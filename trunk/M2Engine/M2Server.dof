@@ -90,11 +90,11 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=..\MirServer
-UnitOutputDir=..\Build\M2Server
+OutputDir=..\MirServer\Mir200
+UnitOutputDir=..\Build\M2Engine
 PackageDLLOutputDir=
 PackageDCPOutputDir=
-SearchPath=D:\GameOfMir\Common
+SearchPath=..\Common;..\Component\JSocket;..\Component\RC4\Source
 Packages=vcl;rtl;vclx;inetdb;dbrtl;inet;dsnap;bdertl;vcldb;vcldbx;vclactnband;vclshlctrls;vclie;xmlrtl;inetdbbde;inetdbxpress;webdsnap;soaprtl;websnap;adortl;dbexpress;dsnapcon;dbxcds;ibxpress;teeui;teedb;tee;dss;indy;VclSmp;dclOfficeXP;qrpt;teeqr;Rave50CLX;Rave50VCL;IntrawebDB_50_70;Intraweb_50_70;RaizeComponentsVcl;RaizeComponentsVclDb;Install;EmbeddedWeBrowserD2005;IcsDel70;DelphiX_for7
 Conditionals=
 DebugSourceDirs=
@@ -134,15 +134,23 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+c:\program files\borland\delphi7\Projects\Bpl\DelphiX110.bpl=DelphiX - DirectX components for Delphi 2007
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 [HistoryLists\hlSearchPath]
-Count=1
-Item0=D:\GameOfMir\Common
+Count=4
+Item0=..\Common;..\Component\JSocket;..\Component\RC4\Source
+Item1=..\Common;..\Component\JSocket
+Item2=..\Common
+Item3=D:\GameOfMir\Common
 [HistoryLists\hlUnitOutputDirectory]
-Count=1
-Item0=..\Build\M2Server
+Count=2
+Item0=..\Build\M2Engine
+Item1=..\Build\M2Server
 [HistoryLists\hlOutputDirectorry]
-Count=1
-Item0=..\MirServer
+Count=3
+Item0=..\MirServer\Mir200
+Item1=Z:\Mir200
+Item2=..\MirServer

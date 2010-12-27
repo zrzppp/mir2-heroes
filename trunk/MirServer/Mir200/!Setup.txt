@@ -2221,6 +2221,16 @@ SerieMagicBlasthitRate11-0=0
 SerieMagicBlasthitRate11-1=10
 SerieMagicBlasthitRate11-2=20
 SerieMagicBlasthitRate11-3=30
+AIHomeMap=3
+AIHomeX=330
+AIHomeY=330
+ItemMaxStarCount=20
+CheckSpeedHack=1
+AutoRepairItem=1
+RenewHealth=1
+RenewPercent=60
+AIConfigListFileName=
+CheckCanUpgradeStarItem=0
 [Exp]
 KillMonExpMultiple=1
 HighLevelKillMonFixExp=1

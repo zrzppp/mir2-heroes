@@ -1,13 +1,13 @@
 object FrmMain: TFrmMain
-  Left = 268
-  Top = 74
-  Width = 456
+  Left = 393
+  Top = 194
+  Width = 455
   Height = 390
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   Icon.Data = {
     0000010001002020010000000000A81000001600000028000000200000004000
@@ -149,11 +149,11 @@ object FrmMain: TFrmMain
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 14
   object RzSplitter: TRzSplitter
     Left = 0
     Top = 0
-    Width = 448
+    Width = 447
     Height = 336
     Orientation = orVertical
     Position = 159
@@ -166,7 +166,7 @@ object FrmMain: TFrmMain
     BarSize = (
       0
       159
-      448
+      447
       161)
     UpperLeftControls = (
       MemoLog)
@@ -175,7 +175,7 @@ object FrmMain: TFrmMain
     object MemoLog: TRzMemo
       Left = 0
       Top = 0
-      Width = 448
+      Width = 447
       Height = 159
       Align = alClient
       ScrollBars = ssVertical
@@ -187,7 +187,7 @@ object FrmMain: TFrmMain
     object RzSplitter1: TRzSplitter
       Left = 0
       Top = 0
-      Width = 448
+      Width = 447
       Height = 175
       Orientation = orVertical
       Position = 79
@@ -198,7 +198,7 @@ object FrmMain: TFrmMain
       BarSize = (
         0
         79
-        448
+        447
         79)
       UpperLeftControls = (
         Panel)
@@ -207,34 +207,34 @@ object FrmMain: TFrmMain
       object Panel: TPanel
         Left = 0
         Top = 0
-        Width = 448
+        Width = 447
         Height = 79
         Align = alClient
         TabOrder = 0
         DesignSize = (
-          448
+          447
           79)
         object Label1: TLabel
           Left = 0
-          Top = 16
-          Width = 36
-          Height = 12
+          Top = 19
+          Width = 35
+          Height = 14
           Caption = 'Lable1'
           Transparent = True
         end
         object Label2: TLabel
           Left = 0
-          Top = 32
-          Width = 36
-          Height = 12
+          Top = 37
+          Width = 35
+          Height = 14
           Caption = 'Lable2'
           Transparent = True
         end
         object Lbcheck: TLabel
-          Left = 48
-          Top = 64
-          Width = 42
-          Height = 12
+          Left = 56
+          Top = 75
+          Width = 45
+          Height = 14
           Caption = 'Lbcheck'
           Transparent = True
           Visible = False
@@ -242,25 +242,25 @@ object FrmMain: TFrmMain
         object LbRunSocketTime: TLabel
           Left = 0
           Top = 0
-          Width = 78
-          Height = 12
+          Width = 86
+          Height = 14
           Caption = 'RunSocketTime'
           Transparent = True
           Visible = False
         end
         object LbRunTime: TLabel
-          Left = 204
-          Top = 16
-          Width = 42
-          Height = 12
+          Left = 238
+          Top = 19
+          Width = 48
+          Height = 14
           Caption = 'RunTime'
           Transparent = True
         end
         object LbTimeCount: TLabel
-          Left = 396
-          Top = 16
-          Width = 54
-          Height = 12
+          Left = 389
+          Top = 19
+          Width = 60
+          Height = 14
           Alignment = taRightJustify
           Anchors = [akTop, akRight]
           BiDiMode = bdRightToLeft
@@ -271,134 +271,134 @@ object FrmMain: TFrmMain
         object LbUserCount: TLabel
           Left = 0
           Top = 0
-          Width = 54
-          Height = 12
+          Width = 57
+          Height = 14
           Caption = 'UserCount'
           Transparent = True
         end
         object MemStatus: TLabel
-          Left = 280
-          Top = 50
-          Width = 36
-          Height = 12
+          Left = 328
+          Top = 58
+          Width = 41
+          Height = 18
           Alignment = taRightJustify
           Caption = 'Status'
           Font.Charset = GB2312_CHARSET
           Font.Color = clRed
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
           Visible = False
         end
         object LabelVersion: TLabel
-          Left = 322
-          Top = 16
-          Width = 12
-          Height = 12
+          Left = 376
+          Top = 19
+          Width = 16
+          Height = 18
           BiDiMode = bdLeftToRight
           Caption = 'LV'
           Font.Charset = GB2312_CHARSET
           Font.Color = clRed
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentBiDiMode = False
           ParentFont = False
           Transparent = True
         end
         object LTotalRAM: TLabel
-          Left = 322
-          Top = 32
-          Width = 54
-          Height = 12
+          Left = 376
+          Top = 37
+          Width = 70
+          Height = 18
           Caption = 'LTotalRAM'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
         end
         object LFreeRAM: TLabel
-          Left = 322
-          Top = 48
-          Width = 48
-          Height = 12
+          Left = 376
+          Top = 56
+          Width = 66
+          Height = 18
           Caption = 'LFreeRAM'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
         end
         object LTotalVirtual: TLabel
-          Left = 234
-          Top = 34
-          Width = 78
-          Height = 12
+          Left = 273
+          Top = 40
+          Width = 79
+          Height = 18
           Caption = 'LTotalVirtual'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
           Visible = False
         end
         object LFreeVirtual: TLabel
-          Left = 234
-          Top = 50
-          Width = 72
-          Height = 12
+          Left = 273
+          Top = 58
+          Width = 75
+          Height = 18
           Caption = 'LFreeVirtual'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
           Visible = False
         end
         object LMemoryLoad: TLabel
-          Left = 322
-          Top = 66
-          Width = 66
-          Height = 12
+          Left = 376
+          Top = 77
+          Width = 92
+          Height = 18
           Caption = 'LMemoryLoad'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -12
-          Font.Name = #23435#20307
+          Font.Height = -15
+          Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
         end
         object Label5: TLabel
           Left = 0
-          Top = 48
-          Width = 36
-          Height = 12
+          Top = 56
+          Width = 35
+          Height = 14
           Caption = 'Label5'
         end
         object Label20: TLabel
           Left = 0
-          Top = 64
+          Top = 75
           Width = 42
-          Height = 12
+          Height = 14
           Caption = 'Label20'
         end
       end
       object GridGate: TStringGrid
         Left = 0
         Top = 0
-        Width = 448
+        Width = 447
         Height = 96
         Align = alClient
         ColCount = 7
@@ -421,159 +421,159 @@ object FrmMain: TFrmMain
     Left = 216
     Top = 16
     object MENU_CONTROL: TMenuItem
-      Caption = #25511#21046'(&C)'
+      Caption = 'Control (&C)'
       object MENU_CONTROL_CLEARLOGMSG: TMenuItem
-        Caption = #28165#38500#26085#24535'(&C)'
+        Caption = 'Clear Log (&C)'
         OnClick = MENU_CONTROL_CLEARLOGMSGClick
       end
       object MENU_CONTROL_RELOAD: TMenuItem
-        Caption = #37325#26032#21152#36733'(&R)'
+        Caption = 'Reload... (&R)'
         object MENU_CONTROL_RELOAD_ITEMDB: TMenuItem
-          Caption = #29289#21697#25968#25454#24211'(&I)'
+          Caption = 'Item Database (&I)'
           OnClick = MENU_CONTROL_RELOAD_ITEMDBClick
         end
         object MENU_CONTROL_RELOAD_MAGICDB: TMenuItem
-          Caption = #25216#33021#25968#25454#24211'(&S)'
+          Caption = 'Magic Database (&S)'
           OnClick = MENU_CONTROL_RELOAD_MAGICDBClick
         end
         object MENU_CONTROL_RELOAD_MONSTERDB: TMenuItem
-          Caption = #24618#29289#25968#25454#24211'(&M)'
+          Caption = 'Monster Database (&M)'
           OnClick = MENU_CONTROL_RELOAD_MONSTERDBClick
         end
         object MENU_CONTROL_RELOAD_MONSTERSAY: TMenuItem
-          Caption = #24618#29289#35828#35805#35774#32622'(&M)'
+          Caption = 'Monster Say File (&M)'
           OnClick = MENU_CONTROL_RELOAD_MONSTERSAYClick
         end
         object MENU_CONTROL_RELOAD_DISABLEMAKE: TMenuItem
-          Caption = #25968#25454#21015#34920'(&D)'
+          Caption = 'Disable Make List (&D)'
           OnClick = MENU_CONTROL_RELOAD_DISABLEMAKEClick
         end
         object MENU_CONTROL_RELOAD_STARTPOINT: TMenuItem
-          Caption = #22320#22270#23433#20840#21306'(&S)'
+          Caption = 'Start Points (&S)'
           OnClick = MENU_CONTROL_RELOAD_STARTPOINTClick
         end
         object MENU_CONTROL_RELOAD_CONF: TMenuItem
-          Caption = #21442#25968#35774#32622'(&C)'
+          Caption = 'Configuration (&C)'
           OnClick = MENU_CONTROL_RELOAD_CONFClick
         end
         object MonItems: TMenuItem
-          Caption = #24618#29289#29190#29575'(&M)'
+          Caption = 'Monster Items (&M)'
           OnClick = MonItemsClick
         end
       end
       object MENU_CONTROL_GATE: TMenuItem
-        Caption = #28216#25103#32593#20851'(&G)'
+        Caption = 'Server Control (&G)'
         object MENU_CONTROL_GATE_OPEN: TMenuItem
-          Caption = #25171#24320'(&O)'
+          Caption = 'Start Server (&O)'
           OnClick = MENU_CONTROL_GATE_OPENClick
         end
         object MENU_CONTROL_GATE_CLOSE: TMenuItem
-          Caption = #20851#38381'(&C)'
+          Caption = 'Stop Server (&C)'
           OnClick = MENU_CONTROL_GATE_CLOSEClick
         end
       end
       object MENU_CONTROL_REFSERVERCONFIG: TMenuItem
-        Caption = #21047#26032#23458#25143#31471#37197#21046#20449#24687'(&O)'
+        Caption = '?????????(&O)'
         Visible = False
         OnClick = MENU_CONTROL_REFSERVERCONFIGClick
       end
       object MENU_CONTROL_EXIT: TMenuItem
-        Caption = #36864#20986'(&X)'
+        Caption = 'Exit (&X)'
         OnClick = MENU_CONTROL_EXITClick
       end
     end
     object MENU_VIEW: TMenuItem
-      Caption = #26597#30475'(&V)'
+      Caption = 'View (&V)'
       object MENU_VIEW_ONLINEHUMAN: TMenuItem
-        Caption = #22312#32447#20154#29289'(&O)'
+        Caption = '????(&O)'
         OnClick = MENU_VIEW_ONLINEHUMANClick
       end
       object MENU_VIEW_SESSION: TMenuItem
-        Caption = #20840#23616#20250#35805'(&S)'
+        Caption = '????(&S)'
         OnClick = MENU_VIEW_SESSIONClick
       end
       object MENU_VIEW_LEVEL: TMenuItem
-        Caption = #31561#32423#23646#24615'(&L)'
+        Caption = '????(&L)'
         OnClick = MENU_VIEW_LEVELClick
       end
       object MENU_VIEW_LIST: TMenuItem
-        Caption = #21015#34920#20449#24687'(&L)'
+        Caption = '????(&L)'
         OnClick = MENU_VIEW_LISTClick
       end
       object MENU_VIEW_KERNELINFO: TMenuItem
-        Caption = #20869#26680#25968#25454'(&K)'
+        Caption = '????(&K)'
         OnClick = MENU_VIEW_KERNELINFOClick
       end
     end
     object MENU_OPTION: TMenuItem
-      Caption = #36873#39033'(&P)'
+      Caption = 'Server Options (&P)'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = #22522#26412#35774#32622'(&G)'
+        Caption = '????(&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_GAME: TMenuItem
-        Caption = #21442#25968#35774#32622'(&O)'
+        Caption = '????(&O)'
         OnClick = MENU_OPTION_GAMEClick
       end
       object MENU_OPTION_ITEMFUNC: TMenuItem
-        Caption = #29289#21697#35013#22791'(&I)'
+        Caption = '????(&I)'
         OnClick = MENU_OPTION_ITEMFUNCClick
       end
       object MENU_OPTION_FUNCTION: TMenuItem
-        Caption = #21151#33021#35774#32622'(&F)'
+        Caption = '????(&F)'
         OnClick = MENU_OPTION_FUNCTIONClick
       end
       object G1: TMenuItem
-        Caption = #28216#25103#21629#20196'(&C)'
+        Caption = '????(&C)'
         OnClick = G1Click
       end
       object MENU_OPTION_MONSTER: TMenuItem
-        Caption = #24618#29289#35774#32622'(&M)'
+        Caption = '????(&M)'
         OnClick = MENU_OPTION_MONSTERClick
       end
       object MENU_OPTION_SERVERCONFIG: TMenuItem
-        Caption = #24615#33021#21442#25968'(&P)'
+        Caption = '????(&P)'
         OnClick = MENU_OPTION_SERVERCONFIGClick
       end
       object MENU_OPTION_HERO: TMenuItem
-        Caption = #33521#38596#35774#32622'(&H)'
+        Caption = '????(&H)'
         OnClick = MENU_OPTION_HEROClick
       end
     end
     object MENU_MANAGE: TMenuItem
-      Caption = #31649#29702'(&M)'
+      Caption = 'Manage (&M)'
       object MENU_MANAGE_ONLINEMSG: TMenuItem
-        Caption = #22312#32447#28040#24687'(&S)'
+        Caption = '????(&S)'
         OnClick = MENU_MANAGE_ONLINEMSGClick
       end
       object MENU_MANAGE_PLUG: TMenuItem
-        Caption = #21151#33021#25554#20214'(&P)'
+        Caption = '????(&P)'
         OnClick = MENU_MANAGE_PLUGClick
       end
       object MENU_MANAGE_CASTLE: TMenuItem
-        Caption = #22478#22561#31649#29702'(&C)'
+        Caption = '????(&C)'
         OnClick = MENU_MANAGE_CASTLEClick
       end
       object MENU_MANAGE_SYS: TMenuItem
-        Caption = #31995#32479#31649#29702'(&G)'
+        Caption = '????(&G)'
         OnClick = MENU_MANAGE_SYSClick
       end
     end
     object MENU_TOOLS: TMenuItem
-      Caption = #24037#20855'(&T)'
+      Caption = 'Tools (&T)'
       object MENU_TOOLS_IPSEARCH: TMenuItem
-        Caption = #22320#21306#26597#35810'(&S)'
+        Caption = '????(&S)'
         OnClick = MENU_TOOLS_IPSEARCHClick
       end
     end
     object MENU_HELP: TMenuItem
-      Caption = #24110#21161'(&H)'
+      Caption = 'Help (&H)'
       object MENU_HELP_REGKEY: TMenuItem
-        Caption = #24110#21161'(&R)'
+        Caption = 'Information (&R)'
         OnClick = MENU_HELP_REGKEYClick
       end
       object MENU_HELP_ABOUT: TMenuItem
-        Caption = #20851#20110'(&A)'
+        Caption = 'About (&A)'
         OnClick = MENU_HELP_ABOUTClick
       end
     end

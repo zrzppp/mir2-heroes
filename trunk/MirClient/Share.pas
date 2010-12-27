@@ -64,7 +64,7 @@ type
   pTMoveMsg = ^TMoveMsg;
 
 const
-  CLIENTTEST = 0; //0正式版   1测试
+  CLIENTTEST = 1; //0正式版   1测试
   MIRSCLIENT = 0; //0传奇 1外传
   sVERSION = '版本号： 20100901';
 

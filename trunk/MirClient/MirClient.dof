@@ -90,11 +90,11 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=D:\热血传奇
-UnitOutputDir=..\Build\MirClient\
+OutputDir=..\MirServer\MirClient
+UnitOutputDir=..\Build\MirClient
 PackageDLLOutputDir=
 PackageDCPOutputDir=
-SearchPath=D:\Source\GameOfMir\Common
+SearchPath=..\Common;..\Component\JSocket;..\Component\black\Sources;..\Component\HTTPGet;..\Component\DirectX
 Packages=vcl;rtl;vclx;inetdb;dbrtl;inet;dsnap;bdertl;vcldb;vcldbx;vclactnband;vclshlctrls;vclie;xmlrtl;inetdbbde;inetdbxpress;webdsnap;soaprtl;websnap;adortl;dbexpress;dsnapcon;dbxcds;ibxpress;teeui;teedb;tee;dss;indy;VclSmp;dclOfficeXP;qrpt;teeqr;Rave50CLX;Rave50VCL;IntrawebDB_50_70;Intraweb_50_70;RaizeComponentsVcl;RaizeComponentsVclDb;Install;EmbeddedWeBrowserD2005;IcsDel70;DelphiX_for7
 Conditionals=
 DebugSourceDirs=
@@ -125,25 +125,39 @@ Locale=2052
 CodePage=936
 [Version Info Keys]
 CompanyName=MakeGM
-FileDescription=MakeGM游戏客户端
+FileDescription=MakeGM?????
 FileVersion=4.0.4.0
 InternalName=MirClient
 LegalCopyright=Copyright 2008
 LegalTrademarks=
 OriginalFilename=MirClient.exe
-ProductName=MakeGM游戏客户端
+ProductName=MakeGM?????
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+c:\program files\borland\delphi7\Projects\Bpl\DelphiX110.bpl=DelphiX - DirectX components for Delphi 2007
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 [HistoryLists\hlSearchPath]
-Count=2
-Item0=D:\Source\GameOfMir\Common
-Item1=D:\GameOfMir\Common
+Count=12
+Item0=..\Common;..\Component\JSocket;..\Component\black\Sources;..\Component\HTTPGet;..\Component\DirectX
+Item1=..\Common;..\Component\JSocket;..\Component\black\Sources;..\Component\HTTPGet;C:\Documents and Settings\Developement\Desktop\Mir2Heroes\Component\DirectX
+Item2=..\Common;..\Component\JSocket;..\Component\undelphix_1_07_f\Source;..\Component\black\Sources;..\Component\HTTPGet
+Item3=..\Common;..\Component\JSocket;..\Component\undelphix_1_07_f\Source;..\Component\black\Sources;..\Component\DirectX;..\Component\HTTPGet
+Item4=..\Common;..\Component\JSocket;..\Component\undelphix_1_07_f\Source;..\Component\black\Sources;..\Component\DirectX;..\Component\HTTPGet;..\MirClient\MediaPlayer
+Item5=..\Common;..\Component\JSocket;..\Component\undelphix_1_07_f\Source;..\Component\black\Sources;..\Component\DirectX
+Item6=..\Common;..\Component\JSocket;..\Component\undelphix_1_07_f\Source;..\Component\black\Sources
+Item7=..\Common;..\Component\JSocket;..\Component\undelphix_1_07_f\Source
+Item8=..\Common;..\Component\JSocket
+Item9=..\Common
+Item10=D:\Source\GameOfMir\Common
+Item11=D:\GameOfMir\Common
 [HistoryLists\hlUnitOutputDirectory]
-Count=1
-Item0=..\Build\MirClient\
+Count=2
+Item0=..\Build\MirClient
+Item1=..\Build\MirClient\
 [HistoryLists\hlOutputDirectorry]
-Count=1
-Item0=D:\热血传奇
+Count=2
+Item0=..\MirServer\MirClient
+Item1=D:\热血传奇

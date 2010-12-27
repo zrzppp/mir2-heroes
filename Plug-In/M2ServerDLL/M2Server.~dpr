@@ -28,7 +28,7 @@ uses
 
 {$R *.res}
 const
-  PlugName = '系统模块(2010/06/10)';
+  PlugName = '系统模块(2010/09/01)';
   LoadPlus = '加载系统模块成功...';
   UnLoadPlus = '卸载系统模块成功...';
 

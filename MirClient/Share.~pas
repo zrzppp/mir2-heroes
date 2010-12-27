@@ -64,7 +64,7 @@ type
   pTMoveMsg = ^TMoveMsg;
 
 const
-  CLIENTTEST = 1; //0正式版   1测试
+  CLIENTTEST = 0; //0正式版   1测试
   MIRSCLIENT = 0; //0传奇 1外传
   sVERSION = '版本号： 20100901';
 
@@ -349,7 +349,7 @@ end;
 
 procedure DrawBlendEx(dsuf: TTexture; X, Y: Integer; ssuf: TTexture; ssufleft, ssuftop, ssufwidth, ssufheight: Integer);
 var
-  ta, tb, tc, td, I,II, j, k, L, tmp, srcleft, srctop, srcwidth, srcbottom, sidx, didx: Integer;
+  ta, tb, tc, td, I, II, j, k, L, tmp, srcleft, srctop, srcwidth, srcbottom, sidx, didx: Integer;
   sptr, dptr, pmix: PWord;
   bitindex, scount, dcount, SrcLen, destlen, wcount, AWidth, bwidth: Integer;
   r, G, b, dr, dg, db, stmp, dtmp: Word;
@@ -395,128 +395,14 @@ begin
   for I := srctop to srcbottom - 1 do begin
     sptr := PWord(Integer(ssuf.PBits) + ssuf.Pitch * I + srcleft * 2);
     dptr := PWord(Integer(dsuf.PBits) + (Y + I - srctop) * dsuf.Pitch + X * 2);
-    for II:=0 to srcwidth - 1 do begin
-      dptr^ := (RGBEffects[BGRS[dptr^].R, BGRS[sptr^].R] shl 8 and $F800) or (RGBEffects[BGRS[dptr^].G, BGRS[sptr^].G] shl 3 and $07E0) or (RGBEffects[BGRS[dptr^].B, BGRS[sptr^].B] shr 3 and $001F);
-
-      Inc(sptr);
-      Inc(dptr);
+    for II := 0 to srcwidth - 1 do begin
+      dptr^ :=
+        (RGBEffects[BGRS[dptr^].R, BGRS[sptr^].R] shl 8 and $F800) or
+        (RGBEffects[BGRS[dptr^].G, BGRS[sptr^].G] shl 3 and $07E0) or
+        (RGBEffects[BGRS[dptr^].B, BGRS[sptr^].B] shr 3 and $001F);
+        
+      Inc(sptr); Inc(dptr);
     end;
-    (*
-
-    j := srcwidth div 4;
-    k := srcwidth mod 4;
-    asm
-                                push edx
-                                push ecx
-                        //mmx处理
-                        @@MMX:
-                                cmp j,0
-                                jle @@Exit
-
-                                mov ecx,sptr
-                                mov edx,dptr
-
-                                movq mm7,[ecx]
-                                PCMPEQW mm7,maskkey
-
-                                movq mm0,[ecx]
-                                movq mm1,[edx]
-                                pand mm0,maskred
-                                pand mm1,maskred
-                                PSRLW mm0,8
-                                PSRLW mm1,8
-                                movq mm2,maskdate1
-                                PSUBUSW mm2,mm0
-                                PMULLW mm2,mm1
-                                PSRLW mm2,8      //成组数据的逻辑右移8
-                                PADDUSW mm2,mm0
-                                PMINSW mm2,maskdate3
-                                PMAXSW mm2,maskdate5
-                                PSLLW mm2,8
-                                pand mm2,maskred
-
-                                movq mm0,[ecx]
-                                movq mm1,[edx]
-                                pand mm0,maskgreen
-                                pand mm1,maskgreen
-                                PSRLW mm0,3
-                                PSRLW mm1,3
-                                movq mm3,maskdate1
-                                PSUBUSW mm3,mm0
-                                PMULLW mm3,mm1
-                                PSRLW mm3,8
-                                PADDUSW mm3,mm0
-                                PMINSW mm3,maskdate4
-                                PMAXSW mm3,maskdate6
-                                PSLLW mm3,3
-                                pand mm3,maskgreen
-                                por mm2,mm3
-
-                                movq mm0,[ecx]
-                                movq mm1,[edx]
-                                pand mm0,maskblue
-                                pand mm1,maskblue
-                                PSLLW mm0,3
-                                PSLLW mm1,3
-                                movq mm3,maskdate1
-                                PSUBUSW mm3,mm0
-                                PMULLW mm3,mm1
-                                PSRLW mm3,8
-                                PADDUSW mm3,mm0
-                                PMINSW mm3,maskdate3
-                                PMAXSW mm3,maskdate5
-                                PSRLW mm3,3
-                                pand mm3,maskblue
-                                por mm2,mm3
-
-                                movq mm1,[edx]
-                                pand mm1,mm7
-                                pandn mm7,maskdate2
-                                pand mm2,mm7
-
-                                por mm2,mm1
-                                movq [edx],mm2
-                        @@Nextflag:
-                                add ecx,8
-                                add edx,8
-                                mov sptr,ecx
-                                mov dptr,edx
-
-                                sub j,1
-                                jmp @@MMX
-
-                        @@Exit:
-                                emms
-                                pop edx
-                                pop ecx
-
-    end;
-    for L := 1 to k do begin //剩余像素处理
-        {dptr^ := RGBColors[
-          RGBEffects[BGRS[dptr^].R, BGRS[sptr^].R],
-          RGBEffects[BGRS[dptr^].G, BGRS[sptr^].G],
-          RGBEffects[BGRS[dptr^].B, BGRS[sptr^].B]];
-        }
-      dptr^ := (RGBEffects[BGRS[dptr^].R, BGRS[sptr^].R] shl 8 and $F800) or (RGBEffects[BGRS[dptr^].G, BGRS[sptr^].G] shl 3 and $07E0) or (RGBEffects[BGRS[dptr^].B, BGRS[sptr^].B] shr 3 and $001F);
-
-      Inc(sptr);
-      Inc(dptr);
-        {r := (sptr^) and $F800 shr 8;
-        G := (sptr^) and $07E0 shr 3;
-        b := (sptr^) and $001F shl 3;
-
-        dr := (dptr^) and $F800 shr 8;
-        dg := (dptr^) and $07E0 shr 3;
-        db := (dptr^) and $001F shl 3;
-
-        r := _MIN(255, r + Round((255 - r) / 255 * dr));
-        G := _MIN(255, G + Round((255 - G) / 255 * dg));
-        b := _MIN(255, b + Round((255 - b) / 255 * db));
-
-        dptr^ := (r shl 8 and $F800) or (G shl 3 and $07E0) or (b shr 3 and $001F);
-        Inc(sptr, 1);
-        Inc(dptr, 1);}
-    end; *)
   end;
 end;
 

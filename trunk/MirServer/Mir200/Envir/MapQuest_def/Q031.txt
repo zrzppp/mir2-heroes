@@ -1,0 +1,16 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+#IF
+checkitem 英雄帖 1
+#ACT
+take 英雄帖 1
+MAPMOVE B010 42 50
+CREDITPOINT + 2
+SENDMSG 0 [%s]打败了一层的庄主![声望指数+2]
+SENDMSG 6 提示：[声望指数+2].当前声望指数为：<$CREDITPOINT>
+break
+#ELSEACT
+SENDMSG 7 提示：你身上没有英雄帖.所以不能进入下一关!
+break

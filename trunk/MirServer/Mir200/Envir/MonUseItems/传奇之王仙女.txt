@@ -1,0 +1,46 @@
+;=============================人形宝宝配制文件=======================
+[BaseInfo]
+;职业
+Job = 2
+;性别
+Gender = 1
+;头发
+Hair = 3
+;使用魔法
+Magic = 无极真气,灵魂火符,神圣战甲术,幽灵盾,施毒术,气功波,治愈术,群体治疗术,召唤月灵,群体火符术,群体施毒术
+;==============================身上装备============================
+[UseItems]
+;衣服
+DRESSNAME = 风神衣(女) 
+;武器
+WEAPONNAME = 风神扇
+;照明物
+RIGHTHANDNAME = 踏雪豹牌
+;项链
+NECKLACENAME = 白玉腾龙项链
+;头盔
+HELMETNAME = 白玉腾龙头盔
+;左手镯
+ARMRINGLNAME = 白玉腾龙护腕
+;右手镯
+ARMRINGRNAME = 白玉腾龙护腕
+;左戒指
+RINGLNAME = 白玉腾龙戒指
+;右戒指
+RINGRNAME = 白玉腾龙戒指
+;物品
+BUJUKNAME = 诅咒符
+;腰带
+BELTNAME = 白玉腾龙腰带
+;鞋子
+BOOTSNAME = 白玉腾龙道靴 
+;宝石
+CHARMNAME = 魔血石(大)
+;死亡掉装备几率 数字越小掉装备几率越高
+DieDropUseItemRate = 50
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 0
+
+;是否允许挖物品(1=允许 0=不允许)
+ButchItem = 0

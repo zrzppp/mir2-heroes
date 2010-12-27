@@ -1,0 +1,61 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+(@buy @sell @storage @getback @repair @s_repair )
+%100
++0
++42
+[@main]
+欢迎你光临：<$SERVERNAME>\ \
+<挑选货物/@buy>                   <愤怒点数/FCOLOR=250>:<$HUMAN(XYNL)>点\ \
+<出售货物/@sell>                   <中毒时间/FCOLOR=249>:<$HUMAN(RWSW)>分\ \
+<超重买药/@chaozhong>                   <官方网站/AUTOCOLOR=254,251,168,191,250,70,245,249,253>:<$WEBSITE>\ \
+<当前时间/FCOLOR=253>:<$DATETIME><关闭对话/@exit>\
+
+[@buy]
+你想购买什么东西?我这里货物可多了.\ \ \
+<出售货物/@sell>\ \
+<超重买药/@chaozhong>\ \
+<当前时间>:<$DATETIME><关闭对话/@exit>\
+[@sell]
+现在的日子越来越难过呀。\ \ \
+<购买货物/@buy>\ \
+<超重买药/@chaozhong>\ \
+<当前时间>:<$DATETIME><关闭对话/@exit>\
+[@chaozhong]
+我是超重服务员。价格嘛！5000块钱一捆,我可不降价的\ \
+<超重一捆蓝/@iblue>\ \
+<超重一捆红/@ired>\ \
+<当前时间>:<$DATETIME><关闭对话/@exit>\
+
+[@iblue]
+#if
+checkgold 5000
+#act
+give 超级魔法药 1
+take 金币 5000
+#say
+你还想要超蓝吗？\ \
+<再要一捆/@iblue>\ \
+<返回上页/@chaozhong>\
+#ELSEACT
+MESSAGEBOX 呵呵，你没有钱，可不行啊
+
+[@ired]
+#if
+checkgold 5000
+#act
+give 超级金创药 1
+take 金币 5000
+#say
+你还想要超红吗？\ \
+<再要一捆/@ired>\ \
+<返回上页/@chaozhong>\
+#ELSEACT
+MESSAGEBOX 呵呵，你没有钱，可不行啊
+
+[goods]
+超级金创药	200	2
+超级魔法药	200	2
+强效太阳水	100	5
+万年雪霜	10     10

@@ -1,0 +1,278 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+(@storage @getback)
+%100
+[@main]
+<我这里可以存放贵重物品.如果你想存垃圾物品请找我旁边的保管员>\
+建议玩家设置仓库密码保证装备绝对不会被盗.设置后请输入@锁定!\ \
+<存放物品/@storage>\
+<取回物品/@getback>\
+<仓库密码/@仓库命令>\
+<金砖兑换/@mbind>\
+<想去商店/@qusd>\
+<返回盟重/@tuanquan>\
+[@tuanquan]
+#ACT
+mapmove 3 330 322
+
+[@qusd]
+你要去哪个商店？这个是免费服务！ \ \
+<铁匠铺/@Gwe1>     <布料店/@Gpo2> \ \
+<首饰店/@Gza3>     <书店/@Gbo5> \ \
+
+<返回/@main>
+[@Gwe1]
+#ACT
+map 0159
+[@Gpo2]
+#ACT
+map 0149
+[@Gza3]
+#ACT
+map 0158
+[@Gbo5]
+#ACT
+map 0161
+
+[@仓库命令]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆新加的密码仓库系统指令说明:                     ┆\
+┆<注意>：设置好密码后请用<@锁定>来加强仓库安全       ┆\
+┆修改密码：命令为@修改密码 +密码                 ┆\
+┆设置密码：命令为@设置密码 +密码                 ┆\
+┆锁定仓库：命令为@锁定仓库 +密码                 ┆\
+┆解锁仓库：命令为<@开锁>                           ┆\
+┆                            <密码找回/@密码找回>    <返回上页/@main>┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\
+
+
+[@密码找回]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆如果您仓库密码丢失可以在我这里申请找回. ┆\
+┆我们会在第二天之前为您找清除仓库密码.   ┆\
+┆但是您必须得付我10万金币才行.           ┆\
+┆<申请找回/@申请找回>                                ┆\
+┆<返回/@main>                                    ┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\
+
+[@申请找回]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+addnamelist ..\QuestDiary\游戏登陆\仓库密码找回.txt
+#SAY
+恭喜你，你的已经申请了密码找回了。请联系管理员\
+<离 开/@exit>
+#ELSESAY
+你金币不够，无法帮你申请密码找回哦！\
+<返回/@main>
+
+[@storage]
+需要保管什么东西?\ \
+<取回物品/@getback>\ \
+<返回上页/@main>
+
+[@getback]
+请看目录决定找什么东西.\ \
+<存放物品/@storage>\ \
+<返回上页/@main>
+
+[@Mbind]
+金币<交换/@changeGold>金条\
+金条<交换/@changeMoney>金币\ \
+金条<交换/@huanjinhe>金砖\
+金砖<交换/@huanjintiao>金条\ \
+金砖<交换/@huanjintiao1>金盒\
+金盒<交换/@huanjinhe1>金砖              <离 开/@exit>\
+
+[@huanjinhe1]
+#IF
+checkitem 金盒 1
+checkgold 2000
+#SAY 
+你要把金盒换成金砖? \
+好的，我给你换 \
+1和金盒换5个金砖\
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@huanjinhe_11> \
+<离 开/@exit>
+#ELSESAY
+你都没有金盒和钱还换什么? \
+想骗我?快滚! \ \
+<离 开/@exit>
+
+[@huanjinhe_11]
+#IF 
+checkitem 金盒 1
+checkgold 2000
+#ACT
+take 金盒 1
+give 金砖 5
+take 金币 2000
+#SAY
+金盒已经换好金砖了了. \ 
+还换吗？ \ \
+<交换/@huanjinhe1> \
+<离 开/@exit>
+
+[@huanjintiao1]
+#IF
+checkitem 金砖 5
+checkgold 2000
+#SAY 
+你要把金砖换成金盒? \
+好的，我给你换 \
+5个金砖换1个金盒\
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@huanjintiao_11> \
+<离 开/@exit>
+#ELSESAY
+你都没有金砖和钱还换什么? \
+想骗我?快滚! \ \
+<离 开/@exit>
+
+[@huanjintiao_11]
+#IF 
+checkitem 金砖 5
+checkgold 2000
+#ACT
+take 金砖 5
+give 金盒 1
+take 金币 2000
+#SAY
+金砖已经换好金盒了. \ 
+还换吗？ \ \
+<交换/@huanjintiao1> \
+<离 开/@exit>
+
+[@changeGold]
+#IF
+checkgold 1002000
+#SAY
+你说你要用金币换成金条? \
+好的，我帮你换 \
+但是要支付手续费 \
+费用是2000金币，你还换吗？ \ \
+<交换/@changeGold_1> \
+<离 开/@exit>
+#ELSESAY
+你连这点钱都没有，还换什么？ \
+等你有足够的钱，再来找我吧 \ \
+<返 回/@main>
+[@changeGold_1]
+#IF 
+CHECKBAGGAGE
+checkgold 1002000
+#ACT
+take 金币 1002000
+give 金条 1
+#SAY
+金币已经换好金条了. \ 
+还换吗？ \ \
+<交换/@changeGold> \
+<离 开/@exit>
+#ELSESAY
+你的包里东西已经满了，或者你没有足够的钱支付手续费\
+你再确认一下吧 \ \
+<离 开/@exit>
+[@changeMoney]
+#IF
+checkitem 金条 1
+#SAY 
+你要把金条换成金币? \
+好的，我给你换 \
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@changeMoney_1> \
+<离 开/@exit>
+#ELSESAY
+你都没有金条还换什么? \
+想骗我?快滚! \ \
+<离 开/@exit>
+[@changeMoney_1]
+#IF
+checkitem 金条 1
+checkgold 14000001
+#SAY
+我也很想给你换， \
+但是你钱太多了，我没办法给你换. \ \
+<离 开/@exit>
+#ELSEACT
+goto @changeMoney_2
+[@changeMoney_2]
+#IF 
+checkitem 金条 1
+#ACT
+take 金条 1
+give 金币 998000
+#SAY
+金条已经换好金币了. \ 
+还换吗？ \ \
+<交换/@changeMoney> \
+<离 开/@exit>
+
+[@huanjinhe]
+#IF
+checkitem 金条 5
+checkgold 2000
+#SAY 
+你要把金条换成金砖? \
+好的，我给你换 \
+5根金条换1个金砖\
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@huanjinhe_1> \
+<离 开/@exit>
+#ELSESAY
+你都没有金条和钱还换什么? \
+想骗我?快滚! \ \
+<离 开/@exit>
+
+[@huanjinhe_1]
+#IF 
+checkitem 金条 5
+checkgold 2000
+#ACT
+take 金条 5
+give 金砖 1
+take 金币 2000
+#SAY
+金条已经换好金砖了了. \ 
+还换吗？ \ \
+<交换/@huanjinhe> \
+<离 开/@exit>
+
+[@huanjintiao]
+#IF
+checkitem 金砖 1
+checkgold 2000
+#SAY 
+你要把金砖换成金条? \
+好的，我给你换 \
+1个金砖换5根金条\
+不过需要支付手续费\
+费用是2000金币，你还换吗？ \ \
+<交换/@huanjintiao_1> \
+<离 开/@exit>
+#ELSESAY
+你都没有金条和钱还换什么? \
+想骗我?快滚! \ \
+<离 开/@exit>
+
+[@huanjintiao_1]
+#IF 
+checkitem 金砖 1
+checkgold 2000
+#ACT
+take 金砖 1
+give 金条 5
+take 金币 2000
+#SAY
+金砖已经换好金条了. \ 
+还换吗？ \ \
+<交换/@huanjintiao> \
+<离 开/@exit>

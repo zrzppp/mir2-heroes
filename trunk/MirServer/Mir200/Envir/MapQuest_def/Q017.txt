@@ -1,0 +1,14 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052 
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+#IF
+Check [318] 0
+#ACT
+mov A53 <$USERNAME>
+mov A54 <$GUILDNAME>
+mov A55 <$DATETIME>
+mov G51 <$LEVEL>
+GAMEGOLD + 5
+SENDMSG 0 龙邪大殿的[龙邪教主]被勇士%s消灭！[元宝+5]
+break

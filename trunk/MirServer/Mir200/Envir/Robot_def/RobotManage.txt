@@ -1,0 +1,379 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;SENDMOVEMSG (0-1 0发送给所有人 1发送给个人) 字体颜色(0-255) 背景颜色(0-255) 滚动次数 信息
+[@送出监狱]
+#IF
+CHECKMAPNAME T225
+equal D4 0
+#ACT
+MAPMOVE 3 333 333
+break
+#IF
+CHECKMAPNAME 0156
+equal D4 0
+#ACT
+MAPMOVE 3 333 333
+break
+[@解除禁言]
+#IF
+CHECKNAMELIST ..\QuestDiary\飛尔世界\变量文件\被禁言的.txt
+#ACT
+Gmexecute 解除禁言 Self
+delnamelist ..\QuestDiary\飛尔世界\变量文件\被禁言的.txt
+break
+[@赠送锦囊]
+#IF
+ISOFFLINEMODE 
+#ACT
+break
+#IF
+checkitem 锦囊 1
+ONLINELONGMIN > 170
+#ACT
+SENDMSG 6 提示：你背包内的锦囊尚未使用.所以系统不能再次给你赠送!
+break
+#IF
+ONLINELONGMIN = 180
+#ACT
+give 锦囊 1
+SENDMSG 5 提示：你已经持续在线三个小时.系统赠送锦囊一个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 360
+#ACT
+give 锦囊 1
+SENDMSG 5 提示：你已经持续在线六个小时.系统赠送锦囊一个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 540
+#ACT
+give 锦囊 1
+SENDMSG 5 提示：你已经持续在线九个小时.系统赠送锦囊一个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 720
+#ACT
+give 锦囊 1
+SENDMSG 5 提示：你已经持续在线十二个小时.系统赠送锦囊一个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 900
+#ACT
+give 锦囊 1
+SENDMSG 5 提示：你已经持续在线十五个小时.系统赠送锦囊一个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 1080
+#ACT
+give 锦囊 1
+SENDMSG 5 提示：你已经持续在线十八个小时.系统赠送锦囊一个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 1260
+#ACT
+give 锦囊 2
+SENDMSG 5 提示：你已经持续在线二十一小时.系统赠送锦囊两个!双击回答问题!
+break
+#IF
+ONLINELONGMIN = 1440
+#ACT
+give 锦囊 2
+SENDMSG 5 提示：你已经持续在线二十四小时.系统赠送锦囊两个!双击回答问题!
+break
+[@检测死亡]
+#IF
+check [444] 1
+ONLINELONGMIN > 1
+#ACT
+CALCVAR HUMAN RWSW + 1
+SAVEVAR HUMAN RWSW ..\QuestDiary\飛尔世界\变量文件\RWSWSave.txt
+break
+[@执行死亡]
+#IF
+check [444] 1
+CHECKVAR HUMAN RWSW = 60
+#ACT
+SENDCOLORMSG 0 253 73 [%s]中了一日丧命散还没解毒.生命剩下60分钟!
+SENDCOLORMSG 1 253 73 提示：你还没拿含笑半步颠到封魔炼药师解毒.生命只剩下60分钟!
+SENDCOLORMSG 1 253 73 提示：你还没拿含笑半步颠到封魔炼药师解毒.生命只剩下60分钟!
+break
+#IF
+check [444] 1
+CHECKVAR HUMAN RWSW = 90
+#ACT
+SENDCOLORMSG 0 253 73 [%s]中了一日丧命散还没解毒.生命剩下30分钟!
+SENDCOLORMSG 1 253 73 提示：你还没拿含笑半步颠到封魔炼药师解毒.生命只剩下30分钟!
+SENDCOLORMSG 1 253 73 提示：你还没拿含笑半步颠到封魔炼药师解毒.生命只剩下30分钟!
+break
+#IF
+check [444] 1
+CHECKVAR HUMAN RWSW = 110
+#ACT
+SENDCOLORMSG 0 253 73 [%s]中了一日丧命散还没解毒.生命剩下10分钟!
+SENDCOLORMSG 1 253 73 提示：你还没拿含笑半步颠到封魔炼药师解毒.生命只剩下10分钟!
+SENDCOLORMSG 1 253 73 提示：你还没拿含笑半步颠到封魔炼药师解毒.生命只剩下10分钟!
+break
+#IF
+check [444] 1
+CHECKVAR HUMAN RWSW > 118
+#ACT
+CHANGEPKPOINT = 0
+CALCVAR HUMAN RWSW = 0
+SET [444] 0
+KILL 0
+GMEXECUTE 人体变色 3 0
+SENDCOLORMSG 0 161 136 [%s]因中毒太深无药可救.暴死在[%M:%x:%y]!
+SAVEVAR HUMAN RWSW ..\QuestDiary\飛尔世界\变量文件\RWSWSave.txt
+break
+[@怪物献宝]
+#IF
+CheckRangeMonCount T240 15 15 30 = 0
+RANDOM 5
+#ACT
+MONGENEX T240 15 15 魔龙教主 1 1 5
+SENDMSG 0 [魔龙教主]出现在至尊殿!武林至尊王可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T240 15 15 30 = 0
+#ACT
+MONGENEX T240 15 15 幽冥统领 1 1 5
+SENDMSG 0 [幽冥统领]出现在至尊殿!武林至尊王可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T240 15 15 30 = 0
+#ACT
+MONGENEX T240 15 15 地藏魔王 1 1 5
+SENDMSG 0 [地藏魔王]出现在至尊殿!武林至尊王可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T240 15 15 30 = 0
+#ACT
+MONGENEX T240 15 15 蛙神 1 1 5
+SENDMSG 0 [蛙神]出现在至尊殿!武林至尊王可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103B 20 20 30 = 0
+#ACT
+MONGENEX T103B 20 20 魔龙教主 1 1 5
+SENDMSG 0 [魔龙教主]出现在天尊殿!无极天尊可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103B 20 20 30 = 0
+#ACT
+MONGENEX T103B 20 20 幽冥统领 1 1 5
+SENDMSG 0 [幽冥统领]出现在天尊殿!无极天尊可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103B 20 20 30 = 0
+#ACT
+MONGENEX T103B 20 20 地藏魔王 1 1 5
+SENDMSG 0 [地藏魔王]出现在天尊殿!无极天尊可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103B 20 20 30 = 0
+#ACT
+MONGENEX T103B 20 20 蛙神 1 1 5
+SENDMSG 0 [蛙神]出现在天尊殿!无极天尊可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103A 20 20 30 = 0
+#ACT
+MONGENEX T103A 20 20 魔龙教主 1 1 5
+SENDMSG 0 [魔龙教主]出现在魔神殿!灭世魔神可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103A 20 20 30 = 0
+#ACT
+MONGENEX T103A 20 20 幽冥统领 1 1 5
+SENDMSG 0 [幽冥统领]出现在魔神殿!灭世魔神可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103A 20 20 30 = 0
+#ACT
+MONGENEX T103A 20 20 地藏魔王 1 1 5
+SENDMSG 0 [地藏魔王]出现在魔神殿!灭世魔神可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103A 20 20 30 = 0
+#ACT
+MONGENEX T103A 20 20 蛙神 1 1 5
+SENDMSG 0 [蛙神]出现在魔神殿!灭世魔神可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103 20 20 30 = 0
+#ACT
+MONGENEX T103 20 20 魔龙教主 1 1 5
+SENDMSG 0 [魔龙教主]出现在猛将殿!武圣猛将可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103 20 20 30 = 0
+#ACT
+MONGENEX T103 20 20 幽冥统领 1 1 5
+SENDMSG 0 [幽冥统领]出现在猛将殿!武圣猛将可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103 20 20 30 = 0
+#ACT
+MONGENEX T103 20 20 地藏魔王 1 1 5
+SENDMSG 0 [地藏魔王]出现在猛将殿!武圣猛将可以去享受它带来的宝藏!
+break
+#IF
+RANDOM 5
+CheckRangeMonCount T103 20 20 30 = 0
+#ACT
+MONGENEX T103 20 20 蛙神 1 1 5
+SENDMSG 0 [蛙神]出现在猛将殿!武圣猛将可以去享受它带来的宝藏!
+break
+[@飛尔世界]
+#IF
+equal G13 1
+#ACT
+Gmexecute 开始提问 @踢掉网挂
+[@控制禁言]
+#IF
+LARGE N1 0
+#ACT
+break
+#IF
+CHECKSTATIONTIME > 1
+#ACT
+INC N1 1
+Gmexecute 禁言 Self 80000
+SENDMSG 7 ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗
+SENDMSG 7 ┆你从登陆游戏到现在已经超过一分钟了.你自己本身没有任何移动...┆
+SENDMSG 7 ┆已经被系统怀疑是网站挂机.输入[@说话]可以恢复聊天.谢谢支持...┆
+SENDMSG 7 ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝
+#ELSEACT
+INC N1 1
+break
+[@准备行会比武]
+#ACT
+SENDMSG 0 行会PK赛现在开始入场.想参加比赛从行会管理.行会争霸里进入!
+[@开始行会比武]
+#ACT
+SENDMSG 0 [行会PK赛]正式开始.入口已经关闭.让我们期待本次比赛冠军!
+Gmexecute 集体传送 D024B D024A
+break
+[@诅咒开始]
+#ACT
+SENDMSG 0 诅咒的封印即将被释放，请大家赶快前往猪七！
+[@诅咒结束]
+#ACT
+SENDMSG 0 经过英雄们的顽强阻挡，魔王的诅咒再次被封印！
+[@诅咒危机]
+#ACT
+Param1 D717
+Param2 50
+Param3 50
+SENDMSG 0 诅咒的封印被释放，大量恶魔出现在猪洞七层！
+MonGen 魔龙战将 10 50
+MonGen 魔龙力士 10 50
+MonGen 魔龙巨蛾 10 50
+MonGen 神鹰 20 50
+MonGen 暗之牛魔王 2 10
+MonGen 暗之赤月恶魔 2 10
+break
+[@结束武宗]
+#IF
+#ACT
+SENDMSG 0 [武士比武大会]入口已经关闭，期待[武圣猛将]的诞生吧!
+[@结束法宗]
+#IF
+#ACT
+SENDMSG 0 [法师比武大会]入口已经关闭，期待[灭世魔神]的诞生吧!
+[@结束道宗]
+#IF
+#ACT
+SENDMSG 0 [道士比武大会]入口已经关闭，期待[无极天尊]的诞生吧!
+[@结束群英]
+#IF
+#ACT
+SENDMSG 0 [至尊比武大会]入口已经关闭，期待[武林至尊PK王]的诞生吧!
+[@开始武宗]
+#IF
+#ACT
+SENDMSG 0 [武士比武大会]入口在5分钟后关闭.请通过“特殊服务-活动专区”参加比赛!
+[@开始法宗]
+#IF
+#ACT
+SENDMSG 0 [法宗比武大会]入口在5分钟后关闭.请通过“特殊服务-活动专区”参加比赛!
+[@开始道宗]
+#IF
+#ACT
+SENDMSG 0 [道宗比武大会]入口在5分钟后关闭.请通过“特殊服务-活动专区”参加比赛!
+[@开始群英]
+#IF
+#ACT
+SENDMSG 0 [群英比武大会]入口在5分钟后关闭.请通过“特殊服务-活动专区”参加比赛!
+[@准备比武大会]
+#IF
+#ACT
+SENDMSG 0 比武大会10分钟后即将开始，请参赛玩家做好应战准备！
+[@武宗比武大会]
+#IF
+#ACT
+SENDMSG 0 [武士比武大会]开始.请通过“特殊服务-活动专区”参加比赛!
+[@法宗比武大会]
+#IF
+#ACT
+SENDMSG 0 [法师比武大会]开始.请通过“特殊服务-活动专区”参加比赛!
+[@道宗比武大会]
+#IF
+#ACT
+SENDMSG 0 [道士比武大会]开始.请通过“特殊服务-活动专区”参加比赛!
+[@群英比武大会]
+#IF
+#ACT
+SENDMSG 0 [至尊比武大会]开始.请通过“特殊服务-活动专区”参加比赛!
+[@初级训练]
+#IF
+  checkhum G002 1
+#ELSEACT
+  ClearMapMon G002
+  break
+#IF
+   checkmonmap G002 200
+#ELSEACT
+MONGENEX G002 50 50 稻草人 50 100 3
+MONGENEX G002 50 50 多钩猫 50 100 3
+MONGENEX G002 50 50 钉耙猫 50 100 3
+break
+[@中级训练]
+#IF
+  checkhum G001 1
+#ELSEACT
+  ClearMapMon G001
+  break
+#IF
+   checkmonmap G001 200
+#ELSEACT
+MONGENEX G001 50 50 僵尸6 50 100 3
+MONGENEX G001 50 50 僵尸7 50 100 3
+MONGENEX G001 50 50 僵尸8 50 100 3
+break
+[@宝宝修炼]
+#IF
+  checkhum B301 1
+#ELSEACT
+  ClearMapMon B301
+  break
+#IF
+   checkmonmap B301 30
+#ELSEACT
+MONGENEX B301 10 10 高级稻草人 5 15 3
+break

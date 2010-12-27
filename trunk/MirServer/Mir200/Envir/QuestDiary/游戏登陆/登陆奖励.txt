@@ -1,0 +1,115 @@
+[@奖励设置]
+{
+#if
+dayofweek sun
+#act
+goto @sun-cqfir.com
+break
+#if
+dayofweek mon
+#act
+goto @mon-cqfir.com
+break
+#if
+dayofweek tue
+#act
+goto @tue-cqfir.com
+break
+#if
+dayofweek wed
+#act
+goto @wed-cqfir.com
+break
+#if
+dayofweek thu
+#act
+goto @thu-cqfir.com
+break
+#if
+dayofweek fri
+#act
+goto @fri-cqfir.com
+break
+#if
+dayofweek sat
+#act
+goto @sat-cqfir.com
+break
+[@sun-cqfir.com]
+#IF
+dayofweek sun
+check [381] 0
+#act
+reset [381] 7
+SET [381] 1
+GOTO @奖励物品
+break
+
+[@mon-cqfir.com]
+#IF
+dayofweek mon
+check [382] 0
+#act
+reset [381] 7
+SET [382] 1
+GOTO @奖励物品
+break
+
+[@tue-cqfir.com]
+#IF
+dayofweek tue
+check [383] 0
+#act
+reset [381] 7
+SET [383] 1
+GOTO @奖励物品
+break
+
+[@wed-cqfir.com]
+#IF
+dayofweek wed
+check [384] 0
+#act
+reset [381] 7
+SET [384] 1
+GOTO @奖励物品
+break
+
+[@thu-cqfir.com]
+#IF
+dayofweek thu
+check [385] 0
+#act
+reset [381] 7
+SET [385] 1
+GOTO @奖励物品
+break
+
+[@fri-cqfir.com]
+#IF
+dayofweek fri
+check [386] 0
+#act
+reset [381] 7
+SET [386] 1
+GOTO @奖励物品
+break
+
+[@sat-cqfir.com]
+#IF
+dayofweek sat
+check [387] 0
+#act
+reset [381] 7
+SET [387] 1
+GOTO @奖励物品
+break
+
+[@奖励物品]
+#IF
+CHECKLEVELEX > 70
+#ACT
+GIVE 檀木钥匙 1
+SENDMSG 5 提示：你的等级大于70级.今天第一次登陆游戏.赠送钥匙一把!
+break
+}

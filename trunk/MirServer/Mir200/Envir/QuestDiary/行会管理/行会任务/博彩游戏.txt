@@ -1,0 +1,377 @@
+[@元宝赌博]
+{
+#IF
+EQUAL D60 0
+#ACT
+MOV D60 1
+MOV S60 ★
+MOV S61 ★
+MOV S62 ★
+#SAY
+╔┄┄┄┄╗┄┄┄┄┄┄┄┄<游戏老虎机>┄┄┄┄┄┄┄┄┄\
+┆<熟悉规则/@熟悉规则>┆　你有元宝：<$GAMEGOLD>\
+┆<积 奖 池/@积奖池>┆　投币数量：<$STR(D55)>\
+┆< 投  币 /@投币>┆　胜利场数：<$STR(D60)>\
+┆< 取  币 /@取币>┆　积奖总池：<$STR(G93)>\
+┆< 退  币 /@退币>┆\
+┆<开始旋转/@开始旋转>┆　    　   <$STR(S60)>           <$STR(S61)>           <$STR(S62)>\
+┆< 返  回 /@main>┆\
+╚┄┄┄┄╝┄┄┄<赌博有风险            投注请谨慎>┄┄┄\
+#ELSESAY
+╔┄┄┄┄╗┄┄┄┄┄┄┄┄<游戏老虎机>┄┄┄┄┄┄┄┄┄\
+┆<熟悉规则/@熟悉规则>┆　你有元宝：<$GAMEGOLD>\
+┆<积 奖 池/@积奖池>┆　投币数量：<$STR(D55)>\
+┆< 投  币 /@投币>┆　胜利场数：<$STR(D60)>\
+┆< 取  币 /@取币>┆　积奖总池：<$STR(G93)>\
+┆< 退  币 /@退币>┆\
+┆<开始旋转/@开始旋转>┆　    　   <$STR(S60)>           <$STR(S61)>           <$STR(S62)>\
+┆< 返  回 /@main>┆\
+╚┄┄┄┄╝┄┄┄<赌博有风险            投注请谨慎>┄┄┄\
+[@熟悉规则]
+点击投币投入1元宝.可多投币.最多允许投入3元宝!如果投入过多\
+可点击取币.点击开始旋转即摇动轮盘..当轮盘上出现同样的三个\
+图案.玩家可以获得相当投币<5倍>的奖金.如果三个图案不一致!!\
+玩家所投币不做返还.玩家获胜后可选择退币即可取得先前的奖金\
+或者继续点击开始旋转进行下一轮游戏.奖金继续做为投注!!如果\
+获胜奖金继续乘以5倍.最多可连续玩三场.最高奖金为1500元宝!\ \
+游戏过程中<不可退出游戏>.否则已投注及奖金归零!     <返回上页/@元宝赌博>\
+[@游戏界面]
+╔┄┄┄┄╗┄┄┄┄┄┄┄┄<游戏老虎机>┄┄┄┄┄┄┄┄┄\
+┆<熟悉规则/@熟悉规则>┆　你有元宝：<$GAMEGOLD>\
+┆<积 奖 池/@积奖池>┆　投币数量：<$STR(D55)>\
+┆< 投  币 /@投币>┆　胜利场数：<$STR(D60)>\
+┆< 取  币 /@取币>┆　积奖总池：<$STR(G93)>\
+┆< 退  币 /@退币>┆\
+┆<开始旋转/@开始旋转>┆　    　   <$STR(S60)>           <$STR(S61)>           <$STR(S62)>\
+┆< 返  回 /@main>┆\
+╚┄┄┄┄╝┄┄┄<赌博有风险            投注请谨慎>┄┄┄\
+[@投币]
+#if
+checkgamegold > 1
+#act
+#elseact
+messagebox 元宝不足，无法继续游戏。
+break
+
+#if
+SMALL D55 3
+#ACT
+GAMEGOLD - 1
+INC D55 1
+SENDMSG 6 提示：你投入元宝1枚。
+GOTO @游戏界面
+#ELSEACT
+messagebox 最多只能投入3枚元宝
+break
+[@取币]
+#if
+EQUAL D55 0
+#ACT
+messagebox 你还未往机内投入元宝。
+break
+#if
+SMALL D55 4
+#ACT
+DEC D55 1
+GAMEGOLD + 1
+SENDMSG 6 提示：你取回元宝1枚。
+GOTO @游戏界面
+break
+#if
+LARGE D55 3
+#ACT
+messagebox 游戏获胜取得元宝可通过“退币”取出。
+[@退币]
+#if
+EQUAL D55 0
+#ACT
+messagebox 机内没有元宝。
+break
+#if
+#ACT
+MOV D60 1
+SENDMSG 6 提示：取回元宝<$STR(D55)>枚。
+GAMEGOLD + D55
+MOV D55 0
+GOTO @游戏界面
+[@离开]
+#if
+EQUAL D55 0
+#ACT
+close
+break
+#if
+#ACT
+SENDMSG 6 提示：取回元宝<$STR(D55)>枚。
+GAMEGOLD + D55
+MOV D55 0
+close
+[@积奖池]
+所有玩家每赢一场游戏.所得奖金其中十分之一将积累到积奖池中.\
+当有玩家连续三盘赢得游戏.除会获得相当投注额100倍奖金外.\
+还会获得积奖池中奖金分红.    <中途不可退出游戏及退币>\ \
+投入1元宝最高可获得<100元宝>分红\ \
+投入2元宝最高可获得<200元宝>分红\ \
+投入3元宝最高可获得<500元宝>分红                <返回上页/@元宝赌博>\
+[@开始旋转]
+#if
+EQUAL D55 0
+#ACT
+messagebox 请向机内投入元宝在进行游戏。
+break
+#if
+EQUAL D60 4
+#ACT
+messagebox 你已经连胜三局，请点击退币后再进行游戏。
+break
+
+#if
+EQUAL D60 1
+#ACT
+INC D60 1
+MOVR N33 8
+MOVR N43 8
+MOVR N53 8
+GOTO @继续旋转
+break
+#if
+EQUAL D60 2
+#ACT
+INC D60 1
+MOVR N33 8
+MOVR N43 8
+MOVR N53 8
+GOTO @继续旋转
+break
+#if
+EQUAL D60 3
+#ACT
+INC D60 1
+MOVR N33 8
+MOVR N43 8
+MOVR N53 8
+GOTO @继续旋转
+break
+[@继续旋转]
+#if
+EQUAL N33 0
+#ACT
+MOV S60 ★
+#if
+EQUAL N33 1
+#ACT
+MOV S60 ⊙
+#if
+EQUAL N33 2
+#ACT
+MOV S60 ●
+#if
+EQUAL N33 3
+#ACT
+MOV S60 △
+#if
+EQUAL N33 4
+#ACT
+MOV S60 ▲
+#if
+EQUAL N33 5
+#ACT
+MOV S60 ■
+#if
+EQUAL N33 6
+#ACT
+MOV S60 ☆
+#if
+EQUAL N33 7
+#ACT
+MOV S60 ◇
+#if
+EQUAL N33 8
+#ACT
+MOV S60 ◆
+#if
+EQUAL N43 0
+#ACT
+MOV S61 ★
+#if
+EQUAL N43 1
+#ACT
+MOV S61 ⊙
+#if
+EQUAL N43 2
+#ACT
+MOV S61 ●
+#if
+EQUAL N43 3
+#ACT
+MOV S61 △
+#if
+EQUAL N43 4
+#ACT
+MOV S61 ▲
+#if
+EQUAL N43 5
+#ACT
+MOV S61 ■
+#if
+EQUAL N43 6
+#ACT
+MOV S61 ☆
+#if
+EQUAL N43 7
+#ACT
+MOV S61 ◇
+#if
+EQUAL N43 8
+#ACT
+MOV S61 ◆
+#if
+EQUAL N53 0
+#ACT
+MOV S62 ★
+#if
+EQUAL N53 1
+#ACT
+MOV S62 ⊙
+#if
+EQUAL N53 2
+#ACT
+MOV S62 ●
+#if
+EQUAL N53 3
+#ACT
+MOV S62 △
+#if
+EQUAL N53 4
+#ACT
+MOV S62 ▲
+#if
+EQUAL N53 5
+#ACT
+MOV S62 ■
+#if
+EQUAL N53 6
+#ACT
+MOV S62 ☆
+#if
+EQUAL N53 7
+#ACT
+MOV S62 ◇
+#if
+EQUAL N53 8
+#ACT
+MOV S62 ◆
+
+#if
+EQUAL N53 N33
+EQUAL N53 N43
+#ACT
+INC G93 D55
+GOTO @轮盘停止
+break
+#if
+#ACT
+MOV D60 1
+MOV D55 0
+SENDMSG 7 提示：很遗憾.这次运气不好.请再接再励。
+GOTO @游戏界面
+break
+[@轮盘停止]
+#if
+EQUAL D55 1
+#ACT
+MOV D55 5
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+#if
+EQUAL D55 2
+#ACT
+MOV D55 10
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+#if
+EQUAL D55 3
+#ACT
+MOV D55 15
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+#if
+EQUAL D55 10
+#ACT
+MOV D55 50
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+#if
+EQUAL D55 20
+#ACT
+MOV D55 100
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>0元宝。
+GOTO @游戏界面
+break
+#if
+EQUAL D55 30
+#ACT
+MOV D55 150
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+
+#if
+EQUAL D55 10
+SMALL G93 1001
+#ACT
+MOV D55 500
+INC D55 G93
+MOV G93 0
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+
+#if
+EQUAL D55 10
+LARGE G93 500
+#ACT
+MOV D55 50
+INC D55 50
+DEC G93 50
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+
+#if
+EQUAL D55 20
+SMALL G93 2001
+#ACT
+MOV D55 1000
+INC D55 G93
+MOV G93 0
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+
+#if
+EQUAL D55 20
+LARGE G93 1000
+#ACT
+MOV D55 1000
+INC D55 1000
+DEC G93 1000
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+
+#if
+EQUAL D55 30
+SMALL G93 5001
+#ACT
+MOV D55 1500
+INC D55 1500
+DEC G93 1500
+SENDCOLORMSG 0 251 249 [%s]赢了一局元宝赌博游戏,获得奖金<$STR(D55)>元宝。
+GOTO @游戏界面
+break
+}

@@ -1,0 +1,46 @@
+;=============================人形宝宝配制文件=======================
+[BaseInfo]
+;职业
+Job = 0
+;性别
+Gender = 1
+;头发
+Hair = 3
+;使用魔法
+Magic = 烈火剑法,半月弯刀,刺杀剑术,野蛮冲撞,抱月刀法,彻地钉
+;==============================身上装备============================
+[UseItems]
+;衣服
+DRESSNAME = 圣战宝甲 
+;武器
+WEAPONNAME = 裁决之杖
+;照明物
+RIGHTHANDNAME = 荣誉勋章33号
+;项链
+NECKLACENAME = 雷霆项链
+;头盔
+HELMETNAME = 圣龙盔
+;左手镯
+ARMRINGLNAME = 雷霆护腕
+;右手镯
+ARMRINGRNAME = 雷霆护腕
+;左戒指
+RINGLNAME = 雷霆战戒
+;右戒指
+RINGRNAME = 雷霆战戒
+;物品
+BUJUKNAME = 
+;腰带
+BELTNAME = 雷霆腰带
+;鞋子
+BOOTSNAME = 雷霆战靴 
+;宝石
+CHARMNAME = 
+;死亡掉装备几率 数字越小掉装备几率越高
+DieDropUseItemRate = 10
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 0
+
+;是否允许挖物品(1=允许 0=不允许)
+ButchItem = 0

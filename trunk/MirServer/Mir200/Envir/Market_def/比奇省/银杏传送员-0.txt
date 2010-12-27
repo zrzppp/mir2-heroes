@@ -1,0 +1,323 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+#IF
+ISNEWHUMAN
+#SAY
+欢迎你光临：<$SERVERNAME>!\ \
+本服独创答题升级系统.35级后.每升一级都将随机获得系统奖励\ \
+那怎么样才能快速升到35级呢?以下有两个方式提供给不同喜好的\ \
+玩家选择!\ \
+<我选择杀怪升到35级/@杀怪升级>               <我选择答题升到35级/@答题升级>\
+#ELSEACT
+GOTO @杀怪升级
+break
+[@杀怪升级]
+#IF
+CHECKLEVELEX < 25
+#ACT
+mapmove G002
+GIVE 回城卷 1
+SENDMSG 4 [%s]进入了初练级区!
+#ELSEACT
+GOTO @大于等级
+break
+[@大于等级]
+#IF
+CHECKLEVELEX < 35
+#ACT
+mapmove G001
+GIVE 回城卷 1
+SENDMSG 4 [%s]进入了中练级区!
+#ELSEACT
+mapmove 3 334 334
+break
+
+[@答题升级]
+#ACT
+SENDMSG 0 新手[%s]选择(答题)的方式向35级冲刺!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级7级>\ \
+在传奇游戏当中.一共有多少种职业选择\ \
+<三种/@正确0>        <四种/@错误>        <五种/@错误>        <六种/@错误>\
+
+[@错误]
+#ACT
+SENDMSG 7 提示：回答错误.给你三秒钟时间.请仔细阅题.再作选择!
+break
+[@正确0]
+#ACT
+CHANGELEVEL = 5
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到五级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级10级>\ \
+治愈术是哪个职业修炼的技能?\ \
+<道士/@正确1>        <法师/@错误>        <战士/@错误>       <傻B/@错误>\
+[@正确1]
+#ACT
+CHANGELEVEL = 10
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到十级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级15级>\ \
+对抗拒火环描述正确的一项是?\ \
+<只能推动怪物/@错误>       <只能推动人物/@错误>       <推动比自己等级低的人和怪/@正确2>\
+[@正确2]
+#ACT
+CHANGELEVEL = 15
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到十五级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级20级>\ \
+对刺杀剑术描述错误的一项是?\ \
+<可以破盾/@错误>         <可以吸血/@正确3>         <可以伤害直线两格/@错误>\
+[@正确3]
+#ACT
+CHANGELEVEL = 20
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到二十级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级24级>\ \
+在本服里将包裹的装备穿戴在身上的最快方式是?\ \
+<把装备用鼠标点着放到身上/@错误>         <鼠标右键点下包裹的装备自动穿/@正确4>\
+[@正确4]
+#ACT
+CHANGELEVEL = 24
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到二十四级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级28级>\ \
+穿戴一套什么装备会引起游戏内的宝宝叛变?\ \
+<记忆套装/@错误>     <神秘套装/@错误>     <雷霆套装/@错误>     <祈祷套装/@正确5>\
+[@正确5]
+#ACT
+CHANGELEVEL = 28
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到二十八级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级30级>\ \
+对于游戏获得元宝解释错误的一项是?\ \
+<找GM购买/@错误>     <元宝打工/@错误>     <杀BOSS获得/@错误>     <天上掉下/@正确6>\
+[@正确6]
+#ACT
+CHANGELEVEL = 30
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到三十级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级35级>\ \
+ 做什么任务可以快速提升自己的等级?\ \
+<元宝打工任务/@错误>       <经验聚集任务/@正确7>      <行会跑商任务/@错误>\
+[@正确7]
+#ACT
+CHANGELEVEL = 32
+SENDMSG 7 提示：恭喜你回答正确.你的等级已经升到三十二级!
+#SAY
+很明显.你是聪明好学之人.请看题!\ \
+本题答对奖励:<等级35级>\ \
+ 多余的祖码.赤月.雷霆系列装备最好的处理办法是?\ \
+<直接丢掉/@错误>       <卖给商店/@错误>       <拿到特殊服务处换东西/@正确8>\
+[@正确8]
+#IF
+gender man
+#ACT
+GOTO @男性新手
+break
+#ELSEACT
+GOTO @女性新手
+break
+[@男性新手]
+#if
+checkjob taoist
+#act
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+give 白龙马牌 1
+give 道士头盔 1
+give 银蛇 1
+give 铂金戒指 2
+give 心灵手镯 2
+give 天珠项链 1
+give 灵魂战衣(男) 1
+give 护身符(大) 1
+give 黄色药粉(大量) 1
+give 灰色药粉(大量) 1
+give 超级金创药 8
+give 超级魔法药 5
+takew 匕首 46
+takew 布衣(男) 46
+CHANGELEVEL = 35
+Gmexecute 解除禁言 Self
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 335 323
+GOTO @CQFIRZH
+break
+#if
+checkjob warrior
+#act
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+give 白龙马牌 1
+give 骷髅头盔 1
+give 炼狱 1
+give 龙之戒指 2
+give 死神手套 2
+give 幽灵项链 1
+give 重盔甲(男) 1
+give 超级金创药 15
+give 超级魔法药 3
+takew 匕首 46
+takew 布衣(男) 46
+CHANGELEVEL = 35
+Gmexecute 解除禁言 Self
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 337 325
+GOTO @CQFIRZH
+break
+#if
+checkjob wizard
+#act
+ADDSKILL 雷电术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 雷电术 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 疾光电影 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+give 白龙马牌 1
+give 道士头盔 1
+give 魔杖 1
+give 红宝石戒指 2
+give 思贝儿手镯 2
+give 生命项链 1
+give 魔法长袍(男) 1
+give 超级金创药 5
+give 超级魔法药 15
+takew 匕首 46
+takew 布衣(男) 46
+CHANGELEVEL = 35
+Gmexecute 解除禁言 Self
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 335 325
+GOTO @CQFIRZH
+break
+[@女性新手]
+#if
+checkjob taoist
+#act
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+give 白龙马牌 1
+give 道士头盔 1
+give 银蛇 1
+give 铂金戒指 2
+give 心灵手镯 2
+give 天珠项链 1
+give 灵魂战衣(女) 1
+give 护身符(大) 1
+give 黄色药粉(大量) 1
+give 灰色药粉(大量) 1
+give 超级金创药 8
+give 超级魔法药 5
+takew 匕首 46
+takew 布衣(女) 46
+CHANGELEVEL = 35
+Gmexecute 解除禁言 Self
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 335 323
+GOTO @CQFIRZH
+break
+#if
+checkjob warrior
+#act
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+give 白龙马牌 1
+give 骷髅头盔 1
+give 炼狱 1
+give 龙之戒指 2
+give 死神手套 2
+give 幽灵项链 1
+give 重盔甲(女) 1
+give 超级金创药 15
+give 超级魔法药 3
+takew 匕首 46
+takew 布衣(女) 46
+CHANGELEVEL = 35
+Gmexecute 解除禁言 Self
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 337 325
+GOTO @CQFIRZH
+break
+#if
+checkjob wizard
+#act
+ADDSKILL 雷电术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 雷电术 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 疾光电影 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+give 白龙马牌 1
+give 道士头盔 1
+give 魔杖 1
+give 红宝石戒指 2
+give 思贝儿手镯 2
+give 生命项链 1
+give 魔法长袍(女) 1
+give 超级金创药 5
+give 超级魔法药 15
+takew 匕首 46
+takew 布衣(女) 46
+CHANGELEVEL = 35
+Gmexecute 解除禁言 Self
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 335 325
+GOTO @CQFIRZH
+break
+[@CQFIRZH]
+首先在盟重安全区找到英雄领取人.建立属于自己的英雄后.领取\
+英雄的技能.火龙之心.对应的合击技能.然后将英雄休息在安全区\
+点<特殊服务选择经验聚集接受40级怪物的任务/FCOLOR=254>.传送到疾风殿打怪\
+不但可以增加杀怪任务.还可以获得祖玛装备及赤月装备和新衣服\
+打到的<祖玛装备不要丢掉带回来找特殊服务进行回收.能获得经验/FCOLOR=253>\
+如果你不仔细看我的说明.你的等级和装备会低于其他玩家很多的\
+<升级会有答题系统.可以获得各种装备.在线持续三小时.赠送钥匙/FCOLOR=249>\ \
+<多关注了解传送员的快速游戏及特殊服务的所有功能!祝你好运!!/FCOLOR=250>\

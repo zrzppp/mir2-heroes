@@ -1,0 +1,114 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+#if
+checkjob warrior
+checklevelex = 28
+#act
+ADDSKILL 半月弯刀 3
+break
+
+#if
+checkjob warrior
+checklevelex = 30
+#act
+ADDSKILL 野蛮冲撞 3
+break
+
+#if
+checkjob taoist
+checklevelex = 26
+#act
+ADDSKILL 心灵启示 3
+break
+
+#if
+checkjob taoist
+checklevelex = 33
+#act
+ADDSKILL 群体治疗术 3
+break
+
+#if
+checkjob wizard
+checklevelex = 26
+#act
+ADDSKILL 疾光电影 3
+break
+
+#if
+checkjob wizard
+checklevelex = 30
+#act
+ADDSKILL 地狱雷光 3
+break
+
+#if
+checkjob wizard
+checklevelex = 31
+#act
+ADDSKILL 魔法盾 3
+break
+
+#if
+checkjob wizard
+checklevelex = 32
+#act
+ADDSKILL 圣言术 3
+break
+
+#if
+checkjob taoist
+CHECKLEVEL 35
+Check [114] 0
+#act
+SET [114] 1
+ADDSKILL 召唤神兽 3
+give 白龙马牌 1
+give 超级金创药 8
+give 超级魔法药 5
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 335 323
+GOTO @CQFIRZH
+break
+
+#if
+checkjob warrior
+CHECKLEVEL 35
+Check [114] 0
+#act
+SET [114] 1
+ADDSKILL 烈火剑法 3
+give 白龙马牌 1
+give 超级金创药 15
+give 超级魔法药 3
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 337 325
+GOTO @CQFIRZH
+break
+
+#if
+checkjob wizard
+CHECKLEVEL 35
+Check [114] 0
+#act
+SET [114] 1
+ADDSKILL 冰咆哮 3
+give 白龙马牌 1
+give 超级金创药 15
+give 超级魔法药 3
+SENDMSG 7 [提示]：送你新手战马一匹.带在勋章位置.使用CTRL+M骑马!
+MAPMOVE 3 335 325
+GOTO @CQFIRZH
+break
+
+[@CQFIRZH]
+首先在盟重安全区找到英雄领取人.建立属于自己的英雄后.领取\
+英雄的技能.火龙之心.对应的合击技能.然后将英雄休息在安全区\
+点<特殊服务选择经验聚集接受40级怪物的任务/FCOLOR=254>.传送到疾风殿打怪\
+不但可以增加杀怪任务.还可以获得祖玛装备及赤月装备和新衣服\
+打到的<祖玛装备不要丢掉带回来找特殊服务进行回收.能获得经验/FCOLOR=253>\
+如果你不仔细看我的说明.你的等级和装备会低于其他玩家很多的\
+<升级会有答题系统.可以获得各种装备.在线持续三小时.赠送钥匙/FCOLOR=249>\ \
+<多关注了解传送员的快速游戏及特殊服务的所有功能!祝你好运!!/FCOLOR=250>\

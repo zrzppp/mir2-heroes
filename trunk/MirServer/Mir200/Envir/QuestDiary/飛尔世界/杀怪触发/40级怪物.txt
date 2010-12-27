@@ -1,0 +1,21 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@一级怪物]
+{
+#IF
+CHECKVAR HUMAN FIRA > 999
+#ACT
+Take 经验石[40级] 46
+give 经验[一千万] 1
+SET [071] 0
+SENDMSG 0 [%s]完成杀怪任务.获得经验[一千万]神丹!
+CALCVAR HUMAN FIRA = 1
+SAVEVAR HUMAN FIRA ..\QuestDiary\飛尔世界\变量文件\FIRASave.txt
+break
+#ELSEACT
+CALCVAR HUMAN FIRA + 1
+SAVEVAR HUMAN FIRA ..\QuestDiary\飛尔世界\变量文件\FIRASave.txt
+SENDMSG 6 提示：当前消灭了：[<$HUMAN(FIRA)>]个四十级怪物!需要消灭[1000个]!
+break
+}

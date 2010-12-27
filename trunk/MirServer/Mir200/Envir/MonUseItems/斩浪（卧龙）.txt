@@ -1,0 +1,46 @@
+;=============================人形宝宝配制文件=======================
+[BaseInfo]
+;职业
+Job = 0
+;性别
+Gender = 0
+;头发
+Hair = 2
+;使用魔法
+Magic = 烈火剑法,半月弯刀,刺杀剑术,野蛮冲撞,抱月刀法,狮子吼,破空剑
+;==============================身上装备============================
+[UseItems]
+;衣服
+DRESSNAME = 凤天魔甲 
+;武器
+WEAPONNAME = 开天
+;照明物
+RIGHTHANDNAME = 荣誉勋章43号
+;项链
+NECKLACENAME = 强化雷霆项链
+;头盔
+HELMETNAME = 圣龙盔
+;左手镯
+ARMRINGLNAME = 强化雷霆护腕
+;右手镯
+ARMRINGRNAME = 强化雷霆护腕
+;左戒指
+RINGLNAME = 强化雷霆战戒
+;右戒指
+RINGRNAME = 强化雷霆战戒
+;物品
+BUJUKNAME = 
+;腰带
+BELTNAME = 强化雷霆腰带
+;鞋子
+BOOTSNAME = 强化雷霆战靴 
+;宝石
+CHARMNAME = 魔血石(小)
+;死亡掉装备几率 数字越小掉装备几率越高
+DieDropUseItemRate = 200
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 1
+
+;是否允许挖物品(1=允许 0=不允许)
+ButchItem = 1

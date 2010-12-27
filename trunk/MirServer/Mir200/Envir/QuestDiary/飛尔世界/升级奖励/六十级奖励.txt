@@ -1,0 +1,116 @@
+[@飛尔世界周行制作60级奖励]
+{
+#IF
+equal D1 0
+#ACT
+MOV D1 0
+GIVEEX 雷霆战甲(男) 1
+SENDMSG 0 [%s]答对升级问题获得了雷霆战甲(男)!
+break
+#IF
+equal D1 1
+#ACT
+MOV D1 0
+GIVEEX 烈焰魔衣(男) 1
+SENDMSG 0 [%s]答对升级问题获得了烈焰魔衣(男)!
+break
+#IF
+equal D1 2
+#ACT
+MOV D1 0
+GIVEEX 烈焰魔衣(女) 1
+SENDMSG 0 [%s]答对升级问题获得了烈焰魔衣(女)!
+break
+#IF
+equal D1 3
+#ACT
+MOV D1 0
+GIVEEX 雷霆战甲(女) 1
+SENDMSG 0 [%s]答对升级问题获得了雷霆战甲(女)!
+break
+#IF
+equal D1 4
+#ACT
+MOV D1 0
+GIVEEX 光芒道袍(女) 1
+SENDMSG 0 [%s]答对升级问题获得了光芒道袍(女)!
+break
+#IF
+equal D1 5
+#ACT
+MOV D1 0
+GIVEEX 光芒道袍(男) 1
+SENDMSG 0 [%s]答对升级问题获得了光芒道袍(男)!
+break
+#IF
+equal D1 6
+#ACT
+MOV D1 0
+GAMEGOLD + 5
+SENDMSG 0 [%s]答对升级问题获得了元宝五个!
+break
+#IF
+equal D1 7
+#ACT
+MOV D1 0
+GIVEEX 伏魔头盔 1
+SENDMSG 0 [%s]答对升级问题获得了伏魔头盔!
+break
+#IF
+equal D1 8
+#ACT
+MOV D1 0
+GIVEEX 武魂头盔 1
+SENDMSG 0 [%s]答对升级问题获得了武魂头盔!
+break
+#IF
+equal D1 9
+#ACT
+MOV D1 0
+GIVEEX 灵玉头盔 1
+SENDMSG 0 [%s]答对升级问题获得了灵玉头盔!
+break
+#IF
+equal D1 10
+#ACT
+MOV D1 0
+CALCVAR HUMAN TGLF + 1
+SAVEVAR HUMAN TGLF ..\QuestDiary\飛尔世界\变量文件\TGLFSave.txt
+SENDMSG 0 [%s]答对升级问题获得了灵符一张!
+break
+#IF
+equal D1 11
+#ACT
+MOV D1 0
+GIVE 金刚石30颗 1
+SENDMSG 0 [%s]答对升级问题获得了金刚石30颗!
+break
+#IF
+equal D1 12
+#ACT
+MOV D1 0
+GIVE 气血石(小) 1
+SENDMSG 0 [%s]答对升级问题获得了气血石(小)!
+break
+#IF
+equal D1 13
+#ACT
+MOV D1 0
+GIVEEX 武魂手镯 1
+SENDMSG 0 [%s]答对升级问题获得了武魂手镯!
+break
+#IF
+equal D1 14
+#ACT
+MOV D1 0
+GIVEEX 伏魔手镯 1
+SENDMSG 0 [%s]答对升级问题获得了伏魔手镯!
+break
+#IF
+equal D1 15
+#ACT
+MOV D1 0
+GIVEEX 灵玉手镯 1
+SENDMSG 0 [%s]答对升级问题获得了灵玉手镯!
+break
+}

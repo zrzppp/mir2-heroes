@@ -1,0 +1,116 @@
+[@周行制作九]
+{
+游戏介绍.双击骰子开始滚动.骰子显示几点.你就可以前进\
+几个地图.本功能共有十五个地图.中途有陷阱等.如果你不幸\
+走到那一步.就听天由命吧!\ \ \ \
+<开始挑战/@开始8>                                <回城算了/@回城>\
+[@回城]
+#ACT
+MAPMOVE 3 333 330
+[@开始8]
+#IF
+CHECKCREDITPOINT > 2
+#ACT
+CREDITPOINT - 2
+movr d0 5
+inc d0 1
+playdice 1 @cube8
+#SAY
+正在决定你的命运.别激动.\
+#ELSEACT
+MESSAGEBOX 本关是正常关卡.需要声望2点才可以进入下一关\你的声望值不够.建议去打赤月装备回收获得声望!
+CLOSE
+[@cube8]
+#ACT
+messagebox 骰子的点数:<$STR(D0)>点\你可以移动:<$STR(D0)>步\
+goto @next_cube8
+break
+[@next_cube8]
+#IF
+CHECKCREDITPOINT < 2
+#ACT
+MESSAGEBOX 本关是正常关卡.需要声望2点才可以进入下一关\你的声望值不够.建议去打赤月装备回收获得声望!
+break
+CLOSE
+#IF
+equal d0 1
+#ACT
+goto @posi18
+break
+#IF
+equal d0 2 
+#ACT
+goto @posi28
+break
+#IF
+equal d0 3 
+#ACT
+goto @posi38
+break
+#IF
+equal d0 4 
+#ACT
+goto @posi48
+break
+#IF
+equal d0 5
+#ACT
+goto @posi58
+break
+#IF
+equal d0 6 
+#ACT
+goto @posi68
+break
+[@Posi18]
+#ACT
+batchDelay 1
+addbatch EM030
+batchmove
+break
+[@Posi28]
+#ACT
+batchDelay 1 
+addbatch EM030
+addbatch EM031
+batchmove
+break
+[@Posi38]
+#ACT
+batchDelay 1
+addbatch EM030
+addbatch EM031
+addbatch EM032
+batchmove
+break
+[@Posi48]
+#ACT
+batchDelay 1
+addbatch EM030
+addbatch EM031
+addbatch EM032
+addbatch EM033
+batchmove
+break
+[@Posi58]
+#ACT
+batchDelay 1
+addbatch EM030
+addbatch EM031
+addbatch EM032
+addbatch EM033
+addbatch EM034
+batchmove
+break
+[@Posi68]
+#ACT
+batchDelay 1
+addbatch EM030
+addbatch EM031
+addbatch EM032
+addbatch EM033
+addbatch EM034
+addbatch EM035
+batchmove
+break
+}

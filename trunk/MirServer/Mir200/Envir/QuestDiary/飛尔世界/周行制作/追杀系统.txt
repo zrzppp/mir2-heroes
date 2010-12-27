@@ -1,0 +1,92 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@PK追杀]
+{
+你想暗杀你的仇人吗?\
+你的朋友正在被人追杀吗?\
+你想和你的朋友一起打BOSS吗?\
+你的朋友打BOSS的时侯没药了吗?\
+只需要花20个元宝.我就可以让你直接飞到他的身边!\
+注意:<人物不在线.或者名字输错不会收取元宝>\ \
+<输入人物角色名/@@InPutString1>     <关闭对话/@EXIT>\
+[@InPutString1]
+#IF
+CHECKMAPNAME T225
+#ACT
+MessageBox 你还在进行犯罪改造.暂时不能离开三峡监狱!
+break
+#IF
+S0.CHECKMAPNAME G012
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T240
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T103
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T103A
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T103B
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME N114
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME D024A
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME D023
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME EM035
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T225
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKONLINE
+#ACT
+GOTO @JCYB
+break
+#ELSEACT
+MessageBox 你输入的人物角色当前不在游戏中
+break
+[@JCYB]
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+REGOTO S0
+give 回城卷 1
+#ELSEACT
+MessageBox 身上没有20个元宝来支付该项服务费用
+CLOSE
+}

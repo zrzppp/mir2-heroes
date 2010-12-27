@@ -1,0 +1,647 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+(@@cqfirHero)
+[@main]
+<　　凝意识为海.入灵台镜天.这里是你灵魂深处的意识之海.我是/FCOLOR=254>\
+<灵台中的神仙.你既有缘来此.我必须告诉你:人类对抗阿修罗为首/FCOLOR=251>\
+<的魔族.历经千年而未曾灭绝.所依靠的.就是神奇的元神分身神技/FCOLOR=168>\
+<你既然炼成元神..则今后卫护黎民百姓.降妖除魔.是你的本份.所/FCOLOR=253>\
+<以你任重而道远!修炼英雄后.他将带给你很多帮助!/FCOLOR=250>\ \
+<开始建立英雄/@@cqfirHero>           <修炼英雄技能/@英雄技能>          <修炼英雄合击/@合击>\ \
+<获得火龙之心/@领取火龙>           <英雄特殊服务/@功能>          <英雄操作指南/@操作指南>\
+
+[@操作指南]
+　　要给元神学习技能书.或者在战斗.打怪时让元神自己用金创药\
+把东西放在元神的包裹里.元神才会自己使用.在元神包裹双击既学\
+　　要是平时带着元神逛街.可以设置成跟随模式.如果是法师.担心\
+被偷袭.可以设置成“攻击模式”.元神还有种模式是和法师.道士宝\
+宝相同的“休息模式”设置这三种模式.使用“<Ctrl+E>”切换模式\
+　　元神初级技能书到书店可以买到!元神所学技能由元神自己选择\
+使用.你不能为元神指定使用技能！\ \
+<了解合击技能的使用/@使用合击>              <多谢周哥指路/@main>\
+
+[@使用合击]
+　　首先领取一个火龙之心.放到英雄的护身符位置.也就是左下角\
+然后你就会看到你的控制面版有一截黄色的气体在增长.这是就怒气\
+当怒气满了.开始闪动的时候.你先使用<CTRL+W>锁定要攻击的怪物.然\
+后再使用<CTRL+S>就可以施放该技能了.如果你是战士.一定不要离该\
+怪物距离太远.否则无法施放合击!\
+　　　　　　　　　　　　　　　　　　　　　　<多谢周哥指路/@main>\
+[@英雄技能]
+#IF
+HERO.CHECKONLINE
+#ACT
+GOTO @开始修炼技能
+break
+#ELSEACT
+MESSAGEBOX 你的英雄当前并不在线.修炼技能失败.
+break
+
+[@开始修炼技能]
+#IF
+HERO.checkjob warrior
+#ACT
+HERO.ADDSKILL 英雄基本剑术 1
+HERO.ADDSKILL 英雄攻杀剑术 1
+HERO.ADDSKILL 英雄刺杀剑术 1
+HERO.ADDSKILL 英雄半月弯刀 1
+HERO.ADDSKILL 英雄野蛮冲撞 1
+HERO.ADDSKILL 英雄烈火剑法 1
+MESSAGEBOX 提示：英雄的初级技能已经修炼完成!新技能在魔龙岭等地图可以爆出!
+CLOSE
+#IF
+HERO.checkjob wizard
+#ACT
+HERO.ADDSKILL 英雄抗拒火环 1
+HERO.ADDSKILL 英雄雷电术 1
+HERO.ADDSKILL 英雄火墙 1
+HERO.ADDSKILL 英雄疾光电影 1
+HERO.ADDSKILL 英雄地狱雷光 1
+HERO.ADDSKILL 英雄魔法盾 1
+HERO.ADDSKILL 英雄冰咆哮 1
+MESSAGEBOX 提示：英雄的初级技能已经修炼完成!新技能在魔龙岭等地图可以爆出!
+CLOSE
+#IF
+HERO.checkjob taoist
+#ACT
+HERO.ADDSKILL 英雄治愈术 1
+HERO.ADDSKILL 英雄精神战法 1
+HERO.ADDSKILL 英雄施毒术 1
+HERO.ADDSKILL 英雄灵魂火符 1
+HERO.ADDSKILL 英雄幽灵盾 1
+HERO.ADDSKILL 英雄神圣战甲 1
+HERO.ADDSKILL 英雄群疗术 1
+HERO.ADDSKILL 英雄召唤神兽 1
+MESSAGEBOX 提示：英雄的初级技能已经修炼完成!新技能在魔龙岭等地图可以爆出!
+CLOSE
+
+[@领取火龙]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.合击都修炼不了.领这个做什么!
+break
+#IF
+CHECKGAMEPOINT > 199
+#ACT
+give 火龙之心 1
+gamepoint - 200
+break
+#ELSEACT
+MESSAGEBOX 需要活跃点数200点!只有在练级打怪地区才会增加活跃!\消灭各大教主有机率会爆出火龙之心.这个秘密别告诉给别人
+break
+[@功能]
+开始<装扮/FCOLOR=250>你的<英雄/FCOLOR=249>吧!!\ \
+<删除当前英雄/@DelMyHeroS>   特别提醒:<英雄一但删除将永久无法恢复!/FCOLOR=250>\ \
+<改变英雄职业/@cqfirHeroZY>          <清除我的英雄PK值/@PK值>\ \
+<改变英雄性别/@cqfirHeroXB>          <快速提升英雄等级/@等级>\ \
+<改变英雄发型/@cqfirHeroFX>          <改变英雄名字颜色/@cqfirHeroYS>         <返回首页/@MAIN>\ \
+[@PK值]
+#IF
+HERO.CHECKONLINE
+#ACT
+GOTO @KYQPK
+break
+#ELSEACT
+MESSAGEBOX [错误]：你的那个英雄并没在线!真TMD无聊!
+break
+[@KYQPK]
+#IF
+checkgold 5000000
+HERO.CHECKPKPOINT 2
+#ACT
+take 金币 5000000
+HERO.CHANGEPKPOINT = 0 
+SENDMSG 7 提示：我已经帮它减轻了所有犯下的罪孽.下次记得不要乱杀人了!
+GOTO @功能
+break
+#ELSEACT
+MESSAGEBOX [错误]：清理英雄的红名需要500万金币!或者你的英雄还没红名呢!
+break
+[@等级]
+<将你的英雄等级快速提升.当然工作不是免费的/FCOLOR=250>       <返回上页/@功能>\ \ \
+英雄等级<60以下/FCOLOR=254>提升等级.收费<100元宝/FCOLOR=253>一级          <确定升级/@升级一>\
+英雄等级<70以下/FCOLOR=254>提升等级.收费<200元宝/FCOLOR=253>一级          <确定升级/@升级二>\
+英雄等级<80以下/FCOLOR=254>提升等级.收费<300元宝/FCOLOR=253>一级          <确定升级/@升级三>\
+英雄等级<90以下/FCOLOR=254>提升等级.收费<500元宝/FCOLOR=253>一级          <确定升级/@升级四>\
+英雄等级<90以上/FCOLOR=254>提升等级.收费<800元宝/FCOLOR=253>一级          <确定升级/@升级五>\
+[@升级一]
+#IF
+CHECKGAMEGOLD < 99
+#ACT
+MESSAGEBOX [错误]：你的元宝不足以进行此项项目的服务!
+break
+#IF
+HERO.CHECKONLINE
+HERO.CHECKLEVELEX < 60
+#ACT
+GAMEGOLD - 100
+HERO.CHANGELEVEL + 1
+SENDMSG 7 提示：恭喜你的英雄又进入了下一个修炼等级!
+GOTO @等级
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级已经大于[60]级!或者英雄并没在线!
+break
+
+[@升级二]
+#IF
+CHECKGAMEGOLD < 199
+#ACT
+MESSAGEBOX [错误]：你的元宝不足以进行此项项目的服务!
+break
+#IF
+HERO.CHECKONLINE
+HERO.CHECKLEVELEX > 59
+#ACT
+GOTO @可以升级二
+break
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级小于60级.或者英雄并没在线!
+break
+[@可以升级二]
+#IF
+HERO.CHECKLEVELEX < 70
+#ACT
+GAMEGOLD - 200
+HERO.CHANGELEVEL + 1
+SENDMSG 7 提示：恭喜你的英雄又进入了下一个修炼等级!
+GOTO @等级
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级已经大于[70]级!
+break
+
+[@升级三]
+#IF
+CHECKGAMEGOLD < 299
+#ACT
+MESSAGEBOX [错误]：你的元宝不足以进行此项项目的服务!
+break
+#IF
+HERO.CHECKONLINE
+HERO.CHECKLEVELEX > 69
+#ACT
+GOTO @可以升级三
+break
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级小于70级.或者英雄并没在线!
+break
+[@可以升级三]
+#IF
+HERO.CHECKLEVELEX < 80
+#ACT
+GAMEGOLD - 300
+HERO.CHANGELEVEL + 1
+SENDMSG 7 提示：恭喜你的英雄又进入了下一个修炼等级!
+GOTO @等级
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级已经大于[80]级!
+break
+
+[@升级四]
+#IF
+CHECKGAMEGOLD < 499
+#ACT
+MESSAGEBOX [错误]：你的元宝不足以进行此项项目的服务!
+break
+#IF
+HERO.CHECKONLINE
+HERO.CHECKLEVELEX > 79
+#ACT
+GOTO @可以升级四
+break
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级小于80级.或者英雄并没在线!
+break
+[@可以升级四]
+#IF
+HERO.CHECKLEVELEX < 90
+#ACT
+GAMEGOLD - 500
+HERO.CHANGELEVEL + 1
+SENDMSG 7 提示：恭喜你的英雄又进入了下一个修炼等级!
+GOTO @等级
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级已经大于[90]级!
+break
+
+[@升级五]
+#IF
+CHECKGAMEGOLD < 799
+#ACT
+MESSAGEBOX [错误]：你的元宝不足以进行此项项目的服务!
+break
+#IF
+HERO.CHECKONLINE
+HERO.CHECKLEVELEX > 89
+#ACT
+GOTO @可以升级五
+break
+#ELSEACT
+MESSAGEBOX [错误]：你的英雄等级小于90级.或者英雄并没在线!
+break
+[@可以升级五]
+#IF
+HERO.CHECKLEVELEX < 100
+#ACT
+GAMEGOLD - 800
+HERO.CHANGELEVEL + 1
+SENDMSG 7 提示：恭喜你的英雄又进入了下一个修炼等级!
+GOTO @等级
+break
+#ELSEACT
+MESSAGEBOX [错误]：英雄等级已到[100]级!不能再提升!自己带他练级!
+break
+
+[@cqfirHeroZY]
+战士英雄您是否已经厌倦了烈火和半月呢？作为法师您是否不再喜\
+欢闪电和冰咆哮了呢？作为道士您是否不在只想做为别人的配角只\
+放宝宝和魔防了呢？OK！现在机会来了，为了满足您的要求，特提\
+供转职服务，当然天上是不会掉“馅饼”的，为了您PK的更爽，自\
+然您也得付出小小的代价.先看清楚下面的需知再做决定吧!\ \
+<转职必看/@readme1>                        <暂时不转/@功能>\
+[@readme1]
+一：转职后保留您英雄的现有级别，但各项技能可就要从头学起了，\
+    我们要相信“好好学习，天天向上”的真理。\ \
+二：目前转职需要元宝100个!\ \
+好了祝好运，快去体验那完全不一样的职业给您带来的快感吧。\ \
+<开始转职/@zhzy>                           <暂时不转/@功能>\
+[@zhzy]
+请选择你希望英雄改变的最合适的职业：\ \ \ \
+<武士/@warr>      <法师/@wizard>      <道士/@taos>      <返回/@功能>\
+[@warr]
+#IF
+CHECKGAMEGOLD > 99
+HERO.CHECKONLINE
+#ACT
+GAMEGOLD - 100
+HERO.CLEARSKILL
+HERO.CHANGEJOB Warrior
+SENDMSG 7 提示：你的英雄现在已经是一位伟大的战士了!
+GOTO @zhzy
+break
+#ELSEACT
+MESSAGEBOX [错误]：元宝数量不够!或者英雄并不在线!
+break
+[@wizard]
+#IF
+CHECKGAMEGOLD > 99
+HERO.CHECKONLINE
+#ACT
+GAMEGOLD - 100
+HERO.CLEARSKILL
+HERO.CHANGEJOB Wizard
+SENDMSG 7 提示：你的英雄现在已经是一位伟大的魔法师了!
+GOTO @zhzy
+break
+#ELSEACT
+MESSAGEBOX [错误]：元宝数量不够!或者英雄并不在线!
+break
+[@taos]
+#IF
+CHECKGAMEGOLD > 99
+HERO.CHECKONLINE
+#ACT
+GAMEGOLD - 100
+HERO.CLEARSKILL
+HERO.CHANGEJOB Taoist
+SENDMSG 7 提示：你的英雄现在已经是一位伟大的道士了!
+GOTO @zhzy
+break
+#ELSEACT
+MESSAGEBOX [错误]：元宝数量不够!或者英雄并不在线!
+break
+[@cqfirHeroXB]
+所谓做妖和做人一样,要有一颗仁慈的心.....前些时候去海外\
+遇到了一个医术超群的医生.学会了这种技术,回来为玛珐大陆\
+的英雄服务，可是我不是免费的哦，需要活跃点200点一次!!\ \
+<改变性别/@ChangGender>\ \
+<返回首页/@功能>\
+[@ChangGender]
+#IF
+HERO.gender man
+#ACT
+GOTO @变为女性
+break
+#ELSEACT
+GOTO @变为男性
+break
+[@变为男性]
+#IF
+CHECKGAMEPOINT > 199
+HERO.CHECKONLINE
+#ACT
+gamepoint - 200
+HERO.CHANGEGENDER 0
+HERO.HAIRSTYLE 2
+SENDMSG 7 提示：英雄已经变成一位猛男了!将他下线在进来看看!
+GOTO @cqfirHeroXB
+break
+#ELSEACT
+MESSAGEBOX [错误]：活跃点数不够.或者英雄不在线!
+break
+[@变为女性]
+#IF
+CHECKGAMEPOINT > 199
+HERO.CHECKONLINE
+#ACT
+gamepoint - 200
+HERO.CHANGEGENDER 1
+HERO.HAIRSTYLE 3
+SENDMSG 7 提示：英雄已经变成一位美女了!将她下线在进来看看!
+GOTO @cqfirHeroXB
+break
+#ELSEACT
+MESSAGEBOX [错误]：活跃点数不够.或者英雄不在线!
+break
+[@cqfirHeroYS]
+是不是觉得英雄名称的颜色太单调了，换换试试！\
+但每次需要10万哦！\ 
+<白色/@Color255>　　       <黄色/@Color3>\
+<黑色/@Color0>　　       <蓝色/@Color4>\
+<红色/@Color1>　　       <紫色/@Color5>\
+<绿色/@Color2>　　       <银色/@Color7>\ \
+<返回/@功能>
+[@Color7]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 7
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color5]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 5
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color4]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 4
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color255]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 255
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color0]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 0
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color1]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 1
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color2]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 2
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+[@Color3]
+#IF
+checkgold 100000
+HERO.CHECKONLINE
+#ACT
+take 金币 100000
+HERO.CHANGENAMECOLOR 3
+SENDMSG 7 提示：英雄的名字颜色已经改变。
+GOTO @cqfirHeroYS
+#ELSEACT
+messagebox 金币数量不够!或者英雄不在线!
+GOTO @main
+
+[@cqfirHeroFX]
+转换英雄的发型每次需要花费10点声望哦！\ \ \
+<改变发型/@ChangHair> \ \
+<返回首页/@功能>\
+[@ChangHair]
+#IF
+HERO.gender man
+#ACT
+goto @HEROMan
+#ELSEACT
+goto @HEROWoman
+[@HEROMan]
+想不想来个光头呀，酷呆了！！！\ \
+<光头/@hairman0>\ \
+<长发/@hairman1>\ \
+<返回/@功能>
+[@hairman0]
+#IF
+CHECKCREDITPOINT > 9
+HERO.CHECKONLINE
+#ACT
+CREDITPOINT - 10
+HERO.HAIRSTYLE 0
+SENDMSG 7 提示：英雄的发型已经改变。
+GOTO @cqfirHeroFX
+#ELSEACT
+messagebox 声望不够!或者英雄不在线!
+GOTO @main
+[@hairman1]
+#IF
+CHECKCREDITPOINT > 9
+#SAY
+呵呵，你的发型已经改变了... \ \
+<返回首页/@功能>
+#ACT
+HERO.HAIRSTYLE 2
+CREDITPOINT - 10
+SENDMSG 7 提示：英雄的发型已经改变。
+GOTO @cqfirHeroFX
+#ELSEACT
+messagebox 声望不够!或者英雄不在线!
+GOTO @main
+[@HEROWoman]
+<短发型/@hairWoman0>\ \
+<长发型/@hairWoman1>\ \
+<返回首页/@功能>
+[@hairWoman0]
+#IF
+CHECKCREDITPOINT > 9
+HERO.CHECKONLINE
+#ACT
+HERO.HAIRSTYLE 3
+CREDITPOINT - 10
+SENDMSG 7 提示：英雄的发型已经改变。
+GOTO @cqfirHeroFX
+#ELSEACT
+messagebox 声望不够!或者英雄不在线!
+GOTO @main
+[@hairWoman1]
+#IF
+CHECKCREDITPOINT > 9
+HERO.CHECKONLINE
+#ACT
+HERO.HAIRSTYLE 1
+CREDITPOINT - 10
+SENDMSG 7 提示：英雄的发型已经改变。
+GOTO @cqfirHeroFX
+#ELSEACT
+messagebox 声望不够!或者英雄不在线!
+GOTO @main
+
+[@合击]
+<战士+战士合击/FCOLOR=251>：<破 魂 斩/@破魂>          <战士+道士合击/FCOLOR=250>：<劈 星 斩/@劈星>\ \
+<道士+道士合击/FCOLOR=168>：<噬魂沼泽/@噬魂>          <道士+法师合击/FCOLOR=254>：<末日审判/@末日>\ \
+<法师+法师合击/FCOLOR=253>：<火龙气焰/@火龙>          <法师+战士合击/FCOLOR=249>：<雷霆一击/@雷霆>\ \
+<英雄和人物同时攻击一个怪物.CTRL+S施放合击.或者先锁定怪物>\ \
+<可以免费领取合击技能.但你的等级必须满50级/FCOLOR=250>       <返回上页/@MAIN>\
+[@破魂]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.还不能修炼英雄合击技能!\快去练级吧.到了50级再来修炼合击.感受合击的快感吧!\特殊服务接受经验聚集任务.打到的装备拿回来回收.经验涨得飞快!
+break
+#ELSEACT
+give 破魂斩 1
+CLOSE
+[@劈星]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.还不能修炼英雄合击技能!\快去练级吧.到了50级再来修炼合击.感受合击的快感吧!\特殊服务接受经验聚集任务.打到的装备拿回来回收.经验涨得飞快!
+break
+#ELSEACT
+give 劈星斩 1
+CLOSE
+[@噬魂]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.还不能修炼英雄合击技能!\快去练级吧.到了50级再来修炼合击.感受合击的快感吧!\特殊服务接受经验聚集任务.打到的装备拿回来回收.经验涨得飞快!
+break
+#ELSEACT
+give 噬魂沼泽 1
+CLOSE
+[@末日]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.还不能修炼英雄合击技能!\快去练级吧.到了50级再来修炼合击.感受合击的快感吧!\特殊服务接受经验聚集任务.打到的装备拿回来回收.经验涨得飞快!
+break
+#ELSEACT
+give 末日审判 1
+CLOSE
+[@火龙]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.还不能修炼英雄合击技能!\快去练级吧.到了50级再来修炼合击.感受合击的快感吧!\特殊服务接受经验聚集任务.打到的装备拿回来回收.经验涨得飞快!
+break
+#ELSEACT
+give 火龙气焰 1
+CLOSE
+[@雷霆]
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 你的等级小于50级.还不能修炼英雄合击技能!\快去练级吧.到了50级再来修炼合击.感受合击的快感吧!\特殊服务接受经验聚集任务.打到的装备拿回来回收.经验涨得飞快!
+break
+#ELSEACT
+give 雷霆一击 1
+CLOSE
+
+[@cqfirHero]
+;CREATEHERO 职业 性别
+选择需要的元神职业性别.<选取后终身将不能变更/FCOLOR=253>    <返回/@修炼元神>\ \
+<男战士/@CREATEHERO_WARR_MAN>             <女战士/@CREATEHERO_WARR_WOM>\ \
+<男法师/@CREATEHERO_WIZA_MAN>             <女法师/@CREATEHERO_WIZA_WOM>\ \
+<男道士/@CREATEHERO_TAOS_MAN>             <女道士/@CREATEHERO_TAOS_WOM>\ \
+[@CREATEHERO_WARR_MAN]
+#ACT
+CREATEHERO 0 0
+goto @CreateingHero
+[@CREATEHERO_WARR_WOM]
+#ACT
+CREATEHERO 0 1
+goto @CreateingHero
+[@CREATEHERO_WIZA_MAN]
+#ACT
+CREATEHERO 1 0
+goto @CreateingHero
+[@CREATEHERO_WIZA_WOM]
+#ACT
+CREATEHERO 1 1
+goto @CreateingHero
+[@CREATEHERO_TAOS_MAN]
+#ACT
+CREATEHERO 2 0
+goto @CreateingHero
+[@CREATEHERO_TAOS_WOM]
+#ACT
+CREATEHERO 2 1
+goto @CreateingHero
+
+[@DelMyHeroS]
+特别提醒:<英雄一但删除将永久无法恢复!/FCOLOR=250>\ \ \
+你自己是否确定删除已经建立的英雄!!<需要元宝100个/FCOLOR=249>\ \ \
+<确定删除当前英雄/@DelMyHero>              <返回首页/@MAIN>\
+[@DelMyHero]
+#IF
+HERO.CHECKONLINE
+#ACT
+messagebox 请先将你的英雄设置为下线.否则不能删除英雄!
+break
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+DELETEHERO
+break
+#ELSEACT
+messagebox 删除已经建立的英雄需要花费元宝100个!
+GOTO @MAIN
+break
+
+[@HeroNameFilter]
+英雄名字中包含禁用字符\<关闭/@exit>

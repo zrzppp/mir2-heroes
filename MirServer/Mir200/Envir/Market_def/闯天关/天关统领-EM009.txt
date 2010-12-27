@@ -1,0 +1,1423 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+先看看我这里的宝物，只要打败所有怪物，宝物就归你了。\
+如果想到下一关，你可以使用1张灵符再过一次天关通道；\
+如果不想使用灵符，那就靠实力打过去吧。\
+天关有无数重，能过多少关就看你的勇气和毅力了。\ \
+<查看本关宝物/@lookmon>      <领取本关宝物/@GatGift>      <返回盟重土城/@huitu>\
+
+[@lookmon]
+#if
+equal M0 0
+equal M1 0
+#act
+goto @baowu
+goto @guai
+goto @kanbao
+#ELSEACT
+goto @kanbao
+break
+
+[@baowu]
+#IF
+random 200
+#act
+mov M0 1
+break
+#IF
+random 195
+#act
+mov M0 2
+break
+#IF
+random 190
+#act
+mov M0 3
+break
+#IF
+random 185
+#act
+mov M0 4
+break
+#IF
+random 180
+#act
+mov M0 5
+break
+#IF
+random 175
+#act
+mov M0 6
+break
+#IF
+random 170
+#act
+mov M0 7
+break
+#IF
+random 165
+#act
+mov M0 8
+break
+#IF
+random 160
+#act
+mov M0 9
+break
+#IF
+random 155
+#act
+mov M0 10
+break
+#IF
+random 150
+#act
+mov M0 11
+break
+#IF
+random 145
+#act
+mov M0 12
+break
+#IF
+random 140
+#act
+mov M0 13
+break
+#IF
+random 135
+#act
+mov M0 14
+break
+#IF
+random 130
+#act
+mov M0 15
+break
+#IF
+random 125
+#act
+mov M0 16
+break
+#IF
+random 120
+#act
+mov M0 17
+break
+#IF
+random 115
+#act
+mov M0 18
+break
+#IF
+random 110
+#act
+mov M0 19
+break
+#IF
+random 105
+#act
+mov M0 20
+break
+#IF
+random 100
+#act
+mov M0 21
+break
+#If
+random 95
+#act
+mov M0 22
+break
+#IF
+random 90
+#act
+mov M0 23
+break
+#IF
+random 85
+#act
+mov M0 24
+break
+#IF
+random 80
+#act
+mov M0 25
+break
+#IF
+random 75
+#act
+mov M0 26
+break
+#IF
+random 70
+#act
+mov M0 27
+break
+#IF
+random 65
+#act
+mov M0 28
+break
+#IF
+random 60
+#act
+mov M0 29
+break
+#IF
+random 55
+#act
+mov M0 30
+break
+#IF
+random 50
+#act
+mov M0 31
+break
+#IF
+random 45
+#act
+mov M0 32
+break
+#IF
+random 40
+#act
+mov M0 33
+break
+#IF
+random 35
+#act
+mov M0 34
+break
+#IF
+random 30
+#act
+mov M0 35
+break
+#IF
+random 25
+#act
+mov M0 36
+break
+#IF
+random 20
+#act
+mov M0 37
+break
+#IF
+random 15
+#act
+mov M0 38
+break
+#IF
+random 10
+#act
+mov M0 39
+break
+#IF
+random 8
+#act
+mov M0 40
+break
+#IF
+random 7
+#act
+mov M0 41
+break
+#IF
+random 6
+#act
+mov M0 45
+break
+#if
+random 5
+#act
+mov M0 46
+break
+#IF
+random 4
+#act
+mov M0 47
+break
+#If
+random 3
+#act
+mov M0 48
+break
+#IF
+random 2
+#act
+mov M0 49
+break
+#IF
+random 1
+#act
+mov M0 50
+break
+
+
+[@guai]
+#IF
+random 20
+#act
+mov M1 20
+break
+#IF
+random 19
+#act
+mov M1 19
+break
+#IF
+random 18
+#act
+mov M1 18
+break
+#IF
+random 17
+#act
+mov M1 17
+break
+#IF
+random 16
+#act
+mov M1 16
+break
+#IF
+random 15
+#act
+mov M1 15
+break
+#IF
+random 14
+#act
+mov M1 14
+break
+#IF
+random 13
+#act
+mov M1 13
+break
+#IF
+random 12
+#act
+mov M1 12
+break
+#IF
+random 11
+#act
+mov M1 11
+break
+#IF
+random 10
+#act
+mov M1 10
+break
+#IF
+random 9
+#act
+mov M1 9
+break
+#IF
+random 8
+#act
+mov M1 8
+break
+#IF
+random 7
+#act
+mov M1 7
+break
+#IF
+random 6
+#act
+mov M1 6
+break
+#IF
+random 5
+#act
+mov M1 5
+break
+#IF
+random 4
+#act
+mov M1 4
+break
+#IF
+random 3
+#act
+mov M1 3
+break
+#IF
+random 2
+#act
+mov M1 2
+break
+#IF
+#act
+mov M1 1
+break
+
+[@kanbao]
+#if
+equal M0 1
+#SAY
+你将能获得怪物给你带来的：[凤天魔甲:1]\
+
+#if
+equal M0 2
+#SAY
+你将能获得怪物给你带来的：[凰天魔衣:1]\
+
+#if
+equal M0 3
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 4
+#SAY
+你将能获得怪物给你带来的：[开天:1]\
+
+#if
+equal M0 5
+#SAY
+你将能获得怪物给你带来的：[镇天:1]\
+
+#if
+equal M0 6
+#SAY
+你将能获得怪物给你带来的：[玄天:1]\
+
+#if
+equal M0 7
+#SAY
+你将能获得怪物给你带来的：[雷霆战甲(男):1]\
+
+#if
+equal M0 8
+#SAY
+你将能获得怪物给你带来的：[雷霆战甲(女):1]\
+
+#if
+equal M0 9
+#SAY
+你将能获得怪物给你带来的：[烈焰魔衣(男):1]\
+
+#if
+equal M0 10
+#SAY
+你将能获得怪物给你带来的：[烈焰魔衣(女):1]\
+
+#if
+equal M0 11
+#SAY
+你将能获得怪物给你带来的：[光芒道袍(男):1]\
+
+#if
+equal M0 12
+#SAY
+你将能获得怪物给你带来的：[光芒道袍(女):1]\
+
+#if
+equal M0 13
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 14
+#SAY
+你将能获得怪物给你带来的：[群体雷电术:1]\
+
+#if
+equal M0 15
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 16
+#SAY
+你将能获得怪物给你带来的：[伏魔头盔:1]\
+
+#if
+equal M0 17
+#SAY
+你将能获得怪物给你带来的：[武魂头盔:1]\
+
+#if
+equal M0 18
+#SAY
+你将能获得怪物给你带来的：[灵玉头盔:1]\
+
+#if
+equal M0 19
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 20
+#SAY
+你将能获得怪物给你带来的：[破空剑:1]\
+
+#if
+equal M0 21
+#SAY
+你将能获得怪物给你带来的：[诅咒术:1]\
+
+#if
+equal M0 22
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 23
+#SAY
+你将能获得怪物给你带来的：[血精灵项链:1]\
+
+#if
+equal M0 24
+#SAY
+你将能获得怪物给你带来的：[火精灵项链:1]\
+
+#if
+equal M0 25
+#SAY
+你将能获得怪物给你带来的：[风精灵项链:1]\
+
+#if
+equal M0 26
+#SAY
+你将能获得怪物给你带来的：[赤金钥匙:1]\
+
+#if
+equal M0 27
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 28
+#SAY
+你将能获得怪物给你带来的：[任务头盔:1]\
+
+#if
+equal M0 29
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 30
+#SAY
+你将能获得怪物给你带来的：[精灵头盔:1]\
+
+#if
+equal M0 31
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 32
+#SAY
+你将能获得怪物给你带来的：[魔血石(大):1]\
+
+#if
+equal M0 33
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 34
+#SAY
+你将能获得怪物给你带来的：[气血石(大):1]\
+
+#if
+equal M0 35
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 36
+#SAY
+你将能获得怪物给你带来的：[白银钥匙:1]\
+
+#if
+equal M0 37
+#SAY
+你将能获得怪物给你带来的：[紫铜钥匙:1]\
+
+#if
+equal M0 38
+#SAY
+你将能获得怪物给你带来的：[檀木钥匙:1]\
+
+#if
+equal M0 39
+#SAY
+你将能获得怪物给你带来的：[金刚石30颗:1]\
+
+#if
+equal M0 40
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 41
+#SAY
+你将能获得怪物给你带来的：[5元宝:1]\
+
+#if
+equal M0 42
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 43
+#SAY
+你将能获得怪物给你带来的：[含笑半步颠:1]\
+
+#if
+equal M0 44
+#SAY
+你将能获得怪物给你带来的：[爱老虎油:1]\
+
+#if
+equal M0 45
+#SAY
+你将能获得怪物给你带来的：[宝藏钥匙:1]\
+
+#if
+equal M0 46
+#SAY
+你将能获得怪物给你带来的：[四十二章经:1]\
+
+#if
+equal M0 47
+#SAY
+你将能获得怪物给你带来的：[一日丧命散:1]\
+
+#if
+equal M0 48
+#SAY
+你将能获得怪物给你带来的：[经验神丹:1]\
+
+#if
+equal M0 49
+#SAY
+你将能获得怪物给你带来的：[声望卷:1]\
+
+#if
+equal M0 50
+#SAY
+你将能获得怪物给你带来的：[祝福油:1]\
+
+#if
+equal M1 1
+#SAY
+当然你必须消灭里面所有的：牛魔法师:5/魔龙巨蛾:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 2
+#SAY
+当然你必须消灭里面所有的：魔龙战将:3/魔龙力士:1\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+
+#if
+equal M1 3
+#SAY
+当然你必须消灭里面所有的：祖玛卫士:2/祖玛弓箭手:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 4
+#SAY
+当然你必须消灭里面所有的：魔龙射手:3\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 5
+#SAY
+当然你必须消灭里面所有的：电僵王:2\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 6
+#SAY
+当然你必须消灭里面所有的：魔龙破甲兵:1/魔龙战将:3\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 7
+#SAY
+当然你必须消灭里面所有的：魔龙巨蛾:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 8
+#SAY
+当然你必须消灭里面所有的：魔龙战将:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 9
+#SAY
+当然你必须消灭里面所有的：恶灵尸王:3/恶灵僵尸:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 10
+#SAY
+当然你必须消灭里面所有的：天狼蜘蛛:5/暴牙蜘蛛:4\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 11
+#SAY
+当然你必须消灭里面所有的：黑锷蜘蛛:2/花吻蜘蛛:3\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 12
+#SAY
+当然你必须消灭里面所有的：祖玛雕像:5/楔蛾:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 13
+#SAY
+当然你必须消灭里面所有的：尸王:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 14
+#SAY
+当然你必须消灭里面所有的：楔蛾:5/白野猪:3\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 15
+#SAY
+当然你必须消灭里面所有的：月魔蜘蛛:3/骷髅长枪兵:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 16
+#SAY
+当然你必须消灭里面所有的：沃玛卫士:2/火焰沃玛:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 17
+#SAY
+当然你必须消灭里面所有的：邪恶钳虫:2/钳虫:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 18
+#SAY
+当然你必须消灭里面所有的：邪恶毒蛇:2/蝎蛇:5\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>    
+
+#if
+equal M1 19
+#SAY
+当然你必须消灭里面所有的：电僵王:2\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+#if
+equal M1 20
+#SAY
+当然你必须消灭里面所有的：重装使者:2\
+如果您觉得本关难度过于太高，或都是对所获得的宝藏不太满意，\
+当然你如能给我一张灵符，我就直接送您去下一天关。\ \
+<使用灵符进入下一关/@jinrutong>         <接受挑战/@tiaozhan>
+
+[@huitu]
+#ACT
+mapmove 3 333 333
+
+[@tiaozhan]
+#if
+check [154] 1
+#act
+break
+#SAY
+你已经接受挑战过了，所以你不能再进行挑战了。
+
+#if
+check [154] 0
+#act
+set [154] 1
+
+#if
+equal M1 1
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 魔龙巨蛾 5 3
+MonGen 牛魔法师 5 3
+break
+close
+#if
+equal M1 2
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 魔龙战将 3 3
+MonGen 魔龙力士 1 3
+break
+close
+#if
+equal M1 3
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 祖玛弓箭手8 5 3
+MonGen 祖玛卫士8 2 3
+break
+close
+#if
+equal M1 4
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 魔龙射手 3 3
+break
+close
+#if
+equal M1 5
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 电僵王 2 3
+break
+close
+#if
+equal M1 6
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 魔龙战将 3 3
+MonGen 魔龙破甲兵 1 3
+break
+close
+#if
+equal M1 7
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 魔龙巨蛾 5 3
+break
+close
+#if
+equal M1 8
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 魔龙战将 5 3
+break
+close
+#if
+equal M1 9
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 恶灵僵尸 5 3
+MonGen 恶灵尸王 3 3
+break
+close
+#if
+equal M1 10
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 天狼蜘蛛 5 3
+MonGen 暴牙蜘蛛 4 3
+break
+close
+#if
+equal M1 11
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 花吻蜘蛛 3 3
+MonGen 黑锷蜘蛛 2 3
+break
+close
+#iF
+equal M1 12
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 祖玛雕像8 5 3
+MonGen 楔蛾 5 3
+break
+close
+#if
+equal M1 13
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 尸王1 5 3
+break
+close
+#if
+equal M1 14
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 白野猪 3 3
+MonGen 楔蛾 5 3
+break
+close
+#if
+equal M1 15
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 月魔蜘蛛 3 3
+MonGen 骷髅长枪兵 5 3
+break
+close
+#if
+equal M1 16
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 沃玛卫士 2 3
+MonGen 火焰沃玛 5 3
+break
+close
+#if
+equal M1 17
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 邪恶钳虫 2 3
+MonGen 钳虫 5 3
+break
+close
+#if
+equal M1 18
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 邪恶毒蛇 2 3
+MonGen 蝎蛇 5 3
+break
+close
+#if
+equal M1 19
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 电僵王 2 3
+break
+close
+#if
+equal M1 20
+#act
+Param1 EM009
+Param2 14
+Param3 15
+MonGen 重装使者 2 3
+break
+close
+
+[@GatGift]
+只有消灭完房间里的所有怪物，才算是挑战成功。\
+在领取宝物前，请您确认您包裹里有足够的空际那放置宝藏。\ \
+<准备好了，领取宝物/@getprize>\
+
+[@getprize]
+#if
+check [153] 1
+#act
+SENDMSG 6 你已经领取过宝藏了。
+break
+close
+
+#if
+check [154] 0
+#act
+SENDMSG 6 你还没有挑战此关怪物，请将此关怪物清理后再来领取。
+break
+close
+
+#if
+CheckRangeMonCount EM009 14 16 10 > 0
+#act
+SENDMSG 6 这里的怪物还没有清理完，清理完后再来领取宝藏吧
+break
+close
+
+#if
+equal M0 1
+#act
+GIVEEX 凤天魔甲 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[凤天魔甲:1]!
+#SAY
+您获得了[凤天魔甲:1].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 2
+#act
+GIVEEX 凰天魔衣 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[凰天魔衣:1]!
+#SAY
+您获得了[凰天魔衣:1].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 3
+#act
+GIVEEX 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#SAY
+您获得了[经验神丹:1].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 4
+#act
+GIVEEX 开天 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[开天:1]!
+#say
+您获得了[开天:1].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 5
+#act
+GIVEEX 镇天 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[镇天:1]!
+#say
+您获得了[镇天:1].看看系统是否为他加上了极品属性\
+
+
+#if
+equal M0 6
+#act
+GIVEEX 玄天 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[玄天:1]!
+#say
+您获得了[玄天:1].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 7
+#act
+GIVEEX 雷霆战甲(男) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[雷霆战甲(男):1]!
+#say
+您获得了[雷霆战甲(男)].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 8
+#act
+GIVEEX 雷霆战甲(女) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[雷霆战甲(女):1]!
+#say
+您获得了[雷霆战甲(女)].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 9
+#act
+GIVEEX 烈焰魔衣(男) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[烈焰魔衣(男):1]!
+#say
+您获得了[烈焰魔衣(男)].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 10
+#act
+GIVEEX 烈焰魔衣(女) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[烈焰魔衣(女):1]!
+#say
+您获得了[烈焰魔衣(女)].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 11
+#act
+GIVEEX 光芒道袍(男) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[光芒道袍(男):1]!
+#say
+您获得了[光芒道袍(男)].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 12
+#act
+GIVEEX 光芒道袍(女) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[光芒道袍(女):1]!
+#say
+您获得了[光芒道袍(女)].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 13
+#act
+GIVE 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 14
+#act
+GIVE 群体雷电术 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[群体雷电术:1]!
+#say
+经过您的奋斗，您终于获得了[群体雷电术:1]\
+
+#if
+equal M0 15
+#act
+GIVE 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 16
+#act
+GIVEEX 伏魔头盔 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[伏魔头盔:1]!
+#say
+您获得了[伏魔头盔].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 17
+#act
+GIVEEX 武魂头盔 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[武魂头盔:1]!
+#say
+您获得了[武魂头盔].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 18
+#act
+GIVEEX 灵玉头盔 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[灵玉头盔:1]!
+#say
+您获得了[灵玉头盔].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 19
+#act
+GIVE 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 20
+#act
+GIVE 破空剑 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[破空剑:1]!
+#say
+经过您的奋斗，您终于获得了[破空剑:1]\
+
+#if
+equal M0 21
+#act
+give 诅咒术 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[诅咒术:1]!
+#say
+经过您的奋斗，您终于获得了[诅咒术:1]\
+
+#if
+equal M0 22
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 23
+#act
+GIVEEX 血精灵项链 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[血精灵项链:1]!
+#say
+您获得了[血精灵项链].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 24
+#act
+GIVEEX 火精灵项链 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[火精灵项链:1]!
+#say
+您获得了[火精灵项链].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 25
+#act
+GIVEEX 风精灵项链 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[风精灵项链:1]!
+#say
+您获得了[风精灵项链].看看系统是否为他加上了极品属性\
+
+#if
+equal M0 26
+#act
+give 赤金钥匙 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[赤金钥匙:1]!
+#say
+经过您的奋斗，您终于获得了[赤金钥匙:1]\
+
+#if
+equal M0 27
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 28
+#act
+give 任务头盔 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[任务头盔:1]!
+#say
+经过您的奋斗，您终于获得了[任务头盔:1]\
+
+#if
+equal M0 29
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 30
+#act
+GIVEEX 精灵头盔 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[精灵头盔:1]!
+#say
+经过您的奋斗，您终于获得了[精灵头盔:1]\
+
+#if
+equal M0 31
+#act
+GIVEEX 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 32
+#act
+GIVE 魔血石(大) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[魔血石(大):1]!
+#say
+经过您的奋斗，您终于获得了[魔血石(大):1]\
+
+#if
+equal M0 33
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 34
+#act
+give 气血石(大) 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[气血石(大):1]!
+#say
+经过您的奋斗，您终于获得了[气血石(大):1]\
+
+#if
+equal M0 35
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 36
+#act
+give 白银钥匙 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[白银钥匙:1]!
+#say
+经过您的奋斗，您终于获得了[白银钥匙:1]\
+
+#if
+equal M0 37
+#act
+give 紫铜钥匙 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[紫铜钥匙:1]!
+#say
+经过您的奋斗，您终于获得了[紫铜钥匙:1]\
+
+#if
+equal M0 38
+#act
+give 檀木钥匙 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[檀木钥匙:1]!
+#say
+经过您的奋斗，您终于获得了[檀木钥匙:1]\
+
+#if
+equal M0 39
+#act
+give 金刚石30颗 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[金刚石30颗:1]!
+#say
+经过您的奋斗，您终于获得了[金刚石30颗:1]\
+
+#if
+equal M0 40
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 41
+#act
+give 5元宝 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[5元宝:1]!
+#say
+经过您的奋斗，您终于获得了[5元宝:1]\
+
+#if
+equal M0 42
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 43
+#act
+give 含笑半步颠 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[含笑半步颠:1]!
+#say
+经过您的奋斗，您终于获得了[含笑半步颠:1]\
+
+#if
+equal M0 44
+#act
+give 爱老虎油 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[爱老虎油:1]!
+#say
+经过您的奋斗，您终于获得了[爱老虎油:1]\
+
+#if
+equal M0 45
+#act
+give 宝藏钥匙 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[宝藏钥匙:1]!
+#say
+经过您的奋斗，您终于获得了[宝藏钥匙:1]\
+
+#if
+equal M0 46
+#act
+give 四十二章经 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[四十二章经:1]!
+#say
+经过您的奋斗，您终于获得了[四十二章经:1]\
+
+#if
+equal M0 47
+#act
+give 一日丧命散 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[一日丧命散:1]!
+#say
+经过您的奋斗，您终于获得了[一日丧命散:1]\
+
+#if
+equal M0 48
+#act
+give 经验神丹 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[经验神丹:1]!
+#say
+经过您的奋斗，您终于获得了[经验神丹:1]\
+
+#if
+equal M0 49
+#act
+give 声望卷 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[声望卷:1]!
+#say
+经过您的奋斗，您终于获得了[声望卷:1]\
+
+#if
+equal M0 50
+#act
+give 祝福油 1
+SENDCOLORMSG 0 251 73 [%s]在闯天关活动中获得了：[祝福油:1]!
+#say
+经过您的奋斗，您终于获得了[祝福油:1]\
+
+#if
+check [153] 0
+#act
+set [153] 1
+#say
+可能有更好的宝藏在下一关等着您哦，\
+您给我一张灵符，我可以直接带您进入下一关，您是否愿意？\ \
+<算了，我要回土城/@huitu>          <是的，进入下一关/@jinrutong>
+
+[@jinrutong]
+#CALL [\飛尔世界\周行制作\天关系统.txt] @进入天关

@@ -1,0 +1,1360 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;╔┄┄┄╗
+;┆比奇省┆
+;╚┄┄┄╝
+[0 比奇省区域] RUNMON HORSE OPENSTORE MUSIC(http://Mir.941SF.Com/BQ/1.mp3)
+[T225 三峡监狱] SAFE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(T225) NOALLOWUSEITEMS(记忆石|还魂符|元宝练级卷|超级传送卷|骰子) MUSIC(102.wav)
+[0122 比奇皇宫] SAFE RUNMON MUSIC(Field2.wav)
+[0102 比奇肉店] RUNMON
+[0108 比奇药店] RUNMON
+[0109 比奇炼毒店] RUNMON
+[0104 比奇书店] RUNMON
+[0107 比奇雅琪酒家] RUNMON
+[B013 比奇雅琪赌场] RUNMON
+[0125 比奇东方客栈] RUNMON
+[0126 比奇东方客栈二层] SAFE RUNMON
+[0103 比奇武器店] RUNMON
+[0105 比奇首饰店] RUNMON
+[0106 比奇衣服店] RUNMON
+[0101 比奇客栈] RUNMON
+[0100 比奇厨房] RUNMON
+[0128 比奇房屋] FIGHT RUNMON
+[0129 比奇房屋] FIGHT RUNMON
+[0123 比奇新房] FIGHT RUNMON
+[0124 比奇房屋] FIGHT RUNMON
+[01141 比奇战士之家] NORECALL NORECONNECT(0) RUNMON
+[01142 比奇任务地图一] NORECALL FIGHT NORECONNECT(0) RUNMON
+[0115  藏剑山庄山门]
+[01152 比奇任务地图二] NORECALL FIGHT NORECONNECT(0115) RUNMON
+[0113  比奇道士之家] RUNMON
+[01132 比奇任务地图三] NORECALL FIGHT
+[0137 比奇竞技场] FIGHT NODRUG RUNMON
+[0139 元宝刷怪地图] NORANDOMMOVE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(0149)
+[G002 初级训练地图] NORANDOMMOVE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/BQ/2.mp3)
+[G001 中级训练地图] NORANDOMMOVE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/BQ/3.mp3)
+[G012 元宝练级地图] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) EXPRATE(200) MUSIC(http://Mir.941SF.Com/BQ/4.mp3)
+
+0 346,186 ->0122 11,41
+0 347,186 ->0122 12,42
+0 348,187 ->0122 13,43
+0122 11,42 -> 0 346,187
+0122 12,43 -> 0 348,188
+0122 13,44 -> 0 347,187
+0 308,264 -> 0102 3,7
+0102 3,8 -> 0 308,265
+0 326,288 -> 0108 10,12
+0108 10,13 -> 0 326,289
+0108 4,15 -> 0109 7,6
+0109 8,6 -> 0108 4,14
+0 323,247 -> 0104 4,10
+0104 4,11 -> 0 323,248
+0 354,319 -> 0107 9,13
+0107 10,13 -> 0 354,320
+0 295,250 -> 0125 8,16
+0 296,250 -> 0125 8,16
+0 296,251 -> 0125 7,16
+0125 7,17 -> 0 295,251
+0125 8,17 -> 0 296,252
+0125 4,10 -> 0126 3,9
+0126 3,10 -> 0125 5,11
+0 335,299 -> 0103 5,12
+0 335,300 -> 0103 6,12
+0103 4,13 -> 0 334,300
+0103 5,13 -> 0 334,301
+0 344,308 -> 0103 17,24
+0 345,308 -> 0103 18,24
+0103 16,25 -> 0 345,310
+0103 17,25 -> 0 344,309
+0 295,284 -> 0105 8,24
+0 295,285 -> 0105 9,23
+0105 9,25 -> 0 295,286
+0105 9,24 -> 0 296,285
+0 305,275 -> 0105 20,12
+0 305,276 -> 0105 21,11
+0105 21,12 -> 0 306,276
+0105 21,13 -> 0 306,277
+0 307,310 -> 0106 8,24
+0 307,311 -> 0106 9,23
+0106 9,25 -> 0 307,312
+0106 9,24 -> 0 308,311
+0 317,301 -> 0106 21,11
+0 317,302 -> 0106 20,12
+0106 21,13 -> 0 318,302
+0106 21,12 -> 0 318,303
+0 286,295 -> 0101 9,22
+0101 10,22 -> 0 287,296
+0 289,292 -> 0101 17,14
+0101 18,14 -> 0 290,293
+0101 3,19 -> 0100 11,13
+0100 11,14 -> 0101 3,20
+0 278,239 -> 0128 6,8
+0128 6,9 -> 0 278,240
+0 285,236 -> 0129 2,6
+0129 2,7 -> 0 284,237
+0 271,256 -> 0123 13,17
+0123 12,18 -> 0 270,257
+0 283,268 -> 0124 7,12
+0124 6,13 -> 0 282,268
+0 314,474 -> 0115 17,20
+0115 17,21 -> 0 315,475
+0 414,242 -> 0137 19,20
+0 415,241 -> 0137 18,21
+0 416,240 -> 0137 17,22
+0137 18,23 -> 0 416,245
+0137 19,22 -> 0 417,244
+0137 20,21 -> 0 418,243
+;------------------------------------------------- 
+;╔┄┄┄┬┄┄┄┬┄┄┄╗
+;┆比奇省┆银杏村┆新手村┆
+;╚┄┄┄┴┄┄┄┴┄┄┄╝
+[0135 银杏村房屋] RUNMON
+[0134 银杏村房屋] RUNMON
+[0133 银杏村房屋] RUNMON
+[0119 银杏村药店] RUNMON
+[0118 银杏村房屋] RUNMON
+0 625,620 -> 0135 9,9
+0135 9,10 -> 0 625,621
+0 622,639 -> 0134 6,12
+0134 6,13 -> 0 623,640
+0 629,645 -> 0133 3,8
+0133 2,8 -> 0 629,646
+0119 4,7 -> 0118 8,11
+0119 5,7 -> 0118 7,12
+0118 8,12 -> 0119 4,8
+0118 9,11 -> 0119 5,8
+0 650,616 -> 0118 3,13
+0118 2,14 -> 0 649,617
+
+[0121 边界村房屋] RUNMON
+[0127 边界村监狱] RUNMON
+[0130 边界村房屋] RUNMON
+[0131 边界村房屋] RUNMON
+[0136 边界村房屋] RUNMON
+[0132 边界村房屋] RUNMON
+[0138 边界村房屋] RUNMON
+[0141 边界村首饰店] RUNMON
+[0140 边界村仓库] RUNMON
+
+0 309,613 -> 0121 3,16
+0121 2,16 -> 0 308,615
+0 310,600 -> 0127 14,16
+0127 14,17 -> 0 311,601
+0 266,630 -> 0130 7,11
+0130 8,12 -> 0 267,630
+0 272,621 -> 0131 5,15
+0131 4,16 -> 0 271,622
+
+0 295,649 -> 0136 3,19
+0136 2,20 -> 0 294,650
+
+0 282,636 -> 0132 13,15
+0 282,635 -> 0132 14,15
+0 283,635 -> 0132 15,14
+0132 14,16 -> 0 283,637
+0132 15,15 -> 0 283,636
+0132 16,14 -> 0 284,636
+
+0 274,636 -> 0138 5,10
+0138 4,10 -> 0 273,637
+
+0 302,622 -> 0141 2,11
+0 311,631 -> 0141 17,26
+0141 2,12 -> 0 302,623
+0141 17,27 -> 0 311,632
+
+0 307,627 -> 0140 2,10
+0140 2,11 -> 0 306,628
+
+;╔┄┄┄┄╗
+;┆沃玛森林┆
+;╚┄┄┄┄╝
+[1	沃玛森林] RUNMON HORSE MUSIC(http://Mir.941SF.Com/BQ/5.mp3)
+0          324,34               ->         1          559,553
+0          325,34               ->         1          560,553
+0          325,35               ->         1          560,554
+0          326,35               ->         1          561,554
+0          326,36               ->         1          561,555
+0          327,36               ->         1          562,555
+0          327,37               ->         1          562,556
+0          328,37               ->         1          563,556
+0          328,38               ->         1          563,557
+0          325,33               ->         1          560,552
+0          326,33               ->         1          561,552
+0          326,34               ->         1          561,553
+0          327,34               ->         1          562,553
+0          327,35               ->         1          562,554
+0          328,35               ->         1          563,554
+0          328,36               ->         1          563,555
+0          329,36               ->         1          564,555
+0          329,37               ->         1          564,556
+
+1          559,554              ->         0          324,35
+1          559,555              ->         0          324,36
+1          560,555              ->         0          325,36
+1          560,556              ->         0          325,37
+1          561,556              ->         0          326,37
+1          561,557              ->         0          326,38
+1          562,557              ->         0          327,38
+1          562,558              ->         0          327,39
+1          563,558              ->         0          328,39
+1          558,555              ->         0          323,36
+1          558,556              ->         0          323,37
+1          559,556              ->         0          324,37
+1          559,557              ->         0          324,38
+1          560,557              ->         0          325,38
+1          560,558              ->         0          325,39
+1          561,558              ->         0          326,39
+1          561,559              ->         0          326,40
+1          562,559              ->         0          327,40
+1          47,170               ->         4          445,193
+1          47,169               ->         4          446,192
+1          48,168               ->         4          447,191
+1          49,167               ->         4          448,190
+1          50,166               ->         4          449,189
+1          51,165               ->         4          450,188
+4          445,193              ->         1          47,170
+4          446,192              ->         1          47,169
+4          447,191              ->         1          48,168
+4          448,190              ->         1          49,167
+4          449,189              ->         1          50,166
+4          450,188              ->         1          51,165
+;-------------------------------------------------------------- 
+;╔┄┄┄┬┄┄┄╗
+;┆比奇省┆比奇矿┆
+;╚┄┄┄┴┄┄┄╝
+[D401 比奇矿区] MINE HORSE RUNMON MUSIC(http://Mir.941SF.Com/BQ/6.mp3)
+0          664,212              ->         D401       25,181
+0          664,213              ->         D401       24,181
+D401       24,182               ->         0          664,214
+;---------------------------------------------------------------
+;╔┄┄┄┄┬┄┄┄┄╗
+;┆沃玛森林┆沃玛寺庙┆
+;╚┄┄┄┄┴┄┄┄┄╝
+;沃玛寺庙
+[D021 沃玛寺庙入口] RUNMON HORSE
+[D024 沃玛教主大殿] RUNMON HORSE INCGAMEPOINT(60/1) NORECONNECT(D021) MUSIC(http://Mir.941SF.Com/BQ/7.mp3)
+
+1          84,277               ->         D021       76,74
+1          84,278               ->         D021       76,75
+D021       77,75                ->         1          85,278
+D021       77,76                ->         1          85,279
+
+D021       26,27                ->         D024       16,19
+D024       16,18                ->         D021       25,26
+;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+;╔┄┄┄╗
+;┆盟重省┆
+;╚┄┄┄╝
+[3 盟重省区域] RUNMON HORSE OPENSTORE MUSIC(http://Mir.941SF.Com/MC/1.mp3)
+[0143 盟重民房] FIGHT RUNMON
+[0144 盟重民房] FIGHT RUNMON
+[0145 盟重仓库] FIGHT RUNMON
+[0146 盟重仓库] FIGHT RUNMON
+[0147 盟重监狱] FIGHT RUNMON
+[0148 盟重客栈] FIGHT RUNMON
+[0149 盟重服饰店] FIGHT RUNMON
+[0158 盟重饰品店] FIGHT RUNMON
+[0159 盟重武器店] FIGHT RUNMON
+[0160 盟重药房] FIGHT RUNMON
+[0161 盟重书店] FIGHT RUNMON
+
+3 276,320 -> 0143 15,20
+0143 16,20 -> 3 277,320
+
+3 255,335 -> 0144 8,19
+3 258,334 -> 0144 17,18
+0144 9,20 -> 3 256,336
+0144 16,18 -> 3 257,335
+
+3 305,368 -> 0145 6,16
+3 306,369 -> 0145 7,17
+3 306,368 -> 0145 6,16
+0145 5,16 -> 3 304,369
+0145 6,17 -> 3 305,370
+
+0145 8,2 -> 0146 7,7
+0145 9,3 -> 0146 8,8
+0146 6,8 -> 0145 8,3
+0146 7,8 -> 0145 9,4
+
+3 392,329 -> 0147 3,15
+0147 2,16 -> 3 392,330
+
+3 290,367 -> 0148 9,15
+0148 10,15 -> 3 291,368
+
+3 311,292 -> 0149 3,9
+3 321,302 -> 0149 17,25
+0149 2,10 -> 3 310,293
+0149 17,26 -> 3 320,303
+
+3 290,302 -> 0158 7,27
+3 300,293 -> 0158 22,12
+0158 7,28 -> 3 291,303
+0158 22,13 -> 3 301,294
+
+3 330,314 -> 0159 5,16
+0159 4,16 -> 3 329,315
+
+3 269,351 -> 0160 3,15
+0160 2,15 -> 3 268,352
+
+3 410,321 -> 0161 7,16
+3 411,322 -> 0161 8,17
+0161 6,16 -> 3 409,322
+0161 7,17 -> 3 410,323
+
+[0150 沙巴克皇宫] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORANDOMMOVE NOALLOWUSEITEMS(随机石|移动仓库卷|记忆石) NOTALLOWUSEMAGIC(彻地钉|瞬息守护) MUSIC(http://Mir.941SF.Com/MC/2.mp3)
+[0151 沙巴克武器店] FIGHT RUNMON
+[0152 沙巴克仓库] FIGHT RUNMON
+[0153 沙巴克药品店] FIGHT RUNMON
+[0154 沙巴克饰品店] FIGHT RUNMON
+[0155 沙巴克服装店] FIGHT RUNMON
+[0156 沙巴克监狱] SAFE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NOALLOWUSEITEMS(记忆石|还魂符|元宝练级卷|超级传送卷|骰子) MUSIC(102.wav)
+
+3 630,274 -> 0150 15,19
+3 631,273 -> 0150 16,18
+0150 15,20 -> 3 631,275
+0150 16,19 -> 3 632,274
+
+0150 8,23 -> 3 624,271
+3 624,270 -> 0150 9,23
+3 624,278 -> 0150 6,21
+3 627,278 -> 0150 11,22
+3 634,271 -> 0150 19,14
+3 626,320 -> 0151 6,22
+3 634,312 -> 0151 17,10
+0151 7,23 -> 3 627,321
+0151 18,11 -> 3 635,313
+0151 6,23 -> 3 627,321
+
+3 637,242 -> 0152 10,15
+0152 10,16 -> 3 638,243
+
+3 637,333 -> 0153 6,21
+3 645,325 -> 0153 17,9
+0153 6,22 -> 3 638,334
+0153 18,10 -> 3 646,326
+
+3 676,293 -> 0154 5,21
+3 683,285 -> 0154 16,10
+3 676,292 -> 0154 5,21
+3 683,286 -> 0154 16,10
+0154 6,22 -> 3 677,294
+0154 17,11 -> 3 684,286
+
+3 664,282 -> 0155 5,21
+3 672,274 -> 0155 17,9
+0155 6,22 -> 3 665,283
+0155 18,10 -> 3 673,275
+
+3 600,282 -> 0156 9,15
+0156 10,16 -> 3 601,283
+;-------------------------------------------------------------- 
+
+;沙巴克暗道
+[D701	沙城秘密通道] HORSE RUNMON
+3          564,287              ->         D701       28,22
+3          564,286              ->         D701       28,22
+D701       27,23                ->         3          563,286
+
+D701       171,132              ->         3          660,276
+D701       171,133              ->         3          660,276
+3          661,277              ->         D701       169,136
+
+D701       31,128               ->         3          577,295
+3          578,296              ->         D701       32,127
+;╔┄┄┄┬┄┄┄┄╗
+;┆盟重省┃祖玛寺庙┆
+;╚┄┄┄┴┄┄┄┄╝
+[0157 祖玛寺庙大殿]
+[D5072 祖玛七层一] HORSE NORANDOMMOVE NORECONNECT(0157) RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/MC/5.mp3)
+[D5073 祖玛七层二] HORSE NORANDOMMOVE NORECONNECT(0157) RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/MC/6.mp3)
+[D5074 祖玛七层三] HORSE NORANDOMMOVE NORECONNECT(0157) RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/MC/7.mp3)
+[D515 祖玛教主之家] NORANDOMMOVE NORECONNECT(0157) RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/MC/8.mp3)
+
+3          862,174              ->         0157       9,25
+3          863,174              ->         0157       10,26
+0157       8,26                 ->         3          861,175
+0157       9,27                 ->         3          862,175
+
+0157       20,15                ->         D5072      7,51
+D5072      6,50                 ->         0157       20,15
+
+D5072      90,20                ->         D5073      10,69
+D5073      9,70                 ->         D5072      89,21
+
+D5073      60,9                 ->         D5074      47,90
+D5074      48,91                ->         D5073      59,10
+
+D5074      77,15                ->         D515       14,31
+D515       13,32                ->         D5074      76,16          
+
+3          330,314              ->         0159       5,16
+0159       4,16                 ->         3          329,315
+
+3          269,351              ->         0160       3,15
+0160       2,15                 ->         3          268,352
+
+3          410,321              ->         0161       7,16
+3          411,322              ->         0161       8,17
+0161       6,16                 ->         3          409,322
+0161       7,17                 ->         3          410,323
+;-------------------------------------------- 
+;╔┄┄┄┬┄┄┄╗
+;┆盟重省┆石墓阵┆
+;╚┄┄┄┴┄┄┄╝
+[D710 石墓入口] RUNMON
+[D716 石墓六层] INCGAMEPOINT(60/1) RUNMON
+[D717 石墓七层] NORECONNECT(D710) HORSE RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/MC/11.mp3)
+[R001 桃源之门] RUNMON HORSE NEEDHOLE NORECONNECT(D710) INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/MC/12.mp3)
+
+3 306,322    -> D710 28,21
+D710 27,22   -> 3 304,325
+
+D710 25,21   -> D716 36,17
+D716 37,16   -> D710 26,20
+
+D716 25,26 -> D717 26,74
+D717 25,75 -> D716 24,27
+
+D717 80,28 -> R001 162,169 
+;----------------------------------------------------------- 
+;╔┄┄┄╗
+;┆蜈蚣洞┆
+;╚┄┄┄╝
+[D613 蜈蚣洞穴] HORSE INCGAMEPOINT(90/1) RUNMON
+[D608 紫水晶房] MUSIC(http://Mir.941SF.Com/MC/13.mp3)
+[M001 真假暗殿] HORSE NORECALL NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL INCGAMEPOINT(60/1) PKLOSTEXPP(2500) PKWINEXP(2000) NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) MUSIC(http://Mir.941SF.Com/MC/14.mp3)
+3 139,85 -> D613 9,51
+D613 8,50 -> 3 140,87
+D613 12,13 -> D608 31,31
+
+D608 32,32 -> D613 12,13
+D608 18,22 -> D613 12,13
+D608 17,33 -> D613 12,13
+;-------------------------------------------------------
+;╔┄┄┄╗
+;┆白日门┆
+;╚┄┄┄╝
+[11 白日门区域] RUNMON HORSE OPENSTORE MUSIC(http://Mir.941SF.Com/BR/1.mp3)
+[1001 白日门武器店] FIGHT RUNMON
+[1002 白日门虎卫堂] FIGHT RUNMON
+[1003 白日门服装店] FIGHT RUNMON
+[1004 白日门图书馆] FIGHT RUNMON
+[1005 白日门饰品店] FIGHT RUNMON
+[1006 白日门药品店] FIGHT RUNMON
+[1007 白日门杂货店] FIGHT RUNMON
+
+1 43,34 -> 11 46,481
+1 44,33 -> 11 47,480
+1 45,32 -> 11 48,479
+1 46,31 -> 11 49,478
+1 47,30 -> 11 50,477
+
+11 47,482 -> 1 44,35
+11 48,481 -> 1 45,34
+11 49,480 -> 1 46,33
+11 50,479 -> 1 47,32
+11 51,478 -> 1 48,31
+
+11 145,324 -> 1005 11,15
+11 176,362 -> 1007 6,17
+11 178,295 -> 1006 7,15
+11 207,318 -> 1003 8,11
+11 208,272 -> 1004 11,15
+11 225,300 -> 1001 6,17
+11 228,268 -> 1002 10,17
+
+1005 12,16 -> 11 146,325
+1007 5,18 -> 11 175,363
+1006 8,16 -> 11 179,296
+1003 7,12 -> 11 206,319
+1004 12,16 -> 11 209,273
+1001 5,18 -> 11 224,301
+1002 9,18 -> 11 227,269
+
+[D10051 山谷秘道] HORSE RUNMON
+[D10061 恶魔祭坛] HORSE NORECALL INCGAMEPOINT(60/1) NODEARRECALL NORECONNECT(D10051) RUNMON MUSIC(http://Mir.941SF.Com/BR/2.mp3)
+[D10062 赤月魔穴] NORECALL INCGAMEPOINT(60/1) NODEARRECALL NORECONNECT(D10051) RUNMON MUSIC(http://Mir.941SF.Com/BR/3.mp3)
+
+D10051 47,189 -> 3 333,333
+D10051 178,53 -> D10062 12,24
+D10062 11,25  -> D10051 179,54
+;------------------------------------------
+;╔┄┄┄╗
+;┆封魔谷┆
+;╚┄┄┄╝
+[4 封魔谷区域] RUNMON HORSE OPENSTORE MUSIC(http://Mir.941SF.Com/FM/1.mp3)
+[B341 封魔皇宫] RUNMON
+[B342 封魔武器店] FIGHT RUNMON
+[B343 封魔书药店] FIGHT RUNMON
+[B344 封魔首饰店] FIGHT RUNMON
+[B345 封魔服装店] FIGHT RUNMON
+[B346 封魔监狱] FIGHT RUNMON
+[B347 封魔仓库] FIGHT RUNMON
+[D2004 疾风殿] HORSE INCGAMEPOINT(60/1)  RUNMON MUSIC(http://Mir.941SF.Com/FM/2.mp3)
+[D2005 光芒殿] HORSE INCGAMEPOINT(60/1)  RUNMON MUSIC(http://Mir.941SF.Com/FM/3.mp3)
+[D2013 封魔殿] HORSE INCGAMEPOINT(60/1)  NODEARRECALL NORECALL RUNMON MUSIC(http://Mir.941SF.Com/FM/11.mp3)
+[M101 姻缘殿] HORSE FIGHT RUNMON MUSIC(http://Mir.941SF.Com/FM/12.mp3)
+
+1 47,170 -> 4 445,193
+1 47,169 -> 4 446,192
+1 48,168 -> 4 447,191
+1 49,167 -> 4 448,190
+1 50,166 -> 4 449,189
+1 51,165 -> 4 450,188
+
+4 445,193 -> 1 47,170
+4 446,192 -> 1 47,169
+4 447,191 -> 1 48,168
+4 448,190 -> 1 49,167
+4 449,189 -> 1 50,166
+4 450,188 -> 1 51,165
+
+B341 26,30 -> 4 219,196
+B341 25,31 -> 4 218,197
+B342 18,13 -> 4 221,234
+B342 10,21 -> 4 217,238
+B343 18,13 -> 4 233,250
+B343 10,21 -> 4 226,252
+B344 6,11  -> 4 233,234
+B344 13,18 -> 4 238,238
+B345 13,19 -> 4 258,204
+B345 5,11  -> 4 251,199
+B346 5,18  -> 4 192,218
+B347 14,15 -> 4 236,181
+4   140,67 -> D2004 77,77
+4    56,66 -> D2004 77,77
+D2004 77,77 -> 4 140,67
+D2004 19,16 -> D2005 85,88
+D2005 18,21 -> D2013 82,83
+D2004 77,77 -> 4 140,67
+D2005 85,88 -> D2004 19,16
+D2013 82,83 -> D2005 18,21
+
+4 219,196 -> B341 26,30
+4 218,197 -> B341 25,31
+4 221,234 -> B342 18,13
+4 217,238 -> B342 10,21
+4 233,250 -> B343 18,13
+4 226,252 -> B343 10,21
+4 233,234 -> B344 6,11
+4 238,238 -> B344 13,18
+4 258,204 -> B345 13,19
+4 251,199 -> B345 5,11
+4 192,218 -> B346 5,18
+4 236,181 -> B347 14,15 
+
+4 140,67 -> D2004 77,77
+4 56,66 ->  D2004 77,77
+;━━━━━━━━━━━━━━━━━━━━━━━ 
+;╔┄┄┄╗
+;┆苍月岛┆
+;╚┄┄┄╝
+[5 苍月岛区域] RUNMON HORSE OPENSTORE MUSIC(http://Mir.941SF.Com/CY/1.mp3)
+[B351 苍月武器库] FIGHT RUNMON
+[B352 苍月饰品铺] FIGHT RUNMON
+[B353 苍月布料铺] FIGHT RUNMON
+[B354 苍月储存室] FIGHT RUNMON
+[B355 苍月客栈]   FIGHT RUNMON
+[B356 苍月药品店] FIGHT RUNMON
+5    127,301 -> B351 11,13
+B351 11,13   -> 5    127,301
+B351 11,14   -> 5    127,301
+B351 12,13   -> 5    127,301
+5    158,336 -> B352 8,13
+B352 8,13    -> 5    158,336
+B352 7,13    -> 5    158,336
+B352 8,14    -> 5    158,336
+5    146,324 -> B353 8,21
+B353 8,21    -> 5    146,324
+5    125,324 -> B354 11,19
+5    126,324 -> B354 12,19
+B354 11,19   -> 5    125,324
+B354 12,19   -> 5    126,324
+5    152,294 -> B355 9,16
+B355 9,16    -> 5    152,294
+B355 9,17    -> 5    152,294
+B355 10,16   -> 5    152,294
+5    167,314 -> B356 10,19
+B356 10,19   -> 5    167,314
+;-------------------------------------------------------- 
+;╔┄┄┄╗
+;┆尸魔洞┆
+;╚┄┄┄╝
+[D2051 尸魔洞一层] HORSE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/CY/2.mp3)
+[D2053 尸魔洞二层] HORSE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/CY/3.mp3)
+[D2052 尸魔洞三层] HORSE INCGAMEPOINT(90/1) NORECONNECT(5) RUNMON MUSIC(http://Mir.941SF.Com/CY/4.mp3)
+5      527,610  ->  D2051  107,182 
+5      527,611  ->  D2051  108,183
+5      528,611  ->  D2051  109,183
+D2051  107,182  ->  5      527,610
+D2051  108,183  ->  5      527,611
+D2051  109,183  ->  5      528,611
+D2051  50,24    ->  D2053  193,279
+D2051  49,24    ->  D2053  192,279
+D2051  50,25    ->  D2053  193,280
+D2053  193,279  ->  D2051  50,24
+D2053  192,279  ->  D2051  49,24
+D2053  193,280  ->  D2051  50,25
+D2053  36,225   ->  D2052  92,75
+D2053  36,226   ->  D2052  92,75
+D2052  92,76    ->  D2053  36,226
+D2052  92,75    ->  D2053  36,226
+D2052  93,75    ->  D2053  36,225
+;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+;╔┄┄┄╗
+;┆骨魔洞┆
+;╚┄┄┄╝
+[D2061 骨魔洞一层] HORSE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/CY/5.mp3)
+[D2064 骨魔洞二层] HORSE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/CY/6.mp3)
+[D2067 骨魔洞三层] HORSE INCGAMEPOINT(90/1) NORECALL NORECONNECT(5) RUNMON MUSIC(http://Mir.941SF.Com/CY/7.mp3)
+D2061  18,176   ->  5      549,127
+D2061  17,175   ->  5      549,127
+5      549,126  ->  D2061  18,175
+5      550,127  ->  D2061  18,175
+D2061  153,186  ->  D2064  13,30
+D2064  13,29    ->  D2061  153,186
+D2064  9,183    ->  D2067  155,161
+D2064  10,184   ->  D2067  155,161
+;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+;╔┄┄┄╗
+;┆牛魔洞┆
+;╚┄┄┄╝
+[D2070 牛魔寺庙入口] RUNMON
+[D2078 牛魔寺庙一层] HORSE INCGAMEPOINT(60/1) NORECONNECT(5) NORANDOMMOVE RUNMON MUSIC(http://Mir.941SF.Com/CY/11.mp3)
+[D2079 牛魔寺庙大殿] HORSE INCGAMEPOINT(60/1) NORECALL NORANDOMMOVE NORECONNECT(5) NODEARRECALL RUNMON MUSIC(http://Mir.941SF.Com/CY/12.mp3)
+
+5	655,458	  ->	D2070	34,38
+5	655,459	  ->	D2070	32,38
+D2070   34,40     ->    5       656,460
+D2070   35,39     ->    5       655,461
+
+D2070 32,19       ->    D2078 160,164
+D2070 33,19       ->    D2078 161,163
+D2078 161,165     ->    D2070 31,19
+D2078 161,164     ->    D2070 32,20
+
+D2078 255,256     ->    D2079 13,13
+D2078 255,255     ->    D2079 12,12
+D2079 13,13       ->    D2078 255,256
+D2079 12,13       ->    D2078 255,255
+D2079 12,12       ->    D2078 255,255
+;--------------------------------------------------------- 
+;╔┄┄┄┄┄┄┄╗
+;┆六个新衣服地点┆
+;╚┄┄┄┄┄┄┄╝
+[T232 钳虫巢穴] HORSE NORECONNECT(1) NORANDOMMOVE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/TS/1.mp3)
+11         343,325              ->         T232       22,24
+[T218 死亡神殿] HORSE NORECONNECT(0) NORANDOMMOVE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/TS/2.mp3)
+4          205,218              ->         T218       14,16
+[T339 地狱烈焰] HORSE NORECONNECT(0) NORANDOMMOVE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/TS/3.mp3)
+0          428,474              ->         T339       23,24
+[T219 深渊魔域] HORSE NORECONNECT(1) NORANDOMMOVE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/TS/4.mp3)
+1          215,312              ->         T219       81,14
+[T315 堕落坟场] HORSE NORECONNECT(1) NORANDOMMOVE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/TS/5.mp3)
+1          320,56               ->         T315       49,31
+[T118 困惑殿堂] HORSE NORECONNECT(2) NORANDOMMOVE INCGAMEPOINT(90/1) RUNMON MUSIC(http://Mir.941SF.Com/TS/6.mp3)
+R001       55,94                ->         T118       14,15
+;------------------------------------------------------------- 
+;╔┄┄╗
+;┆幻境┆
+;╚┄┄╝
+[H001 幻境一层] HORSE INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/HJ/1.mp3)
+[H002 幻境二层] HORSE INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/HJ/2.mp3)
+[H003 幻境三层] HORSE INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/HJ/3.mp3)
+[H004 幻境四层] HORSE INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/HJ/4.mp3)
+[H005 幻境五层] HORSE INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/HJ/5.mp3)
+[H006 幻境六层] HORSE INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/HJ/6.mp3)
+[H007 幻境七层] HORSE INCGAMEPOINT(60/1) NEEDHOLE RUNMON MUSIC(http://Mir.941SF.Com/HJ/7.mp3)
+[H008 幻境八层] HORSE INCGAMEPOINT(60/1) NORECONNECT(H007) NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/HJ/8.mp3)
+[H009 幻境九层] HORSE INCGAMEPOINT(60/1) NORECALL NORECONNECT(H007) RUNMON MUSIC(http://Mir.941SF.Com/HJ/9.mp3)
+[H010 幻境十层] HORSE INCGAMEPOINT(60/1) NORECALL NORECONNECT(H007) NODEARRECALL RUNMON MUSIC(http://Mir.941SF.Com/HJ/10.mp3)
+H001    10,9    ->  H002 205,198
+H002    205,197 ->  H001 11,10 
+H002    364,229 ->  H003 16,19
+H003    16,18   ->  H002 363,230 
+H004    9,25    ->  H003 87,81 
+H004    193,124 ->  H005 195,278
+H005    192,279 ->  H004 192,123 
+H005    36,225  ->  H006 26,74
+H006    25,75   ->  H005 38,227
+H005    12,154  ->  H003 16,19
+H005    11,155  ->  H003 16,19 
+H006    83,25   ->  H007 161,172
+H007    95,102  ->  H006 26,74 
+H007    123,10  ->  H008 82,81
+H008    83,82   ->  H007 123,10
+H008    82,83   ->  H007 123,10
+H008    81,84   ->  H007 123,10
+H008    80,85   ->  H007 123,10 
+H008    21,25   ->  H009 289,150
+H009    290,151 ->  H008 22,25
+H009    290,151 ->  H008 21,26 
+H009    149,103 ->  H010 155,157
+H010    155,156 ->  H009 151,105
+;-------------------------------------------------------
+;╔┄┄┄┄╗
+;┆神秘禁地┆
+;╚┄┄┄┄╝
+[H106 神秘禁地] HORSE INCGAMEPOINT(60/1) RUNMON NORECONNECT(H006) MUSIC(http://Mir.941SF.Com/HJ/11.mp3)
+;-------------------------------------------------------------- 
+;╔┄┄┄┄┄┄╗
+;┆沙巴克藏宝阁┆
+;╚┄┄┄┄┄┄╝
+[H201  沙影之道一层] HORSE INCGAMEPOINT(90/1) RUNMON
+[H202  沙影之道二层] HORSE INCGAMEPOINT(60/1) RUNMON
+[H203  沙影之道三层] HORSE INCGAMEPOINT(60/1) NORECALL RUNMON MUSIC(http://Mir.941SF.Com/HJ/12.mp3)
+[H204  沙巴克藏宝阁] HORSE NORECALL INCGAMEPOINT(60/1) NODEARRECALL NORECONNECT(H202) RUNMON MUSIC(http://Mir.941SF.Com/HJ/13.mp3)
+H001   72,65   ->  H201 11,105 
+H102   10,106  ->  H001 72,66
+H201   121,191 ->  H202 7,51 
+H202   6,50    ->  H201 120,190
+H202   90,20   ->  H203 47,90 
+H203   48,91   ->  H202 89,21
+H203   77,15   ->  H204 50,50
+;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+;╔┄┄┄┄╗
+;┆魔龙大城┆
+;╚┄┄┄┄╝
+[6 魔龙城] RUNMON HORSE OPENSTORE MUSIC(http://Mir.941SF.Com/ML/1.mp3)
+6        464        70        ->        63        28        366
+6        463        69        ->        63        27        367
+6        462        68        ->        63        26        368
+6        461        67        ->        63        25        369
+6        460        66        ->        63        24        370
+6        459        65        ->        63        24        371
+[63 魔龙岭] RUNMON HORSE MUSIC(http://Mir.941SF.Com/ML/2.mp3)
+63        28        366        ->         6         459        65
+63        27        367        ->         6         460        66
+63        26        368        ->         6         461        67
+63        25        369        ->         6         462        68
+63        24        370        ->         6         463        69
+63        24        371        ->         6         464        70
+63        250        35        ->        632        162        166
+63        249        36        ->        632        161        167
+63        248        37        ->        632        160        168
+63        247        38        ->        632        159        169
+63        246        39        ->        632        158        170
+63        245        40        ->        632        157        171
+63        20         38        ->        631        69         165
+63        19         39        ->        631        68         166
+[631 西魔龙关] RUNMON HORSE NORECALL NODEARRECALL NORECONNECT(63) NODRUG FIGHT
+631        99        21         ->        64        165        263
+631        98        22         ->        64        164        264
+631        97        23         ->        64        163        265
+631        96        24         ->        64        163        265
+631        95        25         ->        64        162        266
+631        94        26         ->        64        162        266
+631        68        166        ->        63        19         39 
+[632 东魔龙关] RUNMON NORECALL HORSE NODEARRECALL NORECONNECT(63) NODRUG FIGHT
+632        163        166        ->        63        251        36
+632        162        167        ->        63        251        36
+632        161        168        ->        63        250        37
+632        160        169        ->        63        249        38
+632        159        170        ->        63        248        39
+632        158        171        ->        63        247        40
+632        157        172        ->        63        246        41
+632        24         35         ->        64        271        239
+632        25         36         ->        64        271        239
+632        26         37         ->        64        272        240
+632        27         38         ->        64        273        241
+632        28         39         ->        64        274        242
+[64 魔龙谷] RUNMON HORSE NORECALL INCGAMEPOINT(60/1) NORECONNECT(63) MUSIC(http://Mir.941SF.Com/ML/3.mp3)
+64        272        239        ->        632        25        34
+64        273        240        ->        632        26        35
+64        274        241        ->        632        27        36
+64        29         59         ->        65        267        106
+64        28         60         ->        65        266        107
+64        27         61         ->        65        265        108
+64        26         62         ->        65        264        109
+64        166        264        ->        631        99        22
+64        165        265        ->        631        98        23
+64        164        266        ->        631        97        24
+64        163        267        ->        631        96        25
+64        162        268        ->        631        95        26
+[65 龙源血路] RUNMON HORSE INCGAMEPOINT(60/1) NORANDOMMOVE NORECONNECT(63) MUSIC(http://Mir.941SF.Com/ML/4.mp3)
+65        268        106        ->        64        30         60
+65        267        107        ->        64        29         61
+65        266        108        ->        64        28         62
+65        265        109        ->        64        27         63
+65        45         155        ->        66        258        210
+65        44         156        ->        66        257        211
+65        43         157        ->        66        256        212
+65        42         158        ->        66        255        213
+65        41         159        ->        66        254        214
+[66 魔龙血域] INCGAMEPOINT(60/1) HORSE RUNMON NORECONNECT(63) MUSIC(http://Mir.941SF.Com/ML/5.mp3)
+66        259        210        ->        65        46        158
+66        258        211        ->        65        45        157
+66        257        212        ->        65        44        158
+66        256        213        ->        65        43        159
+66        255        214        ->        65        42        160
+[EM100 魔龙殿] NORECONNECT(63) NORECALL NOGUILDRECALL NORANDOMMOVE 
+63        259        365       ->        EM100      14         16
+63        258        366       ->        EM100      14         16
+63        257        367       ->        EM100      14         16
+63        256        368       ->        EM100      14         16
+63        255        369       ->        EM100      14         16
+63        254        370       ->        EM100      14         16
+[B357 福威镖局大帐] SAFE NORECALL NOGUILDRECALL NODEARRECALL NOMASTERRECALL
+6         115        148       ->        B357       11         13
+B357      11         14        ->        6          115        148
+[B301 宝宝修炼] NORECONNECT(0159) NORANDOMMOVE NORECALL RUNMON NODEARRECALL NOGUILDRECALL
+[F004 幽冥领地] HORSE NORECONNECT(0159) INCGAMEPOINT(90/1)  NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/TS/7.mp3)
+[EM300 比武擂台] NODRUG NOGUILDRECALL NODEARRECALL NOPOSITIONMOVE NORANDOMMOVE NORECALL NOALLOWUSEITEMS(记忆石) NORECONNECT(0159) FIGHT MUSIC(http://Mir.941SF.Com/TS/8.mp3)
+[D2081 龙邪洞一层] NORECALL HORSE NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/ML/6.mp3)
+D2081 19 218 -> D2082 381 45
+D2082 381 45 -> D2081 19 218
+[D2082 龙邪洞二层] NORECALL HORSE NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(D2081) RUNMON INCGAMEPOINT(60/1) MUSIC(http://Mir.941SF.Com/ML/7.mp3)
+D2082 374 273 -> D2083 39 89
+D2083 38 92   -> D2082 374 273
+D2083 37 90   -> D2082 374 275
+D2083 38 91   -> D2082 374 274
+[D2083 龙邪神殿] NORECALL NODEARRECALL NOGUILDRECALL NORANDOMMOVE NOMasterRECALL NORECONNECT(D2082) INCGAMEPOINT(60/1) RUNMON MUSIC(http://Mir.941SF.Com/ML/8.mp3) DECHP(1/5)
+
+[2 打工集中营] SAFE HORSE MUSIC(http://Mir.941SF.Com/TS/9.mp3)
+[0116 打工客栈] FIGHT
+[0117 打工药店] FIGHT
+[0120 打工武器店] FIGHT
+[0142 打工房屋] FIGHT
+
+2 523,473 -> 0116 10,23
+2 523,474 -> 0116 11,24
+0116 9,23 -> 2 522,474
+0116 10,24 -> 2 522,475
+
+2 504,498 -> 0117 10,16
+0117 10,17 -> 2 505,498
+
+2 516,492 -> 0120 14,14
+0120 14,15 -> 2 517,492
+
+2 511,462 -> 0142 9,9
+0142 9,10 -> 2 512,462
+[12 兽民森林] NORECALL HORSE NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON INCGAMEPOINT(90/1) MUSIC(http://Mir.941SF.Com/TS/10.mp3)
+12 89,13 -> DM001 6,10
+12 15,294 -> DM001 6,10
+12 320,119 -> DM001 6,10
+DM011 6,10  -> 3 330,337
+[DM001 商店] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT
+[Q004 兽王决战室] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1) NORECONNECT(0159)
+[DM011 装备交易地图] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORANDOMMOVE NORECONNECT(0159)
+[E404 山庄采矿区] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1)
+[B010 山庄连环坞] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1)
+[GA2 山庄比武厅] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1)
+[D71601	山庄藏剑阁] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1)
+[D2002 山庄地下室] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1)
+[GA0 山庄大院] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL DECHP(1/3) INCGAMEPOINT(60/1)
+[GA1 山庄会客厅] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL DECHP(1/10) INCGAMEPOINT(60/1) NOALLOWUSEITEMS(记忆石)
+;---------------------------------------------------
+[GA5|GA0 宝藏天堂大院] NORECALL HORSE NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL INCGAMEPOINT(120/1) FIGHTPK MUSIC(http://Mir.941SF.Com/CY/8.mp3)
+[GA6|GA1 宝藏天堂大厅] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHTPK MUSIC(http://Mir.941SF.Com/CY/9.mp3)
+GA5 48,47 -> GA6 26,37
+GA6 26,37 -> GA5 48,47
+GA6 27,36 -> GA5 48,47
+GA6 25,38 -> GA5 48,47
+;---------------------------------------------------
+[EM001 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM002 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM003 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM004 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM005 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM006 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM007 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM008 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM009 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM010 天关宝藏] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL FIGHT NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[EM021 命运一关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM022 命运二关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM023 天罗地网] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM024 命运三关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM025 命运四关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM026 谍血地狱] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM027 命运五关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM028 十恶不赦] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM029 命运六关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM030 死神陷阱] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM031 命运七关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM032 命运八关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM033 九死一生] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM034 命运九关] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) DECHP(1/5)
+[EM035 恭喜发财] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石)
+[N101 青蛙森林一层] HORSE RUNMON NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) MUSIC(http://Mir.941SF.Com/FM/4.mp3)
+[N102 青蛙森林二层] HORSE RUNMON NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) MUSIC(http://Mir.941SF.Com/FM/5.mp3)
+[N104 青蛙森林三层] HORSE RUNMON NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) MUSIC(http://Mir.941SF.Com/FM/6.mp3)
+[N107 青蛙森林四层] HORSE RUNMON NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) MUSIC(http://Mir.941SF.Com/FM/7.mp3)
+[N109 青蛙森林五层] HORSE RUNMON NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL NORECONNECT(0159) NOALLOWUSEITEMS(记忆石) MUSIC(http://Mir.941SF.Com/FM/8.mp3)
+[N111 静寂岛一层] RUNMON HORSE MUSIC(http://Mir.941SF.Com/TS/11.mp3)
+[N112 静寂岛二层] HORSE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/FM/9.mp3)
+[N113 静寂岛三层] HORSE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/FM/10.mp3)
+[N108 静寂岛四层] HORSE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON
+[N114 静寂岛之颠] HORSE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NOALLOWUSEITEMS(记忆石)
+[G004 群英争霸场] NORECONNECT(0159) NORECALL NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL NOALLOWUSEITEMS(记忆石) NORANDOMMOVE FIGHTPK DECHP(1/2)
+[GA2A|GA2 武将比赛场] NORECONNECT(0159) NORECALL NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL NOALLOWUSEITEMS(记忆石) NORANDOMMOVE FIGHTPK DECHP(1/5)
+[GA2B|GA2 法神比赛场] NORECONNECT(0159) NORECALL NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL NOALLOWUSEITEMS(记忆石) NORANDOMMOVE FIGHTPK DECHP(1/1)
+[GA2C|GA2 天尊比赛场] NORECONNECT(0159) NORECALL NODEARRECALL NOGUILDRECALL RUNMON NOMasterRECALL NOALLOWUSEITEMS(记忆石) NORANDOMMOVE FIGHTPK DECHP(1/3)
+[D024A|D024 行会争霸场] NORECALL NODEARRECALL NORECONNECT(D024B) NOGUILDRECALL NOMasterRECALL RUNMON FIGHTPK NOALLOWUSEITEMS(记忆石) MUSIC(http://Mir.941SF.Com/MC/2.mp3)
+[D024B|D024 行会准备地] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON SAFE NOALLOWUSEITEMS(记忆石)
+[D10054 诅咒地狱] HORSE NORECALL NOGUILDRECALL NOMasterRECALL RUNMON PKLOSTEXPP(10000) MUSIC(http://Mir.941SF.Com/ML/8.mp3)
+[D2002A|D2002 无间地狱] HORSE NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL MUSIC(http://Mir.941SF.Com/ML/8.mp3)
+D10054  78    12   ->    D2002A  33   39
+D2002A  29    12   ->    D10054  51   24
+[T103A|T103 魔神殿] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NOALLOWUSEITEMS(记忆石) NORECONNECT(0148) EXPRATE(200)
+[T103B|T103 天尊殿] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NOALLOWUSEITEMS(记忆石) NORECONNECT(0148) EXPRATE(200)
+[T103 猛将殿] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NOALLOWUSEITEMS(记忆石) NORECONNECT(0148) EXPRATE(200)
+[T240 至尊殿] NORECALL NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NOALLOWUSEITEMS(记忆石) NORECONNECT(0148) EXPRATE(200)
+[Hero1 卧龙山庄] HORSE MUSIC(http://Mir.941SF.Com/MC/13.mp3) RUNMON FIGHT
+[D2010 跑马场起点地图] HORSE SAFE NORECALL NORANDOMMOVE NODEARRECALL NOGUILDRECALL NOMasterRECALL NOALLOWUSEITEMS(记忆石|随机石) NOTALLOWUSEMAGIC(瞬息守护|擒龙手)
+[D2001 跑马场障碍地图] HORSE SAFE NORECALL NORANDOMMOVE NODEARRECALL NOGUILDRECALL NOMasterRECALL NOALLOWUSEITEMS(记忆石|随机石) NOTALLOWUSEMAGIC(瞬息守护|擒龙手)
+[D2003 跑马场终点地图] HORSE SAFE NORECALL NORANDOMMOVE NODEARRECALL NOGUILDRECALL NOMasterRECALL NOALLOWUSEITEMS(记忆石|随机石) NOTALLOWUSEMAGIC(瞬息守护|擒龙手)
+[K004 魔王岭]
+[K002 比武战场] NORECALL FIGHTPK NODEARRECALL NOGUILDRECALL NOMasterRECALL RUNMON NOALLOWUSEITEMS(记忆石|随机传送卷|回城卷|行会回城卷|随机石|回城石|) NOTALLOWUSEMAGIC(瞬息守护|擒龙手|瞬息移动|火墙) NORECONNECT(0159) MUSIC(http://Mir.941SF.Com/MC/2.mp3)
+[K001 天罡八卦阵] HORSE NORECALL NOGUILDRECALL NOMasterRECALL NOALLOWUSEITEMS(记忆石) RUNMON MUSIC(http://Mir.941SF.Com/ML/8.mp3)
+[D501 盘丝古庙] HORSE NORECALL NOGUILDRECALL NOMasterRECALL RUNMON MUSIC(http://Mir.941SF.Com/ML/8.mp3)
+[D5061	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5062	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5063	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5064	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5065	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5066	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5067	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5068	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D5069	盘丝阁] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+[D10071	盘丝神殿] NORECALL NOGUILDRECALL NOMasterRECALL RUNMON NORECONNECT(D501)
+D501 350,170 -> D5061 8,16
+D5069 90,76 -> D10071 11,26
+D501 302,74 -> D5061 8,16
+D501 326,97 -> D5061 8,16
+D5061 7,10  -> D5066 91,43
+D5061 14,16 -> D5066 34,11
+D5061 14,10 -> D5064 34,76
+D5061 33,10 -> D5064 65,75
+D5061 40,16 -> D5064 8,11
+D5061 33,17 -> D5066 65,71
+D5061 40,10 -> D5062 9,77
+D5061 59,10 -> D5062 39,15
+D5061 59,17 -> D5064 39,71
+D5061 66,10 -> D5069 84,76
+D5061 84,11 -> D5069 13,43
+D5061 91,17 -> D5069 60,11
+D5061 84,18 -> D5062 14,72
+D5061 91,11 -> D5067 60,76
+D5061 7,38  -> D5066 65,43
+D5061 14,44 -> D5066 8,39
+D5061 7,45  -> D5068 65,11
+D5061 14,38 -> D5064 8,16
+D5061 33,38 -> D5064 39,75
+D5061 40,44 -> D5064 86,39
+D5061 33,45 -> D5066 39,11
+D5061 40,38 -> D5062 85,17
+D5061 59,38 -> D5062 13,15
+D5061 66,44 -> D5062 60,39
+D5061 59,45 -> D5064 13,11
+D5061 66,38 -> D5069 60,16
+D5061 85,38 -> D5069 91,43
+D5061 92,44 -> D5069 34,39
+D5061 85,45 -> D5062 90,12
+D5061 92,38 -> D5067 34,16
+D5061 8,71  -> D5066 39,43
+D5061 15,77 -> D5066 84,71
+D5061 8,78  -> D5068 39,39
+D5061 15,71 -> D5064 86,44
+D5061 33,70 -> D5064 14,76
+D5061 40,76 -> D5064 60,71
+D5061 33,77 -> D5066 13,39
+D5061 40,70 -> D5062 60,44
+D5061 59,70 -> D5062 90,16
+D5061 66,76 -> D5062 34,71
+D5061 59,77 -> D5064 91,39
+D5061 66,70 -> D5069 34,44
+D5061 83,70 -> D5069 65,43
+D5061 90,76 -> D5069 9,72
+D5061 83,77 -> D5062 65,39
+D5061 90,70 -> D5067 8,44
+D5062 7,10  -> D5064 89,75
+D5062 14,16 -> D5064 34,39
+D5062 7,17  -> D5066 90,12
+D5062 14,10 -> D5062 34,16
+D5062 33,10 -> D5062 65,15
+D5062 40,16 -> D5062 8,39
+D5062 33,17 -> D5064 65,11
+D5062 40,10 -> D5069 8,16
+D5062 59,10 -> D5069 39,43
+D5062 66,16 -> D5069 86,39
+D5062 59,17 -> D5062 39,11
+D5062 66,10 -> D5067 85,17
+D5062 84,11 -> D5067 14,76
+D5062 91,17 -> D5067 60,39
+D5062 84,18 -> D5069 13,11
+D5062 91,11 -> D5065 60,16
+D5062 7,38  -> D5064 65,75
+D5062 14,44 -> D5064 9,72
+D5062 7,45  -> D5066 65,39
+D5062 14,38 -> D5062 8,44
+D5062 33,38 -> D5062 39,15
+D5062 40,44 -> D5062 84,71
+D5062 33,45 -> D5064 39,39
+D5062 40,38 -> D5069 86,44
+D5062 59,38 -> D5069 13,43
+D5062 66,44 -> D5069 60,71
+D5062 59,45 -> D5062 13,39
+D5062 66,38 -> D5067 60,44
+D5062 85,38 -> D5067 89,75
+D5062 92,44 -> D5067 34,71
+D5062 85,45 -> D5069 91,39
+D5062 92,38 -> D5065 34,44
+D5062 8,71  -> D5064 39,75
+D5062 15,77 -> D5064 85,12
+D5062 8,78  -> D5066 39,71
+D5062 15,71 -> D5062 84,76
+D5062 33,70 -> D5062 13,15
+D5062 40,76 -> D5062 60,11
+D5062 33,77 -> D5064 14,72
+D5062 40,70 -> D5069 60,76
+D5062 59,70 -> D5069 91,43
+D5062 66,76 -> D5069 34,11
+D5062 59,77 -> D5062 89,71
+D5062 66,70 -> D5067 34,76
+D5062 83,70 -> D5067 65,75
+D5062 90,76 -> D5067 8,11
+D5062 83,77 -> D5069 65,71
+D5062 90,70 -> D5065 9,77
+D5063 7,10  -> D5062 90,16
+D5063 14,16 -> D5062 34,71
+D5063 7,17  -> D5064 91,39
+D5063 14,10 -> D5069 34,44
+D5063 33,10 -> D5069 65,43
+D5063 40,16 -> D5069 9,72
+D5063 33,17 -> D5062 65,39
+D5063 40,10 -> D5067 8,44
+D5063 59,10 -> D5067 39,75
+D5063 66,16 -> D5067 84,71
+D5063 59,17 -> D5069 39,39
+D5063 66,10 -> D5065 86,44
+D5063 84,11 -> D5065 13,15
+D5063 91,17 -> D5065 60,71
+D5063 84,18 -> D5067 13,39
+D5063 91,11 -> D5063 60,44
+D5063 7,38  -> D5062 65,15
+D5063 14,44 -> D5062 8,11
+D5063 7,45  -> D5064 65,71
+D5063 14,38 -> D5069 9,77
+D5063 33,38 -> D5069 39,43
+D5063 40,44 -> D5069 85,12
+D5063 33,45 -> D5062 39,71
+D5063 40,38 -> D5067 84,76
+D5063 59,38 -> D5067 14,76
+D5063 66,44 -> D5067 60,11
+D5063 59,45 -> D5069 14,72
+D5063 66,38 -> D5065 60,76
+D5063 85,38 -> D5065 90,16
+D5063 92,44 -> D5065 34,11
+D5063 85,45 -> D5067 89,71
+D5063 92,38 -> D5063 34,76
+D5063 8,71  -> D5062 39,15
+D5063 15,77 -> D5062 86,39
+D5063 8,78  -> D5064 39,11
+D5063 15,71 -> D5069 85,17
+D5063 33,70 -> D5069 13,43
+D5063 40,76 -> D5069 60,39
+D5063 33,77 -> D5062 13,11
+D5063 40,70 -> D5067 60,16
+D5063 59,70 -> D5067 89,75
+D5063 66,76 -> D5067 34,39
+D5063 59,77 -> D5069 90,12
+D5063 66,70 -> D5065 34,16
+D5063 83,70 -> D5065 65,15
+D5063 90,76 -> D5065 8,39
+D5063 83,77 -> D5067 65,11
+D5063 90,70 -> D5063 8,16
+D5064 7,10  -> D5069 91,43
+D5064 14,16 -> D5069 34,11
+D5064 7,17  -> D5062 89,71
+D5064 14,10 -> D5067 34,76
+D5064 33,10 -> D5067 65,75
+D5064 40,16 -> D5067 8,11
+D5064 33,17 -> D5069 65,71
+D5064 40,10 -> D5065 9,77
+D5064 59,10 -> D5065 39,15
+D5064 66,16 -> D5065 85,12
+D5064 59,17 -> D5067 39,71
+D5064 66,10 -> D5063 84,76
+D5064 84,11 -> D5063 13,43
+D5064 91,17 -> D5063 60,11
+D5064 84,18 -> D5065 14,72
+D5064 91,11 -> D5061 60,76
+D5064 7,38  -> D5069 65,43
+D5064 14,44 -> D5069 8,39
+D5064 7,45  -> D5062 65,11
+D5064 14,38 -> D5067 8,16
+D5064 33,38 -> D5067 39,75
+D5064 40,44 -> D5067 86,39
+D5064 33,45 -> D5069 39,11
+D5064 40,38 -> D5065 85,17
+D5064 59,38 -> D5065 13,15
+D5064 66,44 -> D5065 60,39
+D5064 59,45 -> D5067 13,11
+D5064 66,38 -> D5063 60,16
+D5064 85,38 -> D5063 91,43
+D5064 92,44 -> D5063 34,39
+D5064 85,45 -> D5065 90,12
+D5064 92,38 -> D5061 34,16
+D5064 8,71  -> D5069 39,43
+D5064 15,77 -> D5069 84,71
+D5064 8,78  -> D5062 39,39
+D5064 15,71 -> D5067 86,44
+D5064 33,70 -> D5067 14,76
+D5064 40,76 -> D5067 60,71
+D5064 33,77 -> D5069 13,39
+D5064 40,70 -> D5065 60,44
+D5064 59,70 -> D5065 90,16
+D5064 66,76 -> D5065 34,71
+D5064 59,77 -> D5067 91,39
+D5064 66,70 -> D5063 34,44
+D5064 83,70 -> D5063 65,43
+D5064 90,76 -> D5063 9,72
+D5064 83,77 -> D5065 65,39
+D5064 90,70 -> D5061 8,44
+D5065 7,10  -> D5067 89,75
+D5065 14,16 -> D5067 34,39
+D5065 7,17  -> D5069 90,12
+D5065 14,10 -> D5065 34,16
+D5065 33,10 -> D5065 65,15
+D5065 40,16 -> D5065 8,39
+D5065 33,17 -> D5067 65,11
+D5065 40,10 -> D5063 8,16
+D5065 59,10 -> D5063 39,43
+D5065 66,16 -> D5063 86,39
+D5065 59,17 -> D5065 39,11
+D5065 66,10 -> D5061 85,17
+D5065 84,11 -> D5061 14,76
+D5065 91,17 -> D5061 60,39
+D5065 84,18 -> D5063 13,11
+D5065 91,11 -> D5068 60,16
+D5065 7,38  -> D5067 65,75
+D5065 14,44 -> D5067 9,72
+D5065 7,45  -> D5069 65,39
+D5065 14,38 -> D5065 8,44
+D5065 33,38 -> D5065 39,15
+D5065 40,44 -> D5065 84,71
+D5065 33,45 -> D5067 39,39
+D5065 40,38 -> D5063 86,44
+D5065 59,38 -> D5063 13,43
+D5065 66,44 -> D5063 60,71
+D5065 59,45 -> D5065 13,39
+D5065 66,38 -> D5061 60,44
+D5065 85,38 -> D5061 89,75
+D5065 92,44 -> D5061 34,71
+D5065 85,45 -> D5063 91,39
+D5065 92,38 -> D5068 34,44
+D5065 8,71  -> D5067 39,75
+D5065 15,77 -> D5067 85,12
+D5065 8,78  -> D5069 39,71
+D5065 15,71 -> D5065 84,76
+D5065 33,70 -> D5065 13,15
+D5065 40,76 -> D5065 60,11
+D5065 33,77 -> D5067 14,72
+D5065 40,70 -> D5063 60,76
+D5065 59,70 -> D5063 91,43
+D5065 66,76 -> D5063 34,11
+D5065 59,77 -> D5065 89,71
+D5065 66,70 -> D5061 34,76
+D5065 83,70 -> D5061 65,75
+D5065 90,76 -> D5061 8,11
+D5065 83,77 -> D5063 65,71
+D5065 90,70 -> D5068 9,77
+D5066 7,10  -> D5065 90,16
+D5066 14,16 -> D5065 34,71
+D5066 7,17  -> D5067 91,39
+D5066 14,10 -> D5063 34,44
+D5066 33,10 -> D5063 65,43
+D5066 40,16 -> D5063 9,72
+D5066 33,17 -> D5065 65,39
+D5066 40,10 -> D5061 8,44
+D5066 59,10 -> D5061 39,75
+D5066 66,16 -> D5061 84,71
+D5066 59,17 -> D5063 39,39
+D5066 66,10 -> D5068 86,44
+D5066 84,11 -> D5068 13,15
+D5066 91,17 -> D5068 60,71
+D5066 84,18 -> D5061 13,39
+D5066 91,11 -> D5066 60,44
+D5066 7,38  -> D5065 65,15
+D5066 14,44 -> D5065 8,11
+D5066 7,45  -> D5067 65,71
+D5066 14,38 -> D5063 9,77
+D5066 33,38 -> D5063 39,43
+D5066 40,44 -> D5063 85,12
+D5066 33,45 -> D5065 39,71
+D5066 40,38 -> D5061 84,76
+D5066 59,38 -> D5061 14,76
+D5066 66,44 -> D5061 60,11
+D5066 59,45 -> D5063 14,72
+D5066 66,38 -> D5068 60,76
+D5066 85,38 -> D5068 90,16
+D5066 92,44 -> D5068 34,11
+D5066 85,45 -> D5061 89,71
+D5066 92,38 -> D5066 34,76
+D5066 8,71  -> D5065 39,15
+D5066 15,77 -> D5065 86,39
+D5066 8,78  -> D5067 39,11
+D5066 15,71 -> D5063 85,17
+D5066 33,70 -> D5063 13,43
+D5066 40,76 -> D5063 60,39
+D5066 33,77 -> D5065 13,11
+D5066 40,70 -> D5061 60,16
+D5066 59,70 -> D5061 89,75
+D5066 66,76 -> D5061 34,39
+D5066 59,77 -> D5063 90,12
+D5066 66,70 -> D5068 34,16
+D5066 83,70 -> D5068 65,15
+D5066 90,76 -> D5068 8,39
+D5066 83,77 -> D5061 65,11
+D5066 90,70 -> D5066 8,16
+D5067 7,10  -> D5063 91,43
+D5067 14,16 -> D5063 34,11
+D5067 7,17  -> D5065 89,71
+D5067 14,10 -> D5061 34,76
+D5067 33,10 -> D5061 65,75
+D5067 40,16 -> D5061 8,11
+D5067 33,17 -> D5063 65,71
+D5067 40,10 -> D5068 9,77
+D5067 59,10 -> D5068 39,15
+D5067 66,16 -> D5068 85,12
+D5067 59,17 -> D5061 39,71
+D5067 66,10 -> D5066 84,76
+D5067 84,11 -> D5066 13,43
+D5067 91,17 -> D5066 60,11
+D5067 84,18 -> D5068 14,72
+D5067 91,11 -> D5064 60,76
+D5067 7,38  -> D5063 65,43
+D5067 14,44 -> D5063 8,39
+D5067 7,45  -> D5065 65,11
+D5067 14,38 -> D5061 8,16
+D5067 33,38 -> D5061 39,75
+D5067 40,44 -> D5061 86,39
+D5067 33,45 -> D5063 39,11
+D5067 40,38 -> D5068 85,17
+D5067 59,38 -> D5068 13,15
+D5067 66,44 -> D5068 60,39
+D5067 59,45 -> D5061 13,11
+D5067 66,38 -> D5066 60,16
+D5067 85,38 -> D5066 91,43
+D5067 92,44 -> D5066 34,39
+D5067 85,45 -> D5068 90,12
+D5067 92,38 -> D5064 34,16
+D5067 8,71  -> D5063 39,43
+D5067 15,77 -> D5063 84,71
+D5067 8,78  -> D5065 39,39
+D5067 15,71 -> D5061 86,44
+D5067 33,70 -> D5061 14,76
+D5067 40,76 -> D5061 60,71
+D5067 33,77 -> D5063 13,39
+D5067 40,70 -> D5068 60,44
+D5067 59,70 -> D5068 90,16
+D5067 66,76 -> D5068 34,71
+D5067 59,77 -> D5061 91,39
+D5067 66,70 -> D5066 34,44
+D5067 83,70 -> D5066 65,43
+D5067 90,76 -> D5066 9,72
+D5067 83,77 -> D5068 65,39
+D5067 90,70 -> D5064 8,44
+D5068 7,10  -> D5061 89,75
+D5068 14,16 -> D5061 34,39
+D5068 7,17  -> D5063 90,12
+D5068 14,10 -> D5068 34,16
+D5068 33,10 -> D5068 65,15
+D5068 40,16 -> D5068 8,39
+D5068 33,17 -> D5061 65,11
+D5068 40,10 -> D5066 8,16
+D5068 59,10 -> D5066 39,43
+D5068 66,16 -> D5066 86,39
+D5068 59,17 -> D5068 39,11
+D5068 66,10 -> D5064 85,17
+D5068 84,11 -> D5064 14,76
+D5068 91,17 -> D5064 60,39
+D5068 84,18 -> D5066 13,11
+D5068 91,11 -> D5062 60,16
+D5068 7,38  -> D5061 65,75
+D5068 14,44 -> D5061 9,72
+D5068 7,45  -> D5063 65,39
+D5068 14,38 -> D5068 8,44
+D5068 33,38 -> D5068 39,15
+D5068 40,44 -> D5068 84,71
+D5068 33,45 -> D5061 39,39
+D5068 40,38 -> D5066 86,44
+D5068 59,38 -> D5066 13,43
+D5068 66,44 -> D5066 60,71
+D5068 59,45 -> D5068 13,39
+D5068 66,38 -> D5064 60,44
+D5068 85,38 -> D5064 89,75
+D5068 85,45 -> D5066 91,39
+D5068 92,38 -> D5062 34,44
+D5068 8,71  -> D5061 39,75
+D5068 15,77 -> D5061 85,12
+D5068 8,78  -> D5063 39,71
+D5068 15,71 -> D5068 84,76
+D5068 33,70 -> D5068 13,15
+D5068 40,76 -> D5068 60,11
+D5068 33,77 -> D5061 14,72
+D5068 40,70 -> D5066 60,76
+D5068 59,70 -> D5066 91,43
+D5068 66,76 -> D5066 34,11
+D5068 59,77 -> D5068 89,71
+D5068 66,70 -> D5064 34,76
+D5068 83,70 -> D5064 65,75
+D5068 90,76 -> D5064 8,11
+D5068 83,77 -> D5066 65,71
+D5068 90,70 -> D5062 9,77
+D5069 7,10  -> D5068 90,16
+D5069 14,16 -> D5068 34,71
+D5069 7,17  -> D5061 91,39
+D5069 14,10 -> D5066 34,44
+D5069 33,10 -> D5066 65,43
+D5069 40,16 -> D5066 9,72
+D5069 33,17 -> D5068 65,39
+D5069 40,10 -> D5064 8,44
+D5069 59,10 -> D5064 39,75
+D5069 66,16 -> D5064 84,71
+D5069 59,17 -> D5066 39,39
+D5069 66,10 -> D5062 86,44
+D5069 84,11 -> D5062 13,15
+D5069 91,17 -> D5062 60,71
+D5069 84,18 -> D5064 13,39
+D5069 91,11 -> D5069 60,44
+D5069 7,38  -> D5068 65,15
+D5069 14,44 -> D5068 8,11
+D5069 7,45  -> D5061 65,71
+D5069 14,38 -> D5066 9,77
+D5069 33,38 -> D5066 39,43
+D5069 40,44 -> D5066 85,12
+D5069 33,45 -> D5068 39,71
+D5069 40,38 -> D5064 84,76
+D5069 59,38 -> D5064 14,76
+D5069 66,44 -> D5064 60,11
+D5069 59,45 -> D5066 14,72
+D5069 66,38 -> D5062 60,76
+D5069 85,38 -> D5062 90,16
+D5069 92,44 -> D5062 34,11
+D5069 85,45 -> D5064 89,71
+D5069 92,38 -> D5069 34,76
+D5069 8,71  -> D5068 39,15
+D5069 15,77 -> D5068 86,39
+D5069 8,78  -> D5061 39,11
+D5069 15,71 -> D5066 85,17
+D5069 33,70 -> D5066 13,43
+D5069 40,76 -> D5066 60,39
+D5069 33,77 -> D5068 13,11
+D5069 40,70 -> D5064 60,16
+D5069 59,70 -> D5064 89,75
+D5069 66,76 -> D5064 34,39
+D5069 59,77 -> D5066 90,12
+D5069 66,70 -> D5062 34,16
+D5069 83,70 -> D5062 65,15
+D5069 83,77 -> D5064 65,11
+D5069 90,70 -> D5069 8,16
+D5068 92,44 -> D5068 34,44
+D5069 89,75 -> D5068 34,44

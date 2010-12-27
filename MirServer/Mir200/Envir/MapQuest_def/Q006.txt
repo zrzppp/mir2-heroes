@@ -1,0 +1,22 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+#IF
+CHECKVAR HUMAN DGNL > 49
+#ACT
+SET [070] 0
+gamepoint + 60
+give 回城卷 1
+CALCVAR HUMAN DGNL = 0
+SENDMSG 7 [%s]:杀怪数量已达50个!当前的活跃值为<$GAMEPOINT>!
+SAVEVAR HUMAN DGNL ..\QuestDiary\飛尔世界\变量文件\DGNLSave.txt
+#ELSEACT
+goto @yunxing
+[@yunxing]
+#IF
+Check [070] 1
+#ACT
+CALCVAR HUMAN DGNL + 1
+SENDMSG 6 您打活跃工的杀怪数量为：<$HUMAN(DGNL)>
+SAVEVAR HUMAN DGNL ..\QuestDiary\飛尔世界\变量文件\DGNLSave.txt

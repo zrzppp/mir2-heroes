@@ -1,0 +1,160 @@
+[@经济]
+{
+和城市的商人进行贸易可以增加行会的繁荣，繁荣度高的\
+行会可以开放出各种新的功能。跑商的玩家可以获得礼物\ \
+<进行贸易/@进行贸易>\ \
+<返回首页/@main>
+[@进行贸易]
+#IF
+Check [131] 1
+#ACT
+messagebox 货物还没送到沙城手镯店老板手里吗？
+break
+#IF
+Check [132] 1
+#ACT
+messagebox 货物还没送到比齐夏家店老板手里吗？
+break
+#IF
+Check [133] 1
+#ACT
+messagebox 货物还没送到沙城仓库老板手里吗？
+break
+#IF
+Check [134] 1
+#ACT
+messagebox 货物还没送到沙城武器店师傅手里吗？
+break
+#IF
+Check [135] 1
+#ACT
+messagebox 货物还没送到沙城药店老板手里吗？
+break
+#IF
+Check [136] 1
+#ACT
+messagebox 货物还没送到封魔谷炼药师手里吗？
+break
+#IF
+Check [137] 1
+#ACT
+messagebox 货物还没送到沙城戒指店老板手里吗？
+break
+#IF
+Check [138] 1
+#ACT
+messagebox 货物还没送到沙巴克布衣店手里吗？
+break
+#IF
+Check [139] 1
+#ACT
+messagebox 货物还没送到沙城头盔店老板手里吗？
+break
+#IF
+Check [140] 1
+#ACT
+messagebox 货物还没送到沙城项链店老板手里吗？
+break
+#IF
+#ACT
+set [019] 1
+movr d0 9
+goto @xinrenwu
+break
+[@xinrenwu]
+#IF
+Check [019] 0
+#act
+mapmove T225
+break
+#IF
+equal d0 0
+#ACT
+messagebox 麻烦你把这个送到沙城手镯店老板！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [131] 1
+break
+#IF
+equal d0 1
+#ACT
+messagebox 麻烦你把这个送到比齐夏家店老板！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [132] 1
+break
+#IF
+equal d0 2
+#ACT
+messagebox 麻烦你把这个送到沙城仓库老板手里！
+mov d0 0
+give 货物 1
+SET [133] 1
+SET [019] 0
+break
+#IF
+equal d0 3
+#ACT
+messagebox 麻烦你把这个送到沙城武器店师傅！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [134] 1
+break
+#IF
+equal d0 4
+#ACT
+messagebox 麻烦你把这个送到沙城药店老板！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [135] 1
+break
+#IF
+equal d0 5
+#ACT
+messagebox 麻烦你把这个送到封魔谷炼药师！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [136] 1
+break
+#IF
+equal d0 6
+#ACT
+messagebox 麻烦你把这个送到沙城戒指店老板！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [137] 1
+break
+#IF
+equal d0 7
+#ACT
+messagebox 麻烦你把这个送到沙巴克布衣店！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [138] 1
+break
+#IF
+equal d0 8
+#ACT
+messagebox 麻烦你把这个送到沙城头盔店老板！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [139] 1
+break
+#IF
+equal d0 9
+#ACT
+messagebox 麻烦你把这个送到沙城项链店老板！
+mov d0 0
+give 货物 1
+SET [019] 0
+SET [140] 1
+break
+}

@@ -1,0 +1,55 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@Login]
+#IF
+CHECKLEVELEX > 0
+#ACT
+TIMEOPEN
+VAR Integer HUMAN JGST
+VAR Integer HUMAN XYNL
+VAR Integer HUMAN TGLF
+VAR Integer HUMAN DGSW
+VAR Integer HUMAN DGNL
+VAR Integer HUMAN DGYB
+VAR Integer HUMAN FIRA
+VAR Integer HUMAN FIRB
+VAR Integer HUMAN FIRC
+VAR Integer HUMAN RWSW
+VAR Integer HUMAN TDCS
+LOADVAR HUMAN FIRA ..\QuestDiary\飛尔世界\变量文件\FIRASave.txt
+LOADVAR HUMAN FIRB ..\QuestDiary\飛尔世界\变量文件\FIRBSave.txt
+LOADVAR HUMAN FIRC ..\QuestDiary\飛尔世界\变量文件\FIRCSave.txt
+LOADVAR HUMAN XYNL ..\QuestDiary\飛尔世界\变量文件\XYNLSave.txt
+LOADVAR HUMAN JGST ..\QuestDiary\飛尔世界\变量文件\JGSTSave.txt
+LOADVAR HUMAN TGLF ..\QuestDiary\飛尔世界\变量文件\TGLFSave.txt
+LOADVAR HUMAN DGSW ..\QuestDiary\飛尔世界\变量文件\DGSWSave.txt
+LOADVAR HUMAN DGNL ..\QuestDiary\飛尔世界\变量文件\DGNLSave.txt
+LOADVAR HUMAN DGYB ..\QuestDiary\飛尔世界\变量文件\DGYBSave.txt
+LOADVAR HUMAN RWSW ..\QuestDiary\飛尔世界\变量文件\RWSWSave.txt
+LOADVAR HUMAN TDCS ..\QuestDiary\飛尔世界\变量文件\TDCSSave.txt
+#CALL [\游戏登陆\登陆脚本.txt] @登陆设置
+#CALL [\封号系统\封号系统.txt] @封号分类
+#CALL [\游戏登陆\登陆奖励.txt] @奖励设置
+break
+[@Member]
+#CALL [\飛尔世界\周行制作\后台管理.txt] @飛尔后台
+[@踢掉网挂]
+#IF
+ISOFFLINEMODE 
+#ACT
+break
+#IF
+INSAFEZONE
+CHECKSTATIONTIME > 10
+#ACT
+messagebox 你在游戏里面已经有10分钟没有移动过.\被系统怀疑为网站挂机.你有权利上告GM.但是不会理你\如果你不是网站挂机.请在1分钟之内移动自己.否则将被踢下线\
+DELAYGOTO 90 @TCGJ
+break
+[@TCGJ]
+#IF
+CHECKSTATIONTIME > 1
+#ACT
+KICK
+SENDMSG 5 提示：你被怀疑是网站挂机玩家!所以被系统T下线!请小退再登陆!
+break

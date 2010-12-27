@@ -1,0 +1,46 @@
+;=============================人形宝宝配制文件=======================
+[BaseInfo]
+;职业
+Job = 2
+;性别
+Gender = 1
+;头发
+Hair = 3
+;使用魔法
+Magic = 无极真气,灵魂火符,施毒术,气功波,治愈术,群体治疗术,召唤神兽
+;==============================身上装备============================
+[UseItems]
+;衣服
+DRESSNAME = 光芒道袍(女)
+;武器
+WEAPONNAME = 逍遥扇
+;照明物
+RIGHTHANDNAME = 荣誉勋章45号
+;项链
+NECKLACENAME = 真魂项链
+;头盔
+HELMETNAME = 天龙盔
+;左手镯
+ARMRINGLNAME = 真魂手镯
+;右手镯
+ARMRINGRNAME = 真魂手镯
+;左戒指
+RINGLNAME = 真魂戒指
+;右戒指
+RINGRNAME = 真魂戒指
+;物品
+BUJUKNAME = 火龙之心
+;腰带
+BELTNAME = 真魂腰带
+;鞋子
+BOOTSNAME = 真魂道靴
+;宝石
+CHARMNAME = 
+;死亡掉装备几率 数字越小掉装备几率越高
+DieDropUseItemRate = 50
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 0
+
+;是否允许挖物品(1=允许 0=不允许)
+ButchItem = 0

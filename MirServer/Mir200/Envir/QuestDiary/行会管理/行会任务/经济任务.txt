@@ -1,0 +1,65 @@
+[@任务货物]
+{
+#IF
+checkitem 货物 1
+#act
+messagebox 哦，我的货物这么快就送来了啊，非常谢谢你！
+take 货物 1
+set [131] 0
+set [132] 0
+set [133] 0
+set [134] 0
+set [135] 0
+set [136] 0
+set [137] 0
+set [138] 0
+set [139] 0
+set [140] 0
+set [120] 1
+movr d0 20
+GUILDFLOURISHPOINT + 5
+SENDMSG 6 任务完成！
+goto @经济奖励
+#elseact
+set [131] 0
+set [132] 0
+set [133] 0
+set [134] 0
+set [135] 0
+set [136] 0
+set [137] 0
+set [138] 0
+set [139] 0
+set [140] 0
+messagebox 什么？你把货物给弄丢了？算了，我还是自认倒霉吧！
+[@经济奖励]
+#IF
+Check [120] 0
+#act
+mapmove T225
+break
+#IF
+equal d0 2
+#ACT
+set [120] 0
+CREDITPOINT + 1
+SENDCOLORMSG 0 251 249 [%s]在跑商任务中获得奖励：声望1点
+break
+#IF
+equal d0 6
+#ACT
+set [120] 0
+gamepoint + 30
+SENDCOLORMSG 0 251 249 [%s]在跑商任务中获得奖励：活跃增加30点
+break
+#IF
+equal d0 18
+#ACT
+set [120] 0
+give 经验神丹 1
+SENDCOLORMSG 0 251 249 [%s]在跑商任务中获得物品：经验神丹
+break
+#IF
+#ACT
+set [120] 0
+}

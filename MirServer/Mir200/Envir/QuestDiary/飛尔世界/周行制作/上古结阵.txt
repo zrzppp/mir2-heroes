@@ -1,0 +1,324 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@魔法结阵]
+{
+上古结阵是几百万年前先祖遗留下来的强力魔阵，拥有无与伦比的\
+力量.千百万年来.没有人能够启动过.它里面隐藏着什么无人知道！\ \
+<当前魔法结阵等级为>：第<$STR(G0)>层\ \
+<启动结阵/@qidong>\ \
+<返回上页/@main>
+[@qidong]
+#IF
+checkitem 魔法神石 1
+equal G0 0
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第一层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 1
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第二层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 2
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第三层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 3
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第四层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 4
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第五层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 5
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第六层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 6
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第七层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 7
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第八层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 8
+#ACT
+SENDMSG 0 魔法结阵威力提升为：[第九层]
+set [018] 1
+movr d2 20
+goto @huodezhufu
+break
+#IF
+checkitem 魔法神石 1
+equal G0 9
+#ACT
+Param1 3
+Param2 299
+Param3 337
+MonGen 魔兽蚩尤 1 1
+mov G0 0
+SENDMSG 0 结阵被[%s]释放.[魔兽蚩尤]出现在猪洞门口!
+SENDMSG 0 结阵被[%s]释放.[魔兽蚩尤]出现在猪洞门口!
+set [018] 1
+movr d2 20
+goto @huodezhufu
+#ELSEACT
+messagebox 启动魔法结阵需要魔法神石一块！
+[@huodezhufu]
+#IF
+Check [018] 0
+#act
+mapmove T225
+break
+#IF
+checkitem 魔法神石 1
+equal d2 0
+#ACT
+take 魔法神石 1
+SENDMSG 0 魔法结阵被%s触发！[获得声望提升+5]
+set [018] 0
+CREDITPOINT + 5
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 1
+#ACT
+SENDMSG 0 魔法结阵被%s触发！[获得祝福石]
+set [018] 0
+give 祝福石 1
+take 魔法神石 1
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 2
+#ACT
+set [018] 0
+give 灵魂石 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得灵魂石]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 3
+#ACT
+set [018] 0
+give 创造石 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得创造石]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 4
+#ACT
+set [018] 0
+give 英雄石 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得英雄石]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 5
+#ACT
+set [018] 0
+give 至尊石 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得至尊石]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 6
+#ACT
+set [018] 0
+give 檀木宝箱 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得檀木宝箱]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 7
+#ACT
+set [018] 0
+give 爱老虎油 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得爱老虎油]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 8
+#ACT
+set [018] 0
+RECALLMOB 月灵 3 0 1
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得月灵]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 9
+#ACT
+set [018] 0
+CHANGEEXP + 600000
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得经验60W]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 10
+#ACT
+set [018] 0
+CHANGEEXP + 300000
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得经验30W]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 11
+#ACT
+set [018] 0
+CHANGEEXP + 1000000
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得经验100W]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 12
+#ACT
+SENDMSG 0 魔法结阵被%s触发！[获得神圣白虎]
+set [018] 0
+RECALLMOB 神圣白虎[真] 3 0 1
+take 魔法神石 1
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 13
+#ACT
+take 魔法神石 1
+SENDMSG 0 魔法结阵被%s触发！[获得属性点10点]
+set [018] 0
+BONUSPOINT + 10
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 14
+#ACT
+SENDMSG 0 魔法结阵被%s触发！[获得10分钟1.2倍攻击力]
+set [018] 0
+POWERRATE 120 600
+take 魔法神石 1
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 15
+#ACT
+SENDMSG 0 魔法结阵被%s触发！[获得30分钟经验双倍]
+set [018] 0
+KILLMONEXPRATE 200 1800
+take 魔法神石 1
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 16
+#ACT
+SENDMSG 0 魔法结阵被%s触发！[获得30分钟经验三倍]
+set [018] 0
+KILLMONEXPRATE 300 1800
+take 魔法神石 1
+inc G0 1
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 17
+#ACT
+take 魔法神石 1
+set [018] 0
+CREDITPOINT + 10
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得声望提升+10]
+goto @SGJZ
+break
+#IF
+checkitem 魔法神石 1
+equal d2 18
+#ACT
+set [018] 0
+GAMEGOLD + 2
+take 魔法神石 1
+inc G0 1
+SENDMSG 0 魔法结阵被%s触发！[获得元宝2个]
+goto @SGJZ
+break
+}

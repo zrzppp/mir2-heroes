@@ -1,0 +1,572 @@
+[@三级行会]
+{
+<[三级行会]>  <[行会容量]>：<$GUILDMEMBERMAXLIMIT>人\
+<[一级之力]/@qt1>  <[二级之力]/@by1>  <[三级之力]/@hj1>  [四级之力]  <行会安定>:<$GUILDSTABILITYPOINT>\
+<[声望兑换]/@qt2>　<[改变职业]/@by2>  <[改变性别]/@hj2>  [在线购物]  <行会建筑>:<$GUILDBUILDPOINT>\
+<[名字变色]/@qt3>　<[双倍经验]/@by3>  <[超级传送]/@hj3>  [经验三倍]  <行会繁荣>:<$GUILDFLOURISHPOINT>\
+<[转换发型]/@qt4>　<[清理包袱]/@by4>  <[个性封号]/@hj4>  [七彩宠物]  <行会人气>:<$GUILDAURAEPOINT>\
+<[声望传送]/@qt5>　<[免费洗红]/@by5>  <[领取经费]/@hj5>  [在线广播]  <[兑换物品]/@兑换安定>\
+<[神秘商店]/@qt6>  <[三倍泡点]/@by6>  <[修炼宝宝]/@hj6>  [随身仓库]  <[增加人气]/@加入行会>\ \
+<[建筑行会]/@建筑行会>  <[发展经济]/@发展经济>  <[降妖除魔]/@降妖除魔>  <[行会争霸]/@行会争霸>  <[晋升行会]/@晋升4级>\
+[@晋升4级]
+好不容易升到三星级行会了.马上就可以让本会所有成员\
+享受到和会员一样的待遇了.不要吝啬.每人贡献一点点.就可以\
+在以后的行会PK赛.及打装备的时候感受到四星级的好处.\
+如果本服只有你一个四星级行会.那你不就是最强大的行会了吗?\ \
+<使用物品晋级行会/@物品晋级>\ \
+<使用元宝晋级行会/@元宝晋级>---<任何本会成员只需花费200元宝>\
+<我先找成员凑元宝/@EXIT>\
+[@元宝晋级]
+#IF
+CHECKGUILDMEMBERMAXLIMIT > 500
+#ACT
+GOTO @加人数晋升
+break
+#ELSEACT
+GOTO @不加人数晋升
+break
+[@加人数晋升]
+#IF
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+GUILDMEMBERMAXLIMIT + 30
+ADDGUILDNAMEDATELIST ..\QuestDiary\行会管理\行会等级\行会一天名单.txt
+ADDGUILDLIST ..\QuestDiary\行会管理\行会等级\4级.txt
+SENDMSG 0 恭喜--[<$GUILDNAME>]--行会晋升为④星级行会!
+SENDMSG 8 本会人数容量增加30人.目前最大收人数量为:[<$GUILDMEMBERMAXLIMIT>]人!
+close
+#ELSEACT
+messagebox [出错]:元宝晋级行会未成功.身上元宝数量没有200个
+break
+[@不加人数晋升]
+#IF
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+ADDGUILDNAMEDATELIST ..\QuestDiary\行会管理\行会等级\行会一天名单.txt
+ADDGUILDLIST ..\QuestDiary\行会管理\行会等级\4级.txt
+SENDMSG 0 恭喜--[<$GUILDNAME>]--行会晋升为④星级行会!
+close
+#ELSEACT
+messagebox [出错]:元宝晋级行会未成功.身上元宝数量没有200个
+break
+[@物品晋级]
+#IF
+CHECKGUILDMEMBERMAXLIMIT > 500
+#ACT
+GOTO @物品加人数晋升
+break
+#ELSEACT
+GOTO @物品不加人数晋升
+break
+[@物品加人数晋升]
+#IF
+checkitem 蚩尤之角 2
+CHECKGUILDAURAEPOINT > 49
+CHECKGUILDBUILDPOINT > 1999
+CHECKGUILDFLOURISHPOINT > 1999
+#ACT
+GUILDMEMBERMAXLIMIT + 30
+GUILDBUILDPOINT - 2000
+GUILDFLOURISHPOINT - 2000
+take 蚩尤之角 2
+ADDGUILDNAMEDATELIST ..\QuestDiary\行会管理\行会等级\行会一天名单.txt
+ADDGUILDLIST ..\QuestDiary\行会管理\行会等级\4级.txt
+SENDMSG 0 恭喜--[<$GUILDNAME>]--行会晋升为④级行会!
+SENDMSG 8 本会人数容量增加30人.目前最大收人数量为:[<$GUILDMEMBERMAXLIMIT>]人!
+goto @main
+break
+#ELSEACT
+messagebox 行会晋升条件：[人气:50].[建筑:2000].[繁荣:2000].[蚩尤之角=2]
+break
+[@物品不加人数晋升]
+#IF
+checkitem 蚩尤之角 2
+CHECKGUILDAURAEPOINT > 49
+CHECKGUILDBUILDPOINT > 1999
+CHECKGUILDFLOURISHPOINT > 1999
+#ACT
+GUILDBUILDPOINT - 2000
+GUILDFLOURISHPOINT - 2000
+take 蚩尤之角 2
+ADDGUILDNAMEDATELIST ..\QuestDiary\行会管理\行会等级\行会一天名单.txt
+ADDGUILDLIST ..\QuestDiary\行会管理\行会等级\4级.txt
+SENDMSG 0 恭喜--[<$GUILDNAME>]--行会晋升为④级行会!
+goto @main
+break
+#ELSEACT
+messagebox 行会晋升条件：[人气:50].[建筑:2000].[繁荣:2000].[蚩尤之角=2]
+break
+[@降妖除魔]
+#CALL [\行会管理\行会任务\降妖除魔.txt] @除魔任务
+[@hj1]
+当你的等级到达48级后就可以获得三级行会神力，注意：获得力量需\
+要花费300W金币和声望20点！\ \
+<获得力量/@huoquhuangjin>\ \
+<返回首页/@main>
+[@huoquhuangjin]
+#IF
+Check [059] 1
+#SAY
+对不起，你已经获得了三级行会神力！\ \
+<返回首页/@main>
+#ACT
+break
+#if
+CHECKCREDITPOINT > 19
+Check [059] 0
+checkgold 3000000
+CHECKLEVELEX > 47
+#act
+set [059] 1
+CREDITPOINT - 20
+take 金币 3000000
+BONUSPOINT + 50
+SENDMSG 6 恭喜您成功获得三级行会神力！
+close
+#ELSEACT
+messagebox 获得三级行会神力必须等级大于48级.声望20点.金币300万！
+GOTO @MAIN
+break
+[@hj2]
+#IF
+checkmarry
+#SAY
+对不起！你已经结婚了！在你没有离婚之前是不能变性的\ \
+<返回首页/@main>
+#elseact
+goto @dhqskqioq
+[@dhqskqioq]
+所以做妖和做人一样,要有一颗仁慈的心.....前些时候去海外\
+遇到了一个医术超群的医生.学会了这种技术,回来为玛珐大陆\
+的英雄服务，可是我不是免费的哦，需要活跃点500点!\ \
+<改变性别/@ChangGender>\ \
+<返回首页/@main>\
+[@ChangGender]
+#IF
+gender man
+#SAY
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\ \
+<尝尝/@towoman>\ \
+<返回/@main>\
+#ELSESAY
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\ \
+<尝尝/@toman>\ \
+<返回/@main>\
+[@toman]
+#IF
+CHECKGAMEPOINT > 499
+#ACT
+gamepoint - 500
+CHANGEGENDER 0
+#SAY
+呵呵，你已经变成一位猛男了。\ 
+请下线在进来看看！\
+<返回/@main>
+#ELSESAY
+活跃都没有，想做手术？我这不是慈善机构!!\ 
+<返回/@main>
+[@towoman]
+#IF
+CHECKGAMEPOINT > 499
+#ACT
+gamepoint - 500
+CHANGEGENDER 1
+#SAY
+呵呵，你已经变成一位淑女了。\ 
+请下线在进来看看！\
+<返回/@main>
+#ELSESAY
+活跃都没有，想做手术？我这不是慈善机构!!\ 
+<返回/@main>
+[@hj3]
+以下传送不需要金币和声望.仅仅需要活跃点!真假神殿需要元宝\ \
+※ <猪洞七层/@zhudongqi> ※ <祖玛七层/@zhumadating> ※ <王者禁地/@wzjd> ※ <牛魔六层/@niumoda> ※\
+※ <幻境之地/@huanjing> ※ <龙邪一层/@dlmy> ※ <骨魔三层/@qyuanx> ※ <封魔大殿/@youming> ※\
+※ <真假神殿/@BOSS之家> ※ <堕落坟场/@堕落坟场> ※ <死亡神殿/@死亡神殿> ※ <钳虫巢穴/@钳虫巢穴> ※\
+※ <深渊魔域/@深渊魔域> ※ <地狱烈焰/@地狱烈焰> ※ <困惑殿堂/@困惑殿堂> ※ <返回首页/@main> ※\
+[@BOSS之家]
+#IF
+CHECKGAMEGOLD > 4
+#ACT
+GAMEGOLD - 5
+mapmove M001 200 10
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 传送到真假神殿需要花费5元宝
+goto @main
+break
+[@钳虫巢穴]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove T232
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@困惑殿堂]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove T118
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@地狱烈焰]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove T339
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@堕落坟场]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove T315
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@死亡神殿]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove T218
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@深渊魔域]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove T219
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@dlmy]
+#IF
+CHECKGAMEPOINT > 149
+#ACT
+gamepoint - 150
+mapmove D2081 371 32
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要150点活跃用来支付我们的服务费用!
+goto @main
+break
+[@wzjd]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove H106 100 100
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@qyuanx]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D2067
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@zhudongqi]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D717 27 74
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@zhumadating]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D5072 7 51
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@chiyue]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D1004 221 174
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@niumoda]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D2078 160 162
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@huanjing]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove H001 73 67
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@jingxiang]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove L006 73 72
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@youming]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D2013 82 83
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@huiyuaner]
+#IF
+CHECKGAMEPOINT > 9
+#ACT
+gamepoint - 10
+mapmove D2003 29 82
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 需要10点活跃用来支付我们的服务费用!
+goto @main
+break
+[@hj4]
+你可以任意设置你自己的封号\
+比如<单挑王>...<泡妞王>...<打遍天下无敌手>........\
+修改一次封号需要花费活跃值<50>点.下线后封号自动消失\ \
+<注意>:不能自定义和GM有关.及行会等级有关的封号\ \
+<输入你喜欢的封号/@@InPutString封号>           <返回上页/@MAIN>\
+[@InPutString封号]
+#IF
+CHECKCONTAINSTEXT S0 G
+#ACT
+MESSAGEBOX 封号内容不符合规定!
+break
+#IF
+CHECKCONTAINSTEXT S0 ★
+#ACT
+MESSAGEBOX 封号内容不符合规定!
+break
+#IF
+CHECKGAMEPOINT > 49
+#ACT
+gamepoint - 50
+setranklevelname S0
+MESSAGEBOX 你的封号已经变成--><$STR(S0)>.
+break
+#ELSEACT
+MESSAGEBOX [出错]!需要50点活跃用来支付我们的服务费用!
+goto @main
+break
+[@hj5]
+#if
+dayofweek sun
+#act
+goto @sunchenw02
+break
+#if
+dayofweek mon
+#act
+goto @monchenw02
+break
+#if
+dayofweek tue
+#act
+goto @tuechenw02
+break
+#if
+dayofweek wed
+#act
+goto @wedchenw02
+break
+#if
+dayofweek thu
+#act
+goto @thuchenw02
+break
+#if
+dayofweek fri
+#act
+goto @frichenw02
+break
+#if
+dayofweek sat
+#act
+goto @satchenw02
+break
+[@sunchenw02]
+#IF
+dayofweek sun
+check [211] 0
+#act
+reset [211] 7
+set [211] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期天>约会的好机会![金币+200W.声望+5]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@monchenw02]
+#IF
+dayofweek mon
+check [212] 0
+#act
+reset [211] 7
+set [212] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期一>新的开始哟![金币+200W.声望+2]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@tuechenw02]
+#IF
+dayofweek tue
+check [213] 0
+#act
+reset [211] 7
+set [213] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期二>要好好努力呀![金币+200W.声望+2]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@wedchenw02]
+#IF
+dayofweek wed
+check [214] 0
+#act
+reset [211] 7
+set [214] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期三>好好关心你另一半呀![金币+200W.声望+2]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@thuchenw02]
+#IF
+dayofweek thu
+check [215] 0
+#act
+reset [211] 7
+set [215] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期四>今天小心点,怪物很厉害的![金币+200W.声望+2]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@frichenw02]
+#IF
+dayofweek fri
+check [216] 0
+#act
+reset [211] 7
+set [216] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期五>今天你约会了吗？[金币+200W.声望+2]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@satchenw02]
+#IF
+dayofweek sat
+check [217] 0
+#act
+reset [211] 7
+set [217] 1
+give 金币 2000000
+CREDITPOINT + 5
+SENDMSG 7 提示:<星期六>晚上去哪里宵夜？[金币+200W.声望+2]
+GOTO @main
+#ELSEACT
+messagebox 你好象今天已经领过了啊，怎么，还想再领？
+GOTO @MAIN
+break
+[@hj6]
+修炼宝宝可以帮你快速提高宝宝等级，但需要花费1点声望，\
+你想提升宝宝等级吗？\ \
+<修炼宝宝/@xiubaobaobao>\ \ \
+<返回首页/@main>
+[@xiubaobaobao]
+#IF
+CHECKCREDITPOINT > 0
+#ACT
+give 回城卷 1
+mapmove B301 10 10
+CREDITPOINT - 1
+#ELSEACT
+MESSAGEBOX 对不起，你声望不够。
+GOTO @main
+break
+}

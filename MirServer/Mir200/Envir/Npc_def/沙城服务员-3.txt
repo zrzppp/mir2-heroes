@@ -1,0 +1,394 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+欢迎你光临：<$SERVERNAME>\
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\
+┏━━━━━━┓\
+┃<城主使用权利/@周哥制作>┃\
+┗━━━━━━┛\ \
+┏━━━━━━┓    ┏━━━━━━┓    ┏━━━━━━┓\
+┃<查询攻城时间/@aboutwar>┃    ┃<查看占领状态/@WarStatus>┃    ┃<成员福利领取/@Warfuli>┃\
+┗━━━━━━┛    ┗━━━━━━┛    ┗━━━━━━┛\
+
+[@周哥制作]
+#CALL [\飛尔世界\周行制作\城主特权.txt] @使用权利
+
+[@aboutwar]
+下一次战役记录在:\
+<$CASTLEWARDATE> , 20:00开始。\ \
+<详细情况/@listwar>\
+
+[@listwar]
+<$LISTOFWAR>\ \
+<返回首页/@aboutwar>\
+
+[@WarStatus]
+占领行会:<$OWNERGUILD>\ \ 
+占领日期:<$CASTLECHANGEDATE>\ \ 
+占领天数:<$CASTLEGETDAYS>\ \
+行会掌门:<$LORD>\ \
+当前时间:<$DATETIME>        <返回上页/@MAIN>\
+
+[@Warfuli]
+根据沙城的主人『<$LORD>』的吩咐,负责给\
+『<$OWNERGUILD>』的成员整理工资帐目和传送\
+每天可在我这里领取一定工资还可以传送到部份地图\ \
+╔┄┄┄┄╗  ╔┄┄┄┄╗  ╔┄┄┄┄╗\
+┆<领取工资/@lq>┆  ┆<进入传送/@CS>┆  ┆<返回盟重/@huiqu>┆\
+╚┄┄┄┄╝  ╚┄┄┄┄╝  ╚┄┄┄┄╝\
+[@huiqu]
+#IF
+  ISCASTLEGUILD
+#ACT
+mapmove 3 333 330
+break
+#ELSEACT
+MESSAGEBOX 不是沙巴克成员就自己使用回城吧.....
+CLOSE
+[@lq]
+#IF
+  ISCASTLEMASTER
+#SAY
+你是沙城城主。你每天可以在我这里领取10W的金币。\
+但是你要80等级以上。。。\ \ \
+<领取今日的荣誉/@liweijun-CastleGold>\
+<离开这里/@exit>
+#ACT
+break
+#IF
+  ISCASTLEGUILD
+#SAY
+你是沙城成员。你每天可以在我这里领取5W的金币，\
+但是你要70等级以上。。。\ \ \
+<领取今日的荣誉/@liweijun-CastleGold>\
+<离开这里/@exit>
+#ACT
+break
+#ELSEACT
+MESSAGEBOX 你不是沙城主,也不是沙成员，不能使用这个服务。
+CLOSE
+[@liweijun-CastleGold]
+#if
+dayofweek sun
+#act
+goto @sun-liweijun
+break
+#if
+dayofweek mon
+#act
+goto @mon-liweijun
+break
+#if
+dayofweek tue
+#act
+goto @tue-liweijun
+break
+#if
+dayofweek wed
+#act
+goto @wed-liweijun
+break
+#if
+dayofweek thu
+#act
+goto @thu-liweijun
+break
+#if
+dayofweek fri
+#act
+goto @fri-liweijun
+break
+#if
+dayofweek sat
+#act
+goto @sat-liweijun
+break
+[@sun-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek sun
+check [211] 0
+#SAY
+<星期天>\
+嘻嘻！约会的好机会！\
+今天是双倍的工资，还有声望补贴，你拿好了！
+#act
+reset [211] 7
+set [211] 1
+give 金币 200000
+CREDITPOINT + 10
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek sun
+check [211] 0
+#SAY
+<星期天>\
+嘻嘻！约会的好机会！\
+今天是双倍的工资，还有声望补贴，你拿好了！
+#act
+reset [211] 7
+set [211] 1
+give 金币 100000
+CREDITPOINT + 4
+break
+#ELSEACT
+MESSAGEBOX 你好象今天已经领过了啊，或者你等级不够？
+CLOSE
+[@mon-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek mon
+check [212] 0
+#SAY
+<星期一>\
+新的开始哟！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [212] 1
+give 金币 100000
+CREDITPOINT + 5
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek mon
+check [212] 0
+#SAY
+<星期一>\
+新的开始哟！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [212] 1
+give 金币 50000
+CREDITPOINT + 2
+break
+#ELSEACT
+MESSAGEBOX 你今天已经领过了啊，或者你等级不够？
+CLOSE
+[@tue-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek tue
+check [213] 0
+#SAY
+<星期二>\
+要好好努力呀！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [213] 1
+give 金币 100000
+CREDITPOINT + 5
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek tue
+check [213] 0
+#SAY
+<星期二>\
+要好好努力呀！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [213] 1
+give 金币 50000
+CREDITPOINT + 2
+break
+#ELSEACT
+MESSAGEBOX 你今天已经领过了啊，或者你等级不够？
+CLOSE
+[@wed-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek wed
+check [214] 0
+#SAY
+<星期三>\
+好好关心你另一半呀！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [214] 1
+give 金币 100000
+CREDITPOINT + 5
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek wed
+check [214] 0
+#SAY
+<星期三>\
+好好关心你另一半呀！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [214] 1
+give 金币 50000
+CREDITPOINT + 2
+break
+#ELSEACT
+MESSAGEBOX 你今天已经领过了啊，或者你等级不够？
+CLOSE
+[@thu-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek thu
+check [215] 0
+#SAY
+<星期四>\
+今天小心点，怪物很厉害的！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [215] 1
+give 金币 100000
+CREDITPOINT + 5
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek thu
+check [215] 0
+#SAY
+<星期四>\
+今天小心点，怪物很厉害的！\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [215] 1
+give 金币 50000
+CREDITPOINT + 2
+break
+#ELSEACT
+MESSAGEBOX 你今天已经领过了啊，或者你等级不够？
+CLOSE
+[@fri-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek fri
+check [216] 0
+#SAY
+<星期五>\
+今天你约会了吗？\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [216] 1
+give 金币 100000
+CREDITPOINT + 5
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek fri
+check [216] 0
+#SAY
+<星期五>\
+今天你约会了吗？\
+这是今天的工资，你拿好了！
+#act
+reset [211] 7
+set [216] 1
+give 金币 50000
+CREDITPOINT + 2
+break
+#ELSEACT
+MESSAGEBOX 你今天已经领过了啊，或者你等级不够？
+CLOSE
+[@sat-liweijun]
+#IF
+ISCASTLEMASTER
+checklevel 80
+dayofweek sat
+check [217] 0
+#SAY
+<星期六>\
+晚上去哪里宵夜？\
+这是今天的工资，你拿好了！\
+#act
+reset [211] 7
+set [217] 1
+give 金币 100000
+CREDITPOINT + 5
+break
+#IF
+ISCASTLEGUILD
+checklevel 70
+dayofweek sat
+check [217] 0
+#SAY
+<星期六>\
+晚上去哪里宵夜？\
+这是今天的工资，你拿好了！\
+#act
+reset [211] 7
+set [217] 1
+give 金币 50000
+CREDITPOINT + 2
+break
+#ELSEACT
+MESSAGEBOX 你今天已经领过了啊，或者你等级不够？
+CLOSE
+
+[@CS]
+里面便是沙巴克的幻境秘道，\
+多年来只有沙巴克的成员可以独享里面的宝藏。\
+但现在我那个孪生兄弟也知道了进入的方法。\
+要注意里面的收费是与幻境相同而有别于其他地方的\
+进入秘道，我需要收取的1万金币作为费用\
+你只有同意以上收费标准,我才能送你进入沙巴克幻境秘道中。\ \
+ <去藏宝阁/@tongyi>           <去幻境七/@huan7ya>\ 
+
+
+[@tongyi]
+#IF
+ISCASTLEGUILD
+#ACT
+goto @cbgemove
+#ELSESAY
+你不是沙巴克成员，无法前往藏宝阁！\ \
+<离开/@exit>
+
+[@huan7ya]
+#IF
+ISCASTLEGUILD
+#ACT
+goto @huan7ya1
+#ELSESAY
+你不是沙巴克成员，无法前往幻境七层！\ \
+<离开/@exit>
+
+[@huan7ya1]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove h007 161 172
+#ELSESAY
+前往幻境七层需要1W金币！\ \
+<离开/@exit>
+
+[@cbgemove]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove h201 13 103
+#ELSESAY
+前往藏宝阁需要1W金币！\ \
+<离开/@exit>

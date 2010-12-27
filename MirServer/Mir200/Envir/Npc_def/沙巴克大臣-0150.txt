@@ -1,0 +1,633 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+(@@sendmsg)
+[@main]
+沙巴克是在 <$OWNERGUILD> 的管理下。受约束于 <$LORD>\
+城堡总黄金是: <$CASTLEGOLD>\
+今天的收入是: <$TODAYINCOME>\ 
+当前系统时间: <$DATETIME>\
+╔┄┄┄┄╦┄┄┄┄╦┄┄┄┄╦┄┄┄┄╦┄┄┄┄╗\
+║<收回现金/@@withdrawal>║<贮藏现金/@@receipts>║<控制城门/@treatdoor>║<修理城堡/@repaircastle>║<城主公告/@@sendmsg>║\
+╠┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╣\
+║<聘用护卫/@hirearchers>║<防御方式/@commandorder>║<查看攻城/@aboutwar>║<领取奖励/@lingqu>║<去城门口/@MOVECM>║\
+╚┄┄┄┄╩┄┄┄┄╩┄┄┄┄╩┄┄┄┄╩┄┄┄┄╝\
+
+[@aboutwar]
+下一次战役记录在:\
+<$CASTLEWARDATE> , 20:00开始。\ \
+
+<详细情况/@listwar>\
+
+<返回首页/@exit>\
+
+[@listwar]
+<$LISTOFWAR>\ \
+<返回/@aboutwar>\
+
+[@MOVECM]
+#ACT
+MAPMOVE 3 673 334
+
+[@@sendMsg]
+#if
+checkcastlegold ? 200000
+#act
+takecastlegold 200000
+SETSENDMSGFLAG
+#ELSEACT
+MESSAGEBOX 城内资金不足，不要乱用钱。
+
+[@treatdoor]
+城门当前状态为:<$CASTLEDOORSTATE>\ \ \ \
+╔┄┄┄┄┄┄╗╔┄┄┄┄┄┄╗╔┄┄┄┄┄┄╗\
+┆『<关闭城门/@closemaindoor>』┆┆『<打开城门/@openmaindoor>』┆┆『<返回上页/@main>』┆\
+╚┄┄┄┄┄┄╝╚┄┄┄┄┄┄╝╚┄┄┄┄┄┄╝\
+
+[@openmaindoor]
+#ACT
+MESSAGEBOX 城门已经打开。
+goto @main
+break
+[@closemaindoor]
+#ACT
+MESSAGEBOX 城门已经关闭。\ \ \ \
+goto @main
+break
+[@repaircastle]
+请选择要修理的位置？\ \ \ \
+╔┄┄┄┄┄┄╗╔┄┄┄┄┄┄╗╔┄┄┄┄┄┄╗\
+┆『<修理城门/@repairdoor>』┆┆『<修理城墙/@repairwalls>』┆┆『<返回上页/@main>』┆\
+╚┄┄┄┄┄┄╝╚┄┄┄┄┄┄╝╚┄┄┄┄┄┄╝\
+
+[@repairdoor]
+修理城门所需费用为:<$REPAIRDOORGOLD>金币。\ \ \
+╔┄┄┄┄┄┄╗╔┄┄┄┄┄┄╗\
+┆『<修理城门/@repairdoornow>』┆┆『<返回上页/@repaircastle>』┆\
+╚┄┄┄┄┄┄╝╚┄┄┄┄┄┄╝\
+
+
+[@repairwalls]
+修理城墙所需费用为:<$REPAIRWALLGOLD>金币。\ \ \
+╔┄┄┄┄┄┄┄╗ ╔┄┄┄┄┄┄┄╗\
+┆『<修理城墙一/@repairwallnow1>』┆ ┆『<修理城墙二/@repairwallnow2>』┆\
+╚┄┄┄┄┄┄┄╝ ╚┄┄┄┄┄┄┄╝\
+╔┄┄┄┄┄┄┄╗ ╔┄┄┄┄┄┄┄╗\
+┆『<修理城墙三/@repairwallnow3>』┆ ┆『<返回上一页/@repaircastle>』┆\
+╚┄┄┄┄┄┄┄╝ ╚┄┄┄┄┄┄┄╝\
+
+
+[@hirearchers]
+雇用弓箭手可保护城堡的安全，并维护城堡的治安。\
+每个弓箭手的雇用费用为<$ARCHERFEE>金币。\
+╔┄┄┄┄┬┄┄┄┄┬┄┄┄┄┬┄┄┄┄╗\ 
+┊聘用<一号/@hirearchernow1>┊聘用<二号/@hirearchernow2>┊聘用<三号/@hirearchernow3>┊聘用<四号/@hirearchernow4>┊\
+├┄┄┄┄┼┄┄┄┄┼┄┄┄┄┼┄┄┄┄┤\ 
+┊聘用<五号/@hirearchernow5>┊聘用<六号/@hirearchernow6>┊聘用<七号/@hirearchernow7>┊聘用<八号/@hirearchernow8>┊\
+├┄┄┄┄┼┄┄┄┄┼┄┄┄┄┼┄┄┄┄┼┄┄╗\
+┊聘用<九号/@hirearchernow9>┊聘用<十号/@hirearchernow10>┊聘用<十一/@hirearchernow11>┊聘用<十二/@hirearchernow12>┊<返回/@main>┊\
+╚┄┄┄┄┴┄┄┄┄┴┄┄┄┄┴┄┄┄┄┴┄┄╝\
+
+[@commandorder]
+守卫们正在进行沙巴克的防御工作,你想改变他们?\ \ \
+╔┄┄┄┄┬┄┄┄┄┬┄┄╗\ 
+┊<正常防守/@guardrule_normalnow>┊<进攻来者/@guardrule_pkattack>┊<返回/@main>┊\
+╚┄┄┄┄┴┄┄┄┄┴┄┄╝\
+
+[@guardrule_normalnow]
+防守方式已经更改，守卫们已经目前处于正常防御状态.\ \ \
+<返回/@commandorder>\
+
+[@guardrule_pkattack]
+防守方式已经更改，守卫们已经目前处于对来犯者进攻状态.\ \ \
+<返回/@commandorder>\
+
+[@lingqu]
+城主可以在这里凭<50点声望>领取一把属于城主专用的武器和坐骑\
+武器附带<打怪双倍经验>的属性.固守沙城一定时间还可以领取元宝\
+奖励!<注:>守城期间被其它行会占领后再次抢回将重新计时!!\ \
+<查看占领时间/@查看占领时间>\
+<查看奖励物品/@查看奖励物品>\
+<领取守沙奖励/@领取奖励>\
+<领取专用武器和坐骑/@领取武器>                    <返回首页/@main>\
+
+[@领取武器]
+#IF
+CHECKCREDITPOINT > 49
+#ACT
+CREDITPOINT - 50
+give 至尊天绝 1
+give 帝王御马 1
+GOTO @MAIN
+#ELSEACT
+MESSAGEBOX 作为一个城主.身上没几百点声望和元宝是可耻的.
+GOTO @MAIN
+break
+[@领取奖励]
+#if
+CASTLECHANGEDAY > 56
+CHECKGUILDLIST 守沙记录\56天.txt
+#ACT
+messagebox 占领天数56天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 56
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\56天.txt
+GAMEGOLD + 1000
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 49
+CHECKGUILDLIST 守沙记录\49天.txt
+#ACT
+messagebox 占领天数49天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 49
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\49天.txt
+GAMEGOLD + 800
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 42
+CHECKGUILDLIST 守沙记录\42天.txt
+#ACT
+messagebox 占领天数42天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 42
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\42天.txt
+GAMEGOLD + 700
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 35
+CHECKGUILDLIST 守沙记录\35天.txt
+#ACT
+messagebox 占领天数35天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 35
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\35天.txt
+GAMEGOLD + 600
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 28
+CHECKGUILDLIST 守沙记录\28天.txt
+#ACT
+messagebox 占领天数28天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 28
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\28天.txt
+GAMEGOLD + 500
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 21
+CHECKGUILDLIST 守沙记录\21天.txt
+#ACT
+messagebox 占领天数21天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 21
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\21天.txt
+GAMEGOLD + 400
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 14
+CHECKGUILDLIST 守沙记录\14天.txt
+#ACT
+messagebox 占领天数14天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 14
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\14天.txt
+GAMEGOLD + 300
+goto @lingqu
+break
+#if
+CASTLECHANGEDAY > 10
+CHECKGUILDLIST 守沙记录\10天.txt
+#ACT
+messagebox 占领天数10天的奖励已经领取！
+break
+#if
+CASTLECHANGEDAY > 10
+#ACT
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+ADDGUILDLIST 守沙记录\10天.txt
+GAMEGOLD + 200
+goto @lingqu
+break
+#elseact
+CLEARNAMELIST 守沙记录\10天.txt
+CLEARNAMELIST 守沙记录\14天.txt
+CLEARNAMELIST 守沙记录\21天.txt
+CLEARNAMELIST 守沙记录\28天.txt
+CLEARNAMELIST 守沙记录\35天.txt
+CLEARNAMELIST 守沙记录\42天.txt
+CLEARNAMELIST 守沙记录\49天.txt
+CLEARNAMELIST 守沙记录\56天.txt
+messagebox 对不起，占领天数未达到要求无法领取！
+
+[@查看奖励物品]
+占领10天以上，奖励元宝200个\
+占领14天以上，奖励元宝300个\
+占领21天以上，奖励元宝400个\
+占领28天以上，奖励元宝500个\
+占领35天以上，奖励元宝600个\
+占领42天以上，奖励元宝700个\
+占领49天以上，奖励元宝800个\
+占领56天以上，奖励元宝1000个\
+<返回/@lingqu>
+
+[@查看占领时间]
+#if
+CASTLECHANGEDAY > 61
+#ACT
+messagebox 当前已占领沙城：大于60天
+break
+#if
+CASTLECHANGEDAY > 60
+#ACT
+messagebox 当前已占领沙城：60天
+break
+#if
+CASTLECHANGEDAY > 59
+#ACT
+messagebox 当前已占领沙城：59天
+break
+#if
+CASTLECHANGEDAY > 58
+#ACT
+messagebox 当前已占领沙城：58天
+break
+#if
+CASTLECHANGEDAY > 57
+#ACT
+messagebox 当前已占领沙城：57天
+break
+#if
+CASTLECHANGEDAY > 56
+#ACT
+messagebox 当前已占领沙城：56天
+break
+#if
+CASTLECHANGEDAY > 55
+#ACT
+messagebox 当前已占领沙城：55天
+break
+#if
+CASTLECHANGEDAY > 54
+#ACT
+messagebox 当前已占领沙城：54天
+break
+#if
+CASTLECHANGEDAY > 53
+#ACT
+messagebox 当前已占领沙城：53天
+break
+#if
+CASTLECHANGEDAY > 52
+#ACT
+messagebox 当前已占领沙城：52天
+break
+#if
+CASTLECHANGEDAY > 51
+#ACT
+messagebox 当前已占领沙城：51天
+break
+#if
+CASTLECHANGEDAY > 50
+#ACT
+messagebox 当前已占领沙城：50天
+break
+#if
+CASTLECHANGEDAY > 49
+#ACT
+messagebox 当前已占领沙城：49天
+break
+#if
+CASTLECHANGEDAY > 48
+#ACT
+messagebox 当前已占领沙城：48天
+break
+#if
+CASTLECHANGEDAY > 47
+#ACT
+messagebox 当前已占领沙城：47天
+break
+#if
+CASTLECHANGEDAY > 46
+#ACT
+messagebox 当前已占领沙城：46天
+break
+#if
+CASTLECHANGEDAY > 45
+#ACT
+messagebox 当前已占领沙城：45天
+break
+#if
+CASTLECHANGEDAY > 44
+#ACT
+messagebox 当前已占领沙城：44天
+break
+#if
+CASTLECHANGEDAY > 43
+#ACT
+messagebox 当前已占领沙城：43天
+break
+#if
+CASTLECHANGEDAY > 42
+#ACT
+messagebox 当前已占领沙城：42天
+break
+#if
+CASTLECHANGEDAY > 41
+#ACT
+messagebox 当前已占领沙城：41天
+break
+#if
+CASTLECHANGEDAY > 40
+#ACT
+messagebox 当前已占领沙城：40天
+break
+#if
+CASTLECHANGEDAY > 39
+#ACT
+messagebox 当前已占领沙城：39天
+break
+#if
+CASTLECHANGEDAY > 38
+#ACT
+messagebox 当前已占领沙城：38天
+break
+#if
+CASTLECHANGEDAY > 37
+#ACT
+messagebox 当前已占领沙城：37天
+break
+#if
+CASTLECHANGEDAY > 36
+#ACT
+messagebox 当前已占领沙城：36天
+break
+#if
+CASTLECHANGEDAY > 35
+#ACT
+messagebox 当前已占领沙城：35天
+break
+#if
+CASTLECHANGEDAY > 34
+#ACT
+messagebox 当前已占领沙城：34天
+break
+#if
+CASTLECHANGEDAY > 33
+#ACT
+messagebox 当前已占领沙城：33天
+break
+#if
+CASTLECHANGEDAY > 32
+#ACT
+messagebox 当前已占领沙城：32天
+break
+#if
+CASTLECHANGEDAY > 31
+#ACT
+messagebox 当前已占领沙城：31天
+break
+#if
+CASTLECHANGEDAY > 30
+#ACT
+messagebox 当前已占领沙城：30天
+break
+#if
+CASTLECHANGEDAY > 29
+#ACT
+messagebox 当前已占领沙城：29天
+break
+#if
+CASTLECHANGEDAY > 28
+#ACT
+messagebox 当前已占领沙城：28天
+break
+#if
+CASTLECHANGEDAY > 27
+#ACT
+messagebox 当前已占领沙城：27天
+break
+#if
+CASTLECHANGEDAY > 26
+#ACT
+messagebox 当前已占领沙城：26天
+break
+#if
+CASTLECHANGEDAY > 25
+#ACT
+messagebox 当前已占领沙城：25天
+break
+#if
+CASTLECHANGEDAY > 24
+#ACT
+messagebox 当前已占领沙城：24天
+break
+#if
+CASTLECHANGEDAY > 23
+#ACT
+messagebox 当前已占领沙城：23天
+break
+#if
+CASTLECHANGEDAY > 22
+#ACT
+messagebox 当前已占领沙城：22天
+break
+#if
+CASTLECHANGEDAY > 21
+#ACT
+messagebox 当前已占领沙城：21天
+break
+#if
+CASTLECHANGEDAY > 20
+#ACT
+messagebox 当前已占领沙城：20天
+break
+#if
+CASTLECHANGEDAY > 19
+#ACT
+messagebox 当前已占领沙城：19天
+break
+#if
+CASTLECHANGEDAY > 18
+#ACT
+messagebox 当前已占领沙城：18天
+break
+#if
+CASTLECHANGEDAY > 17
+#ACT
+messagebox 当前已占领沙城：17天
+break
+#if
+CASTLECHANGEDAY > 16
+#ACT
+messagebox 当前已占领沙城：16天
+break
+#if
+CASTLECHANGEDAY > 15
+#ACT
+messagebox 当前已占领沙城：15天
+break
+#if
+CASTLECHANGEDAY > 14
+#ACT
+messagebox 当前已占领沙城：14天
+break
+#if
+CASTLECHANGEDAY > 13
+#ACT
+messagebox 当前已占领沙城：13天
+break
+#if
+CASTLECHANGEDAY > 12
+#ACT
+messagebox 当前已占领沙城：12天
+break
+#if
+CASTLECHANGEDAY > 12
+#ACT
+messagebox 当前已占领沙城：12天
+break
+#if
+CASTLECHANGEDAY > 12
+#ACT
+messagebox 当前已占领沙城：12天
+break
+#if
+CASTLECHANGEDAY > 11
+#ACT
+messagebox 当前已占领沙城：11天
+break
+#if
+CASTLECHANGEDAY > 10
+#ACT
+messagebox 当前已占领沙城：10天
+break
+#if
+CASTLECHANGEDAY > 9
+#ACT
+messagebox 当前已占领沙城：9天
+break
+#if
+CASTLECHANGEDAY > 8
+#ACT
+messagebox 当前已占领沙城：8天
+break
+#if
+CASTLECHANGEDAY > 7
+#ACT
+messagebox 当前已占领沙城：7天
+break
+#if
+CASTLECHANGEDAY > 6
+#ACT
+messagebox 当前已占领沙城：6天
+break
+#if
+CASTLECHANGEDAY > 5
+#ACT
+messagebox 当前已占领沙城：5天
+break
+#if
+CASTLECHANGEDAY > 4
+#ACT
+messagebox 当前已占领沙城：4天
+break
+#if
+CASTLECHANGEDAY > 3
+#ACT
+messagebox 当前已占领沙城：3天
+break
+#if
+CASTLECHANGEDAY > 2
+#ACT
+messagebox 当前已占领沙城：2天
+break
+#if
+CASTLECHANGEDAY > 1
+#ACT
+messagebox 当前已占领沙城：1天
+#elseact
+messagebox 当前已占领沙城：0天

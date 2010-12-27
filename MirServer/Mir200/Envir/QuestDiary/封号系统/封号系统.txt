@@ -1,0 +1,21 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052 
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@封号分类]
+{
+#IF
+checkjob warrior
+#ACT
+#CALL [\封号系统\战士封号.txt] @战士封号
+break
+#IF
+checkjob wizard
+#ACT
+#CALL [\封号系统\法师封号.txt] @法师封号
+break
+#IF
+checkjob taoist
+#ACT
+#CALL [\封号系统\道士封号.txt] @道士封号
+break
+}

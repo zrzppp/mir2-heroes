@@ -1,0 +1,37 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052 
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@main]
+#IF
+CheckGroupCount = 5
+CHECKRANGEROUPCOUNT 8 > 4
+#ACT
+GROUPMAPMOVE N109 50 25
+break
+#ELSESAY
+你们没有能进行传送到下一层.<下层将爆所有类装备.还有蛙神>\
+<原因是>:你们队伍的人数没有5人或者有成员的距离超过了本屏幕\
+1:留在此地消灭怪物获得装备.等待其他队伍人员伤亡后重新组队\
+2:集中全队成员再次消灭一个青蛙王子.可以获得传送的机会\ \
+3:<叫安全区有元宝的玩家使用PK飞到你身边重新组队/@重新组队>\ \
+4:<自己使用元宝传送到下一个地图/@元宝进入>--要元宝:<$STR(G17)>个\
+[@重新组队]
+#IF
+CHECKCREDITPOINT > 1
+#ACT
+CREDITPOINT - 1
+SENDMSG 0 [%s]和他的伙伴被困在了青蛙森林四层.请有元宝的玩家输入@PK去和他们一起打装备
+break
+#ELSEACT 
+MESSAGEBOX [出错]:全服喊话一次需要声望一点.
+break
+[@元宝进入]
+#IF
+CHECKGAMEGOLD > G17
+#ACT
+GAMEGOLD - G17
+MAPMOVE N109 50 25
+break
+#ELSEACT 
+MESSAGEBOX [出错]:你身上没有[<$STR(G17)>]个元宝.
+break

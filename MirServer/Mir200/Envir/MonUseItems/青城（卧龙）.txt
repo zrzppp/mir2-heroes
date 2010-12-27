@@ -1,0 +1,46 @@
+;=============================人形宝宝配制文件=======================
+[BaseInfo]
+;职业
+Job = 2
+;性别
+Gender = 0
+;头发
+Hair = 2
+;使用魔法
+Magic = 神圣战甲术,幽灵盾,施毒术,灵魂火符,无极真气,召唤月灵,气功波
+;==============================身上装备============================
+[UseItems]
+;衣服
+DRESSNAME = 凤天魔甲 
+;武器
+WEAPONNAME = 玄天
+;照明物
+RIGHTHANDNAME = 荣誉勋章45号
+;项链
+NECKLACENAME = 光芒项链[任务]
+;头盔
+HELMETNAME = 任务头盔
+;左手镯
+ARMRINGLNAME = 光芒护腕[任务]
+;右手镯
+ARMRINGRNAME = 光芒护腕[任务]
+;左戒指
+RINGLNAME = 光芒道戒[任务]
+;右戒指
+RINGRNAME = 光芒道戒[任务]
+;物品
+BUJUKNAME = 诅咒符
+;腰带
+BELTNAME = 强化光芒腰带
+;鞋子
+BOOTSNAME = 强化光芒道靴 
+;宝石
+CHARMNAME = 魔血石(小)
+;死亡掉装备几率 数字越小掉装备几率越高
+DieDropUseItemRate = 200
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 1
+
+;是否允许挖物品(1=允许 0=不允许)
+ButchItem = 1

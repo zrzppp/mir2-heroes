@@ -1,0 +1,9 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+#AutoRun NPC MIN 1 @控制禁言
+#AutoRun NPC MIN 1 @检测死亡
+#AutoRun NPC MIN 2 @执行死亡
+#AutoRun NPC MIN 1 @赠送锦囊
+#AutoRun NPC MIN 20 @送出监狱
+#AutoRun NPC MIN 28 @解除禁言

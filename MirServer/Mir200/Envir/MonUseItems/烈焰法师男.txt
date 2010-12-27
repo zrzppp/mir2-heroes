@@ -1,0 +1,46 @@
+;=============================人形宝宝配制文件=======================
+[BaseInfo]
+;职业
+Job = 1
+;性别
+Gender = 0
+;头发
+Hair = 2
+;使用魔法
+Magic = 雷电术,冰咆哮,魔法盾,火龙焰,抗拒火环,疾光电影
+;==============================身上装备============================
+[UseItems]
+;衣服
+DRESSNAME = 法神披风 
+;武器
+WEAPONNAME = 血饮
+;照明物
+RIGHTHANDNAME = 荣誉勋章34号
+;项链
+NECKLACENAME = 烈焰项链
+;头盔
+HELMETNAME = 魔龙盔
+;左手镯
+ARMRINGLNAME = 烈焰护腕
+;右手镯
+ARMRINGRNAME = 烈焰护腕
+;左戒指
+RINGLNAME = 烈焰魔戒
+;右戒指
+RINGRNAME = 烈焰魔戒
+;物品
+BUJUKNAME = 
+;腰带
+BELTNAME = 烈焰腰带
+;鞋子
+BOOTSNAME = 烈焰魔靴 
+;宝石
+CHARMNAME = 
+;死亡掉装备几率 数字越小掉装备几率越高
+DieDropUseItemRate = 20
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 0
+
+;是否允许挖物品(1=允许 0=不允许)
+ButchItem = 0

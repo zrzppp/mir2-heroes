@@ -1,0 +1,188 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@拜师学艺]
+{
+1.拜师时必须面对面!由徒弟提出请求.且只能在50级以下!\
+2.徒弟<80级出师/FCOLOR=250>,85级可以当别人的师傅!\
+3.出师后师傅可得到<5点声望值5个元宝5点属性/FCOLOR=253>\
+4.收徒弟成功出师10个以上.所有奖励翻倍!\
+4.强行解除师徒关系的需要声望10点!\ \ 
+<我要拜师/@agree>           你目前已经收了：<$HUMAN(TDCS)>个徒弟!\ \
+<离开师父/@离开师父>              <开除徒弟/@离开徒弟>              <返回上页/@MAIN>\
+[@agree]
+#if
+checkismaster
+#act
+break
+#say
+没事别来这玩！！！\ \
+<返回/@main>
+#if
+checkmaster
+#act 
+break
+#say
+你都已经拜了别人为师，怎么还拜师！！！ \ \
+<返回/@main>
+#if
+checkposemaster
+#say
+你找了个什么人做师父，怎么现在还是别人的徒弟？\ \
+<返回/@main>
+#act
+break
+#if
+checkposedir
+#elsesay
+拜师必须面对面.你没仔细看上面的规则吗?\ \ \
+<返回/@main>
+#elseact
+break
+#if
+checklevel 50
+#say
+你都50级以上了还要找师父？\ \
+<返回/@main>
+#act
+break
+#if
+checkposelevel > 84
+#elsesay
+你找个什么师父呀，等级这么低？师傅的等级必须在85级以上\ \
+<返回/@main>
+#elseact
+break
+#act
+master
+[@StartGetMaster]
+拜师仪式正式开始。\ \
+你是否确认拜师？\ \
+<确认拜师/@RequestMaster>
+[@StartMaster]
+拜师仪式正式开始。\ \
+对方已经向你提出拜师请求。\ \
+[@RequestMaster]
+;检查所需物品
+#if 
+;checkitemw 力量戒指 1
+#elsesay
+你都没信物，怎么拜呀！！！\ \
+<返回/@main>
+#elseact
+break
+#if
+#act
+;takew 力量戒指 1
+master requestmaster
+[@WateMaster]
+你已向对方请求拜师，请耐心等待对方的答复。
+[@RevMaster]
+对方想拜你为师，你是否想收此人为徒？ \ \
+<同意/@ResposeMaster> \
+<不同意/@ResposeMasterFail>
+[@ResposeMaster]
+#if
+#act
+master responsemaster ok
+[@ResposeMasterFail]
+#if
+#act
+master responsemaster fail
+[@EndMaster]
+你们二个已经是师徒关系了。\ \
+<关闭/@exit>
+[@EndMasterFail]
+拜师失败！\ \
+<关闭/@exit>
+[@MasterDirErr]
+对方没站好位置
+[@MasterCheckDir]
+请站好位置\ \
+[@HumanTypeErr]
+此人不可以做你的师父。
+;==========================================
+;开始
+[@离开师父]
+#if
+checkgold  1000000
+havemaster
+#act
+take 金币 1000000
+unmaster requestunmaster force
+SENDMSG 4 [%s]已经和他的『师父』强行脱离师徒关系！
+#elsesay
+你不是别人的徒弟，或者你金币不够？\
+<确定/@exit>
+
+[@离开徒弟]
+#if
+CHECKCREDITPOINT > 9
+havemaster
+#act
+CREDITPOINT - 10
+unmaster requestunmaster force
+SENDMSG 4 [%s]已经和他的『徒弟』强行脱离师徒关系！
+#say
+你已经将你的徒弟逐出师门了。\
+<离开/@exit>
+#elsesay
+你不是别人的师傅，或者你金币不够？\
+<离开/@exit>
+;=======================================================
+[@UnMasterCheckDir]
+按正常出师步骤，必须二个人对面对站好位置，\
+如果人来不了你只能选择强行出师了。\ \
+<我要强行出师/@fUnMaster>\
+<返回/@main>
+;=======================================================
+;对面位置不是人物时显示的信息
+[@UnMasterTypeErr]
+你对面站了个什么东西，怎么不太象人来的。\ \
+<返回/@main>
+[@UnIsMaster]
+必须由徒弟发出请求！！！\ \
+<返回/@main>
+[@UnMasterError]
+不要来捣乱！！！\ \
+<返回/@main>
+;=======================================================
+;开始程序后，双方显示的信息
+[@StartUnMaster]
+出师仪式现在开始！！！\ \
+是否确定真的要脱离师徒关系？\ \
+<确定脱离/@RequestUnMaster>
+[@WateUnMaster]
+出师仪式现在开始！！！\ \
+;=======================================================
+;发出请求
+[@RequestUnMaster]
+#if
+havemaster
+#act
+unmaster requestunmaster
+;=======================================================
+;回应请求
+[@ResposeUnMaster]
+#if
+havemaster
+#act
+unmaster responseunmaster
+;===============================================
+;请求后显示的信息
+[@WateUnMaster]
+你已向对方发出请求，请耐心等待对方的答复。
+;===============================================
+;请求后对方显示的信息
+[@RevUnMaster]
+对方向你请求，你是否答应？ \ \ \
+<我愿意/@RequestUnMaster>
+;===============================================
+[@ExeMasterFail]
+你都没师父，跑来做什么？ \ \
+[返回/@main]
+;==============================================
+;完成后的提示信息
+[@UnMasterEnd]
+从今以后，你们已经脱离了师徒关系！！！
+}

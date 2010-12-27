@@ -1,0 +1,12 @@
+[ProjectInfo]
+InputFileName=D:\GameOfMirs\DBServer\DBServer.exe
+ScriptIncludedInCompilation=1
+Count=0
+Options=1408
+CheckKernelModeDebugger=1
+CompressionMode=1
+VMCodeSectionName=.LITE
+VMExecutorCount=1
+RunParameters=
+[Folders]
+Count=0

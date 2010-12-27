@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008-08-10 22:25:08.281.pas,D:\GameOfMir\LogDataServer\Unit1.pas=D:\GameOfMir\LogDataServer\LogManage.pas</Transaction>
+    <Transaction>2008-08-10 22:25:08.281.dfm,D:\GameOfMir\LogDataServer\Unit1.dfm=D:\GameOfMir\LogDataServer\LogManage.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

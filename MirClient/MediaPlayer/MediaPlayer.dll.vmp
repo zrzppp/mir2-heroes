@@ -1,0 +1,15 @@
+[ProjectInfo]
+InputFileName=D:\GameOfMir\MirClient\MediaPlayer\MediaPlayer.dll
+ScriptIncludedInCompilation=1
+Count=0
+Options=256
+CheckKernelModeDebugger=0
+AddressSort=0
+AddressSearchString=
+AddressSearchMatchCase=0
+VMCodeSectionName=.FIR
+VMExecutorCount=1
+RunParameters=
+CompressionMode=1
+[Folders]
+Count=0

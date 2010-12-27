@@ -1,0 +1,539 @@
+﻿<!--
+    Xunlei Media Player Skin Theme
+    Copyright (C) Thunder Corporation.  All Rights Reserved.
+-->
+<theme name="XmpSkin" author="Thunder Corporation" copyright="(C) Thunder Corporation." scriptFile="XMPLayout.js;xmp.js;PlayControl.js;XMPMenu.js;PlayCtrlBar.js;MiniCtrlBar.js;TopBar.js;ConfigWnd.js;MediaInfo.js;AutoShutdownMsgBox.js;MsgBox.js;SkinMgrHost.js;ExpandBar.js;MainWnd.js;XMPMonitor.js">
+    <resource>
+        <fontlist>
+            <font id="system.default" family="宋体" size="12" bold="0" />
+            <font id="system.font.bold" family="幼圆" size="18" bold="1" />
+            <font id="system.default.link" family="宋体" size="12" underline="1" />
+            <font id="system.title.default" family="宋体" size="12" bold="1" />
+            <font id="system.static.default" family="宋体" size="12" bold="0" />
+            <font id="mediainfo.default" family="宋体" size="12" bold="0" />
+        </fontlist>
+        <colorlist>
+            <color id="menu.text" value="RGB(0,32,69)" />
+            <color id="menu.bkn" value="RGB(195,232,255)" />
+            <color id="menu.selbkn" value="RGB(73,169,242)" />
+            <color id="menu.seltext" value="RGB(255,255,255)" />
+            <color id="menu.separator" value="RGB(155,195,219)" />
+            <color id="static.msg" value="RGB(54,110,156)" />
+            <color id="progress.text" value="RGB(145,195,237)" />
+            <color id="hallidColor" value="RGB(221,240,255)" />
+            <color id="static.title" value="RGB(255,255,255)" />
+            <color id="static.title2" value="RGB(196,196,196)" />
+            <color id="activex.bkcolor" value="RGB(231,231,231)" />
+            <color id="static.title3" value="RGB(52,84,114)" />
+            <color id="static.normaltext" value="RGB(58,58,58)" />
+            <color id="static.disabletext" value="RGB(144,144,144)" />
+            <color id="dlg.default.color" value="RGB(54,110,156)" />
+            <color id="file.title.default" value="RGB(180,214,242)" />
+        </colorlist>
+        <iconlist>
+            <icon id="mainmenu.open" width="14" height="14" value="Menu/MenuOpen.ico" />
+            <icon id="menu.check" value="Menu/MenuChecked.ico" />
+            <icon id="tray" value="tray.ico" />
+            <icon id="mainwnd.small" value="XMPLive.ico" />
+            <icon id="mainwnd.big" value="XMPLive.ico" />
+            <icon id="mainmenu.autoshutdown" value="Menu/shutdown_sel.ico.ico" />
+            <icon id="mainmenu.exit" width="14" height="14" value="Menu/exit.ico" />
+            <icon id="mainmenu.sysconfig" width="14" height="14" value="Menu/sysconfig.ico" />
+            <icon id="mainmenu.topmost" width="14" height="14" value="Menu/MenuTopmost.ico" />
+            <icon id="mainmenu.shutdown_unsel" width="14" height="14" value="Menu/shutdown_unsel.ico" />
+            <icon id="mainmenu.shutdown_sel" width="14" height="14" value="Menu/shutdown_sel.ico" />
+        </iconlist>
+        <imagelist>
+            <image id="image.logo" value="MainFrmLogo.bmp" keycolor="FF00FF" />
+            <image id="GeneralButton.bmp" value="sysconfig/GeneralButton.bmp" keycolor="FF00FF" />
+            <image id="ExpandBar.bmp" value="ExpandBar.bmp" />
+            <image id="SizeRightButton.bmp" value="SizeRightButton.bmp" keycolor="FF00FF" />
+            <image id="SizeLeftButton.bmp" value="SizeLeftButton.bmp" keycolor="FF00FF" />
+            <image id="CF_Bk.bmp" value="sysconfig/sysconfig_bk.bmp" />
+            <image id="CF_LeftTop.bmp" value="sysconfig/lefttop.bmp" />
+            <image id="CF_Left.bmp" value="sysconfig/left.bmp" />
+            <image id="CF_Right.bmp" value="sysconfig/right.bmp" />
+            <image id="CF_LeftBottom.bmp" value="sysconfig/leftbottom.bmp" />
+            <image id="CF_RightTop.bmp" value="sysconfig/righttop.bmp" />
+            <image id="CF_Top.bmp" value="sysconfig/top.bmp" />
+            <image id="CF_Bottom.bmp" value="sysconfig/bottom.bmp" />
+            <image id="CF_RightBottom.bmp" value="sysconfig/rightbottom.bmp" />
+            <image id="CF_General_Uncheck_Normal.bmp" value="sysconfig/General_Normal.bmp" />
+            <image id="CF_General_Uncheck_Hover.bmp" value="sysconfig/General_Hover.bmp" />
+            <image id="CF_General_Down.bmp" value="sysconfig/General_Down.bmp" />
+            <image id="CF_General_Check_Normal.bmp" value="sysconfig/General_Check.bmp" />
+            <image id="CF_Play_Uncheck_Normal.bmp" value="sysconfig/Play_Normal.bmp" />
+            <image id="CF_Play_Uncheck_Hover.bmp" value="sysconfig/Play_Hover.bmp" />
+            <image id="CF_Play_Down.bmp" value="sysconfig/Play_Down.bmp" />
+            <image id="CF_Play_Check_Normal.bmp" value="sysconfig/Play_Check.bmp" />
+            <image id="CF_Associate_Uncheck_Normal.bmp" value="sysconfig/Associate_Normal.bmp" />
+            <image id="CF_Associate_Uncheck_Hover.bmp" value="sysconfig/Associate_Hover.bmp" />
+            <image id="CF_Associate_Down.bmp" value="sysconfig/Associate_Down.bmp" />
+            <image id="CF_Associate_Check_Normal.bmp" value="sysconfig/Associate_Check.bmp" />
+            <image id="CF_Color_Uncheck_Normal.bmp" value="sysconfig/Color_Normal.bmp" />
+            <image id="CF_Color_Uncheck_Hover.bmp" value="sysconfig/Color_Hover.bmp" />
+            <image id="CF_Color_Down.bmp" value="sysconfig/Color_Down.bmp" />
+            <image id="CF_Color_Check_Normal.bmp" value="sysconfig/Color_Check.bmp" />
+            <image id="CF_Speed_Uncheck_Normal.bmp" value="sysconfig/Speed_Normal.bmp" />
+            <image id="CF_Speed_Uncheck_Hover.bmp" value="sysconfig/Speed_Hover.bmp" />
+            <image id="CF_Speed_Down.bmp" value="sysconfig/Speed_Down.bmp" />
+            <image id="CF_Speed_Check_Normal.bmp" value="sysconfig/Speed_Check.bmp" />
+            <image id="CF_Hotkey_Uncheck_Normal.bmp" value="sysconfig/Hotkey_Normal.bmp" />
+            <image id="CF_Hotkey_Uncheck_Hover.bmp" value="sysconfig/Hotkey_Hover.bmp" />
+            <image id="CF_Hotkey_Down.bmp" value="sysconfig/Hotkey_Down.bmp" />
+            <image id="CF_Hotkey_Check_Normal.bmp" value="sysconfig/Hotkey_Check.bmp" />
+            <image id="CF_Subtitle_Uncheck_Normal.bmp" value="sysconfig/Subtitle_Normal.bmp" />
+            <image id="CF_Subtitle_Uncheck_Hover.bmp" value="sysconfig/Subtitle_Hover.bmp" />
+            <image id="CF_Subtitle_Down.bmp" value="sysconfig/Subtitle_Down.bmp" />
+            <image id="CF_Subtitle_Check_Normal.bmp" value="sysconfig/Subtitle_Check.bmp" />
+            <image id="CF_CloseButton.bmp" value="sysconfig/CloseButtom.bmp" />
+            <image id="MNF_Bk.bmp" value="mini/MNF_Bk.bmp" />
+            <image id="MNF_LeftTop.bmp" value="MiniBK/lefttop.bmp" />
+            <image id="MNF_LeftRight.bmp" value="MiniBK/left.bmp" />
+            <image id="MNF_LeftBottom.bmp" value="MiniBK/leftbottom.bmp" />
+            <image id="MNF_RightTop.bmp" value="MiniBK/righttop.bmp" />
+            <image id="MNF_TopBottom.bmp" value="MiniBK/top.bmp" />
+            <image id="MNF_RightBottom.bmp" value="MiniBK/rightbottom.bmp" />
+            <image id="MiniBar_Bk.bmp" value="mini/MiniBar_Bk.bmp" />
+            <image id="MiniBar_RightBottom.bmp" value="mini/MiniBar_RightBottom.bmp" />
+            <image id="MiniBar_Bottom.bmp" value="mini/MiniBar_Bottom.bmp" />
+            <image id="MiniBar_LeftBottom.bmp" value="mini/MiniBar_Bottom.bmp" />
+            <image id="MiniBar_PrevButton.bmp" value="mini/MiniBar_PrevButton.bmp" />
+            <image id="MiniBar_PlayButton.bmp" value="mini/MiniBar_PlayButton.bmp" />
+            <image id="MiniBar_PauseButton.bmp" value="mini/MiniBar_PauseButton.bmp" />
+            <image id="MiniBar_NextButton.bmp" value="mini/MiniBar_NextButton.bmp" />
+            <image id="MiniBar_OpenButton.bmp" value="mini/MiniBar_OpenButton.bmp" />
+            <image id="MiniBar_SoundButton.bmp" value="mini/MiniBar_SoundButton.bmp" />
+            <image id="MiniBar_SilenceButton.bmp" value="mini/MiniBar_SilenceButton.bmp" />
+            <image id="MiniBar_SoundBarLeft.bmp" value="mini/SoundBarLeft.bmp" />
+            <image id="MiniBar_SoundBarInnerLeft.bmp" value="mini/SoundBarInnerLeft.bmp" />
+            <image id="MiniBar_SoundBarInnerRight.bmp" value="mini/SoundBarInnerRight.bmp" />
+            <image id="MiniBar_SoundBarRight.bmp" value="mini/SoundBarRight.bmp" />
+            <image id="MiniBar_SoundBar.bmp" value="mini/MiniBar_SoundBar.bmp" keycolor="FF00FF" />
+            <image id="MiniBar_SeekBarLeft.bmp" value="mini/MiniBar_SeekBarLeft.bmp" />
+            <image id="MiniBar_SeekBarRight.bmp" value="mini/MiniBar_SeekBarRight.bmp" />
+            <image id="MiniBar_SeekBarBuffered.bmp" value="mini/MiniBar_SeekBarBuffered.bmp" />
+            <image id="MiniBar_SeekBarTransparent.bmp" value="mini/MiniBar_SeekBarTransparent.bmp" keycolor="FF00FF" />
+            <image id="MiniBar_SeekBar.bmp" value="mini/MiniBar_SeekBar.bmp" keycolor="FF00FF" />
+            <image id="TopBar_LeftTop.bmp" value="mini/lefttop.bmp" />
+            <image id="TopBar_LeftCenter.bmp" value="mini/leftcenter.bmp" />
+            <image id="TopBar_LeftBottom.bmp" value="mini/leftbottom.bmp" />
+            <image id="TopBar_RightTop.bmp" value="mini/righttop.bmp" />
+            <image id="TopBar_RightCenter.bmp" value="mini/rightcenter.bmp" />
+            <image id="TopBar_RightBottom.bmp" value="mini/rightbottom.bmp" />
+            <image id="TopBar_Top.bmp" value="mini/top.bmp" />
+            <image id="TopBar_Center.bmp" value="mini/center.bmp" />
+            <image id="TopBar_Bottom.bmp" value="mini/bottom.bmp" />
+            <image id="TopBar_ScreenButton.bmp" value="mini/TopBar_ScreenButton.bmp" />
+            <image id="TopBar_NormalModeButton.bmp" value="mini/TopBar_NormalModeButton.bmp" />
+            <image id="TopBar_MiniModeButton.bmp" value="mini/TopBar_MiniModeButton.bmp" />
+            <image id="TopBar_NotTopMostButton.bmp" value="mini/TopBar_NotTopMostButton.bmp" />
+            <image id="TopBar_TopMostButton.bmp" value="mini/TopBar_TopMostButton.bmp" />
+            <image id="TopBar_MinButton.bmp" value="mini/TopBar_MinButton.bmp" />
+            <image id="TopBar_CloseButton.bmp" value="mini/TopBar_CloseButton.bmp" />
+            <image id="TopBar_Separator.bmp" value="mini/TopBar_Separator.bmp" />
+            <image id="StopButton.bmp" value="Play/StopButton.bmp" />
+            <image id="PrevButton.bmp" value="Play/PrevButton.bmp" />
+            <image id="PlayButton.bmp" value="Play/PlayButton.bmp" />
+            <image id="PauseButton.bmp" value="Play/PauseButton.bmp" />
+            <image id="NextButton.bmp" value="Play/NextButton.bmp" />
+            <image id="OpenButton.bmp" value="Play/OpenButton.bmp" keycolor="FF00FF" />
+            <image id="SoundButton.bmp" value="Play/SoundButton.bmp" />
+            <image id="SilenceButton.bmp" value="Play/SilentButton.bmp" />
+            <image id="ScreenButton.bmp" value="Play/ScreenButton.bmp" keycolor="FF00FF" />
+            <image id="SoundBarLeft.bmp" value="Play/SoundBarLeft.bmp" />
+            <image id="SoundBarInnerLeft.bmp" value="Play/SoundBarInnerLeft.bmp" />
+            <image id="SoundBarInnerRight.bmp" value="Play/SoundBarInnerRight.bmp" />
+            <image id="SoundBarRight.bmp" value="Play/SoundBarRight.bmp" />
+            <image id="SoundBar.bmp" value="Play/SoundBar.bmp" keycolor="FF00FF" />
+            <image id="ProgressBarBGLeft.bmp" value="Processbar/ProgressBarBGLeft.bmp" />
+            <image id="ProgressBarFGLeft.bmp" value="Processbar/ProgressBarFGLeft.bmp" />
+            <image id="SeekBarInnerRight.bmp" value="Processbar/SeekBarInnerRight.bmp" />
+            <image id="SeekBarRight.bmp" value="Processbar/SeekBarRight.bmp" />
+            <image id="SeekBarBuffered.bmp" value="Processbar/SeekBarBuffered.bmp" />
+            <image id="SeekBarRightBuffered.bmp" value="Processbar/SeekBarRightBuffered.bmp" />
+            <image id="SeekBarLeft.bmp" value="Processbar/SeekBarLeft.bmp" />
+            <image id="SeekBarInnerLeft.bmp" value="Processbar/SeekBarInnerLeft.bmp" />
+            <image id="SeekBarTransparent.bmp" value="Processbar/SeekBarTransparent.bmp" keycolor="FF00FF" />
+            <image id="SeekBar.bmp" value="Processbar/SeekBar.bmp" keycolor="FF00FF" />
+            <image id="MenuButton.bmp" value="MenuButton.bmp" />
+            <image id="MinButton.bmp" value="MinButton.bmp" />
+            <image id="MaxButton.bmp" value="MaxButton.bmp" />
+            <image id="RestoreButton.bmp" value="RestoreButton.bmp" />
+            <image id="CloseButton.bmp" value="CloseButton.bmp" />
+            <image id="MenuSeparator.bmp" value="MenuSeparator.bmp" />
+            <image id="SearchButton.bmp" value="SearchButton.bmp" />
+            <image id="ChangeSkin.bmp" value="Play/ChangeSkin.bmp" keycolor="FF00FF" />
+            <image id="ShowPlaylist.bmp" value="Play/ShowPlaylist.bmp" keycolor="FF00FF" />
+            <image id="HidePlaylist.bmp" value="Play/HidePlaylist.bmp" keycolor="FF00FF" />
+            <image id="PlayTag_Uncheck_Normal.bmp" value="PlayTag_Normal.bmp" />
+            <image id="PlayTag_Uncheck_Hover.bmp" value="PlayTag_Hover.bmp" />
+            <image id="PlayTag_Down.bmp" value="PlayTag_Down.bmp" />
+            <image id="PlayTag_Check_Normal.bmp" value="PlayTag_Check.bmp" />
+            <image id="ClassicalTag_Uncheck_Normal.bmp" value="ClassicalTag_Normal.bmp" />
+            <image id="ClassicalTag_Uncheck_Hover.bmp" value="ClassicalTag_Hover.bmp" />
+            <image id="ClassicalTag_Down.bmp" value="ClassicalTag_Down.bmp" />
+            <image id="ClassicalTag_Check_Normal.bmp" value="ClassicalTag_Check.bmp" />
+            <image id="TheaterTag_Uncheck_Normal.bmp" value="TheaterTag_Normal.bmp" />
+            <image id="TheaterTag_Uncheck_Hover.bmp" value="TheaterTag_Hover.bmp" />
+            <image id="TheaterTag_Check_Normal.bmp" value="TheaterTag_Check.bmp" />
+            <image id="TheaterTag_Down.bmp" value="TheaterTag_Down.bmp" />
+            <image id="SearchTag_Uncheck_Normal.bmp" value="SearchTag_Normal.bmp" />
+            <image id="SearchTag_Uncheck_Hover.bmp" value="SearchTag_Hover.bmp" />
+            <image id="SearchTag_Down.bmp" value="SearchTag_Down.bmp" />
+            <image id="SearchTag_Check_Normal.bmp" value="SearchTag_Check.bmp" />
+            <image id="MovieHallTag_Uncheck_Normal.bmp" value="MovieHallTag_Normal.bmp" />
+            <image id="MovieHallTag_Uncheck_Hover.bmp" value="MovieHallTag_Hover.bmp" />
+            <image id="MovieHallTag_Down.bmp" value="MovieHallTag_Down.bmp" />
+            <image id="MovieHallTag_Check_Normal.bmp" value="MovieHallTag_Check.bmp" />
+            <image id="TagCloseButton.bmp" value="TagCloseButton.bmp" keycolor="FF00FF" />
+            <image id="MF_LeftTop.bmp" value="mainfrm/MF_LeftTop.bmp" />
+            <image id="MF_RightTop.bmp" value="mainfrm/MF_RightTop.bmp" />
+            <image id="MF_Top.bmp" value="mainfrm/MF_Top.bmp" />
+            <image id="MF_LeftBottom.bmp" value="mainfrm/MF_LeftBottom.bmp" />
+            <image id="MF_RightBottom.bmp" value="mainfrm/MF_RightBottom.bmp" />
+            <image id="MF_Bottom.bmp" value="mainfrm/MF_Bottom.bmp" />
+            <image id="MF_Left.bmp" value="mainfrm/MF_Left.bmp" />
+            <image id="MF_Right.bmp" value="mainfrm/MF_Right.bmp" />
+            <image id="MF_Bk.bmp" value="MF_Bk.bmp" />
+            <image id="MF_Bk2.bmp" value="MF_Bk2.bmp" />
+            <image id="PB_Bottom.bmp" value="Play/PB_Bottom.bmp" />
+            <image id="Topbar_title.bmp" value="Topbar_title.bmp" keycolor="FF00FF" />
+            <image id="SearchBar_left.bmp" value="SearchBar_left.bmp" />
+            <image id="PB_rightbottom.bmp" value="Play/PlayBar_front.bmp" keycolor="FF00FF" />
+            <image id="SearchEdit.bmp" value="SearchEdit.bmp" keycolor="FF00FF" />
+            <image id="MI_Sep.bmp" value="MI_Sep.bmp" />
+            <image id="notify_icon_notice.bmp" value="notify_icon_notice.bmp" keycolor="FF00FF" />
+            <image id="notify_icon_error.bmp" value="notify_icon_error.bmp" keycolor="FF00FF" />
+            <image id="about.bmp" value="About.bmp" keycolor="FF00FF" />
+            <image id="AboutBox_line.bmp" value="AboutBox_line.bmp" keycolor="FF00FF" />
+            <image id="SnapshotImg.bmp" value="SnapshotImg.bmp" keycolor="FF00FF" />
+            <image id="menuselbk.bmp" value="menu/menuselbk.bmp" keycolor="FF00FF" />
+            <image id="menubk.lefttop.bmp" value="menu/lefttop.bmp" keycolor="FF00FF" />
+            <image id="menubk.leftbottom.bmp" value="menu/leftbottom.bmp" keycolor="FF00FF" />
+            <image id="menubk.left.bmp" value="menu/left.bmp" keycolor="FF00FF" />
+            <image id="menubk.righttop.bmp" value="menu/righttop.bmp" keycolor="FF00FF" />
+            <image id="menubk.rightbottom.bmp" value="menu/rightbottom.bmp" keycolor="FF00FF" />
+            <image id="menubk.right.bmp" value="menu/right.bmp" keycolor="FF00FF" />
+            <image id="menubk.top.bmp" value="menu/top.bmp" keycolor="FF00FF" />
+            <image id="menubk.bk.bmp" value="menu/bk.bmp" keycolor="FF00FF" />
+            <image id="menubk.bottom.bmp" value="menu/bottom.bmp" keycolor="FF00FF" />
+        </imagelist>
+    </resource>
+    <menulist>
+        <menu id="mainmenu" checkicon="$menu.check" separatorcolor="$menu.separator" bkncolor="$menu.bkn" seltextcolor="$menu.seltext" selbkncolor="$menu.selbkn" onClick="controlcmd-OnMainMenuCmd" font="$system.default" lefttop="$menubk.lefttop.bmp" righttop="$menubk.righttop.bmp" topcenter="$menubk.top.bmp" leftbottom="$menubk.leftbottom.bmp" rightbottom="$menubk.rightbottom.bmp" bottomcenter="$menubk.bottom.bmp" leftcenter="$menubk.left.bmp" rightcenter="$menubk.right.bmp" centerimage="$menubk.bk.bmp" leftborder="4" rightborder="4" topborder="4" bottomborder="4" selbkn="$menuselbk.bmp" extend="1">
+            <menuitem id="item_file" text="文件" menuchar="F" onClick="controlcmd-OnMenuFile">
+                <menuitem id="item_open" text="打开" menuchar="O" icon="$mainmenu.open" hotkey="CTRL+O" />
+                <menuitem id="item_openDVD" enable="0" text="打开DVD" menuchar="O" hotkey="CTRL+D" />
+                <menuitem id="item_openurl" text="打开URL" menuchar="U" hotkey="CTRL+U" />
+                <menuitem id="item_openrf" text="打开最近文件" menuchar="F" onClick="controlcmd-OnMenuRecentFile">
+                    <menuitem id="item_clear" text="清除最近播放文件列表" menuchar="C" />
+                    <menuitem id="item_s1" separator="1" visible="0" />
+                </menuitem>
+                <menuitem id="item_close" text="关闭" menuchar="C" hotkey="CTRL+W" />
+                <menuitem id="item_s1" separator="1" />
+                <menuitem id="item_SnapshotImg1" text="保存截图" enable="0" hotkey="CTRL+X" />
+                <menuitem id="item_mediainfo" text="媒体信息..." enable="0" />
+                <menuitem id="item_record" text="播放记录" onClick="controlcmd-OnMenuPlayRecord">
+                    <menuitem id="item_clearatonce" text="不保存播放记录" />
+                    <menuitem id="item_clearatquit" text="退出时清除播放记录" />
+                    <menuitem id="item_saveatquit" text="退出时保留播放记录" />
+                </menuitem>
+                <menuitem id="item_s2" separator="1" />
+                <menuitem id="item_quit" text="退出" menuchar="X" icon="$mainmenu.exit" onClick="controlcmd-OnMenuQuit" />
+            </menuitem>
+            <menuitem id="item_view" text="查看" menuchar="V" onClick="controlcmd-OnMenuView">
+                <menuitem id="item_mostfront" text="在最前" onClick="controlcmd-OnMostFrontMenuCmd" icon="$mainmenu.topmost">
+                    <menuitem id="item_never" text="永不最前" checked="1" />
+                    <menuitem id="item_whenplay" text="播放时最前" />
+                    <menuitem id="item_always" text="总是最前" />
+                </menuitem>
+                <menuitem id="item_s1" separator="1" />
+                <menuitem id="item_fullscreen" text="全屏" checked="1" />
+                <menuitem id="item_commonmode" text="普通" />
+                <menuitem id="item_minimode" text="精简" />
+                <menuitem id="item_s2" separator="1" />
+                <menuitem id="item_facemgr" text="皮肤管理" onClick="controlcmd-OnFaceMgrMenuCmd">
+                    <menuitem id="item_themeface" text="主题皮肤" />
+                    <menuitem id="item_palette" text="调色板" />
+                </menuitem>
+                <menuitem id="item_s3" separator="1" />
+                <menuitem id="item_sysconfig" text="系统配置" icon="$mainmenu.sysconfig" hotkey="F2" />
+            </menuitem>
+            <menuitem id="item_play" text="播放" menuchar="Y" onClick="controlcmd-OnPlayMenuCmd">
+                <menuitem id="item_playpause" text="播放/暂停" menuchar="P" hotkey="SPACE" />
+                <menuitem id="item_stop" text="停止" menuchar="S" hotkey="CTRL+S" />
+                <menuitem id="item_before" text="上一文件" hotkey="PAGEUP" />
+                <menuitem id="item_next" text="下一文件" hotkey="PAGEDOWN" />
+                <menuitem id="item_jumpfront" text="向前跳进" hotkey="CTRL+→" />
+                <menuitem id="item_jumpback" text="向后跳进" hotkey="CTRL+←" />
+                <menuitem id="item_s1" separator="1" />
+                <menuitem id="item_voiceup" text="增大音量" menuchar="U" hotkey="↑" />
+                <menuitem id="item_voicedown" text="减小音量" menuchar="D" hotkey="↓" />
+                <menuitem id="item_slient" text="静音" menuchar="M" hotkey="CTRL+M" />
+                <menuitem id="item_s2" separator="1" />
+                <menuitem id="item_showscale" text="显示比例" onClick="controlcmd-OnScaleMenuCmd">
+                    <menuitem id="item_windowvedio" text="窗口适应视频" />
+                    <menuitem id="item_vediowindow" text="视频适应窗口" />
+                </menuitem>
+                <menuitem id="item_track" text="声道调节" onClick="controlcmd-OnTrackMenuCmd">
+                    <menuitem id="item_defaulttrack" text="默认声道" checked="1" />
+                    <menuitem id="item_lefttrack" text="左声道" />
+                    <menuitem id="item_righttrack" text="右声道" />
+                </menuitem>
+                <menuitem id="item_color" text="色彩调节..." />
+                <menuitem id="item_subtitle" text="字幕..." onClick="controlcmd-OnSubtitleCmd">
+                    <menuitem id="item_subtitle_load" text="手动载入字幕..." />
+                    <menuitem id="item_subtitle_file" text="字幕文件" onClick="controlcmd-OnSubtitleFile">
+                        <menuitem id="item_sep_subtitlefile" separator="1" />
+                        <menuitem id="item_subtitle_no" text="无字幕" />
+                        <menuitem id="item_s6" separator="1" />
+                        <menuitem id="item_subtitle_manual" text="手动加载" />
+                    </menuitem>
+                    <menuitem id="item_subtitle_lang" text="字幕语言" onClick="controlcmd-OnSubtitleLang">
+                        <menuitem id="item_sep_subtitlelang" visible="0" separator="1" />
+                    </menuitem>
+                    <menuitem id="item_subtitle_setting" text="效果设置..." />
+                </menuitem>
+                <menuitem id="item_speed" text="速度设置..." />
+                <menuitem id="item_s3" separator="1" />
+                <menuitem id="item_shutdown" icon="$mainmenu.shutdown_sel" text="播放完毕自动关机" checked="0" />
+            </menuitem>
+            <menuitem id="item_help" text="帮助" menuchar="H" onClick="controlcmd-OnMenuHelp">
+                <menuitem id="item_feedback" text="问题反馈..." menuchar="R" hotkey="F1" />
+                <menuitem id="item_xunleionline" text="迅雷在线..." menuchar="L" />
+                <menuitem id="item_update" text="检查更新" menuchar="O" />
+                <menuitem id="item_s1" separator="1" />
+                <menuitem id="item_about" text="关于迅雷看看播放器" menuchar="A" />
+            </menuitem>
+        </menu>
+        <menu id="mediamenu" checkicon="$menu.check" bkncolor="$menu.bkn" separatorcolor="$menu.separator" selbkncolor="$menu.selbkn" onClick="controlcmd-OnMediaMenuCmd" font="$system.default" lefttop="$menubk.lefttop.bmp" righttop="$menubk.righttop.bmp" topcenter="$menubk.top.bmp" leftbottom="$menubk.leftbottom.bmp" rightbottom="$menubk.rightbottom.bmp" bottomcenter="$menubk.bottom.bmp" leftcenter="$menubk.left.bmp" rightcenter="$menubk.right.bmp" centerimage="$menubk.bk.bmp" leftborder="4" rightborder="4" topborder="4" bottomborder="4" selbkn="$menuselbk.bmp" extend="1">
+            <menuitem id="item_fullscreen" text="全屏" menuchar="F" hotkey="CTRL+ENTER" checked="1" onClick="controlcmd-OnMenuView" />
+            <menuitem id="item_commonmode" text="普通" menuchar="C" onClick="controlcmd-OnMenuView" />
+            <menuitem id="item_minimode" text="精简" menuchar="R" onClick="controlcmd-OnMenuView" />
+            <menuitem id="item_s1" separator="1" />
+            <menuitem id="item_mostfront" text="在最前" onClick="controlcmd-OnMostFrontMenuCmd">
+                <menuitem id="item_never" text="永不最前" checked="1" />
+                <menuitem id="item_whenplay" text="播放时最前" />
+                <menuitem id="item_always" text="总是最前" />
+            </menuitem>
+            <menuitem id="item_s2" separator="1" />
+            <menuitem id="item_playpause" text="播放/暂停" menuchar="P" hotkey="SPACE" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_stop" text="停止" menuchar="S" hotkey="CTRL+S" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_before" text="上一文件" hotkey="PAGEUP" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_next" text="下一文件" hotkey="PAGEDOWN" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_jumpfront" text="向前跳进" hotkey="CTRL+→" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_jumpback" text="向后跳进" hotkey="CTRL+←" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_s3" separator="1" />
+            <menuitem id="item_voiceup" text="增大音量" menuchar="U" hotkey="↑" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_voicedown" text="减小音量" menuchar="D" hotkey="↓" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_slient" text="静音" menuchar="M" hotkey="CTRL+M" onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_s4" separator="1" />
+            <menuitem id="item_showscale" text="显示比例" onClick="controlcmd-OnScaleMenuCmd">
+                <menuitem id="item_windowvedio" text="窗口适应视频" />
+                <menuitem id="item_vediowindow" text="视频适应窗口" />
+            </menuitem>
+            <menuitem id="item_track" text="声道调节" onClick="controlcmd-OnTrackMenuCmd">
+                <menuitem id="item_defaulttrack" text="默认声道" checked="1" />
+                <menuitem id="item_lefttrack" text="左声道" />
+                <menuitem id="item_righttrack" text="右声道" />
+            </menuitem>
+            <menuitem id="item_color" text="色彩调节..." onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_subtitle" text="字幕..." onClick="controlcmd-OnSubtitleCmd">
+                <menuitem id="item_subtitle_load" text="手动载入字幕..." />
+                <menuitem id="item_subtitle_file" text="字幕文件" onClick="controlcmd-OnSubtitleFile">
+                    <menuitem id="item_sep_subtitlefile" separator="1" />
+                    <menuitem id="item_subtitle_no" text="无字幕" />
+                    <menuitem id="item_s6" separator="1" />
+                    <menuitem id="item_subtitle_manual" text="手动加载" />
+                </menuitem>
+                <menuitem id="item_subtitle_lang" text="字幕语言" onClick="controlcmd-OnSubtitleLang">
+                    <menuitem id="item_sep_subtitlelang" visible="0" separator="1" />
+                </menuitem>
+                <menuitem id="item_subtitle_setting" text="效果设置..." />
+            </menuitem>
+            <menuitem id="item_speed" text="速度设置..." onClick="controlcmd-OnPlayMenuCmd" />
+            <menuitem id="item_s5" separator="1" />
+            <menuitem id="item_SnapshotImg2" text="保存截图" enable="0" onClick="controlcmd-OnMenuFile" hotkey="Ctrl+X" />
+            <menuitem id="item_mediainfo" text="媒体信息" onClick="controlcmd-OnMenuFile" />
+        </menu>
+        <menu id="traymenu" checkicon="$menu.check" bkncolor="$menu.bkn" selbkncolor="$menu.selbkn" onClick="controlcmd-OnTrayMenuCmd" font="$system.default" lefttop="$menubk.lefttop.bmp" righttop="$menubk.righttop.bmp" topcenter="$menubk.top.bmp" leftbottom="$menubk.leftbottom.bmp" rightbottom="$menubk.rightbottom.bmp" bottomcenter="$menubk.bottom.bmp" leftcenter="$menubk.left.bmp" rightcenter="$menubk.right.bmp" centerimage="$menubk.bk.bmp" leftborder="4" rightborder="4" topborder="4" bottomborder="4" selbkn="$menuselbk.bmp" extend="1">
+            <menuitem id="item_browse" text="打开迅雷看看首页" />
+            <menuitem id="item_s1" separator="1" />
+            <menuitem id="item_open" text="打开迅雷看看播放器" />
+            <menuitem id="item_sysconfig" text="系统配置" onClick="controlcmd-OnMenuView" />
+            <menuitem id="item_about" text="关于迅雷看看播放器" onClick="controlcmd-OnMenuHelp" />
+            <menuitem id="item_s2" separator="1" />
+            <menuitem id="item_quit" text="退出迅雷看看播放器" onClick="controlcmd-OnMenuQuit" />
+        </menu>
+    </menulist>
+    <traylist>
+        <tray id="maintray" visible="0" icon="$tray" tip="迅雷看看播放器" OnNotify="OnTrayNotify" />
+    </traylist>
+    <viewlist>
+        <view id="XmpSkinMgrHost" visible="0" width="400" height="300" activate="0" lefttop="$CF_LeftTop.bmp" righttop="$CF_RightTop.bmp" topcenter="$CF_Top.bmp" leftcenter="$CF_Left.bmp" rightcenter="$CF_Right.bmp" centerimage="$CF_Bk.bmp" leftbottom="$CF_LeftBottom.bmp" rightbottom="$CF_RightBottom.bmp" bottomcenter="$CF_Bottom.bmp" resizetop="22" resize="0" resizeside="3" keycolor="#FF00FF" dragable="1" onCreate="javascript-XMP.view_SkinMgrHost.OnCreate();" modal="1">
+            <static left="8" top="3" width="85" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="皮肤管理器" />
+            <button left="XmpSkinMgrHost.width-25" top="2" tips="关闭" combineImage="$CloseButton.bmp" onClick='javascript-XMP.view_SkinMgrHost._OnUIClick(&quot;close&quot;);' />
+        </view>
+        <view id="XmpMsgBox" visible="0" left="100" top="100" width="323" height="170" activate="0" lefttop="$CF_LeftTop.bmp" righttop="$CF_RightTop.bmp" topcenter="$CF_Top.bmp" leftcenter="$CF_Left.bmp" rightcenter="$CF_Right.bmp" centerimage="$CF_Bk.bmp" leftbottom="$CF_LeftBottom.bmp" rightbottom="$CF_RightBottom.bmp" bottomcenter="$CF_Bottom.bmp" resizetop="22" resize="0" resizeside="3" keycolor="#FF00FF" dragable="1" modal="1">
+            <static id="XmpMsgBox_Title" left="8" top="3" width="85" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="迅雷看看播放器" />
+            <static id="XmpMsgBox_TipsInfo" left="70" top="70" alignX="0" alignY="0" multiline="1" lineheight="14" width="XmpMsgBox.width-80" height="70" font="$system.static.default" textcolor="$static.msg" text="提示消息" />
+            <button left="XmpMsgBox.width-25" top="2" tips="关闭" combineImage="$CloseButton.bmp" onClick='javascript-XMP.view_MsgBox._OnUIClick(&quot;close&quot;);' />
+            <button id="XmpMsgBox_Btn_Ok" left="122" top="132" text="确定" tips="确定" combineImage="$GeneralButton.bmp" onClick='javascript-XMP.view_MsgBox._OnUIClick(&quot;ok&quot;);' />
+            <button id="XmpMsgBox_Btn_Cancel" visible="0" left="(XmpMsgBox.width-72)/2" top="132" text="取消" tips="取消" combineImage="$GeneralButton.bmp" onClick='javascript-XMP.view_MsgBox._OnUIClick(&quot;close&quot;);' />
+            <static id="XmpMsgBox_Icon_Notice" visible="0" left="30" top="65" image="$notify_icon_notice.bmp" />
+            <static id="XmpMsgBox_Icon_Error" visible="0" left="30" top="65" image="$notify_icon_error.bmp" />
+        </view>
+        <view id="AboutMsgBox" visible="0" left="100" top="100" width="338" height="260" activate="0" lefttop="$CF_LeftTop.bmp" righttop="$CF_RightTop.bmp" topcenter="$CF_Top.bmp" leftcenter="$CF_Left.bmp" rightcenter="$CF_Right.bmp" centerimage="$CF_Bk.bmp" leftbottom="$CF_LeftBottom.bmp" rightbottom="$CF_RightBottom.bmp" bottomcenter="$CF_Bottom.bmp" resizetop="22" resize="0" resizeside="3" keycolor="#FF00FF" dragable="1" modal="1">
+            <static id="AboutMsgBox_Title" left="8" top="3" width="120" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="关于迅雷看看播放器" />
+            <static id="AboutMsgBox_Icon" visible="1" left="10" top="28" image="$about.bmp" />
+            <static id="AboutMsgBox_AppInfo" left="115" top="150" width="90" height="22" alignX="1" font="$system.static.default" textcolor="$static.msg" text="迅雷看看播放器" />
+            <static id="AboutMsgBox_Line" visible="1" left="10" top="175" image="$AboutBox_line.bmp" />
+            <static id="AboutMsgBox_AppVersion" left="14" top="181" width="AboutMsgBox.width-80" alignX="0" height="22" font="$system.static.default" textcolor="$static.msg" text="" />
+            <static id="AboutMsgBox_APlayerVersion" left="14" top="200" width="AboutMsgBox.width-80" alignX="0" height="22" font="$system.static.default" textcolor="$static.msg" text="" />
+            <button left="AboutMsgBox.width-25" top="2" tips="关闭" combineImage="$CloseButton.bmp" onClick="javascript-AboutMsgBox.Close();" />
+            <button id="AboutMsgBox_Btn_Ok" left="(AboutMsgBox.width-76)/2" top="AboutMsgBox.height-35" text="确定" tips="确定" combineImage="$GeneralButton.bmp" onClick="javascript-AboutMsgBox.Close();" />
+        </view>
+        <view id="AutoShutdownMsgBox" visible="0" left="100" top="100" width="323" height="170" activate="0" lefttop="$CF_LeftTop.bmp" righttop="$CF_RightTop.bmp" topcenter="$CF_Top.bmp" leftcenter="$CF_Left.bmp" rightcenter="$CF_Right.bmp" centerimage="$CF_Bk.bmp" leftbottom="$CF_LeftBottom.bmp" rightbottom="$CF_RightBottom.bmp" bottomcenter="$CF_Bottom.bmp" resizetop="22" resize="0" resizeside="3" keycolor="#FF00FF" dragable="1" modal="1">
+            <static id="AutoShutdownMsgBox_Title" left="8" top="3" width="85" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="自动关机" />
+            <static id="AutoShutdownMsgBox_Tips" left="27" top="63" alignX="0" alignY="0" multiline="1" lineheight="18" width="AutoShutdownMsgBox.width-75" height="70" font="$system.static.default" textcolor="$static.msg" text="迅雷看看播放器播放列表中的所有任务播放完毕，离关机还有 30 秒！" />
+            <button left="AutoShutdownMsgBox.width-25" top="2" tips="关闭" combineImage="$CloseButton.bmp" onClick='javascript-XMP.view_AutoShutdownMsgBox._OnUIClick(&quot;close&quot;);' />
+            <button id="AutoShutdownMsgBox_Btn_Ok" left="(AutoShutdownMsgBox.width-76-76-4)/2" top="AutoShutdownMsgBox.height-35" text="立即关机" tips="立即关机" combineImage="$GeneralButton.bmp" onClick='javascript-XMP.view_AutoShutdownMsgBox._OnUIClick(&quot;shundown&quot;);' />
+            <button id="AutoShutdownMsgBox_Btn_Cancel" left="(AutoShutdownMsgBox.width-76-76-4)/2+76+4" top="AutoShutdownMsgBox.height-35" text="取消关机" tips="取消关机" combineImage="$GeneralButton.bmp" onClick='javascript-XMP.view_AutoShutdownMsgBox._OnUIClick(&quot;cancel&quot;);' />
+        </view>
+        <view id="XmpConfigWnd" visible="0" width="400" height="300" activate="0" lefttop="$CF_LeftTop.bmp" righttop="$CF_RightTop.bmp" topcenter="$CF_Top.bmp" leftcenter="$CF_Left.bmp" rightcenter="$CF_Right.bmp" centerimage="$CF_Bk.bmp" leftbottom="$CF_LeftBottom.bmp" rightbottom="$CF_RightBottom.bmp" bottomcenter="$CF_Bottom.bmp" resizetop="22" resize="0" resizeside="3" keycolor="#FF00FF" dragable="1">
+            <static left="8" top="3" width="85" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="系统配置" />
+            <button left="XmpConfigWnd.width-25" top="2" tips="关闭" combineImage="$CF_CloseButton.bmp" onClick='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;close&quot;);' />
+            <radiobutton id="cfTabGeneral" left="8" top="27" width="101" height="26" groupid="101" check="1" unchecknormal="$CF_General_Uncheck_Normal.bmp" uncheckhover="$CF_General_Uncheck_Hover.bmp" uncheckdown="$CF_General_Down.bmp" checknormal="$CF_General_Check_Normal.bmp" checkdown="$CF_General_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;General&quot;);' />
+            <radiobutton id="cfTabPlay" left="8" top="57" width="101" height="26" groupid="101" unchecknormal="$CF_Play_Uncheck_Normal.bmp" uncheckhover="$CF_Play_Uncheck_Hover.bmp" uncheckdown="$CF_Play_Down.bmp" checknormal="$CF_Play_Check_Normal.bmp" checkdown="$CF_Play_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;Play&quot;);' />
+            <radiobutton id="cfTabColor" left="8" top="87" width="101" height="26" groupid="101" unchecknormal="$CF_Color_Uncheck_Normal.bmp" uncheckhover="$CF_Color_Uncheck_Hover.bmp" uncheckdown="$CF_Color_Down.bmp" checknormal="$CF_Color_Check_Normal.bmp" checkdown="$CF_Color_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;Color&quot;);' />
+            <radiobutton id="cfTabSpeed" left="8" top="117" width="101" height="26" groupid="101" unchecknormal="$CF_Speed_Uncheck_Normal.bmp" uncheckhover="$CF_Speed_Uncheck_Hover.bmp" uncheckdown="$CF_Speed_Down.bmp" checknormal="$CF_Speed_Check_Normal.bmp" checkdown="$CF_Speed_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;Speed&quot;);' />
+            <radiobutton id="cfTabAssociate" left="8" top="147" width="101" height="26" groupid="101" unchecknormal="$CF_Associate_Uncheck_Normal.bmp" uncheckhover="$CF_Associate_Uncheck_Hover.bmp" uncheckdown="$CF_Associate_Down.bmp" checknormal="$CF_Associate_Check_Normal.bmp" checkdown="$CF_Associate_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;Associate&quot;);' />
+            <radiobutton id="cfTabHotkey" left="8" top="177" width="101" height="26" groupid="101" unchecknormal="$CF_Hotkey_Uncheck_Normal.bmp" uncheckhover="$CF_Hotkey_Uncheck_Hover.bmp" uncheckdown="$CF_Hotkey_Down.bmp" checknormal="$CF_Hotkey_Check_Normal.bmp" checkdown="$CF_Hotkey_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;Hotkey&quot;);' />
+            <radiobutton id="cfTabSubtitle" left="8" top="207" width="101" height="26" groupid="101" unchecknormal="$CF_Subtitle_Uncheck_Normal.bmp" uncheckhover="$CF_Subtitle_Uncheck_Hover.bmp" uncheckdown="$CF_Subtitle_Down.bmp" checknormal="$CF_Subtitle_Check_Normal.bmp" checkdown="$CF_Subtitle_Down.bmp" onCheck='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;Subtitle&quot;);' />
+            <button id="cfConfirm" left="XmpConfigWnd.width-247" top="XmpConfigWnd.height-40" combineImage="$GeneralButton.bmp" text="确定" tips="确定" textcolor="$static.normaltext" onClick='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;ok&quot;);' />
+            <button id="cfApply" left="XmpConfigWnd.width-167" top="XmpConfigWnd.height-40" combineImage="$GeneralButton.bmp" enable="0" textcolor="$static.disabletext" text="应用" tips="应用" onClick='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;apply&quot;);' />
+            <button id="cfCancel" left="XmpConfigWnd.width-87" top="XmpConfigWnd.height-40" combineImage="$GeneralButton.bmp" text="取消" tips="取消" textcolor="$static.normaltext" onClick='javascript-XMP.view_ConfigWnd._OnUIClick(&quot;close&quot;);' />
+            <object id="XmpConfigContainer" visible="1" left="120" top="27" permanent="1" flashOnNotify="0" dllpath="XMPConfigMgr.dll" width="XmpConfigWnd.width-130" height="XmpConfigWnd.height-80" clsid="{B35F29A7-3A50-4B77-9065-CE36AC15E4C4}" objectid="XmpConfig" onLoad="javascript-XMP.view_ConfigWnd.InitXmpConfig();" onResize="javascript-XMP.view_ConfigWnd.ResizeXmpConfig();" />
+        </view>
+        <view id="XmpMediaInfo" visible="0" left="100" top="100" width="355" height="248" activate="0" lefttop="$CF_LeftTop.bmp" righttop="$CF_RightTop.bmp" topcenter="$CF_Top.bmp" leftcenter="$CF_Left.bmp" rightcenter="$CF_Right.bmp" centerimage="$CF_Bk.bmp" leftbottom="$CF_LeftBottom.bmp" rightbottom="$CF_RightBottom.bmp" bottomcenter="$CF_Bottom.bmp" resizetop="22" resize="0" resizeside="3" keycolor="#FF00FF" dragable="1" modal="1">
+            <static left="8" top="3" width="85" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="媒体信息" />
+            <button left="XmpMediaInfo.width-25" top="2" tips="关闭" combineImage="$CloseButton.bmp" onClick="javascript-XmpMediaInfo.Close();" />
+            <button id="XmpMediaInfo_Ok" left="XmpMediaInfo.width-82" top="XmpMediaInfo.height-30" text="确定" tips="确定" combineImage="$GeneralButton.bmp" onClick="javascript-XmpMediaInfo.Close();" />
+            <static id="XmpMediaInfo_Name" ellipsis="1" left="18" top="34" width="XmpMediaInfo.width-30" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="0" text="" />
+            <static left="18" top="58" width="XmpMediaInfo.width-38" image="$MI_Sep.bmp" />
+            <static left="6" top="68" width="78" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="2" alignY="1" text="文件类型 :" />
+            <static id="XmpMediaInfo_FileType" left="95" top="68" width="XmpMediaInfo.width-105" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="0" alignY="1" text="" />
+            <static left="6" top="90" width="78" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="2" alignY="1" text="文件大小 :" />
+            <static id="XmpMediaInfo_FileSize" left="95" top="90" width="XmpMediaInfo.width-105" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="0" alignY="1" text="" />
+            <static left="6" top="112" width="78" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="2" alignY="1" text="媒体时间 :" />
+            <static id="XmpMediaInfo_MediaTime" left="95" top="112" width="XmpMediaInfo.width-105" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="0" alignY="1" text="" />
+            <static left="6" top="134" width="78" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="2" alignY="1" text="分辨率 :" />
+            <static id="XmpMediaInfo_Rate" left="95" top="134" width="XmpMediaInfo.width-105" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="0" alignY="1" text="" />
+            <static left="18" top="158" width="XmpMediaInfo.width-38" image="$MI_Sep.bmp" />
+            <static left="6" top="168" width="78" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="2" alignY="1" text="创建时间 :" />
+            <static id="XmpMediaInfo_CreateTime" left="95" top="168" width="XmpMediaInfo.width-105" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="0" alignY="1" text="" />
+            <static left="6" top="190" width="78" height="16" font="$mediainfo.default" textcolor="$dlg.default.color" alignX="2" alignY="1" text="文件路径 :" />
+            <edit id="XmpMediaInfo_Path" left="84" top="181" width="XmpMediaInfo.width-105" height="32" readonly="1" font="$mediainfo.default" textcolor="$dlg.default.color" text="" center="$Topbar_title.bmp" />
+        </view>
+        <view id="XmpTopBar" visible="0" width="50" height="22" lefttop="$TopBar_LeftTop.bmp" righttop="$TopBar_RightTop.bmp" topcenter="$TopBar_Top.bmp" leftcenter="$TopBar_LeftCenter.bmp" rightcenter="$TopBar_RightCenter.bmp" centerimage="$TopBar_Center.bmp" leftbottom="$TopBar_LeftBottom.bmp" rightbottom="$TopBar_RightBottom.bmp" bottomcenter="$TopBar_Bottom.bmp" dragable="0" onMouseLeave="javascript-XMP.view_TopBar.OnMouseLeave();" onLButtonDown="controlcmd-OnTopbarLButtonDown">
+            <button id="FullScreenBtn" left="2" top="1" tips="全屏" combineImage="$TopBar_ScreenButton.bmp" onClick='javascript-XMP.view_TopBar._OnUIClick(&quot;fullscreen&quot;);' />
+            <static left="24" top="6" image="$TopBar_Separator.bmp" />
+            <button id="NormalModeBtn" left="28" top="1" enable="0" tips="普通" combineImage="$TopBar_NormalModeButton.bmp" onClick='javascript-XMP.view_TopBar._OnUIClick(&quot;normalmode&quot;);' />
+            <static left="50" top="6" image="$TopBar_Separator.bmp" />
+            <button id="MiniModeBtn" left="54" top="1" tips="精简" combineImage="$TopBar_MiniModeButton.bmp" onClick='javascript-XMP.view_TopBar._OnUIClick(&quot;minimode&quot;);' />
+            <static left="76" top="6" image="$TopBar_Separator.bmp" />
+            <button id="TopMostBtn" left="80" top="1" tips="永不最前" combineImage="$TopBar_TopMostButton.bmp" visible="0" onClick='javascript-XMP.view_TopBar._OnUIClick(&quot;topmost&quot;);TopMostBtn.visible=false;NotTopMostBtn.visible=true;' />
+            <button id="NotTopMostBtn" left="80" top="1" tips="总是最前" combineImage="$TopBar_NotTopMostButton.bmp" visible="1" onClick='javascript-XMP.view_TopBar._OnUIClick(&quot;nottopmost&quot;);NotTopMostBtn.visible=false;TopMostBtn.visible=true;' />
+            <static left="102" top="6" image="$TopBar_Separator.bmp" />
+            <static id="PlayTitle" left="105" top="2" width="XmpTopBar.width - Publisher.width - 165" height="16" font="$system.static.default" textcolor="$static.title3" alignX="1" alignY="1" text="" />
+            <static id="PlayTitle_Publisher_Separator" left="107 + (XmpTopBar.width-157)*2/3" top="5" image="$TopBar_Separator.bmp" />
+            <static id="Publisher" left="XmpTopBar.width-200" top="2" width="200" height="16" font="$system.static.default" textcolor="$static.title3" alignX="1" alignY="1" text="" />
+            <static id="TopBar_btnMin_Separator" left="XmpTopBar.width-52" top="6" image="$TopBar_Separator.bmp" />
+            <button id="TopBar_btnMin" visible="0" left="XmpTopBar.width-48" top="1" tips="最小化" combineImage="$TopBar_MinButton.bmp" onClick="javascript-XmpMainWnd.Min();" />
+            <static id="TopBar_btnClose_Separator" visible="0" left="XmpTopBar.width-26" top="6" image="$TopBar_Separator.bmp" />
+            <button id="TopBar_btnClose" visible="0" left="XmpTopBar.width-22" top="1" tips="关闭" combineImage="$TopBar_CloseButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;close&quot;);' />
+        </view>
+        <view id="XmpMiniCtrlBar" visible="0" width="100" height="35" lefttop="$MiniBar_Bk.bmp" righttop="$MiniBar_Bk.bmp" topcenter="$MiniBar_Bk.bmp" leftcenter="$MiniBar_Bk.bmp" rightcenter="$MiniBar_Bk.bmp" centerimage="$MiniBar_Bk.bmp" leftbottom="$MiniBar_LeftBottom.bmp" rightbottom="$MiniBar_RightBottom.bmp" bottomcenter="$MiniBar_Bottom.bmp" dragable="0" onMouseLeave="javascript-XMP.view_MiniCtrlBar.OnMouseLeave">
+            <button id="MiniBar_btnPrev" left="0" top="8" tips="上一个" combineImage="$MiniBar_PrevButton.bmp" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;prev&quot;);' />
+            <button id="MiniBar_btnPlay" left="23" top="8" tips="播放" combineImage="$MiniBar_PlayButton.bmp" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;play&quot;);' />
+            <button id="MiniBar_btnPause" left="23" top="8" tips="暂停" combineImage="$MiniBar_PauseButton.bmp" visible="0" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;pause&quot;);' />
+            <button id="MiniBar_btnNext" left="46" top="8" tips="下一个" combineImage="$MiniBar_NextButton.bmp" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;next&quot;);' />
+            <button id="MiniBar_btnSilence" left="75" top="9" tips="静音" combineImage="$MiniBar_SilenceButton.bmp" visible="0" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;silence&quot;);' />
+            <button id="MiniBar_btnSound" left="75" top="9" tips="静音" combineImage="$MiniBar_SoundButton.bmp" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;sound&quot;);' />
+            <button id="MiniBar_btnOpen" left="XmpMiniCtrlBar.width-30" top="9" tips="打开文件" combineImage="$MiniBar_OpenButton.bmp" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;open&quot;);' />
+            <button id="MiniBar_btnSnapshot" left="XmpMiniCtrlBar.width-52" top="9" tips="保存截图" combineImage="$SnapshotImg.bmp" onClick='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;snapshot&quot;);' />
+            <slider id="MiniBar_volSlider" left="96" top="12" width="90" height="12" min="0" max="100" value="50" thumbSize="16" barType="0" barLeftCorner="$MiniBar_SoundBarLeft.bmp" barLeft="$MiniBar_SoundBarInnerLeft.bmp" barRight="$MiniBar_SoundBarInnerRight.bmp" barRightCorner="$MiniBar_SoundBarRight.bmp" thumbCombineImage="$MiniBar_SoundBar.bmp" onPosChange='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;volume&quot;);' />
+            <slider id="MiniBar_playSlider" enable="0" left="2" top="1" width="XmpMiniCtrlBar.width-4" height="6" min="0" max="100" thumbSize="16" barType="0" barLeft="$MiniBar_SeekBarLeft.bmp" barRight="$MiniBar_SeekBarRight.bmp" thumbCombineImage="$MiniBar_SeekBar.bmp" onPosChange='javascript-XMP.view_MiniCtrlBar._OnUIClick(&quot;seek&quot;);' />
+            <progressbar id="MiniBar_bufferProgressBar" left="2" top="1" width="XmpMiniCtrlBar.width-4" height="6" min="0" max="100" barType="0" barBGInner="$MiniBar_SeekBarRight.bmp" barFGInner="$MiniBar_SeekBarBuffered.bmp" />
+        </view>
+        <view id="XmpPlayBar" visible="0" width="100" height="48" lefttop="$MF_Bk.bmp" righttop="$MF_Bk.bmp" topcenter="$MF_Bk.bmp" centerimage="$MF_Bk.bmp" leftbottom="$PB_Bottom.bmp" rightbottom="$PB_Bottom.bmp" bottomcenter="$PB_Bottom.bmp" leftcenter="$MF_Bk.bmp" rightcenter="$MF_Bk.bmp" dragable="0">
+            <static id="PlayBar_BitRatePanel" font="$system.static.default" textcolor="$progress.text" left="10" top="XmpPlayBar.height-22" width="50" height="13" alignX="1" alignY="1" text="" />
+            <static id="PlayBar_PlayTimePanel" font="$system.static.default" textcolor="$progress.text" left="70" top="XmpPlayBar.height-22" width="110" height="13" alignX="1" alignY="1" text="" />
+            <button id="PlayBar_btnStop" left="XmpPlayBar.width/2-82" top="XmpPlayBar.height-31" tips="停止" combineImage="$StopButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;stop&quot;);' />
+            <button id="PlayBar_btnPrev" left="XmpPlayBar.width/2-52" top="XmpPlayBar.height-31" tips="上一个" combineImage="$PrevButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;prev&quot;);' />
+            <button id="PlayBar_btnPlay" left="XmpPlayBar.width/2-22" top="XmpPlayBar.height-38" tips="播放" combineImage="$PlayButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;play&quot;);' />
+            <button id="PlayBar_btnPause" left="XmpPlayBar.width/2-22" top="XmpPlayBar.height-38" tips="暂停" combineImage="$PauseButton.bmp" visible="0" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;pause&quot;);' />
+            <button id="PlayBar_btnNext" left="XmpPlayBar.width/2+27" top="XmpPlayBar.height-31" tips="下一个" combineImage="$NextButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;next&quot;);' />
+            <button id="PlayBar_btnSound" left="XmpPlayBar.width/2+57" top="XmpPlayBar.height-31" tips="静音" combineImage="$SoundButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;sound&quot;);' />
+            <button id="PlayBar_btnSilence" left="XmpPlayBar.width/2+57" top="XmpPlayBar.height-31" tips="静音" combineImage="$SilenceButton.bmp" visible="0" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;silence&quot;);' />
+            <button id="PlayBar_btnSnapshot" left="XmpPlayBar.width-81" top="XmpPlayBar.height-28" tips="保存截图" combineImage="$SnapshotImg.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;snapshot&quot;);' />
+            <button id="PlayBar_btnOpen" left="XmpPlayBar.width-59" top="XmpPlayBar.height-28" tips="打开文件" combineImage="$OpenButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;open&quot;);' />
+            <button id="PB_btnFullScreenSwitch" enable="1" left="XmpPlayBar.width-37" top="XmpPlayBar.height-28" tips="退出全屏" combineImage="$ScreenButton.bmp" onClick='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;exitfullscreen&quot;);' />
+            <slider id="PlayBar_volSlider" left="XmpPlayBar.width/2+87" top="XmpPlayBar.height-25" width="95" height="12" min="0" max="100" value="50" thumbSize="22" barType="0" barLeftCorner="$SoundBarLeft.bmp" barLeft="$SoundBarInnerLeft.bmp" barRight="$SoundBarInnerRight.bmp" barRightCorner="$SoundBarRight.bmp" thumbCombineImage="$SoundBar.bmp" onPosChange='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;volume&quot;);' />
+            <slider id="PlayBar_playSlider" enable="0" left="9" top="XmpPlayBar.height-51" width="XmpPlayBar.width-18" height="12" min="0" max="100" thumbSize="20" barType="0" barLeftCorner="$SeekBarLeft.bmp" barLeft="$SeekBarInnerLeft.bmp" barRight="$SeekBarTransparent.bmp" barRightCorner="$SeekBarTransparent.bmp" thumbCombineImage="$SeekBar.bmp" onPosChange='javascript-XMP.view_PlayCtrlBar._OnUIClick(&quot;seek&quot;);' />
+            <progressbar id="PlayBar_bufferProgressBar" left="9" top="XmpPlayBar.height-47" width="XmpPlayBar.width-18" height="5" min="0" max="100" barType="0" barBGLeftCorner="$ProgressBarBGLeft.bmp" barBGInner="$SeekBarInnerRight.bmp" barBGRightCorner="$SeekBarRight.bmp" barFGLeftCorner="$ProgressBarFGLeft.bmp" barFGInner="$SeekBarBuffered.bmp" barFGRightCorner="$SeekBarRightBuffered.bmp" />
+            <static id="PlayBar_SeekBk" visible="1" left="0" top="0" width="XmpPlayBar.width" height="12" image="$MiniBar_Bk.bmp" />
+        </view>
+        <view id="XmpMainWnd" visible="1" left="0" top="0" width="606" height="422" minwidth="606" minheight="422" maxwidth="-1" maxheight="-1" resizebox="10" maxshowborder="0" topborder="3" leftborder="3" rightborder="3" bottomborder="3" icon="$mainwnd.small" toolwindow="1" windowtext="迅雷看看播放器" bigicon="$mainwnd.big" lefttop="$MF_LeftTop.bmp" righttop="$MF_RightTop.bmp" topcenter="$MF_Top.bmp" centerimage="$MF_Bk.bmp" leftbottom="$MF_LeftBottom.bmp" rightbottom="$MF_RightBottom.bmp" bottomcenter="$MF_Bottom.bmp" leftcenter="$MF_Left.bmp" rightcenter="$MF_Right.bmp" resize="1" resizetop="22" resizeside="3" keycolor="#FF00FF" onRClick="controlcmd-OnRPopupMenu" onClose="javascript-XMP.view_XmpMainWnd.Quit();" onMaximize="javascript-XMP.view_XmpMainWnd.onMaximize();" onMinimize="javascript-XMP.view_XmpMainWnd.onMinimize();" onRestore="javascript-XMP.view_XmpMainWnd.onRestore();" onSize="javascript-XMP.view_XmpMainWnd.onSize();">
+            <subview id="MainPlane" left="0" top="0" width="XmpMainWnd.width" height="XmpMainWnd.height" visible="1">
+                <static left="5" top="3" image="$image.logo" />
+                <static left="25" top="3" width="90" height="16" font="$system.title.default" textcolor="$static.title" alignX="0" text="迅雷看看播放器" />
+                <static id="XmpCaption" ellipsis="1" left="130" top="3" width="XmpMainWnd.width - 250" height="16" font="$system.title.default" textcolor="$file.title.default" alignX="1" text="" />
+                <static id="BitRatePanel" font="$system.static.default" textcolor="$progress.text" left="XmpMainWnd.width/2-253" top="XmpMainWnd.height-26" width="50" height="13" alignX="1" alignY="1" text="" />
+                <static id="SeparatorPanel" top="XmpMainWnd.height-24" left="XmpMainWnd.width/2-198" image="$MenuSeparator.bmp" visible="0" />
+                <static id="PlayTimePanel" font="$system.static.default" textcolor="$progress.text" left="XmpMainWnd.width/2-193" top="XmpMainWnd.height-26" width="110" height="13" alignX="1" alignY="1" text="" />
+                <button left="XmpMainWnd.width-96" top="2" tips="菜单" combineImage="$MenuButton.bmp" onClick="controlcmd-OnBtnPopUpMenu" />
+                <button left="XmpMainWnd.width-73" top="2" tips="最小化" combineImage="$MinButton.bmp" onClick="javascript-XmpMainWnd.Min();" />
+                <button id="MaxBtn" left="XmpMainWnd.width-51" top="2" tips="最大化" combineImage="$MaxButton.bmp" onClick="javascript-XmpMainWnd.Max();" />
+                <button id="RestroeBtn" left="XmpMainWnd.width-51" top="2" tips="还原" combineImage="$RestoreButton.bmp" visible="0" onClick="javascript-XmpMainWnd.Restore();" />
+                <button left="XmpMainWnd.width-27" top="2" tips="关闭" combineImage="$CloseButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;close&quot;);' />
+                <button id="XmpSearchBtn" left="XmpMainWnd.width-38" top="25" tips="搜索" combineImage="$SearchButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;search&quot;);' />
+                <static left="XmpMainWnd.width-156" top="25" image="$SearchEdit.bmp" />
+                <button id="btnStop" left="XmpMainWnd.width/2-75" top="XmpMainWnd.height-32" tips="停止" combineImage="$StopButton.bmp" enable="0" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;stop&quot;);' />
+                <button id="btnPrev" left="XmpMainWnd.width/2-50" top="XmpMainWnd.height-32" tips="上一个" combineImage="$PrevButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;prev&quot;);' />
+                <button id="btnPlay" left="XmpMainWnd.width/2-23" top="XmpMainWnd.height-39" tips="播放" combineImage="$PlayButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;play&quot;);' />
+                <button id="btnPause" left="XmpMainWnd.width/2-23" top="XmpMainWnd.height-39" tips="暂停" combineImage="$PauseButton.bmp" visible="0" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;pause&quot;);' />
+                <button id="btnNext" left="XmpMainWnd.width/2+18" top="XmpMainWnd.height-32" tips="下一个" combineImage="$NextButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;next&quot;);' />
+                <button id="btnSound" left="XmpMainWnd.width/2+42" top="XmpMainWnd.height-32" tips="静音" combineImage="$SoundButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;sound&quot;);' />
+                <button id="btnSilence" left="XmpMainWnd.width/2+42" top="XmpMainWnd.height-32" tips="静音" combineImage="$SilenceButton.bmp" visible="0" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;silence&quot;);' />
+                <button id="btnSnapshot" left="XmpMainWnd.width-103" top="XmpMainWnd.height-27" tips="保存截图" combineImage="$SnapshotImg.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;snapshot&quot;);' />
+                <button id="btnOpen" left="XmpMainWnd.width-81" top="XmpMainWnd.height-27" tips="打开文件" combineImage="$OpenButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;open&quot;);' />
+                <button id="btnFullScreenSwitch" left="XmpMainWnd.width-59" top="XmpMainWnd.height-27" tips="全屏" combineImage="$ScreenButton.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;fullscreen&quot;);' />
+                <button id="btnShowPlaylist" left="XmpMainWnd.width-37" top="XmpMainWnd.height-27" combineImage="$ShowPlaylist.bmp" tips="展开" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;showplaylist&quot;);' />
+                <button id="btnHidePlaylist" left="XmpMainWnd.width-37" top="XmpMainWnd.height-27" combineImage="$HidePlaylist.bmp" visible="0" tips="收起" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;hideplaylist&quot;);' />
+                <button left="13" top="XmpMainWnd.height-27" tips="换肤" combineImage="$ChangeSkin.bmp" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;changeskin&quot;);' />
+                <button id="btnTabSearchClose" left="0" top="28" width="11" height="11" combineImage="$TagCloseButton.bmp" visible="0" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabsearchclose&quot;);' />
+                <button id="btnTabMovieHallClose" left="0" top="28" width="11" height="11" combineImage="$TagCloseButton.bmp" visible="0" onClick='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabmoviehallclose&quot;);' />
+                <static id="moviehallid" left="0" top="31" text="" width="12" height="13" font="$system.static.default" textcolor="$hallidColor" alignX="1" alignY="1" visible="0" />
+                <radiobutton id="btnTabPlay" left="3" top="21" width="74" height="31" groupid="100" check="1" unchecknormal="$PlayTag_Uncheck_Normal.bmp" uncheckhover="$PlayTag_Uncheck_Hover.bmp" uncheckdown="$PlayTag_Down.bmp" checknormal="$PlayTag_Check_Normal.bmp" checkdown="$PlayTag_Down.bmp" onCheck='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabplay&quot;);' />
+                <radiobutton id="btnTabClassical" left="77" top="21" width="72" height="31" groupid="100" unchecknormal="$ClassicalTag_Uncheck_Normal.bmp" uncheckhover="$ClassicalTag_Uncheck_Hover.bmp" uncheckdown="$ClassicalTag_Down.bmp" checknormal="$ClassicalTag_Check_Normal.bmp" checkdown="$ClassicalTag_Down.bmp" onCheck='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabclassical&quot;);' />
+                <radiobutton id="btnTabTheater" left="149" top="21" width="72" height="31" groupid="100" unchecknormal="$TheaterTag_Uncheck_Normal.bmp" uncheckhover="$TheaterTag_Uncheck_Hover.bmp" uncheckdown="$TheaterTag_Down.bmp" checknormal="$TheaterTag_Check_Normal.bmp" checkdown="$TheaterTag_Down.bmp" onCheck='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabtheater&quot;);' />
+                <radiobutton id="btnTabSearch" left="221" top="21" width="91" height="31" groupid="100" unchecknormal="$SearchTag_Uncheck_Normal.bmp" uncheckhover="$SearchTag_Uncheck_Hover.bmp" uncheckdown="$SearchTag_Down.bmp" checknormal="$SearchTag_Check_Normal.bmp" checkdown="$SearchTag_Down.bmp" visible="0" onCheck='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabsearch&quot;);' />
+                <radiobutton id="btnTabMovieHall" left="0" top="21" width="103" height="31" groupid="100" unchecknormal="$MovieHallTag_Uncheck_Normal.bmp" uncheckhover="$MovieHallTag_Uncheck_Hover.bmp" uncheckdown="$MovieHallTag_Down.bmp" checknormal="$MovieHallTag_Check_Normal.bmp" checkdown="$MovieHallTag_Down.bmp" visible="0" onCheck='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;tabmoviehall&quot;);' />
+                <slider id="volSlider" left="XmpMainWnd.width/2+76" top="XmpMainWnd.height-25" width="95" height="12" min="0" max="100" value="50" thumbSize="12" barType="0" barLeftCorner="$SoundBarLeft.bmp" barLeft="$SoundBarInnerLeft.bmp" barRight="$SoundBarInnerRight.bmp" barRightCorner="$SoundBarRight.bmp" thumbCombineImage="$SoundBar.bmp" onPosChange='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;volume&quot;);' />
+                <slider id="playSlider" enable="1" left="9" top="XmpMainWnd.height-52" width="XmpMainWnd.width-18" height="9" min="0" max="100" thumbSize="30" barType="0" barLeftCorner="$SeekBarLeft.bmp" barLeft="$SeekBarInnerLeft.bmp" barRight="$SeekBarTransparent.bmp" barRightCorner="$SeekBarTransparent.bmp" thumbCombineImage="$SeekBar.bmp" onPosChange='javascript-XMP.view_XmpMainWnd.subView_MainPlane._onUIClick(&quot;playposition&quot;);' />
+                <progressbar id="bufferProgressBar" left="9" top="XmpMainWnd.height-50" width="XmpMainWnd.width-18" height="5" min="0" max="100" barType="0" barBGLeftCorner="$ProgressBarBGLeft.bmp" barBGInner="$SeekBarInnerRight.bmp" barBGRightCorner="$SeekBarRight.bmp" barFGLeftCorner="$ProgressBarFGLeft.bmp" barFGInner="$SeekBarBuffered.bmp" barFGRightCorner="$SeekBarRightBuffered.bmp" />
+                <static id="SeekBk" visible="1" left="5" top="XmpMainWnd.height-54" width="200" height="12" image="$MiniBar_Bk.bmp" />
+            </subview>
+            <object id="XmpPlayerContainer" visible="1" left="5" top="51" permanent="1" flashOnNotify="0" width="XmpMainWnd.width-10" height="XmpMainWnd.height-101" dllpath="XMPControl.dll" clsid="{3A244DFF-9546-46AC-BA36-2EC256AF5B7C}" objectid="XmpPlayer" onLoad="javascript-if(XMP &amp;&amp; XMP.view_XmpMainWnd)XMP.view_XmpMainWnd.InitDataCenter();" onResize="javascript-if(XMP   &amp;&amp;  XMP.view_XmpMainWnd)XMP.view_XmpMainWnd.ResizeXmpPlayer();" />
+            <object id="PlaylistViewContainer" visible="1" left="XmpMainWnd.width-175" top="60" permanent="1" flashOnNotify="0" width="170" height="XmpMainWnd.height-98" dllpath="XMPlaylistView.dll" clsid="{0EAD0147-D25E-48E2-97FE-C4ED0FFCEC45}" objectid="PlaylistView" />
+            <object id="XmpPlayerContainer" visible="1" left="5" top="51" permanent="1" flashOnNotify="0" width="XmpMainWnd.width-10" height="XmpMainWnd.height-101" dllpath="XMPControl.dll" clsid="{3A244DFF-9546-46AC-BA36-2EC256AF5B7C}" objectid="XmpPlayer" onLoad="javascript-if(XMP &amp;&amp; XMP.view_XmpMainWnd)XMP.view_XmpMainWnd.InitDataCenter();" onResize="javascript-if(XMP   &amp;&amp;  XMP.view_XmpMainWnd)XMP.view_XmpMainWnd.ResizeXmpPlayer();" />
+            <object id="DataCenterContainer" permanent="1" flashOnNotify="0" dllpath="DataX.dll" clsid="{94F08BE4-0B70-4AE1-8596-CF5F1506DB48}" objectid="DataCenter" onLoad="javascript-if(XMP &amp;&amp; XMP.view_XmpMainWnd)XMP.view_XmpMainWnd.InitDataCenter();" />
+        </view>
+        <view id="XmpExpandBar" visible="0" width="4" height="25" image="$ExpandBar.bmp" dragable="0" keycolor="#FF00FF">
+            <button id="btnExpand" left="0" top="0" width="4" height="25" tips="展开" combineImage="$SizeRightButton.bmp" visible="1" onClick='javascript-XMP.view_ExpandBar._OnUIClick(&quot;openlist&quot;);' />
+            <button id="btnCollapes" left="0" top="0" width="4" height="25" tips="收起" combineImage="$SizeLeftButton.bmp" visible="0" onClick='javascript-XMP.view_ExpandBar._OnUIClick(&quot;closelist&quot;);' />
+        </view>
+    </viewlist>
+</theme>

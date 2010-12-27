@@ -1,0 +1,15 @@
+[ProjectInfo]
+InputFileName=D:\GameOfMir\LoginGate\LoginGate.exe
+ScriptIncludedInCompilation=1
+Count=0
+Options=1280
+CheckKernelModeDebugger=1
+AddressSort=0
+AddressSearchString=
+AddressSearchMatchCase=0
+VMCodeSectionName=.FIR
+VMExecutorCount=1
+OutputFileName=
+RunParameters=
+[Folders]
+Count=0

@@ -4351,8 +4351,8 @@ begin
       //MainOutMessage(Format(sExceptionMsg, [2]));
     end;
 
-    if m_boHeroLogOnOK and (not m_boAI) then
-      StartEatItems; //³ÔÒ©
+    //if m_boHeroLogOnOK and (not m_boAI) then
+      //StartEatItems; //³ÔÒ©
 
     if m_btHeroGroup > 0 then begin //½â³ýºÏÌå
       if GetTickCount - m_dwHeroGroupTick > m_dwHeroGroupTime then begin

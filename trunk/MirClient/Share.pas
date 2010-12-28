@@ -212,7 +212,7 @@ const
 
   MAXBAGITEMCL = 46;
 
-  MAXFONT = 8;
+  MAXFONT = 1;
   ENEMYCOLOR = 69;
 
   NEARESTPALETTEINDEXFILE = 'Data\npal.idx';

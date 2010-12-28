@@ -12278,29 +12278,29 @@ begin
     if (Sender = DButtonHeroState) or (Sender = DButtonHeroBag) then
       nHintY := DBottom.SurfaceY(Butt.Top) + 30;
   end;
-  if Sender = DBotMiniMap then sMsg := '小地图(Tab)';
-  if Sender = DBotTrade then sMsg := '交易(T)';
-  if Sender = DBotGuild then sMsg := '行会(G)';
-  if Sender = DBotGroup then sMsg := '编组(P)';
-  if Sender = DBotPlusAbil then sMsg := '属性(M)';
-  if Sender = DBotLogout then sMsg := '退出角色Alt-X';
-  if Sender = DBotExit then sMsg := '退出游戏Alt-Q';
-  if Sender = DMyState then sMsg := '状态(F10)';
-  if Sender = DMyBag then sMsg := '包裹(F9)';
-  if Sender = DMyMagic then sMsg := '技能(F11)';
-  if Sender = DVoice then sMsg := '声效';
-  if Sender = DButtonShop then sMsg := '商铺';
-  if Sender = DButtonFriend then sMsg := '关系系统';
-  if (Sender = DButtonDuel) or (Sender = DButOther) then sMsg := '挑战';
-  if Sender = DRanking then sMsg := '人物排行';
+  if Sender = DBotMiniMap then sMsg := 'MiniMap(Tab)';
+  if Sender = DBotTrade then sMsg := 'Trade(T)';
+  if Sender = DBotGuild then sMsg := 'Guild(G)';
+  if Sender = DBotGroup then sMsg := 'Party(P)';
+  if Sender = DBotPlusAbil then sMsg := 'Ability(M)';
+  if Sender = DBotLogout then sMsg := 'Log-out (Alt-X)';
+  if Sender = DBotExit then sMsg := 'Exit Game(Alt-Q)';
+  if Sender = DMyState then sMsg := 'Status(F10)';
+  if Sender = DMyBag then sMsg := 'Inventory(F9)';
+  if Sender = DMyMagic then sMsg := 'Magic(F11)';
+  if Sender = DVoice then sMsg := 'Voice';
+  if Sender = DButtonShop then sMsg := 'GameShop';
+  if Sender = DButtonFriend then sMsg := 'Friends';
+  if (Sender = DButtonDuel) or (Sender = DButOther) then sMsg := 'Duel';
+  if Sender = DRanking then sMsg := 'Ranking';
   if Sender = DButtonReCallHero then sMsg := '召唤英雄';
   if Sender = DButtonHeroState then sMsg := '英雄状态信息';
   if Sender = DButtonHeroBag then sMsg := '英雄包裹';
 
   //if (g_MySelf.m_btHorse > 0) and (g_NewStatus > sNone) then Exit;
-  if Sender = DOnHouser then sMsg := '骑马(CTRL+M)';
-  if Sender = DHelp then sMsg := '摆摊';
-  if Sender = DPlayTool then sMsg := '影音播放器(Alt + P)';
+  if Sender = DOnHouser then sMsg := 'Ride Horse(CTRL+M)';
+  if Sender = DHelp then sMsg := 'Help';
+  if Sender = DPlayTool then sMsg := 'Media Player(Alt + P)';
 
   DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   if g_ConfigClient.btMainInterface in [0, 2] then begin

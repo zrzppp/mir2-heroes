@@ -225,9 +225,9 @@ const
 
 
 
-  sGameNoticeName = '健康游戏公告';
-  sGameNoticeStr1 = '抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当。适度游戏益脑，';
-  sGameNoticeStr2 = '沉迷游戏伤身，合理安排时间，享受健康生活，严厉打击赌博，营造和谐环境。';
+  sGameNoticeName = 'Legend Of Mir II: Heroes';
+  sGameNoticeStr1 = '';  //Feature Information normally goes here
+  sGameNoticeStr2 = '';  //And here
 var
 
  //{$IF SWH = SWH800}

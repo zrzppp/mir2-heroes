@@ -1,0 +1,58 @@
+1/1    gold 6000
+
+1/8   MonkBracelet
+1/8   EbonyBracelet
+1/8   KrissSword
+1/8   BlackRing
+1/8   SerpentEyeRing
+1/8   PearlRing
+1/8   PrinceSword
+1/8   MartialSword
+1/8   HookedSpear
+1/8   IronRing
+1/8   TigerNecklace
+1/8   PlatinumNeck
+1/8   SkeletonRing
+1/8   StrainBracelet
+
+1/5   HookedSword
+1/5   Scimitar
+1/5   Trident
+1/5   SteelSword
+1/5   BlueRing
+1/5   NagaNecklace
+1/5   AmberNeck
+1/5   PhoenixBead
+1/5   HardGlove
+1/5   MagicBracelet
+1/5   LanternNeck
+
+1/2    SunPotion
+1/2    SunPotion
+1/2    SunPotion
+1/2    SunPotion
+1/2    (HP)DrugMedium
+1/2    (HP)DrugMedium
+1/2    (MP)DrugMedium
+1/2    (MP)DrugMedium
+1/2    SunPotion(M)
+1/2    SunPotion(M)
+1/2    SunPotion(M)
+1/2    SunPotion(M)
+
+1/50   HeavyArmour(M)
+1/50   HeavyArmour(F)
+1/50   MagicRobe(M)
+1/50   MagicRobe(F)
+1/50   SoulArmour(M)
+1/50   SoulArmour(F)
+1/300  DeathGauntlet
+1/100  BlueJadeneck
+1/100  GoldBracelet
+1/100  MoralRing
+1/100  CharmRing
+1/300  ConvexLens
+1/200  BambooPipe
+1/200  ShamanHelmet
+1/200  PurifierSword
+1/400  CoralRing

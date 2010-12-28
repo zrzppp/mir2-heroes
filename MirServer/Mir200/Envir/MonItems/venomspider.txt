@@ -1,0 +1,29 @@
+1/2  gold  450
+1/5  (HP)DrugLarge
+1/10  (MP)DrugLarge
+1/20  SunPotion
+1/20  SunPotion
+1/20  SunPotion
+
+1/2000   ConvexLens
+1/1000   BambooPipe
+1/1000   ShamanHelmet
+1/1000   PurifierSword
+1/2000   CoralRing
+1/1000   ExpelRing
+
+1/1500   SkeletonHelmet
+1/1500   DeathGauntlet
+1/1500   PowerAxe
+
+1/500   HeavyArmour(M)
+1/500   HeavyArmour(F)
+1/500   SoulArmour(F)
+1/500   SoulArmour(M)
+1/500   MagicRobe(M)
+1/500   MagicRobe(F)
+1/500   GoldRing
+1/500   BlueJadeneck
+1/500   GoldBracelet
+1/500   MoralRing
+1/500   CharmRing

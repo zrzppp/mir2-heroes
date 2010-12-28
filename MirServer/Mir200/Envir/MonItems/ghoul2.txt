@@ -1,0 +1,84 @@
+1/1   gold 500
+
+1/200    SunPotion(M)
+1/200    SunPotion(M)
+1/200    SunPotion(M)
+1/400    SunPotion(M)
+1/400    SunPotion(M)
+1/200    SunPotion
+1/200    SunPotion
+1/200    SunPotion
+1/200    SunPotion
+1/200    SunPotion
+1/400    SunPotion
+1/400    SunPotion
+1/400    SunPotion
+1/400    SunPotion
+1/400    SunPotion
+1/200    (HP)DrugMedium
+1/200    (HP)DrugMedium
+1/200    (MP)DrugMedium
+1/400    (HP)DrugLarge
+1/400    (HP)DrugLarge
+1/200    SunPotion(M)
+1/200    SunPotion(M)
+1/200    SunPotion(M)
+1/400    (MP)DrugLarge
+1/400    (MP)DrugLarge
+
+1/2000    SkeletonRing
+1/8000    CoralRing
+1/2000    BlackRing
+1/2000    SerpentEyeRing
+1/2000    PearlRing
+1/2000    IronRing
+1/4000    DeathGauntlet
+1/2000    PurifierSword
+1/2000    MoralRing
+1/2000    CharmRing
+1/2000    BlueJadeneck
+
+1/200000   RecallBracelet
+
+1/1000     BlueRing
+1/1000     MonkBracelet
+1/1000     EbonyBracelet
+1/1000     MagicBracelet
+1/1000     StrainBracelet
+
+1/26000    MassHealing
+1/26000    TurnUndead
+
+1/8000    TrapHexagon
+1/8000    ThunderStorm
+1/1500    HalfMoon
+
+1/12000    MagicShield
+1/3000    ShoulderDash
+
+1/4000    Revelation
+1/2000    Thrusting
+1/2000    BlessedArmou
+1/2000    Lightning
+
+1/1400    FireWall
+1/1400    SoulShield
+1/1400    FireBang
+1/1400    MassHiding
+1/1000    Hiding
+1/1000    Poisoning
+1/1000    Slaying
+1/1000    SoulFireBall
+1/1000    ThunderBolt
+1/1000    Eshock
+1/1000    HellFire
+1/1000    GreatFireBal
+1/1000    SummonSkele
+1/1000    Teleport
+
+1/600    Repulsion
+1/600    SpiritSword
+1/600    Healing
+1/600    Fencing
+1/600    FireBall
+

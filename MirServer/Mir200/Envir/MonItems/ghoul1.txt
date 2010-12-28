@@ -1,0 +1,27 @@
+1/36  MysteryWheel
+1/36  MysteryCap
+1/36  MysteryCircle
+
+
+1/180   ConvexLens
+1/90   BambooPipe
+1/90   ShamanHelmet
+1/90   PurifierSword
+1/180   CoralRing
+1/90   ExpelRing
+
+1/180  DeathGauntlet
+1/180  PowerAxe
+1/180  SkeletonHelmet
+
+1/36   HeavyArmour(M)
+1/36   HeavyArmour(F)
+1/36   SoulArmour(F)
+1/36   SoulArmour(M)
+1/36   MagicRobe(M)
+1/36   MagicRobe(F)
+1/36   GoldRing
+1/36   BlueJadeneck
+1/36   GoldBracelet
+1/36   MoralRing
+1/36   CharmRing

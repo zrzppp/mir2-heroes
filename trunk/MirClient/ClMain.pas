@@ -6642,9 +6642,8 @@ end;
 
 procedure TfrmMain.ClientNewIDSuccess();
 begin
-  FrmDlg.DMessageDlg('您的帐号创建成功。\' +
-    '请妥善保管您的帐号和密码，\并且不要因任何原因把帐号和密码告诉任何其他人。\' +
-    '如果忘记了密码,\你可以通过我们的主页重新找回。\', [mbOk]);
+  FrmDlg.DMessageDlg('Account: ' + MakeNewId + ' Created.\' +
+    'Please keep your password safe and contact\the support team if there are any problems.', [mbOk]);
   LoginScene.ShowLoginBox;
 end;
 
@@ -6667,12 +6666,12 @@ end;
 procedure TfrmMain.ClientLoginFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('密码错误！！ Error 1', [mbOk]);
+    -1: FrmDlg.DMessageDlg('Wrong Password.\Please try again, if you have forgotten your password, \contact the support team.', [mbOk]);
     -2: FrmDlg.DMessageDlg('密码输入错误超过3次，此帐号被暂时锁定，请稍候再登录！ Error 2', [mbOk]);
     -3: FrmDlg.DMessageDlg('此帐号已经登录或被异常锁定，请稍候再登录！ Error 3', [mbOk]);
     -4: FrmDlg.DMessageDlg('这个帐号访问失败！\请使用其他帐号登录，\或者申请付费注册。 Error 4', [mbOk]);
     -5: FrmDlg.DMessageDlg('这个帐号被锁定！ Error 5', [mbOk]);
-  else FrmDlg.DMessageDlg('此帐号不存在或出现未知错误！！ Error 6', [mbOk]);
+  else FrmDlg.DMessageDlg('Account does not exist.\Please check your account name and try again.', [mbOk]);
   end;
   LoginScene.PassWdFail;
 end;

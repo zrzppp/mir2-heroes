@@ -1,16 +1,16 @@
 object FrmMain: TFrmMain
-  Left = 818
-  Top = 233
+  Left = 246
+  Top = 145
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #25968#25454#24211#26381#21153#22120
-  ClientHeight = 217
-  ClientWidth = 488
+  Caption = '??????'
+  ClientHeight = 253
+  ClientWidth = 569
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   Menu = MainMenu
   OldCreateOrder = False
@@ -18,12 +18,12 @@ object FrmMain: TFrmMain
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 14
   object MemoLog: TMemo
     Left = 0
     Top = 0
-    Width = 488
-    Height = 81
+    Width = 569
+    Height = 95
     Align = alTop
     ScrollBars = ssVertical
     TabOrder = 0
@@ -32,97 +32,97 @@ object FrmMain: TFrmMain
   end
   object Panel: TPanel
     Left = 0
-    Top = 81
-    Width = 488
-    Height = 57
+    Top = 95
+    Width = 569
+    Height = 66
     Align = alTop
     TabOrder = 1
     object LabelLoadHumRcd: TLabel
-      Left = 184
-      Top = 8
-      Width = 72
-      Height = 12
-      Caption = #35835#21462#20154#29289#25968#25454
+      Left = 215
+      Top = 9
+      Width = 36
+      Height = 14
+      Caption = '??????'
     end
     object LabelSaveHumRcd: TLabel
-      Left = 184
-      Top = 32
-      Width = 72
-      Height = 12
+      Left = 215
+      Top = 37
+      Width = 36
+      Height = 14
       BiDiMode = bdLeftToRight
-      Caption = #20445#23384#20154#29289#25968#25454
+      Caption = '??????'
       ParentBiDiMode = False
     end
     object LabelLoadHeroRcd: TLabel
-      Left = 296
-      Top = 8
-      Width = 72
-      Height = 12
-      Caption = #35835#21462#33521#38596#25968#25454
+      Left = 345
+      Top = 9
+      Width = 36
+      Height = 14
+      Caption = '??????'
     end
     object LabelSaveHeroRcd: TLabel
-      Left = 296
-      Top = 32
-      Width = 72
-      Height = 12
-      Caption = #20445#23384#33521#38596#25968#25454
+      Left = 345
+      Top = 37
+      Width = 36
+      Height = 14
+      Caption = '??????'
     end
     object LabelCreateHero: TLabel
-      Left = 96
-      Top = 8
-      Width = 48
-      Height = 12
-      Caption = #21019#24314#33521#38596
+      Left = 112
+      Top = 9
+      Width = 24
+      Height = 14
+      Caption = '????'
     end
     object LabelCreateHum: TLabel
-      Left = 8
-      Top = 8
-      Width = 48
-      Height = 12
-      Caption = #21019#24314#20154#29289
+      Left = 9
+      Top = 9
+      Width = 24
+      Height = 14
+      Caption = '????'
     end
     object LabelDeleteHum: TLabel
-      Left = 8
-      Top = 32
-      Width = 48
-      Height = 12
-      Caption = #21024#38500#20154#29289
+      Left = 9
+      Top = 37
+      Width = 24
+      Height = 14
+      Caption = '????'
     end
     object LabelDeleteHero: TLabel
-      Left = 96
-      Top = 32
-      Width = 48
-      Height = 12
-      Caption = #21024#38500#33521#38596
+      Left = 112
+      Top = 37
+      Width = 24
+      Height = 14
+      Caption = '????'
     end
     object LabelWorkStatus: TLabel
-      Left = 464
-      Top = 8
-      Width = 6
-      Height = 12
+      Left = 541
+      Top = 9
+      Width = 5
+      Height = 18
       Font.Charset = GB2312_CHARSET
       Font.Color = clGreen
-      Font.Height = -12
-      Font.Name = #23435#20307
+      Font.Height = -15
+      Font.Name = '??'
       Font.Style = []
       ParentFont = False
       Visible = False
     end
     object CheckBoxShowMainLogMsg: TCheckBox
-      Left = 416
-      Top = 24
-      Width = 65
-      Height = 17
-      Caption = #26174#31034#26085#35760
+      Left = 485
+      Top = 28
+      Width = 76
+      Height = 20
+      Caption = '????'
       TabOrder = 0
       OnClick = CheckBoxShowMainLogMsgClick
     end
   end
   object ModuleGrid: TStringGrid
     Left = 0
-    Top = 138
-    Width = 488
-    Height = 79
+    Top = 161
+    Width = 569
+    Height = 92
     Align = alClient
     ColCount = 3
     DefaultColWidth = 158
@@ -147,64 +147,64 @@ object FrmMain: TFrmMain
     Left = 168
     Top = 16
     object MENU_CONTROL: TMenuItem
-      Caption = #25511#21046'(&C)'
+      Caption = '??(&C)'
       object MENU_CONTROL_START: TMenuItem
-        Caption = #21551#21160#26381#21153'(&S)'
+        Caption = '????(&S)'
         OnClick = MENU_CONTROL_STARTClick
       end
       object MENU_CONTROL_STOP: TMenuItem
-        Caption = #20572#27490#26381#21153'(&T)'
+        Caption = '????(&T)'
         OnClick = MENU_CONTROL_STOPClick
       end
       object N1: TMenuItem
-        Caption = #37325#26032#21152#36733
+        Caption = '????'
         object G1: TMenuItem
-          Caption = #32593#20851#35774#32622'(&G)'
+          Caption = '????(&G)'
           OnClick = G1Click
         end
         object C1: TMenuItem
-          Caption = #35282#33394#36807#28388#21015#34920'(&C)'
+          Caption = '??????(&C)'
           OnClick = C1Click
         end
       end
       object MENU_CONTROL_EXIT: TMenuItem
-        Caption = #36864#20986'(&X)'
+        Caption = '??(&X)'
         OnClick = MENU_CONTROL_EXITClick
       end
     end
     object MENU_OPTION: TMenuItem
-      Caption = #36873#39033'(&O)'
+      Caption = '??(&O)'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = #22522#26412#35774#32622'(&G)'
+        Caption = '????(&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_GAMEGATE: TMenuItem
-        Caption = #32593#20851#35774#32622'(&R)'
+        Caption = '????(&R)'
         OnClick = MENU_OPTION_GAMEGATEClick
       end
     end
     object MENU_MANAGE: TMenuItem
-      Caption = #31649#29702'(&M)'
+      Caption = '??(&M)'
       object MENU_MANAGE_DATA: TMenuItem
-        Caption = #25968#25454#31649#29702'(&D)'
+        Caption = '????(&D)'
         OnClick = MENU_MANAGE_DATAClick
       end
       object MENU_RANKING: TMenuItem
-        Caption = #25490#34892#27036#31649#29702'(&R)'
+        Caption = '?????(&R)'
         OnClick = MENU_RANKINGClick
       end
     end
     object MENU_TEST: TMenuItem
-      Caption = #27979#35797'(&T)'
+      Caption = '??(&T)'
       object MENU_TEST_SELGATE: TMenuItem
-        Caption = #36873#25321#32593#20851'(&S)'
+        Caption = '????(&S)'
         OnClick = MENU_TEST_SELGATEClick
       end
     end
     object MENU_HELP: TMenuItem
-      Caption = #24110#21161'(&H)'
+      Caption = '??(&H)'
       object MENU_HELP_VERSION: TMenuItem
-        Caption = #20851#20110'(&A)'
+        Caption = '??(&A)'
         OnClick = MENU_HELP_VERSIONClick
       end
     end

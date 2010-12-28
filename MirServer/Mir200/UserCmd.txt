@@ -1,5 +1,5 @@
-;引擎插件配置文件
-;命令名称	对应编号
+;Custom Commands
+;Command	Number
 说话	1
 会员服务	2
 娱乐	3

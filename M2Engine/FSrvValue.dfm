@@ -1,134 +1,134 @@
 object FrmServerValue: TFrmServerValue
-  Left = 910
-  Top = 161
+  Left = 602
+  Top = 186
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #24615#33021#21442#25968#37197#32622
-  ClientHeight = 192
-  ClientWidth = 468
+  Caption = '??????'
+  ClientHeight = 224
+  ClientWidth = 546
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   ShowHint = True
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 14
   object Label18: TLabel
-    Left = 8
-    Top = 175
-    Width = 432
-    Height = 12
-    Caption = #35843#25972#30340#21442#25968#31435#21363#29983#25928#65292#22312#32447#26102#35831#30830#35748#27492#21442#25968#30340#20316#29992#20877#35843#25972#65292#20081#35843#25972#23558#23548#33268#28216#25103#28151#20081
+    Left = 9
+    Top = 204
+    Width = 280
+    Height = 17
+    Caption = '?????????,???????????????,??????????'
     Font.Charset = ANSI_CHARSET
     Font.Color = clRed
-    Font.Height = -12
-    Font.Name = #23435#20307
+    Font.Height = -15
+    Font.Name = '??'
     Font.Style = []
     ParentFont = False
   end
   object BitBtn1: TBitBtn
-    Left = 368
-    Top = 144
-    Width = 91
-    Height = 25
-    Caption = #30830#23450'(&O)'
+    Left = 429
+    Top = 168
+    Width = 107
+    Height = 29
+    Caption = '??(&O)'
     TabOrder = 0
     OnClick = BitBtn1Click
     Kind = bkOK
   end
   object CbViewHack: TCheckBox
-    Left = 152
-    Top = 136
-    Width = 161
-    Height = 17
-    Caption = #26174#31034#28216#25103#36895#24230#24322#24120#20449#24687
+    Left = 177
+    Top = 159
+    Width = 188
+    Height = 20
+    Caption = '??????????'
     Checked = True
     State = cbChecked
     TabOrder = 1
     OnClick = CbViewHackClick
   end
   object CkViewAdmfail: TCheckBox
-    Left = 152
-    Top = 152
-    Width = 209
-    Height = 17
-    Caption = #26174#31034#38750#27861#30331#24405#20449#24687
+    Left = 177
+    Top = 177
+    Width = 244
+    Height = 20
+    Caption = '????????'
     TabOrder = 2
     OnClick = CkViewAdmfailClick
   end
   object GroupBox1: TGroupBox
-    Left = 152
-    Top = 8
-    Width = 169
-    Height = 121
-    Caption = #32593#20851#25968#25454#20256#36755
+    Left = 177
+    Top = 9
+    Width = 198
+    Height = 142
+    Caption = '??????'
     TabOrder = 3
     object Label8: TLabel
-      Left = 11
-      Top = 24
-      Width = 66
-      Height = 12
-      Caption = #25968#25454#22359#22823#23567':'
+      Left = 13
+      Top = 28
+      Width = 34
+      Height = 14
+      Caption = '?????:'
     end
     object Label7: TLabel
-      Left = 9
-      Top = 48
-      Width = 66
-      Height = 12
-      Caption = #33258#26816#25968#25454#22359':'
+      Left = 11
+      Top = 56
+      Width = 34
+      Height = 14
+      Caption = '?????:'
     end
     object Label9: TLabel
-      Left = 7
-      Top = 69
-      Width = 66
-      Height = 12
-      Caption = #20445#30041#25968#25454#22359':'
+      Left = 8
+      Top = 81
+      Width = 34
+      Height = 14
+      Caption = '?????:'
       Enabled = False
     end
     object Label10: TLabel
-      Left = 7
-      Top = 93
-      Width = 54
-      Height = 12
-      Caption = #36127#36733#27979#35797':'
+      Left = 8
+      Top = 109
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label11: TLabel
-      Left = 145
-      Top = 24
-      Width = 6
-      Height = 12
+      Left = 169
+      Top = 28
+      Width = 7
+      Height = 14
       Caption = 'B'
     end
     object Label12: TLabel
-      Left = 145
-      Top = 48
-      Width = 6
-      Height = 12
+      Left = 169
+      Top = 56
+      Width = 7
+      Height = 14
       Caption = 'B'
     end
     object Label13: TLabel
-      Left = 145
-      Top = 72
-      Width = 6
-      Height = 12
+      Left = 169
+      Top = 84
+      Width = 7
+      Height = 14
       Caption = 'B'
     end
     object Label14: TLabel
-      Left = 145
-      Top = 96
-      Width = 12
-      Height = 12
+      Left = 169
+      Top = 112
+      Width = 14
+      Height = 14
       Caption = 'KB'
     end
     object EGateLoad: TSpinEdit
-      Left = 78
-      Top = 92
-      Width = 59
-      Height = 21
+      Left = 91
+      Top = 107
+      Width = 69
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 0
@@ -136,10 +136,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EGateLoadChange
     end
     object EAvailableBlock: TSpinEdit
-      Left = 78
-      Top = 68
-      Width = 59
-      Height = 21
+      Left = 91
+      Top = 79
+      Width = 69
+      Height = 23
       Enabled = False
       MaxValue = 0
       MinValue = 0
@@ -148,10 +148,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EAvailableBlockChange
     end
     object ECheckBlock: TSpinEdit
-      Left = 78
-      Top = 44
-      Width = 59
-      Height = 21
+      Left = 91
+      Top = 51
+      Width = 69
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 2
@@ -159,10 +159,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = ECheckBlockChange
     end
     object ESendBlock: TSpinEdit
-      Left = 78
-      Top = 21
-      Width = 59
-      Height = 21
+      Left = 91
+      Top = 25
+      Width = 69
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 3
@@ -171,60 +171,60 @@ object FrmServerValue: TFrmServerValue
     end
   end
   object GroupBox2: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 137
-    Height = 161
-    Caption = #22788#29702#26102#38388#20998#37197'('#27627#31186')'
+    Left = 9
+    Top = 9
+    Width = 160
+    Height = 188
+    Caption = '??????(??)'
     TabOrder = 4
     object Label1: TLabel
-      Left = 16
-      Top = 16
-      Width = 54
-      Height = 12
-      Caption = #20154#29289#22788#29702':'
+      Left = 19
+      Top = 19
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label2: TLabel
-      Left = 16
-      Top = 40
-      Width = 54
-      Height = 12
-      Caption = #24618#29289#22788#29702':'
+      Left = 19
+      Top = 47
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label3: TLabel
-      Left = 16
-      Top = 64
-      Width = 54
-      Height = 12
-      Caption = #24618#29289#21047#26032':'
+      Left = 19
+      Top = 75
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label4: TLabel
-      Left = 16
-      Top = 88
-      Width = 54
-      Height = 12
-      Caption = #25968#25454#20256#36755':'
+      Left = 19
+      Top = 103
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label5: TLabel
-      Left = 16
-      Top = 136
-      Width = 48
-      Height = 12
-      Caption = 'NPC'#22788#29702':'
+      Left = 19
+      Top = 159
+      Width = 38
+      Height = 14
+      Caption = 'NPC??:'
     end
     object Label6: TLabel
-      Left = 16
-      Top = 112
-      Width = 54
-      Height = 12
-      Caption = #20445#30041#22788#29702':'
+      Left = 19
+      Top = 131
+      Width = 28
+      Height = 14
+      Caption = '????:'
       Enabled = False
     end
     object EHum: TSpinEdit
-      Left = 76
-      Top = 13
-      Width = 47
-      Height = 21
+      Left = 89
+      Top = 15
+      Width = 55
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 0
@@ -232,10 +232,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EHumChange
     end
     object EMon: TSpinEdit
-      Left = 76
-      Top = 37
-      Width = 47
-      Height = 21
+      Left = 89
+      Top = 43
+      Width = 55
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 1
@@ -243,10 +243,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EMonChange
     end
     object EZen: TSpinEdit
-      Left = 76
-      Top = 61
-      Width = 47
-      Height = 21
+      Left = 89
+      Top = 71
+      Width = 55
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 2
@@ -254,10 +254,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EZenChange
     end
     object ESoc: TSpinEdit
-      Left = 76
-      Top = 85
-      Width = 47
-      Height = 21
+      Left = 89
+      Top = 99
+      Width = 55
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 3
@@ -265,10 +265,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = ESocChange
     end
     object ENpc: TSpinEdit
-      Left = 76
-      Top = 133
-      Width = 47
-      Height = 21
+      Left = 89
+      Top = 155
+      Width = 55
+      Height = 23
       MaxValue = 0
       MinValue = 0
       TabOrder = 4
@@ -276,10 +276,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = ENpcChange
     end
     object EDec: TSpinEdit
-      Left = 76
-      Top = 109
-      Width = 47
-      Height = 21
+      Left = 89
+      Top = 127
+      Width = 55
+      Height = 23
       Enabled = False
       MaxValue = 0
       MinValue = 0
@@ -288,38 +288,38 @@ object FrmServerValue: TFrmServerValue
     end
   end
   object GroupBox3: TGroupBox
-    Left = 328
-    Top = 8
-    Width = 129
-    Height = 89
-    Caption = #24618#29289#22788#29702#25511#21046
+    Left = 383
+    Top = 9
+    Width = 150
+    Height = 104
+    Caption = '??????'
     TabOrder = 5
     object Label15: TLabel
-      Left = 8
-      Top = 16
-      Width = 54
-      Height = 12
-      Caption = #21047#24618#20493#25968':'
+      Left = 9
+      Top = 19
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label16: TLabel
-      Left = 8
-      Top = 64
-      Width = 54
-      Height = 12
-      Caption = #22788#29702#38388#38548':'
+      Left = 9
+      Top = 75
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object Label17: TLabel
-      Left = 8
-      Top = 40
-      Width = 54
-      Height = 12
-      Caption = #21047#24618#38388#38548':'
+      Left = 9
+      Top = 47
+      Width = 28
+      Height = 14
+      Caption = '????:'
     end
     object EditZenMonRate: TSpinEdit
-      Left = 68
-      Top = 13
-      Width = 47
-      Height = 21
+      Left = 79
+      Top = 15
+      Width = 55
+      Height = 23
       MaxValue = 1000
       MinValue = 0
       TabOrder = 0
@@ -327,10 +327,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EditZenMonRateChange
     end
     object EditProcessTime: TSpinEdit
-      Left = 68
-      Top = 61
-      Width = 47
-      Height = 21
+      Left = 79
+      Top = 71
+      Width = 55
+      Height = 23
       Increment = 10
       MaxValue = 1000
       MinValue = 0
@@ -339,10 +339,10 @@ object FrmServerValue: TFrmServerValue
       OnChange = EditProcessTimeChange
     end
     object EditZenMonTime: TSpinEdit
-      Left = 68
-      Top = 37
-      Width = 47
-      Height = 21
+      Left = 79
+      Top = 43
+      Width = 55
+      Height = 23
       Increment = 10
       MaxValue = 1000
       MinValue = 0
@@ -352,11 +352,11 @@ object FrmServerValue: TFrmServerValue
     end
   end
   object ButtonDefault: TButton
-    Left = 368
-    Top = 112
-    Width = 89
-    Height = 25
-    Caption = #40664#35748#35774#32622
+    Left = 429
+    Top = 131
+    Width = 104
+    Height = 29
+    Caption = '????'
     TabOrder = 6
     OnClick = ButtonDefaultClick
   end

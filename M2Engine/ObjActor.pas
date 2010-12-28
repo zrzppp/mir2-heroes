@@ -25453,9 +25453,9 @@ begin
     //if g_Config.boWarDisHumRun then nWarRunAll := 1;
   end;
 
-  ServerConfig.boRUNHUMAN := nRunHuman = 1;
-  ServerConfig.boRUNMON := nRunMon = 1;
-  ServerConfig.boRunNpc := nRunNpc = 1;
+  ServerConfig.boRUNHUMAN := nRunHuman = 0;
+  ServerConfig.boRUNMON := nRunMon = 0;
+  ServerConfig.boRunNpc := nRunNpc = 0;
 
   sMsg := EncodeBuffer(@ServerConfig, SizeOf(TServerConfig));
   nRecog := MakeLong(MakeWord(nRunHuman, nRunMon), MakeWord(nRunNpc, nWarRunAll));

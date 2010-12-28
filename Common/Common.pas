@@ -3,7 +3,7 @@ unit Common;
 interface
 uses Grobal2, Controls;
 const
-  CHECKCRACK = 1; // Disables/Enables .DLL Checking
+  CHECKCRACK = 0; // Disables/Enables .DLL Checking [DISABLED]
   g_nUpDateVersion = 20100901;   //712
 
   //服务器模块之间

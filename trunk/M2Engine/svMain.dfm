@@ -508,35 +508,35 @@ object FrmMain: TFrmMain
     object MENU_OPTION: TMenuItem
       Caption = 'Server Options (&P)'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = '????(&G)'
+        Caption = 'General Options (&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_GAME: TMenuItem
-        Caption = '????(&O)'
+        Caption = 'Game Options (&O)'
         OnClick = MENU_OPTION_GAMEClick
       end
       object MENU_OPTION_ITEMFUNC: TMenuItem
-        Caption = '????(&I)'
+        Caption = 'Item Functions (&I)'
         OnClick = MENU_OPTION_ITEMFUNCClick
       end
       object MENU_OPTION_FUNCTION: TMenuItem
-        Caption = '????(&F)'
+        Caption = 'Option Functions (&F)'
         OnClick = MENU_OPTION_FUNCTIONClick
       end
       object G1: TMenuItem
-        Caption = '????(&C)'
+        Caption = 'Send Game Command (&C)'
         OnClick = G1Click
       end
       object MENU_OPTION_MONSTER: TMenuItem
-        Caption = '????(&M)'
+        Caption = 'Monster Options (&M)'
         OnClick = MENU_OPTION_MONSTERClick
       end
       object MENU_OPTION_SERVERCONFIG: TMenuItem
-        Caption = '????(&P)'
+        Caption = 'Server Configuration (&P)'
         OnClick = MENU_OPTION_SERVERCONFIGClick
       end
       object MENU_OPTION_HERO: TMenuItem
-        Caption = '????(&H)'
+        Caption = 'Hero Options (&H)'
         OnClick = MENU_OPTION_HEROClick
       end
     end

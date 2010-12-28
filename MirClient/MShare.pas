@@ -1213,15 +1213,15 @@ var
     btHearMsgFColor: 255;
 
 //==================================
-    boShowActorLable: False;
-    boHideBlueLable: True;
-    boShowNumberLable: False; //数字显示
-    boShowJobAndLevel: False; //等级和职业
-    boShowUserName: True;
-    boShowMonName: False;
+    boShowActorLable: False; // Revelation
+    boHideBlueLable: True; // Hide Mana Bar
+    boShowNumberLable: False;
+    boShowJobAndLevel: False;
+    boShowUserName: False;  // Show All Player & Merchant Names
+    boShowMonName: False; // Show All Monster Names
     boShowItemName: False;
     boShowMoveLable: True;
-    boShowGreenHint: False;
+    boShowGreenHint: False; // Debug Text
     boBGSound: True;
     boItemHint: True;
     boMagicLock: True; //魔法锁定
@@ -4678,14 +4678,14 @@ begin
     g_Config.boHideBlueLable := True;
     g_Config.boShowNumberLable := False;
     g_Config.boShowJobAndLevel := False;
-    g_Config.boShowUserName := ini.ReadBool('Basic', 'ShowUserName', g_Config.boShowUserName);
-    g_Config.boShowMonName := ini.ReadBool('Basic', 'ShowMonName', g_Config.boShowMonName);
+    g_Config.boShowUserName := False;
+    g_Config.boShowMonName := False;
     g_Config.boShowGreenHint := False;
     g_Config.boItemHint := ini.ReadBool('Basic', 'ItemHint', g_Config.boItemHint);
     g_Config.boMagicLock := ini.ReadBool('Basic', 'MagicLock', g_Config.boMagicLock);
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
-    g_Config.boOnlyShowCharName := ini.ReadBool('Basic', 'OnlyShowCharName', g_Config.boOnlyShowCharName);
-    g_Config.boPickUpItemAll := ini.ReadBool('Basic', 'PickUpItemAll', g_Config.boPickUpItemAll);
+    g_Config.boOnlyShowCharName := False;
+    g_Config.boPickUpItemAll := False;
     g_Config.boCloseGroup := ini.ReadBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);

@@ -129,7 +129,7 @@ SuperBoneFamm8=
 SuperBoneFamm9=
 PayMentPointName=Payment Point
 [Setup]
-ItemNumber=140392111
+ItemNumber=143450573
 ClientFile1 =Mir.Dat
 ClientFile2 =mir.2
 ClientFile3 =mir.3
@@ -225,7 +225,7 @@ ShowGuildName=1
 MonSayMsg=1
 MonsterPowerRate=10
 ItemsPowerRate=10
-ItemNumberEx=1073813866
+ItemNumberEx=1073813871
 StartCastlewarTime=20
 StartPointSize=2
 PasswordLockSystem=1

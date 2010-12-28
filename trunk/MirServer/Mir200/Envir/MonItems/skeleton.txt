@@ -1,0 +1,39 @@
+1/3  gold 120
+
+;1/40000 Scroll3
+
+1/10000 StaminAidDrug
+
+1/2000   HookedSword
+1/2000   Scimitar
+1/2000   Trident
+1/2000   SteelSword
+1/2000   BlueRing
+1/2000   NagaNecklace
+1/2000   AmberNeck
+1/2000   PhoenixBead
+1/2000   HardGlove
+1/2000   MagicBracelet
+1/2000   LanternNeck
+
+1/1000   IronSword
+1/1000   ShortSword
+1/1000   BronzeHelmet
+1/1000   LightArmour(M)
+1/1000   LightArmour(F)
+1/1000   BronzeAxe
+1/1000   EbonyNecklace
+1/1000   YellowNecklace
+1/1000   BlackNecklace
+1/1000   magichelmet
+
+1/500   BronzeSword
+1/500   ThinBracelet
+1/500   GlassRing
+1/500   HexagonalRing
+1/500   LeatherGlove
+1/500   SilverBracelet
+1/500   steelbracelet
+1/500   HornRing
+1/500   LargeBracelet
+

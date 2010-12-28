@@ -1,0 +1,58 @@
+1/6  gold 250
+1/10000 gold  5000
+
+1/40   SunPotion
+
+;1/40000 Scroll3
+
+1/10000 ImpactDrug
+
+1/5000  HeavyArmour(M)
+1/5000  HeavyArmour(F)
+1/5000  SoulArmour(M)
+1/5000  SoulArmour(F)
+1/5000  MagicRobe(M)
+1/5000  MagicRobe(F)
+1/5000  GoldRing
+1/5000  BlueJadeneck
+1/5000  GoldBracelet
+1/5000  MoralRing
+1/5000  CharmRing
+
+1/2500   MonkBracelet
+1/2500   EbonyBracelet
+1/2500   KrissSword
+1/2500   BlackRing
+1/2500   SerpentEyeRing
+1/2500   PearlRing
+1/2500   PrinceSword
+1/2500   MartialSword
+1/2500   HookedSpear
+1/2500   IronRing
+1/2500   TigerNecklace
+1/2500   PlatinumNeck
+1/2500   SkeletonRing
+1/2500   StrainBracelet
+
+1/1200   HookedSword
+1/1200   Scimitar
+1/1200   Trident
+1/1200   BlueRing
+1/1200   NagaNecklace
+1/1200   AmberNeck
+1/1200   PhoenixBead
+1/1200   HardGlove
+1/1200   MagicBracelet
+1/1200   LanternNeck
+
+1/500    IronSword
+1/500    ShortSword
+1/500    BronzeHelmet
+1/500    LightArmour(M)
+1/500    LightArmour(F)
+1/500    BronzeAxe
+1/500    EbonyNecklace
+1/500    YellowNecklace
+1/500    BlackNecklace
+1/500    magichelmet
+

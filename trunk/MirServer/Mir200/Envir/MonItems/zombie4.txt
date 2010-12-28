@@ -1,0 +1,36 @@
+1/4  gold 150
+1/5000 gold  5000
+
+1/10000  StaminAidDrug
+1/10000  MagicAidDrug
+
+1/10  (HP)DrugSmall
+1/20  (MP)DrugSmall
+
+1/2800   Lightning
+1/8400   Revelation
+1/2800   BlessedArmou
+1/2800   Thrusting
+1/2800   FireWall
+1/2800   SoulShield
+1/2800   FireBang
+1/2800   MassHiding
+
+1/1400   Poisoning
+1/1400   Slaying
+1/1400   Hiding
+1/1400   GreatFireBal
+1/1400   SummonSkele
+1/1400   Teleport
+1/1400   SoulFireBall
+1/1400   ThunderBolt
+1/1400   HellFire
+1/1400   Eshock
+
+1/700   Repulsion
+1/700   SpiritSword
+1/700   FireBall
+1/700   Healing
+1/700   Fencing
+
+

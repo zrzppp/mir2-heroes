@@ -1,0 +1,25 @@
+1/4     gold  70
+1/10000 gold  10000
+
+;1/40000 Scroll3
+
+1/1200    BronzeSword
+1/1200    ThinBracelet
+1/1200    GlassRing
+1/1200    HexagonalRing
+1/1200    LeatherGlove
+1/1200    SilverBracelet
+1/1200    steelbracelet
+1/1200    HornRing
+1/1200    LargeBracelet
+
+1/600    BaseDress(M)
+1/600    BaseDress(F)
+1/600    WoodenSword
+1/600    Dagger
+1/600    EbonySword
+1/600    GoldNecklace
+1/600    CopperRing
+1/600    IronBracelet
+1/600    PrecisionNeck
+

@@ -1,0 +1,13 @@
+1/4   gold  30
+1/20  (HP)DrugSmall
+1/30  (MP)DrugSmall
+
+1/600    BaseDress(M)
+1/600    BaseDress(F)
+1/600    WoodenSword
+1/600    Dagger
+1/600    EbonySword
+1/600    GoldNecklace
+1/600    CopperRing
+1/600    IronBracelet
+1/600    PrecisionNeck

@@ -1,0 +1,6 @@
+1/15  (HP)DrugMedium
+1/25  SunPotion(M)
+1/50  SunPotion
+
+1/600000 ParalysisRing
+

@@ -1,0 +1,40 @@
+1/3    gold 150
+1/25   (HP)DrugMedium
+1/40   SunPotion(M)
+1/80   SunPotion
+
+1/10000  StaminAidDrug
+
+1/1200   HookedSword
+1/1200   Scimitar
+1/1200   Trident
+1/1200   SteelSword
+1/1200   BlueRing
+1/1200   NagaNecklace
+1/1200   AmberNeck
+1/1200   PhoenixBead
+1/1200   HardGlove
+1/1200   MagicBracelet
+1/1200   LanternNeck
+
+1/600    IronSword
+1/600    ShortSword
+1/600    BronzeHelmet
+1/600    LightArmour(M)
+1/600    LightArmour(F)
+1/600    BronzeAxe
+1/600    EbonyNecklace
+1/600    YellowNecklace
+1/600    BlackNecklace
+1/600    magichelmet
+
+1/300    BronzeSword
+1/300    ThinBracelet
+1/300    GlassRing
+1/300    HexagonalRing
+1/300    LeatherGlove
+1/300    SilverBracelet
+1/300    steelbracelet
+1/300    HornRing
+1/300    LargeBracelet
+

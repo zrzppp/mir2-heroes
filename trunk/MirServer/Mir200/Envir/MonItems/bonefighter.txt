@@ -1,0 +1,39 @@
+1/4   gold 140
+1/15  (HP)DrugSmall
+1/25  (MP)DrugSmall
+
+1/10000  StaminAidDrug
+
+1/1800   HookedSword
+1/1800   Scimitar
+1/1800   Trident
+1/1800   SteelSword
+1/1800   BlueRing
+1/1800   NagaNecklace
+1/1800   AmberNeck
+;1/1800   주작의구술 (Not in DB)
+1/1800   HardGlove
+1/1800   MagicBracelet
+1/1800   LanternNeck
+
+1/900   IronSword
+1/900   ShortSword
+1/900   BronzeHelmet
+1/900   LightArmour(M)
+1/900   LightArmour(F)
+1/900   BronzeAxe
+1/900   EbonyNecklace
+1/900   YellowNecklace
+1/900   BlackNecklace
+1/900   magichelmet
+
+1/400   BronzeSword
+1/400   ThinBracelet
+1/400   GlassRing
+1/400   HexagonalRing
+1/400   LeatherGlove
+1/400   SilverBracelet
+1/400   steelbracelet
+1/400   HornRing
+1/400   LargeBracelet
+

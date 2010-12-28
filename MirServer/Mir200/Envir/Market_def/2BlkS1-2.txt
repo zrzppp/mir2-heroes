@@ -1,0 +1,58 @@
+;Info [ Npc Name{Bradley} X=518 Y=492 MapName={SerpentValley} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
++43
+
+[@main]
+Glad to see you, how can I help you?\ \
+<Buy/@buy> weapon\
+<Sell/@sell> weapon\
+<Repair/@repair> weapon\
+<Ask/@qweapon> about weapon\
+<Cancel/@exit>
+
+[@buy]
+Please select the weapon you want to buy\ \ \
+<Back/@main>
+
+[@sell]
+Lay down your weapon to be sold\ \ \
+<Back/@main>
+
+[@repair]
+Would you like to repair your weapon?\ \
+<Back/@main>
+
+[~@repair]
+Your weapon seems to be repaired fine.\ \
+<Back/@main>
+
+[@qweapon]
+The weapon bought from this store has some capacity limit,\
+but weapons aquired from monsters sometimes have special stats.\
+If you bring that special weapon to us we'll buy it at a higher price.\
+By the way, don't forget that the weapon price differs with its stats\
+Usually the higher the durability the higher the selling price.\ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+WoodenSword     100         	1
+Dagger		100		1
+EbonySword	100		1	
+BronzeSword	100		1 
+ShortSword 	100		1
+Ironsword	100		1
+BronzeAxe	100		1
+Trident		100		1
+HookedSword	100		1
+Scimitar	100		1
+SteelSword	100		1
+PowerAxe        100             1
+PickAxe		100		1

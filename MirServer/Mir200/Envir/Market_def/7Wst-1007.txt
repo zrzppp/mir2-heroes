@@ -1,0 +1,44 @@
+;Info [ Npc Name{Jerry} X=11 Y=14 MapName={WareHouse} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++30
++3
++25
+
+;Taoist School General School
+[@main]
+This is a place to store implements or\
+tools for people at the taiost school.\
+Sometimes items will be sold to tourists who pass by.\
+since this is a so secluded place that\
+a lot of people might get into trouble.\
+<Buy/@buy> implements\
+<Sell/@sell> implements\
+<Cancel/@exit>
+
+[@buy]
+Which implement would you like to buy?\ \ \
+ <Back/@main>
+
+[@sell]
+We buy Candles, Amulets, Scrolls RepairOils, etc.\
+ <Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle		200	1
+Torch		200	1
+EternalFlame	200	1
+DungeonEscape	200	1
+EscapeBundle	200	1
+RandomTeleport	200	1
+RandomBundle	200	1
+RepairOil	200	1
+TeleportHome	200	1
+Amulet		200	1
+AmuletBundle	200	1

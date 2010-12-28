@@ -1,0 +1,71 @@
+;Info [ Npc Name{Gerald} X=11 Y=11 MapName={} ]
+;NPC Made By Geoff
+
+;Settings
+%100
++5
++6
++43
+
+[@main]
+My shop only sells top quality weapons.\
+So which one you would you like to buy?\ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Talk/@talk> with Gerald\
+<Move/@move> outside\
+<Close/@exit>
+
+[@buy]
+You want to buy a weapon?\
+Hmmm, choose what you want.\
+I assure you they are all fine weapons....\ \ \
+<Back/@main>
+
+[@sell]
+We will buy any weapon.\
+There won't be any rip-off or special bargain but\
+only fair deal.\ \ \
+<Back/@main>
+
+[@repair]
+If you do the normal repair, the durability\
+of the weapon will drop a bit.\
+So you still want that?\
+If you want the special repair, go to Wayne.\ \
+<Back/@main>
+
+[@talk]
+Castle Gi-Ryoong is built in an isolated area\
+but the traffic of trade goods is not so light here.\
+Considering it was originally built\
+for a purely military use,\
+it is lucky to have this degree of prosperity here.\
+However, we always lack the mineral ore to make weapons.\ \
+<Back/@main>
+
+[@move]
+#ACT
+mapmove 4 221 234
+
+[goods]
+;Item		Amount		Time
+WoodenSword      200	         1
+BronzeSword      200	         1
+IronSword	 200             1
+Dagger	         200	         1
+SteelAxe         200	         1
+HookedSword	 200             1
+KrissSword	 200	         1
+PurifierSword	 200	         1
+HoockedSpear	 200	         1
+BronzeAxe	 200	         1
+ShortSword	 200	         1
+PickAxe  	 200	         1
+SteelSword	 200	         1
+Trident 	 200	         1
+Scimitar	 200	         1
+PrinceSword	 200	         1
+EbonySword	 200	         1
+MartialSword	 200	         1

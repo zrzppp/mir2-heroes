@@ -1,0 +1,14 @@
+;Info [ Npc Name{Man} X=36 Y=28 MapName={?} ]
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Easter Quest 2003 - Recreated by Geoff
+[@main]
+What? What do you want? Look, can't you see I'm extremely\
+busy examining this area? Mind your step! I don't have time\
+to stand chatting to you, if you want to find the dark\
+passage, try at 4,64. Now go away and leave me alone!\
+By the way if you are weilding a RedMoonSword you will\
+need to remove it later on. When you need to do this,\
+go and see Carlos in Sabuk Wall\ \
+<Okay/@exit>

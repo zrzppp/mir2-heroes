@@ -1,0 +1,35 @@
+;Info [ Npc Name{Michelle} X=23 Y=27 MapName={potionsroom} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%200
++19
++20
++21
++22
++23
++24
++26
+
+;Repair
+[@main]
+Are you here to find out something new?\
+I guess you may know that it is dangerous here\
+The only thing I can do for you is\
+repair your accessory\ \
+<Repair/@repair> accessory\
+<Cancel/@exit>
+
+
+[@repair]
+Do you want to repair your accessory?\ \
+<back/@main>
+
+[~@repair]
+It seems to be well done.\ \
+<back/@main>
+
+[goods]
+;Item		Amount		Time

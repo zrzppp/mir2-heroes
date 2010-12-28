@@ -1,0 +1,15 @@
+;Info [ Npc Name{HighWarrior} X=14 Y=9 MapName={HouseOfHighLeveledWarrior} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;High Warrior
+[@main]
+#IF
+checkmonmap 01141 1
+#SAY
+There are still spirits guarding the book!\ \
+<Ok/@exit>
+#ELSEACT
+map 0114
+set [209] 1

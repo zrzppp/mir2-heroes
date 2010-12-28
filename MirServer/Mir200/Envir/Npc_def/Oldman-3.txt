@@ -1,0 +1,18 @@
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;OldMan - Talks about Sabuk Wars
+[@main]
+Do you want to know about Sabuk Wars?\ \
+<Info/@aboutwar>\
+
+[@aboutwar]
+So you want to know about wars,\
+the next war is planned on  <$CASTLEWARDATE>, 8PM cet.\ \
+<List War/@listwar>\
+<Back/@main>\
+
+
+[@listwar]
+<$LISTOFWAR>\
+<Back/@aboutwar>\

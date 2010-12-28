@@ -1,0 +1,183 @@
+;Info [ Npc Name{Kim} X=9 Y=7 MapName={MeatStore} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++40
++1
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [302] - Unknown
+; [304] - Unknown
+; [305] - Unknown
+; [309] - Unknown
+; [310] - Unknown
+;###############################################################
+
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you... \ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+#IF
+random 2
+#ACT
+goto @QUEST
+#ELSEACT
+goto @normal
+
+[@normal]
+Welcome, what can I do for you?\ \
+<Buy/@buy> meat\
+<Sell/@sell> meat\
+<Cancel/@exit>
+
+[@Tmove]
+#IF
+random 2
+#ACT
+mapmove 0 307 264
+break
+
+#IF
+random 2
+#ACT
+mapmove 0 308 265
+break
+
+#ELSEACT
+goto @Tmove
+
+[@QUEST]
+#IF 
+check [312] 1
+#ACT
+goto @Q312
+break
+
+#IF
+check [310] 1
+#ACT
+goto @Q310
+break 
+
+#IF
+check [309] 1
+#ACT
+goto @Q309
+break
+
+#IF
+check [305] 1
+#ACT
+goto @Q305
+break 
+
+#IF
+check [304] 1
+#ACT
+goto @Q304
+#ELSESAY
+Welcome, what can I do for you?\ \
+<Buy/@buy> meat\
+<Sell/@sell> meat\
+<Cancel/@exit>
+
+[@Q304]
+You come here after hearing Rupert's remark...\
+Welcome.... I have a request from you\
+I know you are a good person since I heard\
+about you from Rupert. Could you do me a favor?\ \
+<Accept/@Q304_1> request\
+<Reject/@exit> request
+
+
+[@Q304_1]
+#IF
+#ACT
+SET [305] 1
+#SAY
+Thank you for accepting my request...\ 
+Rupert asked me to make a good meat dish\
+and he gave me high quality meat and chicken...\
+But a good cook might be necessary for making a good meat dish\
+Could you please look for a cook for me?\ \
+<ok/@exit>
+
+[@Q305]
+#IF
+#SAY
+I'm begging. Please look for a good cook as soon as possible...\ \
+<Close/@exit>
+
+[@Q309]
+#IF
+check [309] 1
+#SAY
+I really admire you!\
+You found that cook...\
+He contacted me and said to make that delicious dish\ 
+he needs a special oil.\ \
+<Next/@Q309_1>
+
+
+[@Q309_1]
+#IF
+#ACT
+SET [310] 1
+#SAY
+Unfortunatly, I don't know how to make this special oil...\
+I heard that once, in Bichon lived an expert in this matter,\
+who is now a very old person... You have to look for him\
+But, I'm sorry, I don't know exactly where he is now\ \
+<I'll look for him/@exit>
+
+
+[@Q310]
+#IF
+#SAY
+Please find this person as soon as possible..\ \
+<Ok/@exit>
+
+
+
+[@Q312]
+#IF
+#ACT
+SET [313] 1
+#SAY
+Something came from that old person...\ 
+I gave that object to Rupert after asking him to cook the dish,\
+go to Rupert then.\ \
+<Ok/@exit>
+
+
+
+[@buy]
+Please choose what you want to buy.\ \ \
+<Back/@main>
+
+
+[@sell]
+If you have high quality meat please sell it to me\
+I'll pay well for it\ \
+<Back/@main>
+
+
+
+[goods]
+;Item		Amount		Time
+Meat     1000            1
+Chicken  1000            1 

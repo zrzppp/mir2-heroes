@@ -1,0 +1,53 @@
+;Info [ Npc Name{Susan} X=13 Y=14 MapName={} ]
+;Settings
+%100
++10
++11
+
+[@main]
+#SAY
+Welcome, do you want to look at the traditional costumes of\
+Prajna Island?\ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Move Outside/@teleout>\
+<Close/@exit>
+
+[@buy]
+What item do you want to buy?\ \ \
+ <Back/@main>
+
+[@sell]
+Show me your clothes to be sold. I'll give you an appraisement.\
+So if you like my store please sell them to me.\ \
+ <Back/@main>
+
+[@repair]
+You can repair clothes here.\ \ \
+ <Back/@main>
+
+[~@repair]
+It seems repaired fine.\ \ \
+ <Back/@main>
+
+[@teleout]
+#ACT
+mapmove 5 145 325
+
+[goods]
+;Item		Amount		Time
+BaseDress(M)		100	1	
+BaseDress(F)		100	1
+LightArmour(M)		100	1
+LightArmour(F)		100	1
+MediumArmor(M)		100	1
+MediumArmor(F)		100	1
+HeavyArmour(M)		100	1
+HeavyArmour(F)		100	1
+SoulArmour(M)		100	1
+SoulArmour(F)		100	1
+MagicRobe(M)		100	1
+MagicRobe(F)		100	1
+CottonBikini		100	1
+CottonY-Fronts		100	1

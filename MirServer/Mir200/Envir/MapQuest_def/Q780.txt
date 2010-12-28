@@ -1,0 +1,22 @@
+[@main]
+#IF
+check [780] 1
+checkitem E 2
+checkitem A 1
+checkitem S 1
+checkitem T 1
+checkitem R 1
+#ACT
+take E 2
+take A 1
+take S 1
+take T 1
+take R 1
+set [781] 1
+#SAY
+You travel deeper into the tomb...
+#ELSESAY
+Entry prohibited by ORDER of Bichon Wall\
+Administrator.
+#ELSEACT
+mapmove D002 224 176

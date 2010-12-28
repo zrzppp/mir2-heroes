@@ -1,0 +1,61 @@
+;Info [ Npc Name{Adam} X=212 Y=236 MapName={} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
++43
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome. Thanks for dropping in\ \
+<Buy/@buy>  weapon\
+<Sell/@sell>  weapon\
+<Repair/@repair> weapon\
+<Close/@exit>
+
+[@buy]
+Which item would you like to buy?\ \ \
+<Back/@main>
+
+[@sell]
+Show me your weapon to be sold.\ \ \
+<Back/@main>
+
+[@repair]
+Would like to repair weapon? Show me your weapon that need it.\ \
+<Back/@main>
+
+[~@repair]
+It seems in good condition now.\ \
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+WoodenSword     100         	1
+Dagger		100		1
+EbonySword	100		1	
+BronzeSword	100		1 
+ShortSword 	100		1
+Ironsword	100		1
+BronzeAxe	100		1
+Trident		100		1
+HookedSword	100		1
+Scimitar	100		1
+SteelSword	100		1
+PickAxe		100		1

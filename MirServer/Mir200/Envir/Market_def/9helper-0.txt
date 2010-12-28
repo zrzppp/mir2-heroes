@@ -1,0 +1,380 @@
+;Info [ Npc Name{Assistant} X=284 Y=608 MapName={Bichon-Province} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [750]-[770] - Unknown
+;###############################################################
+
+[@main]
+Hi? Are you new to this game?\
+If you want I can tell you how to play.\ \
+;<Talk/@QUEST> about what I can do.\
+<Ask about how to play Mir 2/@next> about Mir 2.
+
+[@next]
+First, let me tell you about talking with NPC's.\
+Do you see the yellow text? Click on it.\
+Can you see the new text?\
+It might be a bit difficult because you are still new here\
+but don't worry you will get used to everything soon.\ \
+<Next/@next1>
+
+[@next1]
+Select a topic yo learn more about.
+<How to wear items/@Wear>\
+<How to move/@Move>\
+<How to fight/@Fight>\
+<How to talk with NPC's/@npctalk>\
+<Skills and Magic/@magicskill>\
+<Function Keys/@keys>\
+<Close/@exit>
+
+[@QUEST]
+#IF
+check [756] 1
+#ACT
+goto @Q706
+break
+
+#IF
+check [755] 1
+#ACT
+goto @Q705
+break
+
+#IF
+check [753] 1
+#ACT
+goto @Q703
+break
+
+#IF
+check [752] 1
+#ACT
+goto @Q702
+break
+
+#IF
+check [750] 1
+#ACT
+goto @Q700
+#ELSEACT
+goto @QUEST1
+
+[@Q706]
+Go to the place I said, The person waits for you there\ \
+<Close/@exit>
+
+
+[@Q705]
+#IF
+checklevel 5
+#ACT
+SET [756] 1
+goto @Q705_1
+#ELSESAY
+<$USERNAME>, have you finished the job that the man\
+of the WeaponStore asked you? Would you come again\
+after reaching level 5 with killing HookingCat or\
+Scarecrow or RakingCat? Then I'll give you the next\
+job to do. Good luck!\ \
+<Close/@exit>
+
+[@Q705_1]
+#IF
+checkjob warrior
+#ACT
+goto @Q705_1_1
+break
+
+#IF
+checkjob wizard
+#ACT
+goto @Q705_1_2
+break
+
+#IF
+checkjob taoist
+#ACT
+goto @Q705_1_3
+break
+
+[@Q705_1_3]
+<$USERNAME>, Do you finish the job that the man of ArmStroe asked you?\
+Also <$USERNAME>, your level is 5 or more. Do you know\
+what your occupation is ? You are a Taoist. Taoists are students of Taoism made by\
+acient taoists and this people are good at kinds of knowledges\
+such as astronomy, geography,medical science. and although it's not same as warrior\
+They are good at sword skill also. for they have studyed health\ \
+<Next/@Q705_1_3_1>
+
+[@Q705_1_3_1]
+They know well about medical skill and Ki(the vital power of body as Asian concept)\
+Therefore they use various kinds of healing, also they make serious poison\
+Taoist has a lot of attack skills using various kinds of aid-instrument\
+Especially at the end of game, most taoist magic skill will be performed with amulet\
+So you should carry many items, and the balance of attack and deffence is best and\
+Attack at short distance and long distance both are available.\ \
+<Next/@Q705_1_3_2>
+
+[@Q705_1_3_2]
+Also using various and strong magics helping other character. They can cover\
+every situation. Now <$USERNAME>, you should go to the house of High level\
+Taoist and build elementry ground to increase your ability. To do so, you\
+should talk to HolyTaoist. Now the coordinates of high level taoist's\
+house are 544,560. It is not easy to go there but talk with him absolutely.\ \ 
+<Close/@exit>
+
+
+[@Q705_1_2]
+<$USERNAME>, Do you finish the job that the man of ArmStroe asked you? \
+Also <$USERNAME>, your level is 5 or more. Do you know  \
+what your occupation is ? You are a Wizard. Wizards is a interseting and attractive \
+character performing various and brilliant magic skill. \
+They can carry out excellent ability of long distance magical attack \
+Irrespective of distance or location. \ \ 
+<Next/@Q705_1_2_1>
+
+[@Q705_1_2_1]
+<$USERNAME>, you who didn't master strong magic skill yet could be vulnerable in close fighting \
+due to weaker physical strength than other characters. Also as level goes up \
+from their learning of magical spell they will grow to fairly strong characters \
+It is a matter for congratulation that you select this wizard character. \
+<$USERNAME>, go to the house of high level wizard and check your own ability \
+The coordinates of high level wizard's house is 314, 474. \
+It is not easy to go there But Talk with GreatWizard \  
+<Close/@exit>
+
+
+[@Q705_1_1]
+<$USERNAME>, Do you finish the job that the man of ArmStroe asked you ? \
+Also <$USERNAME>, your level is 5 or more. Do you know  \
+what your occupation is ? You are a Warrior. Warriors are simple \
+but good at hunting or bitter fighting at close quarters  \
+on the basis of strong physical strength. Also as level goes up \
+from their learning of special sword skill they will grow to fairly strong warriors \ \
+<Next/@Q705_1_1_1>
+
+[@Q705_1_1_1]
+Although warriors are proud of bitter fighting at close quarters \
+they don't have other ability at all. so they are vulnerable in attack at long distance or magical attack \
+But a lot of various pretectors and aid instruments will cover the weak point of warriors \
+It is a matter for congratulation that you select this warrior character. \
+<$USERNAME>, go to the house of  and check your next job to do \
+The coordinates of High-level warrior's house is 107, 316 . \
+Go there and talk with Yado. \
+<Close/@exit>
+
+[@Q703]
+#IF
+#SAY
+BlackSmith is looking for <$USERNAME>, you . Hurry up to go and see him. \ \ 
+<Close/@exit>
+
+[@Q702]
+#IF
+checklevel 3
+#ACT
+SET [753] 1
+#SAY
+<$USERNAME>, Do you finish the job that the man of ArmStroe asked you ? \
+Also <$USERNAME>, your level is 3 or more. then let me tell \
+you next job to do. To do this job, you should go and see \
+a balcksmith([297,612],[649,602]). You could know what these numbers mean \
+Then go there and \
+try doing the job \ \ 
+<Close/@exit>
+
+
+#ELSESAY
+<$USERNAME>, Do you finish the job that the man of ArmStroe asked you ? \
+Kill Hens and Deers and get the meat of those \
+Selling the meats will give you Gold. \
+Would come again after reaching level 3? \
+Now let me tell you next job to do. Good luck \ \
+<Close/@exit>
+
+[@Q700]
+#IF
+#SAY
+<$USERNAME> hurry and see a butcher.\ \ 
+<Close/@exit>
+
+[@QUEST1]
+#IF
+checklevel 1
+#ACT
+reset [750] 20
+goto @QUEST1_1
+#ELSESAY
+<$USERNAME>, you can not do the job I'll ask you \
+Because your level is too low. This job is only for level 1-3 \
+then look for other job that is proper for you \
+Good luck\ \
+<Close/@exit>
+
+[@QUEST1_1]
+#IF
+checklevel 4
+#SAY
+<$USERNAME>, you can't do this job I'm afraid.\
+The job is only for people level 1-3 and you are\
+too high. Find a job that is right for you.\
+Good luck!\ \
+<Close/@exit>
+#ELSESAY
+<$USERNAME>, let me tell you what job to do\
+Will you try? It will be good for playing Mir.\
+You had better try.\ \
+<Try/@QUEST1_1_1>the job\
+<Refuse/@QUEST1_1_2>the job
+
+[@QUEST1_1_1]
+#IF
+#ACT
+SET [750] 1
+#SAY
+Do you want to know the next job to do? Then,\
+go and see a butcher ([293,603],[649,592]). Do\
+you know what the number above means? The number\
+is written on the bottom left of your screen. The\
+number means where the NPC is. In Mir world this number\
+is called coordinates. The name that is next to it is\
+region. This region is Bichon province.. then hurry up to\
+go and see him.\ \
+<Close/@exit>
+
+[@QUEST1_1_2]
+#IF
+#SAY
+<$USERNAME>, you refused my job... well it's ok.\
+Mir's world is one of hardship and trouble.\
+Take care of yourself always and good luck.\
+Be happy always..\ \
+<Close/@exit>
+
+[@Wear]
+If you press F9 (bag window) and F10 (status window)\
+you will see both windows are then open.\
+To wear an item, you have to drag the item from the bag window\
+and drop it into its proper box in the status window.\
+Different boxes: Armours - body, Weapons - right hand,\
+Necklaces - right top corner\
+Candle - below the necklace box, Bracelet - below the candle box,\
+Ring - Below the bracelet box.\
+<Back/@Main>
+
+[@Move]
+Mouse
+Left button: Perform basic actions. Walking, attacking,\
+and moving items.\
+Right button: If you click around or near you,\
+you can face different directions, if you click (and hold) you will run.\ \
+Shift + left: You can force attack.\ \
+<Back/@Main>,  <Continue/@Move2>
+
+[@Move2]
+Ctrl + left: Run\
+Ctrl + right: Will show you what equipment another character\
+is wearing, similar to f10 function.\
+Alt + left: You can harvest dead bodies to <get items/@Getitem>.\
+Double click: If you double click an on item on the ground\
+you will pick it up. If do that on an item in your bag\
+you will use that item.\ \
+<Back/@Move>
+
+[@Getitem]
+You can harvest from the dead bodies of\
+deer, hen, sheep and wolves to get a piece of meat,\
+on CannibalPlants to get a CannibalLeaf or CannibalFruit,\
+on a CaveMaggot to get a MaggotPill, and on a SpittingSpider\
+to get SpiderTeeth.\ \
+<Back/@Move>
+
+[@Fight]
+Basically you can attack most things by simply clicking the\
+left mouse button. But, if this doesn't work you can force\
+attack by pressing Shift + left.\ \
+<Back/@Main>
+
+[@Talk]
+/Characer Name : You can whisper to other players.\
+No distance limit.\
+If you left click on character name in chatting window, the\
+whisper function will be activated automatically.\ \
+<Back/@Main>, <Continue/@Talk2>
+
+[@Talk2]
+!message : Will "shout" the message.\
+(Everyone can hear the message in a large radius)\
+!!message - The message can only be heard within your group.\
+!~message - The message will only be heard by fellow\
+Guild members. The message color is green.\ \
+<Back/@Talk>, <Continue/@Talk3>
+
+[@Talk3]
+@rejectwhisper : Will reject all incoming whispers.\
+you can reconnect or type the command\
+again to allow whispering.
+@ban Character name : You can reject\
+whispering from specific character,\
+toggles back on the same way as above.\ \
+<Back/@Talk2>, <Continue/@Talk4>
+
+[@Talk4]
+@rejectshouting : This will block any incoming shouts.\
+@reject_Guild_Chat : This will block any incoming Guild Chat.\
+@leaveguild : Will remove you from your current guild.\
+Direction keys : You can see previous dialogue by using\
+the up or down arrows.\ \
+<Back/@Talk3>
+
+[@Skill]
+In order to learn your first skill, you need to be level 7.\
+Warriors can learn <Fencing/@Onehand>, Taoists can learn <Healing/@Heal>\
+and Wizards can learn <Fireball/@Fireball>.\
+The books are sold at the bookstores in Border Village,\
+Bichon Wall or Mongchon Province.\
+After the first few skills, some books\
+can only be acquired bu killing Mobs\
+or by trading with other players.\
+<Back/@Main>
+
+[@Onehand]
+As a Warrior's martial art, you can learn it\
+by double clicking on book when you reach level 7.\
+Your accuracy will increase as you level up and\
+so will the chances of a successful attack.\ \
+<Back/@Skill>
+
+[@Heal]
+As a Taoist's martial art, you can learn it\
+by double clicking on book when you reach level 7.\
+As your skill level increases, the amount of HP\
+healed will raise.\ \
+<Back/@Skill>
+
+[@Fireball]
+As a Wizard's skill, you can learn it\
+by double clicking on book when you reach level 7.\
+As the skill level increases, the damage dealt will raise\ \
+<Back/@Skill>
+
+[@Hotkey]
+F1-F8    Shortcut for skills\
+F9       Bag window\
+F10      Status window\
+F11      Skill status window\
+Ctrl+H   Changing attack mode\
+Ctrl+F   Changing letter font \
+Ctrl+A   <Tamed monster/@Slave> attack/rest mode\ \
+<Back/@Main>
+
+[@Slave]
+Tamed monster means a creature that you can control\
+Using skills such as the Taoist's SummonSkel or\
+Wizard's ElectricShock.\ \
+<Back/@Hotkey>

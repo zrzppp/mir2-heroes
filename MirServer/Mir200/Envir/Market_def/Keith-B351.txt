@@ -1,0 +1,52 @@
+;Info [ Npc Name{Keith} X=8 Y=9 MapName={} ]
+;Settings
+%100
++5
++6
++43
+
+[@main]
+#SAY
+There are many useful weapons here.\
+Please have a look.\ \
+<Buy Weapon/@buy>\
+<Sell Weapon/@sell>\
+<Repair Weapon/@repair>\
+<Conduct Special Repair/@s_repair>\
+<Move Outside/@moveout>\
+<Close/@exit>
+
+[@buy]
+Have you found anything you like?\ \
+<Back/@main>
+
+[@sell]
+The price is up to the condition of the weapon.\ \
+<Back/@main>
+
+[@repair]
+You want the normal repair?\
+Hmmm, you are having some financial trouble, aren't you?\
+Anyway, give me the weapon to repair.\ \
+<Back/@main>
+
+[~@repair]
+Your weapon seems to be repaired fine.\ \
+<Back/@main>
+
+[@moveout]
+#ACT
+mapmove 5 128 303
+
+[goods]
+WoodenSword     100         	1
+Dagger		100		1
+EbonySword	100		1	
+BronzeSword	100		1 
+ShortSword 	100		1
+Ironsword	100		1
+BronzeAxe	100		1
+Trident		100		1
+HookedSword	100		1
+Scimitar	100		1
+SteelSword	100		1

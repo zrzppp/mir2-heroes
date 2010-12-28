@@ -1,0 +1,12 @@
+;Info [ Npc Name{GambleWoman} X=10 Y=6 MapName={Pilgrimsroom} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+#IF
+#ACT
+BreakTimeRecall 
+mapmove T125 8 10
+
+

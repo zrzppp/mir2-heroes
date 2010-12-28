@@ -1,0 +1,46 @@
+;Info [ Npc Name{Jeweler} X=10 Y=9 MapName={} ]
+;NPC Made By Geoff
+
+;Settings
+
+[@main]
+I will buy any unused bonus stones you have.\
+Just let me have a look at it
+as I will pay you well.\ \
+<Sell/@sell>\
+<Talk/@talk>
+
+[@sell]
+Which stone do you want to sell? \ \
+<Back/@main>
+
+[@talk]
+Bonus stones protect their owner by allowing\
+him/her to have special powers.\
+It looks like a normal gem stone but it bears\
+mysterious magic. \ \
+<Next/@talk2>
+
+[@talk2]
+There is no fixed shape for bonus stones.\
+Some are natural while the others are\
+cut to make them more powerful.\ \
+<Close/@exit>
+
+[goods]
+;Item		Amount		Time
+HealthStone(S)     100         	1
+HealthStone(M)     100         	1
+HealthStone(L)     100         	1
+HealthStone(1)     100         	1
+HealthStone(2)     100         	1
+MagicStone(S)     100         	1
+MagicStone(M)     100         	1
+MagicStone(L1)     100         	1
+MagicStone(L2)     100         	1
+MagicStone(L3)     100         	1
+PowerStone(S)     100         	1
+PowerStone(M)     100         	1
+PowerStone(L)     100         	1
+PowerStone(1)     100         	1
+PowerStone(2)     100         	1

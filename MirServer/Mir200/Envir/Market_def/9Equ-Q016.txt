@@ -1,0 +1,257 @@
+;Info [ Npc Name{Trader} X=14 Y=21 MapName={QuestRoom6} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+#IF
+#ACT
+goto @QUEST
+
+[@QUEST]
+#IF
+check [317] 1
+#ACT
+goto @Q317
+break
+
+#IF
+#ACT
+mov p1 0
+mov p2 0
+mov p3 0
+mov p4 0
+goto @Q316
+break
+
+[@Q316]
+#IF
+#SAY
+As you come here I want to show you something.\
+There are several items that I have made since I stayed here.\
+I don't know how much these items are worth in the outside world.\
+I have a pride of these items.\
+Would you like to see these them?\ \
+<Take/@Q316_1> a look\
+<Refuse/@Q316_2>
+
+[@Q316_2]
+#IF
+#SAY
+You don't want to? That disapoints me. I was hoping\
+you would be interested. Oh well, be gone then!\ \
+<Close/@exit>
+
+[@Q316_1]
+#IF
+checkjob warrior
+#ACT
+goto @warr
+break
+#IF 
+checkjob wizard
+#ACT
+goto @wiza
+break
+#IF
+checkjob taoist
+#ACT
+goto @taoi
+break
+
+[@warr]
+#IF
+#SAY
+Let me show you items that I can make. Take a look carefully\
+<Ask/@Q316_1_1> making GreatAxe(GoldBar 1, Purity 13 or more GoldOre 5)\
+<Ask/@Q316_1_4> making Benediction Oil(Gold 500,000, Sunpotion(Medium) 5)\ \
+<Cancel/@exit>
+#ACT
+SET [317] 1
+
+[@wiza]
+#IF
+#SAY
+
+Let me show you items that I can make. Take a look carefully\
+<Ask/@Q316_1_3> making Mage Staff(GoldBar 1, Purity 13 or more GoldOre 3)\
+<Ask/@Q316_1_4> making Benediction Oil(Gold 500,000, Sunpotion(Medium) 5)\ \
+<Cancel/@exit>
+#ACT
+SET [317] 1
+
+[@taoi]
+#IF
+#SAY
+Let me show you items that I can make. Take a look carefully\
+<Ask/@Q316_1_2> making Serpent Sword(GoldBar 1, Purity 13 or more GoldOre 4)
+<Ask/@Q316_1_4> making Benediction Oil(Gold 500,000, SunPotion(Medium) 5)\ \
+<Cancel/@exit>
+#ACT
+SET [317] 1
+
+[@Q316_1_1]
+#IF
+equal p1 1
+#ACT
+goto @Nopay1
+#ELSEACT
+goto @Q316_1_1_1
+
+[@Nopay1]
+#IF
+#SAY
+I am sorry. Just one Great Axe is available.\ \
+<Close/@exit>
+
+[@Q316_1_1_1]
+#IF
+checkitem GoldBar 1
+checkitem GoldOre 5
+checkduraeva GoldOre 10
+#ACT
+take GoldOre 5
+take GoldBar 1
+#SAY
+Do you want to make a GreatAxe? Then wait in while.\ \
+<Next/@Q316_1_1_1_1>
+#ELSESAY
+To make a GreatAxe, I need the raw materials that I told you about.\
+after you bring me those I can make it,\
+I can do nothing without them.\ \
+<Close/@exit>
+
+[@Q316_1_1_1_1]
+#IF
+#ACT
+mov p1 1
+give GreatAxe 1
+#SAY
+Here it is. use it well.\ \
+<Close/@exit>
+
+[@Q316_1_2]
+#IF
+equal p2 1
+#ACT
+goto @Nopay2
+#ELSEACT
+goto @Q316_1_2_1
+
+[@Nopay2]
+#IF
+#SAY
+I am sorry. Just one SerpentSword is available.\ \
+<Close/@exit>
+
+[@Q316_1_2_1]
+#IF
+checkitem GoldBar 1
+checkitem GoldOre 4
+checkitem GoldOre 10
+#ACT
+take GoldOre 4
+take GoldBar 1
+#SAY
+Do you want to make a SerpentSword? Then wait in while.\ \
+<Next/@Q316_1_2_1_1>
+#ELSESAY
+To make a SerpentSword, I need the raw materials that I told you about.\
+after you bring me those I can make it,\
+I can do nothing without them.\ \
+<Close/@exit>
+
+[@Q316_1_2_1_1]
+#IF
+#ACT
+mov p2 1
+give SerpentSword 1
+#SAY
+Here it is. Use it well.\ \
+<Close/@exit>
+
+[@Q316_1_3]
+#IF
+equal p3 1
+#ACT
+goto @Nopay3
+#ELSEACT
+goto @Q316_1_3_1
+
+[@Nopay3]
+#IF
+#SAY
+I am sorry. Just one MageStaff is available.\ \
+<Close/@exit>
+
+[@Q316_1_3_1]
+#IF
+checkitem GoldOre 3
+checkitem GoldBar 1
+checkitem GoldOre 10
+#ACT
+take GoldBar 1
+take GoldOre 3
+#SAY
+Do you want to make a MageStaff? Then wait in while.\ \
+<Next/@Q316_1_3_1_1>
+#ELSESAY
+To make a MageStaff, I need the raw materials that I told you about.\
+after you bring me those I can make it,\
+I can do nothing without them.\ \
+<Close/@exit>
+
+[@Q316_1_3_1_1]
+#IF
+#ACT
+mov p3 1
+give MageStaff 1
+#SAY
+Here it is. Use it well.\ \
+<Close/@exit>
+
+[@Q316_1_4]
+#IF
+equal p4 5
+#ACT
+goto @Nopay4
+#ELSEACT
+goto @Q316_1_4_1
+
+[@Nopay4]
+#IF
+#SAY
+I am sorry. Just five Benediction Oils are available.\ \
+<Close/@exit>
+
+[@Q316_1_4_1]
+#IF
+checkgold 500000
+checkitem Sunpotion(Medium) 5
+#ACT
+take Gold 500000
+take Sunpotion(medium) 5 
+#SAY
+Do you want to make a Benediction Oil? Then wait in while.\ \
+<Next/@Q316_1_4_1_1>
+#ELSESAY
+To make a Benediction Oil, I need the raw materials that I told you about.\
+after you bring me those I can make it,\
+I can do nothing without them.\ \
+<Close/@exit>
+
+[@Q316_1_4_1_1]
+#IF
+#ACT
+inc p4 1
+give Benediction Oil 1
+#SAY
+Here it is. Use it well. \ \ 
+<Next/@Q316_1_4>
+
+[@Q317]
+#IF
+#SAY
+It is a rule for me to make you a certain item just one time.\
+The same item is never made again. Go back right now\ \
+<Ok/@exit>

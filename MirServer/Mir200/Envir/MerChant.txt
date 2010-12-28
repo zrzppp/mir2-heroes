@@ -1,114 +1,296 @@
-;脚本名称   地图名称 X坐标 Y坐标   NPC名称   标志    形象  是否属于沙  是否移动  移动间隔   是否允许变色  变色速度（秒）
-英雄系统	3	340	321	英雄领取\盟重	0	36	0	0	0       0          0      2
-沙城炼武	0151	12	10	沙城炼武器老板	0	0	0	0	0
-拍卖系统	3	320	320	拍卖系统\盟重	0	52	0	0	0
-元素系统	3	319	325	装备大师\盟重	0	0	0	0	0       1          3
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-比奇省/比奇传送员	0	328	267	比奇车夫	0	8	0	0	0
-比奇省/比奇省商人	0	337	261	比奇省大奸商	0	18	0	0	0
-比奇省/比齐夏家店	0	324	291	夏家店老板	0	5	0	0	0
-比奇省/银杏传送员	0	652	623	银杏村长	0	9	0	0	0     0          0        3
-比奇省/边界传送员	0	293	614	边界村长	0	9	0	0	0     0          0        3
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-盟重省/盟重省传送	3	341	330	盟重车夫	0	8	0	0	0           1          3
-盟重省/盟重省老兵	3	341	335	特殊服务	0	49	0	0	0           1          3
-盟重省/盟重省仓库	0145	9	12	贵重物品保管员	0	12	0	0	0
-盟重省/盟重省无限仓库	0145	3	12	垃圾物品保管员	0	12	0	0	0
-盟重省/盟重省服装	0149	23	20	周家布衣商行	0	7	0	0	0
-盟重省/盟重省头盔	0149	8	5	盟重头盔店	0	5	0	0	0
-盟重省/盟重省铁匠	0159	5	9	盟重铁匠铺	0	0	0	0	0
-盟重省/盟重省戒指	0158	11	16	盟重戒指店	0	5	0	0	0
-盟重省/盟重省宝石	0149	11	18	宝石靴子腰带店	0	6	0	0	0
-盟重省/盟重省手镯	0158	16	11	盟重手镯店	0	6	0	0	0
-盟重省/盟重省项链	0158	4	21	盟重项链店	0	4	0	0	0
-盟重省/盟重省书店	0161	11	16	盟重书店	0	2	0	0	0
-盟重省/盟重省杂货	3	346	334	盟重杂货店	0	19	0	0	0
-盟重省/盟重省药店	3	361	335	盟重药店	0	21	0	0	0
-盟重省/沙巴克小贩	3	663	304	沙城小贩	0	3	1	0	0
-盟重省/沙巴克仓库	0152	7	12	沙城仓库员	0	12	1	0	0
-盟重省/沙巴克药店	0153	14	7	沙城药店	0	1	1	0	0
-盟重省/沙巴克手镯	0154	14	7	沙城手镯店	0	6	1	0	0
-盟重省/沙巴克项链	0154	3	18	沙城项链店	0	6	1	0	0
-盟重省/沙巴克戒指	0154	10	15	沙城戒指店	0	5	1	0	0
-盟重省/沙巴克衣服	0155	13	7	沙城衣服店	0	7	1	0	0
-盟重省/沙巴克头盔	0155	9	11	沙城头盔店	0	5	1	0	0
-盟重省/红名村老人	3	855	661	红名村老人	0	3	0	0	0
-盟重省/酒馆人物一	3	379	304     辰星	        0	73	0	0	0
-盟重省/酒馆人物二	3	380	305	影月	        0	74	0	0	0
-盟重省/酒馆人物三	3	380	304	翔天     	0	75	0	0	0
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-白日门/白日门传送	11	180	318	白日门车夫	0	8	0	0	0
-白日门/白日门商人	11	182	324	白日门大奸商	0	18	0	0	0
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-封魔谷/封魔谷传送	4	240	194	封魔谷车夫	0	8	0	0	0
-封魔谷/封魔谷商人	4       242     194	封魔谷大奸商	0	18	0	0	0
-封魔谷/封魔谷炼药	4	229	254	封魔谷炼药师	0	22	0	0	0
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-苍月岛/苍月岛传送	5	138	337	苍月岛车夫	0	8	0	0	0
-苍月岛/苍月岛商人	5	145	329	苍月大奸商	0	18	0	0	0
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-魔龙城/魔龙城传送	6	125	152	魔龙城车夫	0	8	0	0	0
-魔龙城/魔龙城商人	6	129	143	魔龙城大奸商	0	18	0	0	0
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-其他类/行会管理	        3	319	336	行会管理\盟重	0	15	0	0	0
-;其他类/比武擂台  	3	319	331	比武擂台\盟重	0	15	0	0	0
-;其他类/擂台裁判         K002	19	10	擂台老人	0	1	0	0	0
-其他类/兽王任务	        DM001	2	8	小林奸商    	0	14	0	0	0
-其他类/群英擂台	        G004	40	40	群英裁判        0	15	0	0	0
-其他类/战士擂台	        GA2A    11      25	武将裁判        0	15	0	0	0
-其他类/法师擂台	        GA2B    11      25	法神裁判        0	15	0	0	0
-其他类/道士擂台	        GA2C    11      25	天尊裁判        0	15	0	0	0
-其他类/七星任务	        11	172	331	七星珠守护神	0	16	0	0	0
-其他类/打工管家	        2	503	485	打工管家	0	25	0	0	0
-;其他类/元宝刷怪        0139	17      22      元宝刷怪员	0	11	0	0	0
-其他类/行会裁判	        D024A   50      50      行会比赛裁判    0       15      0       0       0
-其他类/行会准备	        D024B   50      50      行会供给商人    0       11      0       0       0
-其他类/幻境商贩	        H003	83	83	飛尔世界	0	15	0	0	0
-其他类/幻境商店	        H007	170	170	幻境商人	0	3	0	0	0
-其他类/幻境小贩	        H203	21	17      影之道商贩  	0	3	0	0	0
-其他类/藏剑山庄         GA0     65      66      山庄总管        0       16      0       0       0
-其他类/藏剑山庄         GA1     15      25      庄主叶南天      0       15      0       0       0
-其他类/武圣猛将         T103    11      10      武圣猛将        0       15      0       0       0
-其他类/灭世魔神         T103A   11      10      灭世魔神        0       15      0       0       0
-其他类/无极天尊         T103B   11      10      无极天尊        0       15      0       0       0
-其他类/武林至尊         T240    15       9      武林至尊        0       15      0       0       0
-其他类/神秘宝藏         Hero1   63      45      神秘宝箱        0       54      0       0       0
-其他类/火龙宝藏         Hero1   60      46      火龙宝藏        0       58      0       0       0
-其他类/火龙宝藏         Hero1   64      42      火龙宝藏        0       59      0       0       0
-其他类/火龙宝藏         Hero1   62      43      火龙宝藏        0       60      0       0       0
-其他类/装饰宝箱         Hero1   61      40      02358541052     0       62      0       0       0
-其他类/装饰宝箱         Hero1   60      39      13677866        0       63      0       0       0
-其他类/装饰宝箱         Hero1   59      40      6231316861      0       64      0       0       0
-其他类/装饰宝箱         Hero1   62      38      6231316862      0       64      0       0       0
-其他类/装饰宝箱         Hero1   61      37      6231316863      0       64      0       0       0
-其他类/装饰宝箱         Hero1   57      41      6231316864      0       64      0       0       0
-其他类/装饰宝箱         Hero1   56      43      623131686       0       64      0       0       0
-其他类/装饰宝箱         Hero1   58      41      58541052        0       62      0       0       0
-其他类/装饰宝箱         Hero1   57      42      94113677866     0       62      0       0       0
-其他类/装饰宝箱         Hero1   58      43      6231316865      0       61      0       0       0
-其他类/装饰宝箱         Hero1   59      42      6231316866      0       60      0       0       0
-其他类/装饰宝箱         Hero1   58      39      6231316867      0       57      0       0       0
-其他类/卧龙笔记         3       321     342     卧龙笔记        0       65      0       0       0
-其他类/橙色古书         Hero1   63      185     橙色卧龙古书    0       66      0       0       0
-其他类/红色古书         Hero1   192     191     红色卧龙古书    0       67      0       0       0
-其他类/黄色古书         Hero1   89      141     黄色卧龙古书    0       68      0       0       0
-其他类/绿色古书         Hero1   147     90      绿色卧龙古书    0       69      0       0       0
-其他类/蓝色古书         Hero1   219     59      蓝色卧龙古书    0       70      0       0       0
-其他类/静寂岛一         N111    43      13      静寂岛主一      0       15      0       0       0
-其他类/静寂岛二         N112    10      7       静寂岛主二      0       15      0       0       0
-其他类/静寂岛三         N113    40      6       静寂岛主三      0       15      0       0       0
-其他类/静寂岛四         N108    9      16       静寂岛主四      0       15      0       0       0
-;其他类/跑马裁判         D2010   283    274      跑马裁判A       0       8       0       0       0       0          0      2
-;其他类/跑马裁判         D2001   255    268      跑马裁判B       0       8       0       0       0       0          0      2
-;其他类/跑马裁判         D2003   287    277      跑马裁判C       0       8       0       0       0       0          0      2
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-闯天关/天关统领	        EM001	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM002	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM003	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM004	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM005	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM006	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM007	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM008	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM009	14	16	天关统领	0	8	0	0	0
-闯天关/天关统领	        EM010	14	16	天关统领	0	8	0	0	0
+
+;Merchant NPC Setup File
+
+;Last Updated 01/04 By Geoff
+
+; File   Map      X       Y       Name   0       Char
+
+; Bichon Wall
+1Bme	0102	9	7	Kim	0	11	0	
+1Bme	0	313	271	Brittany	0	4	0	
+
+;3tlr 0 358 284 Taylor  1
+2Bwe	0103	19	18	Vincent	0	1	0	
+2Bbl	0	302	219	Bill	0	0	0	
+3Bdr	0106	19	6	Ann	0	7	0	
+4Bdu	0108	7	7	Larry	0	1	0	
+4Bdu	0	324	291	Sam	0	5	0	
+4Bdm	0109	4	8	Travis	0	9	0	
+5Bbo	0104	5	8	Steven	0	2	0	
+
+;hairdresser 0107 8 5 HairDresser 0 6 0
+
+;5BwBkS1 0 325 250 Steven 0 2 0
+6Bwh	0125	8	6	Mary	0	9	0	
+6Bwh	0	301	257	Danielle	0	6	0	
+7Bst	0	378	298	Tommas	0	3	0	
+8Bri	0105	18	6	Diana	0	4	0	
+8Bbr	0105	12	12	Olivia	0	5	0	
+8Bne	0105	6	18	Kristin	0	6	0	
+9teach	0111	7	11	Teacher	0	3	0	
+
+;9snpc1 0 326 261 TownCrier 0 5 0
+
+; Ginko Tree Village
+4Gdu	0119	10	11	Spencer	0	1	0	
+4Gdm	0119	14	14	Jack	0	9	0	
+7Gst	0	643	611	Gabriel	0	3	0	
+2Gwe	0	649	602	Peter	0	0	0	
+3Gdr	0	643	601	Brenda	0	7	0	
+1Gme	0	649	591	Daisy	0	11	0	
+6Gwh	0	621	642	Monica	0	6	0	
+9helper	0	628	601	Assistant	0	5	0	
+
+; Border Village
+4Tdu	0	291	610	Noah	0	1	0	
+2Twe	0	297	612	Smith	0	0	0	
+1Tme	0	293	603	Jim	0	11	0	
+3Tdr	0	305	607	Whitney	0	7	0	
+5Tbo	0132	5	18	Brian	0	2	0	
+6Twh	0140	8	9	Anthony	0	9		
+8Tri	0141	23	23	Alice	0	4	0	
+8Tbr	0141	16	16	Betty	0	5	0	
+8Tne	0141	10	10	Clara	0	6	0	
+9helper	0	284	608	Assistant	0	5	0	
+
+; High Level Characters
+9Ehw	0114	14	9	HighWarrior	0	3	0	
+9Ehw	01141	14	9	HighWarrior	0	3	0	
+9Ehw	01142	11	10	HighWarrior	0	3	0	
+9Eht	0113	7	5	HighPriest	0	3	0	
+9Eht	01132	11	10	HighPriest	0	3	0	
+9Ewi	0115	5	11	ArchMage	0	3	0	
+9Ewi	01152	11	10	ArchMage	0	3	0	
+
+; Woomyon Woods NPC
+2Wwe	1	314	72	David	0	0	0	
+4Wdu	1	309	81	Annie	0	4	0	
+9Wqu	1	235	305	Kunbun	0	9	0	
+
+;9wooma 1 96 290 OldMan 0 3 0
+
+; Oma Caves NPCs
+6Ewh	D002	174	216	Storage	0	3	0	
+9Equ	D002	187	214	StrangeMan	0	9	0	
+7Est	DM001	4	6	WickedTrader	0	9	0	
+7Wkdme1	DM011	4	6	WickedTrader	0	9	0	
+
+; Serpent Village NPCs
+2Swe	0120	7	8	Bradley	0	0	0	
+2BlkS1	2	518	492	Bradley	0	0	0	
+4Sdu	0117	4	10	Patrik	0	1	0	
+4SVst	2	505	497	Patrik	0	1	0	
+7Sst	2	505	479	Robert	0	3	0	
+3Sdr	2	517	477	Melissa	0	7	0	
+6Swh	2	517	466	Nicole	0	5	0	
+
+; PK Village Traders
+7Est	3	855	661	Frank	0	3	0	
+
+; Mongchon Traders
+6Mwh	0145	9	12	Ruben	0	9	0	
+6Mwh	3	305	373	Jessica	0	6	0	
+3Mdr	0149	23	20	Jennifer	0	7	0	
+3Mga	0149	11	18	Laura	0	4	0	
+3Mhe	0149	8	5	Michelle	0	5	0	
+2Mwe	0159	5	9	Bruce	0	0	0	
+4Mdu	0160	5	8	Raymond	0	1	0	
+8Mri	0158	11	16	Kelly	0	5	0	
+8Mbr	0158	16	11	Tiffany	0	6	0	
+8Mne	0158	4	21	Rachel	0	4	0	
+7Mst	3	346	334	Kevin	0	3	0	
+1Mme	3	355	329	Rupert	0	11	0	
+4Mdu	3	361	335	Daniel	0	1	0	
+5Mbo	0161	11	16	Bookseller	0	2	0	
+
+;9snpc2 3 297 302 TownCrier 0 5 0
+
+; Lottery  Ticket
+9Mlo	3	284	343	Lottery	0	3	0	
+9Blo	0	298	317	Lottery	0	3	0	
+
+; GuildWar Teleport
+
+;9match1 3 480 350 GuildWar 0 2 0
+
+;9match2 F003 41 41 GuildWar 0 2 0
+
+;9match3 2 450 300 GuildWar 0 2 0
+
+; Sabuk Wall Traders
+1Ame	3	659	301	Milton	0	1	1	
+2Are	0151	3	19	Dean	0	0	1	
+2Awe	0151	7	14	Bill	0	0	1	
+3Adr	0155	13	7	Sandra	0	7	1	
+3Ahe	0155	9	11	Debora	0	5	1	
+4Adm	0153	7	14	Milton	0	9	1	
+4Adu	0153	14	7	Harry	0	1	1	
+6Awh	0152	7	12	Vicky	0	6	1	
+7Ast	3	663	304	Tony	0	3	1	
+8Abr	0154	14	7	Cindy	0	6	1	
+8Ane	0154	3	18	Sarah	0	6	1	
+8Ari	0154	10	15	Peggy	0	5	1	
+9Aup	0151	12	10	Carlos	0	0	1	
+
+; Bug Cave Armour Repair
+3Edr	D608	30	22	Jamey	0	3	0	
+
+; Zuma Temple Traders
+3Edr	D514	19	25	Alexander	0	3	0	
+4Edu	D5063	62	36	Nelson	0	1	0	
+
+; Stone Temple Traders
+2Ewe	D71650	23	27	Edward	0	0	0	
+3Edr	D71651	23	27	Louise	0	7	0	
+4Edu	D71653	23	27	Barry	0	3	0	
+8Eac	D71652	23	27	Michelle	0	5	0	
+
+; Mystery Cave Quest NPC
+9Equ	E603	31	191	Yu	0	9	0	
+9Equ	0148	10	9	Martha	0	13	0	
+
+; Exchange Characters
+9Ech	0126	10	10	David	0	9	0	
+9Ech	0152	4	15	Mark	0	9	1	
+9Ech	0146	4	11	Robin	0	9	0	
+9epl	3	850	662	FortuneTeller	0	9	0	
+
+; Quest NPC (Unknown)
+9Equ	Q011	139	120	Man	0	9	0	
+9Equ	Q016	14	21	Trader	0	12	0	
+
+; Gamble House Rooms
+9Ega	0101	8	6	GambleMan	0	9	0	
+9Ega	B010	48	45	Cashier	0	9	0	
+9Ega	B011	8	10	GambleWoman	0	12	0	
+9Ega	B012	8	10	GambleWoman	0	12	0	
+9Ega	B013	8	10	GambleWoman	0	12	0	
+
+; Gamble Betting Rooms
+9Ega	B101	10	6	GambleWoman	0	12	0	
+9Ega	B102	10	6	GambleWoman	0	12	0	
+9Ega	B103	10	6	GambleWoman	0	12	0	
+9Ega	B104	10	6	GambleWoman	0	12	0	
+9Ega	B105	10	6	GambleWoman	0	12	0	
+9Ega	B106	10	6	GambleWoman	0	12	0	
+9Ega	B107	10	6	GambleWoman	0	12	0	
+9Ega	B108	10	6	GambleWoman	0	12	0	
+9Ega	B109	10	6	GambleWoman	0	12	0	
+9Ega	B110	10	6	GambleWoman	0	12	0	
+9Ega	B111	10	6	GambleWoman	0	12	0	
+9Ega	B112	10	6	GambleWoman	0	12	0	
+9Ega	B113	10	6	GambleWoman	0	12	0	
+9Ega	B114	10	6	GambleWoman	0	12	0	
+9Ega	B115	10	6	GambleWoman	0	12	0	
+9Ega	B116	10	6	GambleWoman	0	12	0	
+9Ega	B117	10	6	GambleWoman	0	12	0	
+9Ega	B118	10	6	GambleWoman	0	12	0	
+9Ega	B119	10	6	GambleWoman	0	12	0	
+9Ega	B120	10	6	GambleWoman	0	12	0	
+9Ega	B121	10	6	GambleWoman	0	12	0	
+9Ega	B122	10	6	GambleWoman	0	12	0	
+9Ega	B123	10	6	GambleWoman	0	12	0	
+9Ega	B124	10	6	GambleWoman	0	12	0	
+9Ega	B125	10	6	GambleWoman	0	12	0	
+9Ega	B126	10	6	GambleWoman	0	12	0	
+9Ega	B127	10	6	GambleWoman	0	12	0	
+9Ega	B128	10	6	GambleWoman	0	12	0	
+9Ega	B129	10	6	GambleWoman	0	12	0	
+9Ega	B130	10	6	GambleWoman	0	12	0	
+9Ega	B131	10	6	GambleWoman	0	12	0	
+9Ega	B132	10	6	GambleWoman	0	12	0	
+9Ega	B133	10	6	GambleWoman	0	12	0	
+9Ega	B134	10	6	GambleWoman	0	12	0	
+9Ega	B135	10	6	GambleWoman	0	12	0	
+9Ega	B136	10	6	GambleWoman	0	12	0	
+9Ega	B137	10	6	GambleWoman	0	12	0	
+9Ega	B138	10	6	GambleWoman	0	12	0	
+9Ega	B139	10	6	GambleWoman	0	12	0	
+9Ega	B140	10	6	GambleWoman	0	12	0	
+
+; Gamble Quest Rooms
+9Ega1	T105	7	6	Rascal	0	11	0	
+9Ega2	T105	6	5	Rascal	0	11	0	
+9Ega3	T105	8	7	Rascal	0	11	0	
+9Ega4	T105	9	8	Rascal	0	11	0	
+9Ega5	T105	10	9	Rascal	0	11	0	
+9Ega	T118	14	15	GambleWoman	0	12	0	
+9Ega	T125	11	9	GambleWoman	0	12	0	
+9Ega	T1363	10	6	GambleWoman	0	12	0	
+9Ega	T138	9	10	GambleWoman	0	12	0	
+
+; Woomyon Wall
+2Wwe	1001	14	12	Jerald	0	15	0	
+7Wst	1007	11	14	Jerry	0	17	0	
+8Wac	1005	9	11	Ken	0	20	0	
+3Wdr	1003	13	16	Sam	0	23	0	
+3Wdr	11	203	321	Mike	0	23	0	
+4Wdu	1006	9	10	Janey	0	25	0	
+4Wdm	1006	12	7	Eugene	0	22	0	
+5Wbo	1004	9	11	Huxley	0	18	0	
+6Wwh	11	184	297	Hubert	0	18	0	
+6Wrt	1002	14	13	Perry				
+9Wae1	11	179	309	Apprentice	0	19	0	
+9Wae2	11	181	311	Apprentice	0	19	0	
+9Wae3	11	179	313	Apprentice	0	19	0	
+9Wae4	11	177	311	Apprentice	0	19	0	
+9Wae5	11	175	313	Apprentice	0	19	0	
+9Wae6	11	177	315	Apprentice	0	19	0	
+9Wtt	11	182	308	TrainerTaoist	0	16	0	
+9Wae1	11	191	329	Apprentice	0	21	0	
+9Wae2	11	189	327	Apprentice	0	21	0	
+9Wae3	11	191	325	Apprentice	0	21	0	
+9Wae4	11	193	327	Apprentice	0	21	0	
+9Wae5	11	195	325	Apprentice	0	21	0	
+9Wae6	11	193	323	Apprentice	0	21	0	
+9Wtt	11	196	322	TrainerTaoist	0	24	0	
+9Wbt	D10061	11	16	BigTaoist	0	15	0	
+
+; LevelAreas
+levell	0	628	618	Catherine		4		
+levelm	2	511	465	Isaac		3		
+levell	0	309	630	Antony		4		
+
+; BichonProvince/PrajnaIsland
+boatb	0	251	677	Sailor	0	1	0	
+boatp	5	122	353	Sailor	0	1	0	
+
+; Prajna Island
+Inspector	5	139	332	Inspector	0	15	0	
+DraperyShop5	B353	13	14	Susan	0	7	0	
+VillageChief	B354	11	11	VillageChief	0	1	0	
+Peddler	5	148	352	Bart	0	3	0	
+Storage	5	142	312	Heather	0	10	0	
+CuteShop	5	154	339	Emily	0	12	0	
+Colby	5	130	303	Colby	0	0	0	
+Keith	B351	8	9	Keith	0	0	0	
+Daria	5	154	325	Daria	0	7	0	
+Kurtis	5	173	319	Kurtis	0	22	0	
+Sandford	5	161	315	Sandford	0	1	0	
+
+; Time Travel and OldMan
+oldman	5	343	597	OddOldMan	0	1	0	
+
+; Castle Gi-Ryoong
+4_meat	4	244	188	Jim	0	11	0	
+4_cloth	B345	10	8	Belina	0	7	0	
+4_gnrl	4	252	224	Derby	0	3	0	
+4_acc	B344	16	14	Monica	0	5	0	
+4_acc2	B344	10	9	Jeweler	0	6	0	
+4_ptn	B343	13	10	Kimberly	0	4	0	
+4_ptn2	B343	8	14	Murray	0	1	0	
+4_wep	B342	11	11	Gerald	0	0	0	
+4_srep	4	227	223	Wayne	0	0	0	
+4_pala	B341	16	21	Official	0	8	0	
+
+; Easter Quest 2003
+E03Stanley	DM002	14	16	Stanley	0	18	0	
+E03Percy	T219	78	8	Percy	0	1	0	
+E03Man	T219	36	28	Man	0	1	0	
+
+; Slave Cave
+SlaveCaveNPC	D503	116	283	Sander	0	9	0	
+9brother1	F005	87	88	Brother	0	3	0	
+9brother1	F005	85	12	Brother	0	3	0	
+9brother1	F005	12	14	Brother	0	3	0	
+9brother	F005	10	87	Brother	0	3	0	

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="refresh" content="3; url=http://www.makegm.com/">
+<title>404 未找到页面!!!</title>
+<style type="text/css">
+<!--
+a{ 
+outline:none;/*ff*/ 
+hide-focus:expression(this.hideFocus=true);/*ie*/ 
+}
+.STYLE3 {
+	font-size:50px;
+	font-weight: bold;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+	border:none;
+.STYLE3 a:link{text-decoration:none;}
+.STYLE3 a:visited{text-decoration:none;} 
+.STYLE3 a:hover{text-decoration:none;}
+.STYLE9 {color: #FF6600}
+.STYLE10 {color: #990000}
+.STYLE11 {color: #00CC00}
+.STYLE13 {
+	width: 13%;
+	background-color: #0066CC;
+	color: #FFFFFF;
+	margin-top: 35px;
+	margin-left: 10px;
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+.STYLE30 {font-family: Georgia, "Times New Roman", Times, serif}
+.STYLE33 {
+	color: #FFFF00;
+.STYLE34 {color: #FF00FF}
+.STYLE37 {font-size: 30px}
+.STYLE38 {color: #000000}
+.STYLE39 {
+	color: #FF0000;
+	font-size: 32px;
+.STYLE42 {color: #0000FF}
+.STYLE44 {
+	font-size: 12px;
+	width: 80%;
+	margin-left: 78px;
+-->
+</style>
+</head>
+
+<body>
+<Script Langvage=javascript>
+function Click(){
+if (event.button!=1){alert('版权所有(C)2005-2010 [搜私服]SOUSF.NET :)');
+}}
+document.onmousedown=Click;
+</Script>
+<div class="STYLE3"><a href="http://www.sousf.net"><span class="STYLE10"><span class="STYLE42">M</span>a</span><span class="STYLE9">k</span><span class="STYLE11">e</span><span class="STYLE34">Gm<span class="STYLE37"><span class="STYLE38">.</span><span class="STYLE39">Com</span></span></span></a></div>
+<div class="STYLE13"><span class="STYLE30"><strong>E</strong>rror</span>-<strong>4</strong><span class="STYLE33">o4</span></div>
+<div class="STYLE44">应为这里没有叮当猫滴百宝箱,所以没找到你需要滴东东......</div>
+<p>&nbsp;</p>
+<hr style="border-top:1px dashed #CCCCCC;overflow:hidden;}">
+<p class="STYLE44">等我3秒,就3秒......</p>
+<div style="display:none"><script src=" http://s95.cnzz.com/stat.php?id=880232&web_id=880232" language="JavaScript"></script></div>
+</body>
+</html>

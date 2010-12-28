@@ -1,6 +1,6 @@
 object frmGameConfig: TfrmGameConfig
-  Left = 366
-  Top = 199
+  Left = 371
+  Top = 217
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = '????'
@@ -36,7 +36,7 @@ object frmGameConfig: TfrmGameConfig
     Top = 9
     Width = 571
     Height = 319
-    ActivePage = GeneralSheet
+    ActivePage = TabSheet2
     MultiLine = True
     TabOrder = 0
     OnChanging = GameConfigControlChanging

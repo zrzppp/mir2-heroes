@@ -8,308 +8,308 @@
   resources were bound to the produced executable.
 */
 
-#define M2Share_g_sHeroLoginMsg 64672
-#define M2Share_U_DRESSNAME 64673
-#define M2Share_U_WEAPONNAME 64674
-#define M2Share_U_RIGHTHANDNAME 64675
-#define M2Share_U_NECKLACENAME 64676
-#define M2Share_U_HELMETNAME 64677
-#define M2Share_U_ARMRINGLNAME 64678
-#define M2Share_U_ARMRINGRNAME 64679
-#define M2Share_U_RINGLNAME 64680
-#define M2Share_U_RINGRNAME 64681
-#define M2Share_U_BUJUKNAME 64682
-#define M2Share_U_BELTNAME 64683
-#define M2Share_U_BOOTSNAME 64684
-#define M2Share_U_CHARMNAME 64685
-#define M2Share_g_sGameCommandViewWhisperMsg1 64688
-#define M2Share_g_sGameCommandViewWhisperMsg2 64689
-#define M2Share_g_sGameCommandReAliveHelpMsg 64690
-#define M2Share_g_sGameCommandReAliveMsg 64691
-#define M2Share_g_sGameCommandChangeJobHelpMsg 64692
-#define M2Share_g_sGameCommandChangeJobMsg 64693
-#define M2Share_g_sGameCommandChangeJobHumanMsg 64694
-#define M2Share_g_sGameCommandTestGetBagItemsHelpMsg 64695
-#define M2Share_g_sGameCommandShowUseItemInfoHelpMsg 64696
-#define M2Share_g_sGameCommandBindUseItemHelpMsg 64697
-#define M2Share_g_sGameCommandBindUseItemNoItemMsg 64698
-#define M2Share_g_sGameCommandBindUseItemAlreadBindMsg 64699
-#define M2Share_g_sGameCommandMobFireBurnHelpMsg 64700
-#define M2Share_g_sGameCommandMobFireBurnMapNotFountMsg 64701
-#define M2Share_g_sGameCommandUnBindUseItemHelpMsg 64702
-#define M2Share_g_sGameCommandUnBindUseItemAlreadBindMsg 64703
-#define M2Share_g_sGameCommandPKPointMsg 64704
-#define M2Share_g_sGameCommandIncPkPointHelpMsg 64705
-#define M2Share_g_sGameCommandIncPkPointAddPointMsg 64706
-#define M2Share_g_sGameCommandIncPkPointDecPointMsg 64707
-#define M2Share_g_sGameCommandHumanLocalHelpMsg 64708
-#define M2Share_g_sGameCommandHumanLocalMsg 64709
-#define M2Share_g_sGameCommandPrvMsgHelpMsg 64710
-#define M2Share_g_sGameCommandPrvMsgUnLimitMsg 64711
-#define M2Share_g_sGameCommandPrvMsgLimitMsg 64712
-#define M2Share_g_sGamecommandMakeHelpMsg 64713
-#define M2Share_g_sGamecommandMakeItemNameOrPerMissionNot 64714
-#define M2Share_g_sGamecommandMakeInCastleWarRange 64715
-#define M2Share_g_sGamecommandMakeInSafeZoneRange 64716
-#define M2Share_g_sGamecommandMakeItemNameNotFound 64717
-#define M2Share_g_sGamecommandSuperMakeHelpMsg 64718
-#define M2Share_g_sGameCommandViewWhisperHelpMsg 64719
-#define M2Share_g_sGameCommandDelNpcMsg 64720
-#define M2Share_g_sGameCommandDelNpcMsg1 64721
-#define M2Share_g_sGameCommandRecallMobHelpMsg 64722
-#define M2Share_g_sGameCommandLuckPointHelpMsg 64723
-#define M2Share_g_sGameCommandLuckPointMsg 64724
-#define M2Share_g_sGameCommandLotteryTicketMsg 64725
-#define M2Share_g_sGameCommandReloadGuildHelpMsg 64726
-#define M2Share_g_sGameCommandReloadGuildOnMasterserver 64727
-#define M2Share_g_sGameCommandReloadGuildNotFoundGuildMsg 64728
-#define M2Share_g_sGameCommandReloadGuildSuccessMsg 64729
-#define M2Share_g_sGameCommandReloadLineNoticeSuccessMsg 64730
-#define M2Share_g_sGameCommandReloadLineNoticeFailMsg 64731
-#define M2Share_g_sGameCommandFreePKHelpMsg 64732
-#define M2Share_g_sGameCommandFreePKHumanMsg 64733
-#define M2Share_g_sGameCommandFreePKMsg 64734
-#define M2Share_g_sGameCommandPKPointHelpMsg 64735
-#define M2Share_g_sGameCommandShutupReleaseCanSendMsg 64736
-#define M2Share_g_sGameCommandShutupReleaseHumanCanSendMsg 64737
-#define M2Share_g_sGameCommandShutupListIsNullMsg 64738
-#define M2Share_g_sGameCommandLevelConsoleMsg 64739
-#define M2Share_g_sGameCommandSbkGoldHelpMsg 64740
-#define M2Share_g_sGameCommandSbkGoldCastleNotFoundMsg 64741
-#define M2Share_g_sGameCommandSbkGoldShowMsg 64742
-#define M2Share_g_sGameCommandRecallHelpMsg 64743
-#define M2Share_g_sGameCommandReGotoHelpMsg 64744
-#define M2Share_g_sGameCommandShowHumanFlagHelpMsg 64745
-#define M2Share_g_sGameCommandShowHumanFlagONMsg 64746
-#define M2Share_g_sGameCommandShowHumanFlagOFFMsg 64747
-#define M2Share_g_sGameCommandMobHelpMsg 64748
-#define M2Share_g_sGameCommandMobMsg 64749
-#define M2Share_g_sGameCommandMobNpcHelpMsg 64750
-#define M2Share_g_sGameCommandNpcScriptHelpMsg 64751
-#define M2Share_g_sGameCommandMapMoveHelpMsg 64752
-#define M2Share_g_sGameCommandMapMoveMapNotFound 64753
-#define M2Share_g_sGameCommandShutupHelpMsg 64754
-#define M2Share_g_sGameCommandShutupHumanMsg 64755
-#define M2Share_g_sGameCommandGamePointHelpMsg 64756
-#define M2Share_g_sGameCommandGamePointHumanMsg 64757
-#define M2Share_g_sGameCommandGamePointGMMsg 64758
-#define M2Share_g_sGameCommandCreditPointHelpMsg 64759
-#define M2Share_g_sGameCommandCreditPointHumanMsg 64760
-#define M2Share_g_sGameCommandCreditPointGMMsg 64761
-#define M2Share_g_sGameCommandGameGoldHelpMsg 64762
-#define M2Share_g_sGameCommandGameGoldHumanMsg 64763
-#define M2Share_g_sGameCommandGameGoldGMMsg 64764
-#define M2Share_g_sGameCommandMapInfoMsg 64765
-#define M2Share_g_sGameCommandMapInfoSizeMsg 64766
-#define M2Share_g_sGameCommandShutupReleaseHelpMsg 64767
-#define M2Share_g_sBunOverSpeed 64768
-#define M2Share_g_sGameCommandPermissionTooLow 64769
-#define M2Share_g_sGameCommandParamUnKnow 64770
-#define M2Share_g_sGameCommandMoveHelpMsg 64771
-#define M2Share_g_sGameCommandPositionMoveHelpMsg 64772
-#define M2Share_g_sGameCommandPositionMoveCanotMoveToMap 64773
-#define M2Share_g_sGameCommandPositionMoveCanotMoveToMap1 64774
-#define M2Share_g_sGameCommandInfoHelpMsg 64775
-#define M2Share_g_sNowNotOnLineOrOnOtherServer 64776
-#define M2Share_g_sGameCommandMobCountHelpMsg 64777
-#define M2Share_g_sGameCommandMobCountMapNotFound 64778
-#define M2Share_g_sGameCommandMobCountMonsterCount 64779
-#define M2Share_g_sGameCommandHumanCountHelpMsg 64780
-#define M2Share_g_sGameCommandKickHumanHelpMsg 64781
-#define M2Share_g_sGameCommandTingHelpMsg 64782
-#define M2Share_g_sGameCommandSuperTingHelpMsg 64783
-#define RunSock_sExceptionMsg0 64784
-#define RunSock_sExceptionMsg1 64785
-#define RunSock_sExceptionMsg2 64786
-#define RunSock_sExceptionMsg3 64787
-#define RunSock_sExceptionMsg4 64788
-#define RunSock_sExceptionMsg 64789
-#define RunSock_sExceptionMsg 64790
-#define RunSock_sKickUserMsg 64791
-#define M2Share_g_sSellOffGoldInfo 64792
-#define M2Share_g_sSellOffItemInfo 64793
-#define M2Share_g_sGameLogMsg1 64794
-#define M2Share_g_sHumanDieEvent 64795
-#define M2Share_g_sHitOverSpeed 64796
-#define M2Share_g_sRunOverSpeed 64797
-#define M2Share_g_sWalkOverSpeed 64798
-#define M2Share_g_sSpellOverSpeed 64799
-#define ObjActor_sExceptionMsg 64800
-#define ObjActor_sExceptionMsg 64801
-#define RunSock_sGateOpen 64802
-#define RunSock_sKickGate 64803
-#define RunSock_sGateClose 64804
-#define RunSock_sExceptionMsg1 64805
-#define RunSock_sExceptionMsg2 64806
-#define RunSock_sExceptionMsg3 64807
-#define RunSock_sExceptionMsg1 64808
+#define M2Share_U_CHARMNAME 64672
+#define svMain_sGateIdx 64673
+#define svMain_sGateIPaddr 64674
+#define svMain_sGateListMsg 64675
+#define svMain_sGateSendCount 64676
+#define svMain_sGateMsgCount 64677
+#define svMain_sGateSendKB 64678
+#define svMain_sGateUserCount 64679
+#define svMain_sCloseServerYesNo 64680
+#define svMain_sCloseServerTitle 64681
+#define svMain_sCloseServer 64682
+#define svMain_sCloseServer1 64683
+#define svMain_sGatePortOpen 64684
+#define svMain_sGatePortClose 64685
+#define M2Share_g_sGameCommandMobFireBurnMapNotFountMsg 64688
+#define M2Share_g_sGameCommandUnBindUseItemHelpMsg 64689
+#define M2Share_g_sGameCommandUnBindUseItemAlreadBindMsg 64690
+#define M2Share_g_sHeroLoginMsg 64691
+#define M2Share_U_DRESSNAME 64692
+#define M2Share_U_WEAPONNAME 64693
+#define M2Share_U_RIGHTHANDNAME 64694
+#define M2Share_U_NECKLACENAME 64695
+#define M2Share_U_HELMETNAME 64696
+#define M2Share_U_ARMRINGLNAME 64697
+#define M2Share_U_ARMRINGRNAME 64698
+#define M2Share_U_RINGLNAME 64699
+#define M2Share_U_RINGRNAME 64700
+#define M2Share_U_BUJUKNAME 64701
+#define M2Share_U_BELTNAME 64702
+#define M2Share_U_BOOTSNAME 64703
+#define M2Share_g_sGamecommandMakeItemNameNotFound 64704
+#define M2Share_g_sGamecommandSuperMakeHelpMsg 64705
+#define M2Share_g_sGameCommandViewWhisperHelpMsg 64706
+#define M2Share_g_sGameCommandViewWhisperMsg1 64707
+#define M2Share_g_sGameCommandViewWhisperMsg2 64708
+#define M2Share_g_sGameCommandReAliveHelpMsg 64709
+#define M2Share_g_sGameCommandReAliveMsg 64710
+#define M2Share_g_sGameCommandChangeJobHelpMsg 64711
+#define M2Share_g_sGameCommandChangeJobMsg 64712
+#define M2Share_g_sGameCommandChangeJobHumanMsg 64713
+#define M2Share_g_sGameCommandTestGetBagItemsHelpMsg 64714
+#define M2Share_g_sGameCommandShowUseItemInfoHelpMsg 64715
+#define M2Share_g_sGameCommandBindUseItemHelpMsg 64716
+#define M2Share_g_sGameCommandBindUseItemNoItemMsg 64717
+#define M2Share_g_sGameCommandBindUseItemAlreadBindMsg 64718
+#define M2Share_g_sGameCommandMobFireBurnHelpMsg 64719
+#define M2Share_g_sGameCommandFreePKHumanMsg 64720
+#define M2Share_g_sGameCommandFreePKMsg 64721
+#define M2Share_g_sGameCommandPKPointHelpMsg 64722
+#define M2Share_g_sGameCommandPKPointMsg 64723
+#define M2Share_g_sGameCommandIncPkPointHelpMsg 64724
+#define M2Share_g_sGameCommandIncPkPointAddPointMsg 64725
+#define M2Share_g_sGameCommandIncPkPointDecPointMsg 64726
+#define M2Share_g_sGameCommandHumanLocalHelpMsg 64727
+#define M2Share_g_sGameCommandHumanLocalMsg 64728
+#define M2Share_g_sGameCommandPrvMsgHelpMsg 64729
+#define M2Share_g_sGameCommandPrvMsgUnLimitMsg 64730
+#define M2Share_g_sGameCommandPrvMsgLimitMsg 64731
+#define M2Share_g_sGamecommandMakeHelpMsg 64732
+#define M2Share_g_sGamecommandMakeItemNameOrPerMissionNot 64733
+#define M2Share_g_sGamecommandMakeInCastleWarRange 64734
+#define M2Share_g_sGamecommandMakeInSafeZoneRange 64735
+#define M2Share_g_sGameCommandMobMsg 64736
+#define M2Share_g_sGameCommandMobNpcHelpMsg 64737
+#define M2Share_g_sGameCommandNpcScriptHelpMsg 64738
+#define M2Share_g_sGameCommandDelNpcMsg 64739
+#define M2Share_g_sGameCommandDelNpcMsg1 64740
+#define M2Share_g_sGameCommandRecallMobHelpMsg 64741
+#define M2Share_g_sGameCommandLuckPointHelpMsg 64742
+#define M2Share_g_sGameCommandLuckPointMsg 64743
+#define M2Share_g_sGameCommandLotteryTicketMsg 64744
+#define M2Share_g_sGameCommandReloadGuildHelpMsg 64745
+#define M2Share_g_sGameCommandReloadGuildOnMasterserver 64746
+#define M2Share_g_sGameCommandReloadGuildNotFoundGuildMsg 64747
+#define M2Share_g_sGameCommandReloadGuildSuccessMsg 64748
+#define M2Share_g_sGameCommandReloadLineNoticeSuccessMsg 64749
+#define M2Share_g_sGameCommandReloadLineNoticeFailMsg 64750
+#define M2Share_g_sGameCommandFreePKHelpMsg 64751
+#define M2Share_g_sGameCommandMapInfoMsg 64752
+#define M2Share_g_sGameCommandMapInfoSizeMsg 64753
+#define M2Share_g_sGameCommandShutupReleaseHelpMsg 64754
+#define M2Share_g_sGameCommandShutupReleaseCanSendMsg 64755
+#define M2Share_g_sGameCommandShutupReleaseHumanCanSendMsg 64756
+#define M2Share_g_sGameCommandShutupListIsNullMsg 64757
+#define M2Share_g_sGameCommandLevelConsoleMsg 64758
+#define M2Share_g_sGameCommandSbkGoldHelpMsg 64759
+#define M2Share_g_sGameCommandSbkGoldCastleNotFoundMsg 64760
+#define M2Share_g_sGameCommandSbkGoldShowMsg 64761
+#define M2Share_g_sGameCommandRecallHelpMsg 64762
+#define M2Share_g_sGameCommandReGotoHelpMsg 64763
+#define M2Share_g_sGameCommandShowHumanFlagHelpMsg 64764
+#define M2Share_g_sGameCommandShowHumanFlagONMsg 64765
+#define M2Share_g_sGameCommandShowHumanFlagOFFMsg 64766
+#define M2Share_g_sGameCommandMobHelpMsg 64767
+#define M2Share_g_sGameCommandKickHumanHelpMsg 64768
+#define M2Share_g_sGameCommandTingHelpMsg 64769
+#define M2Share_g_sGameCommandSuperTingHelpMsg 64770
+#define M2Share_g_sGameCommandMapMoveHelpMsg 64771
+#define M2Share_g_sGameCommandMapMoveMapNotFound 64772
+#define M2Share_g_sGameCommandShutupHelpMsg 64773
+#define M2Share_g_sGameCommandShutupHumanMsg 64774
+#define M2Share_g_sGameCommandGamePointHelpMsg 64775
+#define M2Share_g_sGameCommandGamePointHumanMsg 64776
+#define M2Share_g_sGameCommandGamePointGMMsg 64777
+#define M2Share_g_sGameCommandCreditPointHelpMsg 64778
+#define M2Share_g_sGameCommandCreditPointHumanMsg 64779
+#define M2Share_g_sGameCommandCreditPointGMMsg 64780
+#define M2Share_g_sGameCommandGameGoldHelpMsg 64781
+#define M2Share_g_sGameCommandGameGoldHumanMsg 64782
+#define M2Share_g_sGameCommandGameGoldGMMsg 64783
+#define M2Share_g_sRunOverSpeed 64784
+#define M2Share_g_sWalkOverSpeed 64785
+#define M2Share_g_sSpellOverSpeed 64786
+#define M2Share_g_sBunOverSpeed 64787
+#define M2Share_g_sGameCommandPermissionTooLow 64788
+#define M2Share_g_sGameCommandParamUnKnow 64789
+#define M2Share_g_sGameCommandMoveHelpMsg 64790
+#define M2Share_g_sGameCommandPositionMoveHelpMsg 64791
+#define M2Share_g_sGameCommandPositionMoveCanotMoveToMap 64792
+#define M2Share_g_sGameCommandPositionMoveCanotMoveToMap1 64793
+#define M2Share_g_sGameCommandInfoHelpMsg 64794
+#define M2Share_g_sNowNotOnLineOrOnOtherServer 64795
+#define M2Share_g_sGameCommandMobCountHelpMsg 64796
+#define M2Share_g_sGameCommandMobCountMapNotFound 64797
+#define M2Share_g_sGameCommandMobCountMonsterCount 64798
+#define M2Share_g_sGameCommandHumanCountHelpMsg 64799
+#define RunSock_sDisable 64800
+#define RunSock_sExceptionMsg1 64801
+#define RunSock_sExceptionMsg2 64802
+#define RunSock_sExceptionMsg0 64803
+#define RunSock_sExceptionMsg1 64804
+#define RunSock_sExceptionMsg2 64805
+#define RunSock_sExceptionMsg3 64806
+#define RunSock_sExceptionMsg4 64807
+#define RunSock_sExceptionMsg 64808
 #define RunSock_sExceptionMsg 64809
-#define RunSock_sExceptionMsg 64810
-#define RunSock_sExceptionMsg 64811
-#define RunSock_sRobotAttackMsg 64812
-#define RunSock_sDisable 64813
-#define RunSock_sExceptionMsg1 64814
-#define RunSock_sExceptionMsg2 64815
-#define ObjActor_sExceptionMsg3 64816
-#define ObjActor_sExceptionMsg 64817
-#define ObjActor_sExceptionMsg1 64818
-#define ObjActor_sExceptionMsg 64819
-#define ObjActor_sExceptionMsg 64820
-#define ObjActor_sExceptionMsg1 64821
-#define ObjActor_sExceptionMsg2 64822
-#define ObjActor_sExceptionMsg3 64823
-#define ObjActor_sExitGropMsg 64824
-#define ObjActor_sCanceGrop 64825
-#define ObjActor_sExceptionMsg 64826
-#define ObjActor_sExceptionMsg 64827
-#define ObjActor_sExceptionMsg1 64828
-#define ObjActor_sExceptionMsg2 64829
-#define ObjActor_sExceptionMsg 64830
-#define ObjActor_sExceptionMsg 64831
-#define ObjActor_sDelOK 64832
-#define ObjActor_sExceptionMsg 64833
-#define ObjActor_sExceptionMsg 64834
-#define ObjActor_sExceptionMsg 64835
-#define ObjActor_sExceptionMsg 64836
+#define RunSock_sKickUserMsg 64810
+#define M2Share_g_sSellOffGoldInfo 64811
+#define M2Share_g_sSellOffItemInfo 64812
+#define M2Share_g_sGameLogMsg1 64813
+#define M2Share_g_sHumanDieEvent 64814
+#define M2Share_g_sHitOverSpeed 64815
+#define Envir_sExceptionMsg2 64816
+#define Envir_sExceptionMsg 64817
+#define Envir_sExceptionMsg 64818
+#define Envir_sExceptionMsg 64819
+#define Envir_sExceptionMsg 64820
+#define RunSock_sGateOpen 64821
+#define RunSock_sKickGate 64822
+#define RunSock_sGateClose 64823
+#define RunSock_sExceptionMsg1 64824
+#define RunSock_sExceptionMsg2 64825
+#define RunSock_sExceptionMsg3 64826
+#define RunSock_sExceptionMsg1 64827
+#define RunSock_sExceptionMsg 64828
+#define RunSock_sExceptionMsg 64829
+#define RunSock_sExceptionMsg 64830
+#define RunSock_sRobotAttackMsg 64831
+#define ObjActor_sExceptionMsg1 64832
+#define ObjActor_sExceptionMsg2 64833
+#define ObjActor_sExceptionMsg3 64834
+#define ObjActor_sExitGropMsg 64835
+#define ObjActor_sCanceGrop 64836
 #define ObjActor_sExceptionMsg 64837
 #define ObjActor_sExceptionMsg 64838
-#define ObjActor_sExceptionMsg 64839
-#define ObjActor_sExceptionMsg 64840
+#define ObjActor_sExceptionMsg1 64839
+#define ObjActor_sExceptionMsg2 64840
 #define ObjActor_sExceptionMsg 64841
 #define ObjActor_sExceptionMsg 64842
-#define ObjActor_sExceptionMsg1 64843
-#define ObjActor_sExceptionMsg2 64844
-#define ObjActor_sExceptionMsg 64845
-#define ObjActor_sExceptionMsg1 64846
-#define ObjActor_sExceptionMsg2 64847
-#define ObjActor_sExceptionMsg2 64848
-#define ObjActor_sExceptionMsg3 64849
-#define ObjActor_sExceptionMsg4 64850
-#define ObjActor_sExceptionMsg5 64851
-#define ObjActor_sExceptionMsg6 64852
-#define ObjActor_sExceptionMsg7 64853
-#define ObjActor_sExceptionMsg8 64854
-#define ObjActor_sExceptionMsg9 64855
-#define ObjActor_sExceptionMsg10 64856
-#define ObjActor_sExceptionMsg 64857
-#define ObjActor_sExceptionMsg 64858
-#define ObjActor_sExceptionMsg 64859
-#define ObjActor_sDisableMagicCross 64860
-#define ObjActor_sExceptionMsg 64861
+#define ObjActor_sExceptionMsg 64843
+#define ObjActor_sExceptionMsg 64844
+#define ItemEvent_sExceptionMsg 64845
+#define Envir_sExceptionMsg 64846
+#define Envir_sExceptionMsg1 64847
+#define ObjActor_sExceptionMsg 64848
+#define ObjActor_sExceptionMsg 64849
+#define ObjActor_sExceptionMsg 64850
+#define ObjActor_sExceptionMsg 64851
+#define ObjActor_sExceptionMsg 64852
+#define ObjActor_sExceptionMsg 64853
+#define ObjActor_sExceptionMsg1 64854
+#define ObjActor_sExceptionMsg2 64855
+#define ObjActor_sExceptionMsg 64856
+#define ObjActor_sExceptionMsg1 64857
+#define ObjActor_sExceptionMsg2 64858
+#define ObjActor_sExceptionMsg3 64859
+#define ObjActor_sExceptionMsg 64860
+#define ObjActor_sExceptionMsg1 64861
 #define ObjActor_sExceptionMsg 64862
-#define ObjActor_sOutFormatMsg 64863
-#define ObjActor_sExceptionMsg1 64864
-#define ObjActor_sExceptionMsg2 64865
-#define ObjActor_sExceptionMsg3 64866
-#define ObjActor_sExceptionMsg4 64867
-#define ObjActor_sExceptionMsg5 64868
-#define ObjActor_sExceptionMsg6 64869
-#define ObjActor_sExceptionMsg7 64870
-#define ObjActor_sExceptionMsg8 64871
-#define ObjActor_sExceptionMsg9 64872
+#define ObjActor_sExceptionMsg 64863
+#define ObjActor_sExceptionMsg7 64864
+#define ObjActor_sExceptionMsg8 64865
+#define ObjActor_sExceptionMsg9 64866
+#define ObjActor_sExceptionMsg10 64867
+#define ObjActor_sExceptionMsg 64868
+#define ObjActor_sExceptionMsg 64869
+#define ObjActor_sExceptionMsg 64870
+#define ObjActor_sDisableMagicCross 64871
+#define ObjActor_sExceptionMsg 64872
 #define ObjActor_sExceptionMsg 64873
-#define ObjActor_sExceptionMsg 64874
-#define ObjActor_sExceptionMsg 64875
-#define ObjActor_sExceptionMsg0 64876
-#define ObjActor_sPayMentExpire 64877
-#define ObjActor_sDisConnectMsg 64878
-#define ObjActor_sExceptionMsg1 64879
-#define ObjHero_sExceptionMsg 64880
-#define ItemEvent_sExceptionMsg 64881
-#define Envir_sExceptionMsg 64882
-#define Envir_sExceptionMsg1 64883
-#define Envir_sExceptionMsg2 64884
-#define Envir_sExceptionMsg 64885
-#define Envir_sExceptionMsg 64886
-#define Envir_sExceptionMsg 64887
-#define Envir_sExceptionMsg 64888
-#define ObjActor_sExceptionMsg 64889
-#define ObjActor_sExceptionMsg 64890
-#define ObjActor_sExceptionMsg 64891
-#define ObjActor_sExceptionMsg 64892
-#define ObjActor_sDisableMagicCross 64893
-#define ObjActor_sExceptionMsg 64894
-#define ObjActor_sExceptionMsg0 64895
-#define UsrEngn_sExceptionMsg 64896
-#define UsrEngn_sExceptionMsg 64897
-#define UsrEngn_sExceptionMsg 64898
-#define ObjMon2_sExceptionMsg 64899
-#define Castle_sWarStartMsg 64900
-#define Castle_sWarStopTimeMsg 64901
-#define Castle_sExceptionMsg 64902
-#define Castle_sGetCastleMsg 64903
-#define Castle_sWallWarStop 64904
-#define Castle_sMsg 64905
-#define ObjHero_sExceptionMsg 64906
-#define ObjHero_sExceptionMsg 64907
-#define ObjHero_sExceptionMsg 64908
-#define ObjHero_sExceptionMsg 64909
-#define ObjHero_sExceptionMsg 64910
-#define ObjHero_sExceptionMsg 64911
+#define ObjActor_sOutFormatMsg 64874
+#define ObjActor_sDelOK 64875
+#define ObjActor_sExceptionMsg 64876
+#define ObjActor_sExceptionMsg 64877
+#define ObjActor_sExceptionMsg 64878
+#define ObjActor_sExceptionMsg 64879
+#define ObjActor_sExceptionMsg6 64880
+#define ObjActor_sExceptionMsg7 64881
+#define ObjActor_sExceptionMsg8 64882
+#define ObjActor_sExceptionMsg9 64883
+#define ObjActor_sExceptionMsg 64884
+#define ObjActor_sExceptionMsg 64885
+#define ObjActor_sExceptionMsg 64886
+#define ObjActor_sExceptionMsg0 64887
+#define ObjActor_sPayMentExpire 64888
+#define ObjActor_sDisConnectMsg 64889
+#define ObjActor_sExceptionMsg1 64890
+#define ObjActor_sExceptionMsg2 64891
+#define ObjActor_sExceptionMsg3 64892
+#define ObjActor_sExceptionMsg4 64893
+#define ObjActor_sExceptionMsg5 64894
+#define ObjActor_sExceptionMsg6 64895
+#define Castle_sExceptionMsg 64896
+#define Castle_sGetCastleMsg 64897
+#define Castle_sWallWarStop 64898
+#define Castle_sMsg 64899
+#define ObjActor_sExceptionMsg 64900
+#define ObjActor_sExceptionMsg 64901
+#define ObjActor_sExceptionMsg 64902
+#define ObjActor_sExceptionMsg 64903
+#define ObjActor_sDisableMagicCross 64904
+#define ObjActor_sExceptionMsg 64905
+#define ObjActor_sExceptionMsg0 64906
+#define ObjActor_sExceptionMsg1 64907
+#define ObjActor_sExceptionMsg2 64908
+#define ObjActor_sExceptionMsg3 64909
+#define ObjActor_sExceptionMsg4 64910
+#define ObjActor_sExceptionMsg5 64911
 #define UsrEngn_sExceptionMsg2 64912
-#define UsrEngn_sExceptionMsg 64913
-#define UsrEngn_sChangeServerFail1 64914
-#define UsrEngn_sChangeServerFail2 64915
-#define UsrEngn_sErrorEnvirIsNil 64916
-#define UsrEngn_sExceptionMsg1 64917
-#define UsrEngn_sExceptionMsg2 64918
-#define UsrEngn_sExceptionMsg3 64919
-#define UsrEngn_sExceptionMsg4 64920
-#define UsrEngn_sExceptionMsg5 64921
-#define UsrEngn_sExceptionMsg6 64922
-#define UsrEngn_sExceptionMsg7 64923
-#define UsrEngn_sExceptionMsg8 64924
-#define UsrEngn_sExceptionMsg 64925
-#define UsrEngn_sExceptionMsg 64926
-#define UsrEngn_sExceptionMsg 64927
-#define ObjNpc_sExceptionMsg 64928
-#define ObjNpc_sExceptionMsg1 64929
-#define ObjNpc_sExceptionMsg2 64930
-#define ObjNpc_sExceptionMsg 64931
-#define ObjNpc_sExceptionMsg 64932
-#define ObjNpc_sOutMessage 64933
-#define ObjNpc_sVarFound 64934
-#define ObjNpc_sVarTypeError 64935
-#define ObjNpc_sVarFound 64936
-#define ObjNpc_sVarTypeError 64937
-#define ObjNpc_sVarFound 64938
-#define ObjNpc_sVarTypeError 64939
-#define ObjNpc_sVarFound 64940
-#define ObjNpc_sVarTypeError 64941
-#define ObjNpc_sExceptionMsg 64942
+#define UsrEngn_sExceptionMsg3 64913
+#define UsrEngn_sExceptionMsg4 64914
+#define UsrEngn_sExceptionMsg5 64915
+#define UsrEngn_sExceptionMsg6 64916
+#define UsrEngn_sExceptionMsg7 64917
+#define UsrEngn_sExceptionMsg8 64918
+#define UsrEngn_sExceptionMsg 64919
+#define UsrEngn_sExceptionMsg 64920
+#define UsrEngn_sExceptionMsg 64921
+#define UsrEngn_sExceptionMsg 64922
+#define UsrEngn_sExceptionMsg 64923
+#define UsrEngn_sExceptionMsg 64924
+#define ObjMon2_sExceptionMsg 64925
+#define Castle_sWarStartMsg 64926
+#define Castle_sWarStopTimeMsg 64927
+#define ObjNpc_sVarTypeError 64928
+#define ObjNpc_sExceptionMsg 64929
+#define ObjHero_sExceptionMsg 64930
+#define ObjHero_sExceptionMsg 64931
+#define ObjHero_sExceptionMsg 64932
+#define ObjHero_sExceptionMsg 64933
+#define ObjHero_sExceptionMsg 64934
+#define ObjHero_sExceptionMsg 64935
+#define ObjHero_sExceptionMsg 64936
+#define UsrEngn_sExceptionMsg1 64937
+#define UsrEngn_sExceptionMsg2 64938
+#define UsrEngn_sExceptionMsg 64939
+#define UsrEngn_sChangeServerFail1 64940
+#define UsrEngn_sChangeServerFail2 64941
+#define UsrEngn_sErrorEnvirIsNil 64942
 #define UsrEngn_sExceptionMsg1 64943
-#define Magic_sDisableInSafeZoneFireCross 64944
-#define IdSrvClient_sFormatMsg 64945
-#define IdSrvClient_sFormatMsg 64946
-#define IdSrvClient_sFormatMsg 64947
-#define IdSrvClient_sFormatMsg 64948
-#define IdSrvClient_sExceptionMsg 64949
-#define IdSrvClient_sExceptionMsg 64950
-#define IdSrvClient_sExceptionMsg 64951
-#define IdSrvClient_sExceptionMsg 64952
-#define IdSrvClient_sGetFailMsg 64953
-#define IdSrvClient_sExceptionMsg 64954
-#define FrnEngn_sExceptionMsg 64955
-#define FrnEngn_sExceptionMsg 64956
-#define FrnEngn_sExceptionMsg 64957
-#define ObjNpc_sExceptionMsg 64958
-#define ObjNpc_sExceptionMsg 64959
-#define svMain_sGateSendKB 64960
-#define svMain_sGateUserCount 64961
-#define svMain_sCloseServerYesNo 64962
-#define svMain_sCloseServerTitle 64963
-#define svMain_sCloseServer 64964
-#define svMain_sCloseServer1 64965
-#define svMain_sGatePortOpen 64966
-#define svMain_sGatePortClose 64967
-#define RunDB_sLoadDBTimeOut 64968
-#define RunDB_sSaveDBTimeOut 64969
-#define RunDB_sLoadHeroDBTimeOut 64970
-#define RunDB_sSaveHeroDBTimeOut 64971
-#define RunDB_sLoadRankingDBTimeOut 64972
-#define ObjRobot_sExceptionMsg 64973
-#define ObjRobot_sExceptionMsg 64974
-#define Event_sExceptionMsg 64975
+#define FrnEngn_sExceptionMsg 64944
+#define ObjNpc_sExceptionMsg 64945
+#define ObjNpc_sExceptionMsg 64946
+#define ObjNpc_sExceptionMsg 64947
+#define ObjNpc_sExceptionMsg1 64948
+#define ObjNpc_sExceptionMsg2 64949
+#define ObjNpc_sExceptionMsg 64950
+#define ObjNpc_sExceptionMsg 64951
+#define ObjNpc_sOutMessage 64952
+#define ObjNpc_sVarFound 64953
+#define ObjNpc_sVarTypeError 64954
+#define ObjNpc_sVarFound 64955
+#define ObjNpc_sVarTypeError 64956
+#define ObjNpc_sVarFound 64957
+#define ObjNpc_sVarTypeError 64958
+#define ObjNpc_sVarFound 64959
+#define ObjRobot_sExceptionMsg 64960
+#define ObjRobot_sExceptionMsg 64961
+#define Event_sExceptionMsg 64962
+#define Magic_sDisableInSafeZoneFireCross 64963
+#define IdSrvClient_sFormatMsg 64964
+#define IdSrvClient_sFormatMsg 64965
+#define IdSrvClient_sFormatMsg 64966
+#define IdSrvClient_sFormatMsg 64967
+#define IdSrvClient_sExceptionMsg 64968
+#define IdSrvClient_sExceptionMsg 64969
+#define IdSrvClient_sExceptionMsg 64970
+#define IdSrvClient_sExceptionMsg 64971
+#define IdSrvClient_sGetFailMsg 64972
+#define IdSrvClient_sExceptionMsg 64973
+#define FrnEngn_sExceptionMsg 64974
+#define FrnEngn_sExceptionMsg 64975
 #define bdeconst_SNoCachedUpdates 64976
 #define bdeconst_SNoFieldAccess 64977
 #define bdeconst_SUntitled 64978
@@ -321,11 +321,11 @@
 #define ActionSpeedConfig_sExitMsgTitle 64984
 #define ActionSpeedConfig_sExitMsg 64985
 #define ActionSpeedConfig_sExitMsgTitle 64986
-#define svMain_sGateIdx 64987
-#define svMain_sGateIPaddr 64988
-#define svMain_sGateListMsg 64989
-#define svMain_sGateSendCount 64990
-#define svMain_sGateMsgCount 64991
+#define RunDB_sLoadDBTimeOut 64987
+#define RunDB_sSaveDBTimeOut 64988
+#define RunDB_sLoadHeroDBTimeOut 64989
+#define RunDB_sSaveHeroDBTimeOut 64990
+#define RunDB_sLoadRankingDBTimeOut 64991
 #define bdeconst_SInvalidSessionName 64992
 #define bdeconst_SDatabaseNameMissing 64993
 #define bdeconst_SSessionNameMissing 64994
@@ -872,6 +872,23 @@
 #define SysConst_SDiskFull 65535
 STRINGTABLE
 BEGIN
+	M2Share_U_CHARMNAME,	"宝石"
+	svMain_sGateIdx,	"网关"
+	svMain_sGateIPaddr,	"网关地址"
+	svMain_sGateListMsg,	"队列数据"
+	svMain_sGateSendCount,	"发送数据"
+	svMain_sGateMsgCount,	"剩余数据"
+	svMain_sGateSendKB,	"平均流量"
+	svMain_sGateUserCount,	"最高人数"
+	svMain_sCloseServerYesNo,	"Are you sure you want to close the Mir2 Server?"
+	svMain_sCloseServerTitle,	"Close Mir2 Server?"
+	svMain_sCloseServer,	"%s [正在关闭服务器(%s %d/%s %d)...]"
+	svMain_sCloseServer1,	"%s [服务器已关闭]"
+	svMain_sGatePortOpen,	"游戏网关端口(%s:%d)已打开..."
+	svMain_sGatePortClose,	"游戏网关端口(%s:%d)已关闭..."
+	M2Share_g_sGameCommandMobFireBurnMapNotFountMsg,	"地图%s 不存在"
+	M2Share_g_sGameCommandUnBindUseItemHelpMsg,	"人物名称 物品类型"
+	M2Share_g_sGameCommandUnBindUseItemAlreadBindMsg,	"%s的%s上的物品已解除绑定！！！"
 	M2Share_g_sHeroLoginMsg,	"状态更改：CTRL-E 指定攻击目标：CTRL-W 守护位置：CTRL-Q 使用合击：CTRL-S"
 	M2Share_U_DRESSNAME,	"衣服"
 	M2Share_U_WEAPONNAME,	"武器"
@@ -885,7 +902,9 @@ BEGIN
 	M2Share_U_BUJUKNAME,	"物品"
 	M2Share_U_BELTNAME,	"腰带"
 	M2Share_U_BOOTSNAME,	"鞋子"
-	M2Share_U_CHARMNAME,	"宝石"
+	M2Share_g_sGamecommandMakeItemNameNotFound,	"%s 物品名称不正确！！！"
+	M2Share_g_sGamecommandSuperMakeHelpMsg,	"身上没指定物品！！！"
+	M2Share_g_sGameCommandViewWhisperHelpMsg,	" 人物名称"
 	M2Share_g_sGameCommandViewWhisperMsg1,	"已停止侦听%s的私聊信息..."
 	M2Share_g_sGameCommandViewWhisperMsg2,	"正在侦听%s的私聊信息..."
 	M2Share_g_sGameCommandReAliveHelpMsg,	" 人物名称"
@@ -899,9 +918,9 @@ BEGIN
 	M2Share_g_sGameCommandBindUseItemNoItemMsg,	"%s的%s没有戴物品！！！"
 	M2Share_g_sGameCommandBindUseItemAlreadBindMsg,	"%s的%s上的物品早已绑定过了！！！"
 	M2Share_g_sGameCommandMobFireBurnHelpMsg,	"命令格式: %s %s %s %s %s %s %s"
-	M2Share_g_sGameCommandMobFireBurnMapNotFountMsg,	"地图%s 不存在"
-	M2Share_g_sGameCommandUnBindUseItemHelpMsg,	"人物名称 物品类型"
-	M2Share_g_sGameCommandUnBindUseItemAlreadBindMsg,	"%s的%s上的物品已解除绑定！！！"
+	M2Share_g_sGameCommandFreePKHumanMsg,	"你的PK值已经被清除..."
+	M2Share_g_sGameCommandFreePKMsg,	"%s的PK值已经被清除..."
+	M2Share_g_sGameCommandPKPointHelpMsg,	"人物名称"
 	M2Share_g_sGameCommandPKPointMsg,	"%s的PK点数为:%d"
 	M2Share_g_sGameCommandIncPkPointHelpMsg,	"人物名称 PK点数"
 	M2Share_g_sGameCommandIncPkPointAddPointMsg,	"%s的PK值已增加%d点..."
@@ -915,9 +934,9 @@ BEGIN
 	M2Share_g_sGamecommandMakeItemNameOrPerMissionNot,	"输入的物品名称不正确，或权限不够！！！"
 	M2Share_g_sGamecommandMakeInCastleWarRange,	"攻城区域，禁止使用此功能！！！"
 	M2Share_g_sGamecommandMakeInSafeZoneRange,	"非安全区，禁止使用此功能！！！"
-	M2Share_g_sGamecommandMakeItemNameNotFound,	"%s 物品名称不正确！！！"
-	M2Share_g_sGamecommandSuperMakeHelpMsg,	"身上没指定物品！！！"
-	M2Share_g_sGameCommandViewWhisperHelpMsg,	" 人物名称"
+	M2Share_g_sGameCommandMobMsg,	"怪物名称不正确或其它未问题！！！"
+	M2Share_g_sGameCommandMobNpcHelpMsg,	"NPC名称 脚本文件名 外形(数字) 属沙城(0,1)"
+	M2Share_g_sGameCommandNpcScriptHelpMsg,	"？？？？"
 	M2Share_g_sGameCommandDelNpcMsg,	"命令使用方法不正确，必须与NPC面对面，才能使用此命令！！！"
 	M2Share_g_sGameCommandDelNpcMsg1,	"命令使用方法不正确，请输入正确NPC名称！！！"
 	M2Share_g_sGameCommandRecallMobHelpMsg,	"怪物名称 数量 等级"
@@ -931,9 +950,9 @@ BEGIN
 	M2Share_g_sGameCommandReloadLineNoticeSuccessMsg,	"重新加载公告设置信息完成。"
 	M2Share_g_sGameCommandReloadLineNoticeFailMsg,	"重新加载公告设置信息失败！！！"
 	M2Share_g_sGameCommandFreePKHelpMsg,	"人物名称"
-	M2Share_g_sGameCommandFreePKHumanMsg,	"你的PK值已经被清除..."
-	M2Share_g_sGameCommandFreePKMsg,	"%s的PK值已经被清除..."
-	M2Share_g_sGameCommandPKPointHelpMsg,	"人物名称"
+	M2Share_g_sGameCommandMapInfoMsg,	"地图名称: %s(%s)"
+	M2Share_g_sGameCommandMapInfoSizeMsg,	"地图大小: X(%d) Y(%d)"
+	M2Share_g_sGameCommandShutupReleaseHelpMsg,	"人物名称"
 	M2Share_g_sGameCommandShutupReleaseCanSendMsg,	"你已经恢复聊天功能！！！"
 	M2Share_g_sGameCommandShutupReleaseHumanCanSendMsg,	"%s 已经恢复聊天。"
 	M2Share_g_sGameCommandShutupListIsNullMsg,	"禁言列表为空！！！"
@@ -947,9 +966,9 @@ BEGIN
 	M2Share_g_sGameCommandShowHumanFlagONMsg,	"%s: [%d] = ON"
 	M2Share_g_sGameCommandShowHumanFlagOFFMsg,	"%s: [%d] = OFF"
 	M2Share_g_sGameCommandMobHelpMsg,	"怪物名称 数量 等级"
-	M2Share_g_sGameCommandMobMsg,	"怪物名称不正确或其它未问题！！！"
-	M2Share_g_sGameCommandMobNpcHelpMsg,	"NPC名称 脚本文件名 外形(数字) 属沙城(0,1)"
-	M2Share_g_sGameCommandNpcScriptHelpMsg,	"？？？？"
+	M2Share_g_sGameCommandKickHumanHelpMsg,	"人物名称"
+	M2Share_g_sGameCommandTingHelpMsg,	"人物名称"
+	M2Share_g_sGameCommandSuperTingHelpMsg,	"人物名称 范围(0-10)"
 	M2Share_g_sGameCommandMapMoveHelpMsg,	"源地图  目标地图"
 	M2Share_g_sGameCommandMapMoveMapNotFound,	"地图%s不存在！！！"
 	M2Share_g_sGameCommandShutupHelpMsg,	"人物名称  时间长度(分钟)"
@@ -963,9 +982,9 @@ BEGIN
 	M2Share_g_sGameCommandGameGoldHelpMsg,	" 人物名称 控制符(+,-,=) 游戏币(1-200000000)"
 	M2Share_g_sGameCommandGameGoldHumanMsg,	"你的%s已增加%d，当前拥有%d%s。"
 	M2Share_g_sGameCommandGameGoldGMMsg,	"%s的%s已增加%d，当前拥有%d%s。"
-	M2Share_g_sGameCommandMapInfoMsg,	"地图名称: %s(%s)"
-	M2Share_g_sGameCommandMapInfoSizeMsg,	"地图大小: X(%d) Y(%d)"
-	M2Share_g_sGameCommandShutupReleaseHelpMsg,	"人物名称"
+	M2Share_g_sRunOverSpeed,	"[跑步超速] %s 间隔:%d 数量:%d"
+	M2Share_g_sWalkOverSpeed,	"[行走超速] %s 间隔:%d 数量:%d"
+	M2Share_g_sSpellOverSpeed,	"[魔法超速] %s 间隔:%d 数量:%d"
 	M2Share_g_sBunOverSpeed,	"[游戏超速] %s 间隔:%d 数量:%d"
 	M2Share_g_sGameCommandPermissionTooLow,	"权限不够！！！"
 	M2Share_g_sGameCommandParamUnKnow,	"命令格式: @%s %s"
@@ -979,9 +998,9 @@ BEGIN
 	M2Share_g_sGameCommandMobCountMapNotFound,	"指定的地图不存在！！！"
 	M2Share_g_sGameCommandMobCountMonsterCount,	"怪物数量：%d"
 	M2Share_g_sGameCommandHumanCountHelpMsg,	"地图号"
-	M2Share_g_sGameCommandKickHumanHelpMsg,	"人物名称"
-	M2Share_g_sGameCommandTingHelpMsg,	"人物名称"
-	M2Share_g_sGameCommandSuperTingHelpMsg,	"人物名称 范围(0-10)"
+	RunSock_sDisable,	"*disable*"
+	RunSock_sExceptionMsg1,	"[Exception] TRunSocket::SendGateBuffers -> ProcessBuff"
+	RunSock_sExceptionMsg2,	"[Exception] TRunSocket::SendGateBuffers -> SendBuff"
 	RunSock_sExceptionMsg0,	"[Exception] TRunSocket::CloseUser 0"
 	RunSock_sExceptionMsg1,	"[Exception] TRunSocket::CloseUser 1"
 	RunSock_sExceptionMsg2,	"[Exception] TRunSocket::CloseUser 2"
@@ -995,11 +1014,11 @@ BEGIN
 	M2Share_g_sGameLogMsg1,	"%d\t%s\t%d\t%d\t%s\t%s\t%d\t%s\t%s"
 	M2Share_g_sHumanDieEvent,	"人物死亡事件"
 	M2Share_g_sHitOverSpeed,	"[攻击超速] %s 间隔:%d 数量:%d"
-	M2Share_g_sRunOverSpeed,	"[跑步超速] %s 间隔:%d 数量:%d"
-	M2Share_g_sWalkOverSpeed,	"[行走超速] %s 间隔:%d 数量:%d"
-	M2Share_g_sSpellOverSpeed,	"[魔法超速] %s 间隔:%d 数量:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ScatterBagItems"
-	ObjActor_sExceptionMsg,	"[Exception] TAIPlayObject.ProcessSayMsg Msg = %s"
+	Envir_sExceptionMsg2,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 2 ** %d"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::MoveToMovingObject"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMapMineEvent "
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::VerifyMapTime"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::ArroundDoorOpened "
 	RunSock_sGateOpen,	"游戏网关[%d](%s:%d)已打开..."
 	RunSock_sKickGate,	"服务器未就绪: %s"
 	RunSock_sGateClose,	"游戏网关[%d](%s:%d)已关闭..."
@@ -1011,14 +1030,6 @@ BEGIN
 	RunSock_sExceptionMsg,	"[Exception] TRunSocket::DoClientCertification -> GetCertification"
 	RunSock_sExceptionMsg,	"[Exception] TRunSocket::DoClientCertification CheckCode: "
 	RunSock_sRobotAttackMsg,	"[超速登陆] IP:%s 账号:%s 名称:%s 速度:%d"
-	RunSock_sDisable,	"*disable*"
-	RunSock_sExceptionMsg1,	"[Exception] TRunSocket::SendGateBuffers -> ProcessBuff"
-	RunSock_sExceptionMsg2,	"[Exception] TRunSocket::SendGateBuffers -> SendBuff"
-	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::SearchViewRange 2-%d %s %s %d %d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Walk  CheckCode:%d %s %s %d:%d"
-	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::WalkToEvent  CheckCode:%d %s %s %d:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::EnterAnotherMap Code:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ScatterBagItems"
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Die 1"
 	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Die 2"
 	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Die 3 CheckCode:"
@@ -1030,11 +1041,11 @@ BEGIN
 	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::SearchViewRange 1-%d %s %s %d %d %d"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GetShowName"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::MakeGhost"
-	ObjActor_sDelOK,	"删除NPC成功..."
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::DropUseItems"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GainExp"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::UseLamp"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::UserLogon"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ScatterBagItems"
+	ObjActor_sExceptionMsg,	"[Exception] TAIPlayObject.ProcessSayMsg Msg = %s"
+	ItemEvent_sExceptionMsg,	"[Exception] TItemManager::Run"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMap"
+	Envir_sExceptionMsg1,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 1 ** %d"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientGuildAlly %d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::AttackDir Code: %d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetCharColor CheckCode=%d"
@@ -1046,11 +1057,11 @@ BEGIN
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ClearViewRange %d"
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SearchViewRange"
 	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SearchViewRange 1-%d %s %s %d %d %d"
-	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::Run -> Operate 2 # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s  Code=%d"
-	ObjActor_sExceptionMsg3,	"[Exception] TPlayObject::Run -> GetHighHuman"
-	ObjActor_sExceptionMsg4,	"[Exception] TPlayObject::Run -> ClearObj"
-	ObjActor_sExceptionMsg5,	"[Exception] TPlayObject::Run -> ClearItem Code:%d"
-	ObjActor_sExceptionMsg6,	"[Exception] TPlayObject::Run -> GotoLabel:%s"
+	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::SearchViewRange 2-%d %s %s %d %d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Walk  CheckCode:%d %s %s %d:%d"
+	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::WalkToEvent  CheckCode:%d %s %s %d:%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::EnterAnotherMap Code:%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ScatterBagItems"
 	ObjActor_sExceptionMsg7,	"[Exception] TPlayObject::Run -> Say Code:%d"
 	ObjActor_sExceptionMsg8,	"[Exception] TPlayObject::Run -> Robot Code:%d"
 	ObjActor_sExceptionMsg9,	"[Exception] TPlayObject::Run -> Auto Code:%d"
@@ -1062,11 +1073,11 @@ BEGIN
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::RunTo"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::HorseRunTo"
 	ObjActor_sOutFormatMsg,	"[权限调整] %s (%s %d -> %d)"
-	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Run 1 "
-	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Run 2"
-	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Run 3 "
-	ObjActor_sExceptionMsg4,	"[Exception] TActorObject::Run 4 Code:%d"
-	ObjActor_sExceptionMsg5,	"[Exception] TActorObject::Run 5"
+	ObjActor_sDelOK,	"删除NPC成功..."
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::DropUseItems"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GainExp"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::UseLamp"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::UserLogon"
 	ObjActor_sExceptionMsg6,	"[Exception] TActorObject::Run 6"
 	ObjActor_sExceptionMsg7,	"[Exception] TActorObject::Run 7"
 	ObjActor_sExceptionMsg8,	"[Exception] TActorObject::Run 8"
@@ -1078,15 +1089,15 @@ BEGIN
 	ObjActor_sPayMentExpire,	"您的帐户充值时间已到期！！！"
 	ObjActor_sDisConnectMsg,	"游戏被强行中断！！！"
 	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::Run -> Operate 1 Code=%d"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::Die Name:%s ErrorCode:%d"
-	ItemEvent_sExceptionMsg,	"[Exception] TItemManager::Run"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMap"
-	Envir_sExceptionMsg1,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 1 ** %d"
-	Envir_sExceptionMsg2,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 2 ** %d"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::MoveToMovingObject"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMapMineEvent "
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::VerifyMapTime"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::ArroundDoorOpened "
+	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::Run -> Operate 2 # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s  Code=%d"
+	ObjActor_sExceptionMsg3,	"[Exception] TPlayObject::Run -> GetHighHuman"
+	ObjActor_sExceptionMsg4,	"[Exception] TPlayObject::Run -> ClearObj"
+	ObjActor_sExceptionMsg5,	"[Exception] TPlayObject::Run -> ClearItem Code:%d"
+	ObjActor_sExceptionMsg6,	"[Exception] TPlayObject::Run -> GotoLabel:%s"
+	Castle_sExceptionMsg,	"[Exception] TUserCastle::Run"
+	Castle_sGetCastleMsg,	"[%s 已被 %s 占领]"
+	Castle_sWallWarStop,	"[%s 攻城战已经结束]"
+	Castle_sMsg,	"%d年%d月%d日"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Destroy Code: %d CharName: %s"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::RunNotice"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::WalkTo"
@@ -1094,28 +1105,11 @@ BEGIN
 	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
 	ObjActor_sExceptionMsg,	"[Exception] TAIObject::StartAttack Race=%d MagIdx=%d"
 	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Run -> Operate # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
-	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessUserMessage.."
-	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::RegenMonsters"
-	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessData"
-	ObjMon2_sExceptionMsg,	"[Exception] TStickMonster::VisbleActors Dispose"
-	Castle_sWarStartMsg,	"[%s 攻城战已经开始]"
-	Castle_sWarStopTimeMsg,	"[%s 攻城战离结束还有%d分钟]"
-	Castle_sExceptionMsg,	"[Exception] TUserCastle::Run"
-	Castle_sGetCastleMsg,	"[%s 已被 %s 占领]"
-	Castle_sWallWarStop,	"[%s 攻城战已经结束]"
-	Castle_sMsg,	"%d年%d月%d日"
-	ObjHero_sExceptionMsg,	"[Exception] TCopyObject::DropUseItems"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::PickUpItem %d"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::DropUseItems"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::ScatterBagItems"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOut"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOn:%d"
-	UsrEngn_sExceptionMsg2,	"[Exception] TUserEngine::ProcessHeros"
-	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::MakeNewHuman"
-	UsrEngn_sChangeServerFail1,	"chg-server-fail-1 [%d] -> [%d] [%s]"
-	UsrEngn_sChangeServerFail2,	"chg-server-fail-2 [%d] -> [%d] [%s]"
-	UsrEngn_sErrorEnvirIsNil,	"[Error] PlayObject.PEnvir = nil"
-	UsrEngn_sExceptionMsg1,	"[Exception] TUserEngine::ProcessHumans -> Ready, Save, Load... Code:=%d"
+	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Run 1 "
+	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Run 2"
+	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Run 3 "
+	ObjActor_sExceptionMsg4,	"[Exception] TActorObject::Run 4 Code:%d"
+	ObjActor_sExceptionMsg5,	"[Exception] TActorObject::Run 5"
 	UsrEngn_sExceptionMsg2,	"[Exception] TUserEngine::ProcessHumans ClosePlayer.Delete - Free"
 	UsrEngn_sExceptionMsg3,	"[Exception] TUserEngine::ProcessHumans ClosePlayer.Delete"
 	UsrEngn_sExceptionMsg4,	"[Exception] TUserEngine::ProcessHumans RunNotice"
@@ -1126,6 +1120,31 @@ BEGIN
 	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessMerchants"
 	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessMonsters %d %s"
 	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::Run"
+	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessUserMessage.."
+	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::RegenMonsters"
+	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessData"
+	ObjMon2_sExceptionMsg,	"[Exception] TStickMonster::VisbleActors Dispose"
+	Castle_sWarStartMsg,	"[%s 攻城战已经开始]"
+	Castle_sWarStopTimeMsg,	"[%s 攻城战离结束还有%d分钟]"
+	ObjNpc_sVarTypeError,	"变量类型错误，错误类型:%s 当前支持类型(HUMAN、GUILD、GLOBAL)"
+	ObjNpc_sExceptionMsg,	"[Exception] TGuildOfficial::UserSelect... "
+	ObjHero_sExceptionMsg,	"[Exception] TCopyObject::DropUseItems"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::PickUpItem %d"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::DropUseItems"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::ScatterBagItems"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOut"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOn:%d"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::Die Name:%s ErrorCode:%d"
+	UsrEngn_sExceptionMsg1,	"[Exception] TUserEngine::ProcessHeros -> Ready, Save, Load... Code:=%d"
+	UsrEngn_sExceptionMsg2,	"[Exception] TUserEngine::ProcessHeros"
+	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::MakeNewHuman"
+	UsrEngn_sChangeServerFail1,	"chg-server-fail-1 [%d] -> [%d] [%s]"
+	UsrEngn_sChangeServerFail2,	"chg-server-fail-2 [%d] -> [%d] [%s]"
+	UsrEngn_sErrorEnvirIsNil,	"[Error] PlayObject.PEnvir = nil"
+	UsrEngn_sExceptionMsg1,	"[Exception] TUserEngine::ProcessHumans -> Ready, Save, Load... Code:=%d"
+	FrnEngn_sExceptionMsg,	"[Exception] TFrontEngine::ProcessHumData Code:%d"
+	ObjNpc_sExceptionMsg,	"[Exception] TCastleManager::UserSelect... "
+	ObjNpc_sExceptionMsg,	"[Exception] TMerchant::RefillGoods %s/%d:%d [%s] Code:%d"
 	ObjNpc_sExceptionMsg,	"[Exception] TMerchant::UserSelect... Data: %s Code:%d"
 	ObjNpc_sExceptionMsg1,	"[Exception] TMerchant::Run... Code = %d"
 	ObjNpc_sExceptionMsg2,	"[Exception] TMerchant::Run -> Move Code = %d"
@@ -1139,9 +1158,9 @@ BEGIN
 	ObjNpc_sVarFound,	"变量%s不存在，变量类型:%s"
 	ObjNpc_sVarTypeError,	"变量类型错误，错误类型:%s 当前支持类型(HUMAN、GUILD、GLOBAL)"
 	ObjNpc_sVarFound,	"变量%s不存在，变量类型:%s"
-	ObjNpc_sVarTypeError,	"变量类型错误，错误类型:%s 当前支持类型(HUMAN、GUILD、GLOBAL)"
-	ObjNpc_sExceptionMsg,	"[Exception] TGuildOfficial::UserSelect... "
-	UsrEngn_sExceptionMsg1,	"[Exception] TUserEngine::ProcessHeros -> Ready, Save, Load... Code:=%d"
+	ObjRobot_sExceptionMsg,	"[Exception] TRobotObject::SendRefMsg Name = %s"
+	ObjRobot_sExceptionMsg,	"[Exception] TRobotManage::Run"
+	Event_sExceptionMsg,	"[Exception] TMapMagicEvent::SendRefMsg nil m_Envir"
 	Magic_sDisableInSafeZoneFireCross,	"安全区不允许使用..."
 	IdSrvClient_sFormatMsg,	"(%d/%s/%d)"
 	IdSrvClient_sFormatMsg,	"(%d/%s/%d)"
@@ -1155,25 +1174,6 @@ BEGIN
 	IdSrvClient_sExceptionMsg,	"[Exception] FrmIdSoc::GetCancelAdmissionA"
 	FrnEngn_sExceptionMsg,	"[Exception] TFrontEngine::Execute"
 	FrnEngn_sExceptionMsg,	"[Exception] TFrontEngine::ProcessHeroData Code:%d"
-	FrnEngn_sExceptionMsg,	"[Exception] TFrontEngine::ProcessHumData Code:%d"
-	ObjNpc_sExceptionMsg,	"[Exception] TCastleManager::UserSelect... "
-	ObjNpc_sExceptionMsg,	"[Exception] TMerchant::RefillGoods %s/%d:%d [%s] Code:%d"
-	svMain_sGateSendKB,	"平均流量"
-	svMain_sGateUserCount,	"最高人数"
-	svMain_sCloseServerYesNo,	"Are you sure you want to close the Mir2 Server?"
-	svMain_sCloseServerTitle,	"Close Mir2 Server?"
-	svMain_sCloseServer,	"%s [正在关闭服务器(%s %d/%s %d)...]"
-	svMain_sCloseServer1,	"%s [服务器已关闭]"
-	svMain_sGatePortOpen,	"游戏网关端口(%s:%d)已打开..."
-	svMain_sGatePortClose,	"游戏网关端口(%s:%d)已关闭..."
-	RunDB_sLoadDBTimeOut,	"[RunDB] 读取人物数据超时..."
-	RunDB_sSaveDBTimeOut,	"[RunDB] 保存人物数据超时..."
-	RunDB_sLoadHeroDBTimeOut,	"[RunDB] 读取英雄数据超时..."
-	RunDB_sSaveHeroDBTimeOut,	"[RunDB] 保存英雄数据超时..."
-	RunDB_sLoadRankingDBTimeOut,	"[RunDB] 读取排行榜数据超时..."
-	ObjRobot_sExceptionMsg,	"[Exception] TRobotObject::SendRefMsg Name = %s"
-	ObjRobot_sExceptionMsg,	"[Exception] TRobotManage::Run"
-	Event_sExceptionMsg,	"[Exception] TMapMagicEvent::SendRefMsg nil m_Envir"
 	bdeconst_SNoCachedUpdates,	"Not in cached update mode"
 	bdeconst_SNoFieldAccess,	"Cannot access field '%s' in a filter"
 	bdeconst_SUntitled,	"Untitled Application"
@@ -1185,11 +1185,11 @@ BEGIN
 	ActionSpeedConfig_sExitMsgTitle,	"确认信息"
 	ActionSpeedConfig_sExitMsg,	"是否确认恢复默认设置？"
 	ActionSpeedConfig_sExitMsgTitle,	"确认信息"
-	svMain_sGateIdx,	"网关"
-	svMain_sGateIPaddr,	"网关地址"
-	svMain_sGateListMsg,	"队列数据"
-	svMain_sGateSendCount,	"发送数据"
-	svMain_sGateMsgCount,	"剩余数据"
+	RunDB_sLoadDBTimeOut,	"[RunDB] 读取人物数据超时..."
+	RunDB_sSaveDBTimeOut,	"[RunDB] 保存人物数据超时..."
+	RunDB_sLoadHeroDBTimeOut,	"[RunDB] 读取英雄数据超时..."
+	RunDB_sSaveHeroDBTimeOut,	"[RunDB] 保存英雄数据超时..."
+	RunDB_sLoadRankingDBTimeOut,	"[RunDB] 读取排行榜数据超时..."
 	bdeconst_SInvalidSessionName,	"Invalid session name %s"
 	bdeconst_SDatabaseNameMissing,	"Database name missing"
 	bdeconst_SSessionNameMissing,	"Session name missing"

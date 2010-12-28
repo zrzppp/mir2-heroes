@@ -129,7 +129,7 @@ SuperBoneFamm8=
 SuperBoneFamm9=
 PayMentPointName=Payment Point
 [Setup]
-ItemNumber=144026573
+ItemNumber=148003776
 ClientFile1 =Mir.Dat
 ClientFile2 =mir.2
 ClientFile3 =mir.3

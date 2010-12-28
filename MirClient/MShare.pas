@@ -703,21 +703,14 @@ var
   g_boBGSound: Boolean; //开启背景音乐
 
   g_FontArr: array[0..MAXFONT - 1] of string = (
-    '宋体',
-    '新宋体',
-    '仿宋',
-    '楷体',
-    'Courier New',
-    'Arial',
-    'MS Sans Serif',
-    'Microsoft Sans Serif'
+    'MS Sans Serif'
     );
 
   g_nCurFont: Integer = 0;
-  g_sCurFontName: string = '宋体';
+  g_sCurFontName: string = 'MS Sans Serif';
 
 
-  g_sFontName: string = '楷体';
+  g_sFontName: string = 'MS Sans Serif';
 
   g_ImgMixSurface: TTexture;
   g_MiniMapSurface: TTexture;

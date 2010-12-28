@@ -8329,20 +8329,20 @@ begin
     end;
 
     iname := MouseItem.s.Name + ' ';
-    sWgt := '重量.';
+    sWgt := 'Weight.';
 
     case MouseItem.s.StdMode of
       0: begin //药品
           if MouseItem.s.AC > 0 then begin
-            HintList.AddObject('体力恢复: +' + IntToStr(MouseItem.s.AC) + 'HP', TObject(clWhite));
+            HintList.AddObject('HPRecovery: +' + IntToStr(MouseItem.s.AC) + 'HP', TObject(clWhite));
             line1 := '+' + IntToStr(MouseItem.s.AC) + 'HP ';
           end;
           if MouseItem.s.MAC > 0 then begin
-            HintList.AddObject('魔法恢复: +' + IntToStr(MouseItem.s.MAC) + 'MP', TObject(clWhite));
+            HintList.AddObject('MPRecovery: +' + IntToStr(MouseItem.s.MAC) + 'MP', TObject(clWhite));
             line1 := line1 + '+' + IntToStr(MouseItem.s.MAC) + 'MP';
           end;
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
-          line1 := line1 + ' 重量.' + IntToStr(MouseItem.s.Weight);
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          line1 := line1 + ' Weight.' + IntToStr(MouseItem.s.Weight);
         end;
       1: begin
           case MouseItem.s.Shape of
@@ -8355,26 +8355,26 @@ begin
                 line2 := '累积使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时';
               end;
           end;
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       2: begin
-          line1 := line1 + '重量. ' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight. ' + IntToStr(MouseItem.s.Weight);
           case MouseItem.s.Shape of
             1: begin
-                line2 := '使用 ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
-                HintList.AddObject('使用: ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
+                line2 := 'Dura ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
+                HintList.AddObject('Dura: ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
               end;
             2, 3: begin
-                line2 := '使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
-                HintList.AddObject('使用: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
+                line2 := 'Dura ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
+                HintList.AddObject('Dura: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
               end;
           end;
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       3: begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       8: begin
           line2 := '数量: ' + IntToStr(MouseItem.s.Need);
@@ -8382,27 +8382,27 @@ begin
         end;
       4: begin
           HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
-          line1 := line1 + '重量. ' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight. ' + IntToStr(MouseItem.s.Weight);
           line3 := '所需等级 ' + IntToStr(MouseItem.s.DuraMax);
           useable := False;
           case MouseItem.s.Shape of
             0: begin
-                line2 := '武士秘技';
+                line2 := 'Secret martial art skill of Warrior ';
                 if (Actor.m_btJob = 0) and (Actor.m_Abil.Level >= MouseItem.s.DuraMax) then
                   useable := True;
               end;
             1: begin
-                line2 := '法师秘技';
+                line2 := 'Spellbook of Wizard';
                 if (Actor.m_btJob = 1) and (Actor.m_Abil.Level >= MouseItem.s.DuraMax) then
                   useable := True;
               end;
             2: begin
-                line2 := '道士秘技';
+                line2 := 'Secret martial art skill of Taoist';
                 if (Actor.m_btJob = 2) and (Actor.m_Abil.Level >= MouseItem.s.DuraMax) then
                   useable := True;
               end;
             99: begin
-                line2 := '通用秘技';
+                line2 := 'General Skill';
                 if Actor.m_Abil.Level >= MouseItem.s.DuraMax then
                   useable := True;
               end;
@@ -8423,7 +8423,7 @@ begin
             HintList.InsertObject(0, '★(*)' + MouseItem.s.Name, TObject(MouseItem.s.AddValue[13]));
           end;
 
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight) +
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
             ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
           HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
@@ -8431,17 +8431,17 @@ begin
 
           if MouseItem.s.DC > 0 then begin
             line2 := '攻击力' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
-            HintList.AddObject('攻击: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
+            HintList.AddObject('DC: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
           end;
 
           if MouseItem.s.MC > 0 then begin
-            line2 := line2 + '魔法' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)) + ' ';
-            HintList.AddObject('魔法: ' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)), TObject(clWhite));
+            line2 := line2 + 'MC' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)) + ' ';
+            HintList.AddObject('MC: ' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)), TObject(clWhite));
           end;
 
           if MouseItem.s.SC > 0 then begin
-            HintList.AddObject('道术: ' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)), TObject(clWhite));
-            line2 := line2 + '道术' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)) + ' ';
+            HintList.AddObject('SC: ' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)), TObject(clWhite));
+            line2 := line2 + 'SC' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)) + ' ';
           end;
 
           if (MouseItem.s.Source <= -1) and (MouseItem.s.Source >= -50) then begin
@@ -8582,7 +8582,7 @@ begin
           end;
         end;
       7: begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           case MouseItem.s.Shape of
             0: begin
                 line2 := '使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
@@ -8605,7 +8605,7 @@ begin
         end;
       10, 11: {//男衣服, 女衣服} begin
           useable := False;
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight) +
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
             ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
           HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
@@ -8752,7 +8752,7 @@ begin
         53, 63,
         54, 64, 30: {//腰带} begin
           useable := False;
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight) +
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
             ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
           HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
@@ -8999,7 +8999,7 @@ begin
           end;
         end;
       25: {//护身符及毒药} begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           case MouseItem.s.Shape of
             1, 2, 3, 4, 5, 6: begin
                 line2 := '数量 ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax);
@@ -9017,7 +9017,7 @@ begin
           HintList.AddObject('重量: ' + IntToStr(MouseItem.S.Weight), TObject(clWhite));
         end;*)
       40: {//肉} begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           if not g_MouseHeroItem.s.Shape in [13..16] then begin
             line1 := line1 + ' 品质' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
             HintList.AddObject('品质: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
@@ -9025,17 +9025,17 @@ begin
           HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       42: {//药材} begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight) + ' 距犁';
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' 距犁';
           HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
           HintList.AddObject('距犁', TObject(GetRGB(254)));
         end;
       43: {//矿石} begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight) + ' 纯度' + IntToStr(Round(MouseItem.Dura / 1000));
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' 纯度' + IntToStr(Round(MouseItem.Dura / 1000));
           HintList.AddObject('纯度: ' + IntToStr(Round(MouseItem.Dura / 1000)), TObject(GetRGB(254)));
           HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       49: begin
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           line2 := Format('经验: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]);
           HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
           HintList.AddObject(Format('经验: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]), TObject(GetRGB(254)));
@@ -9057,11 +9057,11 @@ begin
               line2 := '记忆传送: 未记忆';
             end;}
           end;
-          line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
     else begin
-        line1 := line1 + '重量.' + IntToStr(MouseItem.s.Weight);
+        line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
         HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
       end;
     end;
@@ -9204,15 +9204,15 @@ begin
 
         end else begin
           TextOut(SurfaceX(Left + 71), SurfaceY(Top + 212), GetGoldStr(g_MySelf.m_nGold));
-          TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243), '左键双击可以装备');
-          TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243 + 14), 'ALT + R 键刷新包裹');
+          TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243), 'Double Click Item to Equip');
+          TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243 + 14), 'ALT + R to refresh Inventory');
         end;
       end;
     end else begin
       with dsurface do begin
         TextOut(SurfaceX(Left + 71), SurfaceY(Top + 212), GetGoldStr(g_MySelf.m_nGold));
-        TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243), '左键双击可以装备');
-        TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243 + 14), 'ALT + R 键刷新包裹');
+        TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243), 'Double Click Item to Equip');
+        TextOut(SurfaceX(Left + 77), SurfaceY(Top + 243 + 14), 'ALT + R to refresh Inventory');
       end;
     end;
   end;
@@ -12288,18 +12288,18 @@ begin
   if Sender = DMyState then sMsg := 'Status(F10)';
   if Sender = DMyBag then sMsg := 'Inventory(F9)';
   if Sender = DMyMagic then sMsg := 'Magic(F11)';
-  if Sender = DVoice then sMsg := 'Voice';
+  if Sender = DVoice then sMsg := 'Sound';
   if Sender = DButtonShop then sMsg := 'GameShop';
   if Sender = DButtonFriend then sMsg := 'Friends';
   if (Sender = DButtonDuel) or (Sender = DButOther) then sMsg := 'Duel';
   if Sender = DRanking then sMsg := 'Ranking';
-  if Sender = DButtonReCallHero then sMsg := '召唤英雄';
-  if Sender = DButtonHeroState then sMsg := '英雄状态信息';
-  if Sender = DButtonHeroBag then sMsg := '英雄包裹';
+  if Sender = DButtonReCallHero then sMsg := 'Hero';
+  if Sender = DButtonHeroState then sMsg := 'Hero Status';
+  if Sender = DButtonHeroBag then sMsg := 'Hero Inventory';
 
   //if (g_MySelf.m_btHorse > 0) and (g_NewStatus > sNone) then Exit;
   if Sender = DOnHouser then sMsg := 'Ride Horse(CTRL+M)';
-  if Sender = DHelp then sMsg := 'Help';
+  if Sender = DHelp then sMsg := 'Stall';
   if Sender = DPlayTool then sMsg := 'Media Player(Alt + P)';
 
   DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);

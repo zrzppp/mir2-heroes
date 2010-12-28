@@ -1,0 +1,218 @@
+;Info [ Npc Name{Yu} X=31 Y=191 MapName={ConnectedPath} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%200
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [310] - Unknown
+; [311] - Unknown
+; [312] - Unknown
+;###############################################################
+
+[@main]
+#IF 
+random 2
+#ACT
+goto @QUEST
+#ELSEACT
+goto @normal
+
+[@QUEST]
+#IF 
+check [312] 1
+#ACT
+goto @Q312
+break
+
+#IF
+check [311] 1
+#ACT
+goto @Q311
+break
+
+#IF
+check [351] 1
+#ACT
+goto @Q351
+break
+
+#IF
+check [310] 1
+random 5
+#ACT 
+goto @Q310
+#ELSEACT
+goto @normal
+
+[@normal]
+What brought you in this dangerous place?\
+I wonder if you can get out of here easily...\ \
+<Talk with/@talkwith_1>\
+<Leave/@exit>\
+
+[@Q310]
+#IF
+#SAY
+What can I do for you? Do you want for me to make a special oil?\  
+I need rare raw material to make the special oil..\
+If you got me this raw material, I'll make it for you...\
+These raw materials are the Blood of Deer and the Horn of Deer...\
+You can get this raw material.\ \
+<Next/@Q310_1>
+
+[@Q310_1]
+#IF
+#ACT
+SET [311] 1
+#SAY
+In the unknown dungeon. I have heard that..\
+Do you know how to get there? If you didn't know, \  
+I don't know what to do\
+Good luck then..\ \
+
+
+[@Q311]
+#IF
+check [311] 1
+checkitem DeerBlood 1
+checkitem DeerHorn 1
+#ACT
+goto @Q311_1
+#ELSEACT
+goto @Q311_2
+
+[@Q311_1]
+#IF
+#ACT
+SET [312] 1
+take the DeerBlood 1
+take the DeerHorn 1
+#SAY
+You are so great to bring me these rare items\
+I'll make this oil... I'll give it to Kim, the Butcher in Bichon Wall\
+Good bye\ \
+<Bye/@exit>
+
+[@Q311_2]
+#IF
+#SAY
+You failed to get them both.. Hurry up..\
+Since I am not so generous, it's hard for me to wait long time\ \
+<Ok/@exit>
+
+[@Q312]
+#IF
+#SAY
+Go and see Kim urgently.\ \
+<Ok/@exit>
+
+[@talkwith_1]
+#IF
+dayofweek Sunday
+hour 20 20
+#ACT
+goto @talkwith_2
+break
+
+#IF
+dayofweek Saturday
+hour 20 20
+#ACT
+goto @talkwith_2
+#ELSEACT
+goto @untalkwith
+   
+[@talkwith_2]
+As you came here and talked to me\
+I'll give you good information... There is a cave that nobody knows around here.\
+This cave is different from the others....\
+I just have heard about it only one time\
+I never been there, but you need a certificate to go there\
+If you got a certificate, you can try.\ \
+<Try/@talkwith_3>\
+<Cancel/@exit>
+
+[@talkwith_3]
+#IF
+checkitem MysteryTicket 1
+#SAY
+Hey you... I'll let you get into dungeon\
+You will be right here after 3 hours.. Take care of yourself\ \ 
+<Get in/@talkwith_4>
+#ACT
+take MysteryTicket 1
+#ELSESAY
+Sorry..but you should get MysteryTicket to get in this dungeon.\
+Come again with MysteryTicket..\ \
+<Ok/@exit>
+   
+[@talkwith_4]
+#IF
+checkhum M001 200
+#SAY
+I want to show you the way, but I'm exhausted\
+I can't help you... Just wait a little while..\ \
+<Close/@exit>
+#ELSEACT
+TimeRecall 180
+map M001
+
+
+[@Q351]
+#IF
+random 5
+#ACT
+goto @Q351_1
+#ELSEACT
+goto @normal
+
+[@Q351_1]
+#IF
+#SAY
+Are you the one who is known to be an hot tempered?\
+I like you because you are similar to me... hahaha...\
+Do you want to earn big money?\ \
+<Why not! Tell me more/@Q351_1_1>\
+<Never mind.../@Q351_1_2>
+
+[@Q351_1_1]
+Are you sure you want to try?\
+Are you really sure?? Then, wearing a MartialSword,\
+go and see Mr. Nicholas\
+He'll say you more...\ \
+<No problem!/@Q351_1_1_1>
+
+[@Q351_1_2]
+I heard that you were hot-tempered, but I don't think so...\
+I don't want to deal with you...\
+Cultivate your mind more...\ \
+<Ok/@exit>
+
+[@Q351_1_1_1]
+#IF
+#ACT
+SET [352] 1
+#SAY 
+Good luck, then...\ \
+<Ok/@exit?>
+
+[@untalkwith]
+#IF 
+random 10
+#SAY
+Have you ever heard about the unknown dungeon?\
+I can't explain more..\
+but the time to get into dungeon is at weekend evening\
+If you came to me again at this time\
+I can take you there\
+see you then...\ \
+<Back/@main>
+#ELSESAY
+I have nothing to tell you...\
+Get out of here please\ \
+<Back/@main>
+

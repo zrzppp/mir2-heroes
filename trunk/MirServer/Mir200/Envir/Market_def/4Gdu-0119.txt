@@ -1,0 +1,272 @@
+;Info [ Npc Name{Spencer} X=10 Y=11 MapName={ReagentStore} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++0
++42
+
+;###################################################################################
+; Brief Description of the switches used in this NPC.
+; [104] - Given the letter
+; [105] - Been given the SpecialDrug
+; [106] - Needs to give Cannibal Fruit still
+; [107] - Has given enough Cannibal Fruit
+; [108] - The first of the empty member of the Assembly it will be shrewd, it receives 
+;###################################################################################
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help such an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome. What can I do for you?\ \
+<Buy/@buy> drug\
+<Sell/@sell> drug\
+<Talk with/@talkwith>\
+<Cancel/@exit>
+
+
+[@buy]
+Which item do you want to buy?\ \ \
+<Back/@main>
+
+[@sell]
+Show me what you want to sell.\ \ \
+<Back/@main>
+
+[@talkwith]
+#IF
+checkunit [1] 0
+#ACT
+goto  @talkwith_1
+
+
+[@talkwith_1]
+; Has been given the HealerLetter, but not handed it in yet
+#IF
+check [103] 1
+check [104] 0
+check [105] 0
+#ACT
+goto @talk_about_letter
+break
+
+; Has given the HealerLetter to the person
+#IF
+check  [103]  1
+check  [104]  1
+check  [106]  0
+#ACT
+goto @talk_1_1
+break
+
+; Has given the HealerLetter, but still needs to give Fruit
+#IF
+check  [104]  1
+check  [106]  1
+check  [107]  0
+#ACT
+goto @talk_2_1
+break
+
+; Has given enough CannibleFruit (I think)
+#IF
+check  [104]  1
+check  [106]  1
+check  [107]  1
+check  [108]  0
+#ACT
+goto  @talk_3_1
+break
+
+; Has Been Given the SpecialDrug Already
+#IF
+check  [105] 1
+#SAY
+<$USERNAME> , Time is wasting. \
+Search for this man, and Please Hurry. \
+#ACT
+break
+
+#IF
+#SAY
+The beauty of this land.. It is fading fast.  \
+
+;-------------------------------------------------------
+; Has Been Given The Letter
+;-------------------------------------------------------
+
+[@talk_about_letter]
+You have the letter, which my father sent?\
+Will you give the letter to me?\ \
+<Give/@give_letter> letter.\
+<Don't Give/@no_give_letter> letter.
+
+[@give_letter]
+#IF
+CHECKITEM  HealerLetter  1
+#ACT
+TAKE  HealerLetter  1
+SET   [104]   1
+#SAY
+Ah I must thank you, I have been worried about my father\
+for some time now, thankfully he tells me, he is ok in this letter.\
+But he needs a special medicine.\
+Now tell me stranger, what is your name?\ \ 
+<Tell name/@say_my_name>
+
+#ELSESAY
+You don't have the letter!\
+You make me so angry! Please leave this place now!\\
+<Ok/@exit>
+
+[@no_give_letter]
+You won't give the letter to me?\
+My friend, I am very upset by this, the letter is from my father,\
+Well, I am sorry but I can't talk to you now!
+
+[@say_my_name]
+<$USERNAME>, I have a very big favour to ask you.\
+I have recently found all the ingredients, to make the medicine,\
+to cure my fathers illness. But first a very powerful magic man,\
+must enhance its power.\
+Will you take the drug to him?\ \
+<Take the Drug/@ok_take_drug>\
+<No I can't/@exit>\
+
+[@ok_take_drug]
+#ACT
+SET  [105] 1
+GIVE SpecialDrug 1
+#SAY
+Please hurry, I fear my father does not have much time.\
+Goodbye... And good luck!\ \
+<Ok/@exit>
+
+;-------------------------------------------------------
+; Has Given the Letter, Still Needs to Collect Fruit
+;-------------------------------------------------------
+[@talk_1_1]
+#SAY
+Oh <$USERNAME>, these fruits are necessary.\
+You will find them outside.\
+Not in here, Now Go!
+#ACT
+SET  [106] 1
+
+;-------------------------------------------------------
+; Still Given Fruit
+;-------------------------------------------------------
+
+[@talk_2_1]
+#IF
+CHECKITEM  CannibalFruit 1
+#SAY
+I need many Fruits, Please give me these.\
+I will pay you 600 gold for each one.\
+I have much work to do, to prepare this.\ \
+<Give the CannibalFruit/@give_sg_1>
+#ELSEACT
+goto  @talk_1_1
+
+[@give_sg_1]
+#IF
+CHECKITEM  CannibalFruit 1
+#ACT
+take CannibalFruit 1
+give gold 600
+goto @check_enough_1
+
+;Check to see if they have given enough fruit
+[@check_enough_1]
+#IF
+RANDOM 10
+DAYTIME SUNSET
+#ACT
+SET  [107] 1
+#SAY
+I am very grateful, <$USERNAME>, for you giving me the cannibal fruits\
+I now have a sufficient, amount of fruits.\
+I will begin mixing them.\
+But I cannot work at night, I need sleep.
+#ELSEACT
+GOTO @give_sg_2
+
+[@give_sg_2]
+#IF
+CHECKITEM CannibalFruit 1
+#ACT
+GOTO @talk_2_1
+#ELSEACT
+CLOSE
+
+
+;-------------------------------------------------------
+; The empty member of the Assembly 1st will be shrewd, it is making 
+; No Idea what that means
+;-------------------------------------------------------
+
+[@talk_3_1]
+#IF
+daytime day
+#ACT
+goto  @talk_3_2
+#ELSESAY
+<$USERNAME>, The medicine is not completed still.\
+Please do not rush me,  When the medicine is completed, it will be\
+very powerful. But if the medicine is completed too early.....then I\
+would hate to think what would happen. I cannot work at nightime,\
+I need to sleep.
+
+;---------------------------------------------
+; Not sure what part of the quest this bit is
+;---------------------------------------------
+[@talk_3_2]
+<$USERNAME>, the medicine is being made now,\
+A portion should work.\
+<Next/@ok_h_order>
+
+[@ok_h_order]
+I am very grateful my friend, the medicine is being made. It\
+contains the key to creating the best medicine. The medicine\
+that is created will probably be of the highest standard....\
+I dont want to sell this drug store, I will not let it go out\
+of business, my friend owes me a favour. He may be able to help.\
+I have some good news about the teacher, it is old news\
+but in essence it is important..... My friend is beautiful, but looks\
+are only as important as knowledge.\
+<They certainly are/@ok_h_order_now>
+
+[@ok_h_order_now]
+#ACT
+SET  [108] 1
+give Medicine 1
+close
+
+[goods]
+;Item		Amount		Time
+(HP)DrugSmall		200	1	
+(MP)DrugSmall		200	1
+(HP)DrugMedium		200	1
+(MP)DrugMedium		200	1
+(HP)DrugLarge		200	1
+(MP)DrugLarge		200	1
+(HP)SDrugBundl		200	1
+(MP)SDrugBundl		200	1
+(HP)MDrugBundl		200	1
+(MP)MDrugBundl		200	1
+(HP)DrugBundle		200	1
+(MP)DrugBundle		200	1
+CannibalFruit           100     1
+CannibalLeaf            100     1

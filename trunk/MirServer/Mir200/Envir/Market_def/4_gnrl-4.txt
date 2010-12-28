@@ -1,0 +1,50 @@
+;Info [ Npc Name{Derby} X=252 Y=224 MapName={CastleGi-Ryoong} ]
+;NPC Made By Geoff
+
+;Settings
+%100
++30
++3
++25
+
+[@main]
+Oh! Welcome, What are you looking for?\
+There is a wide variety of useful goods here.\
+Please have a look.\ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Talk/@talk> with Derby\
+<Close/@exit>
+
+[@buy]
+Everything I sell here may look meagre but\
+they are all necessary things.\
+Ok, What do you want to buy?\ \
+<Back/@main>
+
+[@sell]
+Oh what a coincidence!\
+I was just about to order some more goods since\
+the stock is running low.\
+What do you want to sell?\ \
+<Back/@main>
+
+[@talk]
+This is such an isolated place - goods are usually scarce.\
+It's people like me who keep helping to maintain some prosperity\
+here by importing goods from outside. Heh heh heh..\ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+Candle	         200	         1
+Torch	         200	         1
+DungeonEscape	 20o             1
+RandomTeleport	 200	         1
+Amulet	         200	         1
+Amulet(M)	 200             1
+RepairOil	 200	         1
+TeleportHome	 200	         1
+EscapeBundl	 200	         1
+TeHomeBundl	 200	         1
+RandomBundl	 200	         1

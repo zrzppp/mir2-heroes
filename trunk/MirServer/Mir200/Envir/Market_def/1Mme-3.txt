@@ -1,0 +1,223 @@
+;Info [ Npc Name{Rupert} X=355 Y=329 MapName={MongchonProvince} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++40
++1
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [301] - Unknown
+; [302] - Unknown
+; [303] - Unknown
+; [304] - Unknown
+;###############################################################
+
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you...\ \
+<Damn you!/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+#IF
+random 2
+#ACT
+goto @QUEST
+#ELSEACT
+goto @normal
+
+[@normal]
+#IF
+check [303] 1
+#SAY
+I don't know you..\
+quickly get out of the way, as soon as I see your face I feel discusted...\ \
+<How rude/@exit>
+
+
+#ELSESAY
+Welcome, what can I do for you today?\ \
+<Sell/@sell> meat.\
+<Nothing thanks/@exit>.
+
+
+[@QUEST]
+#IF
+check [303] 1
+#SAY
+I don't know you..\
+quickly get out of the way, as soon as I see your face I feel discusted...\ \
+<How rude/@exit>
+break
+
+#IF
+check [313] 1
+#ACT
+goto @Q313
+break
+
+#IF 
+check [304] 1
+#ACT
+goto @Q304
+break
+
+#IF
+check [302] 1
+#ACT
+goto @Q302
+break
+
+#IF
+check [301] 1
+#ACT
+goto @Q301
+break
+
+#IF
+check [301] 0
+check [302] 0
+check [303] 0
+#ACT
+goto @Q300
+
+#ELSEACT
+goto @normal
+
+[@Q301]
+#IF
+random 5
+#SAY 
+Hello <$USERNAME> will you do something\
+for me please?\ \
+<Sure what is it?/@Q300_2_1>\
+<No thanks I'm busy/@Q301_1>
+#ELSESAY
+Nice weather today isn't it.\
+<I suppose so/@exit>
+
+
+[@Q300]
+#IF
+#SAY
+Hello <$USERNAME>, will you do something\
+for me please? \ \
+<Sure what is it/@Q300_1>\
+<No Thanks im busy/@exit>
+
+
+[@Q302]
+#IF
+checkitem meat 10
+checkitem chicken 10
+checkduraeva meat 20
+checkduraeva chicken 5
+#ACT
+goto @Q302_1
+#ELSEACT
+goto @Q302_2
+
+[@Q302_1]
+#IF
+#ACT
+take meat 10
+take chicken 10
+give gold 6000
+SET [304] 1
+#SAY
+Thank you for getting that meat but I need\
+some cooking oil. Would you please go get it for me.\
+Danielle in Bichon Wall might tell you where to go\ \
+
+<Fine but it better be worth it/@exit>
+
+[@Q302_2]
+#IF
+#SAY
+Come on I need that meat hurry up\\
+<Ok ok calm down/@exit>
+
+
+[@Q304]
+#IF
+check [304] 1
+#SAY
+Hurry and get me that cooking oil!\ \
+<Ok/@exit>
+
+[@Q300_1]
+One of my friends is coming over soon and I\
+want to cook a great dinner for him.\ \
+<Ok so what must i do?/@Q300_2>
+
+[@Q300_2]
+He is a very old friend that I haven't\
+seen in years but he is a very picky eater\
+so this dinner must be perfect.\ \
+<Go on/@Q300_2_1>
+<You talk to much/@Q300_2_2>
+
+[@Q300_2_1]
+#IF
+#ACT
+SET [302] 1
+SET [301] 0
+SET [303] 0
+#SAY
+Thank you for listening to me\
+I will need 10 pieces of normal meat all Dura20+ and\
+5 pieces of chicken meat with Dura5+\
+Please hurry up I need to get started soon\ \
+<Ok I'll be as quick as possible/@exit>
+
+[@Q300_2_2]
+#IF
+#ACT
+SET [301] 1
+#SAY
+I told you about my diffuciltys and you didn't help me.\
+I don't want to see you again, you let me down.\
+Quickly, go away now.
+
+[@Q301_1]
+#IF
+#SAY
+I like you, you help people, that's good.\
+There aren't many people like you.\
+You are willing to share your wealth with others.\
+I thank you.\ \
+<Ok/@exit>
+#ACT
+set [303] 1
+
+[@Q313]
+#IF
+#ACT
+SET [314] 1
+#SAY
+You prepare well, lucky you.\
+I have prepared a gift for you. It is\
+with my friend Martha.\
+Go and see them.\ \
+<Ok/@exit>
+
+[@sell]
+We'll buy high quality at high price.\
+But we'll buy at low price meat stained with soil or burned by fire.\ \
+<Back/@main>
+
+
+[goods]
+;Item Amount Time
+

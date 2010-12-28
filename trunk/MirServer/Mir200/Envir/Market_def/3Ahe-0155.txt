@@ -1,0 +1,54 @@
+;Info [ Npc Name{Debora} X=9 Y=11 MapName={Clothesshop} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++15
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+You are pure evil, I don't want to talk to you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+I think a big strong person like <$USERNAME> would look\
+fantastic in one of my cheap strong helmets!\
+Members of <$OWNERGUILD> will by order of <$LORD> recieve\
+a discount on my prices, because they own this town.\
+How can I help? \ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Repair/@repair>\
+<Exit/@exit>
+
+
+[@buy]
+Which helmet do you want to buy?\ \ \
+<Back/@main>
+
+[@sell]
+Show me your helmet to be sold. I'll give you an appraisement.\
+So if you like my store please sell them to me.\ \
+<Back/@main>
+
+[@repair]
+You can repair helmets here.\ \ \
+<Back/@main>
+
+[~@repair]
+It seems repaired fine.\ \ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time
+BronzeHelmet		100	1
+MagicHelmet		100	1

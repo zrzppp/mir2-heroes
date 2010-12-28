@@ -1,0 +1,85 @@
+;Info [ Npc Name{Milton} X=7 Y=14 MapName={Potionshop} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++0
++42
+
+;Poison Store
+[@main]
+How can I help you?\ \
+<Make/@makedrug> Poison\
+<Listen to explanation/@helpmakedrug>\
+<Cancel/@exit>
+
+[@makedrug]
+Select what kind of drug you want to make.\
+Needless to say... You did bring all the ingredients didn't you?\ \
+<Back/@main>
+
+[@helpmakedrug]
+Two kinds of poison can be made here.\ \
+<Grey Poison powder/@helpdrug1> effect\
+<Yellow Poison powder/@helpdrug2> effect\
+<Ingredients/@helpmakedrug1> to make Grey Poison\
+<Ingredients/@helpmakedrug2> to make Yellow Poison\
+<Back/@main>
+
+
+[@helpdrug1]
+Grey Poison powder can be used by Taoists when they execute\
+Poisoning skill. If the target is poisoned, its health power\
+will slowly decrease.\ \
+<Back/@helpmakedrug>
+
+
+[@helpdrug2]
+Yellow Poison powder can be used by Taoists when they execute\
+Poisoning skill. If the target is poisoned, its defence strenght\
+will decrease.\ \
+<Back/@helpmakedrug>
+
+
+[@helpmakedrug1]
+Grey Poison ingredients are\ 
+			   <1 CannibalFruit/@helpitem1>\
+			   <2 SpiderTeeth/@helpitem1>\
+			   <4 CannibalLeafs/@helpitem1>\
+ <Back/@helpmakedrug>
+
+
+[@helpmakedrug2]
+Yellow Poison ingredients are\
+		           <1 MaggotPill/@helpitem2>\
+			   <1 ScorpionTail/@helpitem2>\
+			   <4 CannibalLeafs/@helpitem2>\
+
+ <Back/@helpmakedrug>
+
+[@helpitem1]
+CannbibalFruit can be harvested from CannibalPlants.\
+SpiderTeeth can be harvested from SpittingSpiders.\
+CannibalLeafs can be harvested from CannibalPlants.\
+
+<back/@helpmakedrug1>
+
+[@helpitem2]
+MaggotPills can be harvested from CaveMaggots.\
+ScorpionTails can be harvested from Scorpions.\
+CannibalLeafs can be harvested from CannibalPlants.\
+ 
+<back/@helpmakedrug2>
+
+
+
+[goods]
+;Item		Amount		Time
+YellowPoisn(S)		200	1
+GreyPoison(S)		200	1
+YellowPoisn(M)		200	1
+GreyPoison(M)		200	1
+YellowPoisn(L)		200	1
+GreyPoison(L)		200	1

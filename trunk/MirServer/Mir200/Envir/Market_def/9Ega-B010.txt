@@ -1,0 +1,108 @@
+;Info [ Npc Name{Cashier} X=48 Y=45 MapName={Casino} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Casino NPC Fixed by Geoff - 22/3/03
+[@main]
+#IF
+#SAY
+Hi there. You look like a bit of a gambler!\
+You want to gamble in the Casino?\
+Well You will have to buy some chips...\ 
+or you can exahange your winnings if you wish.\ \
+<Buy/@changeGold> gamble chip\
+<Buy/@changeTupe> gamble chip bundle\
+<Exchange/@changeMoney> chips to gold\
+<Leave/@exit>
+
+[@changeGold]
+#IF
+checkgold 1000
+#SAY
+It seems you have enough money.\
+Do you still want to buy the chip?\ \
+<Yes/@changeGold_1> \
+<No/@exit>
+
+#ELSESAY
+I can see that you don't have enough money.\
+Go and get some then come back.\ \
+<Ok/@Exit>
+
+[@changeGold_1]
+#IF
+checkbaggage
+checkgold 1000
+#ACT
+take gold 1000
+give gamblechip 1
+#SAY
+There you go...\ 
+Do you want more chips?\ \
+<Yes/@changeGold> \
+<No/@exit>
+
+[@changeMoney]
+#IF
+checkitem gamblechip 1
+#SAY 
+Do you want to exchange a gambling chip into gold?\
+Do you think you stand a chance in the casino?\ \
+<Exchange/@changeMoney_1> chip into gold\
+<Err...No, dont bother/@exit>
+
+#ELSESAY
+I can see that you don't have any chips to exchange\
+into gold. Stop wasting my time and get some.\ \
+<Sorry/@exit>
+
+[@changeMoney_1]
+#IF
+checkitem gamblechip 1
+#ACT
+goto @changeMoney_2
+
+[@changeMoney_2]
+#IF 
+checkitem gamblechip 1
+#ACT
+take gamblechip 1
+give gold 900
+#SAY
+There you go.\ 
+Want to excahnge more?\ \
+<Yeah ok/@changeMoney> \
+<No thanks/@exit>
+
+[@changeTupe]
+#IF
+checkgold 6000
+#SAY
+You want a bundle of chips do you?\
+Feeling lucky?\ \
+<Yeah/@changeGold_5> hand them over\
+<No/@exit> I've changed my mind
+
+#ELSESAY
+I can see you don't have enough gold.\
+Get 6000 and come back.\ \
+<Ok/@main>
+
+[@changeGold_5]
+#IF 
+checkbaggage
+checkgold 6000
+#ACT
+take gold 6000
+give gamblechipbun 1
+#SAY
+There you go...\
+Do you want more?\ \
+<You Bet!/@changeTupe> \
+<No thanks/@exit>
+
+#ELSESAY
+You can't afford it!\
+Get some gold and come back.\ \
+<Ok/@exit>

@@ -1,0 +1,37 @@
+;Info [ Npc Name{Brittany} X=313 Y=271 MapName={Bichon-Province} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++40
++1
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you... \ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome, what can I do for you ?\ \
+<Sell/@sell> meat\
+<Never Mind/@exit>
+
+[@sell]
+We'll buy high quality at high price.\
+But we'll buy at low price meat stained with soil or burned by fire.\ \
+<Back/@main>
+
+
+
+[goods]
+;Item Amount Time
+

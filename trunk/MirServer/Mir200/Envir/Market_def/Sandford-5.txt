@@ -1,0 +1,63 @@
+;Info [ Npc Name{Sandford} X=161 Y=315 MapName={PrajnaIsland} ]
+;Settings
+%100
++0
++42
+
+[@main]
+#SAY
+I'm Sandford, the only Potion Dealer\
+and Medical Practitioner in this Island.\
+Any trouble with your body?\ \
+<Buy drug/@buy>\
+<Sell drug/@sell>\
+<Talk with Sandford/@talk>\
+<Close/@exit>
+
+[@buy]
+#SAY
+Do you want to buy any drug? I used the local ingredients\
+for making them instead of the ones from the Main land\
+but the effect will be almost the same.\ \
+<Back/@main>
+
+[@sell]
+#SAY
+I tell you, I won't accept any left-over drug from you.\
+A drug get easily spoiled once the lid is taken off.\ \
+<Back/@main>
+
+[@talk]
+#IF
+random 2
+#ACT
+goto @talk1
+#ELSEACT
+goto @talk2
+
+[@talk1]
+#SAY
+Hmmm.... Shall I add lots of Preservatives to that? ...\ \
+<Back/@main>
+
+[@talk2]
+#SAY
+The traditional method of potion making is quite\
+vunerable to rotting so you should drink the drug\
+as soon as you take the lid off. So i want to develop\
+a drug that does not easily get spoilt.\ \
+<Back/@main>
+
+[Goods]
+(HP)DrugSmall		200	1	
+(MP)DrugSmall		200	1
+(HP)Drugmedium		200	1
+(MP)Drugmedium		200	1
+(HP)DrugLarge		200	1
+(MP)DrugLarge		200	1
+(HP)Drugbundle		200	1
+(MP)Drugbundle		200	1
+(HP)MDrugbundl		200	1
+(MP)MDrugbundl		200	1
+(HP)SDrugbundl		200	1
+(MP)SDrugbundl		200	1

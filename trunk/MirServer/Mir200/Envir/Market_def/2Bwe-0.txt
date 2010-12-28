@@ -1,0 +1,234 @@
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
+
+;#####################################################################
+; Brief Description of the switches used in this NPC.
+; [222] - If [222] is already switched (1) quest will be started.
+; [220] - If set to (1) quest allowed.
+; [221] - If set to (1) quest allowed.
+; [214] - Used in quest.
+; [216] - Used in quest.
+; [217] - Used in quest.
+;#####################################################################
+
+[@main]
+#IF
+check [222] 1
+daytime night
+#ACT
+goto @givekundobreak
+#IF
+check [220] 1
+check [221] 1
+check [222] 0
+checkitem FateSwordBook 1
+#ACT
+goto @kundo
+break
+#IF
+unit [1] 0
+check [214] 1
+check [216]0
+#ACT
+goto @talk_1
+break
+#IF
+unit [1] 0
+check [214] 1
+check [216] 1
+check [217] 0
+#ACT
+goto @notyet
+break
+#IF
+check [217] 1
+#ACT
+goto @end
+break
+#ELSEACT
+goto @main_1
+break
+
+;Normal NPC if you aren't doing quest.
+[@main_1]
+Glad to see you, how can I help you?\ \
+<Repair/@repair> weapon.\
+<Special repair/@s_repair> weapon.\
+<Leave/@exit>
+
+[@repair]
+Would you like to repair your weapon?\
+ <Back/@main_1>
+
+[~@repair]
+Your weapon seems to be repaired fine.\ \
+ <Back/@main_1>
+
+[goods]
+;Item		Amount		Time
+
+[@talk_1]
+Oh, you are that person that I was told about?\
+Looks like he he has good judgement.\
+Do you want to listen my story?\ \
+<Listen/@okheard>.\
+<Don't listen/@noheard>.
+
+[@okheard]
+#IF
+checkjob warrior
+checklevel 35
+#ACT
+reset [204]
+goto @w_t_okbreak
+break
+
+#IF
+check [204] 1
+#ACT
+goto @nopowerbreakc
+#ELSESAY
+Hmm... you don't meet the standards to listen to my story.\
+There is no point in taking on a quest which you cannot complete.\
+Since you took the effort to get here, I will give you a present.\
+Good luck.\ \
+<Thanks/@exit>
+#ELSEACT
+reset [210] 10
+set [204] 1
+give lotteryticket 5
+
+[@noheard]
+#IF
+#ACT
+reset [210] 10
+#SAY
+If you don't want to listen it would be a waste of time telling\
+you about my story. If you ever feel like listening just come\
+back and ask me\ \
+<Ok, bye/@exit>
+
+[@nopower]
+Sorry, you do not have the ability, you are not strong\
+enough. Come back when you are stronger.\ \
+<Ok/@exit>
+
+[@w_t_ok]
+Have you heard of the FateSword?\
+I study the blacksmith technology everywhere and am\
+looking for a skilled worker's time, I was young once,\
+I was enthusiastic to learn the highest technology, I\
+went all over the lands of Mir.\ \
+<Continue/@next>
+
+[@next]
+I am Jiang Shi.\
+I arrived at a town one day and noticed I was hungry. I\
+found an inn and decided to enter.\ \
+<Continue/@next_1>
+
+[@next_1]
+I entered the inn and called the boss. I asked to select several simple vegetables,\
+but I discovered that in his hand was no common kitchen knife,\
+it was all more splendid than a kitchen knife.\ \
+<Continue/@next_2>
+
+[@next_2]
+I spoke to the inn keeper and found he made knives.\
+Also he is no normal person, he is the high-level warrior.\
+His sword technique at that time was unbelievable.\
+He left the village and I couldn't find him.\ \
+<Continue/@next_3>
+
+[@next_3]
+I went crazy to find him, finally I did.\
+I asked him if I could be his apprentice and he allowed me.\
+I was so proud that I could learn from him. But,\
+I started to drink liquor and didn't pay attention. I\
+regret that to this day.\ \
+<Continue/@next_4>
+
+[@next_4]
+He became unhappy with me and told me to leave. He said I\
+had changed and he didn't like it. I was so sorry,\
+I was a failure at being a skilled worker.\
+Until this day I have worked here.\ \
+<Continue/@next_5>
+
+[@next_5]
+A skilled worker can make swords, but as I have not\
+learned the sword technology before I cannot do it.\
+Now, I am looking for a skilled worker.\
+Will you accept my proposal of finding a skilled worker?\ \
+<Accept/@accept>\
+<Reject/@refuse>
+
+[@accept]
+#IF
+#ACT
+set [216] 1
+#SAY
+Thank you. Please wait a while.\ \
+<Ok/@exit>
+
+[@refuse]
+#IF
+#ACT
+reset [210] 10
+#SAY
+You do not want to? Ok, well if you change your mind then just\
+come and see me.\ \
+<Ok/@exit>
+
+[@notyet]
+Have you not found the skilled worker?\
+Please hurry!\ \
+<Ok/@exit>
+
+[@end]
+#IF
+checkjob warrior
+checklevel 35
+#ACT
+reset [203] 20
+set [203] 1
+give FateSwordBook 1
+#SAY
+Hello,\
+If I was a skilled worker I could use this to make\
+the FateSword but I'm not.\
+Deliver this to a skilled worker, good luck.\ \
+<Thanks/@exit>
+
+[@kundo]
+#IF
+#ACT
+set [222] 1
+take book 1
+#SAY
+destiny? This book is? Skilled worker's book destiny! Worker\
+or has not forgotten me. \ hum ?.... \
+I cannot like this stay, I will have again to inspire skilled worker's peerless valuable thing " edge destiny "\
+you or later look for me again.\ \
+<Close/@exit>
+
+[@givekundo]
+#IF
+checkjob warrior
+checklevel 35
+#ACT
+reset [210] 20
+set [205] 1
+give FateSword
+#SAY
+The FateSword is a fierce weapon, use it well.\
+I have one request,\
+From very early on I started to look for one person,\
+his name is Liu,\
+please help me to look for that person.\ \
+<Ok/@exit> 

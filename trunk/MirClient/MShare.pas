@@ -1008,9 +1008,6 @@ var
   g_boCanRunMon: Boolean = False; //穿NPC
   g_boCanRunNpc: Boolean = False; //穿怪
 
-
-
-
   g_boCanRunAllInWarZone: Boolean = False;
   g_boCanStartRun: Boolean = True; //是否允许免助跑
   g_boParalyCanRun: Boolean = False; //麻痹是否可以跑
@@ -1023,7 +1020,7 @@ var
   g_boShowJob: Boolean = False; //显示职业
   g_boShowLevel: Boolean = False; //显示等级
   g_boDuraAlert: Boolean = False; //物品持久警告
-  g_boMagicLock: Boolean = True; //魔法锁定
+  g_boMagicLock: Boolean = False; //魔法锁定
   g_boAutoPuckUpItem: Boolean = False;
 
   g_boShowHumanInfo: Boolean = True;
@@ -1224,7 +1221,7 @@ var
     boShowGreenHint: False; // Debug Text
     boBGSound: True;
     boItemHint: True;
-    boMagicLock: True; //魔法锁定
+    boMagicLock: False; // Lock Magic Onto Target
     boOrderItem: True;
     boOnlyShowCharName: False;
     boPickUpItemAll: True;
@@ -1240,19 +1237,19 @@ var
     nAutoUseMagicTime: 5;
 
 
-    boSmartLongHit: True;
-    boSmartWideHit: True;
-    boSmartFireHit: True;
-    boSmartSwordHit: True;
-    boSmartCrsHit: True;
-    boSmartZrjfHit: True;
-    boSmartKaitHit: True;
-    boSmartPokHit: True;
-    boSmartShield: True;
-    boSmartWjzq: True;
-    boStruckShield: True;
+    boSmartLongHit: False;
+    boSmartWideHit: False;
+    boSmartFireHit: False;
+    boSmartSwordHit: False;
+    boSmartCrsHit: False;
+    boSmartZrjfHit: False;
+    boSmartKaitHit: False;
+    boSmartPokHit: False;
+    boSmartShield: False;
+    boSmartWjzq: False;
+    boStruckShield: False;
 
-    boSmartPosLongHit: True; //隔位刺杀
+    boSmartPosLongHit: False; //隔位刺杀
     boSmartWalkLongHit: False; //走位刺杀
 
     boChangeSign: False;
@@ -4682,17 +4679,17 @@ begin
     g_Config.boShowMonName := False;
     g_Config.boShowGreenHint := False;
     g_Config.boItemHint := ini.ReadBool('Basic', 'ItemHint', g_Config.boItemHint);
-    g_Config.boMagicLock := ini.ReadBool('Basic', 'MagicLock', g_Config.boMagicLock);
+    g_Config.boMagicLock := False;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
     g_Config.boOnlyShowCharName := False;
-    g_Config.boPickUpItemAll := False;
+    g_Config.boPickUpItemAll := ini.ReadBool('Basic', 'PickUpItemAll', g_Config.boPickUpItemAll);
     g_Config.boCloseGroup := ini.ReadBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);
     g_Config.boNotNeedShift := ini.ReadBool('Basic', 'NotNeedShift', g_Config.boNotNeedShift);
     g_Config.boAutoHorse := ini.ReadBool('Basic', 'AutoHorse', g_Config.boAutoHorse);
     g_Config.boCompareItem := ini.ReadBool('Basic', 'CompareItem', g_Config.boCompareItem);
-    g_Config.boGuaji := ini.ReadBool('Basic', 'Guaji', g_Config.boGuaji);
+    g_Config.boGuaji := False;
 
 
     g_boBGSound := g_Config.boBGSound;
@@ -4759,28 +4756,28 @@ begin
     g_Config.nRenewBookNowBookIndex := ini.ReadInteger('Protect', 'RenewBookNowBookIndex', g_Config.nRenewBookNowBookIndex);
     g_Config.sRenewBookNowBookItem := ini.ReadString('Protect', 'RenewBookNowBookItem', g_Config.sRenewBookNowBookItem);
 
-    g_Config.boAutoHideMode := ini.ReadBool('Tec', 'AutoHideMode', g_Config.boAutoHideMode);
-    g_Config.boAutoUseMagic := ini.ReadBool('Tec', 'AutoUseMagic', g_Config.boAutoUseMagic);
-    g_Config.nAutoHideModeTime := ini.ReadInteger('Tec', 'AutoHideModeTime', g_Config.nAutoHideModeTime);
-    g_Config.nAutoUseMagicTime := _MAX(ini.ReadInteger('Tec', 'AutoUseMagicTime', g_Config.nAutoUseMagicTime), 1);
-    g_Config.nAutoUseMagicIdx := ini.ReadInteger('Tec', 'AutoUseMagicIdx', g_Config.nAutoUseMagicIdx);
+    g_Config.boAutoHideMode := False;
+    g_Config.boAutoUseMagic := False;
+    g_Config.nAutoHideModeTime := 0;
+    g_Config.nAutoUseMagicTime := 0;
+    g_Config.nAutoUseMagicIdx := 0;
 
-    g_Config.boSmartLongHit := ini.ReadBool('Tec', 'SmartLongHit', g_Config.boSmartLongHit);
-    g_Config.boSmartWideHit := ini.ReadBool('Tec', 'SmartWideHit', g_Config.boSmartWideHit);
-    g_Config.boSmartFireHit := ini.ReadBool('Tec', 'SmartFireHit', g_Config.boSmartFireHit);
-    g_Config.boSmartSwordHit := ini.ReadBool('Tec', 'SmartSwordHit', g_Config.boSmartSwordHit);
-    g_Config.boSmartCrsHit := ini.ReadBool('Tec', 'SmartCrsHit', g_Config.boSmartCrsHit);
+    g_Config.boSmartLongHit := False;
+    g_Config.boSmartWideHit := False;
+    g_Config.boSmartFireHit := False;
+    g_Config.boSmartSwordHit := False;
+    g_Config.boSmartCrsHit := False;
 
-    g_Config.boSmartKaitHit := ini.ReadBool('Tec', 'SmartKaitHit', g_Config.boSmartKaitHit);
-    g_Config.boSmartPokHit := ini.ReadBool('Tec', 'SmartPokHit', g_Config.boSmartPokHit);
+    g_Config.boSmartKaitHit := False;
+    g_Config.boSmartPokHit := False;
 
-    g_Config.boSmartShield := ini.ReadBool('Tec', 'SmartShield', g_Config.boSmartShield);
-    g_Config.boSmartWjzq := ini.ReadBool('Tec', 'SmartWjzq', g_Config.boSmartWjzq);
-    g_Config.boStruckShield := ini.ReadBool('Tec', 'StruckShield', g_Config.boStruckShield);
+    g_Config.boSmartShield := False;
+    g_Config.boSmartWjzq := False;
+    g_Config.boStruckShield := False;
 
 
-    g_Config.boSmartPosLongHit := ini.ReadBool('Tec', 'SmartPosLongHit', g_Config.boSmartPosLongHit);
-    g_Config.boSmartWalkLongHit := ini.ReadBool('Tec', 'SmartWalkLongHit', g_Config.boSmartWalkLongHit);
+    g_Config.boSmartPosLongHit := False;
+    g_Config.boSmartWalkLongHit := False;
 
 
     g_Config.boRenewCloseIsAuto := ini.ReadBool('Tec', 'RenewCloseIsAuto', g_Config.boRenewCloseIsAuto);
@@ -4796,9 +4793,9 @@ begin
     g_Config.nRenewHeroLogOutPercent := ini.ReadInteger('Protect', 'RenewHeroLogOutPercent', g_Config.nRenewHeroLogOutPercent);
 
 
-    g_Config.boChangeSign := ini.ReadBool('Protect', 'ChangeSign', g_Config.boChangeSign);
-    g_Config.boChangePoison := ini.ReadBool('Protect', 'ChangePoison', g_Config.boChangePoison);
-    g_Config.nPoisonIndex := ini.ReadInteger('Protect', 'PoisonIndex', g_Config.nPoisonIndex);
+    g_Config.boChangeSign := False;
+    g_Config.boChangePoison := False;
+    g_Config.nPoisonIndex := 0;
 //==================================================================================================
 
 

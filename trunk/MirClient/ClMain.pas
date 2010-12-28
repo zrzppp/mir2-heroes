@@ -2936,16 +2936,16 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
         end;
         Key := 0;
       end;
-    Word('L'): begin //挂机
-        if ssCtrl in Shift then begin
-          g_GuaJi.Started := not g_GuaJi.Started;
+    //Word('L'): begin //挂机
+        //if ssCtrl in Shift then begin
+          //g_GuaJi.Started := not g_GuaJi.Started;
           {if g_GuaJi.Started then begin
             DScreen.AddChatBoardString('开始挂机 Ctrl + L..', clYellow, clRed);
           end else begin
             DScreen.AddChatBoardString('停止挂机 Ctrl + L..', clYellow, clRed);
           end; }
-        end;
-      end;
+        //end;
+      //end;
   end;
 
   with FrmDlg.DScrollChat do begin

@@ -751,56 +751,58 @@ begin
     LoadAICharNameList();
     LoadAIHeroNameList();
     g_Config.nServerFile_CRCB := CalcFileCRC(Application.ExeName);
-    MemoLog.Lines.Add('正在加载物品数据库...');
+
+    MemoLog.Lines.Add('Loading Item Database...');
     nCode := FrmDB.LoadItemsDB;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('物品数据库加载失败！！！' + 'Code: ' + IntToStr(nCode));
+      MemoLog.Lines.Add('Error Loading Item Database' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add(Format('物品数据库加载成功(%d)...', [UserEngine.StdItemList.Count]));
-    MemoLog.Lines.Add('正在加载数据图文件...');
+    MemoLog.Lines.Add(Format('Item Database Loaded: (%d) Items...', [UserEngine.StdItemList.Count]));
+
+    MemoLog.Lines.Add('Loading Mini-Map Information...');
     nCode := FrmDB.LoadMinMap;
     if nCode < 0 then begin
       MemoLog.Lines.Add('小地图数据加载失败！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add('小地图数据加载成功...');
+    MemoLog.Lines.Add('Mini-Map Information Loaded...');
 
-    MemoLog.Lines.Add('正在加载地图数据...');
+    MemoLog.Lines.Add('Loading Map Information...');
     nCode := FrmDB.LoadMapInfo;
     if nCode < 0 then begin
       MemoLog.Lines.Add('地图数据加载失败！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add(Format('地图数据加载成功(%d)...', [g_MapManager.Count]));
+    MemoLog.Lines.Add(Format('Map Information Loaded: (%d) Maps Loaded...', [g_MapManager.Count]));
 
-    MemoLog.Lines.Add('正在加载怪物数据库...');
+    MemoLog.Lines.Add('Loading Monster Database...');
     nCode := FrmDB.LoadMonsterDB;
     if nCode < 0 then begin
       MemoLog.Lines.Add('加载怪物数据库失败！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add(Format('加载怪物数据库成功(%d)...', [UserEngine.MonsterList.Count]));
+    MemoLog.Lines.Add(Format('Monster Database Loaded: (%d) Monsters...', [UserEngine.MonsterList.Count]));
 
-    MemoLog.Lines.Add('正在加载技能数据库...');
+    MemoLog.Lines.Add('Loading Magic Database...');
     nCode := FrmDB.LoadMagicDB;
     if nCode < 0 then begin
       MemoLog.Lines.Add('加载技能数据库失败！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add(Format('加载技能数据库成功(%d)...', [UserEngine.m_MagicList.Count]));
+    MemoLog.Lines.Add(Format('Magic Database Loaded: (%d) Magics...', [UserEngine.m_MagicList.Count]));
 
-    MemoLog.Lines.Add('正在加载怪物刷新配置信息...');
+    MemoLog.Lines.Add('Loading Spawn Lists...');
     nCode := FrmDB.LoadMonGen;
     if nCode < 0 then begin
       MemoLog.Lines.Add('加载怪物刷新配置信息失败！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add(Format('加载怪物刷新配置信息成功(%d)...', [g_MapManager.MonGenCount]));
+    MemoLog.Lines.Add(Format('Spawn Lists Loaded: (%d) Spawns...', [g_MapManager.MonGenCount]));
 
-    MemoLog.Lines.Add('正加载怪物说话配置信息...');
+    MemoLog.Lines.Add('Loading Monster Say Lists...');
     LoadMonSayMsg();
-    MemoLog.Lines.Add(Format('加载怪物说话配置信息成功(%d)...', [g_MonSayMsgList.Count]));
+    MemoLog.Lines.Add(Format('Monster Say Lists Loaded: (%d) Say Lists...', [g_MonSayMsgList.Count]));
 
     nError := 2;
     LoadDisableTakeOffList();
@@ -831,12 +833,10 @@ begin
     MemoLog.Lines.Add(Format('加载寄售物品数据库成功(%d/%d)...', [g_SellList.RecordCount, g_GoldList.RecordCount]));
 
     MemoLog.Lines.Add('正在加载无限仓库数据库...');
-
     g_Storage.LoadStorageList();
     MemoLog.Lines.Add(Format('加载无限仓库数据库成功(%d/%d)...', [g_Storage.HumManCount, g_Storage.RecordCount]));
 
     MemoLog.Lines.Add('正在加载捆装物品信息...');
-
     nCode := FrmDB.LoadUnbindList;
     if nCode < 0 then begin
       MemoLog.Lines.Add('加载捆装物品信息失败！！！' + 'Code: ' + IntToStr(nCode));
@@ -848,13 +848,13 @@ begin
 
     g_DuelEngine.Initialize();
 
-    MemoLog.Lines.Add('正在加载任务地图信息...');
+    MemoLog.Lines.Add('Loading Map Quests...');
     nCode := FrmDB.LoadMapQuest;
     if nCode < 0 then begin
       MemoLog.Lines.Add('加载任务地图信息失败！！！');
       Exit;
     end;
-    MemoLog.Lines.Add('加载任务地图信息成功...');
+    MemoLog.Lines.Add('Map Quests Loaded...');
 
     MemoLog.Lines.Add('正在加载地图触发事件信息...');
     nCode := FrmDB.LoadMapEvent;
@@ -1147,8 +1147,8 @@ end;
 
 procedure TFrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 resourcestring
-  sCloseServerYesNo = '是否确认关闭游戏服务器？';
-  sCloseServerTitle = '确认信息';
+  sCloseServerYesNo = 'Are you sure you want to close the Mir2 Server?';
+  sCloseServerTitle = 'Close Mir2 Server?';
 begin
   if not boServiceStarted then begin
     //    Application.Terminate;

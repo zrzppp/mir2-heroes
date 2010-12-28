@@ -2689,9 +2689,9 @@ begin
     Actor := TActor(m_ActorList[I]);
     if (Actor.m_boVisible) and (Actor.m_boHoldPlace) and (not Actor.m_boDeath) and (Actor.m_nCurrX = mx) and (Actor.m_nCurrY = my) then begin
       //      DScreen.AddChatBoardString ('Actor.m_btRace ' + IntToStr(Actor.m_btRace),clWhite, clRed);
-      if (Actor.m_btRace = RCC_USERHUMAN) and {g_Config.boCanRunHuman and }  g_ServerConfig.boRUNHUMAN then Continue;
-      if (Actor.m_btRace = RCC_MERCHANT) and {g_Config.boCanRunNpc and }  g_ServerConfig.boRunNpc then Continue;
-      if ((Actor.m_btRace > RCC_USERHUMAN) and (Actor.m_btRace <> RCC_MERCHANT)) and {g_Config.boCanRunMon and }  g_ServerConfig.boRUNMON then Continue;
+      if (Actor.m_btRace = RCC_USERHUMAN) and {g_Config.boCanRunHuman and }  (g_ServerConfig.boRUNHUMAN = True) then Continue;
+      if (Actor.m_btRace = RCC_MERCHANT) and {g_Config.boCanRunNpc and }  (g_ServerConfig.boRunNpc = True) then Continue;
+      if ((Actor.m_btRace > RCC_USERHUMAN) and (Actor.m_btRace <> RCC_MERCHANT)) and {g_Config.boCanRunMon and }  (g_ServerConfig.boRUNMON = True) then Continue;
       //m_btRace 大于 0 并不等于 50 则为怪物
       Result := True;
       Break;

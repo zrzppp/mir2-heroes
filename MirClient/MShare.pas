@@ -1213,13 +1213,13 @@ var
     btHearMsgFColor: 255;
 
 //==================================
-    boShowActorLable: True;
+    boShowActorLable: False;
     boHideBlueLable: True;
-    boShowNumberLable: True; //数字显示
-    boShowJobAndLevel: True; //等级和职业
+    boShowNumberLable: False; //数字显示
+    boShowJobAndLevel: False; //等级和职业
     boShowUserName: True;
     boShowMonName: False;
-    boShowItemName: True;
+    boShowItemName: False;
     boShowMoveLable: True;
     boShowGreenHint: False;
     boBGSound: True;
@@ -4674,13 +4674,13 @@ begin
   ini := TIniFile.Create(sFileName);
   if ini <> nil then begin
     //DebugOutStr('LoadUserConfig();');
-    g_Config.boShowActorLable := ini.ReadBool('Basic', 'ShowActorLable', g_Config.boShowActorLable);
-    g_Config.boHideBlueLable := ini.ReadBool('Basic', 'HideBlueLable', g_Config.boHideBlueLable);
-    g_Config.boShowNumberLable := ini.ReadBool('Basic', 'ShowNumberLable', g_Config.boShowNumberLable);
-    g_Config.boShowJobAndLevel := ini.ReadBool('Basic', 'ShowJobAndLevel', g_Config.boShowJobAndLevel);
+    g_Config.boShowActorLable := False;
+    g_Config.boHideBlueLable := True;
+    g_Config.boShowNumberLable := False;
+    g_Config.boShowJobAndLevel := False;
     g_Config.boShowUserName := ini.ReadBool('Basic', 'ShowUserName', g_Config.boShowUserName);
     g_Config.boShowMonName := ini.ReadBool('Basic', 'ShowMonName', g_Config.boShowMonName);
-    g_Config.boShowGreenHint := ini.ReadBool('Basic', 'ShowGreenHint', g_Config.boShowGreenHint);
+    g_Config.boShowGreenHint := False;
     g_Config.boItemHint := ini.ReadBool('Basic', 'ItemHint', g_Config.boItemHint);
     g_Config.boMagicLock := ini.ReadBool('Basic', 'MagicLock', g_Config.boMagicLock);
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);

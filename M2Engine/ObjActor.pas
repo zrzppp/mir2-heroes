@@ -25453,17 +25453,12 @@ begin
     //if g_Config.boWarDisHumRun then nWarRunAll := 1;
   end;
 
-  ServerConfig.boRUNHUMAN := nRunHuman = 0;
-  ServerConfig.boRUNMON := nRunMon = 0;
-  ServerConfig.boRunNpc := nRunNpc = 0;
-
   sMsg := EncodeBuffer(@ServerConfig, SizeOf(TServerConfig));
   nRecog := MakeLong(MakeWord(nRunHuman, nRunMon), MakeWord(nRunNpc, nWarRunAll));
   nParam := MakeWord(5, 0);
 
   m_DefMsg := MakeDefaultMsg(SM_SERVERCONFIG, nRecog, nParam, 0, 0);
   SendSocket(@m_DefMsg, sMsg);
-  //SendDefMessage(SM_SERVERCONFIG, nRecog, nParam, 0, 0, sMsg);
 end;
 
 procedure TPlayObject.SendServerStatus;

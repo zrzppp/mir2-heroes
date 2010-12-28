@@ -18916,6 +18916,11 @@ begin
 
   //Cheat Disabling
   DCheckBoxShowActorLable.Enabled := False;
+  DCheckBoxShowGreenHint.Enabled := False;
+  DCheckBoxHideBlueLable.Enabled := False;
+  DCheckBoxShowNumberLable.Enabled := False;
+  DCheckBoxShowJobAndLevel.Enabled := False;
+
 end;
 
 procedure TFrmDlg.DMemoChatMouseMove(Sender: TObject; Shift: TShiftState;

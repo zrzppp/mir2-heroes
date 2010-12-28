@@ -18913,6 +18913,9 @@ begin
   DComboboxHeroMP1.OnChange := DComboboxHeroMP1Change;
   DComboboxHeroHP2.OnChange := DComboboxHeroHP2Change;
   DComboboxHeroMP2.OnChange := DComboboxHeroMP2Change;
+
+  //Cheat Disabling
+  DCheckBoxShowActorLable.Enabled := False;
 end;
 
 procedure TFrmDlg.DMemoChatMouseMove(Sender: TObject; Shift: TShiftState;

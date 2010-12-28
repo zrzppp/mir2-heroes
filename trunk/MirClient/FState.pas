@@ -18923,8 +18923,9 @@ begin
   DCheckBoxMagicLock.Enabled := False;
 
   //Disable Bot
-  DButtonTab5.Visible := False;
+  DButtonTab2.Enabled := False;
   DButtonTab5.Enabled := False;
+  DButtonTab7.Enabled := False;
   DCheckBoxGuaji.Enabled := False;
 end;
 

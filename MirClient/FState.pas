@@ -18920,7 +18920,12 @@ begin
   DCheckBoxHideBlueLable.Enabled := False;
   DCheckBoxShowNumberLable.Enabled := False;
   DCheckBoxShowJobAndLevel.Enabled := False;
+  DCheckBoxMagicLock.Enabled := False;
 
+  //Disable Bot
+  DButtonTab5.Visible := False;
+  DButtonTab5.Enabled := False;
+  DCheckBoxGuaji.Enabled := False;
 end;
 
 procedure TFrmDlg.DMemoChatMouseMove(Sender: TObject; Shift: TShiftState;

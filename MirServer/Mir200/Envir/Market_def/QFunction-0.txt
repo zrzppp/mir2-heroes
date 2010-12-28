@@ -1,1 +1,32 @@
-;此脚为功能脚本，用于实现各种与脚本有关的功能
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+(@@sendmsg @buy @sell @repair @s_repair @@useitemname @@offlinemsg @storage @getback)
+[@DeleteHeroOK]
+#ACT
+SENDMSG 5 'Hero has been removed'
+CLOSE
+[@DeleteHeroFail]
+#ACT
+SENDMSG 5 'Cannot delete Hero'
+CLOSE
+[@HeroNameFilter]
+#ACT
+SENDMSG 5 提示：英雄名字中包含禁用字符
+CLOSE
+[@CreateHeroOK]
+#ACT
+SENDMSG 5 'Your Hero has been created'
+CLOSE
+[@HeroNameExists]
+#ACT
+SENDMSG 5 'Hero Name is in use'
+CLOSE
+[@CreateHeroFail]
+#ACT
+SENDMSG 5 'Unable to create Hero'
+CLOSE
+[@HeroOverChrCount]
+#ACT
+SENDMSG 5 'Hero name too long. Please shorten and try again.'
+CLOSE

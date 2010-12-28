@@ -5,6 +5,9 @@
 
 ; File   Map      X       Y       Name   0       Char
 
+;New NPCs
+Hero		3	340	321	Hero	0	36	0	0	0       0          0      2
+
 ; Bichon Wall
 1Bme	0102	9	7	Kim	0	11	0	
 1Bme	0	313	271	Brittany	0	4	0	

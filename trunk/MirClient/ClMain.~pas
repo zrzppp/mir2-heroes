@@ -13210,7 +13210,7 @@ var
     Result := False;
     if (g_Config.nRenewHeroHPIndex1 > 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
       sItemName := g_Config.sRenewHeroHPItem1Name;
-      nIndex := FindBagItemName(sItemName);
+      nIndex := FindHeroBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick1 := GetTickCount;
         Result := AutoHeroEatItem(nIndex);
@@ -13257,7 +13257,6 @@ begin
 
     end else
       if (g_Config.boRenewHeroHPIsAuto1) and (not g_Config.boRenewHeroHPIsAuto2) then begin
-
       EatHPItem1(False);
     end else
       if (not g_Config.boRenewHeroHPIsAuto1) and (g_Config.boRenewHeroHPIsAuto2) then begin

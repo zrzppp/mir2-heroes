@@ -14397,9 +14397,11 @@ var
 begin
   DConfigDlg.Visible := not DConfigDlg.Visible;
   if DConfigDlg.Visible then begin
+    DComboboxHumHP1.Items.Clear;
     DComboboxBookIndex.Items.Clear;
     for I := Low(g_ItemArr) to High(g_ItemArr) do begin
       if g_ItemArr[I].s.Name <> '' then
+        DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
         DComboboxBookIndex.Items.Add(g_ItemArr[I].s.Name);
     end;
     if g_Config.sRenewBookNowBookItem <> '' then begin
@@ -14415,9 +14417,9 @@ begin
           Break;
         end;
       end;
-      SaveUserConfig();
+      //SaveUserConfig();
     end;
-    DComboboxBookIndex.Text := g_Config.sRenewBookNowBookItem;
+    //DComboboxBookIndex.Text := g_Config.sRenewBookNowBookItem;
   end;
 end;
 

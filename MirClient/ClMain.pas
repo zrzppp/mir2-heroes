@@ -1736,12 +1736,14 @@ begin
 
     //for I := 0 to g_UnbindItemList.Count - 1 do begin
 
-        for I := Low(g_ItemArr) to High(g_ItemArr) do begin
-          with FrmDlg do begin
-          if g_ItemArr[I].s.Name <> '' then
-            DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
-          end;
 
+    {with FrmDlg do begin
+
+    DComboboxHumHP1.Items.Clear;
+    for I := Low(g_ItemArr) to High(g_ItemArr) do begin
+      if g_ItemArr[I].s.Name <> '' then
+        DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
+    end;
         //DComboboxHumHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
         //DComboboxHumMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
         //DComboboxHumHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
@@ -1752,7 +1754,7 @@ begin
         //DComboboxHeroHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
         //DComboboxHeroMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
       //end;
-    end;
+    end;    }
 
     if doFullScreen in DXDraw.Options then begin
          //Screen.Cursor := crNone;

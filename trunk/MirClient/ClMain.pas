@@ -13041,7 +13041,7 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHumHPIndex1 >= 0) and (GetTickCount - g_dwRenewHumHPTick1 > g_Config.nRenewHumHPTime1) and (flag or (g_MySelf.m_Abil.HP < g_Config.nRenewHumHPPercent1)) then begin
-      sItemName := g_Config.sRenewHeroHPItem1Name;
+      sItemName := g_Config.sRenewHumHPItem1Name;
       nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHumHPTick1 := GetTickCount;
@@ -13053,7 +13053,8 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHumHPIndex2 >= 0) and (GetTickCount - g_dwRenewHumHPTick2 > g_Config.nRenewHumHPTime2) and (flag or (g_MySelf.m_Abil.HP < g_Config.nRenewHumHPPercent2)) then begin
-      nIndex := FindHumItemIndex(g_Config.nRenewHumHPIndex2);
+      sItemName := g_Config.sRenewHumHPItem2Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHumHPTick2 := GetTickCount;
         Result := AutoEatItem(nIndex);
@@ -13203,11 +13204,13 @@ end;
 procedure TfrmMain.AutoHeroEatHPItem(Sender: TObject);
 var
   nIndex: Integer;
+  sItemName: string;
   function EatHPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
     if (g_Config.nRenewHeroHPIndex1 > 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
-      nIndex := FindHeroItemIndex(g_Config.nRenewHeroHPIndex1);
+      sItemName := g_Config.sRenewHeroHPItem1Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick1 := GetTickCount;
         Result := AutoHeroEatItem(nIndex);
@@ -13297,7 +13300,6 @@ begin
   if (g_WaitingUseItem.Item.S.Name = '') and (g_MyHero <> nil) and
     (not g_MyHero.m_boDeath) {and (g_MyHero.m_Abil.MP > 0)} then begin
     if g_Config.boRenewHeroMPIsAuto1 and g_Config.boRenewHeroMPIsAuto2 then begin
-      DScreen.AddChatBoardString('Test3: ' + BoolToStr(g_Config.boRenewHeroMPIsAuto1) + BoolToStr(g_Config.boRenewHeroMPIsAuto2), clGreen, clWhite);
       if g_Config.nRenewHeroMPPercent2 < g_Config.nRenewHeroMPPercent1 then begin
         if (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent2) then begin
           if not EatMPItem2(False) then

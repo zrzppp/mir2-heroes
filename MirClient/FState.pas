@@ -14443,7 +14443,7 @@ begin
     // Auto-Pot HP Box One [Hero]
     DComboboxHeroHP1.Items.Clear;
     for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
-      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.AC > 0) then
+      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) then
         DComboboxHeroHP1.Items.Add(g_HeroItemArr[I].s.Name);
     end;
 

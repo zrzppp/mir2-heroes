@@ -13208,7 +13208,7 @@ var
   function EatHPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroHPIndex1 > 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
+    if (g_Config.nRenewHeroHPIndex1 >= 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
       sItemName := g_Config.sRenewHeroHPItem1Name;
       nIndex := FindHeroBagItemName(sItemName);
       if nIndex >= 0 then begin
@@ -13220,7 +13220,7 @@ var
   function EatHPItem2(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroHPIndex2 > 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
+    if (g_Config.nRenewHeroHPIndex2 >= 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
       nIndex := FindHeroItemIndex(g_Config.nRenewHeroHPIndex2);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick2 := GetTickCount;

@@ -2266,6 +2266,7 @@ begin
         caRun: begin
             LB_RUN:
             crun := g_MySelf.CanRun;
+            DScreen.AddChatBoardString('CanRun: ' + IntToStr(crun) + ' ' + IntToStr(g_MySelf.m_dwLastStruckTime), clRed, clWhite);
             if (GetDistance(mx, my, dx, dy) >= 2) and (crun > 0) then begin
               if IsUnLockAction(CM_RUN, ndir) then begin
                 GetNextRunXY(ndir, mx, my);
@@ -2862,7 +2863,7 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
             DScreen.AddChatBoardString('你目前正在战斗中不能离开..', clYellow, clRed);
         end;
       end;}
-    Word('V'), VK_TAB: begin
+    Word('V'): begin
         if not g_boViewMiniMap then begin
           if GetTickCount > g_dwQueryMsgTick then begin
             g_dwQueryMsgTick := GetTickCount + 3000;
@@ -3813,7 +3814,7 @@ begin
   //pt := ScreenToClient(pt);
   //g_DWinMan.MouseUp(Button, Shift,pt.X, pt.Y);
   mousedowntime := GetTickCount;
-  g_nRunReadyCount := 0;
+  g_nRunReadyCount := 3;
   //_DXDrawMouseDown(Sender, Button, Shift, pt.X, pt.Y);
   _DXDrawMouseDown(Sender, Button, Shift, X, Y);
 end;
@@ -7360,7 +7361,6 @@ begin
     sData2 := Copy(sData, Pos('/', sData) + 1, Length(sData));
     DecodeBuffer(sData1, @MessageBodyWL, SizeOf(TMessageBodyWL));
     DecodeBuffer(sData2, @Health, SizeOf(THealth));
-
 
    { if g_Config.boStruckChgColor then begin
       if g_MySelf = Actor then begin
@@ -13208,7 +13208,7 @@ var
   function EatHPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroHPIndex1 > 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
+    if (g_Config.nRenewHeroHPIndex1 >= 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
       sItemName := g_Config.sRenewHeroHPItem1Name;
       nIndex := FindHeroBagItemName(sItemName);
       if nIndex >= 0 then begin
@@ -13220,7 +13220,7 @@ var
   function EatHPItem2(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroHPIndex2 > 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
+    if (g_Config.nRenewHeroHPIndex2 >= 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
       nIndex := FindHeroItemIndex(g_Config.nRenewHeroHPIndex2);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick2 := GetTickCount;

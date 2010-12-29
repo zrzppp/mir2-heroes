@@ -1629,7 +1629,7 @@ var
   //Shift: TShiftState;
   //nKey: Integer;
   List: TList;
-  BindItem: pTBindItemFile;
+  BindItem: TClientItem;
 begin
   g_PlugInfo.AppHandle := Handle;
   g_MainHandle := Handle;
@@ -1734,19 +1734,24 @@ begin
     end;
     List.Free;
 
-    for I := 0 to g_UnbindItemList.Count - 1 do begin
-      BindItem := g_UnbindItemList.Items[I];
-      with FrmDlg do begin
-        DComboboxHumHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        DComboboxHumMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        DComboboxHumHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        DComboboxHumMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+    //for I := 0 to g_UnbindItemList.Count - 1 do begin
 
-        DComboboxHeroHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        DComboboxHeroMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        DComboboxHeroHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        DComboboxHeroMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-      end;
+        for I := Low(g_ItemArr) to High(g_ItemArr) do begin
+          with FrmDlg do begin
+          if g_ItemArr[I].s.Name <> '' then
+            DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
+          end;
+
+        //DComboboxHumHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+        //DComboboxHumMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+        //DComboboxHumHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+        //DComboboxHumMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+
+        //DComboboxHeroHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+        //DComboboxHeroMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+        //DComboboxHeroHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+        //DComboboxHeroMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
+      //end;
     end;
 
     if doFullScreen in DXDraw.Options then begin

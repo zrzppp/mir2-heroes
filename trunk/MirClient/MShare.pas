@@ -400,6 +400,7 @@ type
     boRenewHeroHPIsAuto1: Boolean;
     boRenewHeroMPIsAuto1: Boolean;
 
+    sRenewHeroHPItem1Name: string;
     nRenewHeroHPIndex1: Integer;
     nRenewHeroMPIndex1: Integer;
 

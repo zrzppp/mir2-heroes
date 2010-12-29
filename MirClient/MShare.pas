@@ -371,6 +371,9 @@ type
     boRenewHumHPIsAuto1: Boolean;
     boRenewHumMPIsAuto1: Boolean;
 
+    sRenewHumHPItem1Name: string;
+    sRenewHumHPItem2Name: string;
+
     nRenewHumHPIndex1: Integer;
     nRenewHumMPIndex1: Integer;
 
@@ -379,8 +382,6 @@ type
 
     nRenewHumMPTime1: Integer;
     nRenewHumMPPercent1: Integer;
-
-
 
     boRenewHumHPIsAuto2: Boolean;
     boRenewHumMPIsAuto2: Boolean;
@@ -401,6 +402,8 @@ type
     boRenewHeroMPIsAuto1: Boolean;
 
     sRenewHeroHPItem1Name: string;
+    sRenewHeroHPItem2Name: string;
+
     nRenewHeroHPIndex1: Integer;
     nRenewHeroMPIndex1: Integer;
 

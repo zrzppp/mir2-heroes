@@ -1,7 +1,8 @@
 ;Legend of Mir 2 Server MapInfo File
 ;Last Updated 01/04 By Geoff
 
-[0 BichonProvince 0]
+[0 BichonProvince 0] SNOW(1)
+
 
 ;Buildings
 [0122 Palace 0] FIGHT
@@ -498,7 +499,8 @@ D422	22,42  -> D421	 361,20
 [G013 FootbalMap11   0] SAFE DAY NORECONNECT(0) NORECALL
 [G014 FootbalMap12   0] FIGHT DAY NORECONNECT(0) NORECALL
 
-[3   MongchonProvince  0]
+[3   MongchonProvince  0] SNOW(1)
+
 
 2	296,58 -> 3		273,750
 2	297,58 -> 3		274,750

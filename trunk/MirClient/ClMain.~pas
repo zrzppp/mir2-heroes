@@ -13202,9 +13202,7 @@ var
   function EatHPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroHPIndex1 >= 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
-      //DScreen.AddChatBoardString('EatHPItem1:', clGreen, clWhite);
-
+    if (g_Config.nRenewHeroHPIndex1 > 0) and (GetTickCount - g_dwRenewHeroHPTick1 > g_Config.nRenewHeroHPTime1) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent1)) then begin
       nIndex := FindHeroItemIndex(g_Config.nRenewHeroHPIndex1);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick1 := GetTickCount;
@@ -13215,9 +13213,7 @@ var
   function EatHPItem2(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroHPIndex2 >= 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
-      //DScreen.AddChatBoardString('EatHPItem1:', clGreen, clWhite);
-
+    if (g_Config.nRenewHeroHPIndex2 > 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
       nIndex := FindHeroItemIndex(g_Config.nRenewHeroHPIndex2);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick2 := GetTickCount;
@@ -13228,7 +13224,7 @@ var
 begin
   if (g_WaitingUseItem.Item.S.Name = '') and (g_MyHero <> nil) and
     (not g_MyHero.m_boDeath) and (g_MyHero.m_Abil.HP > 0) then begin
-    if g_Config.boRenewHeroHPIsAuto1 and g_Config.boRenewHeroHPIsAuto2 then begin
+    if (g_Config.boRenewHeroHPIsAuto1) and (g_Config.boRenewHeroHPIsAuto2) then begin
 
       if g_Config.nRenewHeroHPPercent2 < g_Config.nRenewHeroHPPercent1 then begin
         if (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2) then begin
@@ -13253,10 +13249,11 @@ begin
       end;
 
     end else
-      if g_Config.boRenewHeroHPIsAuto1 and (not g_Config.boRenewHeroHPIsAuto2) then begin
+      if (g_Config.boRenewHeroHPIsAuto1) and (not g_Config.boRenewHeroHPIsAuto2) then begin
+
       EatHPItem1(False);
     end else
-      if (not g_Config.boRenewHeroHPIsAuto1) and g_Config.boRenewHeroHPIsAuto2 then begin
+      if (not g_Config.boRenewHeroHPIsAuto1) and (g_Config.boRenewHeroHPIsAuto2) then begin
       EatHPItem2(False);
     end;
   end;
@@ -13268,8 +13265,8 @@ var
   function EatMPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroMPIndex1 >= 0) and (GetTickCount - g_dwRenewHeroMPTick1 > g_Config.nRenewHeroMPTime1) and (flag or (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent1)) then begin
-      //DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
+    if (g_Config.nRenewHeroMPIndex1 > 0) and (GetTickCount - g_dwRenewHeroMPTick1 > g_Config.nRenewHeroMPTime1) and (flag or (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent1)) then begin
+      DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
 
       nIndex := FindHeroItemIndex(g_Config.nRenewHeroMPIndex1);
       if nIndex >= 0 then begin
@@ -13282,8 +13279,8 @@ var
   function EatMPItem2(flag: Boolean): Boolean;
   begin
     Result := False;
-    if (g_Config.nRenewHeroMPIndex2 >= 0) and (GetTickCount - g_dwRenewHeroMPTick2 > g_Config.nRenewHeroMPTime2) and (flag or (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent2)) then begin
-      //DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
+    if (g_Config.nRenewHeroMPIndex2 > 0) and (GetTickCount - g_dwRenewHeroMPTick2 > g_Config.nRenewHeroMPTime2) and (flag or (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent2)) then begin
+      DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
 
       nIndex := FindHeroItemIndex(g_Config.nRenewHeroMPIndex2);
       if nIndex >= 0 then begin
@@ -13296,7 +13293,7 @@ begin
   if (g_WaitingUseItem.Item.S.Name = '') and (g_MyHero <> nil) and
     (not g_MyHero.m_boDeath) {and (g_MyHero.m_Abil.MP > 0)} then begin
     if g_Config.boRenewHeroMPIsAuto1 and g_Config.boRenewHeroMPIsAuto2 then begin
-
+      DScreen.AddChatBoardString('Test3: ' + BoolToStr(g_Config.boRenewHeroMPIsAuto1) + BoolToStr(g_Config.boRenewHeroMPIsAuto2), clGreen, clWhite);
       if g_Config.nRenewHeroMPPercent2 < g_Config.nRenewHeroMPPercent1 then begin
         if (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent2) then begin
           if not EatMPItem2(False) then
@@ -13311,19 +13308,18 @@ begin
         if (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent1) then begin
           if not EatMPItem1(False) then
             if not EatMPItem2(False) then
-
         end else begin
           if not EatMPItem2(False) then
             if not EatMPItem1(False) then
-
         end;
       end;
-
     end else
       if g_Config.boRenewHeroMPIsAuto1 and (not g_Config.boRenewHeroMPIsAuto2) then begin
+      DScreen.AddChatBoardString('Test4: ' + BoolToStr(g_Config.boRenewHeroMPIsAuto1), clGreen, clWhite);
       EatMPItem1(False);
     end else
       if (not g_Config.boRenewHeroMPIsAuto1) and g_Config.boRenewHeroMPIsAuto2 then begin
+      DScreen.AddChatBoardString('Test5: ' + BoolToStr(g_Config.boRenewHeroMPIsAuto2), clGreen, clWhite);
       EatMPItem2(False);
     end;
   end;

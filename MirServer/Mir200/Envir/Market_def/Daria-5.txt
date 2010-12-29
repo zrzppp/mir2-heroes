@@ -1,4 +1,5 @@
 ;Info [ Npc Name{Daria} X=154 Y=325 MapName={PrajnaIsland} ]
+(@buy @sell @repair)
 ;Settings
 %100
 +10

@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Lottery} X=284 Y=343 MapName={MongchonProvince} ]
-
+(@buy)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

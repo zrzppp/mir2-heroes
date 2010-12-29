@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Murray} X=8 Y=14 MapName={} ]
 ;NPC Made By Geoff
-
+(@buy @sell)
 ;Settings
 %100
 +0

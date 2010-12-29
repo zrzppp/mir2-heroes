@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Jerry} X=11 Y=14 MapName={WareHouse} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Michelle} X=23 Y=27 MapName={potionsroom} ]
-
+(@repair)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

@@ -1,5 +1,6 @@
 ;Info [ Npc Name{Kurtis} X=173 Y=319 MapName={PrajnaIsland} ]
 ;Settings
+(@Buy)
 %100
 +0
 +42

@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Spencer} X=10 Y=11 MapName={ReagentStore} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

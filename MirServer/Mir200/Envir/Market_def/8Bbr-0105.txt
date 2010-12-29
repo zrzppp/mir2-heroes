@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Olivia} X=12 Y=12 MapName={GroceryStore} ]
-
+(@buy @sell @repair)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Jim} X=244 Y=188 MapName={CastleGi-Ryoong} ]
 ;NPC Made By Geoff
-
+(@buy @sell)
 ;Settings
 %100
 +40

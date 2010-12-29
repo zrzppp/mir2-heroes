@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Jim} X=293 Y=603 MapName={Bichon-Province} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

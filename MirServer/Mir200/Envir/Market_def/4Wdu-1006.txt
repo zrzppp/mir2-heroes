@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Janey} X=9 Y=10 MapName={Drug_Store} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

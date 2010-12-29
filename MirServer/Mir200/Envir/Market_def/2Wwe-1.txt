@@ -1,5 +1,5 @@
 ;Info [ Npc Name{David} X=314 Y=72 MapName={WoomyonWoods} ]
-
+(@repair @s_repair)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

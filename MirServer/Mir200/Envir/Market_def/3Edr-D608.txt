@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Jamey} X=30 Y=22 MapName={AmethystRoom} ]
-
+(@repair)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Danielle} X=301 Y=257 MapName={Bichon-Province} ]
-
+(@storage @getback)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

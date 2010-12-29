@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Lottery} X=202 Y=203 MapName={} ]
-
+(@buy)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

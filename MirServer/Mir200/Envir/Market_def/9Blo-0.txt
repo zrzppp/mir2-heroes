@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Lottery} X=298 Y=317 MapName={Bichon-Province} ]
-
+(@buy)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

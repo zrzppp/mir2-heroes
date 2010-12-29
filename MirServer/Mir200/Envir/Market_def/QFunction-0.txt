@@ -4,11 +4,11 @@
 (@@sendmsg @buy @sell @repair @s_repair @@useitemname @@offlinemsg @storage @getback)
 [@DeleteHeroOK]
 #ACT
-SENDMSG 5 'Hero has been removed'
+SENDMSG 5 "Hero has been removed"
 CLOSE
 [@DeleteHeroFail]
 #ACT
-SENDMSG 5 'Cannot delete Hero'
+SENDMSG 5 "Cannot delete Hero"
 CLOSE
 [@HeroNameFilter]
 #ACT
@@ -16,17 +16,17 @@ SENDMSG 5 提示：英雄名字中包含禁用字符
 CLOSE
 [@CreateHeroOK]
 #ACT
-SENDMSG 5 'Your Hero has been created'
+SENDMSG 5 "Your Hero has been created"
 CLOSE
 [@HeroNameExists]
 #ACT
-SENDMSG 5 'Hero Name is in use'
+SENDMSG 5 "Hero Name is in use"
 CLOSE
 [@CreateHeroFail]
 #ACT
-SENDMSG 5 'Unable to create Hero'
+SENDMSG 5 "Unable to create Hero"
 CLOSE
 [@HeroOverChrCount]
 #ACT
-SENDMSG 5 'Hero name too long. Please shorten and try again.'
+SENDMSG 5 "Hero name too long. Please shorten and try again."
 CLOSE

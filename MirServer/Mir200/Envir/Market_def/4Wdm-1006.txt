@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Eugene} X=12 Y=7 MapName={Drug_Store} ]
-
+(@buy)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

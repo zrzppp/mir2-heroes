@@ -14400,19 +14400,23 @@ begin
 
     DComboboxHumHP1.Items.Clear;
     for I := Low(g_ItemArr) to High(g_ItemArr) do begin
-      if (g_ItemArr[I].s.Name <> '') and (g_ItemArr[I].s.StdMode = 0) then
+      if (g_ItemArr[I].s.Name <> '') and (g_ItemArr[I].s.StdMode = 0) and (g_ItemArr[I].s.AC > 0) then
         DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
     end;
 
+    if (g_Config.nRenewHumHPIndex1 >= 0) and (g_Config.nRenewHumHPIndex1 < DComboboxHumHP1.Items.Count) then begin
+        if g_Config.sRenewHeroHPItem1Name = DComboboxHumHP1.Items.Strings[g_Config.nRenewHumHPIndex1] then Exit;
+    end;
     g_Config.nRenewHumHPIndex1 := -1;
     DComboboxHumHP1.ItemIndex := -1;
     for I := 0 to DComboboxHumHP1.Items.Count - 1 do begin
-      if CompareText(IntToStr(g_Config.nRenewHumHPIndex1), DComboboxHumHP1.Items.Strings[I]) = 0 then begin
+      if CompareText(g_Config.sRenewHeroHPItem1Name, DComboboxHumHP1.Items.Strings[I]) = 0 then begin
         g_Config.nRenewHumHPIndex1 := I;
         DComboboxHumHP1.ItemIndex := I;
         Break;
       end;
     end;
+    DComboboxHumHP1.Text := g_Config.sRenewHeroHPItem1Name;
 
     DComboboxBookIndex.Items.Clear;
     for I := Low(g_ItemArr) to High(g_ItemArr) do begin
@@ -19608,6 +19612,8 @@ procedure TFrmDlg.DComboboxHumHP1Change(Sender: TObject);
 begin
   if (not g_boLoadUserConfig) then Exit;
   g_Config.nRenewHumHPIndex1 := DComboboxHumHP1.ItemIndex;
+  if (DComboboxHumHP1.ItemIndex >= 0) and (DComboboxHumHP1.ItemIndex < DComboboxHumHP1.Items.Count) then
+    g_Config.sRenewHeroHPItem1Name := DComboboxHumHP1.Items.Strings[DComboboxHumHP1.ItemIndex];
   SaveUserConfig();
 end;
 

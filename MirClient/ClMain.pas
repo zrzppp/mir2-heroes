@@ -13036,15 +13036,14 @@ end;
 procedure TfrmMain.AutoEatHPItem(Sender: TObject);
 var
   nIndex: Integer;
+  sItemName: string;
   function EatHPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
     if (g_Config.nRenewHumHPIndex1 >= 0) and (GetTickCount - g_dwRenewHumHPTick1 > g_Config.nRenewHumHPTime1) and (flag or (g_MySelf.m_Abil.HP < g_Config.nRenewHumHPPercent1)) then begin
-      DScreen.AddChatBoardString('EatHPItem1:', clGreen, clWhite);
-
-      nIndex := FindHumItemIndex(g_Config.nRenewHumHPIndex1);
+      sItemName := g_Config.sRenewHeroHPItem1Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
-        DScreen.AddChatBoardString('Eating: ' + IntToStr(g_Config.nRenewHumHPIndex1), clGreen, clWhite);
         g_dwRenewHumHPTick1 := GetTickCount;
         Result := AutoEatItem(nIndex);
       end;
@@ -13054,8 +13053,6 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHumHPIndex2 >= 0) and (GetTickCount - g_dwRenewHumHPTick2 > g_Config.nRenewHumHPTime2) and (flag or (g_MySelf.m_Abil.HP < g_Config.nRenewHumHPPercent2)) then begin
-      DScreen.AddChatBoardString('EatHPItem1:', clGreen, clWhite);
-
       nIndex := FindHumItemIndex(g_Config.nRenewHumHPIndex2);
       if nIndex >= 0 then begin
         g_dwRenewHumHPTick2 := GetTickCount;
@@ -13067,7 +13064,6 @@ begin
   if (g_WaitingUseItem.Item.S.Name = '') and (g_MySelf <> nil) and
     (not g_MySelf.m_boDeath) and (g_MySelf.m_Abil.HP > 0) then begin
     if g_Config.boRenewHumHPIsAuto1 and g_Config.boRenewHumHPIsAuto2 then begin
-
       if g_Config.nRenewHumHPPercent2 < g_Config.nRenewHumHPPercent1 then begin
         if (g_MySelf.m_Abil.HP < g_Config.nRenewHumHPPercent2) then begin
           if not EatHPItem2(False) then

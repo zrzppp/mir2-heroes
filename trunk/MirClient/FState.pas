@@ -14397,11 +14397,26 @@ var
 begin
   DConfigDlg.Visible := not DConfigDlg.Visible;
   if DConfigDlg.Visible then begin
+
     DComboboxHumHP1.Items.Clear;
+    for I := Low(g_ItemArr) to High(g_ItemArr) do begin
+      if (g_ItemArr[I].s.Name <> '') and (g_ItemArr[I].s.StdMode = 0) then
+        DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
+    end;
+
+    g_Config.nRenewHumHPIndex1 := -1;
+    DComboboxHumHP1.ItemIndex := -1;
+    for I := 0 to DComboboxHumHP1.Items.Count - 1 do begin
+      if CompareText(IntToStr(g_Config.nRenewHumHPIndex1), DComboboxHumHP1.Items.Strings[I]) = 0 then begin
+        g_Config.nRenewHumHPIndex1 := I;
+        DComboboxHumHP1.ItemIndex := I;
+        Break;
+      end;
+    end;
+
     DComboboxBookIndex.Items.Clear;
     for I := Low(g_ItemArr) to High(g_ItemArr) do begin
       if g_ItemArr[I].s.Name <> '' then
-        DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
         DComboboxBookIndex.Items.Add(g_ItemArr[I].s.Name);
     end;
     if g_Config.sRenewBookNowBookItem <> '' then begin
@@ -14417,9 +14432,9 @@ begin
           Break;
         end;
       end;
-      //SaveUserConfig();
+      SaveUserConfig();
     end;
-    //DComboboxBookIndex.Text := g_Config.sRenewBookNowBookItem;
+    DComboboxBookIndex.Text := g_Config.sRenewBookNowBookItem;
   end;
 end;
 

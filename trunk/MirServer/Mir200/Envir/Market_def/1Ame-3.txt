@@ -1,3 +1,4 @@
+(@buy @sell)
 ;Info [ Npc Name{Milton} X=659 Y=301 MapName={MongchonProvince} ]
 
 ;NPC Release 1 (2003) By Geoff

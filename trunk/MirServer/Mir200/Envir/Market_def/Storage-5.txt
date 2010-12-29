@@ -1,5 +1,6 @@
 ;Info [ Npc Name{Heather} X=142 Y=312 MapName={PrajnaIsland} ]
 ;Settings
+(@storage @getback)
 %100
 
 [@main]

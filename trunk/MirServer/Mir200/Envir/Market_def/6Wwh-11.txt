@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Hubert} X=184 Y=297 MapName={WoomyonWoods} ]
-
+(@storage @getback)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

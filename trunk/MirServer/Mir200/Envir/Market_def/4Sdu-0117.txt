@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Patrik} X=4 Y=10 MapName={Reagent} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

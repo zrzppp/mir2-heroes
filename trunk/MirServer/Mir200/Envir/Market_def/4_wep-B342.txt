@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Gerald} X=11 Y=11 MapName={} ]
 ;NPC Made By Geoff
-
+(@buy @sell @repair)
 ;Settings
 %100
 +5

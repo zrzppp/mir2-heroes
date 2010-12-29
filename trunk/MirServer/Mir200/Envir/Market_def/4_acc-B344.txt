@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Monica} X=16 Y=14 MapName={} ]
 ;NPC Made By Geoff
-
+(@buy @sell @repair)
 ;Settings
 %100
 +19

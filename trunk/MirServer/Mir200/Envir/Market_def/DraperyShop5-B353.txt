@@ -1,4 +1,5 @@
 ;Info [ Npc Name{Susan} X=13 Y=14 MapName={} ]
+(@buy @sell @repair)
 ;Settings
 %100
 +10

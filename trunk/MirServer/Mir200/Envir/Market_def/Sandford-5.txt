@@ -1,5 +1,6 @@
 ;Info [ Npc Name{Sandford} X=161 Y=315 MapName={PrajnaIsland} ]
 ;Settings
+(@buy @sell)
 %100
 +0
 +42

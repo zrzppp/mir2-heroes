@@ -1,4 +1,5 @@
 ;Info [ Npc Name{Emily} X=154 Y=339 MapName={PrajnaIsland} ]
+(@buy @sell @repair)
 ;Settings
 %100
 +22

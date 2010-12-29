@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Kim} X=9 Y=7 MapName={MeatStore} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

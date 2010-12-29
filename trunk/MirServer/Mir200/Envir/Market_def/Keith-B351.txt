@@ -1,5 +1,6 @@
 ;Info [ Npc Name{Keith} X=8 Y=9 MapName={} ]
 ;Settings
+(@buy @sell @repair @s_repair)
 %100
 +5
 +6

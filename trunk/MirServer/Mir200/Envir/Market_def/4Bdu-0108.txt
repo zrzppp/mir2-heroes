@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Larry} X=7 Y=7 MapName={Reagent} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

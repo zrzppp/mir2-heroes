@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Bradley} X=518 Y=492 MapName={SerpentValley} ]
-
+(@buy @sell @repair)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

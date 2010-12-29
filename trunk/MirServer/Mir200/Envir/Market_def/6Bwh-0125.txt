@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Mary} X=8 Y=6 MapName={EasterInn} ]
-
+(@storage @getback)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

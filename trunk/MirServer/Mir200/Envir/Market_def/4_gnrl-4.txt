@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Derby} X=252 Y=224 MapName={CastleGi-Ryoong} ]
 ;NPC Made By Geoff
-
+(@buy @sell)
 ;Settings
 %100
 +30

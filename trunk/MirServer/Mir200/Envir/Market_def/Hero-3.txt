@@ -3,6 +3,9 @@
 ;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 (@@cqfirHero)
 [@main]
+#ACT
+VIBRATION
+#SAY
 <Use me to Create a Hero!/FCOLOR=254>\ \
 <Create Hero/@@cqfirHero>           <Auto Add HeroSkills/@HeroSkills>          <修炼英雄合击/@合击>\ \
 <获得火龙之心/@领取火龙>           <英雄特殊服务/@功能>          <英雄操作指南/@操作指南>\
@@ -31,7 +34,7 @@ HERO.CHECKONLINE
 GOTO @addHeroSkills
 break
 #ELSEACT
-MESSAGEBOX 'Hero must be online for this.'
+MESSAGEBOX "Hero must be online for this."
 break
 
 [@addHeroSkills]
@@ -44,7 +47,7 @@ HERO.ADDSKILL 英雄刺杀剑术 1
 HERO.ADDSKILL 英雄半月弯刀 1
 HERO.ADDSKILL 英雄野蛮冲撞 1
 HERO.ADDSKILL 英雄烈火剑法 1
-MESSAGEBOX 'Skills added to Hero'
+MESSAGEBOX "Skills added to Hero"
 CLOSE
 #IF
 HERO.checkjob wizard
@@ -56,7 +59,7 @@ HERO.ADDSKILL 英雄疾光电影 1
 HERO.ADDSKILL 英雄地狱雷光 1
 HERO.ADDSKILL 英雄魔法盾 1
 HERO.ADDSKILL 英雄冰咆哮 1
-MESSAGEBOX 'Skills added to Hero'
+MESSAGEBOX "Skills added to Hero"
 CLOSE
 #IF
 HERO.checkjob taoist
@@ -69,7 +72,7 @@ HERO.ADDSKILL 英雄幽灵盾 1
 HERO.ADDSKILL 英雄神圣战甲 1
 HERO.ADDSKILL 英雄群疗术 1
 HERO.ADDSKILL 英雄召唤神兽 1
-MESSAGEBOX 'Skills added to Hero'
+MESSAGEBOX "Skills added to Hero"
 CLOSE
 
 [@领取火龙]

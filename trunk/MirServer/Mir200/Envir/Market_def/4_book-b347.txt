@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Darren} X=12 Y=8 MapName={} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

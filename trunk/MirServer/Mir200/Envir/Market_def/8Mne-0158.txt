@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Rachel} X=4 Y=21 MapName={Ringshop} ]
-
+(@buy @sell @repair)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

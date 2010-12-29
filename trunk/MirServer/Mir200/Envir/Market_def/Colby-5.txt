@@ -1,4 +1,5 @@
 ;Info [ Npc Name{Colby} X=130 Y=303 MapName={PrajnaIsland} ]
+(@buy @sell @repair @s_repair)
 ;Settings
 %100
 +5

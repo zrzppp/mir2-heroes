@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Wayne} X=227 Y=223 MapName={CastleGi-Ryoong} ]
 ;NPC Made By Geoff
-
+(@s_repair)
 ;Settings
 %100
 +5

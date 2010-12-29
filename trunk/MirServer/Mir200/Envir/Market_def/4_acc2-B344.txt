@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Jeweler} X=10 Y=9 MapName={} ]
 ;NPC Made By Geoff
-
+(@sell)
 ;Settings
 
 [@main]

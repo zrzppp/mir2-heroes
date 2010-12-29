@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Brian} X=5 Y=18 MapName={BorderResidence} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

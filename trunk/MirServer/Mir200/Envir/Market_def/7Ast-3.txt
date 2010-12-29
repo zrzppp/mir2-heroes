@@ -1,5 +1,5 @@
 ;Info [ Npc Name{Tony} X=663 Y=304 MapName={MongchonProvince} ]
-
+(@buy @sell)
 ;NPC Release 1 (2003) By Geoff
 ;99% Translated NPCs Including Quests
 

@@ -1,6 +1,6 @@
 ;Info [ Npc Name{Belina} X=10 Y=8 MapName={} ]
 ;NPC Made By Geoff
-
+(@buy @sell @repair)
 ;Settings
 %100
 +10

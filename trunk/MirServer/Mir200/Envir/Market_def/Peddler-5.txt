@@ -1,5 +1,6 @@
 ;Info [ Npc Name{Bart} X=148 Y=352 MapName={PrajnaIsland} ]
 ;Settings
+(@buy @sell)
 %100
 +30
 +25

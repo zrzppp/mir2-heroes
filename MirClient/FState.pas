@@ -14398,6 +14398,7 @@ begin
   DConfigDlg.Visible := not DConfigDlg.Visible;
   if DConfigDlg.Visible then begin
 
+    // Auto-Pot Box One [Player]
     DComboboxHumHP1.Items.Clear;
     for I := Low(g_ItemArr) to High(g_ItemArr) do begin
       if (g_ItemArr[I].s.Name <> '') and (g_ItemArr[I].s.StdMode = 0) and (g_ItemArr[I].s.AC > 0) then

@@ -1705,7 +1705,7 @@ function FindHeroItemArrBindItemName(btType: Byte): Integer; overload;
 function FindHeroItemArrBindItemName(sItemName: string): Integer; overload;
 
 function FindBagItemName(sItemName: string): Integer;
-
+function FindHeroBagItemName(sItemName: string): Integer;
 
 function HeroBagItemCount: Integer;
 function BagItemCount: Integer;
@@ -2092,6 +2092,20 @@ begin
   end;
 end;
 
+function FindHeroBagItemName(sItemName: string): Integer;
+var
+  I: Integer;
+begin
+  Result := -1;
+  for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
+    if g_HeroItemArr[I].s.Name <> '' then begin
+      if g_HeroItemArr[I].s.Name = sItemName then begin
+        Result := I;
+        Break;
+      end;
+    end;
+  end;
+end;
 
 function FindItemArrItemName(btType: Byte): Integer;
 var

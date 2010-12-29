@@ -2192,7 +2192,7 @@ Alt + 右键 取得肉或者其他玩家因为死亡丢失的东西。
 
 procedure TfrmMain.ProcessActionMessages;
 var
-  mx, my, dx, dy, crun: Integer;
+  mx, my, dx, dy, crun, stdcount: Integer;
   ndir, adir, mdir: Byte;
   bowalk, bostop: Boolean;
   //I: Integer;
@@ -2265,7 +2265,13 @@ begin
           end;
         caRun: begin
             LB_RUN:
+            stdcount := 1;
+            DScreen.AddChatBoardString('CanRun: ' + IntToStr(g_nRunReadyCount), clRed, clWhite);
+            if (g_MySelf.m_nState and $01000000) <> 0 then
+                  stdcount := 0;
+            if g_nRunReadyCount >= stdcount {1} then begin
             crun := g_MySelf.CanRun;
+            DScreen.AddChatBoardString('CanRun: ' + IntToStr(crun) + ' ' + IntToStr(g_MySelf.m_dwLastStruckTime), clRed, clWhite);
             if (GetDistance(mx, my, dx, dy) >= 2) and (crun > 0) then begin
               if IsUnLockAction(CM_RUN, ndir) then begin
                 GetNextRunXY(ndir, mx, my);
@@ -2297,7 +2303,9 @@ begin
                   g_dwLastMoveTick := GetTickCount;
                 end;
               end else g_nTargetX := -1;
+            end;
             end else begin
+              Inc (g_nRunReadyCount);
               goto LB_WALK;
             end;
           end;
@@ -2862,7 +2870,7 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
             DScreen.AddChatBoardString('你目前正在战斗中不能离开..', clYellow, clRed);
         end;
       end;}
-    Word('V'), VK_TAB: begin
+    Word('V'): begin
         if not g_boViewMiniMap then begin
           if GetTickCount > g_dwQueryMsgTick then begin
             g_dwQueryMsgTick := GetTickCount + 3000;
@@ -7360,7 +7368,6 @@ begin
     sData2 := Copy(sData, Pos('/', sData) + 1, Length(sData));
     DecodeBuffer(sData1, @MessageBodyWL, SizeOf(TMessageBodyWL));
     DecodeBuffer(sData2, @Health, SizeOf(THealth));
-
 
    { if g_Config.boStruckChgColor then begin
       if g_MySelf = Actor then begin

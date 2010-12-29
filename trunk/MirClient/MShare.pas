@@ -1194,7 +1194,7 @@ var
     //外挂功能变量结束
     boMoveSlow: False;
     boAttackSlow: True; //免负重
-    boStable: True;
+    boStable: False;
 
     btActorLableColor: 255;
     nStruckChgColor: 0;

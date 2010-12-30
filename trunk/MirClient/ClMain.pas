@@ -1630,7 +1630,6 @@ var
   //Shift: TShiftState;
   //nKey: Integer;
   List: TList;
-  BindItem: TClientItem;
 begin
   g_PlugInfo.AppHandle := Handle;
   g_MainHandle := Handle;
@@ -1735,34 +1734,9 @@ begin
     end;
     List.Free;
 
-    //for I := 0 to g_UnbindItemList.Count - 1 do begin
-
-
-    {with FrmDlg do begin
-
-    DComboboxHumHP1.Items.Clear;
-    for I := Low(g_ItemArr) to High(g_ItemArr) do begin
-      if g_ItemArr[I].s.Name <> '' then
-        DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
-    end;
-        //DComboboxHumHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHumMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHumHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHumMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-
-        //DComboboxHeroHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHeroMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHeroHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHeroMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-      //end;
-    end;    }
-
     if doFullScreen in DXDraw.Options then begin
          //Screen.Cursor := crNone;
-
     end else begin
-
-
     end;
 
     g_ImgMixSurface := TTexture.Create();
@@ -7294,7 +7268,7 @@ procedure TfrmMain.ClientObjLevelUp(DefMsg: pTDefaultMessage);
 begin
   g_MySelf.m_Abil.Level := MakeLong(DefMsg.param, DefMsg.tag);
   g_MySelf.SendMsg(SM_LEVELUP, g_MySelf.m_nRecogId, g_MySelf.m_nCurrX {X}, g_MySelf.m_nCurrY {Y}, g_MySelf.m_btDir {d}, 0, '', 0);
-  DScreen.AddSysMsg('Level Up!', 30, 40, clAqua);
+  DScreen.AddSysMsg('Congratulations, New level aquired!', 30, 40, clAqua);
 end;
 
 procedure TfrmMain.ClientObjHealthSpellChanged(DefMsg: pTDefaultMessage;
@@ -7325,7 +7299,6 @@ begin
             //Actor.AddHealthStatus(0, 0);
     end;
 
-
     if Actor.m_Abil.MP - Health.MP < 0 then begin
       Actor.AddHealthStatus(3, abs(Actor.m_Abil.MP - Health.MP));
     end else
@@ -7334,14 +7307,13 @@ begin
     end else begin
             //Actor.AddHealthStatus(0, 0);
     end;
-    Actor.m_boOpenHealth := True;
     Actor.m_Abil.HP := Health.HP;
     Actor.m_Abil.MP := Health.MP;
     Actor.m_Abil.MaxHP := Health.MaxHP;
   end else begin
     if (g_MyHero <> nil) and (g_MyHero.m_nRecogId = DefMsg.Recog) then begin
       nDamage := g_MyHero.m_Abil.HP - Health.HP;
-      g_MyHero.m_boOpenHealth := True;
+      //g_MyHero.m_boOpenHealth := True;
       g_MyHero.m_Abil.HP := Health.HP;
       g_MyHero.m_Abil.MP := Health.MP;
       g_MyHero.m_Abil.MaxHP := Health.MaxHP;
@@ -7407,6 +7379,7 @@ begin
           '', MessageBodyWL.lTag1);
       end;
     end else begin
+      Actor.m_boOpenHealth := True;
       Actor.UpdateMsg(SM_STRUCK, MessageBodyWL.lTag2, 0,
         MakeLong(DefMsg.Tag, DefMsg.series) {damage}, MessageBodyWL.lParam1, MessageBodyWL.lParam2,
         '', MessageBodyWL.lTag1);
@@ -7426,7 +7399,6 @@ begin
     end else begin
 
     end;
-    Actor.m_boOpenHealth := True;
     Actor.m_Abil.HP := Health.HP;
     Actor.m_Abil.MaxHP := Health.MaxHP;
   end;
@@ -7479,10 +7451,10 @@ procedure TfrmMain.ClientObjCloseHealth(DefMsg: pTDefaultMessage);
 var
   Actor: TActor;
 begin
-  {Actor := PlayScene.FindActor(DefMsg.Recog);
+  Actor := PlayScene.FindActor(DefMsg.Recog);
   if Actor <> nil then begin
     Actor.m_boOpenHealth := False;
-  end;  }
+  end;
 end;
 
 procedure TfrmMain.ClientObjInstanceOpenHealth(DefMsg: pTDefaultMessage;

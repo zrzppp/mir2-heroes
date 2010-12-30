@@ -1138,6 +1138,7 @@ begin
   DebugOutStr('----------------------- start ------------------------');
   GetWindowThreadProcessId(Handle, @g_nSelfThreadProcessId);
   g_sAppFilePath := ExtractFilePath(Application.ExeName);
+  //Sets Main Interface 0 = Original, 1 = CQFir, 2 = Original again? or not used.
   g_ConfigClient.btMainInterface := 1; //2;
   FInterval2 := 1;
   FInterval := 50;
@@ -1629,7 +1630,6 @@ var
   //Shift: TShiftState;
   //nKey: Integer;
   List: TList;
-  BindItem: TClientItem;
 begin
   g_PlugInfo.AppHandle := Handle;
   g_MainHandle := Handle;
@@ -1734,34 +1734,9 @@ begin
     end;
     List.Free;
 
-    //for I := 0 to g_UnbindItemList.Count - 1 do begin
-
-
-    {with FrmDlg do begin
-
-    DComboboxHumHP1.Items.Clear;
-    for I := Low(g_ItemArr) to High(g_ItemArr) do begin
-      if g_ItemArr[I].s.Name <> '' then
-        DComboboxHumHP1.Items.Add(g_ItemArr[I].s.Name);
-    end;
-        //DComboboxHumHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHumMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHumHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHumMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-
-        //DComboboxHeroHP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHeroMP1.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHeroHP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-        //DComboboxHeroMP2.Items.AddObject(BindItem.sItemName, TObject(BindItem));
-      //end;
-    end;    }
-
     if doFullScreen in DXDraw.Options then begin
          //Screen.Cursor := crNone;
-
     end else begin
-
-
     end;
 
     g_ImgMixSurface := TTexture.Create();
@@ -2109,7 +2084,7 @@ begin
   while True do begin
     flname := 'Images' + IntToStr2(g_nCaptureSerial) + '.BMP';
     if not FileExists(sDirectory + flname) then begin
-      DScreen.AddChatBoardString('[屏幕截图: ' + flname + ']', clGreen, clWhite);
+      DScreen.AddChatBoardString('[Screenshot: ' + flname + '] saved.', clGreen, clWhite);
       Break;
     end;
     Inc(g_nCaptureSerial);
@@ -2744,7 +2719,7 @@ begin
               (GetTickCount - g_dwLatestHitTick > 10000) or
               (g_MySelf.m_boDeath) then begin
               AppExit;
-            end else DScreen.AddChatBoardString('你目前正在战斗中不能离开..', clyellow, clRed);
+            end else DScreen.AddChatBoardString('You cannot leave the Battle?..', clyellow, clRed);
           end;
         end;
       end;
@@ -2813,7 +2788,7 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
                 if g_MySelf <> nil then begin
                   g_boQueryHumBagItem := True;
                   SendClientMessage(CM_QUERYBAGITEMS, 0, 0, 0, 0);
-                  DScreen.AddChatBoardString('正在刷新包裹...', clWhite, clFuchsia);
+                  DScreen.AddChatBoardString('Reloading Bag.', clWhite, clFuchsia);
                 end;
               end;
             q_QueryHero: begin
@@ -2821,13 +2796,13 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
                   g_QueryBagItem := q_QueryHum;
                   g_boQueryHeroBagItem := True;
                   SendClientMessage(CM_QUERYHEROBAGITEMS, 0, 0, 0, 0);
-                  DScreen.AddChatBoardString('正在刷新英雄包裹...', clWhite, clFuchsia);
+                  DScreen.AddChatBoardString('Reloading Hero Bag.', clWhite, clFuchsia);
                 end else begin
                   g_QueryBagItem := q_QueryHum;
                   if g_MySelf <> nil then begin
                     g_boQueryHumBagItem := True;
                     SendClientMessage(CM_QUERYBAGITEMS, 0, 0, 0, 0);
-                    DScreen.AddChatBoardString('正在刷新包裹...', clWhite, clFuchsia);
+                    DScreen.AddChatBoardString('Reloading Bag.', clWhite, clFuchsia);
                   end;
                 end;
               end;
@@ -2848,7 +2823,7 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
             (GetTickCount - g_dwLatestHitTick > 10000) or
             (g_MySelf.m_boDeath) then begin
             AppLogout;
-          end else DScreen.AddChatBoardString('你目前正在战斗中不能离开..', clyellow, clRed);
+          end else DScreen.AddChatBoardString('You cannot leave the Battle?.', clyellow, clRed);
         end;
       end;
     {Word('Q'): begin
@@ -6751,8 +6726,8 @@ end;
 
 procedure TfrmMain.ClientVersionFail();
 begin
-  FrmDlg.DMessageDlg('游戏程序版本不正确，请下载最新版本游戏程序！', [mbOk]);
-  DScreen.AddChatBoardString('游戏程序版本不正确，请下载最新版本游戏程序！', clyellow, clRed);
+  FrmDlg.DMessageDlg('Client Version does not match Required Version.', [mbOk]);
+  DScreen.AddChatBoardString('Please download the correct Version and try again.', clyellow, clRed);
   CSocket.Close;
 end;
 
@@ -8372,7 +8347,7 @@ end;
 procedure TfrmMain.ClientGetReadMiniMapFail();
 begin
   g_dwQueryMsgTick := GetTickCount;
-  DScreen.AddChatBoardString('没有小地图.', clWhite, clRed);
+  DScreen.AddChatBoardString('No MiniMap Available.', clWhite, clRed);
   g_nMiniMapIndex := -1;
 end;
 
@@ -8575,7 +8550,7 @@ begin
   g_UpgradeItemsWait[0].S.Name := '';
   g_UpgradeItemsWait[1].S.Name := '';
   g_UpgradeItemsWait[2].S.Name := '';
-  DScreen.AddChatBoardString('装备升级成功！', clWhite, clRed);
+  DScreen.AddChatBoardString('You have successfully upgraded the Item.', clWhite, clRed);
   //DebugOutStr('TfrmMain.ClientObjUpgradeItemOK EncodeBuffer:' + EncodeBuffer(@g_UpgradeItems[0], SizeOf(TClientItem)));
   //FrmDlg.DMessageDlg('TfrmMain.ClientObjChangeItemOK！！！', [mbOk]);
 end;
@@ -8598,19 +8573,19 @@ begin
   case nFailCode of
     0: begin
         g_UpgradeItems := g_UpgradeItemsWait;
-        DScreen.AddChatBoardString('装备升级失败！', clWhite, clRed);
+        DScreen.AddChatBoardString('You have failed to upgrade this Item.', clWhite, clRed);
       end;
     -1: begin
         g_UpgradeItems[0].S.Name := '';
         g_UpgradeItems[1].S.Name := '';
         g_UpgradeItems[2].S.Name := '';
-        DScreen.AddChatBoardString('装备升级失败，装备已破碎！', clWhite, clRed);
+        DScreen.AddChatBoardString('You have broken this Item.', clWhite, clRed);
       end;
     -2: begin
         g_UpgradeItems[0] := g_UpgradeItemsWait[0];
         g_UpgradeItems[1].S.Name := '';
         g_UpgradeItems[2].S.Name := '';
-        DScreen.AddChatBoardString('装备升级失败！', clWhite, clRed);
+        DScreen.AddChatBoardString('You have failed to upgrade this Item.', clWhite, clRed);
       end;
   end;
   //Move(g_UpgradeItemsWait,g_UpgradeItems,SizeOf(g_UpgradeItems));
@@ -9151,7 +9126,7 @@ begin
   //end else begin
     if (abs(g_MySelf.m_nCurrX - nX) <= 1) and (abs(g_MySelf.m_nCurrY - nY) <= 1) then begin
       LegendMap.Stop;
-      DScreen.AddChatBoardString(Format('自动移动坐标点(%d:%d)已到达', [nX, nY]), GetRGB(154), clWhite);
+      DScreen.AddChatBoardString(Format('You have reached the Coordinates set (%d:%d).', [nX, nY]), GetRGB(154), clWhite);
     end else begin
       if LegendMap.StartFind then begin
         if (LegendMap.EndX <> nX) or (LegendMap.EndY <> nY) then
@@ -9165,7 +9140,7 @@ begin
       LegendMap.BeginY := g_MySelf.m_nCurrY;
       LegendMap.EndX := nX;
       LegendMap.EndY := nY;
-      DScreen.AddChatBoardString(Format('自动移动至坐标(%d:%d)，点击鼠标任意键停止...', [nX, nY]), GetRGB(154), clWhite);
+      DScreen.AddChatBoardString(Format('Automatically traveling to the location at (%d:%d), press any mouse button to stop.', [nX, nY]), GetRGB(154), clWhite);
     end;
   end;
 end;
@@ -10341,7 +10316,7 @@ begin
   g_boBagLoaded := True;
 
   if g_boQueryHumBagItem then
-    DScreen.AddChatBoardString('刷新包裹成功...', clWhite, clFuchsia);
+    DScreen.AddChatBoardString('Bag reloaded.', clWhite, clFuchsia);
 end;
 
 //英雄相关
@@ -10591,7 +10566,7 @@ begin
   ArrangeHeroItemBag;
 
   if g_boQueryHeroBagItem then
-    DScreen.AddChatBoardString('刷新英雄包裹成功...', clWhite, clFuchsia);
+    DScreen.AddChatBoardString('Hero Bag reloaded.', clWhite, clFuchsia);
 end;
 
 procedure TfrmMain.ClientGetShopItems(DefMsg: pTDefaultMessage; body: string);
@@ -11985,7 +11960,7 @@ begin
   if sHumanName <> '' then begin
     ShowMsgActor := PlayScene.FindActor(sHumanName);
     if ShowMsgActor = nil then begin
-      DScreen.AddChatBoardString(Format('%s没找到！！！', [sHumanName]), clWhite, clRed);
+      DScreen.AddChatBoardString(Format('%s was not found', [sHumanName]), clWhite, clRed);
       Exit;
     end;
   end;
@@ -12817,7 +12792,7 @@ begin
 
   if (LegendMap.EndX > 0) and (LegendMap.EndY > 0) then begin
     if (abs(g_MySelf.m_nCurrX - LegendMap.EndX) <= 1) and (abs(g_MySelf.m_nCurrY - LegendMap.EndY) <= 1) then begin
-      DScreen.AddChatBoardString(Format('自动移动坐标点(%d:%d)已到达', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+      DScreen.AddChatBoardString(Format('You have reached the location at (%d:%d).', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
       LegendMap.Stop;
     end else begin
       if GetTickCount - g_dwAutoFindPathTick > 200 then begin
@@ -12833,7 +12808,7 @@ begin
         if LegendMap.StartFind then Exit;
 
         if Length(LegendMap.RunPath) <= 0 then begin
-          DScreen.AddChatBoardString(Format('自动移动坐标点(%d:%d)不可到达', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+          DScreen.AddChatBoardString(Format('Unable to reach location at (%d:%d)', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
           LegendMap.Stop;
         end else begin
           if (LegendMap.PathPositionIndex >= 0) and (LegendMap.PathPositionIndex < Length(LegendMap.RunPath)) then begin
@@ -12892,7 +12867,7 @@ begin
                   LegendMap.Find(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, LegendMap.EndX, LegendMap.EndY);
                   LegendMap.PathPositionIndex := 0;
                 end else begin
-                  DScreen.AddChatBoardString(Format('自动移动坐标点(%d:%d)不可到达', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+                  DScreen.AddChatBoardString(Format('Unable to reach location at (%d:%d)', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
                   LegendMap.Stop;
                 end;
               end;

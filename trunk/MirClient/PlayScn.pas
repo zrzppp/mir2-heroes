@@ -1818,14 +1818,12 @@ begin
     for k := 0 to m_ActorList.Count - 1 do begin
       Actor := TActor(m_ActorList.Items[k]);
       if not Actor.m_boDeath then begin
-
-        if g_Config.boShowActorLable and (g_NewStatus <> sBlind) then begin
+        if Actor.m_boOpenHealth and (g_NewStatus <> sBlind) then begin
           Actor.ShowActorLable(m_ObjSurface);
         end;
         if g_Config.boShowMoveLable and (g_NewStatus <> sBlind) then
-          Actor.ShowHealthStatus(m_ObjSurface);
+          //Actor.ShowHealthStatus(m_ObjSurface);
       end;
-          //Inc(k);
     end;
 
       //显示角色说话文字

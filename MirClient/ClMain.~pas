@@ -1170,7 +1170,7 @@ begin
   SCREENHEIGHT := 600;
 
   {SCREENWIDTH := 1024;
-  SCREENHEIGHT := 768; }
+  SCREENHEIGHT := 768;}
 {$IFEND}
   MAPSURFACEWIDTH := SCREENWIDTH;
   if (g_ConfigClient.btMainInterface = 1) or (SCREENWIDTH = 1024) then begin
@@ -2266,12 +2266,10 @@ begin
         caRun: begin
             LB_RUN:
             stdcount := 1;
-            DScreen.AddChatBoardString('CanRun: ' + IntToStr(g_nRunReadyCount), clRed, clWhite);
             if (g_MySelf.m_nState and $01000000) <> 0 then
                   stdcount := 0;
             if g_nRunReadyCount >= stdcount {1} then begin
             crun := g_MySelf.CanRun;
-            DScreen.AddChatBoardString('CanRun: ' + IntToStr(crun) + ' ' + IntToStr(g_MySelf.m_dwLastStruckTime), clRed, clWhite);
             if (GetDistance(mx, my, dx, dy) >= 2) and (crun > 0) then begin
               if IsUnLockAction(CM_RUN, ndir) then begin
                 GetNextRunXY(ndir, mx, my);
@@ -7286,15 +7284,16 @@ end;
 
 procedure TfrmMain.ClientObjWinExp(DefMsg: pTDefaultMessage);
 begin
+  // Experience Gained
   g_MySelf.m_Abil.Exp := LongWord(DefMsg.Recog);
-  DScreen.AddSysMsg('已获得 ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' 点经验值。', SCREENWIDTH - 150, 40, clLime);
+  DScreen.AddSysMsg('Gained ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' Experience', SCREENWIDTH - 150, 40, clLime);
 end;
 
 procedure TfrmMain.ClientObjLevelUp(DefMsg: pTDefaultMessage);
 begin
   g_MySelf.m_Abil.Level := MakeLong(DefMsg.param, DefMsg.tag);
   g_MySelf.SendMsg(SM_LEVELUP, g_MySelf.m_nRecogId, g_MySelf.m_nCurrX {X}, g_MySelf.m_nCurrY {Y}, g_MySelf.m_btDir {d}, 0, '', 0);
-  DScreen.AddSysMsg('升级！', 30, 40, clAqua);
+  DScreen.AddSysMsg('Level Up!', 30, 40, clAqua);
 end;
 
 procedure TfrmMain.ClientObjHealthSpellChanged(DefMsg: pTDefaultMessage;

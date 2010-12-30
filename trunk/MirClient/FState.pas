@@ -6801,22 +6801,22 @@ begin
           if AbilPage = 0 then begin
             with dsurface do begin
               mmx := bbx + 85;
-              TextOut(bbx, bby, '当前经验', clSilver);
+              TextOut(bbx, bby, 'Experience ', clSilver);
             //TextOut(mmx, bby, FloatToStrFixFmt(100 * g_MySelf.m_Abil.Exp / g_MySelf.m_Abil.MaxExp, 3, 2) + '%');
               c := clSilver;
               TextOut(mmx, bby, IntToStr(g_MySelf.m_Abil.Exp), clSilver);
               bby := bby + 14;
-              TextOut(bbx, bby, '升级经验', clSilver);
+              TextOut(bbx, bby, 'Next Level Exp. ', clSilver);
               TextOut(mmx, bby, IntToStr(g_MySelf.m_Abil.MaxExp), clSilver);
 
-              TextOut(bbx, bby + 14 * 1, '背包重量', clSilver);
+              TextOut(bbx, bby + 14 * 1, 'Bag Weight ', clSilver);
               if g_MySelf.m_Abil.Weight > g_MySelf.m_Abil.MaxWeight then
                 c := clRed
               else
                 c := clSilver;
               TextOut(mmx, bby + 14 * 1, IntToStr(g_MySelf.m_Abil.Weight) + '/' + IntToStr(g_MySelf.m_Abil.MaxWeight), c);
 
-              TextOut(bbx, bby + 14 * 2, '负量', clSilver);
+              TextOut(bbx, bby + 14 * 2, 'C. Weight ', clSilver);
               if g_MySelf.m_Abil.WearWeight > g_MySelf.m_Abil.MaxWearWeight then
                 c := clRed
               else
@@ -6824,45 +6824,45 @@ begin
               TextOut(mmx, bby + 14 * 2, IntToStr(g_MySelf.m_Abil.WearWeight) + '/' + IntToStr(g_MySelf.m_Abil.MaxWearWeight), c);
 
 
-              TextOut(bbx, bby + 14 * 3, '腕力', clSilver);
+              TextOut(bbx, bby + 14 * 3, 'Hands W. ', clSilver);
               if g_MySelf.m_Abil.HandWeight > g_MySelf.m_Abil.MaxHandWeight then
                 c := clRed
               else
                 c := clSilver;
               TextOut(mmx, bby + 14 * 3, IntToStr(g_MySelf.m_Abil.HandWeight) + '/' + IntToStr(g_MySelf.m_Abil.MaxHandWeight), c);
 
-              TextOut(bbx, bby + 14 * 4, '准确度', clSilver);
+              TextOut(bbx, bby + 14 * 4, 'Accuracy ', clSilver);
               TextOut(mmx, bby + 14 * 4, IntToStr(g_nMyHitPoint), clSilver);
 
-              TextOut(bbx, bby + 14 * 5, '敏捷', clSilver);
+              TextOut(bbx, bby + 14 * 5, 'Agility ', clSilver);
               TextOut(mmx, bby + 14 * 5, IntToStr(g_nMySpeedPoint), clSilver);
 
-              TextOut(bbx, bby + 14 * 6, '魔法躲避', clSilver);
+              TextOut(bbx, bby + 14 * 6, 'M. Resistance ', clSilver);
               TextOut(mmx, bby + 14 * 6, '+' + IntToStr(g_nMyAntiMagic * 10) + '%', clSilver);
 
-              TextOut(bbx, bby + 14 * 7, '毒物躲避', clSilver);
+              TextOut(bbx, bby + 14 * 7, 'P. Resistance ', clSilver);
               TextOut(mmx, bby + 14 * 7, '+' + IntToStr(g_nMyAntiPoison * 10) + '%', clSilver);
 
-              TextOut(bbx, bby + 14 * 8, '中毒恢复', clSilver);
+              TextOut(bbx, bby + 14 * 8, 'P. Recovery ', clSilver);
               TextOut(mmx, bby + 14 * 8, '+' + IntToStr(g_nMyPoisonRecover * 10) + '%', clSilver);
 
-              TextOut(bbx, bby + 14 * 9, '体力恢复', clSilver);
+              TextOut(bbx, bby + 14 * 9, 'HP Recovery', clSilver);
               TextOut(mmx, bby + 14 * 9, '+' + IntToStr(g_nMyHealthRecover * 10) + '%', clSilver);
 
-              TextOut(bbx, bby + 14 * 10, '魔法恢复', clSilver);
+              TextOut(bbx, bby + 14 * 10, 'MP Recovery', clSilver);
               TextOut(mmx, bby + 14 * 10, '+' + IntToStr(g_nMySpellRecover * 10) + '%', clSilver);
 
-              TextOut(bbx, bby + 14 * 11, g_sGameGoldName + '数量', clSilver);
+              TextOut(bbx, bby + 14 * 11, g_sGameGoldName + ' ', clSilver);
               TextOut(mmx, bby + 14 * 11, IntToStr(g_MySelf.m_nGameGold), clSilver);
 
-              TextOut(bbx, bby + 14 * 12, g_sGamePointName + '数量', clSilver);
+              TextOut(bbx, bby + 14 * 12, g_sGamePointName + ' ', clSilver);
               TextOut(mmx, bby + 14 * 12, IntToStr(g_MySelf.m_nGamePoint), clSilver);
 
               if {(g_ServerConfig.btShowClientItemStyle = 0) and}  g_ServerConfig.boAllowItemAddPoint then begin
-                TextOut(bbx, bby + 14 * 13, '移动加速', clSilver);
+                TextOut(bbx, bby + 14 * 13, 'Move Speed ', clSilver);
                 TextOut(mmx, bby + 14 * 13, '+' + IntToStr(g_MySelf.m_Abil.MoveSpeed) + '%', clSilver);
 
-                TextOut(bbx, bby + 14 * 14, '攻击加速', clSilver);
+                TextOut(bbx, bby + 14 * 14, 'Attack Speed', clSilver);
                 TextOut(mmx, bby + 14 * 14, '+' + IntToStr(g_MySelf.m_Abil.AttackSpeed) + '%', clSilver);
               end;
 
@@ -8115,9 +8115,9 @@ procedure TFrmDlg.DSoundClick();
 begin
   g_boSound := not g_boSound;
   if g_boSound then begin
-    DScreen.AddChatBoardString('[打开声音]', clWhite, clblack);
+    DScreen.AddChatBoardString('[Sound Enabled]', clWhite, clblack);
   end else begin
-    DScreen.AddChatBoardString('[关闭声音]', clWhite, clblack);
+    DScreen.AddChatBoardString('[Sound Disabled]', clWhite, clblack);
     if Assigned(g_PlugInfo.MediaPlayer.StopPlay) then begin
       g_PlugInfo.MediaPlayer.StopPlay(nil);
     end;
@@ -8381,9 +8381,9 @@ begin
           HintList.AddObject('数量:' + IntToStr(MouseItem.s.Need), TObject(GetRGB(254)));
         end;
       4: begin
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
           line1 := line1 + 'Weight. ' + IntToStr(MouseItem.s.Weight);
-          line3 := '所需等级 ' + IntToStr(MouseItem.s.DuraMax);
+          line3 := 'Requires Level ' + IntToStr(MouseItem.s.DuraMax);
           useable := False;
           case MouseItem.s.Shape of
             0: begin
@@ -8408,10 +8408,10 @@ begin
               end;
           end;
           if useable then begin
-            HintList.AddObject('所需等级: ' + IntToStr(MouseItem.s.DuraMax), TObject(clWhite));
+            HintList.AddObject('Requires Level: ' + IntToStr(MouseItem.s.DuraMax), TObject(clWhite));
             HintList.AddObject(line2, TObject(clWhite));
           end else begin
-            HintList.AddObject('所需等级: ' + IntToStr(MouseItem.s.DuraMax), TObject(clRed));
+            HintList.AddObject('Requires Level: ' + IntToStr(MouseItem.s.DuraMax), TObject(clRed));
             HintList.AddObject(line2, TObject(clRed));
           end;
         end;
@@ -8427,10 +8427,10 @@ begin
             ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
           HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
 
           if MouseItem.s.DC > 0 then begin
-            line2 := '攻击力' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
+            line2 := 'DC' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
             HintList.AddObject('DC: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
           end;
 
@@ -8445,36 +8445,36 @@ begin
           end;
 
           if (MouseItem.s.Source <= -1) and (MouseItem.s.Source >= -50) then begin
-            line2 := line2 + '神圣 +' + IntToStr(-MouseItem.s.Source) + ' ';
-            HintList.AddObject('神圣: +' + IntToStr(-MouseItem.s.Source), TObject(GetRGB(254)));
+            line2 := line2 + 'Holy +' + IntToStr(-MouseItem.s.Source) + ' ';
+            HintList.AddObject('Holy: +' + IntToStr(-MouseItem.s.Source), TObject(GetRGB(254)));
           end;
           if (MouseItem.s.Source <= -51) and (MouseItem.s.Source >= -100) then begin
-            line2 := line2 + '神圣 -' + IntToStr(-MouseItem.s.Source - 50) + ' ';
-            HintList.AddObject('神圣: -' + IntToStr(-MouseItem.s.Source - 50), TObject(GetRGB(254)));
+            line2 := line2 + 'Holy -' + IntToStr(-MouseItem.s.Source - 50) + ' ';
+            HintList.AddObject('Holy: -' + IntToStr(-MouseItem.s.Source - 50), TObject(GetRGB(254)));
           end;
 
           if Hiword(MouseItem.s.AC) > 0 then begin
-            line3 := line3 + '准确+' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
-            HintList.AddObject('准确: +' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
+            line3 := line3 + 'Accuracy +' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
+            HintList.AddObject('Accuracy: +' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
           end;
 
           if Hiword(MouseItem.s.MAC) > 0 then begin
             if Hiword(MouseItem.s.MAC) > 10 then begin
-              line3 := line3 + '攻击速度 +' + IntToStr(Hiword(MouseItem.s.MAC) - 10) + ' ';
-              HintList.AddObject('攻击速度: +' + IntToStr(Hiword(MouseItem.s.MAC) - 10), TObject(clWhite))
+              line3 := line3 + 'Attack Speed +' + IntToStr(Hiword(MouseItem.s.MAC) - 10) + ' ';
+              HintList.AddObject('Attack Speed: +' + IntToStr(Hiword(MouseItem.s.MAC) - 10), TObject(clWhite))
             end else begin
-              line3 := line3 + '攻击速度 -' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
-              HintList.AddObject('攻击速度: -' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
+              line3 := line3 + 'Attack Speed -' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
+              HintList.AddObject('Attack Speed: -' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
             end;
           end;
 
           if Loword(MouseItem.s.AC) > 0 then begin
-            line3 := line3 + '幸运+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
-            HintList.AddObject('幸运: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(GetRGB(254)));
+            line3 := line3 + 'Luck+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
+            HintList.AddObject('Luck: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(GetRGB(254)));
           end;
           if Loword(MouseItem.s.MAC) > 0 then begin
-            HintList.AddObject('诅咒: +' + IntToStr(Loword(MouseItem.s.MAC)), TObject(GetRGB(254)));
-            line3 := line3 + '诅咒+' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
+            HintList.AddObject('Curse: +' + IntToStr(Loword(MouseItem.s.MAC)), TObject(GetRGB(254)));
+            line3 := line3 + 'Curse+' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
           end;
 
           GetAtomStr(MouseItem.s.AddValue);
@@ -8601,7 +8601,7 @@ begin
                 HintList.AddObject('HPMP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万', TObject(GetRGB(254)));
               end;
           end;
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       10, 11: {//男衣服, 女衣服} begin
           useable := False;
@@ -8609,35 +8609,35 @@ begin
             ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
           HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
 
           if MouseItem.s.AC > 0 then begin
-            HintList.AddObject('防御: ' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
-            line2 := '防御' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
+            HintList.AddObject('AC: ' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
+            line2 := 'AC' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
           end;
           if MouseItem.s.MAC > 0 then begin
-            HintList.AddObject('魔防: ' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
-            line2 := line2 + '魔防' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
+            HintList.AddObject('AMC: ' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
+            line2 := line2 + 'AMC' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
           end;
           if MouseItem.s.DC > 0 then begin
-            HintList.AddObject('攻击: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
-            line2 := line2 + '攻击力' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
+            HintList.AddObject('DC: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
+            line2 := line2 + 'DC' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
           end;
           if MouseItem.s.MC > 0 then begin
-            HintList.AddObject('魔法: ' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)), TObject(clWhite));
-            line2 := line2 + '魔法' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)) + ' ';
+            HintList.AddObject('MC: ' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)), TObject(clWhite));
+            line2 := line2 + 'MC' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)) + ' ';
           end;
           if MouseItem.s.SC > 0 then begin
-            HintList.AddObject('道术: ' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)), TObject(clWhite));
-            line2 := line2 + '道术' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC));
+            HintList.AddObject('SC: ' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)), TObject(clWhite));
+            line2 := line2 + 'SC' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC));
           end;
           if LoByte(MouseItem.s.Source) > 0 then begin
-            HintList.AddObject('幸运: +' + IntToStr(LoByte(MouseItem.s.Source)), TObject(GetRGB(254)));
-            line3 := line3 + '幸运+' + IntToStr(LoByte(MouseItem.s.Source)) + ' ';
+            HintList.AddObject('Luck: +' + IntToStr(LoByte(MouseItem.s.Source)), TObject(GetRGB(254)));
+            line3 := line3 + 'Luck+' + IntToStr(LoByte(MouseItem.s.Source)) + ' ';
           end;
           if HiByte(MouseItem.s.Source) > 0 then begin
-            HintList.AddObject('诅咒: +' + IntToStr(HiByte(MouseItem.s.Source)), TObject(GetRGB(254)));
-            line3 := line3 + '诅咒+' + IntToStr(HiByte(MouseItem.s.Source)) + ' ';
+            HintList.AddObject('Curse: +' + IntToStr(HiByte(MouseItem.s.Source)), TObject(GetRGB(254)));
+            line3 := line3 + 'Curse+' + IntToStr(HiByte(MouseItem.s.Source)) + ' ';
           end;
           GetAtomStr(MouseItem.s.AddValue);
 
@@ -8645,25 +8645,25 @@ begin
             0: begin
                 if Actor.m_Abil.Level >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             1: begin
                 if Hiword(Actor.m_Abil.DC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '需要攻击力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires DC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             2: begin
                 if Hiword(Actor.m_Abil.MC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需魔法值: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires MC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             3: begin
                 if Hiword(Actor.m_Abil.SC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需道术: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires SC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             4: begin
@@ -8756,70 +8756,70 @@ begin
             ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
           HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
 
           case MouseItem.s.StdMode of
             19, 53: {//项链} begin
                 if MouseItem.s.AC > 0 then begin
-                  sTemp := '魔法躲避: +' + IntToStr(Hiword(MouseItem.s.AC)) + '0%';
+                  sTemp := 'M. Evasion: +' + IntToStr(Hiword(MouseItem.s.AC)) + '0%';
                   line2 := line2 + sTemp + ' ';
                   HintList.AddObject(sTemp, TObject(clWhite));
                 end;
                 if Loword(MouseItem.s.MAC) > 0 then begin
-                  sTemp := '诅咒: +' + IntToStr(Loword(MouseItem.s.MAC));
+                  sTemp := 'Curse: +' + IntToStr(Loword(MouseItem.s.MAC));
                   line2 := line2 + sTemp + ' ';
                   HintList.AddObject(sTemp, TObject(GetRGB(254)));
                 end;
                 if Hiword(MouseItem.s.MAC) > 0 then begin
-                  sTemp := '幸运: +' + IntToStr(Hiword(MouseItem.s.MAC));
+                  sTemp := 'Luck: +' + IntToStr(Hiword(MouseItem.s.MAC));
                   line2 := line2 + sTemp + ' ';
                   HintList.AddObject(sTemp, TObject(GetRGB(254)));
                 end;
               end;
             20, 24, 52: {//项链 及 手镯: MaxAC -> Hit,  MaxMac -> Speed} begin
                 if MouseItem.s.AC > 0 then begin
-                  line2 := line2 + '准确+' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
-                  HintList.AddObject('准确: +' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
+                  line2 := line2 + 'Accuracy+' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
+                  HintList.AddObject('Accuracy: +' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
                 end;
                 if MouseItem.s.MAC > 0 then begin
-                  line2 := line2 + '敏捷+' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
-                  HintList.AddObject('敏捷: +' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
+                  line2 := line2 + 'Agility+' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
+                  HintList.AddObject('Agility: +' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
                 end;
               end;
             21, 54: {//项链} begin
                 if Hiword(MouseItem.s.AC) > 0 then begin
-                  HintList.AddObject('体力恢复: +' + IntToStr(Hiword(MouseItem.s.AC)) + '0%', TObject(clWhite));
-                  line2 := line2 + '体力恢复+' + IntToStr(Hiword(MouseItem.s.AC)) + '0% ';
+                  HintList.AddObject('HP Recovery: +' + IntToStr(Hiword(MouseItem.s.AC)) + '0%', TObject(clWhite));
+                  line2 := line2 + 'HP Recovery+' + IntToStr(Hiword(MouseItem.s.AC)) + '0% ';
                 end;
                 if Hiword(MouseItem.s.MAC) > 0 then begin
-                  HintList.AddObject('魔法恢复: +' + IntToStr(Hiword(MouseItem.s.MAC)) + '0%', TObject(clWhite));
-                  line2 := line2 + '魔法恢复+' + IntToStr(Hiword(MouseItem.s.MAC)) + '0% ';
+                  HintList.AddObject('MP Recovery: +' + IntToStr(Hiword(MouseItem.s.MAC)) + '0%', TObject(clWhite));
+                  line2 := line2 + 'MP Recovery+' + IntToStr(Hiword(MouseItem.s.MAC)) + '0% ';
                 end;
                 if Loword(MouseItem.s.AC) > 0 then begin
-                  HintList.AddObject('攻击速度: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(clWhite));
-                  line2 := line2 + '攻击速度+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
+                  HintList.AddObject('Attack Speed: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(clWhite));
+                  line2 := line2 + 'Attack Speed+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
                 end;
                 if Loword(MouseItem.s.MAC) > 0 then begin
-                  HintList.AddObject('攻击速度: -' + IntToStr(Loword(MouseItem.s.MAC)), TObject(clWhite));
-                  line2 := line2 + '攻击速度-' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
+                  HintList.AddObject('Attack Speed: -' + IntToStr(Loword(MouseItem.s.MAC)), TObject(clWhite));
+                  line2 := line2 + 'Attack Speed-' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
                 end;
               end;
             23: {//戒指} begin
                 if Hiword(MouseItem.s.AC) > 0 then begin
-                  HintList.AddObject('毒物躲避: +' + IntToStr(Hiword(MouseItem.s.AC)) + '0%', TObject(clWhite));
-                  line2 := line2 + '毒物躲避+' + IntToStr(Hiword(MouseItem.s.AC)) + '0% ';
+                  HintList.AddObject('P Evasion: +' + IntToStr(Hiword(MouseItem.s.AC)) + '0%', TObject(clWhite));
+                  line2 := line2 + 'P Evasion+' + IntToStr(Hiword(MouseItem.s.AC)) + '0% ';
                 end;
                 if Hiword(MouseItem.s.MAC) > 0 then begin
-                  HintList.AddObject('中毒恢复: +' + IntToStr(Hiword(MouseItem.s.MAC)) + '0%', TObject(clWhite));
-                  line2 := line2 + '中毒恢复+' + IntToStr(Hiword(MouseItem.s.MAC)) + '0% ';
+                  HintList.AddObject('P Recovery: +' + IntToStr(Hiword(MouseItem.s.MAC)) + '0%', TObject(clWhite));
+                  line2 := line2 + 'P Recovery+' + IntToStr(Hiword(MouseItem.s.MAC)) + '0% ';
                 end;
                 if Loword(MouseItem.s.AC) > 0 then begin
-                  HintList.AddObject('攻击速度: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(clWhite));
-                  line2 := line2 + '攻击速度+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
+                  HintList.AddObject('Attack Speed: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(clWhite));
+                  line2 := line2 + 'Attack Speed+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
                 end;
                 if Loword(MouseItem.s.MAC) > 0 then begin
-                  HintList.AddObject('攻击速度: -' + IntToStr(Loword(MouseItem.s.MAC)), TObject(clWhite));
-                  line2 := line2 + '攻击速度-' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
+                  HintList.AddObject('Attack Speed: -' + IntToStr(Loword(MouseItem.s.MAC)), TObject(clWhite));
+                  line2 := line2 + 'Attack Speed-' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
                 end;
               end;
             62: {//Boots} begin
@@ -8828,12 +8828,12 @@ begin
                 if Hiword(MouseItem.S.MAC) > 0 then
                   HintList.AddObject('魔防: ' + IntToStr(Hiword(MouseItem.S.MAC)), TObject(clWhite)); }
                 if MouseItem.s.AC > 0 then begin
-                  HintList.AddObject('防御: ' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
-                  line2 := line2 + '防御' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
+                  HintList.AddObject('AC: ' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
+                  line2 := line2 + 'AC' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
                 end;
                 if MouseItem.s.MAC > 0 then begin
-                  HintList.AddObject('魔防: ' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
-                  line2 := line2 + '魔防' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
+                  HintList.AddObject('AMC: ' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
+                  line2 := line2 + 'AMC' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
                 end;
 
                 //if Loword(MouseItem.S.MAC) > 0 then      //2008-3-3去掉鞋子的魔法恢复
@@ -10832,7 +10832,7 @@ begin
     (g_MySelf.m_boDeath) then begin
     frmMain.AppLogout;
   end else
-    DScreen.AddChatBoardString('你在战斗当中不能退出游戏.', clyellow, clRed);
+    DScreen.AddChatBoardString('You cannot log out during Battle.', clyellow, clRed);
 end;
 
 procedure TFrmDlg.DBotExitClick(Sender: TObject; X, Y: Integer);
@@ -10849,7 +10849,7 @@ begin
     //frmMain.AppExit;
     frmMain.Close;
   end else
-    DScreen.AddChatBoardString('你在战斗当中不能退出游戏.', clyellow, clRed);
+    DScreen.AddChatBoardString('You cannot Exit the game during Battle.', clyellow, clRed);
 end;
 
 procedure TFrmDlg.DBotPlusAbilClick(Sender: TObject; X, Y: Integer);
@@ -12328,7 +12328,7 @@ begin
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   if Sender = DButFunc5 then begin
-    sMsg := '自动喊话开关';
+    sMsg := 'ChatButFunc5';
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   {nLocalX := Butt.LocalX(X - Butt.Left);
@@ -12821,20 +12821,20 @@ begin
   if Sender = DButFunc1 then begin
     g_boShowGroupMsg := not DButFunc1.Downed;
     if g_boShowGroupMsg then begin
-      sMsg := '允许接受公聊信息';
+      sMsg := 'Show General Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
     end else begin
-      sMsg := '拒绝接受公聊信息';
+      sMsg := 'Hide General Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
     end;
   end else
     if Sender = DButFunc2 then begin
     g_boShowHearMsg := not DButFunc2.Downed;
     if g_boShowHearMsg then begin
-      sMsg := '允许接受（黄色字体）喊话';
+      sMsg := 'Show Shout Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
     end else begin
-      sMsg := '拒绝接受（黄色字体）喊话';
+      sMsg := 'Hide Shout Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
     end;
   end else
@@ -13250,51 +13250,51 @@ begin
           with dsurface do begin
             mmx := bbx + 85;
             hcolor := clSilver;
-            TextOut(bbx, bby, '当前经验', hcolor);
+            TextOut(bbx, bby, 'Experience ', hcolor);
             //TextOut(mmx, bby, FloatToStrFixFmt(100 * g_MyHero.m_Abil.Exp / g_MyHero.m_Abil.MaxExp, 3, 2) + '%');
 
             TextOut(mmx, bby, IntToStr(g_MyHero.m_Abil.Exp), hcolor);
             bby := bby + 14;
-            TextOut(bbx, bby, '升级经验', hcolor);
+            TextOut(bbx, bby, 'Next Level Exp. ', hcolor);
             TextOut(mmx, bby, IntToStr(g_MyHero.m_Abil.MaxExp), hcolor);
 
-            TextOut(bbx, bby + 14 * 1, '背包重量', hcolor);
+            TextOut(bbx, bby + 14 * 1, 'Bag Weight ', hcolor);
             if g_MyHero.m_Abil.Weight > g_MyHero.m_Abil.MaxWeight then
               hcolor := clRed;
             TextOut(mmx, bby + 14 * 1, IntToStr(g_MyHero.m_Abil.Weight) + '/' + IntToStr(g_MyHero.m_Abil.MaxWeight), hcolor);
 
             hcolor := clSilver;
-            TextOut(bbx, bby + 14 * 2, '负重', hcolor);
+            TextOut(bbx, bby + 14 * 2, 'C. Weight ', hcolor);
             if g_MyHero.m_Abil.WearWeight > g_MyHero.m_Abil.MaxWearWeight then
               hcolor := clRed;
             TextOut(mmx, bby + 14 * 2, IntToStr(g_MyHero.m_Abil.WearWeight) + '/' + IntToStr(g_MyHero.m_Abil.MaxWearWeight), hcolor);
 
             hcolor := clSilver;
-            TextOut(bbx, bby + 14 * 3, '腕力', hcolor);
+            TextOut(bbx, bby + 14 * 3, 'Hands W. ', hcolor);
             if g_MyHero.m_Abil.HandWeight > g_MyHero.m_Abil.MaxHandWeight then
               hcolor := clRed;
             TextOut(mmx, bby + 14 * 3, IntToStr(g_MyHero.m_Abil.HandWeight) + '/' + IntToStr(g_MyHero.m_Abil.MaxHandWeight), hcolor);
 
             hcolor := clSilver;
-            TextOut(bbx, bby + 14 * 4, '准确度', hcolor);
+            TextOut(bbx, bby + 14 * 4, 'Accuracy ', hcolor);
             TextOut(mmx, bby + 14 * 4, IntToStr(g_nMyHeroHitPoint), hcolor);
 
-            TextOut(bbx, bby + 14 * 5, '敏捷', hcolor);
+            TextOut(bbx, bby + 14 * 5, 'Agility ', hcolor);
             TextOut(mmx, bby + 14 * 5, IntToStr(g_nMyHeroSpeedPoint), hcolor);
 
-            TextOut(bbx, bby + 14 * 6, '魔法躲避', hcolor);
+            TextOut(bbx, bby + 14 * 6, 'M. Resistance ', hcolor);
             TextOut(mmx, bby + 14 * 6, '+' + IntToStr(g_nMyHeroAntiMagic * 10) + '%', hcolor);
 
-            TextOut(bbx, bby + 14 * 7, '毒物躲避', hcolor);
+            TextOut(bbx, bby + 14 * 7, 'P. Resistance ', hcolor);
             TextOut(mmx, bby + 14 * 7, '+' + IntToStr(g_nMyHeroAntiPoison * 10) + '%', hcolor);
 
-            TextOut(bbx, bby + 14 * 8, '中毒恢复', hcolor);
+            TextOut(bbx, bby + 14 * 8, 'P. Recovery ', hcolor);
             TextOut(mmx, bby + 14 * 8, '+' + IntToStr(g_nMyHeroPoisonRecover * 10) + '%', hcolor);
 
-            TextOut(bbx, bby + 14 * 9, '体力恢复', hcolor);
+            TextOut(bbx, bby + 14 * 9, 'HP Recovery ', hcolor);
             TextOut(mmx, bby + 14 * 9, '+' + IntToStr(g_nMyHeroHealthRecover * 10) + '%', hcolor);
 
-            TextOut(bbx, bby + 14 * 10, '魔法恢复', hcolor);
+            TextOut(bbx, bby + 14 * 10, 'MP Recovery ', hcolor);
             TextOut(mmx, bby + 14 * 10, '+' + IntToStr(g_nMyHeroSpellRecover * 10) + '%', hcolor);
           end;
         end;
@@ -14897,9 +14897,9 @@ begin
   Butt := TDButton(Sender);
   nHintX := Butt.Left;
   nHintY := DUserSellOff.Top + DUserSellOff.Height;
-  if Sender = DPrevSell then sMsg := '上一页';
-  if Sender = DRefreshSell then sMsg := '刷新';
-  if Sender = DNextSell then sMsg := '下一页';
+  if Sender = DPrevSell then sMsg := 'Previous';
+  if Sender = DRefreshSell then sMsg := 'Refresh';
+  if Sender = DNextSell then sMsg := 'Next';
   DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite, False);
 end;
 
@@ -15067,7 +15067,7 @@ begin
       dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
 
     if g_boGetBoxItemMouseMove then begin
-      sMsg := '启动乾坤挪移换取一件圈外宝物';
+      sMsg := 'BoxItemMessage';
       with dsurface do begin
         TextOut(SurfaceX(Left) + 16, SurfaceY(Top) + 160, sMsg);
       end;
@@ -16626,18 +16626,18 @@ begin
   if g_MyHero = nil then Exit;
   if g_ConfigClient.btMainInterface in [0, 2] then begin
     if g_MyHero.m_Abil.MaxExp > 0 then begin
-      sStr := '体力值: ' + IntToStr(g_MyHero.m_Abil.HP) + '/' + IntToStr(g_MyHero.m_Abil.MaxHP) + '\' +
-        '魔法值: ' + IntToStr(g_MyHero.m_Abil.MP) + '/' + IntToStr(g_MyHero.m_Abil.MaxMP) + '\' +
-        '经验值: ' + FloatToStrFixFmt(100 * g_MyHero.m_Abil.Exp / g_MyHero.m_Abil.MaxExp, 3, 2) + '%\';
+      sStr := 'HP: ' + IntToStr(g_MyHero.m_Abil.HP) + '/' + IntToStr(g_MyHero.m_Abil.MaxHP) + '\' +
+        'MP: ' + IntToStr(g_MyHero.m_Abil.MP) + '/' + IntToStr(g_MyHero.m_Abil.MaxMP) + '\' +
+        'Experience: ' + FloatToStrFixFmt(100 * g_MyHero.m_Abil.Exp / g_MyHero.m_Abil.MaxExp, 3, 2) + '%\';
 
       with DHeroHealthStateWin do
         DScreen.ShowHint(Left + Width, 25, sStr, clWhite, False);
     end;
   end else begin
     if g_MyHero.m_Abil.MaxExp > 0 then begin
-      sStr := '体力值: ' + IntToStr(g_MyHero.m_Abil.HP) + '/' + IntToStr(g_MyHero.m_Abil.MaxHP) + '\' +
-        '魔法值: ' + IntToStr(g_MyHero.m_Abil.MP) + '/' + IntToStr(g_MyHero.m_Abil.MaxMP) + '\' +
-        '经验值: ' + FloatToStrFixFmt(100 * g_MyHero.m_Abil.Exp / g_MyHero.m_Abil.MaxExp, 3, 2) + '%\';
+      sStr := 'HP: ' + IntToStr(g_MyHero.m_Abil.HP) + '/' + IntToStr(g_MyHero.m_Abil.MaxHP) + '\' +
+        'MP: ' + IntToStr(g_MyHero.m_Abil.MP) + '/' + IntToStr(g_MyHero.m_Abil.MaxMP) + '\' +
+        'Experience: ' + FloatToStrFixFmt(100 * g_MyHero.m_Abil.Exp / g_MyHero.m_Abil.MaxExp, 3, 2) + '%\';
 
       with DHeroHealthStateWin do
         DScreen.ShowHint(Left + Width, Top + 32, sStr, clWhite, False);
@@ -16659,7 +16659,7 @@ begin
         LegendMap.BeginY := g_MySelf.m_nCurrY;
         LegendMap.EndX := LegendMap.Path[Length(LegendMap.Path) - 1].X;
         LegendMap.EndY := LegendMap.Path[Length(LegendMap.Path) - 1].Y;
-        DScreen.AddChatBoardString(Format('自动移动至坐标(%d:%d)，点击鼠标任意键停止...', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+        DScreen.AddChatBoardString(Format('Automatically moving to (%d:%d)，press any Mouse Button to stop.', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
         Exit;
       end;
     end;
@@ -16743,8 +16743,8 @@ begin
   Butt := TDButton(Sender);
   nHintX := Butt.Left;
   nHintY := Butt.SurfaceY(Butt.Top) - 25;
-  if Sender = DButtonOption1 then sMsg := '显示/隐藏聊天栏';
-  if Sender = DButtonOption2 then sMsg := '显示/隐藏控制按钮';
+  if Sender = DButtonOption1 then sMsg := 'Show/Hide Chat Bar';
+  if Sender = DButtonOption2 then sMsg := 'Show/Hide Control Button';
   DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
 end;
 
@@ -16887,12 +16887,12 @@ var
 begin
   if (g_nShowChatMemoCount < 5) then begin
     if not DChatDlg.Visible then begin
-      sMsg := '显示';
+      sMsg := 'Show Chat';
     end else begin
       if DMemoChat.Height = 12 * 9 then begin
-        sMsg := '展开';
+        sMsg := 'Show Big Chat';
       end else begin
-        sMsg := '隐藏';
+        sMsg := 'Hide Chat';
       end;
     end;
     if (GetTickCount - g_dwShowChatMemoTick > 1000) then begin

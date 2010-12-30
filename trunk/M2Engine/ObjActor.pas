@@ -17855,7 +17855,7 @@ begin
       if not g_Config.boNoHintMagicOK then
         THeroObject(Self).SysMsg(sFireSpiritsSummoned, c_Green, t_Hint);
     end;
-    //SysMsg(sFireSpiritsSummoned, c_Green, t_Hint);
+    SysMsg(sFireSpiritsSummoned, c_Green, t_Hint);
     Result := True;
   end else begin
     if m_btRaceServer = RC_PLAYOBJECT then begin

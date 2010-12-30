@@ -2,20 +2,20 @@
 ;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052 
 ;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 ;-----解开打包文件--------------
-100    强效金创药
-101    强效魔法药
-102    超强金创药
-103    超强魔法药
-104    金创药(中量)
-105    魔法药(中量)
-106    地牢逃脱卷
-107    随机传送卷
-108    回城卷
-109    行会回城卷
-110    筹码
-111    护身符(大)
-112    疗伤药
-113    魔界神石
-114    神吟神石
-115    战歌神石
-116    灵魂宝石
+100    (HP)DrugLarge
+101    (MP)DrugLarge
+102    (HP)DrugSmall
+103    (MP)DrugSmall
+104    (HP)DrugMedium
+105    (MP)DrugMedium
+106    DungeonEscape
+107    RandomTeleport
+108    TownTeleport
+109    TeleportHome
+110    GambleChip
+111    Amulet
+112    BrownLog
+113    RedLog
+114    BlueLog
+115    战歌神石 red poison
+116    灵魂宝石 green poison

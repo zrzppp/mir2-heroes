@@ -1762,8 +1762,8 @@ begin
       SM_TURN, SM_WALK, SM_BACKSTEP, SM_RUSH, SM_RUSHKUNG, SM_RUN, SM_HORSERUN, SM_DIGUP, SM_ALIVE: begin
           m_nFeature := Msg.feature;
           m_nState := Msg.State;
-          {if m_nState and STATE_OPENHEATH <> 0 then m_boOpenHealth := True
-          else m_boOpenHealth := False; }
+          if m_nState and STATE_OPENHEATH <> 0 then m_boOpenHealth := True
+          else m_boOpenHealth := False;
         end;
     end;
 
@@ -2571,7 +2571,7 @@ var
   rc: TRect;
   nHPY, nMPY: Integer;
 begin
-  //if g_Config.boShowActorLable {m_boOpenHealth} and not m_boDeath then begin
+  if m_boOpenHealth and not m_boDeath then begin
   if m_sUserName = '' then Exit;
   if m_btHorse = 0 then begin
     nHPY := 10;
@@ -2647,7 +2647,7 @@ begin
       MSurface.Draw(m_nSayX - d.Width div 2, m_nSayY - nHPY, rc, d, True);
     end;
   end;
-  //end;
+  end;
 end;
 
 procedure TActor.ShowSayMsg(MSurface: TTexture);

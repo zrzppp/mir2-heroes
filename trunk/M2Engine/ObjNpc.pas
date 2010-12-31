@@ -10355,8 +10355,8 @@ begin
         sText := TUserCastle(m_Castle).GetWarDate();
         if sText <> '' then begin
           sMsg := sub_49ADB8(sMsg, '<$CASTLEWARDATE>', sText);
-        end else sMsg := '暂时没有行会攻城！！！\ \<返回/@main>';
-      end else sMsg := '现正在攻城中！！！\ \<返回/@main>';
+        end else sMsg:='Well I guess there may be no wall conquest war in the mean time .\ \<back/@main>';
+      end else sMsg:='Now is on wall conquest war.\ \<back/@main>';
     end else begin
       sText := '????';
     end;
@@ -10371,7 +10371,7 @@ begin
     end;
     if sText <> '' then begin
       sMsg := sub_49ADB8(sMsg, '<$LISTOFWAR>', sText);
-    end else sMsg := '现在没有行会申请攻城战\ \<返回/@main>';
+    end else sMsg:='We have no schedule...\ \<back/@main>';
     Exit;
   end;
 

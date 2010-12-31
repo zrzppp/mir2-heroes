@@ -7464,14 +7464,10 @@ var
   Health: THealth;
 begin
   Actor := PlayScene.FindActor(DefMsg.Recog);
-  if Actor <> nil then begin
+  if (Actor <> nil) and (Actor <> g_MySelf) then begin
     DecodeBuffer(sData, @Health, SizeOf(THealth));
     Actor.m_Abil.HP := Health.HP;
     Actor.m_Abil.MaxHP := Health.MaxHP;
-    {Actor.m_Abil.HP := DefMsg.param;
-    Actor.m_Abil.MaxHP := DefMsg.tag;
-    }
-    Dscreen.AddChatBoardString('Working', clRed, clBlack);
     Actor.m_noInstanceOpenHealth := True;
     Actor.m_dwOpenHealthTime := 2 * 1000;
     Actor.m_dwOpenHealthStart := GetTickCount;

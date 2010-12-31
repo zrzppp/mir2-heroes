@@ -6,20 +6,20 @@ uses
   IntroScn, PlayScn, clEvent, MapUnit, GameImages, Wil, Wis, Uib, Fir, Actor, Grobal2, IniFiles, SoundUtil,
   Share, SoundEngn, ClFunc, PathFind, Controls, GuaJi;
 const
-  U_DRESSNAME = '[身上装备 衣服]';
-  U_WEAPONNAME = '[身上装备 武器]';
-  U_RIGHTHANDNAME = '[身上装备 照明物]';
-  U_NECKLACENAME = '[身上装备 项链]';
-  U_HELMETNAME = '[身上装备 头盔]';
-  U_ARMRINGLNAME = '[身上装备 左手镯]';
-  U_ARMRINGRNAME = '[身上装备 右手镯]';
-  U_RINGLNAME = '[身上装备 左戒指]';
-  U_RINGRNAME = '[身上装备 右戒指]';
+  U_DRESSNAME = '[Eq. Armour]';
+  U_WEAPONNAME = '[Eq. Weapon]';
+  U_RIGHTHANDNAME = '[Eq. Unknown]';
+  U_NECKLACENAME = '[Eq. Necklace]';
+  U_HELMETNAME = '[Eq. Helmet]';
+  U_ARMRINGLNAME = '[Eq. Left Bracelet]';
+  U_ARMRINGRNAME = '[Eq. Right Bracelet]';
+  U_RINGLNAME = '[Eq. Left Ring]';
+  U_RINGRNAME = '[Eq. Right Ring]';
 
-  U_BUJUKNAME = '[身上装备 物品]';
-  U_BELTNAME = '[身上装备 腰带]';
-  U_BOOTSNAME = '[身上装备 鞋子]';
-  U_CHARMNAME = '[身上装备 宝石]';
+  U_BUJUKNAME = '[Eq. Candle]';
+  U_BELTNAME = '[Eq. Belt]';
+  U_BOOTSNAME = '[Eq. Boots]';
+  U_CHARMNAME = '[Eq. Stone]';
 type
   TDBHeader = Integer;
   TQueryBagItem = (q_QueryHum, q_QueryHero);
@@ -4201,7 +4201,7 @@ begin
         ShowItem.sItemName := sItemName;
         ShowItem.boHintMsg := sHint = '1';
         ShowItem.boPickup := sPickUp = '1';
-        ShowItem.boShowName := sShowName = '1';
+        ShowItem.boShowName := True;
       end;
     end;
   end;

@@ -842,7 +842,7 @@ begin
   Result := False;
   if g_Config.boShowItemName then begin //显示地面物品名称
     ShowItem := g_ShowItemList.Find(DropItem.Name);
-    if (ShowItem <> nil) and ShowItem.boShowName then begin
+    if (ShowItem <> nil) then begin
       Result := True;
     end;
   end;
@@ -1822,7 +1822,7 @@ begin
           Actor.ShowActorLable(m_ObjSurface);
         end;
         if g_Config.boShowMoveLable and (g_NewStatus <> sBlind) then
-          //Actor.ShowHealthStatus(m_ObjSurface);
+          Actor.ShowHealthStatus(m_ObjSurface);
       end;
     end;
 

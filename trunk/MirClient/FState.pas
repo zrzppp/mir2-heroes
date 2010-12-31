@@ -18985,6 +18985,8 @@ begin
   DCheckBoxShowNumberLable.Enabled := False;
   DCheckBoxShowJobAndLevel.Enabled := False;
   DCheckBoxMagicLock.Enabled := False;
+  DCheckBoxShowUserName.Enabled := False;
+  DCheckBoxShowMonName.Enabled := False;
 
   //Disable Bot
   DButtonTab2.Enabled := False;

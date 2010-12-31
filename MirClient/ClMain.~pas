@@ -4952,29 +4952,14 @@ begin
     DComboboxAutoUseMagic.Items.Clear;
     DSerieMagicMenu.Clear;
 
-    DCheckBoxShowActorLable.OnClick := nil;
-    DCheckBoxHideBlueLable.OnClick := nil;
-    DCheckBoxShowNumberLable.OnClick := nil;
-    DCheckBoxShowJobAndLevel.OnClick := nil;
-    DCheckBoxShowUserName.OnClick := nil;
-    DCheckBoxShowMonName.OnClick := nil;
-    DCheckBoxShowItemName.OnClick := nil;
     DCheckBoxShowMoveNumberLable.OnClick := nil;
-    DCheckBoxShowGreenHint.OnClick := nil;
-    DCheckBoxMagicLock.OnClick := nil;
     DCheckBoxOrderItem.OnClick := nil;
-    DCheckBoxMagicLock.OnClick := nil;
-    DCheckBoxCloseGroup.OnClick := nil;
     DCheckBoxItemDuraHint.OnClick := nil;
-    DCheckBoxNotNeedShift.OnClick := nil;
-    DCheckBoxAutoHorse.OnClick := nil;
-    DCheckBoxPickUpItemAll.OnClick := nil;
-    DCheckBoxOnlyShowCharName.OnClick := nil;
-    DCheckBoxItemHint.OnClick := nil;
+    DCheckBoxMusic.OnClick := nil;
 
+    DCheckBoxPickUpItemAll.OnClick := nil;
     DCheckBoxBook.OnClick := nil;
     DCheckBoxClose.OnClick := nil;
-
     DCheckBoxHeroLogOut.OnClick := nil;
 
     DCheckBoxLongHit.OnClick := nil;
@@ -13032,13 +13017,13 @@ end;
 procedure TfrmMain.AutoEatMPItem(Sender: TObject);
 var
   nIndex: Integer;
+  sItemName: string;
   function EatMPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
     if (g_Config.nRenewHumMPIndex1 >= 0) and (GetTickCount - g_dwRenewHumMPTick1 > g_Config.nRenewHumMPTime1) and (flag or (g_MySelf.m_Abil.MP < g_Config.nRenewHumMPPercent1)) then begin
-      //DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
-
-      nIndex := FindHumItemIndex(g_Config.nRenewHumMPIndex1);
+      sItemName := g_Config.sRenewHumMPItem1Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHumMPTick1 := GetTickCount;
         Result := AutoEatItem(nIndex);
@@ -13049,9 +13034,8 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHumMPIndex2 >= 0) and (GetTickCount - g_dwRenewHumMPTick2 > g_Config.nRenewHumMPTime2) and (flag or (g_MySelf.m_Abil.MP < g_Config.nRenewHumMPPercent2)) then begin
-      //DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
-
-      nIndex := FindHumItemIndex(g_Config.nRenewHumMPIndex2);
+      sItemName := g_Config.sRenewHumMPItem2Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHumMPTick2 := GetTickCount;
         Result := AutoEatItem(nIndex);

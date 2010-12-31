@@ -367,6 +367,9 @@ type
     sRenewHumHPItem1Name: string;
     sRenewHumHPItem2Name: string;
 
+    sRenewHumMPItem1Name: string;
+    sRenewHumMPItem2Name: string;
+
     nRenewHumHPIndex1: Integer;
     nRenewHumMPIndex1: Integer;
 
@@ -396,6 +399,9 @@ type
 
     sRenewHeroHPItem1Name: string;
     sRenewHeroHPItem2Name: string;
+
+    sRenewHeroMPItem1Name: string;
+    sRenewHeroMPItem2Name: string;
 
     nRenewHeroHPIndex1: Integer;
     nRenewHeroMPIndex1: Integer;
@@ -4574,6 +4580,15 @@ begin
     ini.WriteInteger('Protect', 'RenewHeroMPTime2', g_Config.nRenewHeroMPTime2);
     ini.WriteInteger('Protect', 'RenewHeroMPPercent2', g_Config.nRenewHeroMPPercent2);
 
+    ini.WriteString('Protect', 'RenewHumHPName1', g_Config.sRenewHumHPItem1Name);
+    ini.WriteString('Protect', 'RenewHumHPName2', g_Config.sRenewHumHPItem2Name);
+    ini.WriteString('Protect', 'RenewHumMPName1', g_Config.sRenewHumMPItem1Name);
+    ini.WriteString('Protect', 'RenewHumMPName2', g_Config.sRenewHumMPItem2Name);
+
+    ini.WriteString('Protect', 'RenewHeroHPName1', g_Config.sRenewHeroHPItem1Name);
+    ini.WriteString('Protect', 'RenewHeroHPName2', g_Config.sRenewHeroHPItem2Name);
+    ini.WriteString('Protect', 'RenewHeroMPName1', g_Config.sRenewHeroMPItem1Name);
+    ini.WriteString('Protect', 'RenewHeroMPName2', g_Config.sRenewHeroMPItem2Name);
 
     ini.WriteBool('Protect', 'RenewBookIsAuto', g_Config.boRenewBookIsAuto);
     ini.WriteInteger('Protect', 'RenewBookTime', g_Config.nRenewBookTime);
@@ -4658,11 +4673,8 @@ begin
     g_Config.boItemHint := False;
     g_Config.boMagicLock := False;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
-    g_Config.boCloseGroup := ini.ReadBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);
-    g_Config.boNotNeedShift := ini.ReadBool('Basic', 'NotNeedShift', g_Config.boNotNeedShift);
-    g_Config.boAutoHorse := ini.ReadBool('Basic', 'AutoHorse', g_Config.boAutoHorse);
     g_Config.boCompareItem := ini.ReadBool('Basic', 'CompareItem', g_Config.boCompareItem);
 
     g_boBGSound := g_Config.boBGSound;
@@ -4712,15 +4724,15 @@ begin
     g_Config.nRenewHeroMPTime2 := ini.ReadInteger('Protect', 'RenewHeroMPTime2', g_Config.nRenewHeroMPTime2);
     g_Config.nRenewHeroMPPercent2 := ini.ReadInteger('Protect', 'RenewHeroMPPercent2', g_Config.nRenewHeroMPPercent2);
 
+    g_Config.sRenewHumHPItem1Name := ini.ReadString('Protect', 'RenewHumHPName1', g_Config.sRenewHumHPItem1Name);
+    g_Config.sRenewHumHPItem2Name := ini.ReadString('Protect', 'RenewHumHPName2', g_Config.sRenewHumHPItem2Name);
+    g_Config.sRenewHumMPItem1Name := ini.ReadString('Protect', 'RenewHumMPName1', g_Config.sRenewHumMPItem1Name);
+    g_Config.sRenewHumMPItem2Name := ini.ReadString('Protect', 'RenewHumMPName2', g_Config.sRenewHumMPItem2Name);
 
-
-
-
-
-
-
-
-
+    g_Config.sRenewHeroHPItem1Name := ini.ReadString('Protect', 'RenewHumHPName1', g_Config.sRenewHeroHPItem1Name);
+    g_Config.sRenewHeroHPItem2Name := ini.ReadString('Protect', 'RenewHumHPName2', g_Config.sRenewHeroHPItem2Name);
+    g_Config.sRenewHeroMPItem1Name := ini.ReadString('Protect', 'RenewHumMPName1', g_Config.sRenewHeroMPItem1Name);
+    g_Config.sRenewHeroMPItem2Name := ini.ReadString('Protect', 'RenewHumMPName2', g_Config.sRenewHeroMPItem2Name);
 
     g_Config.boRenewBookIsAuto := ini.ReadBool('Protect', 'RenewBookIsAuto', g_Config.boRenewBookIsAuto);
 

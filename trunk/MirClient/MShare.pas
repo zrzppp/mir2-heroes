@@ -8,7 +8,7 @@ uses
 const
   U_DRESSNAME = '[Eq. Armour]';
   U_WEAPONNAME = '[Eq. Weapon]';
-  U_RIGHTHANDNAME = '[Eq. Unknown]';
+  U_RIGHTHANDNAME = '[Eq. Candle]';
   U_NECKLACENAME = '[Eq. Necklace]';
   U_HELMETNAME = '[Eq. Helmet]';
   U_ARMRINGLNAME = '[Eq. Left Bracelet]';
@@ -16,7 +16,7 @@ const
   U_RINGLNAME = '[Eq. Left Ring]';
   U_RINGRNAME = '[Eq. Right Ring]';
 
-  U_BUJUKNAME = '[Eq. Candle]';
+  U_BUJUKNAME = '[Eq. Amulet]';
   U_BELTNAME = '[Eq. Belt]';
   U_BOOTSNAME = '[Eq. Boots]';
   U_CHARMNAME = '[Eq. Stone]';

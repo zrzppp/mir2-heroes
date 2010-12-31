@@ -2239,45 +2239,8 @@ begin
             end;
           end;
         caRun: begin
-          LB_RUN:
-               stdcount := 1;
-               if (g_MySelf.m_nState and $00100000) <> 0 then
-                  stdcount := 0;
-               if g_nRunReadyCount >= stdcount then begin
-                  crun := g_MySelf.CanRun;
-                  if (GetDistance (mx, my, dx, dy) >= 2) and (crun > 0) then begin
-                     if IsUnLockAction (CM_RUN, ndir) then begin
-                        GetNextRunXY (ndir, mx, my);
-                        if PlayScene.CanRun(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, mx, my) then begin
-                           g_MySelf.UpdateMsg(CM_RUN, mx, my, ndir, 0, 0, '', 0);
-                  g_dwLastMoveTick := GetTickCount;
-                        end else begin
-                           mx := g_MySelf.m_nCurrX;
-                    my := g_MySelf.m_nCurrY;
-                           goto LB_WALK;
-                        end;      
-                     end else
-                        g_nTargetX := -1;
-                  end else begin
-                     //if crun = -1 then begin
-                        //DScreen.AddSysMsg ('지금은 뛸 수 없습니다.');
-                        //TargetX := -1;
-                     //end;
-                     goto LB_WALK;     //체력이 없는경우.
-                     {if crun = -2 then begin
-                        DScreen.AddSysMsg ('잠시후에 뛸 수 있습니다.');
-                        TargetX := -1;
-                     end; }
-                  end;
-               end else begin
-                  Inc (g_nRunReadyCount);
-                  goto LB_WALK;
-               end;
-            end;
-        {caRun: begin
             LB_RUN:
             stdcount := 1;
-            DScreen.AddChatBoardString('Count: ' + IntToStr(g_nRunReadyCount), clRed, clBlack);
             if (g_MySelf.m_nState and $00100000) <> 0 then
                   stdcount := 0;
             if g_nRunReadyCount >= stdcount then begin
@@ -2285,40 +2248,23 @@ begin
             if (GetDistance(mx, my, dx, dy) >= 2) and (crun > 0) then begin
               if IsUnLockAction(CM_RUN, ndir) then begin
                 GetNextRunXY(ndir, mx, my);
-                bowalk := True;
-                bostop := False;
-                if not PlayScene.CanRun(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, mx, my) then begin
-                  bowalk := False;
-                  mdir := 0;
-                  if not bowalk then begin
-                    mx := g_MySelf.m_nCurrX;
-                    my := g_MySelf.m_nCurrY;
-                    GetNextRunXY(ndir, mx, my);
-                    if CheckDoorAction(mx, my) then
-                      bostop := True;
-                  end;
-                  if not bostop then begin
-                    mx := g_MySelf.m_nCurrX;
-                    my := g_MySelf.m_nCurrY;
-                    goto LB_WALK;
-                  end else begin
-                    mx := g_MySelf.m_nCurrX;
-                    my := g_MySelf.m_nCurrY;
-                    GetNextRunXY(ndir, mx, my);
-                    g_MySelf.UpdateMsg(CM_RUN, mx, my, ndir, 0, 0, '', 0);
-                    g_dwLastMoveTick := GetTickCount;
-                  end;
-                end else begin
+                if PlayScene.CanRun(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, mx, my) then begin
                   g_MySelf.UpdateMsg(CM_RUN, mx, my, ndir, 0, 0, '', 0);
                   g_dwLastMoveTick := GetTickCount;
+                end else begin
+                  mx := g_MySelf.m_nCurrX;
+                  my := g_MySelf.m_nCurrY;
+                  goto LB_WALK;
                 end;
               end else g_nTargetX := -1;
+            end else begin
+              goto LB_WALK;
             end;
             end else begin
               Inc (g_nRunReadyCount);
               goto LB_WALK;
+              end;
             end;
-          end;   }
         caHorseRun: begin
             crun := g_MySelf.CanRun;
             if (GetDistance(mx, my, dx, dy) >= 3) and (crun > 0) then begin

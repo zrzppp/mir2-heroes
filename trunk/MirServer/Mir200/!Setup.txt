@@ -130,7 +130,7 @@ SuperBoneFamm9=
 PayMentPointName=Payment Point
 [Setup]
 <<<<<<< .mine
-ItemNumber=161967677
+ItemNumber=165278935
 =======
 ItemNumber=148003776
 >>>>>>> .r32
@@ -229,7 +229,7 @@ ShowGuildName=1
 MonSayMsg=1
 MonsterPowerRate=10
 ItemsPowerRate=10
-ItemNumberEx=1073813974
+ItemNumberEx=1073813981
 StartCastlewarTime=20
 StartPointSize=2
 PasswordLockSystem=1
@@ -1904,7 +1904,7 @@ AllowClientChgSpeed=1
 MonRandomNewAddValue=10
 MakeRandomNewAddValue=1
 ScriptRandomNewAddValue=1
-MonRandomNotLimit=50
+MonRandomNotLimit=1
 MakeRandomNotLimit=1
 ScriptRandomNotLimit=1
 ItemMaxLimitDay=10

@@ -8261,13 +8261,13 @@ procedure TFrmDlg.GetMouseItemInfo(Actor: TActor; MouseItem: pTClientItem; var i
   begin
     if (not g_ServerConfig.boAllowItemAddValue) or (g_ServerConfig.btShowClientItemStyle <> 0) then Exit;
     if Value[4] > 0 then begin
-      HintList.AddObject('攻击元素: ' + GetAtomTypeStr(Value[1]) + '+' + IntToStr(Value[4]), TObject(GetRGB(222)));
+      HintList.AddObject('Attack Element: ' + GetAtomTypeStr(Value[1]) + '+' + IntToStr(Value[4]), TObject(GetRGB(222)));
     end;
     if Value[5] > 0 then begin
-      HintList.AddObject('强性元素: ' + GetAtomTypeStr(Value[2]) + '+' + IntToStr(Value[5]), TObject(GetRGB(222)));
+      HintList.AddObject('Magic Element: ' + GetAtomTypeStr(Value[2]) + '+' + IntToStr(Value[5]), TObject(GetRGB(222)));
     end;
     if Value[6] > 0 then begin
-      HintList.AddObject('弱性元素: ' + GetAtomTypeStr(Value[3]) + '+' + IntToStr(Value[6]), TObject(GetRGB(254)));
+      HintList.AddObject('Weak Element: ' + GetAtomTypeStr(Value[3]) + '+' + IntToStr(Value[6]), TObject(GetRGB(254)));
     end;
   end;
 
@@ -8347,12 +8347,12 @@ begin
       1: begin
           case MouseItem.s.Shape of
             1, 2, 5, 6, 7: begin
-                HintList.AddObject('持续使用: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时', TObject(GetRGB(254)));
-                line2 := '持续使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时';
+                HintList.AddObject('Left: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时', TObject(GetRGB(254)));
+                line2 := 'Left ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时';
               end;
             3, 4, 8, 9, 10: begin
-                HintList.AddObject('累积使用: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时', TObject(GetRGB(254)));
-                line2 := '累积使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时';
+                HintList.AddObject('Uses: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时', TObject(GetRGB(254)));
+                line2 := 'Uses ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 小时';
               end;
           end;
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
@@ -8424,9 +8424,9 @@ begin
           end;
 
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
-            ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+            ' Durability' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
-          HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
+          HintList.AddObject('Durability: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
           HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
 
           if MouseItem.s.DC > 0 then begin
@@ -8483,25 +8483,25 @@ begin
             0: begin
                 if Actor.m_Abil.Level >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             1: begin
                 if Hiword(Actor.m_Abil.DC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '需要攻击力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires DC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             2: begin
                 if Hiword(Actor.m_Abil.MC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需魔法值: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires MC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             3: begin
                 if Hiword(Actor.m_Abil.SC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需道术: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires SC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             4: begin
@@ -8585,8 +8585,8 @@ begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           case MouseItem.s.Shape of
             0: begin
-                line2 := '使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
-                HintList.AddObject('使用:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
+                line2 := 'Use ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
+                HintList.AddObject('Use:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
               end;
             1: begin
                 line2 := 'HP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万';
@@ -8606,9 +8606,9 @@ begin
       10, 11: {//男衣服, 女衣服} begin
           useable := False;
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
-            ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+            ' Durability' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
-          HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
+          HintList.AddObject('Durability: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
           HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
 
           if MouseItem.s.AC > 0 then begin
@@ -8753,9 +8753,9 @@ begin
         54, 64, 30: {//腰带} begin
           useable := False;
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
-            ' 持久' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+            ' Durability' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
 
-          HintList.AddObject('持久: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
+          HintList.AddObject('Durability: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
           HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
 
           case MouseItem.s.StdMode of
@@ -8839,59 +8839,59 @@ begin
                 //if Loword(MouseItem.S.MAC) > 0 then      //2008-3-3去掉鞋子的魔法恢复
                   //HintList.AddObject('魔法恢复: +' + IntToStr(Loword(MouseItem.S.MAC)), TObject(clWhite));
                 if MouseItem.s.AniCount * MouseItem.s.Weight > 0 then begin
-                  HintList.AddObject('负重: +' + IntToStr(MouseItem.s.AniCount * MouseItem.s.Weight), TObject(clWhite));
-                  line2 := line2 + '负重+' + IntToStr(MouseItem.s.AniCount * MouseItem.s.Weight) + ' ';
+                  HintList.AddObject('Weight: +' + IntToStr(MouseItem.s.AniCount * MouseItem.s.Weight), TObject(clWhite));
+                  line2 := line2 + 'Weight+' + IntToStr(MouseItem.s.AniCount * MouseItem.s.Weight) + ' ';
                 end;
               end;
             63: {//Charm} begin
                 if Loword(MouseItem.s.AC) > 0 then begin
-                  HintList.AddObject('体力: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(GetRGB(254)));
-                  line2 := line2 + '体力+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
+                  HintList.AddObject('Strength: +' + IntToStr(Loword(MouseItem.s.AC)), TObject(GetRGB(254)));
+                  line2 := line2 + 'Strength+' + IntToStr(Loword(MouseItem.s.AC)) + ' ';
                 end;
                 if Hiword(MouseItem.s.AC) > 0 then begin
-                  HintList.AddObject('魔法: +' + IntToStr(Hiword(MouseItem.s.AC)), TObject(GetRGB(254)));
-                  line2 := line2 + '魔法+' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
+                  HintList.AddObject('Magic: +' + IntToStr(Hiword(MouseItem.s.AC)), TObject(GetRGB(254)));
+                  line2 := line2 + 'Magic+' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
                 end;
                 if Loword(MouseItem.s.MAC) > 0 then begin
-                  HintList.AddObject('诅咒: +' + IntToStr(Loword(MouseItem.s.MAC)), TObject(GetRGB(254)));
-                  line2 := line2 + '诅咒+' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
+                  HintList.AddObject('Curse: +' + IntToStr(Loword(MouseItem.s.MAC)), TObject(GetRGB(254)));
+                  line2 := line2 + 'Curse+' + IntToStr(Loword(MouseItem.s.MAC)) + ' ';
                 end;
                 if Hiword(MouseItem.s.MAC) > 0 then begin
-                  HintList.AddObject('幸运: +' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(GetRGB(254)));
-                  line2 := line2 + '幸运+' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
+                  HintList.AddObject('Luck: +' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(GetRGB(254)));
+                  line2 := line2 + 'Luck+' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
                 end;
               end;
           else begin
               if MouseItem.s.AC > 0 then begin
-                HintList.AddObject('防御: ' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
-                line2 := line2 + '防御' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
+                HintList.AddObject('AC: ' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)), TObject(clWhite));
+                line2 := line2 + 'AC' + IntToStr(Loword(MouseItem.s.AC)) + '-' + IntToStr(Hiword(MouseItem.s.AC)) + ' ';
               end;
               if MouseItem.s.MAC > 0 then begin
-                HintList.AddObject('魔防: ' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
-                line2 := line2 + '魔防' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
+                HintList.AddObject('AMC: ' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)), TObject(clWhite));
+                line2 := line2 + 'AMC' + IntToStr(Loword(MouseItem.s.MAC)) + '-' + IntToStr(Hiword(MouseItem.s.MAC)) + ' ';
               end;
             end;
           end;
 
           if MouseItem.s.DC > 0 then begin
-            line2 := line2 + '攻击力' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
-            HintList.AddObject('攻击: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
+            line2 := line2 + 'DC' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)) + ' ';
+            HintList.AddObject('DC: ' + IntToStr(Loword(MouseItem.s.DC)) + '-' + IntToStr(Hiword(MouseItem.s.DC)), TObject(clWhite));
           end;
           if MouseItem.s.MC > 0 then begin
-            line2 := line2 + '魔法' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)) + ' ';
-            HintList.AddObject('魔法: ' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)), TObject(clWhite));
+            line2 := line2 + 'MC' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)) + ' ';
+            HintList.AddObject('MC: ' + IntToStr(Loword(MouseItem.s.MC)) + '-' + IntToStr(Hiword(MouseItem.s.MC)), TObject(clWhite));
           end;
           if MouseItem.s.SC > 0 then begin
-            line2 := line2 + '道术' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)) + ' ';
-            HintList.AddObject('道术: ' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)), TObject(clWhite));
+            line2 := line2 + 'SC' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)) + ' ';
+            HintList.AddObject('SC: ' + IntToStr(Loword(MouseItem.s.SC)) + '-' + IntToStr(Hiword(MouseItem.s.SC)), TObject(clWhite));
           end;
           if (MouseItem.s.Source <= -1) and (MouseItem.s.Source >= -50) then begin
-            line2 := line2 + '神圣+' + IntToStr(-MouseItem.s.Source);
-            HintList.AddObject('神圣: +' + IntToStr(-MouseItem.s.Source), TObject(GetRGB(254)));
+            line2 := line2 + 'Holy+' + IntToStr(-MouseItem.s.Source);
+            HintList.AddObject('Holy: +' + IntToStr(-MouseItem.s.Source), TObject(GetRGB(254)));
           end;
           if (MouseItem.s.Source <= -51) and (MouseItem.s.Source >= -100) then begin
-            line2 := line2 + '神圣-' + IntToStr(-MouseItem.s.Source - 50);
-            HintList.AddObject('神圣: -' + IntToStr(-MouseItem.s.Source - 50), TObject(GetRGB(254)));
+            line2 := line2 + 'Holy-' + IntToStr(-MouseItem.s.Source - 50);
+            HintList.AddObject('Holy: -' + IntToStr(-MouseItem.s.Source - 50), TObject(GetRGB(254)));
           end;
 
           GetAtomStr(MouseItem.s.AddValue);
@@ -8900,25 +8900,25 @@ begin
             0: begin
                 if Actor.m_Abil.Level >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             1: begin
                 if Hiword(Actor.m_Abil.DC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '需要攻击力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires DC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             2: begin
                 if Hiword(Actor.m_Abil.MC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需魔法值: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires MC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             3: begin
                 if Hiword(Actor.m_Abil.SC) >= MouseItem.s.NeedLevel then
                   useable := True;
-                sTemp := '所需道术: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires SC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             4: begin
@@ -9002,15 +9002,15 @@ begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           case MouseItem.s.Shape of
             1, 2, 3, 4, 5, 6: begin
-                line2 := '数量 ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax);
-                HintList.AddObject('数量: ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
+                line2 := 'Amount ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax);
+                HintList.AddObject('Amount: ' + GetDura100Str(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
               end;
             9: begin
-                line2 := Format('容量 %d/%d', [MouseItem.Dura, MouseItem.DuraMax]);
-                HintList.AddObject(Format('容量: %d/%d', [MouseItem.Dura, MouseItem.DuraMax]), TObject(GetRGB(254)));
+                line2 := Format('Amount %d/%d', [MouseItem.Dura, MouseItem.DuraMax]);
+                HintList.AddObject(Format('Amount: %d/%d', [MouseItem.Dura, MouseItem.DuraMax]), TObject(GetRGB(254)));
               end;
           end;
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       (*30: {//照明物} begin
           HintList.AddObject('持久 : ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GETRGB(254)));
@@ -9019,34 +9019,34 @@ begin
       40: {//肉} begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           if not g_MouseHeroItem.s.Shape in [13..16] then begin
-            line1 := line1 + ' 品质' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
-            HintList.AddObject('品质: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
+            line1 := line1 + ' Quality' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+            HintList.AddObject('Quality: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
           end;
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       42: {//药材} begin
-          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' 距犁';
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' plow?';
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
           HintList.AddObject('距犁', TObject(GetRGB(254)));
         end;
       43: {//矿石} begin
-          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' 纯度' + IntToStr(Round(MouseItem.Dura / 1000));
-          HintList.AddObject('纯度: ' + IntToStr(Round(MouseItem.Dura / 1000)), TObject(GetRGB(254)));
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' Purity' + IntToStr(Round(MouseItem.Dura / 1000));
+          HintList.AddObject('Purity: ' + IntToStr(Round(MouseItem.Dura / 1000)), TObject(GetRGB(254)));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
       49: begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
-          line2 := Format('经验: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]);
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
-          HintList.AddObject(Format('经验: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]), TObject(GetRGB(254)));
+          line2 := Format('Experience: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]);
+          HintList.AddObject('Weigth: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject(Format('Experience: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]), TObject(GetRGB(254)));
           //dwExp := MouseItem.Dura * 10000;
           //dwMaxExp := MouseItem.DuraMax * 10000;
           //HintList.AddObject('经验: ' + IntToStr(dwExp) + '/' + IntToStr(dwMaxExp), TObject(GetRGB(254)));
         end; //
       31: begin
           if (MouseItem.s.AniCount <> 0) and (MouseItem.s.Shape = 1) then begin
-            line2 := '使用 ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
-            HintList.AddObject('使用: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
+            line2 := 'Use ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
+            HintList.AddObject('Use: ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
             {if MouseItem.s.AddValue[1] <> 0 then begin
               //line2 := '记忆传送: 地图:' + MouseItem.s.sDescr + ' 坐标:' + GetMoveXY(MouseItem.s.AddValue);
               //HintList.AddObject('记忆传送: 地图: ' + MouseItem.s.sDescr + ' 坐标:' + GetMoveXY(MouseItem.s.AddValue), TObject(GetRGB(254)));
@@ -9058,47 +9058,47 @@ begin
             end;}
           end;
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
-          HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
         end;
     else begin
         line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
-        HintList.AddObject('重量: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+        HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
       end;
     end;
 
     if (g_ServerConfig.btShowClientItemStyle = 0) then begin
       if g_ServerConfig.boAllowItemAddPoint then begin
-        if MouseItem.s.AddPoint[12] > 0 then HintList.AddObject('移动加速: ' + IntToStr(MouseItem.s.AddPoint[12]) + '%', TObject(GetRGB(68)));
-        if MouseItem.s.AddPoint[13] > 0 then HintList.AddObject('攻击加速: ' + IntToStr(MouseItem.s.AddPoint[13]) + '%', TObject(GetRGB(68)));
+        if MouseItem.s.AddPoint[12] > 0 then HintList.AddObject('Walk Speed: ' + IntToStr(MouseItem.s.AddPoint[12]) + '%', TObject(GetRGB(68)));
+        if MouseItem.s.AddPoint[13] > 0 then HintList.AddObject('Attack Speed: ' + IntToStr(MouseItem.s.AddPoint[13]) + '%', TObject(GetRGB(68)));
       end;
     end;
 
     if (g_ServerConfig.btShowClientItemStyle = 0) then begin
       if g_ServerConfig.boAllowItemAddPoint then begin
         case MouseItem.s.AddPoint[1] of
-          1: HintList.AddObject('物理伤害减少: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          2: HintList.AddObject('魔法伤害减少: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          3: HintList.AddObject('忽视目标防御: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          4: HintList.AddObject('所有伤害反射: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          5: HintList.AddObject('增加攻击伤害: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          1: HintList.AddObject('1物理伤害减少: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          2: HintList.AddObject('2魔法伤害减少: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          3: HintList.AddObject('3忽视目标防御: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          4: HintList.AddObject('4所有伤害反射: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          5: HintList.AddObject('5增加攻击伤害: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
         end;
-        if MouseItem.s.AddPoint[3] > 0 then HintList.AddObject('物理防御增强: ' + IntToStr(MouseItem.s.AddPoint[3]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[4] > 0 then HintList.AddObject('魔法防御增强: ' + IntToStr(MouseItem.s.AddPoint[4]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[5] > 0 then HintList.AddObject('物理攻击增强: ' + IntToStr(MouseItem.s.AddPoint[5]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[6] > 0 then HintList.AddObject('魔法攻击增强: ' + IntToStr(MouseItem.s.AddPoint[6]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[7] > 0 then HintList.AddObject('道术攻击增强: ' + IntToStr(MouseItem.s.AddPoint[7]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[8] > 0 then HintList.AddObject('增加进入失明状态: ' + IntToStr(MouseItem.s.AddPoint[8]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[9] > 0 then HintList.AddObject('增加进入混乱状态: ' + IntToStr(MouseItem.s.AddPoint[9]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[10] > 0 then HintList.AddObject('减少进入失明状态: ' + IntToStr(MouseItem.s.AddPoint[10]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[11] > 0 then HintList.AddObject('减少进入混乱状态: ' + IntToStr(MouseItem.s.AddPoint[11]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[3] > 0 then HintList.AddObject('6物理防御增强: ' + IntToStr(MouseItem.s.AddPoint[3]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[4] > 0 then HintList.AddObject('7魔法防御增强: ' + IntToStr(MouseItem.s.AddPoint[4]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[5] > 0 then HintList.AddObject('8物理攻击增强: ' + IntToStr(MouseItem.s.AddPoint[5]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[6] > 0 then HintList.AddObject('9魔法攻击增强: ' + IntToStr(MouseItem.s.AddPoint[6]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[7] > 0 then HintList.AddObject('10道术攻击增强: ' + IntToStr(MouseItem.s.AddPoint[7]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[8] > 0 then HintList.AddObject('11增加进入失明状态: ' + IntToStr(MouseItem.s.AddPoint[8]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[9] > 0 then HintList.AddObject('12增加进入混乱状态: ' + IntToStr(MouseItem.s.AddPoint[9]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[10] > 0 then HintList.AddObject('13减少进入失明状态: ' + IntToStr(MouseItem.s.AddPoint[10]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[11] > 0 then HintList.AddObject('14减少进入混乱状态: ' + IntToStr(MouseItem.s.AddPoint[11]) + '%', TObject(GetRGB(180)));
         //if MouseItem.s.AddPoint[12] > 0 then HintList.AddObject('移动加速: ' + IntToStr(MouseItem.s.AddPoint[12]) + '%', TObject(GetRGB(68)));
         //if MouseItem.s.AddPoint[13] > 0 then HintList.AddObject('攻击加速: ' + IntToStr(MouseItem.s.AddPoint[13]) + '%', TObject(GetRGB(68)));
       end;
       if g_ServerConfig.boAllowItemTime then begin
         if MouseItem.s.AddValue[0] = 1 then begin
-          HintList.AddObject('到期时间: ' + DateToStr(MouseItem.s.MaxDate), TObject(clyellow));
+          HintList.AddObject('Expires: ' + DateToStr(MouseItem.s.MaxDate), TObject(clyellow));
         end else begin
-          HintList.AddObject('到期时间: 永久使用', TObject(clyellow));
+          HintList.AddObject('Expires: Never', TObject(clyellow));
         end;
 
         {
@@ -10148,9 +10148,9 @@ begin
     end;
 
     if not BoStorageMenu then begin
-      TextOut(sx(19), sY(11), '物品列表');
-      TextOut(sx(156), sY(11), '费用');
-      TextOut(sx(245), sY(11), '持久.');
+      TextOut(sx(19), sY(11), 'Item List');
+      TextOut(sx(156), sY(11), 'Price');
+      TextOut(sx(245), sY(11), 'Dura.');
       lh := LISTLINEHEIGHT;
       menuline := _MIN(MAXMENU, MenuList.Count - MenuTop);
       //惑前 府胶飘

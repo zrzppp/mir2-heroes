@@ -130,7 +130,7 @@ SuperBoneFamm9=
 PayMentPointName=Payment Point
 [Setup]
 <<<<<<< .mine
-ItemNumber=161913677
+ItemNumber=161967677
 =======
 ItemNumber=148003776
 >>>>>>> .r32
@@ -570,7 +570,7 @@ WinLottery5Gold=1000
 WinLottery6Gold=500
 GuildRecallTime=600
 GroupRecallTime=4
-ControlDropItem=1
+ControlDropItem=0
 InSafeDisableDrop=1
 CanDropGold=2000
 CanDropPrice=3000

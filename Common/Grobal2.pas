@@ -3433,13 +3433,13 @@ end;
 function GetAtomTypeStr(btAtom: Byte): string;
 begin
   case btAtom of
-    AT_FIRE: Result := '»ð(»ðÑæ)';
-    AT_ICE: Result := '±ù(±ùº®)';
-    AT_LIGHT: Result := 'À×(µç»÷)';
-    AT_WIND: Result := '·ç(·ç)';
-    AT_HOLY: Result := 'Ê¥(ÉñÊ¥)';
-    AT_DARK: Result := '°µºÚ(°µºÚ)';
-    AT_PHANTOM: Result := '»ÃÓ°(»ÃÓ°)';
+    AT_FIRE: Result := 'Fire';
+    AT_ICE: Result := 'Ice';
+    AT_LIGHT: Result := 'Light';
+    AT_WIND: Result := 'Wind';
+    AT_HOLY: Result := 'Holy';
+    AT_DARK: Result := 'Dark';
+    AT_PHANTOM: Result := 'Phantom';
   end;
 end;
 

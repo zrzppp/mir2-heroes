@@ -303,20 +303,13 @@ type
     //boShowFullScreen: Boolean;
 
 //==================================
-    boShowActorLable: Boolean;
     boHideBlueLable: Boolean;
-    boShowNumberLable: Boolean; //数字显示
-    boShowJobAndLevel: Boolean; //等级和职业
-    boShowUserName: Boolean;
-    boShowMonName: Boolean;
     boShowItemName: Boolean;
     boShowMoveLable: Boolean;
-    boShowGreenHint: Boolean;
     boBGSound: Boolean; //背景音乐
     boItemHint: Boolean;
     boMagicLock: Boolean; //魔法锁定
     boOrderItem: Boolean;
-    boOnlyShowCharName: Boolean;
     boPickUpItemAll: Boolean;
     boCloseGroup: Boolean;
     boDuraWarning: Boolean;
@@ -446,7 +439,6 @@ type
     nRenewHeroLogOutTime: Integer;
     nRenewHeroLogOutPercent: Integer;
 //==============================================================================
-    boGuaji: Boolean;
   end;
   pTConfig = ^TConfig;
 
@@ -788,7 +780,6 @@ var
   g_boMapMovingWait: Boolean;
   g_boCheckBadMapMode: Boolean; //是否显示相关检查地图信息(用于调试)
   g_boCheckSpeedHackDisplay: Boolean; //是否显示机器速度数据
-  g_boShowGreenHint: Boolean;
   g_boShowWhiteHint: Boolean;
   g_boViewMiniMap: Boolean; //是否显示小地图
   g_nViewMinMapLv: Integer; //Jacky 小地图显示模式(0为不显示，1为透明显示，2为清析显示)
@@ -1207,20 +1198,13 @@ var
     btHearMsgFColor: 255;
 
 //==================================
-    boShowActorLable: False; // Revelation
     boHideBlueLable: True; // Hide Mana Bar
-    boShowNumberLable: False;
-    boShowJobAndLevel: False;
-    boShowUserName: False;  // Show All Player & Merchant Names
-    boShowMonName: False; // Show All Monster Names
     boShowItemName: False;
     boShowMoveLable: True;
-    boShowGreenHint: False; // Debug Text
     boBGSound: True;
     boItemHint: False;
     boMagicLock: False; // Lock Magic Onto Target
     boOrderItem: True;
-    boOnlyShowCharName: False;
     boPickUpItemAll: False;
     boCloseGroup: True;
     boDuraWarning: True;
@@ -1339,7 +1323,6 @@ var
     nRenewHeroLogOutPercent: 10;
 
 //==============================================================================
-    boGuaji: False;
     );
 
 
@@ -4535,18 +4518,10 @@ begin
   sFileName := Format(CONFIGFILE, [g_sServerName, g_MySelf.m_sUserName]);
   ini := TIniFile.Create(sFileName);
   if ini <> nil then begin
-    ini.WriteBool('Basic', 'ShowActorLable', g_Config.boShowActorLable);
     ini.WriteBool('Basic', 'HideBlueLable', g_Config.boHideBlueLable);
-    ini.WriteBool('Basic', 'ShowNumberLable', g_Config.boShowNumberLable);
-    ini.WriteBool('Basic', 'ShowJobAndLevel', g_Config.boShowJobAndLevel);
-    ini.WriteBool('Basic', 'ShowUserName', g_Config.boShowUserName);
-    ini.WriteBool('Basic', 'ShowMonName', g_Config.boShowMonName);
-    ini.WriteBool('Basic', 'ShowGreenHint', g_Config.boShowGreenHint);
     ini.WriteBool('Basic', 'ItemHint', g_Config.boItemHint);
     ini.WriteBool('Basic', 'MagicLock', g_Config.boMagicLock);
     ini.WriteBool('Basic', 'OrderItem:', g_Config.boOrderItem);
-    ini.WriteBool('Basic', 'OnlyShowCharName', g_Config.boOnlyShowCharName);
-    ini.WriteBool('Basic', 'PickUpItemAll', g_Config.boPickUpItemAll);
     ini.WriteBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     ini.WriteBool('Basic', 'Music', g_Config.boBGSound);
     ini.WriteBool('Basic', 'DuraWarning', g_Config.boDuraWarning);
@@ -4554,8 +4529,6 @@ begin
 
     ini.WriteBool('Basic', 'AutoHorse', g_Config.boAutoHorse);
     ini.WriteBool('Basic', 'CompareItem', g_Config.boCompareItem);
-
-    ini.WriteBool('Basic', 'Guaji', g_Config.boGuaji);
 
 
     ini.WriteBool('Protect', 'RenewHumHPIsAuto1', g_Config.boRenewHumHPIsAuto1);
@@ -4681,27 +4654,16 @@ begin
   sFileName := Format(CONFIGFILE, [g_sServerName, g_MySelf.m_sUserName]);
   ini := TIniFile.Create(sFileName);
   if ini <> nil then begin
-    //DebugOutStr('LoadUserConfig();');
-    g_Config.boShowActorLable := False;
     g_Config.boHideBlueLable := True;
-    g_Config.boShowNumberLable := False;
-    g_Config.boShowJobAndLevel := False;
-    g_Config.boShowUserName := False;
-    g_Config.boShowMonName := False;
-    g_Config.boShowGreenHint := False;
     g_Config.boItemHint := False;
     g_Config.boMagicLock := False;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
-    g_Config.boOnlyShowCharName := False;
-    g_Config.boPickUpItemAll := False;
     g_Config.boCloseGroup := ini.ReadBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);
     g_Config.boNotNeedShift := ini.ReadBool('Basic', 'NotNeedShift', g_Config.boNotNeedShift);
     g_Config.boAutoHorse := ini.ReadBool('Basic', 'AutoHorse', g_Config.boAutoHorse);
     g_Config.boCompareItem := ini.ReadBool('Basic', 'CompareItem', g_Config.boCompareItem);
-    g_Config.boGuaji := False;
-
 
     g_boBGSound := g_Config.boBGSound;
 

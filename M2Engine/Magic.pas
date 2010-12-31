@@ -954,7 +954,7 @@ begin
         end;
 
         nPower := PlayObject._GetAtomPower(TargeTActorObject, AT_FIRE, nPower);
-        TargeTActorObject.m_boNotDefendoof := PlayObject.GetNotDefendoof; //忽视目标防御
+        TargeTActorObject.m_boNotDefendoof := PlayObject.GetNotDefendoof; // Ignore Target Defense
 
         PlayObject.SendDelayMsg(PlayObject, RM_DELAYMAGIC, nPower, MakeLong(nTargetX, nTargetY), MakeLong(2, Integer(TargeTActorObject.m_boNotDefendoof)), Integer(TargeTActorObject), '', 600);
         {if (TargeTActorObject.m_btRaceServer >= RC_ANIMAL) then Result := True;}
@@ -1852,7 +1852,7 @@ end;
 function TMagicManager.IsWarrSkill(wMagIdx: Integer): Boolean; //是否是战士技能
 begin
   Result := False;
-  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_YEDO {7}, SKILL_ERGUM {12}, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_40 {40}, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
+  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_SLAYING, SKILL_THRUSTING, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_40 {40}, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
     Result := True;
 end;
 
@@ -1985,36 +1985,36 @@ begin
           nTargetY,
           TargeTActorObject) then boTrain := True;
       end;
-    SKILL_AMYOUNSUL {6}: begin //施毒术
+    SKILL_POISONING: begin // Poisoning - ID: 6
         if MagLightening(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject, boSpellFail) then
           boTrain := True;
       end;
-    SKILL_FIREWIND {8}: begin //抗拒火环  00493754
+    SKILL_REPULSION: begin // Repulsion - ID: 8
         if MagPushArround(PlayObject, UserMagic.btLevel) > 0 then boTrain := True;
       end;
-    SKILL_FIRE {9}: begin //地狱火 00493778
+    SKILL_HELLFIRE: begin // HellFire - ID: 9
         if MagMakeHellFire(PlayObject,
           UserMagic,
           nTargetX,
           nTargetY,
           TargeTActorObject) then boTrain := True;
       end;
-    SKILL_SHOOTLIGHTEN {10}: begin //疾光电影
+    SKILL_LIGHTNING: begin // Lightning - ID: 10
         if MagMakeQuickLighting(PlayObject,
           UserMagic,
           nTargetX,
           nTargetY,
           TargeTActorObject) then boTrain := True;
       end;
-    SKILL_LIGHTENING {11}: begin //雷电术
+    SKILL_THUNDERBOLT: begin // ThunderBolt - ID: 11
         if MagMakeLighting(PlayObject,
           UserMagic,
           nTargetX,
           nTargetY,
           TargeTActorObject) then boTrain := True;
       end;
-    SKILL_FIRECHARM {13},
-      SKILL_HANGMAJINBUB {14},
+      SKILL_SOULFIREBALL, // SoulFireBall - ID: 13
+      SKILL_SOULSHIELD,   // SoulShield - ID: 14
       SKILL_DEJIWONHO {15},
       SKILL_HOLYSHIELD {16},
       SKILL_SKELLETON {17},
@@ -2025,14 +2025,14 @@ begin
         if CheckAmulet(PlayObject, 1, 1, nAmuletIdx) then begin
           UseAmulet(PlayObject, 1, 1, nAmuletIdx);
           case UserMagic.MagicInfo.wMagicId of //
-            SKILL_FIRECHARM {13}: begin //灵魂火符 0049415F
+            SKILL_SOULFIREBALL: begin
                 if MagMakeFireCharm(PlayObject,
                   UserMagic,
                   nTargetX,
                   nTargetY,
                   TargeTActorObject) then boTrain := True;
               end;
-            SKILL_HANGMAJINBUB {14}: begin //幽灵盾
+            SKILL_SOULSHIELD: begin
                 nPower := PlayObject.GetAttackPower(GetPower13(60) + LoWord(PlayObject.m_WAbil.SC) * 10, Integer(HiWord(PlayObject.m_WAbil.SC) - LoWord(PlayObject.m_WAbil.SC)) + 1);
                 if PlayObject.MagMakeDefenceArea(nTargetX, nTargetY, 3, nPower, 1, True) > 0 then
                   boTrain := True;

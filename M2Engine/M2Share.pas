@@ -56,18 +56,15 @@ const
   SKILL_FENCING = 3;
   SKILL_SPIRITSWORD = 4;
   SKILL_GREATFIREBALL = 5;
-  SKILL_AMYOUNSUL = 6;
-  SKILL_YEDO = 7;
-  SKILL_ERGUM = 12;
-  SKILL_BANWOL = 25;
-  SKILL_FIRESWORD = 26;
-  SKILL_MOOTEBO = 27;
-  SKILL_FIREWIND = 8;
-  SKILL_FIRE = 9;
-  SKILL_SHOOTLIGHTEN = 10;
-  SKILL_LIGHTENING = 11;
-  SKILL_FIRECHARM {13} = 13;
-  SKILL_HANGMAJINBUB {14} = 14;
+  SKILL_POISONING = 6;
+  SKILL_SLAYING = 7;
+  SKILL_REPULSION = 8;
+  SKILL_HELLFIRE = 9;
+  SKILL_LIGHTNING = 10;
+  SKILL_THUNDERBOLT = 11;
+  SKILL_THRUSTING = 12;
+  SKILL_SOULFIREBALL = 13;
+  SKILL_SOULSHIELD = 14;
   SKILL_DEJIWONHO {15} = 15;
   SKILL_HOLYSHIELD {16} = 16;
   SKILL_SKELLETON {17} = 17;
@@ -78,6 +75,10 @@ const
   SKILL_EARTHFIRE {22} = 22;
   SKILL_FIREBOOM {23} = 23;
   SKILL_LIGHTFLOWER {24} = 24;
+
+  SKILL_BANWOL = 25;
+  SKILL_FIRESWORD = 26;
+  SKILL_MOOTEBO = 27;
   SKILL_SHOWHP {28} = 28;
   SKILL_BIGHEALLING {29} = 29;
   SKILL_SINSU {30} = 30;
@@ -7230,13 +7231,6 @@ resourcestring
   g_sGameCommandUnBindUseItemHelpMsg = '人物名称 物品类型';
   g_sGameCommandUnBindUseItemNoItemMsg = '%s的%s没有戴物品！！！';
   g_sGameCommandUnBindUseItemAlreadBindMsg = '%s的%s上的物品已解除绑定！！！';
-
-
-
-  g_sHeroLoginMsg = '状态更改：CTRL-E 指定攻击目标：CTRL-W 守护位置：CTRL-Q 使用合击：CTRL-S'; // 英雄挂机：CTRL-B
-
-
-
 
 resourcestring
   U_DRESSNAME = '衣服';

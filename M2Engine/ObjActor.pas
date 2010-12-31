@@ -5233,7 +5233,7 @@ begin
             Result := 2;
           end else
             //if (wMagicID = SKILL_FIRECHARM) and (not CanWalk(m_nCurrX, m_nCurrY, m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, -1, nStep, True)) then begin
-            if (wMagicID = SKILL_FIRECHARM) and (not CanAttack(m_TargetCret, 10, btDir)) then begin
+            if (wMagicID = SKILL_SOULFIREBALL) and (not CanAttack(m_TargetCret, 10, btDir)) then begin
             Result := 3;
           end else
             if {((GetTickCount - m_dwStationTick) > 1000 * 10) and}  TargetNeedRunPos and CanRunPos(5) then begin
@@ -5609,7 +5609,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
     Result := False;
     try
       nError := 0;
-      boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]) or (m_btJob = 0);
+      boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_SOULFIREBALL]) or (m_btJob = 0);
       if (m_btJob = 0) or (wMagicID <= 0) then begin
         nRange := 1;
         if (wMagicID = 58) or (wMagicID = 77) then nRange := 4;
@@ -5758,7 +5758,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
           nRange := 1;
 
       //boFlag := nRange = 1;
-        boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]) or (nRange = 1);
+        boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_SOULFIREBALL]) or (nRange = 1);
 
         for I := 2 downto 1 do begin
           if FindPosOfSelf(@WalkStep, I, boFlag) then begin
@@ -5827,7 +5827,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
     Result := False;
     nRange := _MAX(Random(3), 2);
 
-    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]);
+    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_SOULFIREBALL]);
     for I := nRange downto 1 do begin
         //if FindPosOfTarget(@WalkStep, ActorObject.m_nCurrX, ActorObject.m_nCurrY, I, boFlag) then begin
       if FindPosOfSelf(@WalkStep, I, boFlag) then begin
@@ -5897,7 +5897,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
   begin
     Result := False;
     nRange := 2;
-    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]);
+    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_SOULFIREBALL]);
     for I := nRange downto 1 do begin
       if FindPosOfSelf(@WalkStep, I, boFlag) then begin
         {if m_Master <> nil then begin
@@ -6334,7 +6334,7 @@ begin
   end;
   m_dwMagicAttackTick := GetTickCount();  }
   case UserMagic.wMagIdx of //
-    SKILL_ERGUM {12}: begin //刺杀剑法
+    SKILL_THRUSTING {12}: begin //刺杀剑法
         if m_MagicErgumSkill <> nil then begin
           if not m_boUseThrusting then begin
             ThrustingOnOff(True);
@@ -6489,8 +6489,8 @@ begin
         end;
       end else begin
         case UserMagic.wMagIdx of
-          SKILL_HEALLING {2},
-            SKILL_HANGMAJINBUB {14},
+            SKILL_HEALLING,
+            SKILL_SOULSHIELD,
             SKILL_DEJIWONHO {15},
             SKILL_BIGHEALLING {29},
             SKILL_SINSU, {30}
@@ -6829,8 +6829,8 @@ begin
   m_wHitMode := 0;
   if wMagIdx > 0 then begin
     case wMagIdx of
-      SKILL_FIRECHARM {13},
-        SKILL_HANGMAJINBUB {14},
+        SKILL_SOULFIREBALL,
+        SKILL_SOULSHIELD,
         SKILL_DEJIWONHO {15},
         SKILL_HOLYSHIELD {16},
         SKILL_SKELLETON {17},
@@ -6845,8 +6845,8 @@ begin
           m_btTaoistUseItemType := 5;
           nCount := 1;
           case wMagIdx of
-            SKILL_FIRECHARM {13}: nCount := 1;
-            SKILL_HANGMAJINBUB {14}: nCount := 1;
+            SKILL_SOULFIREBALL: nCount := 1;
+            SKILL_SOULSHIELD: nCount := 1;
             SKILL_DEJIWONHO {15}: nCount := 1;
             SKILL_HOLYSHIELD {16}: nCount := 1;
             SKILL_SKELLETON {17}: nCount := 1;
@@ -6921,10 +6921,10 @@ begin
             end;
           end;
         end;
-      SKILL_AMYOUNSUL, SKILL_GROUPAMYOUNSUL: begin //换毒
+      SKILL_POISONING, SKILL_GROUPAMYOUNSUL: begin //换毒
           nCount := 1;
           case wMagIdx of
-            SKILL_AMYOUNSUL: nCount := 1;
+            SKILL_POISONING: nCount := 1;
             SKILL_GROUPAMYOUNSUL: nCount := 2;
           end;
           m_btTaoistUseItemType := m_nSelItemType;
@@ -8860,8 +8860,8 @@ begin
         for I := 0 to m_MagicList.Count - 1 do begin
           UserMagic := m_MagicList.Items[I];
           case UserMagic.wMagIdx of
-            SKILL_HEALLING {2},
-              SKILL_HANGMAJINBUB {14},
+              SKILL_HEALLING,
+              SKILL_SOULSHIELD,
               SKILL_DEJIWONHO {15},
               SKILL_HOLYSHIELD {16},
               SKILL_SKELLETON {17},
@@ -8870,8 +8870,8 @@ begin
               SKILL_BIGHEALLING {29},
               SKILL_SINSU {30}: begin //需要符
                 case UserMagic.wMagIdx of
-                  SKILL_HEALLING {2}: nCount := 1;
-                  SKILL_HANGMAJINBUB {14}: nCount := 1;
+                  SKILL_HEALLING: nCount := 1;
+                  SKILL_SOULSHIELD: nCount := 1;
                   SKILL_DEJIWONHO {15}: nCount := 1;
                   SKILL_HOLYSHIELD {16}: nCount := 1;
                   SKILL_SKELLETON {17}: nCount := 1;
@@ -8905,9 +8905,9 @@ begin
           case UserMagic.wMagIdx of
               SKILL_FIREBALL,
               SKILL_GREATFIREBALL,
-              SKILL_FIRE,
-              SKILL_SHOOTLIGHTEN,
-              SKILL_LIGHTENING,
+              SKILL_HELLFIRE,
+              SKILL_LIGHTNING,
+              SKILL_THUNDERBOLT,
               SKILL_EARTHFIRE,
               SKILL_FIREBOOM,
               SKILL_LIGHTFLOWER,
@@ -8929,24 +8929,24 @@ begin
           UserMagic := m_MagicList.Items[I];
           if UserMagic.MagicInfo.btJob in [2, 99] then begin
             case UserMagic.wMagIdx of
-              SKILL_AMYOUNSUL {6 施毒术}, SKILL_GROUPAMYOUNSUL {38 群体施毒术}: begin //需要毒药
+              SKILL_POISONING, SKILL_GROUPAMYOUNSUL {38 群体施毒术}: begin //需要毒药
                   Result := CheckUserItem(1, 2) or CheckUserItem(2, 2);
                   if Result then begin
-                    Result := AllowUseMagic(SKILL_AMYOUNSUL) or AllowUseMagic(SKILL_GROUPAMYOUNSUL);
+                    Result := AllowUseMagic(SKILL_POISONING) or AllowUseMagic(SKILL_GROUPAMYOUNSUL);
                   end;
                   if Result then Break;
                 end;
-              SKILL_FIRECHARM: begin //需要符
+              SKILL_SOULFIREBALL: begin
                   Result := CheckUserItem(5, 1);
                   if Result then begin
-                    Result := AllowUseMagic(SKILL_FIRECHARM);
+                    Result := AllowUseMagic(SKILL_SOULFIREBALL);
                   end;
                   if Result then Break;
                 end;
               SKILL_72, SKILL_76: begin //需要符
                   Result := CheckUserItem(5, 5);
                   if Result then begin
-                    Result := AllowUseMagic(SKILL_FIRECHARM);
+                    Result := AllowUseMagic(SKILL_SOULFIREBALL);
                   end;
                   if Result then Break;
                 end;
@@ -16845,7 +16845,7 @@ begin
   end;
   m_dwMagicAttackTick := GetTickCount();
   case UserMagic.wMagIdx of //
-    SKILL_ERGUM {12}: begin //刺杀剑法
+    SKILL_THRUSTING {12}: begin //刺杀剑法
         if m_MagicErgumSkill <> nil then begin
           if not m_boUseThrusting then begin
             ThrustingOnOff(True);
@@ -30715,7 +30715,7 @@ begin
             m_btHitPoint := m_btHitPoint + Round(8 / 3 * UserMagic.btLevel);
           end;
         end;
-      SKILL_YEDO: begin //攻杀剑法
+      SKILL_SLAYING: begin // Slaying - ID: 7
           m_MagicPowerHitSkill := UserMagic;
           if UserMagic.btLevel > 0 then begin
             m_btHitPoint := m_btHitPoint + Round(3 / 3 * UserMagic.btLevel);
@@ -30724,7 +30724,7 @@ begin
           m_btAttackSkillCount := 7 - UserMagic.btLevel;
           m_btAttackSkillPointCount := Random(m_btAttackSkillCount);
         end;
-      SKILL_ERGUM: begin //刺杀剑法
+      SKILL_THRUSTING: begin // Thrusting - ID: 12
           m_MagicErgumSkill := UserMagic;
         end;
       SKILL_BANWOL: begin //半月弯刀

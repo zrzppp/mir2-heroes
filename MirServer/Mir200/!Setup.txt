@@ -130,7 +130,7 @@ SuperBoneFamm9=
 PayMentPointName=Payment Point
 [Setup]
 <<<<<<< .mine
-ItemNumber=152749075
+ItemNumber=161913677
 =======
 ItemNumber=148003776
 >>>>>>> .r32
@@ -229,7 +229,7 @@ ShowGuildName=1
 MonSayMsg=1
 MonsterPowerRate=10
 ItemsPowerRate=10
-ItemNumberEx=1073813973
+ItemNumberEx=1073813974
 StartCastlewarTime=20
 StartPointSize=2
 PasswordLockSystem=1
@@ -4246,13 +4246,13 @@ Level998=1000000000
 Level999=1000000000
 Level1000=1000000000
 [HeroSetup]
-StartLevel=35
-KillMonExpRate=40
+StartLevel=1
+KillMonExpRate=1
 BagItemCount0=40
 BagItemCount1=50
 BagItemCount2=60
 BagItemCount3=70
-WarrorAttackTime=900
+WarrorAttackTime=1400
 WizardAttackTime=1500
 TaoistAttackTime=1400
 KillByMonstDropUseItem=1
@@ -4270,7 +4270,7 @@ DecFirDragonPoint=10
 HeroAttackRate=300
 HeroNameColor=254
 AvoidSpeedTime=1500
-GotoTargetSpeedTime=1200
+GotoTargetSpeedTime=1400
 Skill60Rate=250
 Skill61Rate=150
 Skill62Rate=150

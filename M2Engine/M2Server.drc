@@ -8,36 +8,35 @@
   resources were bound to the produced executable.
 */
 
-#define M2Share_U_CHARMNAME 64672
-#define svMain_sGateIdx 64673
-#define svMain_sGateIPaddr 64674
-#define svMain_sGateListMsg 64675
-#define svMain_sGateSendCount 64676
-#define svMain_sGateMsgCount 64677
-#define svMain_sGateSendKB 64678
-#define svMain_sGateUserCount 64679
-#define svMain_sCloseServerYesNo 64680
-#define svMain_sCloseServerTitle 64681
-#define svMain_sCloseServer 64682
-#define svMain_sCloseServer1 64683
-#define svMain_sGatePortOpen 64684
-#define svMain_sGatePortClose 64685
+#define svMain_sGateIdx 64672
+#define svMain_sGateIPaddr 64673
+#define svMain_sGateListMsg 64674
+#define svMain_sGateSendCount 64675
+#define svMain_sGateMsgCount 64676
+#define svMain_sGateSendKB 64677
+#define svMain_sGateUserCount 64678
+#define svMain_sCloseServerYesNo 64679
+#define svMain_sCloseServerTitle 64680
+#define svMain_sCloseServer 64681
+#define svMain_sCloseServer1 64682
+#define svMain_sGatePortOpen 64683
+#define svMain_sGatePortClose 64684
 #define M2Share_g_sGameCommandMobFireBurnMapNotFountMsg 64688
 #define M2Share_g_sGameCommandUnBindUseItemHelpMsg 64689
 #define M2Share_g_sGameCommandUnBindUseItemAlreadBindMsg 64690
-#define M2Share_g_sHeroLoginMsg 64691
-#define M2Share_U_DRESSNAME 64692
-#define M2Share_U_WEAPONNAME 64693
-#define M2Share_U_RIGHTHANDNAME 64694
-#define M2Share_U_NECKLACENAME 64695
-#define M2Share_U_HELMETNAME 64696
-#define M2Share_U_ARMRINGLNAME 64697
-#define M2Share_U_ARMRINGRNAME 64698
-#define M2Share_U_RINGLNAME 64699
-#define M2Share_U_RINGRNAME 64700
-#define M2Share_U_BUJUKNAME 64701
-#define M2Share_U_BELTNAME 64702
-#define M2Share_U_BOOTSNAME 64703
+#define M2Share_U_DRESSNAME 64691
+#define M2Share_U_WEAPONNAME 64692
+#define M2Share_U_RIGHTHANDNAME 64693
+#define M2Share_U_NECKLACENAME 64694
+#define M2Share_U_HELMETNAME 64695
+#define M2Share_U_ARMRINGLNAME 64696
+#define M2Share_U_ARMRINGRNAME 64697
+#define M2Share_U_RINGLNAME 64698
+#define M2Share_U_RINGRNAME 64699
+#define M2Share_U_BUJUKNAME 64700
+#define M2Share_U_BELTNAME 64701
+#define M2Share_U_BOOTSNAME 64702
+#define M2Share_U_CHARMNAME 64703
 #define M2Share_g_sGamecommandMakeItemNameNotFound 64704
 #define M2Share_g_sGamecommandSuperMakeHelpMsg 64705
 #define M2Share_g_sGameCommandViewWhisperHelpMsg 64706
@@ -872,7 +871,6 @@
 #define SysConst_SDiskFull 65535
 STRINGTABLE
 BEGIN
-	M2Share_U_CHARMNAME,	"宝石"
 	svMain_sGateIdx,	"网关"
 	svMain_sGateIPaddr,	"网关地址"
 	svMain_sGateListMsg,	"队列数据"
@@ -889,7 +887,6 @@ BEGIN
 	M2Share_g_sGameCommandMobFireBurnMapNotFountMsg,	"地图%s 不存在"
 	M2Share_g_sGameCommandUnBindUseItemHelpMsg,	"人物名称 物品类型"
 	M2Share_g_sGameCommandUnBindUseItemAlreadBindMsg,	"%s的%s上的物品已解除绑定！！！"
-	M2Share_g_sHeroLoginMsg,	"状态更改：CTRL-E 指定攻击目标：CTRL-W 守护位置：CTRL-Q 使用合击：CTRL-S"
 	M2Share_U_DRESSNAME,	"衣服"
 	M2Share_U_WEAPONNAME,	"武器"
 	M2Share_U_RIGHTHANDNAME,	"照明物"
@@ -902,6 +899,7 @@ BEGIN
 	M2Share_U_BUJUKNAME,	"物品"
 	M2Share_U_BELTNAME,	"腰带"
 	M2Share_U_BOOTSNAME,	"鞋子"
+	M2Share_U_CHARMNAME,	"宝石"
 	M2Share_g_sGamecommandMakeItemNameNotFound,	"%s 物品名称不正确！！！"
 	M2Share_g_sGamecommandSuperMakeHelpMsg,	"身上没指定物品！！！"
 	M2Share_g_sGameCommandViewWhisperHelpMsg,	" 人物名称"

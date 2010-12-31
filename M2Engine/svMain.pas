@@ -441,7 +441,7 @@ begin
         end;
         boWriteLog := False;
       except
-        MemoLog.Lines.Add('保存日志信息出错！！！');
+        MemoLog.Lines.Add('Failed to write to log file...');
       end;
     end;
 
@@ -524,7 +524,7 @@ begin
     IntToStr(UserEngine.m_PlayObjectFreeList.Count) + '/在线:' +
     IntToStr(UserEngine.PlayObjectCount) + '/' +
 
-  ') 英雄(登录:' + IntToStr(UserEngine.m_LoadHeroList.Count) + '/释放:' +
+  ') Hero(登录:' + IntToStr(UserEngine.m_LoadHeroList.Count) + '/释放:' +
     IntToStr(UserEngine.m_HeroObjectFreeList.Count) + '/在线:' +
     IntToStr(UserEngine.m_HeroObjectList.Count) + ')';
   {
@@ -763,7 +763,7 @@ begin
     MemoLog.Lines.Add('Loading Mini-Map Information...');
     nCode := FrmDB.LoadMinMap;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('小地图数据加载失败！！！' + 'Code: ' + IntToStr(nCode));
+      MemoLog.Lines.Add('Minimap.txt : Failed to read this file.' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
     MemoLog.Lines.Add('Mini-Map Information Loaded...');
@@ -771,7 +771,7 @@ begin
     MemoLog.Lines.Add('Loading Map Information...');
     nCode := FrmDB.LoadMapInfo;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('地图数据加载失败！！！' + 'Code: ' + IntToStr(nCode));
+      MemoLog.Lines.Add('MapInfo : Failure occurred.' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
     MemoLog.Lines.Add(Format('Map Information Loaded: (%d) Maps Loaded...', [g_MapManager.Count]));
@@ -779,7 +779,7 @@ begin
     MemoLog.Lines.Add('Loading Monster Database...');
     nCode := FrmDB.LoadMonsterDB;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('加载怪物数据库失败！！！' + 'Code: ' + IntToStr(nCode));
+      MemoLog.Lines.Add('Failed to load Monster Database' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
     MemoLog.Lines.Add(Format('Monster Database Loaded: (%d) Monsters...', [UserEngine.MonsterList.Count]));
@@ -792,13 +792,13 @@ begin
     end;
     MemoLog.Lines.Add(Format('Magic Database Loaded: (%d) Magics...', [UserEngine.m_MagicList.Count]));
 
-    MemoLog.Lines.Add('Loading Spawn Lists...');
+    MemoLog.Lines.Add('Loading Monster Spawn Lists...');
     nCode := FrmDB.LoadMonGen;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('加载怪物刷新配置信息失败！！！' + 'Code: ' + IntToStr(nCode));
+      MemoLog.Lines.Add('Failed to load MonGen' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add(Format('Spawn Lists Loaded: (%d) Spawns...', [g_MapManager.MonGenCount]));
+    MemoLog.Lines.Add(Format('Monster Spawn Lists Loaded: (%d) Spawns...', [g_MapManager.MonGenCount]));
 
     MemoLog.Lines.Add('Loading Monster Say Lists...');
     LoadMonSayMsg();
@@ -827,22 +827,22 @@ begin
     LoadAllowScatterItemList();
     LoadAllowSellOffItemList();
 
-    MemoLog.Lines.Add('正在加载寄售物品数据库...');
+    MemoLog.Lines.Add('Loading consignment list...');
     g_SellList.LoadSellList();
     g_GoldList.LoadGoldList();
-    MemoLog.Lines.Add(Format('加载寄售物品数据库成功(%d/%d)...', [g_SellList.RecordCount, g_GoldList.RecordCount]));
+    MemoLog.Lines.Add(Format('Loaded consignment list (%d/%d)...', [g_SellList.RecordCount, g_GoldList.RecordCount]));
 
-    MemoLog.Lines.Add('正在加载无限仓库数据库...');
+    MemoLog.Lines.Add('Loading Big Storage...');
     g_Storage.LoadStorageList();
-    MemoLog.Lines.Add(Format('加载无限仓库数据库成功(%d/%d)...', [g_Storage.HumManCount, g_Storage.RecordCount]));
+    MemoLog.Lines.Add(Format('Loaded Big Storage(%d/%d)...', [g_Storage.HumManCount, g_Storage.RecordCount]));
 
-    MemoLog.Lines.Add('正在加载捆装物品信息...');
+    MemoLog.Lines.Add('Loading Unbind List...');
     nCode := FrmDB.LoadUnbindList;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('加载捆装物品信息失败！！！' + 'Code: ' + IntToStr(nCode));
+      MemoLog.Lines.Add('Failed to load Unbind List' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add('加载捆装物品信息成功...');
+    MemoLog.Lines.Add('Loaded Unbind List...');
 
     LoadBindItemTypeFromUnbindList(); {加载捆装物品类型}
 
@@ -851,55 +851,55 @@ begin
     MemoLog.Lines.Add('Loading Map Quests...');
     nCode := FrmDB.LoadMapQuest;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('加载任务地图信息失败！！！');
+      MemoLog.Lines.Add('Failed to load MapQuest');
       Exit;
     end;
     MemoLog.Lines.Add('Map Quests Loaded...');
 
-    MemoLog.Lines.Add('正在加载地图触发事件信息...');
+    MemoLog.Lines.Add('Loading Map Events...');
     nCode := FrmDB.LoadMapEvent;
     {if nCode < 0 then begin
       MemoLog.Lines.Add('加载地图触发事件信息失败！！！');
       Exit;
     end; }
-    MemoLog.Lines.Add('加载地图触发事件信息成功...');
+    MemoLog.Lines.Add('Loaded Map Events...');
 
-    MemoLog.Lines.Add('正在加载地图魔法系统...');
+    MemoLog.Lines.Add('Loading MapMagic Events...');
     nCode := FrmDB.LoadMapMagicEvent;
-    MemoLog.Lines.Add('加载地图魔法系统成功...');
+    MemoLog.Lines.Add('Loaded MapMagic Events...');
 
-    MemoLog.Lines.Add('正在加载任务说明信息...');
+    MemoLog.Lines.Add('Loading QuestDiary...');
     nCode := FrmDB.LoadQuestDiary;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('加载任务说明信息失败！！！');
+      MemoLog.Lines.Add('Failed to load QuestDiary');
       Exit;
     end;
-    MemoLog.Lines.Add('加载任务说明信息成功...');
+    MemoLog.Lines.Add('Loaded QuestDiary...');
 
     if LoadAbuseInformation('.\!abuse.txt') then begin
-      MemoLog.Lines.Add('加载文字过滤信息成功...');
+      MemoLog.Lines.Add('Loaded Abuse List...');
     end;
 
-    MemoLog.Lines.Add('正在加载公告提示信息...');
+    MemoLog.Lines.Add('Loading LineNotice...');
     if not LoadLineNotice(g_Config.sNoticeDir + 'LineNotice.txt') then begin
-      MemoLog.Lines.Add('加载公告提示信息失败！！！');
+      MemoLog.Lines.Add('Failed to load LineNotice');
     end;
-    MemoLog.Lines.Add('加载公告提示信息成功...');
+    MemoLog.Lines.Add('Loaded LineNotice...');
 
     FrmDB.LoadAdminList();
-    MemoLog.Lines.Add('管理员列表加载成功...');
+    MemoLog.Lines.Add('Loading Admin List...');
     g_GuildManager.LoadGuildInfo();
-    MemoLog.Lines.Add('行会列表加载成功...');
+    MemoLog.Lines.Add('Loading Guild Information...');
 
     g_CastleManager.LoadCastleList();
-    MemoLog.Lines.Add('城堡列表加载成功...');
+    MemoLog.Lines.Add('Loading Castle List...');
 
     g_GroupItems.LoadFromFile();
 
     nError := 4;
     //UserCastle.Initialize;
     g_CastleManager.Initialize;
-    MemoLog.Lines.Add('城堡城初始完成...');
+    MemoLog.Lines.Add('Castle initialised...');
     {
     if (nServerIndex = 0) then FrmSrvMsg.StartMsgServer
     else FrmMsgClient.ConnectMsgServer;
@@ -915,7 +915,7 @@ begin
     g_dwUsrRotCountTick := GetTickCount();
 
     RunTimer.Enabled := True;
-    SendGameCenterMsg(SG_STARTOK, '游戏主程序启动完成...');
+    SendGameCenterMsg(SG_STARTOK, 'Rungate Started...');
     GateSocket.Address := g_Config.sGateAddr;
     GateSocket.Port := g_Config.nGatePort;
     g_GateSocket := GateSocket;
@@ -924,7 +924,7 @@ begin
     SendGameCenterMsg(SG_CHECKCODEADDR, IntToStr(Integer(@g_CheckCode)));
   except
     on E: Exception do
-      MainOutMessage('服务器启动异常！！！' + E.Message + IntToStr(nError));
+      MainOutMessage('StartTimer exception:' + E.Message + IntToStr(nError));
   end;
 end;
 
@@ -941,16 +941,16 @@ begin
     nError := 1;
     Application.ProcessMessages;
     FrmIDSoc.Initialize;
-    MemoLog.Lines.Add('登录服务器连接初始化完成...');
+    MemoLog.Lines.Add('Login server initialized...');
 
     nError := 2;
     Application.ProcessMessages;
     g_MapManager.LoadMapDoor;
-    MemoLog.Lines.Add('地图环境加载成功...');
+    MemoLog.Lines.Add('Map teleports loaded...');
     nError := 3;
     Application.ProcessMessages;
     MakeStoneMines();
-    MemoLog.Lines.Add('矿物数据初始成功...');
+    MemoLog.Lines.Add('Mining Data Loaded...');
     nError := 4;
     Application.ProcessMessages;
     nCode := FrmDB.LoadMerchant;
@@ -958,7 +958,7 @@ begin
       MemoLog.Lines.Add('Load Merchant Error ！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add('交易NPC列表加载成功...');
+    MemoLog.Lines.Add('NPC List Loaded...');
     nError := 5;
     Application.ProcessMessages;
     if not g_Config.boVentureServer then begin
@@ -966,7 +966,7 @@ begin
       if nCode < 0 then begin
         MemoLog.Lines.Add('Load GuardList Error ！！！' + 'Code: ' + IntToStr(nCode));
       end;
-      MemoLog.Lines.Add('守卫列表加载成功...');
+      MemoLog.Lines.Add('Guards loaded...');
     end;
     nError := 6;
     Application.ProcessMessages;
@@ -975,7 +975,7 @@ begin
       MemoLog.Lines.Add('Load NpcList Error ！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add('管理NPC列表加载成功...');
+    MemoLog.Lines.Add('NPC Loaded...');
     nError := 7;
     Application.ProcessMessages;
     nCode := FrmDB.LoadMakeItem;
@@ -983,28 +983,28 @@ begin
       MemoLog.Lines.Add('Load MakeItem Error ！！！' + 'Code: ' + IntToStr(nCode));
       Exit;
     end;
-    MemoLog.Lines.Add('炼制物品信息加载成功...');
+    MemoLog.Lines.Add('MakeItem Loaded...');
     nError := 8;
     Application.ProcessMessages;
     nCode := FrmDB.LoadStartPoint;
     if nCode < 0 then begin
-      MemoLog.Lines.Add('加载回城点配置时出现错误 ！！！(错误码: ' + IntToStr(nCode) + ')');
+      MemoLog.Lines.Add('Start Point list failed to load. Code: ' + IntToStr(nCode) + ')');
       Close;
     end;
-    MemoLog.Lines.Add('回城点配置加载成功...');
+    MemoLog.Lines.Add('StartPoint loaded...');
     nError := 9;
     Application.ProcessMessages;
     FrontEngine.Resume;
-    MemoLog.Lines.Add('人物数据引擎启动成功...');
+    MemoLog.Lines.Add('F-Engine resumed...');
     nError := 10;
     Application.ProcessMessages;
     UserEngine.Initialize;
-    MemoLog.Lines.Add('游戏处理引擎初始化成功...');
+    MemoLog.Lines.Add('U-Engine initialised...');
     nError := 11;
     Application.ProcessMessages;
     g_MapManager.MakeSafePkZone; //安全区光圈
     nError := 12;
-    sCaptionExtText := '正在初始化引擎插件...';
+    sCaptionExtText := 'Loading Engine Plugins...';
     Caption := sCaption + ' [' + sCaptionExtText + ']';
 
     LoadStringList;
@@ -1062,15 +1062,15 @@ end;
 
 function TFrmMain.LoadClientFile(): Boolean;
 begin
-  MemoLog.Lines.Add('正在加载客户端版本信息...');
+  MemoLog.Lines.Add('Loading Client information...');
   if not (g_Config.sClientFile1 = '') then g_Config.nClientFile1_CRC := CalcFileCRC(g_Config.sClientFile1);
   if not (g_Config.sClientFile2 = '') then g_Config.nClientFile2_CRC := CalcFileCRC(g_Config.sClientFile2);
   if not (g_Config.sClientFile3 = '') then g_Config.nClientFile3_CRC := CalcFileCRC(g_Config.sClientFile3);
   if (g_Config.nClientFile1_CRC <> 0) or (g_Config.nClientFile2_CRC <> 0) or (g_Config.nClientFile3_CRC <> 0) then begin
-    MemoLog.Lines.Add('加载客户端版本信息成功...');
+    MemoLog.Lines.Add('Loaded Client information...');
     Result := True;
   end else begin
-    MemoLog.Lines.Add('加载客户端版本信息失败！！！');
+    MemoLog.Lines.Add('Failed to load Client information');
     Result := False;
   end;
   Result := True;
@@ -1085,13 +1085,13 @@ var
   //EngineOption:TEngineOption;
 resourcestring
   //sDemoVersion = '演示版';
-  sGateIdx = '网关';
-  sGateIPaddr = '网关地址';
-  sGateListMsg = '队列数据';
-  sGateSendCount = '发送数据';
-  sGateMsgCount = '剩余数据';
-  sGateSendKB = '平均流量';
-  sGateUserCount = '最高人数';
+  sGateIdx       = 'Idx';
+  sGateIPaddr    = 'Address';
+  sGateListMsg   = 'Msg';
+  sGateSendCount = 'SCount';
+  sGateMsgCount  = 'MCount';
+  sGateSendKB    = 'KB';
+  sGateUserCount = 'Users';
 begin
   Randomize;
   //ShowMessage(IntToStr(Length(EncryptBuffer(@ScriptConfig, SizeOf(TScriptConfig)))));
@@ -1512,7 +1512,7 @@ begin
   PlugInEngine.HookSetMaxPlayObjectCount(TUserEngine_SetMaxPlayObjectCount);
 
   PlugInEngine.LoadPlugIn();
-  MemoLog.Lines.Add('正在读取配置信息...');
+  MemoLog.Lines.Add('Loading Plugins...');
   nShiftUsrDataNameNo := 1;
 
   Caption := g_Config.sServerName;

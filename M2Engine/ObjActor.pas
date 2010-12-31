@@ -18692,7 +18692,7 @@ begin
     PlayObject.SendMsg(Self, RM_ADJUST_BONUS, 0, 0, 0, 0, '');
     Exit;
   end;
-  sMsg := Format('未分配点数:%d 已分配点数:(DC:%d MC:%d SC:%d AC:%d MAC:%d HP:%d MP:%d HIT:%d SPEED:%d)',
+  sMsg := Format('Unused Points:%d Stats:(DC:%d MC:%d SC:%d AC:%d MAC:%d HP:%d MP:%d HIT:%d SPEED:%d)',
     [PlayObject.m_nBonusPoint,
     PlayObject.m_BonusAbil.DC,
       PlayObject.m_BonusAbil.MC,
@@ -19772,15 +19772,15 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sMapName = '') then begin
-    SysMsg('命令格式: @' + sCmd + ' 地图号', c_Red, t_Hint);
+    SysMsg('@' + sCmd + ' <Map>',c_Red,t_Hint);
     Exit;
   end;
   Envir := g_MapManager.FindMap(sMapName);
   if (Envir = nil) then begin
-    SysMsg(sMapName + ' 不存在！！！', c_Red, t_Hint);
+    SysMsg(sMapName + ' does not exist.',c_Red,t_Hint);
     Exit;
   end;
-  sMsg := '地图模式: ' + Envir.GetEnvirInfo;
+  sMsg:='Map Info: ' + Envir.GetEnvirInfo;
   SysMsg(sMsg, c_Blue, t_Hint);
 end;
 
@@ -19792,12 +19792,12 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sMapName = '') or (sMapMode = '') then begin
-    SysMsg('命令格式: @' + sCmd + ' 地图号 模式', c_Red, t_Hint);
+    SysMsg('@' + sCmd + ' <Map> <MapMode>',c_Red,t_Hint);
     Exit;
   end;
   Envir := g_MapManager.FindMap(sMapName);
   if (Envir = nil) then begin
-    SysMsg(sMapName + ' 不存在！！！', c_Red, t_Hint);
+    SysMsg(sMapName + ' does not exist.',c_Red,t_Hint);
     Exit;
   end;
   if CompareText(sMapMode, 'SAFE') = 0 then begin
@@ -20018,7 +20018,7 @@ begin
       Envir.m_boNOPOSITIONMOVE := False;
     end;
   end;
-  sMsg := '地图模式: ' + Envir.GetEnvirInfo;
+  sMsg:='Environment: ' + Envir.GetEnvirInfo;
   SysMsg(sMsg, c_Blue, t_Hint);
 end;
 
@@ -25876,7 +25876,7 @@ begin
             THeroObject(m_MyHero).m_nTargetX := BaseObject.m_nCurrX;
             THeroObject(m_MyHero).m_nTargetY := BaseObject.m_nCurrY;
             THeroObject(m_MyHero).m_boTarget := True;
-            sMsg := '<英雄 %s>锁定攻击目标:%s(坐标%d/%d)';
+            sMsg := '<Hero %s> is now attacking :%s(Coordinates %d/%d)';
             if THeroObject(m_MyHero).m_btStatus <> 0 then THeroObject(m_MyHero).m_btStatus := 0;
             SysMsg(Format(sMsg, [THeroObject(m_MyHero).m_sCharName, BaseObject.m_sCharName, BaseObject.m_nCurrX, BaseObject.m_nCurrY]), c_Green, t_Hint);
             Exit;

@@ -7464,13 +7464,10 @@ var
   Health: THealth;
 begin
   Actor := PlayScene.FindActor(DefMsg.Recog);
-  if Actor <> nil then begin
+  if (Actor <> nil) and (Actor <> g_MySelf) then begin
     DecodeBuffer(sData, @Health, SizeOf(THealth));
     Actor.m_Abil.HP := Health.HP;
     Actor.m_Abil.MaxHP := Health.MaxHP;
-    {Actor.m_Abil.HP := DefMsg.param;
-    Actor.m_Abil.MaxHP := DefMsg.tag;
-    }
     Actor.m_noInstanceOpenHealth := True;
     Actor.m_dwOpenHealthTime := 2 * 1000;
     Actor.m_dwOpenHealthStart := GetTickCount;
@@ -7957,7 +7954,7 @@ procedure TfrmMain.ClientObjHeroWinExp(DefMsg: pTDefaultMessage);
 begin
   if g_MyHero <> nil then begin
     g_MyHero.m_Abil.Exp := LongWord(DefMsg.Recog);
-    DScreen.AddSysMsg('英雄已获得 ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' 点经验值。', SCREENWIDTH - 150, 40, clLime); //SCREENWIDTH - 100, 40, clGreen);
+    DScreen.AddSysMsg('Hero Gained ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' Experience', SCREENWIDTH - 150, 40, clLime); //SCREENWIDTH - 100, 40, clGreen);
   end;
 end;
 
@@ -7966,7 +7963,7 @@ begin
   if g_MyHero <> nil then begin
     g_MyHero.m_Abil.Level := MakeLong(DefMsg.param, DefMsg.tag);
     g_MyHero.SendMsg(SM_LEVELUP, g_MyHero.m_nRecogId, g_MyHero.m_nCurrX {X}, g_MyHero.m_nCurrY {Y}, g_MyHero.m_btDir {d}, 0, '', 0);
-    DScreen.AddSysMsg('英雄升级！', 30, 40, clAqua);
+    DScreen.AddSysMsg('Congratulations, Hero aquired a new level!', 30, 40, clAqua);
   end;
 end;
 

@@ -150,11 +150,11 @@
 #define M2Share_g_sGameLogMsg1 64813
 #define M2Share_g_sHumanDieEvent 64814
 #define M2Share_g_sHitOverSpeed 64815
-#define Envir_sExceptionMsg2 64816
-#define Envir_sExceptionMsg 64817
-#define Envir_sExceptionMsg 64818
-#define Envir_sExceptionMsg 64819
-#define Envir_sExceptionMsg 64820
+#define ObjActor_sExceptionMsg2 64816
+#define ObjActor_sExceptionMsg 64817
+#define ObjActor_sExceptionMsg 64818
+#define ObjActor_sExceptionMsg 64819
+#define ObjActor_sExceptionMsg 64820
 #define RunSock_sGateOpen 64821
 #define RunSock_sKickGate 64822
 #define RunSock_sGateClose 64823
@@ -166,86 +166,86 @@
 #define RunSock_sExceptionMsg 64829
 #define RunSock_sExceptionMsg 64830
 #define RunSock_sRobotAttackMsg 64831
-#define ObjActor_sExceptionMsg1 64832
-#define ObjActor_sExceptionMsg2 64833
-#define ObjActor_sExceptionMsg3 64834
-#define ObjActor_sExitGropMsg 64835
-#define ObjActor_sCanceGrop 64836
-#define ObjActor_sExceptionMsg 64837
+#define ObjActor_sExceptionMsg 64832
+#define ObjActor_sExceptionMsg1 64833
+#define ObjActor_sExceptionMsg2 64834
+#define ObjActor_sExceptionMsg3 64835
+#define ObjActor_sExceptionMsg 64836
+#define ObjActor_sExceptionMsg1 64837
 #define ObjActor_sExceptionMsg 64838
-#define ObjActor_sExceptionMsg1 64839
-#define ObjActor_sExceptionMsg2 64840
-#define ObjActor_sExceptionMsg 64841
-#define ObjActor_sExceptionMsg 64842
-#define ObjActor_sExceptionMsg 64843
-#define ObjActor_sExceptionMsg 64844
-#define ItemEvent_sExceptionMsg 64845
-#define Envir_sExceptionMsg 64846
-#define Envir_sExceptionMsg1 64847
+#define ObjActor_sExceptionMsg 64839
+#define ObjActor_sExceptionMsg1 64840
+#define ObjActor_sExceptionMsg2 64841
+#define ObjActor_sExceptionMsg3 64842
+#define ObjActor_sExitGropMsg 64843
+#define ObjActor_sCanceGrop 64844
+#define ObjActor_sExceptionMsg 64845
+#define ObjActor_sExceptionMsg 64846
+#define ObjActor_sExceptionMsg1 64847
 #define ObjActor_sExceptionMsg 64848
 #define ObjActor_sExceptionMsg 64849
-#define ObjActor_sExceptionMsg 64850
-#define ObjActor_sExceptionMsg 64851
+#define ObjActor_sOutFormatMsg 64850
+#define ObjActor_sDelOK 64851
 #define ObjActor_sExceptionMsg 64852
 #define ObjActor_sExceptionMsg 64853
-#define ObjActor_sExceptionMsg1 64854
-#define ObjActor_sExceptionMsg2 64855
+#define ObjActor_sExceptionMsg 64854
+#define ObjActor_sExceptionMsg 64855
 #define ObjActor_sExceptionMsg 64856
-#define ObjActor_sExceptionMsg1 64857
-#define ObjActor_sExceptionMsg2 64858
-#define ObjActor_sExceptionMsg3 64859
+#define ObjActor_sExceptionMsg 64857
+#define ObjActor_sExceptionMsg 64858
+#define ObjActor_sExceptionMsg 64859
 #define ObjActor_sExceptionMsg 64860
-#define ObjActor_sExceptionMsg1 64861
-#define ObjActor_sExceptionMsg 64862
-#define ObjActor_sExceptionMsg 64863
-#define ObjActor_sExceptionMsg7 64864
-#define ObjActor_sExceptionMsg8 64865
-#define ObjActor_sExceptionMsg9 64866
-#define ObjActor_sExceptionMsg10 64867
-#define ObjActor_sExceptionMsg 64868
-#define ObjActor_sExceptionMsg 64869
-#define ObjActor_sExceptionMsg 64870
-#define ObjActor_sDisableMagicCross 64871
-#define ObjActor_sExceptionMsg 64872
-#define ObjActor_sExceptionMsg 64873
-#define ObjActor_sOutFormatMsg 64874
-#define ObjActor_sDelOK 64875
+#define ObjActor_sExceptionMsg 64861
+#define ObjActor_sExceptionMsg1 64862
+#define ObjActor_sExceptionMsg2 64863
+#define ObjActor_sPayMentExpire 64864
+#define ObjActor_sDisConnectMsg 64865
+#define ObjActor_sExceptionMsg1 64866
+#define ObjActor_sExceptionMsg2 64867
+#define ObjActor_sExceptionMsg3 64868
+#define ObjActor_sExceptionMsg4 64869
+#define ObjActor_sExceptionMsg5 64870
+#define ObjActor_sExceptionMsg6 64871
+#define ObjActor_sExceptionMsg7 64872
+#define ObjActor_sExceptionMsg8 64873
+#define ObjActor_sExceptionMsg9 64874
+#define ObjActor_sExceptionMsg10 64875
 #define ObjActor_sExceptionMsg 64876
 #define ObjActor_sExceptionMsg 64877
 #define ObjActor_sExceptionMsg 64878
-#define ObjActor_sExceptionMsg 64879
-#define ObjActor_sExceptionMsg6 64880
-#define ObjActor_sExceptionMsg7 64881
-#define ObjActor_sExceptionMsg8 64882
-#define ObjActor_sExceptionMsg9 64883
-#define ObjActor_sExceptionMsg 64884
-#define ObjActor_sExceptionMsg 64885
-#define ObjActor_sExceptionMsg 64886
-#define ObjActor_sExceptionMsg0 64887
-#define ObjActor_sPayMentExpire 64888
-#define ObjActor_sDisConnectMsg 64889
-#define ObjActor_sExceptionMsg1 64890
-#define ObjActor_sExceptionMsg2 64891
-#define ObjActor_sExceptionMsg3 64892
-#define ObjActor_sExceptionMsg4 64893
-#define ObjActor_sExceptionMsg5 64894
-#define ObjActor_sExceptionMsg6 64895
+#define ObjActor_sDisableMagicCross 64879
+#define ObjActor_sDisableMagicCross 64880
+#define ObjActor_sExceptionMsg 64881
+#define ObjActor_sExceptionMsg0 64882
+#define ObjActor_sExceptionMsg1 64883
+#define ObjActor_sExceptionMsg2 64884
+#define ObjActor_sExceptionMsg3 64885
+#define ObjActor_sExceptionMsg4 64886
+#define ObjActor_sExceptionMsg5 64887
+#define ObjActor_sExceptionMsg6 64888
+#define ObjActor_sExceptionMsg7 64889
+#define ObjActor_sExceptionMsg8 64890
+#define ObjActor_sExceptionMsg9 64891
+#define ObjActor_sExceptionMsg 64892
+#define ObjActor_sExceptionMsg 64893
+#define ObjActor_sExceptionMsg 64894
+#define ObjActor_sExceptionMsg0 64895
 #define ObjHero_sExceptionMsg 64896
 #define ObjHero_sExceptionMsg 64897
 #define ObjHero_sExceptionMsg 64898
 #define ObjHero_sExceptionMsg 64899
-#define ObjActor_sExceptionMsg 64900
-#define ObjActor_sExceptionMsg 64901
-#define ObjActor_sExceptionMsg 64902
-#define ObjActor_sExceptionMsg 64903
-#define ObjActor_sDisableMagicCross 64904
-#define ObjActor_sExceptionMsg 64905
-#define ObjActor_sExceptionMsg0 64906
-#define ObjActor_sExceptionMsg1 64907
-#define ObjActor_sExceptionMsg2 64908
-#define ObjActor_sExceptionMsg3 64909
-#define ObjActor_sExceptionMsg4 64910
-#define ObjActor_sExceptionMsg5 64911
+#define ItemEvent_sExceptionMsg 64900
+#define Envir_sExceptionMsg 64901
+#define Envir_sExceptionMsg1 64902
+#define Envir_sExceptionMsg2 64903
+#define Envir_sExceptionMsg 64904
+#define Envir_sExceptionMsg 64905
+#define Envir_sExceptionMsg 64906
+#define Envir_sExceptionMsg 64907
+#define ObjActor_sExceptionMsg 64908
+#define ObjActor_sExceptionMsg 64909
+#define ObjActor_sExceptionMsg 64910
+#define ObjActor_sExceptionMsg 64911
 #define UsrEngn_sExceptionMsg 64912
 #define UsrEngn_sExceptionMsg 64913
 #define UsrEngn_sExceptionMsg 64914
@@ -1014,11 +1014,11 @@ BEGIN
 	M2Share_g_sGameLogMsg1,	"%d\t%s\t%d\t%d\t%s\t%s\t%d\t%s\t%s"
 	M2Share_g_sHumanDieEvent,	"人物死亡事件"
 	M2Share_g_sHitOverSpeed,	"[攻击超速] %s 间隔:%d 数量:%d"
-	Envir_sExceptionMsg2,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 2 ** %d"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::MoveToMovingObject"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMapMineEvent "
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::VerifyMapTime"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::ArroundDoorOpened "
+	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::SearchViewRange 1-%d %s %s %d %d %d"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GetShowName"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::MakeGhost"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ScatterBagItems"
+	ObjActor_sExceptionMsg,	"[Exception] TAIPlayObject.ProcessSayMsg Msg = %s"
 	RunSock_sGateOpen,	"游戏网关[%d](%s:%d)已打开..."
 	RunSock_sKickGate,	"服务器未就绪: %s"
 	RunSock_sGateClose,	"游戏网关[%d](%s:%d)已关闭..."
@@ -1030,30 +1030,6 @@ BEGIN
 	RunSock_sExceptionMsg,	"[Exception] TRunSocket::DoClientCertification -> GetCertification"
 	RunSock_sExceptionMsg,	"[Exception] TRunSocket::DoClientCertification CheckCode: "
 	RunSock_sRobotAttackMsg,	"[超速登陆] IP:%s 账号:%s 名称:%s 速度:%d"
-	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Die 1"
-	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Die 2"
-	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Die 3 CheckCode:"
-	ObjActor_sExitGropMsg,	"%s 已经退出了本组...."
-	ObjActor_sCanceGrop,	"你的小组被解散了..."
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::_Attack Name:= %s Code:=%d"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClearViewRange %d"
-	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::SearchViewRange"
-	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::SearchViewRange 1-%d %s %s %d %d %d"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GetShowName"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::MakeGhost"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ScatterBagItems"
-	ObjActor_sExceptionMsg,	"[Exception] TAIPlayObject.ProcessSayMsg Msg = %s"
-	ItemEvent_sExceptionMsg,	"[Exception] TItemManager::Run"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMap"
-	Envir_sExceptionMsg1,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 1 ** %d"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientGuildAlly %d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::AttackDir Code: %d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetCharColor CheckCode=%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapEvents"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapActorObjects"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SendRefMsg Name = %s"
-	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SendRefMsg 1 Name = %s"
-	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SendRefMsg 2 Name = %s"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ClearViewRange %d"
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SearchViewRange"
 	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SearchViewRange 1-%d %s %s %d %d %d"
@@ -1062,14 +1038,14 @@ BEGIN
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::WalkToEvent  CheckCode:%d %s %s %d:%d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::EnterAnotherMap Code:%d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ScatterBagItems"
-	ObjActor_sExceptionMsg7,	"[Exception] TPlayObject::Run -> Say Code:%d"
-	ObjActor_sExceptionMsg8,	"[Exception] TPlayObject::Run -> Robot Code:%d"
-	ObjActor_sExceptionMsg9,	"[Exception] TPlayObject::Run -> Auto Code:%d"
-	ObjActor_sExceptionMsg10,	"[Exception] TPlayObject::Run -> AutoGetExp"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ProcessUserLineMsg Msg = %s"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject.ProcessSayMsg Msg = %s"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientHitXY"
-	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
+	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Die 1"
+	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Die 2"
+	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Die 3 CheckCode:"
+	ObjActor_sExitGropMsg,	"%s 已经退出了本组...."
+	ObjActor_sCanceGrop,	"你的小组被解散了..."
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::_Attack Name:= %s Code:=%d"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClearViewRange %d"
+	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::SearchViewRange"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::RunTo"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::HorseRunTo"
 	ObjActor_sOutFormatMsg,	"[权限调整] %s (%s %d -> %d)"
@@ -1078,14 +1054,14 @@ BEGIN
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GainExp"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::UseLamp"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::UserLogon"
-	ObjActor_sExceptionMsg6,	"[Exception] TActorObject::Run 6"
-	ObjActor_sExceptionMsg7,	"[Exception] TActorObject::Run 7"
-	ObjActor_sExceptionMsg8,	"[Exception] TActorObject::Run 8"
-	ObjActor_sExceptionMsg9,	"[Exception] TActorObject::Run 9"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove Code:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove2 Code:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Operate Ident:"
-	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Operate %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientGuildAlly %d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::AttackDir Code: %d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetCharColor CheckCode=%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapEvents"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapActorObjects"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SendRefMsg Name = %s"
+	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SendRefMsg 1 Name = %s"
+	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SendRefMsg 2 Name = %s"
 	ObjActor_sPayMentExpire,	"您的帐户充值时间已到期！！！"
 	ObjActor_sDisConnectMsg,	"游戏被强行中断！！！"
 	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::Run -> Operate 1 Code=%d"
@@ -1094,14 +1070,14 @@ BEGIN
 	ObjActor_sExceptionMsg4,	"[Exception] TPlayObject::Run -> ClearObj"
 	ObjActor_sExceptionMsg5,	"[Exception] TPlayObject::Run -> ClearItem Code:%d"
 	ObjActor_sExceptionMsg6,	"[Exception] TPlayObject::Run -> GotoLabel:%s"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::ScatterBagItems"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOut"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOn:%d"
-	ObjHero_sExceptionMsg,	"[Exception] THeroObject::Die Name:%s ErrorCode:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Destroy Code: %d CharName: %s"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::RunNotice"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::WalkTo"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::SendSocket.."
+	ObjActor_sExceptionMsg7,	"[Exception] TPlayObject::Run -> Say Code:%d"
+	ObjActor_sExceptionMsg8,	"[Exception] TPlayObject::Run -> Robot Code:%d"
+	ObjActor_sExceptionMsg9,	"[Exception] TPlayObject::Run -> Auto Code:%d"
+	ObjActor_sExceptionMsg10,	"[Exception] TPlayObject::Run -> AutoGetExp"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ProcessUserLineMsg Msg = %s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject.ProcessSayMsg Msg = %s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientHitXY"
+	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
 	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
 	ObjActor_sExceptionMsg,	"[Exception] TAIObject::StartAttack Race=%d MagIdx=%d"
 	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Run -> Operate # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
@@ -1110,6 +1086,30 @@ BEGIN
 	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Run 3 "
 	ObjActor_sExceptionMsg4,	"[Exception] TActorObject::Run 4 Code:%d"
 	ObjActor_sExceptionMsg5,	"[Exception] TActorObject::Run 5"
+	ObjActor_sExceptionMsg6,	"[Exception] TActorObject::Run 6"
+	ObjActor_sExceptionMsg7,	"[Exception] TActorObject::Run 7"
+	ObjActor_sExceptionMsg8,	"[Exception] TActorObject::Run 8"
+	ObjActor_sExceptionMsg9,	"[Exception] TActorObject::Run 9"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove Code:%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove2 Code:%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Operate Ident:"
+	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Operate %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::ScatterBagItems"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOut"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOn:%d"
+	ObjHero_sExceptionMsg,	"[Exception] THeroObject::Die Name:%s ErrorCode:%d"
+	ItemEvent_sExceptionMsg,	"[Exception] TItemManager::Run"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMap"
+	Envir_sExceptionMsg1,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 1 ** %d"
+	Envir_sExceptionMsg2,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 2 ** %d"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::MoveToMovingObject"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMapMineEvent "
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::VerifyMapTime"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::ArroundDoorOpened "
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Destroy Code: %d CharName: %s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::RunNotice"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::WalkTo"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::SendSocket.."
 	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessMerchants"
 	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::ProcessMonsters %d %s"
 	UsrEngn_sExceptionMsg,	"[Exception] TUserEngine::Run"

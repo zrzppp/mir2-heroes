@@ -5210,7 +5210,7 @@ begin
             Result := 2;
           end else
             //if (wMagicID in [SKILL_FIREBALL, SKILL_FIREBALL2]) and (not CanWalk(m_nCurrX, m_nCurrY, m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, -1, nStep, True)) then begin
-            if ((wMagicID in [SKILL_FIREBALL, SKILL_FIREBALL2]) or (m_btRaceServer = RC_MOONOBJECT)) and (not CanAttack(m_TargetCret, 10, btDir)) then begin
+            if ((wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL]) or (m_btRaceServer = RC_MOONOBJECT)) and (not CanAttack(m_TargetCret, 10, btDir)) then begin
             Result := 3;
           end else
             if {((GetTickCount - m_dwStationTick) > 1000 * 10) and}  TargetNeedRunPos and CanRunPos(5) then begin
@@ -5609,7 +5609,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
     Result := False;
     try
       nError := 0;
-      boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_FIREBALL2, SKILL_FIRECHARM]) or (m_btJob = 0);
+      boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]) or (m_btJob = 0);
       if (m_btJob = 0) or (wMagicID <= 0) then begin
         nRange := 1;
         if (wMagicID = 58) or (wMagicID = 77) then nRange := 4;
@@ -5758,7 +5758,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
           nRange := 1;
 
       //boFlag := nRange = 1;
-        boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_FIREBALL2, SKILL_FIRECHARM]) or (nRange = 1);
+        boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]) or (nRange = 1);
 
         for I := 2 downto 1 do begin
           if FindPosOfSelf(@WalkStep, I, boFlag) then begin
@@ -5827,7 +5827,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
     Result := False;
     nRange := _MAX(Random(3), 2);
 
-    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_FIREBALL2, SKILL_FIRECHARM]);
+    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]);
     for I := nRange downto 1 do begin
         //if FindPosOfTarget(@WalkStep, ActorObject.m_nCurrX, ActorObject.m_nCurrY, I, boFlag) then begin
       if FindPosOfSelf(@WalkStep, I, boFlag) then begin
@@ -5897,7 +5897,7 @@ function TAIObject.ActThink(wMagicID: Word): Boolean;
   begin
     Result := False;
     nRange := 2;
-    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_FIREBALL2, SKILL_FIRECHARM]);
+    boFlag := (m_btRaceServer = RC_MOONOBJECT) or (wMagicID in [SKILL_FIREBALL, SKILL_GREATFIREBALL, SKILL_FIRECHARM]);
     for I := nRange downto 1 do begin
       if FindPosOfSelf(@WalkStep, I, boFlag) then begin
         {if m_Master <> nil then begin
@@ -8903,8 +8903,8 @@ begin
         for I := 0 to m_MagicList.Count - 1 do begin
           UserMagic := m_MagicList.Items[I];
           case UserMagic.wMagIdx of
-            SKILL_FIREBALL {1},
-              SKILL_FIREBALL2,
+              SKILL_FIREBALL,
+              SKILL_GREATFIREBALL,
               SKILL_FIRE,
               SKILL_SHOOTLIGHTEN,
               SKILL_LIGHTENING,
@@ -30703,10 +30703,16 @@ begin
   for I := 0 to m_MagicList.Count - 1 do begin
     UserMagic := m_MagicList.Items[I];
     case UserMagic.wMagIdx of
-      SKILL_ONESWORD: begin //基本剑法
+      SKILL_FENCING: begin // Fencing - ID: 3
           m_MagicOneSwordSkill := UserMagic;
           if UserMagic.btLevel > 0 then begin
             m_btHitPoint := m_btHitPoint + Round(9 / 3 * UserMagic.btLevel);
+          end;
+        end;
+      SKILL_SPIRITSWORD: begin // Spirit Sword - ID: 4
+          m_MagicOneSwordSkill := UserMagic;
+          if UserMagic.btLevel > 0 then begin
+            m_btHitPoint := m_btHitPoint + Round(8 / 3 * UserMagic.btLevel);
           end;
         end;
       SKILL_YEDO: begin //攻杀剑法
@@ -30728,12 +30734,7 @@ begin
           m_MagicFireSwordSkill := UserMagic;
           m_nHitDouble := 4 + UserMagic.btLevel * 4;
         end;
-      SKILL_ILKWANG: begin //内功心法
-          m_MagicOneSwordSkill := UserMagic;
-          if UserMagic.btLevel > 0 then begin
-            m_btHitPoint := m_btHitPoint + Round(8 / 3 * UserMagic.btLevel);
-          end;
-        end;
+
       SKILL_SHIELD: begin //魔法盾
           m_Magic31Skill := UserMagic;
         end;

@@ -1764,6 +1764,9 @@ begin
           m_nState := Msg.State;
           if m_nState and STATE_OPENHEATH <> 0 then m_boOpenHealth := True
           else m_boOpenHealth := False;
+         
+          if (GetTickCount - m_dwOpenHealthStart > m_dwOpenHealthTime) then m_noInstanceOpenHealth := False
+          else m_noInstanceOpenHealth := True;
         end;
     end;
 
@@ -2571,7 +2574,7 @@ var
   rc: TRect;
   nHPY, nMPY: Integer;
 begin
-  if m_boOpenHealth and not m_boDeath then begin
+  if (m_boOpenHealth or m_noInstanceOpenHealth) and not m_boDeath then begin
   if m_sUserName = '' then Exit;
   if m_btHorse = 0 then begin
     nHPY := 10;

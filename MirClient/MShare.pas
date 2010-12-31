@@ -1217,11 +1217,11 @@ var
     boShowMoveLable: True;
     boShowGreenHint: False; // Debug Text
     boBGSound: True;
-    boItemHint: True;
+    boItemHint: False;
     boMagicLock: False; // Lock Magic Onto Target
     boOrderItem: True;
     boOnlyShowCharName: False;
-    boPickUpItemAll: True;
+    boPickUpItemAll: False;
     boCloseGroup: True;
     boDuraWarning: True;
     boNotNeedShift: True;
@@ -4689,11 +4689,11 @@ begin
     g_Config.boShowUserName := False;
     g_Config.boShowMonName := False;
     g_Config.boShowGreenHint := False;
-    g_Config.boItemHint := ini.ReadBool('Basic', 'ItemHint', g_Config.boItemHint);
+    g_Config.boItemHint := False;
     g_Config.boMagicLock := False;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
     g_Config.boOnlyShowCharName := False;
-    g_Config.boPickUpItemAll := ini.ReadBool('Basic', 'PickUpItemAll', g_Config.boPickUpItemAll);
+    g_Config.boPickUpItemAll := False;
     g_Config.boCloseGroup := ini.ReadBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);

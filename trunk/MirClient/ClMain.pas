@@ -1502,7 +1502,6 @@ begin
   g_boCheckBadMapMode := False;
   g_boCheckSpeedHackDisplay := False;
   g_boViewMiniMap := False;
-  g_boShowGreenHint := True;
   g_boShowWhiteHint := True;
   FailDir := 0;
   FailAction := 0;
@@ -2239,6 +2238,7 @@ begin
             end;
           end;
         caRun: begin
+            // New Running Method
             LB_RUN:
             stdcount := 1;
             if (g_MySelf.m_nState and $00100000) <> 0 then
@@ -4561,38 +4561,6 @@ begin
 end;
 
 procedure TfrmMain.MouseTimerTimer(Sender: TObject);
-  procedure AutoPickUpItem; //自动捡物
-  var
-    I: Integer;
-//  ItemList: TList;
-    DropItem: pTDropItem;
-    ShowItem: pTShowItem;
-    PickupList: TList;
-  begin
-    //if g_Config.boPickUpItem then begin
-    if {(GetTickCount - g_dwPickUpItemTick > 300) and}(BagItemCount < 46) then begin
-      g_dwPickUpItemTick := GetTickCount;
-      PickupList := TList.Create;
-      PlayScene.GetXYDropItemsList(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, PickupList);
-      for I := 0 to PickupList.Count - 1 do begin
-        if BagItemCount < 46 then begin
-          if g_Config.boPickUpItemAll then begin
-            SendPickup;
-          end else begin
-            DropItem := PickupList.Items[I];
-            ShowItem := g_ShowItemList.Find(DropItem.Name);
-            if (ShowItem <> nil) and ShowItem.boPickup then
-              SendPickup;
-          end;
-        end else begin
-          Break;
-        end;
-      end;
-      PickupList.Free;
-    end;
-    //end;
-  end;
-
 var
   I: Integer;
   pt: TPoint;
@@ -4705,8 +4673,6 @@ begin
         g_MySelf.SendMsg(CM_HIT + 1, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, g_MySelf.m_btDir, 0, 0, '', 0);
       end;
     end;
-
-    AutoPickUpItem; //自动捡物
 
     //自动烈火
     if g_Config.boSmartFireHit and (GetTickCount - g_dwAutoFireTick > 1000 * 3) and (g_MySelf.m_Abil.MP >= 7) and (not g_boNextTimeFireHit) and (GetTickCount - g_dwLatestFireHitTick >= g_ServerConfig.nFireDelayTime) then begin
@@ -4986,29 +4952,14 @@ begin
     DComboboxAutoUseMagic.Items.Clear;
     DSerieMagicMenu.Clear;
 
-    DCheckBoxShowActorLable.OnClick := nil;
-    DCheckBoxHideBlueLable.OnClick := nil;
-    DCheckBoxShowNumberLable.OnClick := nil;
-    DCheckBoxShowJobAndLevel.OnClick := nil;
-    DCheckBoxShowUserName.OnClick := nil;
-    DCheckBoxShowMonName.OnClick := nil;
-    DCheckBoxShowItemName.OnClick := nil;
     DCheckBoxShowMoveNumberLable.OnClick := nil;
-    DCheckBoxShowGreenHint.OnClick := nil;
-    DCheckBoxMagicLock.OnClick := nil;
     DCheckBoxOrderItem.OnClick := nil;
-    DCheckBoxMagicLock.OnClick := nil;
-    DCheckBoxCloseGroup.OnClick := nil;
     DCheckBoxItemDuraHint.OnClick := nil;
-    DCheckBoxNotNeedShift.OnClick := nil;
-    DCheckBoxAutoHorse.OnClick := nil;
-    DCheckBoxPickUpItemAll.OnClick := nil;
-    DCheckBoxOnlyShowCharName.OnClick := nil;
-    DCheckBoxItemHint.OnClick := nil;
+    DCheckBoxMusic.OnClick := nil;
 
+    DCheckBoxPickUpItemAll.OnClick := nil;
     DCheckBoxBook.OnClick := nil;
     DCheckBoxClose.OnClick := nil;
-
     DCheckBoxHeroLogOut.OnClick := nil;
 
     DCheckBoxLongHit.OnClick := nil;
@@ -5673,7 +5624,6 @@ begin
       Exit;
     end;
     if Str = '/hint screen' then begin
-      g_boShowGreenHint := not g_boShowGreenHint;
       g_boShowWhiteHint := not g_boShowWhiteHint;
       Exit;
     end;

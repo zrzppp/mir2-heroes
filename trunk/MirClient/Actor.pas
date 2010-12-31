@@ -982,7 +982,6 @@ type
     function GetDrawEffectValue: TColorEffect;
     procedure FreeNameSurface;
     procedure NameTextOut(dsurface: TTexture; sName: string; X, Y: Integer; FColor: TColor = clWhite; BColor: TColor = $00050505);
-    procedure DrawChrInfo(dsurface: TTexture);
     procedure DrawChr(dsurface: TTexture; dx, dy: Integer; blend: Boolean; boFlag: Boolean); dynamic;
     procedure DrawEff(dsurface: TTexture; dx, dy: Integer); dynamic;
     procedure ShowHealthStatus(MSurface: TTexture);
@@ -2860,118 +2859,6 @@ begin
       X - dsurface.TextWidth(nstr) div 2,
       Y + row * 12, nstr, FColor, BColor);
     Inc(row);
-  end;
-end;
-
-procedure TActor.DrawChrInfo(dsurface: TTexture);
-var
-  k: Integer;
-  sName: string;
-  infoMsg: string;
-  nX, nY: Integer;
-begin
-  infoMsg := '';
-  if (not m_boDeath) then begin
-    if (m_Abil.MaxHP > 1) and (m_boOpenHealth or (Self = g_MySelf) or (Self = g_MyHero)) then begin
-
-      if g_Config.boShowNumberLable then begin //显示人物血量(数字显示)
-        infoMsg := IntToStr(m_Abil.HP) + '/' + IntToStr(m_Abil.MaxHP);
-      end;
-      if m_btRace = RC_PLAYOBJECT then begin
-        if g_Config.boShowJobAndLevel then begin //显示人物职业等级(数字显示)
-          if infoMsg <> '' then infoMsg := infoMsg + '/';
-          case m_btJob of
-            0: infoMsg := infoMsg + 'Z';
-            1: infoMsg := infoMsg + 'F';
-            2: infoMsg := infoMsg + 'D';
-          else infoMsg := infoMsg + 'UnKnow';
-          end;
-          infoMsg := infoMsg + IntToStr(m_Abil.Level);
-        end;
-        if (m_btHair >= 4) then infoMsg := '';
-      end;
-
-      if infoMsg <> '' then begin
-        nX := m_nSayX;
-        nY := m_nSayY - 21;
-        if m_btHorse > 0 then begin
-          case m_btDir of
-            DR_UP,
-              DR_UPRIGHT,
-              DR_UPLEFT: begin
-                nY := nY - 20;
-              end;
-            DR_DOWN,
-              DR_DOWNRIGHT,
-              DR_DOWNLEFT: begin
-                nY := nY - 12;
-              end;
-            DR_LEFT,
-              DR_RIGHT: begin
-                nY := nY - 16;
-              end;
-          end;
-        end;
-        dsurface.BoldTextOut(nX - dsurface.TextWidth(infoMsg) div 2,
-          nY, infoMsg, GetRGB(g_Config.btActorLableColor));
-
-      end;
-    end; // TActor_Abil(Actor).MaxHP > 1
-        {人物}
-    if g_Config.boShowUserName then begin
-        {NPC}
-      if m_btRace = RC_ANIMAL then begin
-        if g_Config.boOnlyShowCharName then begin
-          sName := m_sUserName;
-        end else begin
-          sName := m_sDescUserName + '\' + m_sUserName;
-        end;
-        NameTextOut(dsurface, sName,
-          m_nSayX,
-          m_nSayY + 30,
-          m_nNameColor);
-      end;
-
-      if (g_FocusCret <> Self) and (m_btRace = RC_PLAYOBJECT) then begin
-        if g_MySelf = Self then begin
-          if g_Config.boOnlyShowCharName then begin
-            sName := m_sUserName;
-          end else begin
-            sName := m_sDescUserName + '\' + m_sUserName;
-          end;
-          NameTextOut(dsurface, sName,
-            m_nSayX,
-            m_nSayY + 30,
-            m_nNameColor);
-        end else begin
-             // if (m_btHair < 4) then begin           $002F0000
-          sName := m_sUserName;
-          NameTextOut(dsurface, sName,
-            m_nSayX,
-            m_nSayY + 30,
-            m_nNameColor);
-        end;
-      end;
-    end;
-        {怪物}
-    if (g_FocusCret <> Self) and (m_btRace <> RC_PLAYOBJECT) and ((m_btRace >= RC_MONSTER) or (m_btRace <> RC_ANIMAL)) then begin
-      sName := m_sUserName;
-      if Assigned(g_PlugInfo.HookShowMonName) then begin
-        if g_PlugInfo.HookShowMonName(PChar(sName)) then begin
-          NameTextOut(dsurface, sName,
-            m_nSayX,
-            m_nSayY + 30,
-            m_nNameColor);
-          Exit;
-        end;
-      end;
-      if g_Config.boShowMonName then begin
-        NameTextOut(dsurface, sName,
-          m_nSayX,
-          m_nSayY + 30,
-          m_nNameColor);
-      end;
-    end;
   end;
 end;
 

@@ -1855,7 +1855,7 @@ begin
       for k := 0 to m_ActorList.Count - 1 do begin
         Actor := TActor(m_ActorList.Items[k]);
         if (not Actor.m_boDeath) and (abs(Actor.m_nCurrX - g_MySelf.m_nCurrX) <= 8) and (abs(Actor.m_nCurrY - g_MySelf.m_nCurrY) <= 7) then begin
-          Actor.DrawChrInfo(m_ObjSurface);
+          
         end;
       end;
 
@@ -1867,7 +1867,7 @@ begin
           g_FocusCret.m_nNameColor);
       end;
 
-      if (not g_Config.boShowUserName) and (g_MySelf <> nil) then begin
+      if (g_MySelf <> nil) then begin
         if IsSelectMyself(g_nMouseX, g_nMouseY) then begin
           sName := g_MySelf.m_sDescUserName + '\' + g_MySelf.m_sUserName;
           g_MySelf.NameTextOut(m_ObjSurface, sName,

@@ -505,22 +505,13 @@ type
     DScrollTab7: TDScroll;
     DMemoTab8: TDMemo;
     DScrollTab8: TDScroll;
-    DCheckBoxShowActorLable: TDCheckBox;
-    DCheckBoxHideBlueLable: TDCheckBox;
-    DCheckBoxShowNumberLable: TDCheckBox;
-    DCheckBoxShowJobAndLevel: TDCheckBox;
-    DCheckBoxShowUserName: TDCheckBox;
-    DCheckBoxShowMonName: TDCheckBox;
-    DCheckBoxShowItemName: TDCheckBox;
+
     DCheckBoxShowMoveNumberLable: TDCheckBox;
-    DCheckBoxShowGreenHint: TDCheckBox;
     DCheckBoxMusic: TDCheckBox;
-    DCheckBoxItemHint: TDCheckBox;
-    DCheckBoxMagicLock: TDCheckBox;
     DCheckBoxOrderItem: TDCheckBox;
-    DCheckBoxOnlyShowCharName: TDCheckBox;
-    DCheckBoxCloseGroup: TDCheckBox;
     DCheckBoxItemDuraHint: TDCheckBox;
+    DCheckBoxCompareItem: TDCheckBox;
+
     DLabelItemName: TDLabel;
     DLabelItemHint: TDLabel;
     DLabelPickUpItem: TDLabel;
@@ -588,7 +579,6 @@ type
     DLabelHeroCallHero: TDLabel;
     DLabelKeyMemo: TDLabel;
     DCheckBoxUseKey: TDCheckBox;
-    DCheckBoxNotNeedShift: TDCheckBox;
     DMenuPoison: TDPopupMenu;
     DMenuItemType: TDPopupMenu;
     DCategorizeSys: TDButton;
@@ -600,7 +590,6 @@ type
     DCheckBoxStruckShield: TDCheckBox;
     DCheckBoxSmartPosLongHit: TDCheckBox;
     DCheckBoxSmartWalkLongHit: TDCheckBox;
-    DCheckBoxAutoHorse: TDCheckBox;
     DCheckBoxGuaji: TDCheckBox;
     DLabelGuajiQunti: TDLabel;
     DComboboxGuajiQunti: TDCombobox;
@@ -623,7 +612,6 @@ type
     DSerieMagic8: TDButton;
     DSerieMagicMenu: TDPopupMenu;
     DEditSerieMagic: TDButton;
-    DCheckBoxCompareItem: TDCheckBox;
     DEditAdjustIncrement: TDEdit;
     DLabelAdjustIncrement: TDLabel;
     DEditHumHPPercent1: TDEdit;
@@ -4373,128 +4361,35 @@ begin
   {DMemoTab1.PosX := 20;
   DMemoTab1.PosY := 20;  }
 
-
-  DCheckBoxShowActorLable.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxHideBlueLable.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxShowNumberLable.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxShowJobAndLevel.SetImgIndex(g_WMain2Images, 228);
-
-  DCheckBoxShowUserName.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxShowMonName.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxShowItemName.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxShowMoveNumberLable.SetImgIndex(g_WMain2Images, 228);
-
-
-  DCheckBoxShowGreenHint.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxMusic.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxItemHint.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxMagicLock.SetImgIndex(g_WMain2Images, 228);
-
   DCheckBoxOrderItem.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxOnlyShowCharName.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxCloseGroup.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxItemDuraHint.SetImgIndex(g_WMain2Images, 228);
-
-  DCheckBoxNotNeedShift.SetImgIndex(g_WMain2Images, 228);
-  DCheckBoxAutoHorse.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxCompareItem.SetImgIndex(g_WMain2Images, 228);
 
-  DCheckBoxShowActorLable.Left := 0;
-  DCheckBoxHideBlueLable.Left := 68 + 20;
-  DCheckBoxShowNumberLable.Left := 68 * 2 + 20 * 2;
-  DCheckBoxShowJobAndLevel.Left := 68 * 3 + 20 * 3;
+  DCheckBoxShowMoveNumberLable.Left := 0;
+  DCheckBoxShowMoveNumberLable.Top := 0;
 
-  DCheckBoxShowActorLable.Top := 0;
-  DCheckBoxHideBlueLable.Top := 0;
-  DCheckBoxShowNumberLable.Top := 0;
-  DCheckBoxShowJobAndLevel.Top := 0;
+  DCheckBoxItemDuraHint.Left := 68 + 35;
+  DCheckBoxItemDuraHint.Top := 0;
 
-
-  DCheckBoxShowUserName.Left := 0;
-  DCheckBoxShowMonName.Left := 68 + 20;
-  DCheckBoxShowItemName.Left := 68 * 2 + 20 * 2;
-  DCheckBoxShowMoveNumberLable.Left := 68 * 3 + 20 * 3;
-
-
-  DCheckBoxShowUserName.Top := 30;
-  DCheckBoxShowMonName.Top := 30;
-  DCheckBoxShowItemName.Top := 30;
-  DCheckBoxShowMoveNumberLable.Top := 30;
-
-
-
-
-  DCheckBoxShowGreenHint.Left := 0;
-  DCheckBoxMusic.Left := 68 + 20;
-  DCheckBoxItemHint.Left := 68 * 2 + 20 * 2;
-  DCheckBoxMagicLock.Left := 68 * 3 + 20 * 3;
-
-  DCheckBoxShowGreenHint.Top := 30 * 2;
-  DCheckBoxMusic.Top := 30 * 2;
-  DCheckBoxItemHint.Top := 30 * 2;
-  DCheckBoxMagicLock.Top := 30 * 2;
-
-
+  DCheckBoxMusic.Left := 68 * 2 + 35 * 2;
+  DCheckBoxMusic.Top := 0;
 
   DCheckBoxOrderItem.Left := 0;
-  DCheckBoxOnlyShowCharName.Left := 68 + 20;
-  DCheckBoxCloseGroup.Left := 68 * 2 + 20 * 2;
-  DCheckBoxItemDuraHint.Left := 68 * 3 + 20 * 3;
+  DCheckBoxOrderItem.Top := 30;
 
-  DCheckBoxOrderItem.Top := 30 * 3;
-  DCheckBoxOnlyShowCharName.Top := 30 * 3;
-  DCheckBoxCloseGroup.Top := 30 * 3;
-  DCheckBoxItemDuraHint.Top := 30 * 3;
-
-  DCheckBoxNotNeedShift.Left := 0;
-  DCheckBoxNotNeedShift.Top := 30 * 4;
-
-  DCheckBoxAutoHorse.Left := 68 + 20;
-  DCheckBoxAutoHorse.Top := 30 * 4;
-
-  DCheckBoxCompareItem.Left := 68 * 2 + 20 * 2;
-  DCheckBoxCompareItem.Top := 30 * 4;
+  DCheckBoxCompareItem.Left := 68 + 35;
+  DCheckBoxCompareItem.Top := 30;
 
   ItemList := DMemoTab1.Add;
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowActorLable);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxHideBlueLable);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowNumberLable);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowJobAndLevel);
-
-
-
-  ItemList := DMemoTab1.Add;
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowUserName);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowMonName);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowItemName);
   DMemoTab1.AddSuItem(ItemList, DCheckBoxShowMoveNumberLable);
-
-
-  ItemList := DMemoTab1.Add;
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxShowGreenHint);
+  DMemoTab1.AddSuItem(ItemList, DCheckBoxItemDuraHint);
   DMemoTab1.AddSuItem(ItemList, DCheckBoxMusic);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxItemHint);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxMagicLock);
-
 
   ItemList := DMemoTab1.Add;
   DMemoTab1.AddSuItem(ItemList, DCheckBoxOrderItem);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxOnlyShowCharName);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxCloseGroup);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxItemDuraHint);
-
-  ItemList := DMemoTab1.Add;
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxNotNeedShift);
-  DMemoTab1.AddSuItem(ItemList, DCheckBoxAutoHorse);
   DMemoTab1.AddSuItem(ItemList, DCheckBoxCompareItem);
-  //DebugOutStr('DCheckBoxShowActorLable:' + IntToStr(DCheckBoxShowActorLable.Height));
-
- // DMemoTab1.ItemSize := 24;
-
-  //DebugOutStr('DMemoTab1.Height:' + IntToStr(DMemoTab1.Height)+' DScrollTab1.Max:' + IntToStr(DScrollTab1.Max));
-
-
-
 
 {----------------------DMemoTab2------------------------------}
 
@@ -18611,32 +18506,15 @@ var
 begin
   if g_MySelf = nil then Exit;
 
-  DCheckBoxShowActorLable.OnClick := nil;
-  DCheckBoxHideBlueLable.OnClick := nil;
-  DCheckBoxShowNumberLable.OnClick := nil;
-  DCheckBoxShowJobAndLevel.OnClick := nil;
-  DCheckBoxShowUserName.OnClick := nil;
-  DCheckBoxShowMonName.OnClick := nil;
-  DCheckBoxShowItemName.OnClick := nil;
   DCheckBoxShowMoveNumberLable.OnClick := nil;
-  DCheckBoxShowGreenHint.OnClick := nil;
-  DCheckBoxMagicLock.OnClick := nil;
   DCheckBoxOrderItem.OnClick := nil;
-  DCheckBoxMagicLock.OnClick := nil;
-  DCheckBoxCloseGroup.OnClick := nil;
   DCheckBoxItemDuraHint.OnClick := nil;
-  DCheckBoxNotNeedShift.OnClick := nil;
-  DCheckBoxAutoHorse.OnClick := nil;
   DCheckBoxPickUpItemAll.OnClick := nil;
-  DCheckBoxOnlyShowCharName.OnClick := nil;
-  DCheckBoxItemHint.OnClick := nil;
+  DCheckBoxMusic.OnClick := nil;
 
   DCheckBoxBook.OnClick := nil;
   DCheckBoxClose.OnClick := nil;
-
   DCheckBoxHeroLogOut.OnClick := nil;
-
-
   DCheckBoxLongHit.OnClick := nil;
   DCheckBoxWideHit.OnClick := nil;
   DCheckBoxFireHit.OnClick := nil;
@@ -18711,34 +18589,13 @@ begin
   DComboboxHeroHP2.OnChange := nil;
   DComboboxHeroMP2.OnChange := nil;
 
-
-
-
-  DCheckBoxShowActorLable.Checked := g_Config.boShowActorLable;
-  DCheckBoxHideBlueLable.Checked := g_Config.boHideBlueLable;
-  DCheckBoxShowNumberLable.Checked := g_Config.boShowNumberLable;
-  DCheckBoxShowJobAndLevel.Checked := g_Config.boShowJobAndLevel;
-  DCheckBoxShowUserName.Checked := g_Config.boShowUserName;
-  DCheckBoxShowMonName.Checked := g_Config.boShowMonName;
   DCheckBoxShowMoveNumberLable.Checked := g_Config.boShowMoveLable;
-  DCheckBoxShowGreenHint.Checked := g_Config.boShowGreenHint;
   DCheckBoxMusic.Checked := g_Config.boBGSound;
-  DCheckBoxMagicLock.Checked := g_Config.boMagicLock;
   DCheckBoxOrderItem.Checked := g_Config.boOrderItem;
-  DCheckBoxMagicLock.Checked := g_Config.boMagicLock;
-  DCheckBoxCloseGroup.Checked := g_Config.boCloseGroup;
   DCheckBoxItemDuraHint.Checked := g_Config.boDuraWarning;
-  DCheckBoxNotNeedShift.Checked := g_Config.boNotNeedShift;
-  DCheckBoxAutoHorse.Checked := g_Config.boAutoHorse;
   DCheckBoxCompareItem.Checked := g_Config.boCompareItem;
 
-  DCheckBoxPickUpItemAll.Checked := g_Config.boPickUpItemAll;
-  DCheckBoxShowItemName.Checked := g_Config.boShowItemName;
-  DCheckBoxOnlyShowCharName.Checked := g_Config.boOnlyShowCharName;
-  //DCheckBoxPickItem.Enabled := False;
-  DCheckBoxItemHint.Checked := g_Config.boItemHint;
-
-
+  DCheckBoxPickUpItemAll.Checked := False;
   DCheckBoxBook.Checked := g_Config.boRenewBookIsAuto;
   DCheckBoxClose.Checked := g_Config.boRenewCloseIsAuto;
   DCheckBoxHeroLogOut.Checked := g_Config.boRenewHeroLogOutIsAuto;
@@ -18825,7 +18682,7 @@ begin
   DCheckBoxPoison.Checked := g_Config.boChangePoison;
   DComboboxPoison.ItemIndex := g_Config.nPoisonIndex;
 
-  DCheckBoxGuaji.Checked := g_Config.boGuaji;
+  DCheckBoxGuaji.Checked := False;
 
   DCheckBoxUseKey.Checked := g_Config.boUseHotkey;
   DLabelSerieSkill.Idx := g_Config.nSerieSkill;
@@ -18879,25 +18736,11 @@ begin
     //end;
   end;
 
-  DCheckBoxShowActorLable.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxHideBlueLable.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxShowNumberLable.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxShowJobAndLevel.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxShowUserName.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxShowMonName.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxShowItemName.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxShowMoveNumberLable.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxShowGreenHint.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxMagicLock.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxOrderItem.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxMagicLock.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxCloseGroup.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxItemDuraHint.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxNotNeedShift.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxAutoHorse.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxPickUpItemAll.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxOnlyShowCharName.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxItemHint.OnClick := DCheckBoxShowActorLableClick;
+  DCheckBoxMusic.OnClick := DCheckBoxShowActorLableClick;
 
   DCheckBoxBook.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxClose.OnClick := DCheckBoxShowActorLableClick;
@@ -18977,16 +18820,6 @@ begin
   DComboboxHeroMP1.OnChange := DComboboxHeroMP1Change;
   DComboboxHeroHP2.OnChange := DComboboxHeroHP2Change;
   DComboboxHeroMP2.OnChange := DComboboxHeroMP2Change;
-
-  //Cheat Disabling
-  DCheckBoxShowActorLable.Enabled := False;
-  DCheckBoxShowGreenHint.Enabled := False;
-  DCheckBoxHideBlueLable.Enabled := False;
-  DCheckBoxShowNumberLable.Enabled := False;
-  DCheckBoxShowJobAndLevel.Enabled := False;
-  DCheckBoxMagicLock.Enabled := False;
-  DCheckBoxShowUserName.Enabled := False;
-  DCheckBoxShowMonName.Enabled := False;
 
   //Disable Bot
   DButtonTab2.Enabled := False;
@@ -19136,49 +18969,14 @@ procedure TFrmDlg.DCheckBoxShowActorLableClick(Sender: TObject; X,
   Y: Integer);
 begin
   if (g_MySelf = nil) or (not g_boLoadUserConfig) then Exit;
-  if Sender = DCheckBoxShowActorLable then
-    g_Config.boShowActorLable := DCheckBoxShowActorLable.Checked;
-  if Sender = DCheckBoxHideBlueLable then
-    g_Config.boHideBlueLable := DCheckBoxHideBlueLable.Checked;
-  if Sender = DCheckBoxShowNumberLable then
-    g_Config.boShowNumberLable := DCheckBoxShowNumberLable.Checked;
-  if Sender = DCheckBoxShowJobAndLevel then
-    g_Config.boShowJobAndLevel := DCheckBoxShowJobAndLevel.Checked;
-  if Sender = DCheckBoxShowUserName then
-    g_Config.boShowUserName := DCheckBoxShowUserName.Checked;
-  if Sender = DCheckBoxShowMonName then
-    g_Config.boShowMonName := DCheckBoxShowMonName.Checked;
-  if Sender = DCheckBoxShowItemName then
-    g_Config.boShowItemName := DCheckBoxShowItemName.Checked;
   if Sender = DCheckBoxShowMoveNumberLable then
     g_Config.boShowMoveLable := DCheckBoxShowMoveNumberLable.Checked;
-  if Sender = DCheckBoxShowGreenHint then
-    g_Config.boShowGreenHint := DCheckBoxShowGreenHint.Checked;
-  if Sender = DCheckBoxMagicLock then
-    g_Config.boMagicLock := DCheckBoxMagicLock.Checked;
   if Sender = DCheckBoxOrderItem then
     g_Config.boOrderItem := DCheckBoxOrderItem.Checked;
-  if Sender = DCheckBoxMagicLock then
-    g_Config.boMagicLock := DCheckBoxMagicLock.Checked;
-  if Sender = DCheckBoxCloseGroup then
-    g_Config.boCloseGroup := DCheckBoxCloseGroup.Checked;
   if Sender = DCheckBoxItemDuraHint then
     g_Config.boDuraWarning := DCheckBoxItemDuraHint.Checked;
-  if Sender = DCheckBoxNotNeedShift then
-    g_Config.boNotNeedShift := DCheckBoxNotNeedShift.Checked;
-  if Sender = DCheckBoxAutoHorse then
-    g_Config.boAutoHorse := DCheckBoxAutoHorse.Checked;
   if Sender = DCheckBoxCompareItem then
     g_Config.boCompareItem := DCheckBoxCompareItem.Checked;
-
-
-  if Sender = DCheckBoxPickUpItemAll then
-    g_Config.boPickUpItemAll := DCheckBoxPickUpItemAll.Checked;
-  if Sender = DCheckBoxOnlyShowCharName then
-    g_Config.boOnlyShowCharName := DCheckBoxOnlyShowCharName.Checked;
-  if Sender = DCheckBoxItemHint then
-    g_Config.boItemHint := DCheckBoxItemHint.Checked;
-
 
   if Sender = DCheckBoxBook then
     g_Config.boRenewBookIsAuto := DCheckBoxBook.Checked;
@@ -19226,9 +19024,6 @@ begin
   if Sender = DCheckBoxPoison then
     g_Config.boChangePoison := DCheckBoxPoison.Checked;
 
-  if Sender = DCheckBoxGuaji then
-    g_Config.boGuaji := DCheckBoxGuaji.Checked;
-
   if Sender = DCheckBoxHumHP1 then
     g_Config.boRenewHumHPIsAuto1 := DCheckBoxHumHP1.Checked;
   if Sender = DCheckBoxHumMP1 then
@@ -19246,10 +19041,6 @@ begin
   if Sender = DCheckBoxHeroMP2 then
     g_Config.boRenewHeroMPIsAuto2 := DCheckBoxHeroMP2.Checked;
 
-
-  if not g_Config.boGuaji then begin
-    g_GuaJi.Stop;
-  end;
   SaveUserConfig();
 end;
 

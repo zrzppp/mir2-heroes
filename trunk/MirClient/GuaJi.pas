@@ -63,11 +63,7 @@ end;
 
 procedure TGuaJi.Start;
 begin
-  if g_Config.boGuaji and (g_MySelf <> nil) and (not g_MySelf.m_boDeath) and (not FStarted) then begin
-    FStarted := True;
-    FRunTick := GetTickCount;
-    DScreen.AddChatBoardString('¿ªÊ¼¹Ò»ú Ctrl + L', clYellow, clRed);
-  end;
+
 end;
 
 procedure TGuaJi.Stop;
@@ -465,88 +461,8 @@ begin
       Stop;
   end;
 
-  if g_Config.boGuaji and FStarted and (GetTickCount - FRunTick > 200) then begin
-    FRunTick := GetTickCount;
-    if not PlayScene.IsValidActor(m_TargetCret) then m_TargetCret := nil;
-    if (m_TargetCret <> nil) and m_TargetCret.m_boDeath then m_TargetCret := nil;
-    if (m_TargetCret <> nil) and (m_TargetCret.m_Abil.HP = 0) then m_TargetCret := nil;
-    if m_TargetCret = nil then SearchTarget;
-
-    if m_TargetCret <> nil then begin
-      //DScreen.AddChatBoardString('m_TargetCret <> nil:' + m_TargetCret.m_sUserName + ' m_TargetCret.m_btRace:' + IntToStr(m_TargetCret.m_btRace), clYellow, clRed);
-      pm := nil;
-      if g_MySelf.m_btJob > 0 then begin
-        if (GetRangeTargetCount(m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, 4) > 1) and (FrmDlg.DComboboxGuajiQunti.ItemIndex >= 0) and (FrmDlg.DComboboxGuajiQunti.ItemIndex < FrmDlg.DComboboxGuajiQunti.Items.Count) then
-          pm := PTClientMagic(FrmDlg.DComboboxGuajiQunti.Items.Objects[FrmDlg.DComboboxGuajiQunti.ItemIndex]);
-
-        if (pm = nil) and (FrmDlg.DComboboxGuajiGeti.ItemIndex >= 0) and (FrmDlg.DComboboxGuajiGeti.ItemIndex < FrmDlg.DComboboxGuajiGeti.Items.Count) then
-          pm := PTClientMagic(FrmDlg.DComboboxGuajiGeti.Items.Objects[FrmDlg.DComboboxGuajiGeti.ItemIndex]);
-
-        if pm <> nil then begin
-          g_TargetCret := nil;
-          g_FocusCret := m_TargetCret;
-
-          PlayScene.ScreenXYfromMCXY(m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, g_nMouseX, g_nMouseY);
-          if (GetTickCount - FAttackTick > 1000) and (frmMain.ActionKey = 0) then begin
-            FAttackTick := GetTickCount;
-            frmMain.UseMagic(g_nMouseX, g_nMouseY, pm);
-          end;
-          if GetRangeTargetCount(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, 2) > 0 then begin
-            //DScreen.AddChatBoardString('Avoid', clYellow, clRed);
-            Avoid;
-            Exit;
-          end;
-
-        end else begin
-          tdir := GetNextDirection(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY);
-          GetBackPosition(m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, tdir, dx, dy);
-
-          if CanWalk(dx, dy, True) then
-            g_TargetCret := m_TargetCret
-          else begin
-            g_TargetCret := nil;
-          end;
-        end;
-      end else begin
-        //tdir := GetNextDirection(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY);
-        //GetBackPosition(m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, tdir, dx, dy);
-        {if CanWalk(dx, dy, True) then
-          g_TargetCret := m_TargetCret
-        else begin
-          g_TargetCret := nil;
-        end;}
-        g_TargetCret := m_TargetCret;
-      end;
-    end else begin
-      //g_TargetCret := nil;
-      if (g_nTargetX > 0) and (g_nTargetY > 0) then begin
-        if (abs(g_MySelf.m_nCurrX - g_nTargetX) >= 1) or (abs(g_MySelf.m_nCurrY - g_nTargetY) >= 1) then
-        else begin
-          GetAutoWalkXY(nTargetX, nTargetY);
-          if (abs(g_MySelf.m_nCurrX - nTargetX) >= 2) or (abs(g_MySelf.m_nCurrY - nTargetY) >= 2) then
-            g_ChrAction := caRun
-          else g_ChrAction := caWalk;
-        //GetBackPosition(target.m_nCurrX, target.m_nCurrY, tdir, dx, dy);
-          g_nTargetX := nTargetX;
-          g_nTargetY := nTargetY;
-          m_nTargetX := nTargetX;
-          m_nTargetY := nTargetY;
-          //DScreen.AddChatBoardString('m_TargetCret = nil X:' + IntToStr(g_MySelf.m_nCurrX) + ' Y:' + IntToStr(g_MySelf.m_nCurrY) + ' TX:' + IntToStr(g_nTargetX) + ' TY:' + IntToStr(g_nTargetY), clYellow, clRed);
-        end;
-      end else begin
-        GetAutoWalkXY(nTargetX, nTargetY);
-        if (abs(g_MySelf.m_nCurrX - nTargetX) >= 2) or (abs(g_MySelf.m_nCurrY - nTargetY) >= 2) then
-          g_ChrAction := caRun
-        else g_ChrAction := caWalk;
-        //GetBackPosition(target.m_nCurrX, target.m_nCurrY, tdir, dx, dy);
-        g_nTargetX := nTargetX;
-        g_nTargetY := nTargetY;
-        m_nTargetX := nTargetX;
-        m_nTargetY := nTargetY;
-        //DScreen.AddChatBoardString('m_TargetCret = nil X:' + IntToStr(g_MySelf.m_nCurrX) + ' Y:' + IntToStr(g_MySelf.m_nCurrY) + ' TX:' + IntToStr(g_nTargetX) + ' TY:' + IntToStr(g_nTargetY), clYellow, clRed);
-      end
-    end;
-  end;
+      //end;
+  //end;
 end;
 
 end.

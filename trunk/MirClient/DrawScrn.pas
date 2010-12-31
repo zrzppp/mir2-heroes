@@ -1953,50 +1953,6 @@ begin
   end;
   Inc(m_dwFrameCount);
   infoMsg := '';
-
-  {if g_MySelf = nil then Exit;
-  if CurrentScene = PlayScene then begin
-    with MSurface do begin
-      with PlayScene do begin
-        for k := 0 to m_ActorList.Count - 1 do begin
-          Actor := TActor(m_ActorList.Items[k]);
-          if not Actor.m_boDeath then begin
-
-            if g_Config.boShowActorLable and (g_NewStatus <> sBlind) then begin
-              Actor.ShowActorLable(MSurface);
-            end;
-            if g_Config.boShowMoveLable and (g_NewStatus <> sBlind) then
-              Actor.ShowHealthStatus(MSurface);
-          end;
-          //Inc(k);
-        end;
-      end;
-      //显示角色说话文字
-      with PlayScene do begin
-        if g_NewStatus <> sBlind then
-          for k := 0 to m_ActorList.Count - 1 do begin
-            Actor := m_ActorList[k];
-            Actor.ShowSayMsg(MSurface);
-          end;
-      end;
-
-      if (g_nAreaStateValue and $04) <> 0 then begin
-        BoldTextOut(0, 0, '攻城区域');
-      end;
-
-      k := 0;
-      for I := 0 to 15 do begin
-        if g_nAreaStateValue and ($01 shr I) <> 0 then begin
-          d := g_WMainImages.Images[AREASTATEICONBASE + I];
-          if d <> nil then begin
-            k := k + d.Width;
-            MSurface.Draw(SCREENWIDTH - k, 0, d.ClientRect, d, True);
-          end;
-        end;
-      end;
-
-    end;
-  end;}
 end;
 
 //显示左上角信息文字
@@ -2201,45 +2157,6 @@ begin
   *)
   with MSurface do begin
     if g_MySelf <> nil then begin
-      //显示人物血量
-      //BoldTextOut (MSurface, 15, SCREENHEIGHT - 120, clWhite, clBlack, IntToStr(g_MySelf.m_Abil.HP) + '/' + IntToStr(g_MySelf.m_Abil.MaxHP));
-      //人物MP值
-      //BoldTextOut (MSurface, 115, SCREENHEIGHT - 120, clWhite, clBlack, IntToStr(g_MySelf.m_Abil.MP) + '/' + IntToStr(g_MySelf.m_Abil.MaxMP));
-      //人物经验值
-      //BoldTextOut (MSurface, 655, SCREENHEIGHT - 55, clWhite, clBlack, IntToStr(g_MySelf.Abil.Exp) + '/' + IntToStr(g_MySelf.Abil.MaxExp));
-      //人物背包重量
-      //BoldTextOut (MSurface, 655, SCREENHEIGHT - 25, clWhite, clBlack, IntToStr(g_MySelf.Abil.Weight) + '/' + IntToStr(g_MySelf.Abil.MaxWeight));
-
-      if g_Config.boShowGreenHint then begin
-        Str := {'Time: ' + TimeToStr(Time) +
-          ' Exp: ' + IntToStr(g_MySelf.m_Abil.Exp) + '/' + IntToStr(g_MySelf.m_Abil.MaxExp) +}
-        ' 负重: ' + IntToStr(g_MySelf.m_Abil.Weight) + '/' + IntToStr(g_MySelf.m_Abil.MaxWeight) +
-          ' ' + g_sGoldName + ': ' + IntToStr(g_MySelf.m_nGold) +
-          ' 鼠标: ' + IntToStr(g_nMouseCurrX) + ':' + IntToStr(g_nMouseCurrY) + '(' + IntToStr(g_nMouseX) + ':' + IntToStr(g_nMouseY) + ')';
-        if g_FocusCret <> nil then begin
-          Str := Str + ' 目标: ' + g_FocusCret.m_sUserName + '(' + IntToStr(g_FocusCret.m_Abil.HP) + '/' + IntToStr(g_FocusCret.m_Abil.MaxHP) + ')';
-        end else begin
-          Str := Str + ' 目标: -/-';
-        end;
-        if g_MyHero <> nil then begin
-          Str := Str + Format('  我的英雄: %s(%d/%d)', [g_MyHero.m_sUserName, g_MyHero.m_nCurrX, g_MyHero.m_nCurrY]);
-        end;
-        BoldTextOut(10, 0, Str, clLime);
-        {Str := '“*”键或“Home”键 打开游戏设置';
-        BoldTextOut(SCREENWIDTH - TextWidth(Str) - 20, SCREENHEIGHT - TextHeight('A'), Str, clLime);
-        Str := '';  }
-      end;
-
-      if g_boCheckBadMapMode then begin
-        Str := IntToStr(m_dwDrawFrameCount) + ' '
-          + '  Mouse ' + IntToStr(g_nMouseX) + ':' + IntToStr(g_nMouseY) + '(' + IntToStr(g_nMouseCurrX) + ':' + IntToStr(g_nMouseCurrY) + ')'
-          + '  HP' + IntToStr(g_MySelf.m_Abil.HP) + '/' + IntToStr(g_MySelf.m_Abil.MaxHP)
-          + '  D0 ' + IntToStr(g_nDebugCount)
-          + ' D1 ' + IntToStr(g_nDebugCount1) + ' D2 '
-          + IntToStr(g_nDebugCount2);
-        BoldTextOut(10, 0, Str, clWhite);
-      end;
-
       if g_ConfigClient.btMainInterface in [0, 2] then begin
 
         if g_boShowWhiteHint then begin
@@ -2347,7 +2264,6 @@ begin
   for k := 0 to PlayScene.m_ActorList.Count - 1 do begin
     Actor := TActor(PlayScene.m_ActorList.Items[k]);
     if (not Actor.m_boDeath) and (abs(Actor.m_nCurrX - g_MySelf.m_nCurrX) <= 8) and (abs(Actor.m_nCurrY - g_MySelf.m_nCurrY) <= 7) then begin
-      Actor.DrawChrInfo(MSurface);
     end;
   end;
 
@@ -2359,7 +2275,7 @@ begin
       g_FocusCret.m_nNameColor);
   end;
 
-  if (not g_Config.boShowUserName) and (g_MySelf <> nil) then begin
+  if (g_MySelf <> nil) then begin
     if PlayScene.IsSelectMyself(g_nMouseX, g_nMouseY) then begin
       sName := g_MySelf.m_sDescUserName + '\' + g_MySelf.m_sUserName;
       g_MySelf.NameTextOut(MSurface, sName,

@@ -2395,13 +2395,16 @@ end;
 procedure TfrmMain.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 var
-  Msg, wc, dir, mx, my, nKey: Integer;
+  Msg, wc, dir, mx, my, nKey, I: Integer;
   ini: TIniFile;
   nCount: Integer;
   Magic: PTClientMagic;
   dwSpellTime: LongWord;
   target: TActor;
   AShift: TShiftState;
+  PickupList: TList;
+  DropItem: pTDropItem;
+  ShowItem: pTShowItem;
 begin
   if not CanDraw then Exit;
   case Key of
@@ -2862,6 +2865,10 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
           FrmDlg.DMiniMap.Height := 120;
         end;
         Key := 0;
+      end;
+    VK_TAB: begin
+        // Pickup item if standing over it.
+        SendPickup;
       end;
     Word('T'): begin
         if GetTickCount > g_dwQueryMsgTick then begin

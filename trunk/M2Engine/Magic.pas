@@ -929,8 +929,7 @@ begin
   end else TargeTActorObject := nil;
 end;
 
-{火球}
-
+{Fireball Skill}
 function TMagicManager.MagMakeFireball(PlayObject: TActorObject;
   UserMagic: pTUserMagic; nTargetX, nTargetY: Integer;
   var TargeTActorObject: TActorObject): Boolean;
@@ -1026,8 +1025,7 @@ end;
 
 
 
-{治愈术}
-
+{Healing Skill}
 function TMagicManager.MagTreatment(PlayObject: TActorObject;
   UserMagic: pTUserMagic; var nTargetX, nTargetY: Integer;
   var TargeTActorObject: TActorObject): Boolean;
@@ -1058,8 +1056,7 @@ begin
       TargeTActorObject.SendDelayMsg(PlayObject, RM_MAGHEALING, 0, nPower, 0, 0, '', 800);
     end;
     Result := True;
-    if PlayObject.m_boAbilSeeHealGauge then
-      PlayObject.SendMsg(TargeTActorObject, RM_10414, 0, 0, 0, 0, '');
+    PlayObject.SendMsg(TargeTActorObject, RM_10414, 0, 0, 0, 0, '');
   end;
 end;
 
@@ -1855,7 +1852,7 @@ end;
 function TMagicManager.IsWarrSkill(wMagIdx: Integer): Boolean; //是否是战士技能
 begin
   Result := False;
-  if wMagIdx in [SKILL_ONESWORD {3}, SKILL_ILKWANG {4}, SKILL_YEDO {7}, SKILL_ERGUM {12}, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_40 {40}, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
+  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_YEDO {7}, SKILL_ERGUM {12}, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_40 {40}, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
     Result := True;
 end;
 
@@ -1972,16 +1969,16 @@ begin
     if (not TPlayObject(PlayObject).m_boHeroVersion) and (TPlayObject(PlayObject).m_dwClientTick = 0) and (UserMagic.MagicInfo.wMagicId > 40) then Exit;
   end;
 
-  case UserMagic.MagicInfo.wMagicId of //
-    SKILL_FIREBALL {1},
-      SKILL_FIREBALL2 {5}: begin //火球术 大火球
+  case UserMagic.MagicInfo.wMagicId of
+    SKILL_FIREBALL, // Fireball - ID: 1
+      SKILL_GREATFIREBALL: begin // Great Fireball - ID: 5
         if MagMakeFireball(PlayObject,
           UserMagic,
           nTargetX,
           nTargetY,
           TargeTActorObject) then boTrain := True;
       end;
-    SKILL_HEALLING {2}: begin
+    SKILL_HEALLING: begin // Healing - ID: 2
         if MagTreatment(PlayObject,
           UserMagic,
           nTargetX,

@@ -14335,10 +14335,52 @@ begin
     end;
     DComboboxHumHP2.Text := g_Config.sRenewHumHPItem2Name;
 
+    // Auto-Pot MP Box One [Player]
+    DComboboxHumMP1.Items.Clear;
+    for I := Low(g_ItemArr) to High(g_ItemArr) do begin
+      if (g_ItemArr[I].s.Name <> '') and (g_ItemArr[I].s.StdMode = 0) and (g_ItemArr[I].s.MAC > 0) then
+        DComboboxHumMP1.Items.Add(g_ItemArr[I].s.Name);
+    end;
+
+    if (g_Config.nRenewHumMPIndex1 >= 0) and (g_Config.nRenewHumMPIndex1 < DComboboxHumMP1.Items.Count) then begin
+        if g_Config.sRenewHumMPItem1Name = DComboboxHumMP1.Items.Strings[g_Config.nRenewHumMPIndex1] then Exit;
+    end;
+    g_Config.nRenewHumMPIndex1 := -1;
+    DComboboxHumMP1.ItemIndex := -1;
+    for I := 0 to DComboboxHumMP1.Items.Count - 1 do begin
+      if CompareText(g_Config.sRenewHumMPItem1Name, DComboboxHumMP1.Items.Strings[I]) = 0 then begin
+        g_Config.nRenewHumMPIndex1 := I;
+        DComboboxHumMP1.ItemIndex := I;
+        Break;
+      end;
+    end;
+    DComboboxHumMP1.Text := g_Config.sRenewHumMPItem1Name;
+
+    // Auto-Pot MP Box Two [Player]
+    DComboboxHumMP2.Items.Clear;
+    for I := Low(g_ItemArr) to High(g_ItemArr) do begin
+      if (g_ItemArr[I].s.Name <> '') and (g_ItemArr[I].s.StdMode = 0) and (g_ItemArr[I].s.MAC > 0) then
+        DComboboxHumMP2.Items.Add(g_ItemArr[I].s.Name);
+    end;
+
+    if (g_Config.nRenewHumMPIndex2 >= 0) and (g_Config.nRenewHumMPIndex2 < DComboboxHumMP2.Items.Count) then begin
+        if g_Config.sRenewHumMPItem2Name = DComboboxHumMP2.Items.Strings[g_Config.nRenewHumMPIndex2] then Exit;
+    end;
+    g_Config.nRenewHumMPIndex2 := -1;
+    DComboboxHumMP2.ItemIndex := -1;
+    for I := 0 to DComboboxHumMP2.Items.Count - 1 do begin
+      if CompareText(g_Config.sRenewHumMPItem2Name, DComboboxHumMP2.Items.Strings[I]) = 0 then begin
+        g_Config.nRenewHumMPIndex2 := I;
+        DComboboxHumMP2.ItemIndex := I;
+        Break;
+      end;
+    end;
+    DComboboxHumMP2.Text := g_Config.sRenewHumMPItem2Name;
+
     // Auto-Pot HP Box One [Hero]
     DComboboxHeroHP1.Items.Clear;
     for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
-      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_ItemArr[I].s.AC > 0) then
+      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.AC > 0) then
         DComboboxHeroHP1.Items.Add(g_HeroItemArr[I].s.Name);
     end;
 
@@ -14355,6 +14397,69 @@ begin
       end;
     end;
     DComboboxHeroHP1.Text := g_Config.sRenewHeroHPItem1Name;
+
+    // Auto-Pot HP Box Two [Hero]
+    DComboboxHeroHP2.Items.Clear;
+    for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
+      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.AC > 0) then
+        DComboboxHeroHP2.Items.Add(g_HeroItemArr[I].s.Name);
+    end;
+
+    if (g_Config.nRenewHeroHPIndex2 >= 0) and (g_Config.nRenewHeroHPIndex2 < DComboboxHeroHP2.Items.Count) then begin
+        if g_Config.sRenewHeroHPItem2Name = DComboboxHeroHP2.Items.Strings[g_Config.nRenewHeroHPIndex2] then Exit;
+    end;
+    g_Config.nRenewHeroHPIndex2 := -1;
+    DComboboxHeroHP2.ItemIndex := -1;
+    for I := 0 to DComboboxHeroHP2.Items.Count - 1 do begin
+      if CompareText(g_Config.sRenewHeroHPItem2Name, DComboboxHeroHP2.Items.Strings[I]) = 0 then begin
+        g_Config.nRenewHeroHPIndex2 := I;
+        DComboboxHeroHP2.ItemIndex := I;
+        Break;
+      end;
+    end;
+    DComboboxHeroHP2.Text := g_Config.sRenewHeroHPItem2Name;
+
+    // Auto-Pot MP Box One [Hero]
+    DComboboxHeroMP1.Items.Clear;
+    for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
+      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.MAC > 0) then
+        DComboboxHeroMP1.Items.Add(g_HeroItemArr[I].s.Name);
+    end;
+
+    if (g_Config.nRenewHeroMPIndex1 >= 0) and (g_Config.nRenewHeroMPIndex1 < DComboboxHeroMP1.Items.Count) then begin
+        if g_Config.sRenewHeroMPItem1Name = DComboboxHeroMP1.Items.Strings[g_Config.nRenewHeroMPIndex1] then Exit;
+    end;
+    g_Config.nRenewHeroMPIndex1 := -1;
+    DComboboxHeroMP1.ItemIndex := -1;
+    for I := 0 to DComboboxHeroMP1.Items.Count - 1 do begin
+      if CompareText(g_Config.sRenewHeroMPItem1Name, DComboboxHeroMP1.Items.Strings[I]) = 0 then begin
+        g_Config.nRenewHeroMPIndex1 := I;
+        DComboboxHeroMP1.ItemIndex := I;
+        Break;
+      end;
+    end;
+    DComboboxHeroMP1.Text := g_Config.sRenewHeroMPItem1Name;
+
+    // Auto-Pot MP Box Two [Hero]
+    DComboboxHeroMP2.Items.Clear;
+    for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
+      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.AC > 0) then
+        DComboboxHeroMP2.Items.Add(g_HeroItemArr[I].s.Name);
+    end;
+
+    if (g_Config.nRenewHeroMPIndex2 >= 0) and (g_Config.nRenewHeroMPIndex2 < DComboboxHeroMP2.Items.Count) then begin
+        if g_Config.sRenewHeroMPItem2Name = DComboboxHeroMP2.Items.Strings[g_Config.nRenewHeroMPIndex2] then Exit;
+    end;
+    g_Config.nRenewHeroMPIndex2 := -1;
+    DComboboxHeroMP2.ItemIndex := -1;
+    for I := 0 to DComboboxHeroMP2.Items.Count - 1 do begin
+      if CompareText(g_Config.sRenewHeroMPItem2Name, DComboboxHeroMP2.Items.Strings[I]) = 0 then begin
+        g_Config.nRenewHeroMPIndex2 := I;
+        DComboboxHeroMP2.ItemIndex := I;
+        Break;
+      end;
+    end;
+    DComboboxHeroMP2.Text := g_Config.sRenewHeroMPItem2Name;
 
     DComboboxBookIndex.Items.Clear;
     for I := Low(g_ItemArr) to High(g_ItemArr) do begin
@@ -19429,6 +19534,8 @@ procedure TFrmDlg.DComboboxHeroMP1Change(Sender: TObject);
 begin
   if (not g_boLoadUserConfig) then Exit;
   g_Config.nRenewHeroMPIndex1 := DComboboxHeroMP1.ItemIndex;
+  if (DComboboxHeroMP1.ItemIndex >= 0) and (DComboboxHeroMP1.ItemIndex < DComboboxHeroMP1.Items.Count) then
+    g_Config.sRenewHeroMPItem1Name := DComboboxHeroMP1.Items.Strings[DComboboxHeroMP1.ItemIndex];
   SaveUserConfig();
 end;
 
@@ -19436,6 +19543,8 @@ procedure TFrmDlg.DComboboxHeroHP2Change(Sender: TObject);
 begin
   if (not g_boLoadUserConfig) then Exit;
   g_Config.nRenewHeroHPIndex2 := DComboboxHeroHP2.ItemIndex;
+  if (DComboboxHeroHP2.ItemIndex >= 0) and (DComboboxHeroHP2.ItemIndex < DComboboxHeroHP2.Items.Count) then
+    g_Config.sRenewHeroHPItem2Name := DComboboxHeroHP2.Items.Strings[DComboboxHeroHP2.ItemIndex];
   SaveUserConfig();
 end;
 
@@ -19443,6 +19552,8 @@ procedure TFrmDlg.DComboboxHeroMP2Change(Sender: TObject);
 begin
   if (not g_boLoadUserConfig) then Exit;
   g_Config.nRenewHeroMPIndex2 := DComboboxHeroMP2.ItemIndex;
+  if (DComboboxHeroMP2.ItemIndex >= 0) and (DComboboxHeroMP2.ItemIndex < DComboboxHeroMP2.Items.Count) then
+    g_Config.sRenewHeroMPItem2Name := DComboboxHeroMP2.Items.Strings[DComboboxHeroMP2.ItemIndex];
   SaveUserConfig();
 end;
 
@@ -19459,6 +19570,8 @@ procedure TFrmDlg.DComboboxHumMP1Change(Sender: TObject);
 begin
   if (not g_boLoadUserConfig) then Exit;
   g_Config.nRenewHumMPIndex1 := DComboboxHumMP1.ItemIndex;
+  if (DComboboxHumMP1.ItemIndex >= 0) and (DComboboxHumMP1.ItemIndex < DComboboxHumMP1.Items.Count) then
+    g_Config.sRenewHumMPItem1Name := DComboboxHumMP1.Items.Strings[DComboboxHumMP1.ItemIndex];
   SaveUserConfig();
 end;
 
@@ -19475,6 +19588,8 @@ procedure TFrmDlg.DComboboxHumMP2Change(Sender: TObject);
 begin
   if (not g_boLoadUserConfig) then Exit;
   g_Config.nRenewHumMPIndex2 := DComboboxHumMP2.ItemIndex;
+  if (DComboboxHumMP2.ItemIndex >= 0) and (DComboboxHumMP2.ItemIndex < DComboboxHumMP2.Items.Count) then
+    g_Config.sRenewHumMPItem2Name := DComboboxHumMP2.Items.Strings[DComboboxHumMP2.ItemIndex];
   SaveUserConfig();
 end;
 

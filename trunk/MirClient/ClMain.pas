@@ -13017,13 +13017,13 @@ end;
 procedure TfrmMain.AutoEatMPItem(Sender: TObject);
 var
   nIndex: Integer;
+  sItemName: string;
   function EatMPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
     if (g_Config.nRenewHumMPIndex1 >= 0) and (GetTickCount - g_dwRenewHumMPTick1 > g_Config.nRenewHumMPTime1) and (flag or (g_MySelf.m_Abil.MP < g_Config.nRenewHumMPPercent1)) then begin
-      //DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
-
-      nIndex := FindHumItemIndex(g_Config.nRenewHumMPIndex1);
+      sItemName := g_Config.sRenewHumMPItem1Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHumMPTick1 := GetTickCount;
         Result := AutoEatItem(nIndex);
@@ -13034,9 +13034,8 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHumMPIndex2 >= 0) and (GetTickCount - g_dwRenewHumMPTick2 > g_Config.nRenewHumMPTime2) and (flag or (g_MySelf.m_Abil.MP < g_Config.nRenewHumMPPercent2)) then begin
-      //DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
-
-      nIndex := FindHumItemIndex(g_Config.nRenewHumMPIndex2);
+      sItemName := g_Config.sRenewHumMPItem2Name;
+      nIndex := FindBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHumMPTick2 := GetTickCount;
         Result := AutoEatItem(nIndex);
@@ -13138,7 +13137,8 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHeroHPIndex2 >= 0) and (GetTickCount - g_dwRenewHeroHPTick2 > g_Config.nRenewHeroHPTime2) and (flag or (g_MyHero.m_Abil.HP < g_Config.nRenewHeroHPPercent2)) then begin
-      nIndex := FindHeroItemIndex(g_Config.nRenewHeroHPIndex2);
+      sItemName := g_Config.sRenewHeroHPItem2Name;
+      nIndex := FindHeroBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHeroHPTick2 := GetTickCount;
         Result := AutoHeroEatItem(nIndex);
@@ -13185,13 +13185,13 @@ end;
 procedure TfrmMain.AutoHeroEatMPItem(Sender: TObject);
 var
   nIndex: Integer;
+  sItemName: string;
   function EatMPItem1(flag: Boolean): Boolean;
   begin
     Result := False;
     if (g_Config.nRenewHeroMPIndex1 > 0) and (GetTickCount - g_dwRenewHeroMPTick1 > g_Config.nRenewHeroMPTime1) and (flag or (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent1)) then begin
-      DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
-
-      nIndex := FindHeroItemIndex(g_Config.nRenewHeroMPIndex1);
+      sItemName := g_Config.sRenewHeroMPItem1Name;
+      nIndex := FindHeroBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHeroMPTick1 := GetTickCount;
         Result := AutoHeroEatItem(nIndex);
@@ -13203,9 +13203,8 @@ var
   begin
     Result := False;
     if (g_Config.nRenewHeroMPIndex2 > 0) and (GetTickCount - g_dwRenewHeroMPTick2 > g_Config.nRenewHeroMPTime2) and (flag or (g_MyHero.m_Abil.MP < g_Config.nRenewHeroMPPercent2)) then begin
-      DScreen.AddChatBoardString('EatMPItem1:', clGreen, clWhite);
-
-      nIndex := FindHeroItemIndex(g_Config.nRenewHeroMPIndex2);
+      sItemName := g_Config.sRenewHeroMPItem2Name;
+      nIndex := FindHeroBagItemName(sItemName);
       if nIndex >= 0 then begin
         g_dwRenewHeroMPTick2 := GetTickCount;
         Result := AutoHeroEatItem(nIndex);
@@ -13237,11 +13236,9 @@ begin
       end;
     end else
       if g_Config.boRenewHeroMPIsAuto1 and (not g_Config.boRenewHeroMPIsAuto2) then begin
-      DScreen.AddChatBoardString('Test4: ' + BoolToStr(g_Config.boRenewHeroMPIsAuto1), clGreen, clWhite);
       EatMPItem1(False);
     end else
       if (not g_Config.boRenewHeroMPIsAuto1) and g_Config.boRenewHeroMPIsAuto2 then begin
-      DScreen.AddChatBoardString('Test5: ' + BoolToStr(g_Config.boRenewHeroMPIsAuto2), clGreen, clWhite);
       EatMPItem2(False);
     end;
   end;

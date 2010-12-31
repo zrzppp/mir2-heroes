@@ -1735,12 +1735,12 @@ end;
 
 procedure THeroObject.SysMsg(sMsg: string; MsgColor: TMsgColor; MsgType: TMsgType);
 begin
-  if IsSend then m_Master.SysMsg('(英雄) ' + sMsg, MsgColor, MsgType);
+  if IsSend then m_Master.SysMsg('[Hero] ' + sMsg, MsgColor, MsgType);
 end;
 
 procedure THeroObject.SysMsg(sMsg: string; btFColor, btBColor: Byte; MsgType: TMsgType);
 begin
-  if IsSend then m_Master.SysMsg('(英雄) ' + sMsg, btFColor, btBColor, MsgType);
+  if IsSend then m_Master.SysMsg('[Hero] ' + sMsg, btFColor, btBColor, MsgType);
 end;
 
 procedure THeroObject.RefBagItemCount;
@@ -4661,14 +4661,14 @@ begin
   m_boSlaveRelax := m_btStatus = 2;
 
   case m_btStatus of
-    0: begin
-        SysMsg('状态：攻击', c_Green, t_Hint);
-      end;
-    1: begin
-        SysMsg('状态：跟随', c_Green, t_Hint);
-      end;
-    2: begin
-        SysMsg('状态：休息', c_Green, t_Hint);
+      0: begin
+          SysMsg('Status: Attack', c_Green, t_Hint);
+        end;
+      1: begin
+          SysMsg('Status: Follow', c_Green, t_Hint);
+        end;
+      2: begin
+          SysMsg('Status: Rest', c_Green, t_Hint);
       end;
   end;
 end;
@@ -5544,13 +5544,13 @@ begin
     nError := 25;
     case m_btStatus of
       0: begin
-          SysMsg('状态：攻击', c_Green, t_Hint);
+          SysMsg('Status: Attack', c_Green, t_Hint);
         end;
       1: begin
-          SysMsg('状态：跟随', c_Green, t_Hint);
+          SysMsg('Status: Follow', c_Green, t_Hint);
         end;
       2: begin
-          SysMsg('状态：休息', c_Green, t_Hint);
+          SysMsg('Status: Rest', c_Green, t_Hint);
         end;
     end;
     //MainOutMessage(m_sCharName + ' THeroObject::m_WAbil.Level0:' + IntToStr(m_WAbil.Level));
@@ -5564,12 +5564,11 @@ begin
     end;
     //MainOutMessage(m_sCharName + ' THeroObject::m_WAbil.Level1:' + IntToStr(m_WAbil.Level));
 
-    (*SysMsg('状态更改：Ctrl+E', c_Red, t_Hint);
-    SysMsg('指定攻击目标：Ctrl+W', c_Red, t_Hint);
-    SysMsg(Format('守护位置：Ctrl+Q (英雄人物达到%d级后方可使用)', [33 {g_Config.nNeedGuardLevel}]), c_Red, t_Hint);
-    SysMsg('使用合击技：Ctrl+S (学会合击技方可使用)', c_Red, t_Hint);  *)
     nError := 29;
-    SysMsg(g_sHeroLoginMsg, c_Green, t_Hint);
+    SysMsg('Change Hero Status: CTRL+E', c_Green, t_Hint);
+    SysMsg('Attack Target: CTRL+W', c_Green, t_Hint);
+    SysMsg('Hero Patrol Area: CTRL+Q', c_Green, t_Hint);
+    SysMsg('Duel Skill: CTRL+S', c_Green, t_Hint);
     nError := 30;
   except
     on E: Exception do begin

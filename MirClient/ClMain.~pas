@@ -599,14 +599,10 @@ type
     procedure SendFindUserItem(nWho: Integer; sData: string);
     procedure SendHeroMagicKeyChange(magid: Integer);
 
-
-    procedure AutoOrderItem; //自动放药
-    procedure AutoLogOut; //自动小退
-    procedure AutoHeroLogOut; //召回英雄
-    procedure DuraWarning(); //持久警告
+    procedure AutoOrderItem;
+    procedure DuraWarning();
     function AutoEatItem(idx: Integer): Boolean;
     function AutoHeroEatItem(idx: Integer): Boolean;
-
 
     procedure AutoUseItem(Sender: TObject);
     procedure AutoEatHPItem(Sender: TObject);
@@ -615,7 +611,6 @@ type
     procedure AutoHeroEatMPItem(Sender: TObject);
 
     procedure AutoUseBookItem(Sender: TObject);
-
     procedure PlayMedia(const sFileName: string);
   end;
 
@@ -4959,8 +4954,6 @@ begin
 
     DCheckBoxPickUpItemAll.OnClick := nil;
     DCheckBoxBook.OnClick := nil;
-    DCheckBoxClose.OnClick := nil;
-    DCheckBoxHeroLogOut.OnClick := nil;
 
     DCheckBoxLongHit.OnClick := nil;
     DCheckBoxWideHit.OnClick := nil;
@@ -4983,15 +4976,7 @@ begin
 
 
     DEditBookHP.OnChange := nil;
-    DEditCloseHP.OnChange := nil;
-
-    DEditHeroLogOutHP.OnChange := nil;
-
     DEditBookTime.OnChange := nil;
-    DEditCloseTime.OnChange := nil;
-
-    DEditHeroLogOutTime.OnChange := nil;
-
 
     DEditAutoUseMagicTime.OnChange := nil;
 
@@ -12938,13 +12923,11 @@ begin
     AutoEatHPItem(Sender);
     AutoEatMPItem(Sender);
     AutoUseBookItem(Sender);
-    AutoLogOut;
   end;
 
   if g_boHeroProtect then begin
     AutoHeroEatHPItem(Sender);
     AutoHeroEatMPItem(Sender);
-    AutoHeroLogOut;
   end;
 
   DuraWarning();
@@ -13240,26 +13223,6 @@ begin
     end else
       if (not g_Config.boRenewHeroMPIsAuto1) and g_Config.boRenewHeroMPIsAuto2 then begin
       EatMPItem2(False);
-    end;
-  end;
-end;
-
-procedure TfrmMain.AutoHeroLogOut; //召回英雄
-begin
-  if (g_MyHero <> nil) and (not g_MyHero.m_boDeath) and g_Config.boRenewHeroLogOutIsAuto then begin
-    if (g_MyHero.m_Abil.HP < g_Config.nRenewHeroLogOutPercent) and (GetTickCount - g_dwRenewHeroLogOutTick > g_Config.nRenewHeroLogOutTime * 1000) then begin
-      g_dwRenewHeroLogOutTick := GetTickCount;
-      SendClientMessage(CM_HEROLOGOUT, g_MyHero.m_nRecogId, 0, 0, 0);
-    end;
-  end;
-end;
-
-procedure TfrmMain.AutoLogOut; //小退
-begin
-  if (g_MySelf <> nil) and (not g_MySelf.m_boDeath) and g_Config.boRenewCloseIsAuto then begin
-    if (g_MySelf.m_Abil.HP < g_Config.nRenewClosePercent) and (GetTickCount - g_dwRenewCloseTick > g_Config.nRenewCloseTime * 1000) then begin
-      g_dwRenewCloseTick := GetTickCount;
-      AppLogout;
     end;
   end;
 end;

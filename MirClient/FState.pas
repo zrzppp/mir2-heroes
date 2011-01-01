@@ -525,14 +525,8 @@ type
     DCheckBoxBook: TDCheckBox;
     DLabelBookHP: TDLabel;
     DEditBookHP: TDEdit;
-    DCheckBoxClose: TDCheckBox;
-    DLabelCloseHP: TDLabel;
-    DEditCloseHP: TDEdit;
-    DLabelClose: TDLabel;
     DEditBookTime: TDEdit;
     DLabelBookTime: TDLabel;
-    DEditCloseTime: TDEdit;
-    DLabelCloseTime: TDLabel;
     DLabelBookItemType: TDLabel;
     DLabel1: TDLabel;
     DLabel2: TDLabel;
@@ -622,12 +616,6 @@ type
     DEditHumMPTime1: TDEdit;
     DLabelHumHP1: TDLabel;
     DLabelHumMP1: TDLabel;
-    DLabelHeroLogOutTime: TDLabel;
-    DEditHeroLogOutTime: TDEdit;
-    DEditHeroLogOutHP: TDEdit;
-    DLabelHeroLogOutHP: TDLabel;
-    DCheckBoxHeroLogOut: TDCheckBox;
-    DLabelHeroLogOut: TDLabel;
     DComboboxHumHP1: TDCombobox;
     DMenuHumItem: TDPopupMenu;
     DComboboxHumMP1: TDCombobox;
@@ -4606,46 +4594,6 @@ begin
   DMemoTab3.AddSuItem(ItemList, DLabelBookItemType);
   DMemoTab3.AddSuItem(ItemList, DComboboxBookIndex);
 
-
-
-{-----------------------------------------------------------}
-  DLabelClose.Left := 8;
-  DLabelClose.Top := 130 + 30 * 2;
-  ItemList := DMemoTab3.Add;
-  DMemoTab3.AddSuItem(ItemList, DLabelClose);
-
-  DCheckBoxClose.Left := 8;
-  DCheckBoxClose.Top := 130 + 30 * 3;
-
-  DCheckBoxClose.SetImgIndex(g_WMain2Images, 228);
-
-
-  DLabelCloseHP.Left := 44;
-  DLabelCloseHP.Top := 130 + 2 + 30 * 3;
-
-  DEditCloseHP.Left := 58;
-  DEditCloseHP.Top := 130 + 30 * 3;
-  DEditCloseHP.Width := 46;
-  DEditCloseHP.Text := '0';
-
-  DEditCloseTime.Left := 118;
-  DEditCloseTime.Top := 130 + 30 * 3;
-  DEditCloseTime.Width := 20;
-  DEditCloseTime.Text := '0';
-
-  DLabelCloseTime.Left := 144;
-  DLabelCloseTime.Top := 130 + 30 * 3 + 2;
-
-
-  ItemList := DMemoTab3.Add;
-  DMemoTab3.AddSuItem(ItemList, DCheckBoxClose);
-  DMemoTab3.AddSuItem(ItemList, DLabelCloseHP);
-  DMemoTab3.AddSuItem(ItemList, DEditCloseHP);
-  DMemoTab3.AddSuItem(ItemList, DEditCloseTime);
-  DMemoTab3.AddSuItem(ItemList, DLabelCloseTime);
-  //DMemoTab3.ItemSize := 100;
-
-  //DebugOutStr('DMemoTab3.Height:' + IntToStr(DMemoTab3.Height)+' DScrollTab3.Max:' + IntToStr(DScrollTab3.Max));
 {----------------------DMemoTab4------------------------------}
   DCheckBoxHeroHP1.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxHeroMP1.SetImgIndex(g_WMain2Images, 228);
@@ -4769,46 +4717,6 @@ begin
   DMemoTab4.AddSuItem(ItemList, DComboboxHeroMP2);
   DMemoTab4.AddSuItem(ItemList, DEditHeroMPTime2);
   DMemoTab4.AddSuItem(ItemList, DLabelHeroMP2);
-
-
-  DLabelHeroLogOut.Left := 8;
-  DLabelHeroLogOut.Top := 130;
-  ItemList := DMemoTab4.Add;
-  DMemoTab4.AddSuItem(ItemList, DLabelHeroLogOut);
-
-
-  DCheckBoxHeroLogOut.Left := 8;
-  DCheckBoxHeroLogOut.Top := 130 + 30;
-  DCheckBoxHeroLogOut.SetImgIndex(g_WMain2Images, 228);
-
-
-  DLabelHeroLogOutHP.Left := 44;
-  DLabelHeroLogOutHP.Top := 130 + 30 + 1;
-
-  DEditHeroLogOutHP.Left := 58;
-  DEditHeroLogOutHP.Top := 130 + 30;
-  DEditHeroLogOutHP.Width := 46;
-  DEditHeroLogOutHP.Text := '0';
-
-  DEditHeroLogOutTime.Left := 118;
-  DEditHeroLogOutTime.Top := 130 + 30;
-  DEditHeroLogOutTime.Width := 20;
-  DEditHeroLogOutTime.Text := '0';
-
-  DLabelHeroLogOutTime.Left := 144;
-  DLabelHeroLogOutTime.Top := 130 + 30 + 2;
-
-
-  ItemList := DMemoTab4.Add;
-  DMemoTab4.AddSuItem(ItemList, DCheckBoxHeroLogOut);
-  DMemoTab4.AddSuItem(ItemList, DLabelHeroLogOutHP);
-  DMemoTab4.AddSuItem(ItemList, DEditHeroLogOutHP);
-  DMemoTab4.AddSuItem(ItemList, DEditHeroLogOutTime);
-  DMemoTab4.AddSuItem(ItemList, DLabelHeroLogOutTime);
-
-
-
-
 {------------------------DMemoTab5---------------------------}
 
 
@@ -18618,8 +18526,6 @@ begin
   DCheckBoxMusic.OnClick := nil;
 
   DCheckBoxBook.OnClick := nil;
-  DCheckBoxClose.OnClick := nil;
-  DCheckBoxHeroLogOut.OnClick := nil;
   DCheckBoxLongHit.OnClick := nil;
   DCheckBoxWideHit.OnClick := nil;
   DCheckBoxFireHit.OnClick := nil;
@@ -18641,17 +18547,9 @@ begin
 
 
   DEditBookHP.OnChange := nil;
-  DEditCloseHP.OnChange := nil;
-
-  DEditHeroLogOutHP.OnChange := nil;
   DEditBookTime.OnChange := nil;
-  DEditCloseTime.OnChange := nil;
-
-  DEditHeroLogOutTime.OnChange := nil;
 
   DEditAutoUseMagicTime.OnChange := nil;
-
-
 
   DCheckBoxHumHP1.OnClick := nil;
   DCheckBoxHumMP1.OnClick := nil;
@@ -18702,21 +18600,11 @@ begin
 
   DCheckBoxPickUpItemAll.Checked := False;
   DCheckBoxBook.Checked := g_Config.boRenewBookIsAuto;
-  DCheckBoxClose.Checked := g_Config.boRenewCloseIsAuto;
-  DCheckBoxHeroLogOut.Checked := g_Config.boRenewHeroLogOutIsAuto;
-
 
 
   DEditBookHP.Text := IntToStr(g_Config.nRenewBookPercent);
-  DEditCloseHP.Text := IntToStr(g_Config.nRenewClosePercent);
-  DEditHeroLogOutHP.Text := IntToStr(g_Config.nRenewHeroLogOutPercent);
-
 
   DEditBookTime.Text := IntToStr(g_Config.nRenewBookTime);
-  DEditCloseTime.Text := IntToStr(g_Config.nRenewCloseTime);
-  DEditHeroLogOutTime.Text := IntToStr(g_Config.nRenewHeroLogOutTime);
-
-
 
   DCheckBoxHumHP1.Checked := g_Config.boRenewHumHPIsAuto1;
   DCheckBoxHumMP1.Checked := g_Config.boRenewHumMPIsAuto1;
@@ -18848,9 +18736,6 @@ begin
   DCheckBoxMusic.OnClick := DCheckBoxShowActorLableClick;
 
   DCheckBoxBook.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxClose.OnClick := DCheckBoxShowActorLableClick;
-  DCheckBoxHeroLogOut.OnClick := DCheckBoxShowActorLableClick;
-
   DCheckBoxLongHit.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxWideHit.OnClick := DCheckBoxShowActorLableClick;
   DCheckBoxFireHit.OnClick := DCheckBoxShowActorLableClick;
@@ -18872,14 +18757,7 @@ begin
 
 
   DEditBookHP.OnChange := DEditSpecialHPChange;
-  DEditCloseHP.OnChange := DEditSpecialHPChange;
-
-  DEditHeroLogOutHP.OnChange := DEditSpecialHPChange;
-
   DEditBookTime.OnChange := DEditSpecialHPChange;
-  DEditCloseTime.OnChange := DEditSpecialHPChange;
-
-  DEditHeroLogOutTime.OnChange := DEditSpecialHPChange;
 
   DEditAutoUseMagicTime.OnChange := DEditSpecialHPChange;
 
@@ -19085,11 +18963,7 @@ begin
 
   if Sender = DCheckBoxBook then
     g_Config.boRenewBookIsAuto := DCheckBoxBook.Checked;
-  if Sender = DCheckBoxClose then
-    g_Config.boRenewCloseIsAuto := DCheckBoxClose.Checked;
 
-  if Sender = DCheckBoxHeroLogOut then
-    g_Config.boRenewHeroLogOutIsAuto := DCheckBoxHeroLogOut.Checked;
 
   if Sender = DCheckBoxLongHit then
     g_Config.boSmartLongHit := DCheckBoxLongHit.Checked;
@@ -19155,17 +19029,10 @@ begin
 
   if Sender = DEditBookHP then
     g_Config.nRenewBookPercent := Str_ToInt(Trim(DEditBookHP.Text), 0);
-  if Sender = DEditCloseHP then
-    g_Config.nRenewClosePercent := Str_ToInt(Trim(DEditCloseHP.Text), 0);
-  if Sender = DEditHeroLogOutHP then
-    g_Config.nRenewHeroLogOutPercent := Str_ToInt(Trim(DEditHeroLogOutHP.Text), 0);
+
+
   if Sender = DEditBookTime then
     g_Config.nRenewBookTime := Str_ToInt(Trim(DEditBookTime.Text), 0);
-  if Sender = DEditCloseTime then
-    g_Config.nRenewCloseTime := Str_ToInt(Trim(DEditCloseTime.Text), 0);
-
-  if Sender = DEditHeroLogOutTime then
-    g_Config.nRenewHeroLogOutTime := Str_ToInt(Trim(DEditHeroLogOutTime.Text), 0);
 
   if Sender = DEditAutoUseMagicTime then
     g_Config.nAutoUseMagicTime := _MAX(Str_ToInt(Trim(DEditAutoUseMagicTime.Text), 1), 1);

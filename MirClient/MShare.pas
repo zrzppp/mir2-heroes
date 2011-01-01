@@ -425,9 +425,6 @@ type
     nRenewHeroMPTime2: Integer;
     nRenewHeroMPPercent2: Integer;
 
-
-
-    boRenewCloseIsAuto: Boolean;
     nRenewCloseTime: Integer;
     nRenewClosePercent: Integer;
 
@@ -1306,12 +1303,6 @@ var
 
     nRenewHeroMPTime2: 1;
     nRenewHeroMPPercent2: 10;
-
-
-
-    boRenewCloseIsAuto: False;
-    nRenewCloseTime: 30;
-    nRenewClosePercent: 10;
 
     boRenewBookIsAuto: False;
     nRenewBookTime: 3;
@@ -4621,18 +4612,10 @@ begin
     ini.WriteBool('Tec', 'SmartWalkLongHit', g_Config.boSmartWalkLongHit);
 
 
-    ini.WriteBool('Tec', 'RenewCloseIsAuto', g_Config.boRenewCloseIsAuto);
     ini.WriteBool('Tec', 'RenewChangeSignIsAuto', g_Config.boRenewChangeSignIsAuto);
     ini.WriteBool('Tec', 'RenewChangePoisonIsAuto', g_Config.boRenewChangePoisonIsAuto);
-    ini.WriteBool('Tec', 'RenewHeroLogOutIsAuto', g_Config.boRenewHeroLogOutIsAuto);
 
-
-    ini.WriteInteger('Protect', 'RenewCloseTime', g_Config.nRenewCloseTime);
-    ini.WriteInteger('Protect', 'RenewClosePercent', g_Config.nRenewClosePercent);
     ini.WriteInteger('Protect', 'RenewPoisonIndex', g_Config.nRenewPoisonIndex);
-    ini.WriteInteger('Protect', 'RenewHeroLogOutTime', g_Config.nRenewHeroLogOutTime);
-    ini.WriteInteger('Protect', 'RenewHeroLogOutPercent', g_Config.nRenewHeroLogOutPercent);
-
 
     ini.WriteBool('Protect', 'ChangeSign', g_Config.boChangeSign);
     ini.WriteBool('Protect', 'ChangePoison', g_Config.boChangePoison);
@@ -4765,17 +4748,11 @@ begin
     g_Config.boSmartWalkLongHit := False;
 
 
-    g_Config.boRenewCloseIsAuto := ini.ReadBool('Tec', 'RenewCloseIsAuto', g_Config.boRenewCloseIsAuto);
     g_Config.boRenewChangeSignIsAuto := ini.ReadBool('Tec', 'RenewChangeSignIsAuto', g_Config.boRenewChangeSignIsAuto);
     g_Config.boRenewChangePoisonIsAuto := ini.ReadBool('Tec', 'RenewChangePoisonIsAuto', g_Config.boRenewChangePoisonIsAuto);
-    g_Config.boRenewHeroLogOutIsAuto := ini.ReadBool('Tec', 'RenewHeroLogOutIsAuto', g_Config.boRenewHeroLogOutIsAuto);
 
-
-    g_Config.nRenewCloseTime := ini.ReadInteger('Protect', 'RenewCloseTime', g_Config.nRenewCloseTime);
-    g_Config.nRenewClosePercent := ini.ReadInteger('Protect', 'RenewClosePercent', g_Config.nRenewClosePercent);
     g_Config.nRenewPoisonIndex := ini.ReadInteger('Protect', 'RenewPoisonIndex', g_Config.nRenewPoisonIndex);
-    g_Config.nRenewHeroLogOutTime := ini.ReadInteger('Protect', 'RenewHeroLogOutTime', g_Config.nRenewHeroLogOutTime);
-    g_Config.nRenewHeroLogOutPercent := ini.ReadInteger('Protect', 'RenewHeroLogOutPercent', g_Config.nRenewHeroLogOutPercent);
+
 
 
     g_Config.boChangeSign := False;

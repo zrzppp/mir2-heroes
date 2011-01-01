@@ -1294,7 +1294,7 @@ begin
   end;
 
   if not InitM2ServerDllOK then begin
-    MainOutMessage('系统模块加载失败!!!');
+    MainOutMessage('Failed to Load M2Server.dll');
     Exit;
   end;
 //{$I VMProtectEnd.inc}

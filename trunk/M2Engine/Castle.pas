@@ -215,12 +215,12 @@ begin
       nCode := 3;
       m_MapPalace := g_MapManager.FindMap(m_sPalaceMap);
       if m_MapPalace = nil then begin
-        MainOutMessage(Format('皇宫地图%s没找到！！！', [m_sPalaceMap]));
+        MainOutMessage(format('%s No map found. ( No inner wall map of wall conquest war )',[m_sPalaceMap]));
       end;
       nCode := 4;
       m_MapSecret := g_MapManager.FindMap(m_sSecretMap);
       if m_MapSecret = nil then begin
-        MainOutMessage(Format('密道地图%s没找到！！！', [m_sSecretMap]));
+        MainOutMessage(format('%s - secret map not found !!',[m_sSecretMap]));
       //ShowMessage('0150 没有找到地图...');
       end;
       nCode := 5;
@@ -237,7 +237,7 @@ begin
           end;
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[MainDoor.ActorObject.m_sCharName,MainDoor.ActorObject.m_sMapName,MainDoor.ActorObject.m_nCurrX,MainDoor.ActorObject.m_nCurrY,MainDoor.ActorObject.m_Wabil.HP]));
         end else begin
-          MainOutMessage('[错误信息] 城堡初始化城门失败，检查怪物数据库里有没城门的设置: ' + m_MainDoor.sName);
+          MainOutMessage('[Castle] Failed to load Castle MainDoor, check Monster DB: ' + m_MainDoor.sName);
         end;
         nCode := 6;
         m_LeftWall.ActorObject := UserEngine.RegenMonsterByName(nil, m_sMapName, m_LeftWall.nX, m_LeftWall.nY, m_LeftWall.sName);
@@ -247,7 +247,7 @@ begin
         //MainOutMessage('m_LeftWall.ActorObject.m_WAbil.HP '+IntToStr(m_LeftWall.ActorObject.m_WAbil.HP));
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[LeftWall.ActorObject.m_sCharName,LeftWall.ActorObject.m_sMapName,LeftWall.ActorObject.m_nCurrX,LeftWall.ActorObject.m_nCurrY,LeftWall.ActorObject.m_Wabil.HP]));
         end else begin
-          MainOutMessage('[错误信息] 城堡初始化左城墙失败，检查怪物数据库里有没左城墙的设置: ' + m_LeftWall.sName);
+          MainOutMessage('[Castle] Failed to load Castle LeftWall, check Monster DB: ' + m_LeftWall.sName);
         end;
         nCode := 7;
         m_CenterWall.ActorObject := UserEngine.RegenMonsterByName(nil, m_sMapName, m_CenterWall.nX, m_CenterWall.nY, m_CenterWall.sName);
@@ -256,7 +256,7 @@ begin
           m_CenterWall.ActorObject.m_Castle := Self;
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[CenterWall.ActorObject.m_sCharName,CenterWall.ActorObject.m_sMapName,CenterWall.ActorObject.m_nCurrX,CenterWall.ActorObject.m_nCurrY,CenterWall.ActorObject.m_Wabil.HP]));
         end else begin
-          MainOutMessage('[错误信息] 城堡初始化中城墙失败，检查怪物数据库里有没中城墙的设置: ' + m_CenterWall.sName);
+          MainOutMessage('[Castle] Failed to load Castle CenterWall, check Monster DB: ' + m_CenterWall.sName);
         end;
         nCode := 8;
         m_RightWall.ActorObject := UserEngine.RegenMonsterByName(nil, m_sMapName, m_RightWall.nX, m_RightWall.nY, m_RightWall.sName);
@@ -265,7 +265,7 @@ begin
           m_RightWall.ActorObject.m_Castle := Self;
         //         MainOutMessage(format('Name:%s Map:%s X:%d Y:%d HP:%d',[RightWall.ActorObject.m_sCharName,RightWall.ActorObject.m_sMapName,RightWall.ActorObject.m_nCurrX,RightWall.ActorObject.m_nCurrY,RightWall.ActorObject.m_Wabil.HP]));
         end else begin
-          MainOutMessage('[错误信息] 城堡初始化右城墙失败，检查怪物数据库里有没右城墙的设置: ' + m_RightWall.sName);
+          MainOutMessage('[Castle] Failed to load Castle RightWall, check Monster DB: ' + m_RightWall.sName);
         end;
         nCode := 9;
         for I := Low(m_Archer) to High(m_Archer) do begin
@@ -280,7 +280,7 @@ begin
             TGuardUnit(ObjUnit.ActorObject).m_nDirection := 3;
           end else begin
           //MainOutMessage('[错误信息] UserCastle.Initialize Archer -> UnitObj = nil');
-            MainOutMessage('[错误信息] 城堡初始化弓箭手失败，检查怪物数据库里有没弓箭手的设置: ' + ObjUnit.sName);
+            MainOutMessage('[Castle] Failed to load Castle Archers: ' + ObjUnit.sName);
           end;
         end;
         nCode := 10;
@@ -291,7 +291,7 @@ begin
           if ObjUnit.ActorObject <> nil then begin
             ObjUnit.ActorObject.m_WAbil.HP := m_Guard[I].nHP;
           end else begin
-            MainOutMessage('[错误信息] 城堡初始化守卫失败(检查怪物数据库里有没守卫怪物)');
+            MainOutMessage('[Castle] Failed to load Castle Guard)');
           //MainOutMessage('[错误信息] UserCastle.Initialize Guard -> UnitObj = nil');
           end;
         end;
@@ -303,7 +303,7 @@ begin
           end;
         end;
       end else begin
-        MainOutMessage(Format('[错误信息] 城堡所在地图不存在(检查地图配置文件里是否有地图%s的设置)', [m_sMapName]));
+        MainOutMessage(Format('[Castle] Failed to load %s Castle Map)', [m_sMapName]));
       //MainOutMessage('[错误信息] TUserCastle.Initialize CastleMap -> nil');
       end;
     end;
@@ -578,7 +578,7 @@ begin
   try
     LoadLis.SaveToFile(sFileName);
   except
-    MainOutMessage('保存攻城信息失败: ' + sFileName);
+    MainOutMessage('Failed to save Castle War information: ' + sFileName);
   end;
   LoadLis.Free;
 end;
@@ -1413,9 +1413,9 @@ begin
       end;
     end;
     LoadList.Free;
-    MainOutMessage('已读取 ' + IntToStr(m_CastleList.Count) + '个城堡信息...');
+    MainOutMessage(IntToStr(m_CastleList.Count) + ' Castles loaded...');
   end else begin
-    MainOutMessage('城堡列表文件未找到！！！');
+    MainOutMessage('Failed to load Castles');
   end;
 end;
 

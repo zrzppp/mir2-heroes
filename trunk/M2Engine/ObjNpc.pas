@@ -12210,9 +12210,9 @@ var
             end;
             if not JmpToLable(s4C) then begin
               //ScriptActionError(PlayObject,'',QuestActionInfo,sGOTO);
-              MainOutMessage('[脚本死循环] NPC:' + m_sCharName +
-                ' 位置:' + m_sMapName + '(' + IntToStr(m_nCurrX) + ':' + IntToStr(m_nCurrY) + ')' +
-                ' 命令:' + sGOTO + ' ' + QuestActionInfo.sParam1);
+              MainOutMessage('[Script Loop] NPC:' + m_sCharName +
+                ' Location:' + m_sMapName + '(' + IntToStr(m_nCurrX) + ':' + IntToStr(m_nCurrY) + ')' +
+                ' Command:' + sGOTO + ' ' + QuestActionInfo.sParam1);
               Result := False;
               Exit;
             end;
@@ -12829,16 +12829,16 @@ procedure TNormNpc.ScriptConditionError(BaseObject: TActorObject;
 var
   sMsg: string;
 begin
-  sMsg := 'Cmd:' + sCmd +
-    ' NPC名称:' + m_sCharName +
-    ' 地图:' + m_sMapName +
-    ' 座标:' + IntToStr(m_nCurrX) + ':' + IntToStr(m_nCurrY) +
-    ' 参数1:' + QuestConditionInfo.sParam1 +
-    ' 参数2:' + QuestConditionInfo.sParam2 +
-    ' 参数3:' + QuestConditionInfo.sParam3 +
-    ' 参数4:' + QuestConditionInfo.sParam4 +
-    ' 参数5:' + QuestConditionInfo.sParam5;
-  MainOutMessage('[脚本参数不正确] ' + sMsg);
+  sMsg:='Cmd:' + sCmd +
+        ' NPC:' + m_sCharName +
+        ' Map:' + m_sMapName +
+        ' (' + IntToStr(m_nCurrX) + ':' + IntToStr(m_nCurrY) +
+        ') Param1:' + QuestConditionInfo.sParam1 +
+        ' Param2:' + QuestConditionInfo.sParam2 +
+        ' Param3:' + QuestConditionInfo.sParam3 +
+        ' Param4:' + QuestConditionInfo.sParam4 +
+        ' Param5:' + QuestConditionInfo.sParam5;
+  MainOutMessage('[Npc Condition Error] ' + sMsg);
 end;
 
 procedure TNormNpc.SendMsgToUser(PlayObject: TPlayObject; sMsg: string);

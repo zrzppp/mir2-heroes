@@ -134,7 +134,7 @@ begin
     FConnected := False;
     ClientSocket.Active := False;
     FConnectTick := GetTickCount;
-    MainOutMessage('数据库服务器连接断开...');
+    MainOutMessage('Database Server disconnected...');
   end;
 end;
 
@@ -148,7 +148,7 @@ begin
     g_Config.boDBSocketWorking := False;
     TSendListThread.Create;
 
-    MainOutMessage('数据库服务器(' + ClientSocket.Socket.RemoteAddress + ':' + IntToStr(ClientSocket.Socket.RemotePort) + ')连接成功...');
+    MainOutMessage('Database Server (' + ClientSocket.Socket.RemoteAddress + ':' + IntToStr(ClientSocket.Socket.RemotePort) + ')connected...');
   end;
 end;
 

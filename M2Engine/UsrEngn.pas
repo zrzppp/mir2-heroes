@@ -2334,7 +2334,7 @@ begin
     if (GetTickCount() - dwShowOnlineTick) > g_Config.dwConsoleShowUserCountTime then begin
       dwShowOnlineTick := GetTickCount();
       NoticeManager.LoadingNotice;
-      MainOutMessage('ÔÚÏßÊı: ' + GetOnlineCount);
+      MainOutMessage('Players Online: ' + GetOnlineCount);
       g_CastleManager.Save;
     end;
     if (GetTickCount() - dwSendOnlineHumTime) > 10000 then begin

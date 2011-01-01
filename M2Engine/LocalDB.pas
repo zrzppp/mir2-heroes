@@ -4086,7 +4086,7 @@ begin
           end else begin
             QuestConditionInfo.Script.Free;
             Dispose(QuestConditionInfo);
-            MainOutMessage('脚本错误: ' + s34 + ' 第:' + IntToStr(I) + ' 行: ' + sScritpFileName);
+            MainOutMessage('Quest Problem: ' + s34 + ' Line:' + IntToStr(I) + ' File: ' + sScritpFileName);
           end;
         end;
         if (n6C = 12) then begin
@@ -4098,7 +4098,7 @@ begin
           end else begin
             QuestActionInfo.Script.Free;
             Dispose(QuestActionInfo);
-            MainOutMessage('脚本错误: ' + s34 + ' 第:' + IntToStr(I) + ' 行: ' + sScritpFileName);
+            MainOutMessage('Quest Problem: ' + s34 + ' Line:' + IntToStr(I) + ' File: ' + sScritpFileName);
           end;
         end;
         if (n6C = 13) then begin
@@ -4110,7 +4110,7 @@ begin
           end else begin
             QuestActionInfo.Script.Free;
             Dispose(QuestActionInfo);
-            MainOutMessage('脚本错误: ' + s34 + ' 第:' + IntToStr(I) + ' 行: ' + sScritpFileName);
+            MainOutMessage('Quest Problem: ' + s34 + ' Line:' + IntToStr(I) + ' File: ' + sScritpFileName);
           end;
         end;
         if (n6C = 14) then
@@ -4135,7 +4135,7 @@ begin
     end; // for
     LoadList.Free;
   end else begin
-    MainOutMessage('脚本文件未找到: ' + sScritpFileName);
+    MainOutMessage('Script file not found: ' + sScritpFileName);
   end;
   Result := 1;
 end;

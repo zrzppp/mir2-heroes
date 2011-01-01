@@ -11604,7 +11604,7 @@ begin
 
 {$IF CHECKNEWMSG = 1}
     else begin
-        MainOutMessage(Format('人物: %s 消息: Ident %d Param %d P1 %d P2 %d P3 %d Msg %s',
+        MainOutMessage(Format('Character: %s Message: Ident %d Param %d P1 %d P2 %d P3 %d Msg %s',
           [m_sCharName,
           ProcessMsg.wIdent,
             ProcessMsg.wParam,
@@ -12029,7 +12029,7 @@ begin
         ClientGuildUpdateRankInfo(ProcessMsg.sMsg);
       end;
     CM_1042: begin
-        MainOutMessage('[非法数据] ' + m_sCharName);
+        MainOutMessage('[Bad Data] ' + m_sCharName);
       end;
     CM_ADJUST_BONUS: begin
         ClientAdjustBonus(ProcessMsg.nParam1, ProcessMsg.sMsg);
@@ -18610,9 +18610,9 @@ begin
     {dwOExp := PlayObject.m_Abil.Exp;
     PlayObject.m_Abil.Exp := dwExp;
     PlayObject.HasLevelUp(1);  }
-    SysMsg(sHumanName + ' 经验调整完成。', c_Green, t_Hint);
+    SysMsg(sHumanName + ' is not online.',c_Green,t_Hint);
     if g_Config.boShowMakeItemMsg then
-      MainOutMessage('[经验调整] ' + m_sCharName + '(' + PlayObject.m_sCharName + ' ' + IntToStr(dwOExp) + ' -> ' + IntToStr(PlayObject.m_Abil.Exp) + ')');
+      MainOutMessage('[Exp Change] ' + m_sCharName + '(' + PlayObject.m_sCharName + ' ' + IntToStr(dwOExp) + ' -> ' + IntToStr(PlayObject.m_Abil.Exp) + ')');
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumanName]), c_Red, t_Hint);
   end;
@@ -18644,9 +18644,9 @@ begin
     if PlayObject.m_Abil.Exp > PlayObject.m_Abil.MaxExp then
       PlayObject.m_Abil.Exp := PlayObject.m_Abil.MaxExp;
     PlayObject.HasLevelUp(1);
-    SysMsg(sHumanName + ' 等级调整完成。', c_Green, t_Hint);
+    SysMsg(sHumanName + ' is not online.', c_Green, t_Hint);
     if g_Config.boShowMakeItemMsg then
-      MainOutMessage('[等级调整] ' + m_sCharName + '(' + PlayObject.m_sCharName + ' ' + IntToStr(nOLevel) + ' -> ' + IntToStr(PlayObject.m_Abil.Level) + ')');
+      MainOutMessage('[Level Change] ' + m_sCharName + '(' + PlayObject.m_sCharName + ' ' + IntToStr(nOLevel) + ' -> ' + IntToStr(PlayObject.m_Abil.Level) + ')');
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumanName]), c_Red, t_Hint);
   end;
@@ -21216,7 +21216,7 @@ begin
       m_ItemList.Add(UserItem);
       SendAddItem(UserItem);
       if g_Config.boShowMakeItemMsg and (m_btPermission >= 6) then
-        MainOutMessage('[制造物品] ' + m_sCharName + ' ' + sItemName + '(' + IntToStr(UserItem.MakeIndex) + ')');
+        MainOutMessage('[Item] ' + m_sCharName + ' ' + sItemName + '(' + IntToStr(UserItem.MakeIndex) + ')');
       if StdItem.NeedIdentify = 1 then
         AddGameDataLog('5' + #9 +
           m_sMapName + #9 +
@@ -21834,7 +21834,7 @@ begin
   RecalcAbilitys();
   SendMsg(Self, RM_ABILITY, 0, 0, 0, 0, '');
   SendMsg(Self, RM_SUBABILITY, 0, 0, 0, 0, '');
-  MainOutMessage('[武器调整]' + m_sCharName + ' DC:' + IntToStr(nDc) + ' MC' + IntToStr(nMc) + ' SC' + IntToStr(nSc) + ' HIT:' + IntToStr(nHit));
+  MainOutMessage('[Weapon]' + m_sCharName + ' DC:' + IntToStr(nDc) + ' MC' + IntToStr(nMc) + ' SC' + IntToStr(nSc) + ' HIT:' + IntToStr(nHit));
 end;
 
 procedure TPlayObject.CmdReGotoHuman(Cmd: pTGameCmd; sHumanName: string);
@@ -22582,7 +22582,7 @@ begin
         IntToStr(m_UseItems[nWhere].btValue[13]);
       SysMsg(sShowMsg, c_Blue, t_Hint);
       if g_Config.boShowMakeItemMsg then
-        MainOutMessage('[物品调整] ' + m_sCharName + '(' + StdItem.Name + ' -> ' + sShowMsg + ')');
+        MainOutMessage('[Item] ' + m_sCharName + '(' + StdItem.Name + ' -> ' + sShowMsg + ')');
     end else begin
       SysMsg(g_sGamecommandSuperMakeHelpMsg, c_Red, t_Hint);
     end;
@@ -27346,11 +27346,11 @@ begin
               case ActorObject.m_btRaceServer of
                 RC_PLAYOBJECT: begin
                     TPlayObject(ActorObject).SendDelItems(@CopyItem01.UserItem);
-                    MainOutMessage('（身上）删除复制装备 人物:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+                    MainOutMessage('(Body) Duplicate Items removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
                   end;
                 RC_HEROOBJECT: begin
                     THeroObject(ActorObject).SendDelItems(@CopyItem01.UserItem);
-                    MainOutMessage('（身上）删除复制装备 英雄:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+                    MainOutMessage('(Body) Duplicate Hero Items removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
                   end;
               end;
               if CopyItem01.OwnerAddr <> nil then
@@ -27362,12 +27362,12 @@ begin
               ActorObject := TActorObject(CopyItem01.OwnerObj);
               case ActorObject.m_btRaceServer of
                 RC_PLAYOBJECT: begin
-                    MainOutMessage('（包裹）删除复制装备 人物:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+                    MainOutMessage('(Bag) Duplicate Item removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
                     TPlayObject(ActorObject).SendDelItems(@CopyItem01.UserItem);
                     TPlayObject(ActorObject).DelBagItem(CopyItem01.UserItem.MakeIndex, UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex));
                   end;
                 RC_HEROOBJECT: begin
-                    MainOutMessage('（包裹）删除复制装备 英雄:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+                    MainOutMessage('(Bag) Duplicate Hero Item removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
                     THeroObject(ActorObject).SendDelItems(@CopyItem01.UserItem);
                     THeroObject(ActorObject).DelBagItem(CopyItem01.UserItem.MakeIndex, UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex));
                   end;
@@ -27376,7 +27376,7 @@ begin
             end;
           t_StorageItem: begin
               ActorObject := TActorObject(CopyItem01.OwnerObj);
-              MainOutMessage('（仓库）删除复制装备 人物:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+              MainOutMessage('(Storage) Duplicate item removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
               case ActorObject.m_btRaceServer of
                 RC_PLAYOBJECT: begin
                     TPlayObject(ActorObject).DelStorageItem(CopyItem01.UserItem.MakeIndex, UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex));
@@ -27386,13 +27386,13 @@ begin
             end;
           t_BigStorageItem: begin
               ActorObject := TActorObject(CopyItem01.OwnerObj);
-              MainOutMessage('（无限仓库）删除复制装备 人物:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+              MainOutMessage('(Big Storage) Duplicate item removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
               g_Storage.Delete(ActorObject.m_sCharName, pTBigStorage(CopyItem01.OwnerAddr));
               CopyItem01.OwnerObj := nil;
             end;
           t_SellOffItem: begin
               ActorObject := TActorObject(CopyItem01.OwnerObj);
-              MainOutMessage('（拍卖）删除复制装备 人物:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
+              MainOutMessage('(Commission) Duplicate item removed:' + ActorObject.m_sCharName + ' 装备名称:' + UserEngine.GetStdItemName(CopyItem01.UserItem.wIndex) + ' MakeIndex:' + IntToStr(CopyItem01.UserItem.MakeIndex));
               g_SellList.Delete(pTSellOffInfo(CopyItem01.OwnerAddr), True);
               CopyItem01.OwnerObj := nil;
             end;

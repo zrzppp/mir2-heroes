@@ -79,8 +79,8 @@ var
   sIPaddr: string;
   Gate: pTGateInfo;
 resourcestring
-  sGateOpen = '游戏网关[%d](%s:%d)已打开...';
-  sKickGate = '服务器未就绪: %s';
+  sGateOpen = 'Rungate [%d](%s:%d)opened...';
+  sKickGate = 'Server not ready: %s';
 begin
   sIPaddr := Socket.RemoteAddress;
   if boStartReady then begin
@@ -138,7 +138,7 @@ var
   UserList: TList;
   Gate: pTGateInfo;
 resourcestring
-  sGateClose = '游戏网关[%d](%s:%d)已关闭...';
+  sGateClose = 'Rungate [%d](%s:%d)closed...';
 begin
   EnterCriticalSection(m_RunSocketSection);
   try

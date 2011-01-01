@@ -192,7 +192,7 @@ begin
     try
       LoadList.LoadFromFile(g_Config.sGuildFile);
     except
-      MainOutMessage(g_Config.sGuildFile + ' 读取出错！！！');
+      MainOutMessage(g_Config.sGuildFile + ' failed');
     end;
     for I := 0 to LoadList.Count - 1 do begin
       sGuildName := Trim(LoadList.Strings[I]);
@@ -206,16 +206,16 @@ begin
     for I := GuildList.Count - 1 downto 0 do begin
       Guild := GuildList.Items[I];
       if not Guild.LoadGuild() then begin
-        MainOutMessage(Guild.sGuildName + ' 读取出错！！！');
+        MainOutMessage(Guild.sGuildName + ' failed');
         GuildList.Delete(I);
         Guild.Free;
         SaveGuildList();
       end;
     end;
 
-    MainOutMessage('已读取 ' + IntToStr(GuildList.Count) + '个行会信息...');
+    MainOutMessage('Total Guilds:' + IntToStr(GuildList.Count));
   end else begin
-    MainOutMessage('行会信息文件未找到！！！');
+    MainOutMessage('Failed to read Guilds');
   end;
 end;
 
@@ -245,7 +245,7 @@ begin
   try
     SaveList.SaveToFile(g_Config.sGuildFile);
   except
-    MainOutMessage('行会信息保存失败！！！');
+    MainOutMessage('Failed to save Guild List');
   end;
   SaveList.Free;
 end;
@@ -638,7 +638,7 @@ begin
   try
     SaveList.SaveToFile(sFileName);
   except
-    MainOutMessage('保存行会信息失败！！！ ' + sFileName);
+    MainOutMessage('Failed to save ' + sFileName);
   end;
   SaveList.Free;
 end;

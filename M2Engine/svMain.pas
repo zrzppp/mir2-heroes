@@ -1032,13 +1032,13 @@ begin
 
     PlugInEngine.StartPlugMoudle;
 
-    MainOutMessage('引擎插件初始化成功...');
+    MainOutMessage('Plugin Module started...');
 
     //Sleep(1000);
     //if g_boMinimize then Application.Minimize; //启动完成后最小化
     if g_boMinimize then SendMessage(Handle, WM_SYSCOMMAND, SC_MINIMIZE, 0);
   except
-    MainOutMessage('服务启动时出现异常错误 ！！！' + IntToStr(nError));
+    MainOutMessage('Failed to load something?' + IntToStr(nError));
   end;
 end;
 
@@ -1289,7 +1289,7 @@ end;
 procedure TFrmMain.MENU_CONTROL_REFSERVERCONFIGClick(Sender: TObject);
 begin
   UserEngine.RefServerConfig;
-  MainOutMessage('客户端配制信息刷新完成...');
+  MainOutMessage('Reload Client to complete this step...');
 end;
 
 procedure TFrmMain.MENU_CONTROL_RELOAD_CONFClick(Sender: TObject);
@@ -1310,19 +1310,19 @@ end;
 procedure TFrmMain.MENU_CONTROL_RELOAD_ITEMDBClick(Sender: TObject);
 begin
   FrmDB.LoadItemsDB();
-  MainOutMessage('重新加载物品数据库完成...');
+  MainOutMessage('Reloaded Item Database...');
 end;
 
 procedure TFrmMain.MENU_CONTROL_RELOAD_MAGICDBClick(Sender: TObject);
 begin
   FrmDB.LoadMagicDB();
-  MainOutMessage('重新加载技能数据库完成...');
+  MainOutMessage('Reloaded Magic Database...');
 end;
 
 procedure TFrmMain.MENU_CONTROL_RELOAD_MONSTERDBClick(Sender: TObject);
 begin
   FrmDB.LoadMonsterDB();
-  MainOutMessage('重新加载怪物数据库完成...');
+  MainOutMessage('Reloaded Monster Database...');
 end;
 
 procedure TFrmMain.StartService;
@@ -1813,7 +1813,7 @@ end;
 procedure TFrmMain.DBSocketConnect(Sender: TObject;
   Socket: TCustomWinSocket);
 begin
-  MainOutMessage('数据库服务器(' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort) + ')连接成功...');
+  MainOutMessage('DBSrv (' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort) + ')connected...');
   g_nSaveRcdErrorCount := 0;
 end;
 
@@ -1875,7 +1875,7 @@ procedure TFrmMain.MENU_CONTROL_RELOAD_MONSTERSAYClick(Sender: TObject);
 begin
   UserEngine.ClearMonSayMsg();
   LoadMonSayMsg();
-  MainOutMessage('重新加载怪物说话配置完成...');
+  MainOutMessage('MonSay reloaded...');
 end;
 
 procedure TFrmMain.MENU_CONTROL_RELOAD_DISABLEMAKEClick(Sender: TObject);
@@ -1904,18 +1904,18 @@ begin
   LoadAIHeroNameList();
   g_GroupItems.LoadFromFile();
   FrmDB.LoadAdminList();
-  MainOutMessage('重新加载列表配置完成...');
+  MainOutMessage('Configuration reloaded...');
 end;
 
 procedure TFrmMain.MENU_CONTROL_RELOAD_STARTPOINTClick(Sender: TObject);
 begin
   FrmDB.LoadStartPoint();
-  MainOutMessage('重新地图安全区列表完成...');
+  MainOutMessage('StartPoint reloaded...');
 end;
 
 procedure TFrmMain.MENU_CONTROL_GATE_OPENClick(Sender: TObject);
 resourcestring
-  sGatePortOpen = '游戏网关端口(%s:%d)已打开...';
+  sGatePortOpen = 'Rungate (%s:%d)opened...';
 begin
   if not GateSocket.Active then begin
     GateSocket.Active := True;
@@ -1932,7 +1932,7 @@ procedure TFrmMain.CloseGateSocket;
 var
   I: Integer;
 resourcestring
-  sGatePortClose = '游戏网关端口(%s:%d)已关闭...';
+  sGatePortClose = 'Rungate (%s:%d) closed...';
 begin
   if GateSocket.Active then begin
     for I := 0 to GateSocket.Socket.ActiveConnections - 1 do begin
@@ -2070,7 +2070,7 @@ end;
 
 procedure TFrmMain.ClearMemoLog;
 begin
-  if Application.MessageBox('是否确定清除日志信息！！！', '提示信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+  if Application.MessageBox('Are you sure you want to clear the Log file', 'Confirm', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
     MemoLog.Clear;
   end;
 end;
@@ -2154,9 +2154,9 @@ begin
       Monster := UserEngine.MonsterList.Items[I];
       FrmDB.LoadMonitems(Monster.sName, Monster.ItemList);
     end;
-    MainOutMessage('怪物爆物品列表重加载完成...');
+    MainOutMessage('MonItems Loaded...');
   except
-    MainOutMessage('怪物爆物品列表重加载失败！！！');
+    MainOutMessage('Failed to load MonItems');
   end;
 end;
 

@@ -413,7 +413,7 @@ begin
       Self.Add(Envir);
       if Envir.m_boDuel then Self.m_DuelMaps.Add(Envir);
     end else begin
-      MainOutMessage('地图文件 ' + g_Config.sMapDir + sMainMapName + '.map' + ' 未找到！！！');
+      MainOutMessage('Map ' + g_Config.sMapDir + sMainMapName + '.map' + ' not found.');
       Envir.Free;
     end;
   end else begin
@@ -422,7 +422,7 @@ begin
       Self.Add(Envir);
       if Envir.m_boDuel then Self.m_DuelMaps.Add(Envir);
     end else begin
-      MainOutMessage('地图文件 ' + g_Config.sMapDir + sMapName + '.map' + ' 未找到！！！');
+      MainOutMessage('Map ' + g_Config.sMapDir + sMapName + '.map' + ' not found.');
       Envir.Free;
     end;
   end;

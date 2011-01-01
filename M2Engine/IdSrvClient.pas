@@ -486,7 +486,7 @@ procedure TFrmIDSoc.IDSocketConnect(Sender: TObject;
   Socket: TCustomWinSocket);
 begin
   g_Config.boIDSocketConnected := True;
-  MainOutMessage('登录服务器(' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort) + ')连接成功...');
+  MainOutMessage('LoginSrv(' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort) + ')connected...');
 end;
 
 procedure TFrmIDSoc.IDSocketDisconnect(Sender: TObject;
@@ -495,7 +495,7 @@ begin
   if g_Config.boIDSocketConnected then begin
     ClearSession();
     g_Config.boIDSocketConnected := False;
-    MainOutMessage('登录服务器(' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort) + ')断开连接...');
+    MainOutMessage('LoginSrv(' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort) + ')disconnected...');
   end;
 end;
 

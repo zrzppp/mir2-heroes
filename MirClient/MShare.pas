@@ -569,13 +569,13 @@ var
   g_ReceiveList: TGStringList;
   g_sProcMsg: string;
 
-  g_sLogoText: string = 'MakeGM';
-  g_sGoldName: string = '金币';
-  g_sGameGoldName: string = '元宝';
-  g_sGamePointName: string = '游戏点';
-  g_sWarriorName: string = '武士'; //职业名称
-  g_sWizardName: string = '魔法师'; //职业名称
-  g_sTaoistName: string = '道士'; //职业名称
+  g_sLogoText: string = 'LOMCN';
+  g_sGoldName: string = 'Gold';
+  g_sGameGoldName: string = 'GameGold';
+  g_sGamePointName: string = 'GamePoint';
+  g_sWarriorName: string = 'Warrior'; //职业名称
+  g_sWizardName: string = 'Wizard'; //职业名称
+  g_sTaoistName: string = 'Taoist'; //职业名称
   g_sUnKnowName: string = 'Unknown';
 
   g_MainHandle: THandle;

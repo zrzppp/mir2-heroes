@@ -1211,7 +1211,7 @@ var
     boPickUpItemAll: False;
     boCloseGroup: True;
     boDuraWarning: True;
-    boNotNeedShift: True;
+    boNotNeedShift: False;
     boAutoHorse: True;
     boCompareItem: True;
 //==================================
@@ -4522,7 +4522,6 @@ begin
     ini.WriteBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     ini.WriteBool('Basic', 'Music', g_Config.boBGSound);
     ini.WriteBool('Basic', 'DuraWarning', g_Config.boDuraWarning);
-    ini.WriteBool('Basic', 'NotNeedShift', g_Config.boNotNeedShift);
 
     ini.WriteBool('Basic', 'AutoHorse', g_Config.boAutoHorse);
     ini.WriteBool('Basic', 'CompareItem', g_Config.boCompareItem);

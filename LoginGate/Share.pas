@@ -5,12 +5,12 @@ uses
   Windows, Messages, Classes, SysUtils, JSocket, Mudutil, IniFiles, HUtil32, Forms,
   Grobal2, GateShare, HttpGet;
 resourcestring
-  g_sUpDateTime = '更新日期: 2010/09/01';
-  g_sProductName = 'MakeGM防攻击登陆网关 V 3.0';
-  g_sProgram = '程序制作: MakeGM QQ:1037527564';
-  g_sWebSite = '程序网站: http://www.MakeGM.com';
-  g_sNowStartGate = '正在启动登录网关...';
-  g_sNowStartOK = '启动登录网关完成...';
+  g_sUpDateTime = 'Build: 02/01/2011';
+  g_sProductName = 'LOMCN - Mir Heroes';
+  g_sProgram = 'Program: CQFir';
+  g_sWebSite = 'Website: www.lomcn.co.uk';
+  g_sNowStartGate = 'Starting Gate...';
+  g_sNowStartOK = 'Gate Started...';
 const
   TESTMODE = 0;
 type
@@ -178,8 +178,8 @@ var
   GateClass: string = 'LoginGate';
 
   g_Config: TConfig = (
-    GateName: '登录网关';
-    TitleName: 'MakeGM';
+    GateName: 'Login Gate';
+    TitleName: 'LOMCN';
     ServerPort: 5500;
     ServerAddr: '127.0.0.1';
     GatePort: 7000;
@@ -821,7 +821,7 @@ begin
     m_dwSendKeepAliveTick := GetTickCount();
     m_boKeepAliveTimcOut := False;
     Initialize();
-    MainOutMessage('账号服务器(' + ClientSocket.Socket.RemoteAddress + ':' + IntToStr(ClientSocket.Socket.RemotePort) + ')连接成功...', nil);
+    MainOutMessage('Connected to (' + ClientSocket.Socket.RemoteAddress + ':' + IntToStr(ClientSocket.Socket.RemotePort) + ')Ok...', nil);
   end;
 end;
 

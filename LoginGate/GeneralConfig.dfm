@@ -3,7 +3,7 @@ object frmGeneralConfig: TfrmGeneralConfig
   Top = 249
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #22522#26412#35774#32622
+  Caption = 'General Options'
   ClientHeight = 158
   ClientWidth = 370
   Color = clBtnFace
@@ -20,35 +20,35 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 185
     Height = 113
-    Caption = #32593#32476#35774#32622
+    Caption = 'IP / Ports'
     TabOrder = 0
     object LabelGateIPaddr: TLabel
       Left = 8
       Top = 20
       Width = 54
       Height = 12
-      Caption = #32593#20851#22320#22336':'
+      Caption = 'Gate Addr:'
     end
     object LabelGatePort: TLabel
       Left = 8
       Top = 44
       Width = 54
       Height = 12
-      Caption = #32593#20851#31471#21475':'
+      Caption = 'Gate Port:'
     end
     object LabelServerPort: TLabel
       Left = 8
       Top = 92
       Width = 66
       Height = 12
-      Caption = #26381#21153#22120#31471#21475':'
+      Caption = 'Server Port:'
     end
     object LabelServerIPaddr: TLabel
       Left = 8
       Top = 68
       Width = 66
       Height = 12
-      Caption = #26381#21153#22120#22320#22336':'
+      Caption = 'Server Addr:'
     end
     object EditGateIPaddr: TEdit
       Left = 80
@@ -88,21 +88,21 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 8
     Width = 161
     Height = 113
-    Caption = #22522#26412#21442#25968
+    Caption = 'Gate Info'
     TabOrder = 1
     object Label1: TLabel
       Left = 8
       Top = 20
       Width = 30
       Height = 12
-      Caption = #26631#39064':'
+      Caption = 'Title:'
     end
     object Label2: TLabel
       Left = 8
       Top = 44
       Width = 78
       Height = 12
-      Caption = #20801#35768#21516#26102#22312#32447':'
+      Caption = 'Max Count:'
     end
     object EditTitle: TEdit
       Left = 40
@@ -110,14 +110,14 @@ object frmGeneralConfig: TfrmGeneralConfig
       Width = 105
       Height = 20
       TabOrder = 0
-      Text = #39134#23572#19990#30028
+      Text = 'title1'
     end
     object CheckBoxMinimize: TCheckBox
       Left = 8
       Top = 64
       Width = 137
       Height = 17
-      Caption = #21551#21160#25104#21151#21518#26368#23567#21270
+      Caption = 'Minimize'
       TabOrder = 1
       OnClick = CheckBoxMinimizeClick
     end
@@ -137,7 +137,7 @@ object frmGeneralConfig: TfrmGeneralConfig
     Top = 128
     Width = 65
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'OK(&O)'
     TabOrder = 2
     OnClick = ButtonOKClick
   end

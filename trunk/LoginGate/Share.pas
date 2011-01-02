@@ -640,7 +640,7 @@ begin
   ClientSocket.Active := False;
   m_dwKeepAliveTick := GetTickCount();
   Initialize();
-  MainOutMessage('账号服务器连接断开...', nil);
+  MainOutMessage('Gate Disconnected From Server...', nil);
 end;
 
 procedure TClientThread.Execute;

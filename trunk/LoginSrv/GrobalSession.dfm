@@ -3,7 +3,7 @@ object frmGrobalSession: TfrmGrobalSession
   Top = 424
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #26597#30475#20840#23616#20250#35805
+  Caption = '??????'
   ClientHeight = 208
   ClientWidth = 405
   Color = clBtnFace
@@ -22,7 +22,7 @@ object frmGrobalSession: TfrmGrobalSession
     Top = 176
     Width = 73
     Height = 25
-    Caption = #21047#26032'(&R)'
+    Caption = '??(&R)'
     TabOrder = 0
   end
   object PanelStatus: TPanel

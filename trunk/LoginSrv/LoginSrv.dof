@@ -90,7 +90,7 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=..\MirServer\LoginSrv
+OutputDir=C:\MirServer\LoginSrv
 UnitOutputDir=..\Build\LoginSrv
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -134,6 +134,9 @@ OriginalFilename=LoginSrv.exe
 ProductName=???????
 ProductVersion=2.0.0.0
 Comments=
+[Excluded Packages]
+C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyCore70.bpl=Indy 10 Core Design Time
+C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyProtocols70.bpl=Indy 10 Protocols Design Time
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
@@ -144,5 +147,6 @@ Item0=..\Common;..\Component\JSocket;..\Component\RC4\Source
 Count=1
 Item0=..\Build\LoginSrv
 [HistoryLists\hlOutputDirectorry]
-Count=1
-Item0=..\MirServer\LoginSrv
+Count=2
+Item0=C:\MirServer\LoginSrv
+Item1=..\MirServer\LoginSrv

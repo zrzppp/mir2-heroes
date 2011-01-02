@@ -4387,10 +4387,11 @@ begin
             if (g_NewStatus = sNone) and
               ((target.m_btRace <> RCC_USERHUMAN) and
               (target.m_btRace <> RCC_GUARD) and
+              (target.m_btRace <> 12) and // Guard
+              (target.m_btRace <> 45) and // Archer
               (target.m_btRace <> RCC_MERCHANT) and
-              (Pos('(', target.m_sUserName) = 0) //包括'('的角色名称为召唤的宝宝
-              )
-              or ((ssShift in Shift) or ((target.m_btRace <> RCC_MERCHANT))) //SHIFT + 鼠标左键
+              (Pos('(', target.m_sUserName) = 0))
+              or ((ssShift in Shift) or ((target.m_btRace <> RCC_MERCHANT)) and g_Config.boNotNeedShift) //SHIFT + 鼠标左键
               or (target.m_nNameColor = ENEMYCOLOR) or (GetRangeHit(nHitMsg) and IsInRangeLine(target.m_nCurrX, target.m_nCurrY, 4))
               then begin
               AttackTarget(target);
@@ -4613,6 +4614,8 @@ begin
               if ((keyvalue[VK_SHIFT] and $80) <> 0) then Shift := Shift + [ssShift];
               if ((g_TargetCret.m_btRace <> RCC_USERHUMAN) and
                 (g_TargetCret.m_btRace <> RCC_GUARD) and
+                (g_TargetCret.m_btRace <> 12) and  // Guard
+                (g_TargetCret.m_btRace <> 45) and // Archer
                 (g_TargetCret.m_btRace <> RCC_MERCHANT) and
                 (Pos('(', g_TargetCret.m_sUserName) = 0) //
                 )

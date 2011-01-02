@@ -3,7 +3,7 @@ object frmPrefConfig: TfrmPrefConfig
   Top = 314
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #24615#33021#35774#32622
+  Caption = 'Performance'
   ClientHeight = 155
   ClientWidth = 193
   Color = clBtnFace
@@ -20,28 +20,22 @@ object frmPrefConfig: TfrmPrefConfig
     Top = 8
     Width = 177
     Height = 49
-    Caption = #26381#21153#22120#36890#35759
+    Caption = 'Server Check Time Out'
     TabOrder = 0
     object LabelCheckTimeOut: TLabel
       Left = 8
       Top = 20
       Width = 54
       Height = 12
-      Caption = #26816#27979#36229#26102':'
-    end
-    object Label1: TLabel
-      Left = 128
-      Top = 20
-      Width = 12
-      Height = 12
-      Caption = #31186
+      Caption = 'Time Out:'
+      end
     end
     object EditServerCheckTimeOut: TSpinEdit
       Left = 72
-      Top = 16
+      Top = 26
       Width = 49
       Height = 21
-      Hint = #19982#28216#25103#26381#21153#22120#20043#38388#36890#35759#26816#27979#36229#26102#26102#38388#38271#24230
+      Hint = 'Server check time out to be set in this box'
       EditorEnabled = False
       Increment = 30
       MaxLength = 600
@@ -52,35 +46,27 @@ object frmPrefConfig: TfrmPrefConfig
       TabOrder = 0
       Value = 0
       OnChange = EditServerCheckTimeOutChange
-    end
   end
   object GroupBox1: TGroupBox
     Left = 8
     Top = 64
     Width = 177
     Height = 49
-    Caption = #23458#25143#31471#36890#35759
+    Caption = 'Client Block Size'
     TabOrder = 1
     object LabelSendBlockSize: TLabel
       Left = 8
       Top = 20
       Width = 54
       Height = 12
-      Caption = #25968#25454#22823#23567':'
-    end
-    object Label3: TLabel
-      Left = 136
-      Top = 20
-      Width = 24
-      Height = 12
-      Caption = #23383#33410
+      Caption = 'Client Block:'
     end
     object EditSendBlockSize: TSpinEdit
       Left = 72
       Top = 16
       Width = 57
       Height = 21
-      Hint = #21457#36865#32473#23458#25143#31471#25968#25454#21253#22823#23567
+      Hint = 'Client block size to be set here'
       EditorEnabled = False
       Increment = 50
       MaxLength = 600
@@ -98,7 +84,7 @@ object frmPrefConfig: TfrmPrefConfig
     Top = 120
     Width = 65
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'OK (&O)'
     TabOrder = 2
     OnClick = ButtonOKClick
   end

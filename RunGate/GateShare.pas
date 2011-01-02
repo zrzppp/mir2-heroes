@@ -4,10 +4,10 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, JSocket, WinSock, SyncObjs, IniFiles, Grobal2, Common;
 resourcestring
-  g_sVersion = '程序版本: 1.00 Build 20100901';
-  g_sUpDateTime = '更新日期: 2010/09/01';
-  g_sProgram = '程序制作: MakeGM QQ:1037527564';
-  g_sWebSite = '程序网站: http://www.MakeGM.com';
+  g_sVersion = 'Build: LOMCN Mir Heroes';
+  g_sUpDateTime = 'Updated: 02/01/2011';
+  g_sProgram = 'Program: LOMCN';
+  g_sWebSite = 'Webse: www.lomcn.co.uk';
 const
   tRunGate = 8;
   GATEMAXSESSION = 1000;
@@ -140,7 +140,7 @@ var
   MainLogMsgList: TStringList;
   nShowLogLevel: Integer = 3;
   GateClass: string = 'Server';
-  GateName: string = '游戏网关';
+  GateName: string = 'Run Gate';
   TitleName: string = 'MakeGM';
 
   ServerAddr: string = '127.0.0.1';

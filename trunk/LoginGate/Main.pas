@@ -125,7 +125,7 @@ begin
   MainOutMessage(g_sUpDateTime, nil);
   MainOutMessage(g_sProgram, nil);
   MainOutMessage(g_sWebSite, nil);
-  MainOutMessage('正在启动服务...', nil);
+  MainOutMessage('test123...', nil);
   g_boShowLog := MENU_VIEW_LOGMSG.Checked;
   g_Config.boStarted := False;
 
@@ -149,8 +149,8 @@ begin
   //g_TestList.Free;
 {$IFEND}
   if g_Config.boStarted then begin
-    if Application.MessageBox('是否确认退出服务器？',
-      '提示信息',
+    if Application.MessageBox('Are you sure you want to close gate?',
+      'Exit',
       MB_YESNO + MB_ICONQUESTION) = IDYES then begin
       Caption := g_Config.TitleName + ' [正在关闭服务...]';
       g_boClose := True;
@@ -198,7 +198,7 @@ begin
     ClientSocket.Active := True;  }
 
     Timer.Enabled := True;
-    MainOutMessage('启动服务完成...', nil);
+    MainOutMessage('Gate Loading...', nil);
 
     g_Config.boStarted := True;
     g_boClose := False;
@@ -226,7 +226,7 @@ procedure TfrmMain.StopService;
 var
   I: Integer;
 begin
-  MainOutMessage('正在停止服务...', nil);
+  MainOutMessage('Gate Disabling...', nil);
   g_Config.boStarted := False;
   g_boServiceStart := False;
   //Initialize();
@@ -244,7 +244,7 @@ begin
   ButtonStop.Enabled := False;
   MENU_START.Enabled := True;
   MENU_STOP.Enabled := False;
-  MainOutMessage('服务器已停止...', nil);
+  MainOutMessage('Gate Stopped...', nil);
 end;
 
 procedure TfrmMain.TimerStartTimer(Sender: TObject);
@@ -384,7 +384,7 @@ procedure TfrmMain.MENU_LOADBLOCKIPLISTClick(Sender: TObject);
 begin
   LoadBlockIPFile();
   LoadBlockIPArrayFile;
-  MainOutMessage('IP过滤列表加载完成...', nil);
+  MainOutMessage('Loaded Blocked IP List...', nil);
 end;
 
 procedure TfrmMain.MENU_OPTION_HELPClick(Sender: TObject);
@@ -403,10 +403,10 @@ begin
   MENU_CONTROL_OPENATTACK.Checked := not MENU_CONTROL_OPENATTACK.Checked;
   if MENU_CONTROL_OPENATTACK.Checked then begin
     g_boCheckAttack := True;
-    MainOutMessage('防攻击系统已启动...', nil);
+    MainOutMessage('Check Attack On...', nil);
   end else begin
     g_boCheckAttack := False;
-    MainOutMessage('防攻击系统已关闭...', nil);
+    MainOutMessage('Check Attack Off...', nil);
   end;
   sConfigFileName := '.\Config.ini';
   Conf := TIniFile.Create(sConfigFileName);
@@ -479,8 +479,8 @@ begin
       if not g_boGateReady then begin
         StatusPane1.Caption := IntToStr(g_Config.GatePort);
         StatusPane2.Caption := '---]    [---';
-        StatusPane3.Caption := Format('人物:%d/%d/%d', [ServerSocket.Socket.ActiveConnections, g_SessionList.Count, g_SessionList.MaxCount]);
-        StatusPane4.Caption := Format('注册账号:%d', [g_nNewAccountCount]);
+        StatusPane3.Caption := Format('Running:%d/%d/%d', [ServerSocket.Socket.ActiveConnections, g_SessionList.Count, g_SessionList.MaxCount]);
+        StatusPane4.Caption := Format('Account Count:%d', [g_nNewAccountCount]);
         //StatusPane5.Caption := Format('工作线程:%d', [g_dwDecodeMsgTime]);
        { ClientSocket.Port := g_Config.ServerPort;
         ClientSocket.Address := g_Config.ServerAddr;
@@ -489,16 +489,16 @@ begin
 
         StatusPane1.Caption := IntToStr(g_Config.GatePort);
         StatusPane2.Caption := '-----][-----';
-        StatusPane3.Caption := Format('人物:%d/%d/%d', [ServerSocket.Socket.ActiveConnections, g_SessionList.Count, g_SessionList.MaxCount]);
-        StatusPane4.Caption := Format('注册账号:%d', [g_nNewAccountCount]);
+        StatusPane3.Caption := Format('Running:%d/%d/%d', [ServerSocket.Socket.ActiveConnections, g_SessionList.Count, g_SessionList.MaxCount]);
+        StatusPane4.Caption := Format('Account Count:%d', [g_nNewAccountCount]);
         //StatusPane5.Caption := Format('工作线程:%d', [g_dwDecodeMsgTime]);
 
       end;
     end else begin
-      StatusPane1.Caption := '???';
+      StatusPane1.Caption := 'No Connection';
       StatusPane2.Caption := '---]    [---';
-      StatusPane3.Caption := '人物:?/?/?';
-      StatusPane4.Caption := '注册账号:?';
+      StatusPane3.Caption := 'Offline:?/?/?';
+      StatusPane4.Caption := 'Offline:?';
       //StatusPane5.Caption := '工作线程:?';
     end;
   end;
@@ -548,7 +548,7 @@ begin
       BlockIP := IsBlockIP(sRemoteIPaddr);
       if BlockIP <> nil then begin
         Inc(BlockIP.nAttackCount);
-        MainOutMessage('过滤连接: ' + sRemoteIPaddr, TObject(BlockIP));
+        MainOutMessage('Block IP: ' + sRemoteIPaddr, TObject(BlockIP));
         Socket.Close;
         Exit;
       end;
@@ -678,7 +678,7 @@ begin
     if g_boCheckAttack then begin
       if not IsUserIPList(Session.sRemoteIPaddr) then begin
         if Length(sReviceMsg) > 355 then begin
-          MainOutMessage('数据超限: ' + Session.sRemoteIPaddr, nil);
+          MainOutMessage('User IP List: ' + Session.sRemoteIPaddr, nil);
           Socket.Close;
           Exit;
         end;

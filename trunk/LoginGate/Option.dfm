@@ -3,7 +3,7 @@ object frmOption: TfrmOption
   Top = 310
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #37197#21046#20449#24687
+  Caption = 'IP Filter'
   ClientHeight = 329
   ClientWidth = 636
   Color = clBtnFace
@@ -20,77 +20,56 @@ object frmOption: TfrmOption
     Top = 20
     Width = 54
     Height = 12
-    Caption = #36830#25509#38480#21046':'
-  end
-  object Label3: TLabel
-    Left = 592
-    Top = 20
-    Width = 42
-    Height = 12
-    Caption = #36830#25509'/IP'
+    Caption = 'Max Connect:'
   end
   object Label5: TLabel
     Left = 440
     Top = 44
     Width = 42
     Height = 12
-    Caption = #31354#36830#25509':'
+    Caption = 'Con TimeOut:'
   end
   object Label11: TLabel
     Left = 440
     Top = 68
     Width = 78
     Height = 12
-    Caption = #38450'CC'#25915#20987#26102#38388':'
+    Caption = 'Con Check:'
   end
   object Label1: TLabel
     Left = 440
     Top = 92
     Width = 54
     Height = 12
-    Caption = #36830#25509#38480#21046':'
-  end
-  object Label4: TLabel
-    Left = 587
-    Top = 92
-    Width = 42
-    Height = 12
-    Caption = #36830#25509'/IP'
+    Caption = 'Max On Count:'
   end
   object Label7: TLabel
     Left = 440
     Top = 116
     Width = 48
     Height = 12
-    Caption = #32511#33394#36890#36947
-  end
-  object Label8: TLabel
-    Left = 587
-    Top = 115
-    Width = 24
-    Height = 12
-    Caption = #27627#31186
+    Caption = 'Load IP List:'
   end
   object GroupBoxActive: TGroupBox
     Left = 8
     Top = 8
     Width = 137
     Height = 257
-    Caption = #24403#21069#36830#25509
+    Caption = 'Block List'
     TabOrder = 0
     object LabelActive: TLabel
       Left = 8
       Top = 24
       Width = 54
       Height = 12
-      Caption = #36830#25509#21015#34920':'
+      Caption = 'test1:'
     end
     object ListBoxActiveList: TListBox
       Left = 8
       Top = 40
       Width = 121
       Height = 209
-      Hint = #24403#21069#36830#25509#30340'IP'#22320#22336#21015#34920#13'Ctrl + F '#26597#25214'IP'
+      Hint = ' command? Ctrl + F IP'
       ItemHeight = 12
       Items.Strings = (
         '888.888.888.888')
@@ -108,23 +87,21 @@ object frmOption: TfrmOption
     Top = 8
     Width = 137
     Height = 257
-    Caption = #36807#28388#21015#34920
+    Caption = 'Char Block List'
     TabOrder = 1
     object LabelBlock: TLabel
       Left = 8
       Top = 24
       Width = 54
       Height = 12
-      Caption = #27704#20037#36807#28388':'
+      Caption = 'test13:'
     end
     object ListBoxBlockList: TListBox
       Left = 13
       Top = 42
       Width = 121
       Height = 209
-      Hint = 
-        #27704#20037#36807#28388#21015#34920#65292#22312#27492#21015#34920#20013#30340'IP'#23558#26080#27861#24314#31435#36830#25509#65292#27492#21015#34920#23558#20445#23384#20110#37197#32622#25991#20214#20013#65292#22312#31243#24207#37325#26032#21551#21160#26102#20250#37325#26032#21152#36733#27492#21015#34920#13'Ctrl + F '#26597#25214 +
-        'IP'
+      Hint = 'hint box 2'
       ItemHeight = 12
       Items.Strings = (
         '888.888.888.888')
@@ -142,8 +119,7 @@ object frmOption: TfrmOption
     Top = 16
     Width = 65
     Height = 21
-    Hint = #21333#20010'IP'#22320#22336#65292#26368#22810#21487#20197#24314#31435#36830#25509#25968#65292#36229#36807#25351#23450#36830#25509#25968#65292#36830#25509#26029#24320
-    EditorEnabled = False
+    Hint = 'hint box 6'
     MaxValue = 10000
     MinValue = 1
     ParentShowHint = False
@@ -157,7 +133,7 @@ object frmOption: TfrmOption
     Top = 296
     Width = 89
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'OK(&O)'
     Default = True
     TabOrder = 3
     OnClick = ButtonOKClick
@@ -179,7 +155,7 @@ object frmOption: TfrmOption
     Top = 64
     Width = 81
     Height = 21
-    Hint = #25968#23383#36234#22823#36234#20005#26684#65292#40664#35748'100'
+    Hint = 'hint box 5'
     Increment = 10
     MaxValue = 1000
     MinValue = 1
@@ -194,23 +170,21 @@ object frmOption: TfrmOption
     Top = 8
     Width = 137
     Height = 257
-    Caption = 'IP'#27573#36807#28388#21015#34920
+    Caption = 'IP Block List'
     TabOrder = 6
     object LabelIPArray: TLabel
       Left = 8
       Top = 24
       Width = 54
       Height = 12
-      Caption = 'IP'#27573#36807#28388':'
+      Caption = 'IPtest15:'
     end
     object ListBoxIPArrayList: TListBox
       Left = 8
       Top = 40
       Width = 121
       Height = 209
-      Hint = 
-        'IP'#27573#36807#28388#21015#34920#12290#27604#22914#35201#36807#28388'221.221.10.1'#21040'221.221.10.225'#30340'IP'#65292#21482#38656#22686#21152#19968#20010#13'221.221.10.*'#65292 +
-        #29992'*'#21495#20195#34920'IP'#20013#30340#23383#27573#21363#21487#12290
+      Hint = 'box hint1'
       ItemHeight = 12
       Items.Strings = (
         '*.*.*.*')
@@ -227,7 +201,7 @@ object frmOption: TfrmOption
     Top = 88
     Width = 65
     Height = 21
-    Hint = #26368#22810#21487#20197#24314#31435#36830#25509#25968#65292#36229#36807#25351#23450#36830#25509#25968#23558#20840#37096#36807#28388#21015#34920
+    Hint = 'Max Online Count Edited'
     EditorEnabled = False
     MaxValue = 10000
     MinValue = 1
@@ -242,21 +216,21 @@ object frmOption: TfrmOption
     Top = 268
     Width = 425
     Height = 53
-    Caption = #32511#33394#36890#36947
+    Caption = 'IP List Site'
     TabOrder = 8
     object Label6: TLabel
       Left = 8
       Top = 24
       Width = 42
       Height = 12
-      Caption = 'IPList:'
+      Caption = 'IP List:'
     end
     object ButtonLoadIpList: TButton
       Left = 367
       Top = 20
       Width = 50
       Height = 20
-      Caption = #21047#26032
+      Caption = 'Save'
       TabOrder = 0
       OnClick = ButtonLoadIpListClick
     end
@@ -286,19 +260,19 @@ object frmOption: TfrmOption
     Left = 56
     Top = 160
     object APOPMENU_REFLIST: TMenuItem
-      Caption = #21047#26032'(&R)'
+      Caption = 'Ref List(&R)'
       OnClick = APOPMENU_REFLISTClick
     end
     object APOPMENU_BLOCKLIST: TMenuItem
-      Caption = #21152#20837#27704#20037#36807#28388#21015#34920'(&D)'
+      Caption = 'Block List(&D)'
       OnClick = APOPMENU_BLOCKLISTClick
     end
     object APOPMENU_ALLADDLIST: TMenuItem
-      Caption = #20840#37096#21152#20837#27704#20037#36807#28388#21015#34920'(&S'
+      Caption = 'Add List(&S'
       OnClick = APOPMENU_ALLADDLISTClick
     end
     object APOPMENU_KICK: TMenuItem
-      Caption = #36386#38500#19979#32447'(&K)'
+      Caption = 'Kick(&K)'
       OnClick = APOPMENU_KICKClick
     end
   end
@@ -306,19 +280,19 @@ object frmOption: TfrmOption
     Left = 200
     Top = 160
     object BPOPMENU_REFLIST: TMenuItem
-      Caption = #21047#26032'(&R)'
+      Caption = 'Ref List(&R)'
       OnClick = BPOPMENU_REFLISTClick
     end
     object BPOPMENU_ADD: TMenuItem
-      Caption = #22686#21152'(&A)'
+      Caption = 'Add(&A)'
       OnClick = BPOPMENU_ADDClick
     end
     object BPOPMENU_CLEAR: TMenuItem
-      Caption = #20840#37096#28165#38500'(&C)'
+      Caption = 'Clear(&C)'
       OnClick = BPOPMENU_CLEARClick
     end
     object BPOPMENU_DELETE: TMenuItem
-      Caption = #21024#38500'(&D)'
+      Caption = 'Delete(&D)'
       OnClick = BPOPMENU_DELETEClick
     end
   end
@@ -326,19 +300,19 @@ object frmOption: TfrmOption
     Left = 352
     Top = 160
     object AYPOPMENU_REFLIST: TMenuItem
-      Caption = #21047#26032'(&R)'
+      Caption = 'Ref List(&R)'
       OnClick = AYPOPMENU_REFLISTClick
     end
     object AYPOPMENU_ADD: TMenuItem
-      Caption = #22686#21152'(&A)'
+      Caption = 'Add(&A)'
       OnClick = AYPOPMENU_ADDClick
     end
     object AYPOPMENU_CLEAR: TMenuItem
-      Caption = #20840#37096#28165#38500'(&C)'
+      Caption = 'Clear(&C)'
       OnClick = AYPOPMENU_CLEARClick
     end
     object AYPOPMENU_DELETE: TMenuItem
-      Caption = #21024#38500'(&D)'
+      Caption = 'Delete(&D)'
       OnClick = AYPOPMENU_DELETEClick
     end
   end

@@ -1607,24 +1607,24 @@ begin
   SetWindowPos(Self.Handle, Self.Handle, Self.Left, Self.Top, Self.Width, Self.Height, $40);
   case m_nStartStatus of
     0: begin
-        if Application.MessageBox('是否确认启动游戏服务器 ?', '确认信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to start server?', 'Starting Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           StartGame();
         end;
       end;
     1: begin
-        if Application.MessageBox('是否确认中止启动游戏服务器 ?', '确认信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to stop server?', 'Stopping Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           TimerStartGame.Enabled := False;
           m_nStartStatus := 2;
           ButtonStartGame.Caption := g_sButtonStopGame;
         end;
       end;
     2: begin
-        if Application.MessageBox('是否确认停止游戏服务器 ?', '确认信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to stop server?', 'Stopping Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           StopGame();
         end;
       end;
     3: begin
-        if Application.MessageBox('是否确认中止启动游戏服务器 ?', '确认信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to stop server?111111', 'Stopping Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           TimerStopGame.Enabled := False;
           m_nStartStatus := 2;
           ButtonStartGame.Caption := g_sButtonStopGame;
@@ -1715,7 +1715,7 @@ end;
 procedure TfrmMain.StopGame;
 begin
   ButtonStartGame.Caption := g_sButtonStopStopGame;
-  MainOutMessage('正在开始停止服务器...');
+  MainOutMessage('Server has been closed...');
   TimerCheckRun.Enabled := False;
   TimerStopGame.Enabled := True;
   m_nStartStatus := 3;
@@ -2753,7 +2753,7 @@ end;
 function TfrmMain.StartService: Boolean;
 begin
   Result := False;
-  MainOutMessage('正在启动游戏客户端控制器...');
+  MainOutMessage('Game Center Started...');
   g_SessionList := TStringList.Create;
   if FileExists(g_sGameFile) then begin
     MemoGameList.Lines.LoadFromFile(g_sGameFile);
@@ -2775,12 +2775,12 @@ begin
     Timer.Enabled := True;
   except
     on e: ESocketError do begin
-      MainOutMessage(Format('端口%d打开异常，检查端口是否被其它程序占用！！！', [g_nServerPort]));
+      MainOutMessage(Format('Socket Error', [g_nServerPort]));
       MainOutMessage(e.message);
       Exit;
     end;
   end;
-  MainOutMessage('游戏控制台启动完成...');
+  MainOutMessage('Loaded Config File...');
   Result := True;
 end;
 

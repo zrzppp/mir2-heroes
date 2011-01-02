@@ -134,3 +134,6 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyCore70.bpl=Indy 10 Core Design Time
+C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyProtocols70.bpl=Indy 10 Protocols Design Time

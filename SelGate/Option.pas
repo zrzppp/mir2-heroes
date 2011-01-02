@@ -26,7 +26,6 @@ type
     BPOPMENU_CLEAR: TMenuItem;
     Label2: TLabel;
     EditMaxConnect: TSpinEdit;
-    Label3: TLabel;
     ButtonOK: TButton;
     Label5: TLabel;
     EditKeepConnectTimeOut: TSpinEdit;
@@ -42,7 +41,6 @@ type
     AYPOPMENU_DELETE: TMenuItem;
     Label1: TLabel;
     EditMaxOnlineCount: TSpinEdit;
-    Label4: TLabel;
     procedure APOPMENU_KICKClick(Sender: TObject);
     procedure APOPMENU_BLOCKLISTClick(Sender: TObject);
     procedure APOPMENU_REFLISTClick(Sender: TObject);

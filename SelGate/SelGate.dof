@@ -90,7 +90,7 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=..\MirServer\SelGate
+OutputDir=C:\MirServer\SelGate
 UnitOutputDir=..\Build\SelGate
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -135,7 +135,8 @@ ProductName=
 ProductVersion=1.0.0.0
 Comments=
 [Excluded Packages]
-c:\program files\borland\delphi7\Projects\Bpl\DelphiX110.bpl=DelphiX - DirectX components for Delphi 2007
+C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyCore70.bpl=Indy 10 Core Design Time
+C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyProtocols70.bpl=Indy 10 Protocols Design Time
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
@@ -147,5 +148,6 @@ Item1=..\Common;..\Component\JSocket;..\Component\RC4\Source
 Count=1
 Item0=..\Build\SelGate
 [HistoryLists\hlOutputDirectorry]
-Count=1
-Item0=..\MirServer\SelGate
+Count=2
+Item0=C:\MirServer\SelGate
+Item1=..\MirServer\SelGate

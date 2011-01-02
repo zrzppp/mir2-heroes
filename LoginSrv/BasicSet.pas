@@ -19,7 +19,6 @@ type
     CheckBoxEnableGetbackPassword: TCheckBox;
     CheckBoxAutoClear: TCheckBox;
     Label1: TLabel;
-    Label2: TLabel;
     ButtonSave: TButton;
     ButtonClose: TButton;
     SpinEditAutoClearTime: TSpinEdit;
@@ -45,7 +44,6 @@ type
     GroupBox7: TGroupBox;
     CheckBoxAutoUnLockAccount: TCheckBox;
     Label9: TLabel;
-    Label10: TLabel;
     SpinEditUnLockAccountTime: TSpinEdit;
     CheckBoxMinimize: TCheckBox;
     procedure CheckBoxTestServerClick(Sender: TObject);

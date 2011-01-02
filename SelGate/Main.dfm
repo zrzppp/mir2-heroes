@@ -1,14 +1,14 @@
 object frmMain: TfrmMain
-  Left = 804
-  Top = 178
+  Left = 995
+  Top = 118
+  Width = 437
+  Height = 256
   Caption = 'frmMain'
-  ClientHeight = 198
-  ClientWidth = 421
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   Menu = MainMenu
   OldCreateOrder = False
@@ -69,7 +69,7 @@ object frmMain: TfrmMain
     object ButtonStart: TRzToolButton
       Left = 4
       Top = 2
-      Hint = #21551#21160#26381#21153
+      Hint = '????'
       ImageIndex = 98
       Images = imlMain
       ParentShowHint = False
@@ -79,7 +79,7 @@ object frmMain: TfrmMain
     object ButtonStop: TRzToolButton
       Left = 29
       Top = 2
-      Hint = #20572#27490#26381#21153
+      Hint = '????'
       ImageIndex = 100
       Images = imlMain
       ParentShowHint = False
@@ -103,15 +103,15 @@ object frmMain: TfrmMain
       Align = alClient
       Columns = <
         item
-          Caption = #26102#38388
+          Caption = 'Date / Time'
           Width = 120
         end
         item
-          Caption = #20449#24687
+          Caption = 'Information'
           Width = 220
         end
         item
-          Caption = #29366#24577
+          Caption = 'Status'
           Width = 60
         end>
       ColumnClick = False
@@ -135,60 +135,60 @@ object frmMain: TfrmMain
     Left = 272
     Top = 56
     object MENU_CONTROL: TMenuItem
-      Caption = #25511#21046'(&C)'
+      Caption = 'Control (&C)'
       object MENU_CONTROL_OPENATTACK: TMenuItem
-        Caption = #24320#21551#25915#20987#20445#25252'(&A)'
+        Caption = 'Open Attack (&A)'
         Checked = True
         OnClick = MENU_CONTROL_OPENATTACKClick
       end
       object MENU_CONTROL_CLEAELOG: TMenuItem
-        Caption = #28165#38500#26085#24535'(&C)'
+        Caption = 'Clear Log (&C)'
         OnClick = MENU_CONTROL_CLEAELOGClick
       end
       object MENU_START: TMenuItem
-        Caption = #21551#21160#26381#21153'(&S)'
+        Caption = 'Start (&S)'
         OnClick = ButtonStartClick
       end
       object MENU_STOP: TMenuItem
-        Caption = #20572#27490#26381#21153'(&T)'
+        Caption = 'Stop (&T)'
         OnClick = ButtonStartClick
       end
       object MENU_LOADBLOCKIPLIST: TMenuItem
-        Caption = #37325#26032#21152#36733'IP'#36807#28388#21015#34920'(&L)'
+        Caption = 'Load Block IP List (&L)'
         OnClick = MENU_LOADBLOCKIPLISTClick
       end
       object MENU_CONTROL_EXIT: TMenuItem
-        Caption = #36864#20986'(&E)'
+        Caption = 'Exit (&E)'
         OnClick = MENU_CONTROL_EXITClick
       end
     end
     object MENU_VIEW: TMenuItem
-      Caption = #26597#30475'(&V)'
+      Caption = 'View (&V)'
       object MENU_VIEW_LOGMSG: TMenuItem
-        Caption = #26597#30475#26085#24535'(&L)'
+        Caption = 'Log Message (&L)'
         Checked = True
         OnClick = MENU_VIEW_LOGMSGClick
       end
       object MENU_VIEW_SENDMSG: TMenuItem
-        Caption = #26597#30475#23553#21253'(&S)'
+        Caption = 'Send Message (&S)'
         Enabled = False
       end
     end
     object MENU_OPTION: TMenuItem
-      Caption = #36873#39033'(&O)'
+      Caption = 'Options (&O)'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = #22522#26412#35774#32622'(&G)'
+        Caption = 'General (&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_IPFILTER: TMenuItem
-        Caption = #23433#20840#36807#28388'(&S)'
+        Caption = 'IP Filter (&S)'
         OnClick = MENU_OPTION_IPFILTERClick
       end
     end
     object H1: TMenuItem
-      Caption = #24110#21161'(&H)'
+      Caption = 'Help (&H)'
       object MENU_OPTION_HELP: TMenuItem
-        Caption = #20851#20110'(&S)'
+        Caption = 'Help (&S)'
         OnClick = MENU_OPTION_HELPClick
       end
     end
@@ -197,7 +197,7 @@ object frmMain: TfrmMain
     Left = 188
     Top = 52
     Bitmap = {
-      494C010166006800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101660068000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000A0010000010020000000000000A0
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3640,15 +3640,15 @@ object frmMain: TfrmMain
     Left = 232
     Top = 56
     object POPUPMENU_COPY: TMenuItem
-      Caption = #22797#21046'(&C)'
+      Caption = 'Copy (&C)'
       OnClick = POPUPMENU_COPYClick
     end
     object POPUPMENU_SELALL: TMenuItem
-      Caption = #20840#36873'(&A)'
+      Caption = 'Select All (&A)'
       OnClick = POPUPMENU_SELALLClick
     end
     object POPUPMENU_SAVE: TMenuItem
-      Caption = #20445#23384
+      Caption = 'Save'
       Visible = False
       OnClick = POPUPMENU_SAVEClick
     end

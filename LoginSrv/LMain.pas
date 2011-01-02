@@ -100,7 +100,6 @@ type
     MENU_CONTROL_EXIT: TMenuItem;
     MENU_VIEW: TMenuItem;
     MENU_OPTION: TMenuItem;
-    MENU_TOOLS: TMenuItem;
     MENU_HELP: TMenuItem;
     MENU_HELP_ABOUT: TMenuItem;
     MENU_OPTION_GENERAL: TMenuItem;
@@ -455,12 +454,12 @@ begin
   ParseList := TThreadParseList.Create(True);
 
   LoadAddrTable(Config);
-  MonitorGrid.Cells[0, 0] := '服务器名';
-  MonitorGrid.Cells[1, 0] := '用户数';
-  MonitorGrid.Cells[2, 0] := '状态';
-  MonitorGrid.Cells[3, 0] := '服务器名';
-  MonitorGrid.Cells[4, 0] := '用户数';
-  MonitorGrid.Cells[5, 0] := '状态';
+  MonitorGrid.Cells[0, 0] := 'Srv Name';
+  MonitorGrid.Cells[1, 0] := 'Index';
+  MonitorGrid.Cells[2, 0] := 'Ok';
+  MonitorGrid.Cells[3, 0] := 'Name';
+  MonitorGrid.Cells[4, 0] := 'Users';
+  MonitorGrid.Cells[5, 0] := 'Ok';
 end;
 
 procedure TFrmMain.FormDestroy(Sender: TObject);
@@ -529,7 +528,7 @@ begin
   Config := @g_Config;
   Label1.Caption := IntToStr(Config.dwProcessGateTime);
   CkLogin.Checked := GSocket.Socket.Connected;
-  CkLogin.Caption := '连接 (' + IntToStr(GSocket.Socket.ActiveConnections) + ')';
+  CkLogin.Caption := 'Con (' + IntToStr(GSocket.Socket.ActiveConnections) + ')';
   LbMasCount.Caption := IntToStr(nOnlineCountMin) + '/' + IntToStr(nOnlineCountMax);
   if Memo1.Lines.Count > 200 then Memo1.Clear;
   EnterCriticalSection(g_OutMessageCS);
@@ -560,12 +559,12 @@ var
 begin
   StartTimer.Enabled := False;
   Config := @g_Config;
-  SendGameCenterMsg(SG_STARTNOW, '正在启动登录服务器...');
-  Memo1.Lines.Add('1) 正在启动服务器...');
+  SendGameCenterMsg(SG_STARTNOW, 'Game Center Message...');
+  Memo1.Lines.Add('1) Gate Loading...');
   Application.ProcessMessages;
   AccountDB := TFileIDDB.Create(Config.sIdDir + 'Id.DB');
   ParseList.Resume;
-  Memo1.Lines.Add('2) 正在等待服务器连接...');
+  Memo1.Lines.Add('2) Accounts Loaded...');
   while (True) do begin
     Application.ProcessMessages;
     if Application.Terminated then Exit;
@@ -576,9 +575,9 @@ begin
   GSocket.Address := Config.sGateAddr;
   GSocket.Port := Config.nGatePort;
   GSocket.Active := True;
-  Memo1.Lines.Add('3) 服务器启动完成...');
+  Memo1.Lines.Add('3) Configuration Loaded...');
   ExecTimer.Enabled := True;
-  SendGameCenterMsg(SG_STARTOK, '登录服务器启动完成...');
+  SendGameCenterMsg(SG_STARTOK, 'Game Center Message 2...');
   if Config.boMinimize then Application.Minimize;
 end;
 
@@ -598,8 +597,8 @@ procedure TFrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 var
   Config: pTConfig;
 resourcestring
-  sExitMsg = '是否确认停止登录服务器 ?';
-  sExitTitle = '确认信息';
+  sExitMsg = 'Are you sure you want to exit this gate??';
+  sExitTitle = 'Exit';
 begin
   Config := @g_Config;
   if Config.boRemoteClose then Exit;
@@ -678,8 +677,8 @@ begin
         else MonitorGrid.Cells[nCol, (I div 2 + 1)] := sServerName + ' ' + IntToStr(MsgServer.nServerIndex);
         MonitorGrid.Cells[nCol + 1, (I div 2 + 1)] := IntToStr(MsgServer.nOnlineCount);
         if (GetTickCount - MsgServer.dwKeepAliveTick) < 30000 then
-          MonitorGrid.Cells[nCol + 2, (I div 2 + 1)] := '正常'
-        else MonitorGrid.Cells[nCol + 2, (I div 2 + 1)] := '超时';
+          MonitorGrid.Cells[nCol + 2, (I div 2 + 1)] := 'Ok'
+        else MonitorGrid.Cells[nCol + 2, (I div 2 + 1)] := 'Ok';
       end else begin //0046EEF2
         MonitorGrid.Cells[nCol, (I div 2 + 1)] := '-';
         MonitorGrid.Cells[nCol + 1, (I div 2 + 1)] := '-';
@@ -2359,7 +2358,7 @@ begin
     end;
   end;
   LoadAddrTable(Config);
-  MainOutMessage('加载路由列表完成...');
+  MainOutMessage('Address Table Reloaded...');
 end;
 
 procedure TFrmMain.C1Click(Sender: TObject);
@@ -2377,7 +2376,7 @@ begin
     UserLimit[I].nLimitCountMax := 0;
   end;
   FrmMasSoc.LoadUserLimit();
-  MainOutMessage('加载配制文件完成...');
+  MainOutMessage('Reloaded User Limit...');
 end;
 
 procedure TFrmMain.ApplicationEvents1Exception(Sender: TObject;

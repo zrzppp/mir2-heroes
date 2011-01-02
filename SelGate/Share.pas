@@ -5,12 +5,12 @@ uses
   Windows, Messages, Classes, SysUtils, JSocket, IniFiles, Mudutil, HUtil32,
   Grobal2, GateShare;
 resourcestring
-  g_sUpDateTime = '更新日期: 2010/09/01';
-  g_sProductName = 'MakeGM防攻击角色网关 V 3.0';
-  g_sProgram = '程序制作: MakeGM QQ:1037527564';
-  g_sWebSite = '程序网站: http://www.MakeGM.com';
-  g_sNowStartGate = '正在启动角色网关...';
-  g_sNowStartOK = '启动角色网关完成...';
+  g_sUpDateTime = 'Updated: 02/01/2011';
+  g_sProductName = 'LOMCN - Mir Heroes';
+  g_sProgram = 'Program: LOMCN';
+  g_sWebSite = 'Website: www.lomcn.co.uk';
+  g_sNowStartGate = 'Start Gate...';
+  g_sNowStartOK = 'Gate Started...';
 const
   TESTMODE = 0;
 type
@@ -168,7 +168,7 @@ var
   GateClass: string = 'SelGate';
 
   g_Config: TConfig = (
-    GateName: '角色网关';
+    GateName: 'Select Gate';
     TitleName: 'MakeGM';
     ServerPort: 5100;
     ServerAddr: '127.0.0.1';
@@ -615,7 +615,7 @@ begin
   ClientSocket.Active := False;
   m_dwKeepAliveTick := GetTickCount();
   Initialize();
-  MainOutMessage('数据库服务器连接断开...', nil);
+  MainOutMessage('Connections Disconnected...', nil);
 end;
 
 procedure TClientThread.Execute;
@@ -796,7 +796,7 @@ begin
     m_dwSendKeepAliveTick := GetTickCount();
     m_boKeepAliveTimcOut := False;
     Initialize();
-    MainOutMessage('数据库服务器(' + ClientSocket.Socket.RemoteAddress + ':' + IntToStr(ClientSocket.Socket.RemotePort) + ')连接成功...', nil);
+    MainOutMessage('Connected to (' + ClientSocket.Socket.RemoteAddress + ':' + IntToStr(ClientSocket.Socket.RemotePort) + ')OK...', nil);
   end;
 end;
 

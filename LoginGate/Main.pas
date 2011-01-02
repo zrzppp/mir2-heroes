@@ -198,7 +198,7 @@ begin
     ClientSocket.Active := True;  }
 
     Timer.Enabled := True;
-    MainOutMessage('Gate Loading...', nil);
+    MainOutMessage('Gate Loaded...', nil);
 
     g_Config.boStarted := True;
     g_boClose := False;

@@ -58,10 +58,10 @@ var
 
   g_nFormIdx: Integer;
   g_IniConf: Tinifile;
-  g_sButtonStartGame: string = '启动游戏服务器(&S)';
-  g_sButtonStopGame: string = '停止游戏服务器(&T)';
-  g_sButtonStopStartGame: string = '中止启动游戏服务器(&T)';
-  g_sButtonStopStopGame: string = '中止停止游戏服务器(&T)';
+  g_sButtonStartGame: string = 'Restart Server(&S)';
+  g_sButtonStopGame: string = 'Stop Server(&T)';
+  g_sButtonStopStartGame: string = 'Stop Server(&T)';
+  g_sButtonStopStopGame: string = 'Stop Server(&T)';
 
   g_sConfFile: string = '.\Config.ini';
   g_sGameDirectory: string = 'D:\MirServer\';

@@ -692,8 +692,8 @@ procedure TFrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   //TestList.SaveToFile('Test.txt');
   if boClose then Exit;
-  if Application.MessageBox('是否确认退出服务器？',
-    '确认信息',
+  if Application.MessageBox('Are you sure you want to exit?',
+    'Exit',
     MB_YESNO + MB_ICONQUESTION) = IDYES then begin
     if boServiceStart then begin
       StartTimer.Enabled := True;
@@ -715,7 +715,7 @@ begin
     AddMainLogMsg(g_sUpDateTime, 0);
     AddMainLogMsg(g_sProgram, 0);
     AddMainLogMsg(g_sWebSite, 0);
-    AddMainLogMsg('正在启动服务...', 2);
+    AddMainLogMsg('Gate Loading...', 2);
     boServiceStart := True;
     boGateReady := False;
     boCheckServerFail := False;
@@ -752,7 +752,7 @@ begin
     ClientSocket.Active := True;
 
     SendTimer.Enabled := True;
-    AddMainLogMsg('服务已启动成功...', 2);
+    AddMainLogMsg('Gate Connected...', 2);
     SendGameCenterMsg(SG_STARTOK, IntToStr(Self.Handle));
     if boMinimize then SendMessage(Handle, WM_SYSCOMMAND, SC_MINIMIZE, 0); //Application.Minimize;
   except
@@ -772,7 +772,7 @@ var
   IPaddr: pTSockaddr;
   IPList: TList;
 begin
-  AddMainLogMsg('正在停止服务...', 2);
+  AddMainLogMsg('Gate Stopping...', 2);
 
   boServiceStart := False;
   boGateReady := False;
@@ -839,20 +839,20 @@ begin
   end;
   AttackIPaddrList.Free;
 
-  AddMainLogMsg('服务停止成功...', 2);
+  AddMainLogMsg('Gate Stopped...', 2);
 end;
 
 procedure TFrmMain.MENU_CONTROL_STOPClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认停止服务？',
-    '确认信息',
+  if Application.MessageBox('Are you sure you want to stop this gate?',
+    'Stop Gate',
     MB_YESNO + MB_ICONQUESTION) = IDYES then
     StopService();
 end;
 
 procedure TFrmMain.LoadConfig;
 begin
-  AddMainLogMsg('正在加载配置信息...', 3);
+  AddMainLogMsg('Configuration Loaded...', 3);
   if Conf <> nil then begin
     TitleName := Conf.ReadString(GateClass, 'Title', TitleName);
     ServerAddr := Conf.ReadString(GateClass, 'Server1', ServerAddr);
@@ -897,7 +897,7 @@ begin
   end;
   LoadAbuseFile();
   LoadBlockIPFile();
-  AddMainLogMsg('配置信息加载完成...', 3);
+  AddMainLogMsg('Abuse / Block IP File Loaded...', 3);
 end;
 
 procedure TFrmMain.ShowMainLogMsg;
@@ -956,7 +956,7 @@ end;
 
 procedure TFrmMain.TimerTimer(Sender: TObject);
 const
-  sMsg = '用户 %d/%d/%d';
+  sMsg = 'Ports: %d/%d/%d';
 begin
   if ServerSocket.Active then begin
     {StatusBar.Panels[0].Text := IntToStr(ServerSocket.Port); }
@@ -1314,7 +1314,7 @@ begin
   boServerReady := True;
   dwCheckServerTimeMax := 0;
   dwCheckServerTimeMax := 0;
-  AddMainLogMsg('连接成功 ' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort), 1);
+  AddMainLogMsg('Connected to ' + Socket.RemoteAddress + ':' + IntToStr(Socket.RemotePort), 1);
 end;
 
 procedure TFrmMain.ClientSocketDisconnect(Sender: TObject;
@@ -1522,8 +1522,8 @@ end;
 
 procedure TFrmMain.MENU_CONTROL_CLEAELOGClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认清除显示的日志信息？',
-    '确认信息',
+  if Application.MessageBox('Are you sure you want to clear log?',
+    'Clear Log',
     MB_OKCANCEL + MB_ICONQUESTION
     ) <> IDOK then Exit;
   MemoLog.Clear;
@@ -1894,8 +1894,8 @@ end;
 
 procedure TFrmMain.MENU_CONTROL_RELOADCONFIGClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确认重新加载配置信息？',
-    '确认信息',
+  if Application.MessageBox('Are you sure you want to reload configuration?',
+    'Reload Configuration',
     MB_OKCANCEL + MB_ICONQUESTION
     ) <> IDOK then Exit;
   LoadConfig();

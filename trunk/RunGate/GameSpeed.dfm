@@ -2,7 +2,7 @@ object FrmGameSpeed: TFrmGameSpeed
   Left = 655
   Top = 162
   BorderStyle = bsDialog
-  Caption = #22806#25346#25511#21046
+  Caption = 'Game Speed'
   ClientHeight = 275
   ClientWidth = 463
   Color = clSilver
@@ -20,28 +20,28 @@ object FrmGameSpeed: TFrmGameSpeed
     Top = 8
     Width = 449
     Height = 257
-    Caption = #21442#25968#35774#32622
+    Caption = 'Attack'
     TabOrder = 0
     object GroupBox15: TGroupBox
       Left = 8
       Top = 16
       Width = 113
       Height = 81
-      Caption = #36895#24230#25511#21046
+      Caption = 'Attack'
       TabOrder = 0
       object Label5: TLabel
         Left = 11
         Top = 40
         Width = 30
         Height = 12
-        Caption = #38388#38548':'
+        Caption = 'Attack:'
       end
       object CheckBoxSpeedingControl: TCheckBox
         Left = 8
         Top = 15
         Width = 73
         Height = 17
-        Caption = #36895#24230#25511#21046
+        Caption = 'test1'
         TabOrder = 0
         OnClick = CheckBoxSpeedingControlClick
       end
@@ -50,7 +50,7 @@ object FrmGameSpeed: TFrmGameSpeed
         Top = 36
         Width = 61
         Height = 21
-        Hint = #25968#25454#36234#22823#36234#20005#26684#40664#35748'400'
+        Hint = 'hint1'
         MaxValue = 2000
         MinValue = 1
         ParentShowHint = False
@@ -65,7 +65,7 @@ object FrmGameSpeed: TFrmGameSpeed
       Top = 216
       Width = 75
       Height = 25
-      Caption = #40664#35748'(&R)'
+      Caption = 'Ref (&R)'
       TabOrder = 1
       OnClick = ButtonRefClick
     end
@@ -74,7 +74,7 @@ object FrmGameSpeed: TFrmGameSpeed
       Top = 216
       Width = 75
       Height = 25
-      Caption = #20445#23384'(&S)'
+      Caption = 'Save (&S)'
       TabOrder = 2
       OnClick = ButtonSaveClick
     end
@@ -83,7 +83,7 @@ object FrmGameSpeed: TFrmGameSpeed
       Top = 216
       Width = 75
       Height = 25
-      Caption = #20851#38381'(&E)'
+      Caption = 'Exit (&E)'
       TabOrder = 3
       OnClick = ButtonCloseClick
     end
@@ -92,12 +92,12 @@ object FrmGameSpeed: TFrmGameSpeed
       Top = 16
       Width = 113
       Height = 81
-      Caption = #21152#36895#23553#21253#22788#29702#26041#24335
+      Caption = 'Radio Group Speeding Data'
       ItemIndex = 0
       Items.Strings = (
-        #36716#25442#23553#21253
-        #20002#25481#23553#21253
-        #23553#21253#26080#25928)
+        'string1'
+        'string2'
+        'string3')
       TabOrder = 4
       OnClick = RadioGroupSpeedingDataManageClick
     end
@@ -106,14 +106,14 @@ object FrmGameSpeed: TFrmGameSpeed
       Top = 104
       Width = 425
       Height = 97
-      Caption = #21152#36895#25552#31034
+      Caption = 'test2'
       TabOrder = 5
       object CheckBoxShowSpeedingMsg: TCheckBox
         Left = 8
         Top = 16
         Width = 73
         Height = 17
-        Caption = #21152#36895#25552#31034
+        Caption = 'Show Speed Msg'
         TabOrder = 0
         OnClick = CheckBoxShowSpeedingMsgClick
       end
@@ -137,12 +137,12 @@ object FrmGameSpeed: TFrmGameSpeed
         Top = 40
         Width = 233
         Height = 41
-        Caption = #25552#31034#26041#24335
+        Caption = 'Radio Group Show Speed Msg'
         Columns = 2
         ItemIndex = 0
         Items.Strings = (
-          #23494#20154#25552#31034
-          #24377#31383#25552#31034)
+          'string4'
+          'string5')
         TabOrder = 2
         OnClick = RadioGroupShowSpeedingMsgClick
       end

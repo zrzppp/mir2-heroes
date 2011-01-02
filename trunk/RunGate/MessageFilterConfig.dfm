@@ -3,7 +3,7 @@ object frmMessageFilterConfig: TfrmMessageFilterConfig
   Top = 281
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #28040#24687#25991#23383#36807#28388#35774#32622
+  Caption = 'Filter Message'
   ClientHeight = 195
   ClientWidth = 232
   Color = clBtnFace
@@ -20,7 +20,7 @@ object frmMessageFilterConfig: TfrmMessageFilterConfig
     Top = 8
     Width = 54
     Height = 12
-    Caption = #36807#28388#25991#26412':'
+    Caption = 'Filter:'
   end
   object ListBoxFilterText: TListBox
     Left = 8
@@ -37,7 +37,7 @@ object frmMessageFilterConfig: TfrmMessageFilterConfig
     Top = 64
     Width = 57
     Height = 25
-    Caption = #22686#21152'(&A)'
+    Caption = 'Add (&A)'
     TabOrder = 1
     OnClick = ButtonAddClick
   end
@@ -46,7 +46,7 @@ object frmMessageFilterConfig: TfrmMessageFilterConfig
     Top = 96
     Width = 57
     Height = 25
-    Caption = #21024#38500'(&D)'
+    Caption = 'Delete (&D)'
     TabOrder = 2
     OnClick = ButtonDelClick
   end
@@ -55,7 +55,7 @@ object frmMessageFilterConfig: TfrmMessageFilterConfig
     Top = 160
     Width = 57
     Height = 25
-    Caption = #30830#23450'(&O)'
+    Caption = 'OK (&O)'
     TabOrder = 3
     OnClick = ButtonOKClick
   end
@@ -64,7 +64,7 @@ object frmMessageFilterConfig: TfrmMessageFilterConfig
     Top = 128
     Width = 57
     Height = 25
-    Caption = #20462#25913'(&M)'
+    Caption = 'Change (&M)'
     TabOrder = 4
     OnClick = ButtonModClick
   end

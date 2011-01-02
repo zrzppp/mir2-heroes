@@ -1158,15 +1158,20 @@ begin
   SCREENWIDTH := MirServer.nScreenWidth;
   SCREENHEIGHT := MirServer.nScreenHegiht;
 {$ELSE}
-  g_boFullScreen := False;
-  g_sServerAddr := '127.0.0.1'; // //'121.14.151.47'; '127.0.0.1'; //; //;'121.14.152.5'; //'121.11.91.39'; // '127.0.0.1'; //;////117.41.165.47 7001
-  g_nServerPort := 7000;
+  ini := TIniFile.Create('.\mir.ini');
+  if ini <> nil then begin
+    g_sCurFontName := ini.ReadString('Client Options', 'FontName', g_sCurFontName);
+    g_boFullScreen := ini.ReadBool('Client Options', 'FullScreen', g_boFullScreen);
+    g_sServerAddr := ini.ReadString('Client Options', 'ServerIP', g_sServerAddr);
+    g_nServerPort := ini.ReadInteger('Client Options', 'ServerPort', g_nServerPort);
+    SCREENWIDTH := ini.ReadInteger('Client Options', 'ScreenWidth', SCREENWIDTH);
+    SCREENHEIGHT := ini.ReadInteger('Client Options', 'ScreenHeight', SCREENHEIGHT);
 
-  SCREENWIDTH := 800;
-  SCREENHEIGHT := 600;
-
-  {SCREENWIDTH := 1024;
-  SCREENHEIGHT := 768;}
+    ini.ReadInteger('Client Setup', 'LineColor', g_btFColor);
+    ini.ReadInteger('Client Setup', 'RectangleColor', g_btBColor);
+    ini.ReadInteger('Client Setup', 'BlendAlpha', g_btAlpha);
+    ini.Free;
+  end;
 {$IFEND}
   MAPSURFACEWIDTH := SCREENWIDTH;
   if (g_ConfigClient.btMainInterface = 1) or (SCREENWIDTH = 1024) then begin
@@ -2739,12 +2744,6 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
           FrmDlg.EdChat.Font.Name := g_sCurFontName;
           frmMain.Font.Name := g_sCurFontName;
           frmMain.Canvas.Font.Name := g_sCurFontName;
-
-          ini := TIniFile.Create('.\mir.ini');
-          if ini <> nil then begin
-            ini.WriteString('Setup', 'FontName', g_sCurFontName);
-            ini.Free;
-          end;
           Key := 0;
         end;
       end;
@@ -12541,10 +12540,16 @@ begin
   //Dispose(g_PlugInfo);
   ini := TIniFile.Create('.\mir.ini');
   if ini <> nil then begin
-    ini.WriteInteger('Setup', 'LineColor', g_btFColor);
-    ini.WriteInteger('Setup', 'RectangleColor', g_btBColor);
-    ini.WriteInteger('Setup', 'BlendAlpha', g_btAlpha);
+    ini.WriteString('Client Options', 'FontName', g_sCurFontName);
+    ini.WriteBool('Client Options', 'FullScreen', g_boFullScreen);
+    ini.WriteString('Client Options', 'ServerIP', g_sServerAddr);
+    ini.WriteInteger('Client Options', 'ServerPort', g_nServerPort);
+    ini.WriteInteger('Client Options', 'ScreenWidth', SCREENWIDTH);
+    ini.WriteInteger('Client Options', 'ScreenHeight', SCREENHEIGHT);
 
+    ini.WriteInteger('Client Setup', 'LineColor', g_btFColor);
+    ini.WriteInteger('Client Setup', 'RectangleColor', g_btBColor);
+    ini.WriteInteger('Client Setup', 'BlendAlpha', g_btAlpha);
     ini.Free;
   end;
 

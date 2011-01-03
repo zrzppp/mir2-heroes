@@ -90,7 +90,7 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=C:\MirServer\Mir200
+OutputDir=..\MirServer\Mir200
 UnitOutputDir=..\Build\M2Engine
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -135,9 +135,7 @@ ProductName=
 ProductVersion=1.0.0.0
 Comments=
 [Excluded Packages]
-c:\program files (x86)\borland\delphi7\Projects\Bpl\Package1.bpl=(untitled)
-C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyCore70.bpl=Indy 10 Core Design Time
-C:\Program Files (x86)\Indy 10 for Delphi 7\LibD7\dclIndyProtocols70.bpl=Indy 10 Protocols Design Time
+c:\program files\borland\delphi7\Projects\Bpl\DelphiX110.bpl=DelphiX - DirectX components for Delphi 2007
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
@@ -153,7 +151,7 @@ Item0=..\Build\M2Engine
 Item1=..\Build\M2Server
 [HistoryLists\hlOutputDirectorry]
 Count=4
-Item0=C:\MirServer\Mir200
-Item1=..\MirServer\Mir200
+Item0=..\MirServer\Mir200
+Item1=C:\MirServer\Mir200
 Item2=Z:\Mir200
 Item3=..\MirServer

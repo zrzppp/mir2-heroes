@@ -6416,7 +6416,7 @@ begin
         end;
         Result := True;
       end;
-    SKILL_42: begin //¿ñ·çÕ¶
+    SKILL_TWINDRAKEBLADE: begin //¿ñ·çÕ¶
         if m_Magic42Skill <> nil then begin
           if not m_bo42kill then begin
             Skill42OnOff(True);
@@ -16925,7 +16925,7 @@ begin
         end;
         Result := True;
       end;
-    SKILL_42: begin //¿ñ·çÕ¶
+    SKILL_TWINDRAKEBLADE: begin //¿ñ·çÕ¶
         if m_Magic42Skill <> nil then begin
           if not m_bo42kill then begin
             Skill42OnOff(True);
@@ -30739,10 +30739,10 @@ begin
       SKILL_CROSSHALFMOON: begin // CrossHalfMoon - ID: 34
           m_MagicCrsSkill := UserMagic;
         end;
-      SKILL_41: begin
+      SKILL_LIONROAR: begin
           m_Magic41Skill := UserMagic;
         end;
-      SKILL_42: begin
+      SKILL_TWINDRAKEBLADE: begin
           m_Magic42Skill := UserMagic;
         end;
       SKILL_43: begin

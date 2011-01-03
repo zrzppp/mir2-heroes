@@ -143,7 +143,7 @@ var
 begin
   sRemoteAddress := Thread.ClientSocket.RemoteAddress;
   if (not CheckServerIP(sRemoteAddress)) then begin
-    MainOutMessage('非法服务器连接: ' + sRemoteAddress);
+    MainOutMessage('test2: ' + sRemoteAddress);
     Thread.ClientSocket.Close;
     Exit;
   end;
@@ -151,7 +151,7 @@ begin
     Thread.ClientSocket.Close else
   begin
     ModuleInfo.Module := Thread;
-    ModuleInfo.ModuleName := '游戏中心';
+    ModuleInfo.ModuleName := 'test1';
     ModuleInfo.Address := Format('%s:%d → %s:%d', [sRemoteAddress, Thread.ClientSocket.RemotePort, sRemoteAddress, ServerSocket.Port]);
     ModuleInfo.Buffer := '0/0';
     TServerClient(Thread).m_Module := AddModule(@ModuleInfo);
@@ -180,7 +180,7 @@ var
 begin
   sRemoteAddress := Thread.ClientSocket.RemoteAddress;
   if (not CheckServerIP(sRemoteAddress)) then begin
-    MainOutMessage('非法服务器连接: ' + sRemoteAddress);
+    MainOutMessage('test3: ' + sRemoteAddress);
     Thread.ClientSocket.Close;
     Exit;
   end;
@@ -188,7 +188,7 @@ begin
     Thread.ClientSocket.Close else
   begin
     ModuleInfo.Module := Thread;
-    ModuleInfo.ModuleName := '角色网关';
+    ModuleInfo.ModuleName := 'test4';
     ModuleInfo.Address := Format('%s:%d → %s:%d', [sRemoteAddress, Thread.ClientSocket.RemotePort, sRemoteAddress, SelectSocket.Port]);
     ModuleInfo.Buffer := '0/0';
     TSelectClient(Thread).m_Module := AddModule(@ModuleInfo);
@@ -215,7 +215,7 @@ var
 begin
   sRemoteAddress := Socket.RemoteAddress;
   if (not CheckServerIP(sRemoteAddress)) then begin
-    MainOutMessage('非法服务器连接: ' + sRemoteAddress);
+    MainOutMessage('test5: ' + sRemoteAddress);
     Socket.Close;
     Exit;
   end;
@@ -224,7 +224,7 @@ begin
   begin
 
     ModuleInfo.Module := Socket;
-    ModuleInfo.ModuleName := '游戏中心';
+    ModuleInfo.ModuleName := 'Connected';
     ModuleInfo.Address := Format('%s:%d → %s:%d', [sRemoteAddress, Socket.RemotePort, sRemoteAddress, ServerSocket.Port]);
     ModuleInfo.Buffer := '0/0';
     TServerClient(Socket).m_Module := AddModule(@ModuleInfo);
@@ -264,7 +264,7 @@ var
 begin
   sRemoteAddress := Socket.RemoteAddress;
   if (not CheckServerIP(sRemoteAddress)) then begin
-    MainOutMessage('非法服务器连接: ' + sRemoteAddress);
+    MainOutMessage('test7: ' + sRemoteAddress);
     Socket.Close;
     Exit;
   end;
@@ -272,7 +272,7 @@ begin
     Socket.Close else
   begin
     ModuleInfo.Module := Socket;
-    ModuleInfo.ModuleName := '角色网关';
+    ModuleInfo.ModuleName := 'Connected';
     ModuleInfo.Address := Format('%s:%d → %s:%d', [sRemoteAddress, Socket.RemotePort, sRemoteAddress, SelectSocket.Port]);
     ModuleInfo.Buffer := '0/0';
     TSelectClient(Socket).m_Module := AddModule(@ModuleInfo);
@@ -518,34 +518,34 @@ begin
   case g_nWorkStatus of
     DB_LOADHUMANRCD: begin
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '读取人物数据';
+        LabelWorkStatus.Caption := 'Load Hum';
       end;
     DB_SAVEHUMANRCD: begin
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '保存人物数据';
+        LabelWorkStatus.Caption := 'Save Hum';
       end;
     {DB_SAVEHUMANRCDEX: begin
         SaveHumanRcdEx(sData, DefMsg.Recog, Socket);
       end; }
     DB_LOADHERORCD: begin //读取英雄数据
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '读取英雄数据';
+        LabelWorkStatus.Caption := 'Load Hero';
       end;
     DB_NEWHERORCD: begin //新建英雄
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '创建英雄';
+        LabelWorkStatus.Caption := 'New Hero';
       end;
     DB_DELHERORCD: begin //删除英雄
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '删除英雄';
+        LabelWorkStatus.Caption := 'Del Hero';
       end;
     DB_SAVEHERORCD: begin //保存英雄数据
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '保存英雄数据';
+        LabelWorkStatus.Caption := 'Save Hero';
       end;
     DB_LOADRANKING: begin //排行榜
         LabelWorkStatus.Font.Color := clGreen;
-        LabelWorkStatus.Caption := '读取排行榜数据';
+        LabelWorkStatus.Caption := 'Ranking';
       end;
   else LabelWorkStatus.Font.Color := clBlue;
       {DB_SAVEMAGICLIST: begin
@@ -558,15 +558,15 @@ begin
   end;
   if GetTickCount - g_dwWorkStatusTick > 1000 then begin
     g_dwWorkStatusTick := GetTickCount;
-    LabelCreateHum.Caption := Format('创建人物:%d', [g_nCreateHumCount]);
-    LabelDeleteHum.Caption := Format('删除人物:%d', [g_nDeleteHumCount]);
-    LabelLoadHumRcd.Caption := Format('读取人物数据:%d', [g_nLoadHumCount]);
-    LabelSaveHumRcd.Caption := Format('保存人物数据:%d', [g_nSaveHumCount]);
+    LabelCreateHum.Caption := Format('Create Hum:%d', [g_nCreateHumCount]);
+    LabelDeleteHum.Caption := Format('Del Hum:%d', [g_nDeleteHumCount]);
+    LabelLoadHumRcd.Caption := Format('Load Hum:%d', [g_nLoadHumCount]);
+    LabelSaveHumRcd.Caption := Format('Save Hum:%d', [g_nSaveHumCount]);
 
-    LabelCreateHero.Caption := Format('创建英雄:%d', [g_nCreateHeroCount]);
-    LabelDeleteHero.Caption := Format('删除英雄:%d', [g_nDeleteHeroCount]);
-    LabelLoadHeroRcd.Caption := Format('读取英雄数据:%d', [g_nLoadHeroCount]);
-    LabelSaveHeroRcd.Caption := Format('保存英雄数据:%d', [g_nSaveHeroCount]);
+    LabelCreateHero.Caption := Format('Create Hero:%d', [g_nCreateHeroCount]);
+    LabelDeleteHero.Caption := Format('Del Hero:%d', [g_nDeleteHeroCount]);
+    LabelLoadHeroRcd.Caption := Format('Load Hero:%d', [g_nLoadHeroCount]);
+    LabelSaveHeroRcd.Caption := Format('Save Hero:%d', [g_nSaveHeroCount]);
   end;
 end;
 
@@ -693,8 +693,8 @@ begin
       TimerClose.Enabled := True;
     end;
   end else begin
-    if (Application.MessageBox('是否确定退出数据库服务器？',
-      '确认信息',
+    if (Application.MessageBox('Are you sure you want to close this gate?',
+      'Exit',
       MB_YESNO + MB_ICONQUESTION) = IDYES) then begin
       g_boSoftClose := True;
       if (ServerSocket.Socket.ActiveConnections > 0) or (SelectSocket.Socket.ActiveConnections > 0) then begin
@@ -818,7 +818,7 @@ end;
 
 procedure TFrmMain.MemoLogDblClick(Sender: TObject);
 begin
-  if Application.MessageBox('是否确定清除日志信息！！！', '提示信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+  if Application.MessageBox('Are you sure you want to clear the log?', 'Clear Log', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
     MemoLog.Clear;
   end;
 end;

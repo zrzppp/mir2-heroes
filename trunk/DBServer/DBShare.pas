@@ -4,10 +4,10 @@ interface
 uses
   Windows, Messages, Classes, SysUtils, JSocket, IniFiles, Controls, Grobal2, Common, HumDB, MudUtil, SDK;
 resourcestring
-  g_sVersion = '程序版本: 1.00 Build 20100901';
-  g_sUpDateTime = '更新日期: 2010/09/01';
-  g_sProgram = '程序制作: MakeGM QQ:1037527564';
-  g_sWebSite = '程序网站: http://www.MakeGM.com';
+  g_sVersion = 'LOMCN - Mir Heroes';
+  g_sUpDateTime = 'Build: 03/01/2011';
+  g_sProgram = 'Program: LOMCN';
+  g_sWebSite = 'Website: www.lomcn.co.uk';
 
 type
   TRouteInfo = record

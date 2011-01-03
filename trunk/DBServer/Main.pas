@@ -340,15 +340,15 @@ begin
     Top := nY;
   end;
   SendGameCenterMsg(SG_FORMHANDLE, IntToStr(Self.Handle));
-  MainOutMessage('正在启动数据库服务器...');
+  MainOutMessage('Gate Starting...');
 
   ModuleGrid.RowCount := 5;
   ModuleGrid.ColWidths[0] := 80;
   ModuleGrid.ColWidths[1] := 480 - 80 * 2;
   ModuleGrid.ColWidths[2] := 80;
-  ModuleGrid.Cells[0, 0] := '模块名称';
-  ModuleGrid.Cells[1, 0] := '连接地址';
-  ModuleGrid.Cells[2, 0] := '数据通讯';
+  ModuleGrid.Cells[0, 0] := 'Srv Name';
+  ModuleGrid.Cells[1, 0] := 'IP and Ports';
+  ModuleGrid.Cells[2, 0] := 'Connection';
 
   ServerSocket := TServerSocket.Create(Self);
   SelectSocket := TServerSocket.Create(Self);
@@ -408,7 +408,7 @@ begin
   RankingThread := TRankingThread.Create(True);
   RankingThread.Resume;
 
-  SendGameCenterMsg(SG_STARTNOW, '正在启动数据库服务器...');
+  SendGameCenterMsg(SG_STARTNOW, 'Game Center Message...');
   TimerStart.Enabled := True;
 end;
 
@@ -600,7 +600,7 @@ end;
 procedure TFrmMain.StartService();
 begin
   try
-    MainOutMessage('正在启动服务器...');
+    MainOutMessage('Loading Character and Data DB...');
     LoadConfig();
     g_HumCharDB.LoadFormFile(g_sHumDBFilePath + 'Hum.DB');
     g_HumDataDB.LoadFormFile(g_sDataDBFilePath + 'Mir.DB');
@@ -618,10 +618,10 @@ begin
     MENU_CONTROL_START.Enabled := False;
     MENU_CONTROL_STOP.Enabled := True;
 
-    MainOutMessage('数据库服务器启动成功...');
+    MainOutMessage('Gate Started...');
     //MainOutMessage('SelectSocket.Port:' + IntToStr(SelectSocket.Port));
     //MainOutMessage('ServerSocket.Port:' + IntToStr(ServerSocket.Port));
-    SendGameCenterMsg(SG_STARTOK, '数据库服务器启动完成...');
+    SendGameCenterMsg(SG_STARTOK, 'Gate Stopped...');
   except
     on E: Exception do begin
       g_boStartService := False;
@@ -641,7 +641,7 @@ var
   SelectClient: TSelectClient;
 begin
   g_boStartService := False;
-  MainOutMessage('正在停止服务器...');
+  MainOutMessage('Gate Stopped...');
   MENU_CONTROL_START.Enabled := True;
   MENU_CONTROL_STOP.Enabled := False;
 
@@ -757,7 +757,7 @@ var
 begin
   if g_boStartService then begin
     g_boStartService := False;
-    MainOutMessage('正在停止服务器...');
+    MainOutMessage('Gate Stopped...');
     MENU_CONTROL_START.Enabled := True;
     MENU_CONTROL_STOP.Enabled := False;
     FrmIDSoc.CloseConnect;
@@ -801,14 +801,14 @@ procedure TFrmMain.G1Click(Sender: TObject);
 begin
   LoadGateID();
   LoadIPTable();
-  MainOutMessage('网关设置加载完成');
+  MainOutMessage('Reloaded Gate ID/IP Table');
 end;
 
 procedure TFrmMain.C1Click(Sender: TObject);
 begin
   LoadChrNameList('DenyChrName.txt');
   LoadAICharNameList('AICharName.txt');
-  MainOutMessage('角色过滤列表加载完成');
+  MainOutMessage('Reloaded Character Name List');
 end;
 
 procedure TFrmMain.MemoLogChange(Sender: TObject);

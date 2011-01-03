@@ -149,8 +149,8 @@ var
   g_StdItemList: TStringList;
 
   g_dwGameCenterHandle: THandle;
-  g_sNowStartServer: string = '正在启动数据库服务器...';
-  g_sNowStartServerOK: string = '数据库服务器启动完成...';
+  g_sNowStartServer: string = 'Gate Starting...';
+  g_sNowStartServerOK: string = 'Gate Started...';
 
   g_nWorkStatus: Integer = 0;
   g_dwWorkStatusTick: LongWord;

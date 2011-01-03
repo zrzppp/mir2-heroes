@@ -1,6 +1,6 @@
 object FrmMain: TFrmMain
-  Left = 1007
-  Top = 163
+  Left = 676
+  Top = 203
   Width = 507
   Height = 390
   Color = clBtnFace
@@ -153,8 +153,8 @@ object FrmMain: TFrmMain
   object RzSplitter: TRzSplitter
     Left = 0
     Top = 0
-    Width = 491
-    Height = 332
+    Width = 499
+    Height = 336
     Orientation = orVertical
     Position = 159
     Percent = 48
@@ -166,7 +166,7 @@ object FrmMain: TFrmMain
     BarSize = (
       0
       159
-      491
+      499
       161)
     UpperLeftControls = (
       MemoLog)
@@ -175,7 +175,7 @@ object FrmMain: TFrmMain
     object MemoLog: TRzMemo
       Left = 0
       Top = 0
-      Width = 491
+      Width = 499
       Height = 159
       Align = alClient
       ScrollBars = ssVertical
@@ -187,18 +187,18 @@ object FrmMain: TFrmMain
     object RzSplitter1: TRzSplitter
       Left = 0
       Top = 0
-      Width = 491
-      Height = 171
+      Width = 499
+      Height = 175
       Orientation = orVertical
       Position = 79
-      Percent = 46
+      Percent = 45
       SplitterWidth = 0
       Align = alClient
       TabOrder = 0
       BarSize = (
         0
         79
-        491
+        499
         79)
       UpperLeftControls = (
         Panel)
@@ -207,12 +207,12 @@ object FrmMain: TFrmMain
       object Panel: TPanel
         Left = 0
         Top = 0
-        Width = 491
+        Width = 499
         Height = 79
         Align = alClient
         TabOrder = 0
         DesignSize = (
-          491
+          499
           79)
         object Label1: TLabel
           Left = 0
@@ -257,7 +257,7 @@ object FrmMain: TFrmMain
           Transparent = True
         end
         object LbTimeCount: TLabel
-          Left = 442
+          Left = 450
           Top = 16
           Width = 51
           Height = 13
@@ -277,10 +277,10 @@ object FrmMain: TFrmMain
           Transparent = True
         end
         object MemStatus: TLabel
-          Left = 280
+          Left = 281
           Top = 50
-          Width = 36
-          Height = 12
+          Width = 35
+          Height = 14
           Alignment = taRightJustify
           Caption = 'Status'
           Font.Charset = GB2312_CHARSET
@@ -295,8 +295,8 @@ object FrmMain: TFrmMain
         object LabelVersion: TLabel
           Left = 322
           Top = 16
-          Width = 12
-          Height = 12
+          Width = 14
+          Height = 14
           BiDiMode = bdLeftToRight
           Caption = 'LV'
           Font.Charset = GB2312_CHARSET
@@ -311,8 +311,8 @@ object FrmMain: TFrmMain
         object LTotalRAM: TLabel
           Left = 322
           Top = 32
-          Width = 54
-          Height = 12
+          Width = 58
+          Height = 14
           Caption = 'LTotalRAM'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
@@ -325,8 +325,8 @@ object FrmMain: TFrmMain
         object LFreeRAM: TLabel
           Left = 322
           Top = 48
-          Width = 48
-          Height = 12
+          Width = 54
+          Height = 14
           Caption = 'LFreeRAM'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
@@ -339,8 +339,8 @@ object FrmMain: TFrmMain
         object LTotalVirtual: TLabel
           Left = 234
           Top = 34
-          Width = 78
-          Height = 12
+          Width = 68
+          Height = 14
           Caption = 'LTotalVirtual'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
@@ -354,8 +354,8 @@ object FrmMain: TFrmMain
         object LFreeVirtual: TLabel
           Left = 234
           Top = 50
-          Width = 72
-          Height = 12
+          Width = 64
+          Height = 14
           Caption = 'LFreeVirtual'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
@@ -369,8 +369,8 @@ object FrmMain: TFrmMain
         object LMemoryLoad: TLabel
           Left = 322
           Top = 66
-          Width = 66
-          Height = 12
+          Width = 75
+          Height = 14
           Caption = 'LMemoryLoad'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
@@ -398,8 +398,8 @@ object FrmMain: TFrmMain
       object GridGate: TStringGrid
         Left = 0
         Top = 0
-        Width = 491
-        Height = 92
+        Width = 499
+        Height = 96
         Align = alClient
         ColCount = 7
         DefaultColWidth = 60

@@ -38793,11 +38793,11 @@ begin
   if nSpellPoint > 0 then begin
     if m_WAbil.MP < nSpellPoint then Exit;
     n14 := (Random(10 + UserMagic.btLevel) + UserMagic.btLevel) * _MAX(UserMagic.btLevel, 1);
-    m_dwStatusArrTimeOutTick[2] := GetTickCount + n14 * 1000;
-    //m_wStatusArrValue[2] := GetPower(MPow(UserMagic));
-    m_wStatusArrValue[2] := GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(m_WAbil.SC), Integer(HiWord(m_WAbil.SC) - LoWord(m_WAbil.SC)) + 1);
-    //m_wStatusArrValue[2 {0x218}] := MakeLong(LoWord(m_WAbil.SC), HiWord(m_WAbil.SC) - 2 - (m_Abil.Level div 7)) * 2;
-    SysMsg('道术增加' + IntToStr(m_wStatusArrValue[2]) + '点 ' + IntToStr(n14) + '秒', c_Green, t_Hint);
+    m_dwStatusArrTimeOutTick[0] := GetTickCount + n14 * 1000;
+
+    m_wStatusArrValue[0] := GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(m_WAbil.SC), Integer(HiWord(m_WAbil.SC) - LoWord(m_WAbil.SC)) + 1);
+
+    SysMsg('Increased DC: ' + IntToStr(m_wStatusArrValue[0]) + ' For: ' + IntToStr(n14) + ' Seconds', c_Green, t_Hint);
     RecalcAbilitys();
     SendMsg(Self, RM_ABILITY, 0, 0, 0, 0, '');
     Result := True;

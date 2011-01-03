@@ -9,6 +9,54 @@ VIBRATION
 <Use me to Create a Hero!/FCOLOR=254>\ \
 <Create Hero/@@cqfirHero>           <Auto Add HeroSkills/@HeroSkills>          <修炼英雄合击/@合击>\ \
 <获得火龙之心/@领取火龙>           <英雄特殊服务/@功能>          <英雄操作指南/@操作指南>\
+<Change Status/@changestatus> <Item Stars/@star> <Dual Skills/@dual> <Delete Hero/@delete>
+
+[@delete]
+#ACT
+DELETEHERO
+
+[@dual]
+#ACT
+HERO.CHANGELEVEL = 50
+HERO.GIVE BrokenSoulCut
+HERO.GIVE ChopChopStar
+HERO.GIVE ThunderClap
+HERO.GIVE SoulEaterSwamp
+HERO.GIVE LastJudgement
+HERO.GIVE DragonFlames
+HERO.GIVE HeroAmulet
+
+[@star]
+#ACT
+GIVE GlowingWeapon
+CHANGEBAGITEMSTARSLEVEL + 1
+;移动加速 + 10
+CHANGEITEMNEWADDVALUE 15 + 10
+;攻击加速 + 10
+CHANGEITEMNEWADDVALUE 16 + 10
+;绑定人物 BINDBAGITEM (0=绑定账号 1=绑定人物 2=绑定IP) （0=不检测，1=检测是否可以穿上此装备）
+BINDBAGITEM 1
+;装备发光
+SETITEMSLIGHTEX 3
+
+
+
+[@changestatus]
+#SAY
+<Blind/@blind> <Clear/@clear> <Chaos/@chaos>
+
+[@clear]
+#ACT
+CHANGENEWSTATUS 0
+
+[@blind]
+#ACT
+CHANGENEWSTATUS 1
+
+[@chaos]
+#ACT
+CHANGENEWSTATUS 2
+
 
 [@操作指南]
 　　要给元神学习技能书.或者在战斗.打怪时让元神自己用金创药\
@@ -52,9 +100,27 @@ CLOSE
 #IF
 HERO.checkjob wizard
 #ACT
+ADDSKILL Skill100 1
+ADDSKILL Skill101 1
+ADDSKILL Skill102 1
+ADDSKILL Skill103 1
+ADDSKILL Skill104 1
+ADDSKILL Skill105 1
+ADDSKILL Skill106 1
+ADDSKILL Skill107 1
+ADDSKILL Skill108 1
+ADDSKILL Skill109 1
+ADDSKILL Skill110 1
+ADDSKILL Skill111 1
+ADDSKILL Skill197 1
+ADDSKILL Skill198 1
+ADDSKILL Skill199 1
+ADDSKILL Skill200 1
 HERO.ADDSKILL Fireball 1
-HERO.ADDSKILL 英雄雷电术 1
-HERO.ADDSKILL 英雄火墙 1
+HERO.ADDSKILL Skill74 1
+HERO.ADDSKILL Skill75 1
+HERO.ADDSKILL Skill106 1
+HERO.ADDSKILL Skill107 1
 HERO.ADDSKILL 英雄疾光电影 1
 HERO.ADDSKILL 英雄地狱雷光 1
 HERO.ADDSKILL 英雄魔法盾 1

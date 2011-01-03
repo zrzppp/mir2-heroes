@@ -2194,6 +2194,24 @@ begin
         if MagMakeFireDay(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
       end;
 
+    SKILL_ULTIMATEENHANCER: begin // Ultimate Enhancer
+        if (GetTickCount - PlayObject.m_dwSkill50DelayTimeTick >= g_Config.nSkill50DelayTime * 1000) and (PlayObject.m_dwStatusArrTimeOutTick[2] <= 0) then begin
+          PlayObject.m_dwSkill50DelayTimeTick := GetTickCount;
+          if PlayObject.m_btRaceServer = RC_PLAYOBJECT then begin
+            if TPlayObject(PlayObject).AbilityUp(UserMagic) then
+              boTrain := True;
+          end else
+            if PlayObject.m_btRaceServer = RC_HEROOBJECT then begin
+            if THeroObject(PlayObject).AbilityUp(UserMagic) then
+              boTrain := True;
+          end else
+            if PlayObject.m_btRaceServer = RC_PLAYMOSTER then begin
+            if TCopyObject(PlayObject).AbilityUp(UserMagic) then
+              boTrain := True;
+          end;
+        end;
+      end;
+
     SKILL_PURIFICATION: begin // Purification
         if MagMakeUnTreatment(PlayObject,
           UserMagic,
@@ -2272,23 +2290,7 @@ begin
     SKILL_49: begin //净化术
         boTrain := True;
       end;
-    SKILL_50: begin //无极真气
-        if (GetTickCount - PlayObject.m_dwSkill50DelayTimeTick >= g_Config.nSkill50DelayTime * 1000) and (PlayObject.m_dwStatusArrTimeOutTick[2] <= 0) then begin
-          PlayObject.m_dwSkill50DelayTimeTick := GetTickCount;
-          if PlayObject.m_btRaceServer = RC_PLAYOBJECT then begin
-            if TPlayObject(PlayObject).AbilityUp(UserMagic) then
-              boTrain := True;
-          end else
-            if PlayObject.m_btRaceServer = RC_HEROOBJECT then begin
-            if THeroObject(PlayObject).AbilityUp(UserMagic) then
-              boTrain := True;
-          end else
-            if PlayObject.m_btRaceServer = RC_PLAYMOSTER then begin
-            if TCopyObject(PlayObject).AbilityUp(UserMagic) then
-              boTrain := True;
-          end;
-        end;
-      end;
+
     SKILL_51: begin //飓风破
         if MagGroupFengPo(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
       end;

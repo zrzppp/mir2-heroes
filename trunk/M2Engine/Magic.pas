@@ -2228,6 +2228,19 @@ begin
           TargeTActorObject) then boTrain := True;
       end;
 
+    SKILL_SUMMONHOLYDEVA: begin
+       //MainOutMessage('g_Config.boAllowRecallMoon '+BooleanToStr(g_Config.boAllowRecallMoon));
+        if PlayObject.m_btRaceServer = RC_PLAYOBJECT then begin
+          if g_Config.boAllowRecallAll or g_Config.boAllowRecallMoon or (TPlayObject(PlayObject).GetMagicInfo(30) = nil) then begin
+            if (MagMakeMoonObj(PlayObject, UserMagic) <> nil) then boTrain := True;
+          end;
+        end else begin
+          if g_Config.boAllowRecallAll or g_Config.boAllowRecallMoon or (TAIObject(PlayObject).FindMagic(30) = nil) then begin
+            if (MagMakeMoonObj(PlayObject, UserMagic) <> nil) then boTrain := True;
+          end;
+        end;
+      end;
+
     SKILL_WINDTEBO {35}: if MagWindTebo(PlayObject, UserMagic) then boTrain := True;
 
     //±ùÑæ
@@ -2281,6 +2294,7 @@ begin
           nY := BaseObject.m_nCurrY;
         end;
       end;
+
     SKILL_47: begin //»ðÁúÆøÑæ
         if MagBigExplosion(PlayObject,
           PlayObject.GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(PlayObject.m_WAbil.MC), Integer(HiWord(PlayObject.m_WAbil.MC) - LoWord(PlayObject.m_WAbil.MC)) + 1),
@@ -2314,18 +2328,8 @@ begin
     SKILL_56: begin //ÒÆÐÐ»»Î»
         if MagChangePosition(PlayObject, nTargetX, nTargetY) then boTrain := True;
       end;
-    SKILL_59: begin
-       //MainOutMessage('g_Config.boAllowRecallMoon '+BooleanToStr(g_Config.boAllowRecallMoon));
-        if PlayObject.m_btRaceServer = RC_PLAYOBJECT then begin
-          if g_Config.boAllowRecallAll or g_Config.boAllowRecallMoon or (TPlayObject(PlayObject).GetMagicInfo(30) = nil) then begin
-            if (MagMakeMoonObj(PlayObject, UserMagic) <> nil) then boTrain := True;
-          end;
-        end else begin
-          if g_Config.boAllowRecallAll or g_Config.boAllowRecallMoon or (TAIObject(PlayObject).FindMagic(30) = nil) then begin
-            if (MagMakeMoonObj(PlayObject, UserMagic) <> nil) then boTrain := True;
-          end;
-        end;
-      end;
+
+
 
     SKILL_61: begin //ÅüÐÇÕ¶
         if PlayObject.m_btRaceServer = RC_HEROOBJECT then begin

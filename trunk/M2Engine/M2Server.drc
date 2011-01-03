@@ -37,86 +37,86 @@
 #define RunSock_sExceptionMsg 64701
 #define RunSock_sExceptionMsg 64702
 #define RunSock_sKickUserMsg 64703
-#define ObjActor_sExitGropMsg 64704
-#define ObjActor_sCanceGrop 64705
-#define ObjActor_sExceptionMsg 64706
-#define ObjActor_sExceptionMsg 64707
-#define ObjActor_sExceptionMsg1 64708
-#define ObjActor_sExceptionMsg2 64709
-#define ObjActor_sExceptionMsg 64710
-#define ObjActor_sExceptionMsg 64711
-#define ObjActor_sExceptionMsg 64712
-#define ObjActor_sExceptionMsg 64713
+#define ObjActor_sExceptionMsg 64704
+#define ObjActor_sExceptionMsg 64705
+#define ItemEvent_sExceptionMsg 64706
+#define Envir_sExceptionMsg 64707
+#define Envir_sExceptionMsg1 64708
+#define Envir_sExceptionMsg2 64709
+#define Envir_sExceptionMsg 64710
+#define Envir_sExceptionMsg 64711
+#define Envir_sExceptionMsg 64712
+#define Envir_sExceptionMsg 64713
 #define RunSock_sGateOpen 64714
 #define RunSock_sKickGate 64715
 #define RunSock_sGateClose 64716
 #define RunSock_sExceptionMsg1 64717
 #define RunSock_sExceptionMsg2 64718
 #define RunSock_sExceptionMsg3 64719
-#define ObjActor_sExceptionMsg 64720
+#define ObjActor_sExceptionMsg3 64720
 #define ObjActor_sExceptionMsg 64721
-#define ObjActor_sExceptionMsg 64722
-#define ObjActor_sExceptionMsg1 64723
-#define ObjActor_sExceptionMsg2 64724
-#define ObjActor_sExceptionMsg 64725
-#define ObjActor_sExceptionMsg1 64726
-#define ObjActor_sExceptionMsg2 64727
-#define ObjActor_sExceptionMsg3 64728
-#define ObjActor_sExceptionMsg 64729
-#define ObjActor_sExceptionMsg1 64730
+#define ObjActor_sExceptionMsg1 64722
+#define ObjActor_sExceptionMsg 64723
+#define ObjActor_sExceptionMsg 64724
+#define ObjActor_sExceptionMsg1 64725
+#define ObjActor_sExceptionMsg2 64726
+#define ObjActor_sExceptionMsg3 64727
+#define ObjActor_sExitGropMsg 64728
+#define ObjActor_sCanceGrop 64729
+#define ObjActor_sExceptionMsg 64730
 #define ObjActor_sExceptionMsg 64731
-#define ObjActor_sExceptionMsg 64732
-#define ObjActor_sExceptionMsg1 64733
-#define ObjActor_sExceptionMsg2 64734
-#define ObjActor_sExceptionMsg3 64735
-#define ObjActor_sExceptionMsg10 64736
+#define ObjActor_sExceptionMsg1 64732
+#define ObjActor_sExceptionMsg2 64733
+#define ObjActor_sExceptionMsg 64734
+#define ObjActor_sExceptionMsg 64735
+#define ObjActor_sDelOK 64736
 #define ObjActor_sExceptionMsg 64737
 #define ObjActor_sExceptionMsg 64738
 #define ObjActor_sExceptionMsg 64739
-#define ObjActor_sDisableMagicCross 64740
+#define ObjActor_sExceptionMsg 64740
 #define ObjActor_sExceptionMsg 64741
 #define ObjActor_sExceptionMsg 64742
-#define ObjActor_sOutFormatMsg 64743
-#define ObjActor_sDelOK 64744
+#define ObjActor_sExceptionMsg 64743
+#define ObjActor_sExceptionMsg 64744
 #define ObjActor_sExceptionMsg 64745
 #define ObjActor_sExceptionMsg 64746
-#define ObjActor_sExceptionMsg 64747
-#define ObjActor_sExceptionMsg 64748
+#define ObjActor_sExceptionMsg1 64747
+#define ObjActor_sExceptionMsg2 64748
 #define ObjActor_sExceptionMsg 64749
-#define ObjActor_sExceptionMsg 64750
-#define ObjActor_sExceptionMsg 64751
-#define ObjActor_sExceptionMsg9 64752
-#define ObjActor_sExceptionMsg 64753
-#define ObjActor_sExceptionMsg 64754
-#define ObjActor_sExceptionMsg 64755
-#define ObjActor_sExceptionMsg0 64756
-#define ObjActor_sPayMentExpire 64757
-#define ObjActor_sDisConnectMsg 64758
-#define ObjActor_sExceptionMsg1 64759
-#define ObjActor_sExceptionMsg2 64760
-#define ObjActor_sExceptionMsg3 64761
-#define ObjActor_sExceptionMsg4 64762
-#define ObjActor_sExceptionMsg5 64763
-#define ObjActor_sExceptionMsg6 64764
-#define ObjActor_sExceptionMsg7 64765
-#define ObjActor_sExceptionMsg8 64766
-#define ObjActor_sExceptionMsg9 64767
-#define Envir_sExceptionMsg 64768
-#define ObjActor_sExceptionMsg 64769
-#define ObjActor_sExceptionMsg 64770
-#define ObjActor_sExceptionMsg 64771
-#define ObjActor_sExceptionMsg 64772
-#define ObjActor_sDisableMagicCross 64773
-#define ObjActor_sExceptionMsg 64774
-#define ObjActor_sExceptionMsg0 64775
-#define ObjActor_sExceptionMsg1 64776
-#define ObjActor_sExceptionMsg2 64777
-#define ObjActor_sExceptionMsg3 64778
-#define ObjActor_sExceptionMsg4 64779
-#define ObjActor_sExceptionMsg5 64780
-#define ObjActor_sExceptionMsg6 64781
-#define ObjActor_sExceptionMsg7 64782
-#define ObjActor_sExceptionMsg8 64783
+#define ObjActor_sExceptionMsg1 64750
+#define ObjActor_sExceptionMsg2 64751
+#define ObjActor_sExceptionMsg2 64752
+#define ObjActor_sExceptionMsg3 64753
+#define ObjActor_sExceptionMsg4 64754
+#define ObjActor_sExceptionMsg5 64755
+#define ObjActor_sExceptionMsg6 64756
+#define ObjActor_sExceptionMsg7 64757
+#define ObjActor_sExceptionMsg8 64758
+#define ObjActor_sExceptionMsg9 64759
+#define ObjActor_sExceptionMsg10 64760
+#define ObjActor_sExceptionMsg 64761
+#define ObjActor_sExceptionMsg 64762
+#define ObjActor_sExceptionMsg 64763
+#define ObjActor_sDisableMagicCross 64764
+#define ObjActor_sExceptionMsg 64765
+#define ObjActor_sExceptionMsg 64766
+#define ObjActor_sOutFormatMsg 64767
+#define ObjActor_sExceptionMsg1 64768
+#define ObjActor_sExceptionMsg2 64769
+#define ObjActor_sExceptionMsg3 64770
+#define ObjActor_sExceptionMsg4 64771
+#define ObjActor_sExceptionMsg5 64772
+#define ObjActor_sExceptionMsg6 64773
+#define ObjActor_sExceptionMsg7 64774
+#define ObjActor_sExceptionMsg8 64775
+#define ObjActor_sExceptionMsg9 64776
+#define ObjActor_sExceptionMsg 64777
+#define ObjActor_sExceptionMsg 64778
+#define ObjActor_sExceptionMsg 64779
+#define ObjActor_sExceptionMsg0 64780
+#define ObjActor_sPayMentExpire 64781
+#define ObjActor_sDisConnectMsg 64782
+#define ObjActor_sExceptionMsg1 64783
 #define Castle_sWallWarStop 64784
 #define Castle_sMsg 64785
 #define ObjHero_sExceptionMsg 64786
@@ -126,13 +126,13 @@
 #define ObjHero_sExceptionMsg 64790
 #define ObjHero_sExceptionMsg 64791
 #define ObjHero_sExceptionMsg 64792
-#define ItemEvent_sExceptionMsg 64793
-#define Envir_sExceptionMsg 64794
-#define Envir_sExceptionMsg1 64795
-#define Envir_sExceptionMsg2 64796
-#define Envir_sExceptionMsg 64797
-#define Envir_sExceptionMsg 64798
-#define Envir_sExceptionMsg 64799
+#define ObjActor_sExceptionMsg 64793
+#define ObjActor_sExceptionMsg 64794
+#define ObjActor_sExceptionMsg 64795
+#define ObjActor_sExceptionMsg 64796
+#define ObjActor_sDisableMagicCross 64797
+#define ObjActor_sExceptionMsg 64798
+#define ObjActor_sExceptionMsg0 64799
 #define UsrEngn_sExceptionMsg4 64800
 #define UsrEngn_sExceptionMsg5 64801
 #define UsrEngn_sExceptionMsg6 64802
@@ -900,30 +900,22 @@ BEGIN
 	RunSock_sExceptionMsg,	"[Exception] TRunSocket::ExecGateMsg %d"
 	RunSock_sExceptionMsg,	"[Exception] TRunSocket::KickUser CheckCode: %d"
 	RunSock_sKickUserMsg,	"当前登录帐号正在其它位置登录，本机已被强行离线！！！"
-	ObjActor_sExitGropMsg,	"%s 已经退出了本组...."
-	ObjActor_sCanceGrop,	"你的小组被解散了..."
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::_Attack Name:= %s Code:=%d"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClearViewRange %d"
-	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::SearchViewRange"
-	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::SearchViewRange 1-%d %s %s %d %d %d"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GetShowName"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::MakeGhost"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ScatterBagItems"
 	ObjActor_sExceptionMsg,	"[Exception] TAIPlayObject.ProcessSayMsg Msg = %s"
+	ItemEvent_sExceptionMsg,	"[Exception] TItemManager::Run"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMap"
+	Envir_sExceptionMsg1,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 1 ** %d"
+	Envir_sExceptionMsg2,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 2 ** %d"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::MoveToMovingObject"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMapMineEvent "
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::VerifyMapTime"
+	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::ArroundDoorOpened "
 	RunSock_sGateOpen,	"Rungate [%d](%s:%d)opened..."
 	RunSock_sKickGate,	"Server not ready: %s"
 	RunSock_sGateClose,	"Rungate [%d](%s:%d)closed..."
 	RunSock_sExceptionMsg1,	"[Exception] TRunSocket::ExecGateBuffers -> pBuffer"
 	RunSock_sExceptionMsg2,	"[Exception] TRunSocket::ExecGateBuffers -> @pwork,ExecGateMsg "
 	RunSock_sExceptionMsg3,	"[Exception] TRunSocket::ExecGateBuffers -> FreeMem"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapEvents"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapActorObjects"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SendRefMsg Name = %s"
-	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SendRefMsg 1 Name = %s"
-	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SendRefMsg 2 Name = %s"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ClearViewRange %d"
-	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SearchViewRange"
-	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SearchViewRange 1-%d %s %s %d %d %d"
 	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::SearchViewRange 2-%d %s %s %d %d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Walk  CheckCode:%d %s %s %d:%d"
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::WalkToEvent  CheckCode:%d %s %s %d:%d"
@@ -932,14 +924,14 @@ BEGIN
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Die 1"
 	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Die 2"
 	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Die 3 CheckCode:"
-	ObjActor_sExceptionMsg10,	"[Exception] TPlayObject::Run -> AutoGetExp"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ProcessUserLineMsg Msg = %s"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject.ProcessSayMsg Msg = %s"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientHitXY"
-	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::RunTo"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::HorseRunTo"
-	ObjActor_sOutFormatMsg,	"[权限调整] %s (%s %d -> %d)"
+	ObjActor_sExitGropMsg,	"%s 已经退出了本组...."
+	ObjActor_sCanceGrop,	"你的小组被解散了..."
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::_Attack Name:= %s Code:=%d"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClearViewRange %d"
+	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::SearchViewRange"
+	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::SearchViewRange 1-%d %s %s %d %d %d"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GetShowName"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::MakeGhost"
 	ObjActor_sDelOK,	"删除NPC成功..."
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::DropUseItems"
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::GainExp"
@@ -948,14 +940,14 @@ BEGIN
 	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientGuildAlly %d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::AttackDir Code: %d"
 	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetCharColor CheckCode=%d"
-	ObjActor_sExceptionMsg9,	"[Exception] TActorObject::Run 9"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove Code:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove2 Code:%d"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Operate Ident:"
-	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Operate %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
-	ObjActor_sPayMentExpire,	"您的帐户充值时间已到期！！！"
-	ObjActor_sDisConnectMsg,	"游戏被强行中断！！！"
-	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::Run -> Operate 1 Code=%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapEvents"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::GetMapActorObjects"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SendRefMsg Name = %s"
+	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SendRefMsg 1 Name = %s"
+	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SendRefMsg 2 Name = %s"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::ClearViewRange %d"
+	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::SearchViewRange"
+	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::SearchViewRange 1-%d %s %s %d %d %d"
 	ObjActor_sExceptionMsg2,	"[Exception] TPlayObject::Run -> Operate 2 # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s  Code=%d"
 	ObjActor_sExceptionMsg3,	"[Exception] TPlayObject::Run -> GetHighHuman"
 	ObjActor_sExceptionMsg4,	"[Exception] TPlayObject::Run -> ClearObj"
@@ -964,14 +956,14 @@ BEGIN
 	ObjActor_sExceptionMsg7,	"[Exception] TPlayObject::Run -> Say Code:%d"
 	ObjActor_sExceptionMsg8,	"[Exception] TPlayObject::Run -> Robot Code:%d"
 	ObjActor_sExceptionMsg9,	"[Exception] TPlayObject::Run -> Auto Code:%d"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::ArroundDoorOpened "
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Destroy Code: %d CharName: %s"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::RunNotice"
-	ObjActor_sExceptionMsg,	"[Exception] TActorObject::WalkTo"
-	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::SendSocket.."
+	ObjActor_sExceptionMsg10,	"[Exception] TPlayObject::Run -> AutoGetExp"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ProcessUserLineMsg Msg = %s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject.ProcessSayMsg Msg = %s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::ClientHitXY"
 	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
-	ObjActor_sExceptionMsg,	"[Exception] TAIObject::StartAttack Race=%d MagIdx=%d"
-	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Run -> Operate # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::RunTo"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::HorseRunTo"
+	ObjActor_sOutFormatMsg,	"[权限调整] %s (%s %d -> %d)"
 	ObjActor_sExceptionMsg1,	"[Exception] TActorObject::Run 1 "
 	ObjActor_sExceptionMsg2,	"[Exception] TActorObject::Run 2"
 	ObjActor_sExceptionMsg3,	"[Exception] TActorObject::Run 3 "
@@ -980,6 +972,14 @@ BEGIN
 	ObjActor_sExceptionMsg6,	"[Exception] TActorObject::Run 6"
 	ObjActor_sExceptionMsg7,	"[Exception] TActorObject::Run 7"
 	ObjActor_sExceptionMsg8,	"[Exception] TActorObject::Run 8"
+	ObjActor_sExceptionMsg9,	"[Exception] TActorObject::Run 9"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove Code:%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::SpaceMove2 Code:%d"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Operate Ident:"
+	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Operate %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
+	ObjActor_sPayMentExpire,	"您的帐户充值时间已到期！！！"
+	ObjActor_sDisConnectMsg,	"游戏被强行中断！！！"
+	ObjActor_sExceptionMsg1,	"[Exception] TPlayObject::Run -> Operate 1 Code=%d"
 	Castle_sWallWarStop,	"[%s 攻城战已经结束]"
 	Castle_sMsg,	"%d年%d月%d日"
 	ObjHero_sExceptionMsg,	"[Exception] TCopyObject::DropUseItems"
@@ -989,13 +989,13 @@ BEGIN
 	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOut"
 	ObjHero_sExceptionMsg,	"[Exception] THeroObject::LogOn:%d"
 	ObjHero_sExceptionMsg,	"[Exception] THeroObject::Die Name:%s ErrorCode:%d"
-	ItemEvent_sExceptionMsg,	"[Exception] TItemManager::Run"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMap"
-	Envir_sExceptionMsg1,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 1 ** %d"
-	Envir_sExceptionMsg2,	"[Exception] TEnvirnoment::DeleteFromMap -> Except 2 ** %d"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::MoveToMovingObject"
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::AddToMapMineEvent "
-	Envir_sExceptionMsg,	"[Exception] TEnvirnoment::VerifyMapTime"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::Destroy Code: %d CharName: %s"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::RunNotice"
+	ObjActor_sExceptionMsg,	"[Exception] TActorObject::WalkTo"
+	ObjActor_sExceptionMsg,	"[Exception] TPlayObject::SendSocket.."
+	ObjActor_sDisableMagicCross,	"当前地图不允许使用：%s"
+	ObjActor_sExceptionMsg,	"[Exception] TAIObject::StartAttack Race=%d MagIdx=%d"
+	ObjActor_sExceptionMsg0,	"[Exception] TActorObject::Run -> Operate # %s Ident:%d Sender:%d wP:%d nP1:%d nP2:%d np3:%d Msg:%s"
 	UsrEngn_sExceptionMsg4,	"[Exception] TUserEngine::ProcessHumans RunNotice"
 	UsrEngn_sExceptionMsg5,	"[Exception] TUserEngine::ProcessHumans Human.Operate Code: %d"
 	UsrEngn_sExceptionMsg6,	"[Exception] TUserEngine::ProcessHumans Human.Finalize Code: %d"

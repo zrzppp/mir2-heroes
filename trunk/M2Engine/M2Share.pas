@@ -92,11 +92,11 @@ const
   SKILL_TWINDRAKEBLADE = 38;
   SKILL_FROSTCRUNCH = 39;
   SKILL_PURIFICATION = 40;
-
+  SKILL_SUMMONHOLYDEVA = 41;
   SKILL_LIONROAR = 43;
 
    SKILL_GROUPAMYOUNSUL = 42;
-  SKILL_43 = 41;
+  SKILL_43 = 59;
   SKILL_GROUPDEDING {39 µÿ∂§} = 44;
   SKILL_WINDTEBO {35} = 45;
   SKILL_46 = 46;
@@ -114,7 +114,7 @@ const
   SKILL_57 = 57;
 
   SKILL_58 = 58;
-  SKILL_59 = 59;
+
   SKILL_60 = 60;
   SKILL_61 = 61;
 
@@ -4083,7 +4083,7 @@ var
     sDogz: '…Ò ﬁ';
     nDogzCount: 1;
 
-    sMoon: '‘¬¡È';
+    sMoon: 'Test';
     nMoonCount: 1;
     //    g_Config.DogzArray                           :array[0..9] of TRecallMigic;
     nAmyOunsulPoint: 10;

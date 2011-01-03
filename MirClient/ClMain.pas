@@ -4236,6 +4236,9 @@ begin
       end else                          // Halfmoon
         if g_boCanWideHit and (g_MySelf.m_Abil.MP >= 3) and TargetInSwordWideAttackRange(tdir) then begin
         nHitMsg := CM_WIDEHIT;
+      end else                          // CrossHalfMoon
+        if g_boCanCrsHit and (g_MySelf.m_Abil.MP >= 6) and TargetInSwordCrsAttackRange(tdir) then begin
+        nHitMsg := CM_CRSHIT;
       end;
 
       g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);
@@ -4410,6 +4413,9 @@ begin
               end;
               if g_boCanWideHit and (g_MySelf.m_Abil.MP >= 3) and TargetInSwordWideAttackRange(tdir) then begin
                 nHitMsg := CM_WIDEHIT;
+              end;
+              if g_boCanCrsHit and (g_MySelf.m_Abil.MP >= 6) and TargetInSwordCrsAttackRange(tdir) then begin
+                nHitMsg := CM_CRSHIT;
               end;
 
               g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);

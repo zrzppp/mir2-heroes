@@ -1,13 +1,13 @@
 object FrmMain: TFrmMain
-  Left = 393
-  Top = 194
-  Width = 455
+  Left = 1007
+  Top = 163
+  Width = 507
   Height = 390
   Color = clBtnFace
-  Font.Charset = GB2312_CHARSET
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = '??'
+  Font.Name = 'MS Sans Serif'
   Font.Style = []
   Icon.Data = {
     0000010001002020010000000000A81000001600000028000000200000004000
@@ -149,15 +149,15 @@ object FrmMain: TFrmMain
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 14
+  TextHeight = 13
   object RzSplitter: TRzSplitter
     Left = 0
     Top = 0
-    Width = 447
-    Height = 336
+    Width = 491
+    Height = 332
     Orientation = orVertical
     Position = 159
-    Percent = 47
+    Percent = 48
     SplitterWidth = 2
     Align = alClient
     BorderShadow = clBtnFace
@@ -166,7 +166,7 @@ object FrmMain: TFrmMain
     BarSize = (
       0
       159
-      447
+      491
       161)
     UpperLeftControls = (
       MemoLog)
@@ -175,7 +175,7 @@ object FrmMain: TFrmMain
     object MemoLog: TRzMemo
       Left = 0
       Top = 0
-      Width = 447
+      Width = 491
       Height = 159
       Align = alClient
       ScrollBars = ssVertical
@@ -187,18 +187,18 @@ object FrmMain: TFrmMain
     object RzSplitter1: TRzSplitter
       Left = 0
       Top = 0
-      Width = 447
-      Height = 175
+      Width = 491
+      Height = 171
       Orientation = orVertical
       Position = 79
-      Percent = 45
+      Percent = 46
       SplitterWidth = 0
       Align = alClient
       TabOrder = 0
       BarSize = (
         0
         79
-        447
+        491
         79)
       UpperLeftControls = (
         Panel)
@@ -207,34 +207,34 @@ object FrmMain: TFrmMain
       object Panel: TPanel
         Left = 0
         Top = 0
-        Width = 447
+        Width = 491
         Height = 79
         Align = alClient
         TabOrder = 0
         DesignSize = (
-          447
+          491
           79)
         object Label1: TLabel
           Left = 0
-          Top = 19
-          Width = 35
-          Height = 14
+          Top = 16
+          Width = 32
+          Height = 13
           Caption = 'Lable1'
           Transparent = True
         end
         object Label2: TLabel
           Left = 0
-          Top = 37
-          Width = 35
-          Height = 14
+          Top = 32
+          Width = 32
+          Height = 13
           Caption = 'Lable2'
           Transparent = True
         end
         object Lbcheck: TLabel
-          Left = 56
-          Top = 75
-          Width = 45
-          Height = 14
+          Left = 48
+          Top = 64
+          Width = 42
+          Height = 13
           Caption = 'Lbcheck'
           Transparent = True
           Visible = False
@@ -242,25 +242,25 @@ object FrmMain: TFrmMain
         object LbRunSocketTime: TLabel
           Left = 0
           Top = 0
-          Width = 86
-          Height = 14
+          Width = 77
+          Height = 13
           Caption = 'RunSocketTime'
           Transparent = True
           Visible = False
         end
         object LbRunTime: TLabel
-          Left = 238
-          Top = 19
-          Width = 48
-          Height = 14
+          Left = 204
+          Top = 16
+          Width = 43
+          Height = 13
           Caption = 'RunTime'
           Transparent = True
         end
         object LbTimeCount: TLabel
-          Left = 389
-          Top = 19
-          Width = 60
-          Height = 14
+          Left = 442
+          Top = 16
+          Width = 51
+          Height = 13
           Alignment = taRightJustify
           Anchors = [akTop, akRight]
           BiDiMode = bdRightToLeft
@@ -271,21 +271,21 @@ object FrmMain: TFrmMain
         object LbUserCount: TLabel
           Left = 0
           Top = 0
-          Width = 57
-          Height = 14
+          Width = 50
+          Height = 13
           Caption = 'UserCount'
           Transparent = True
         end
         object MemStatus: TLabel
-          Left = 328
-          Top = 58
-          Width = 41
-          Height = 18
+          Left = 280
+          Top = 50
+          Width = 36
+          Height = 12
           Alignment = taRightJustify
           Caption = 'Status'
           Font.Charset = GB2312_CHARSET
           Font.Color = clRed
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentFont = False
@@ -293,15 +293,15 @@ object FrmMain: TFrmMain
           Visible = False
         end
         object LabelVersion: TLabel
-          Left = 376
-          Top = 19
-          Width = 16
-          Height = 18
+          Left = 322
+          Top = 16
+          Width = 12
+          Height = 12
           BiDiMode = bdLeftToRight
           Caption = 'LV'
           Font.Charset = GB2312_CHARSET
           Font.Color = clRed
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentBiDiMode = False
@@ -309,42 +309,42 @@ object FrmMain: TFrmMain
           Transparent = True
         end
         object LTotalRAM: TLabel
-          Left = 376
-          Top = 37
-          Width = 70
-          Height = 18
+          Left = 322
+          Top = 32
+          Width = 54
+          Height = 12
           Caption = 'LTotalRAM'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
         end
         object LFreeRAM: TLabel
-          Left = 376
-          Top = 56
-          Width = 66
-          Height = 18
+          Left = 322
+          Top = 48
+          Width = 48
+          Height = 12
           Caption = 'LFreeRAM'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentFont = False
           Transparent = True
         end
         object LTotalVirtual: TLabel
-          Left = 273
-          Top = 40
-          Width = 79
-          Height = 18
+          Left = 234
+          Top = 34
+          Width = 78
+          Height = 12
           Caption = 'LTotalVirtual'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentFont = False
@@ -352,14 +352,14 @@ object FrmMain: TFrmMain
           Visible = False
         end
         object LFreeVirtual: TLabel
-          Left = 273
-          Top = 58
-          Width = 75
-          Height = 18
+          Left = 234
+          Top = 50
+          Width = 72
+          Height = 12
           Caption = 'LFreeVirtual'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentFont = False
@@ -367,14 +367,14 @@ object FrmMain: TFrmMain
           Visible = False
         end
         object LMemoryLoad: TLabel
-          Left = 376
-          Top = 77
-          Width = 92
-          Height = 18
+          Left = 322
+          Top = 66
+          Width = 66
+          Height = 12
           Caption = 'LMemoryLoad'
           Font.Charset = GB2312_CHARSET
           Font.Color = clBlue
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = '??'
           Font.Style = []
           ParentFont = False
@@ -382,24 +382,24 @@ object FrmMain: TFrmMain
         end
         object Label5: TLabel
           Left = 0
-          Top = 56
-          Width = 35
-          Height = 14
+          Top = 48
+          Width = 32
+          Height = 13
           Caption = 'Label5'
         end
         object Label20: TLabel
           Left = 0
-          Top = 75
-          Width = 42
-          Height = 14
+          Top = 64
+          Width = 38
+          Height = 13
           Caption = 'Label20'
         end
       end
       object GridGate: TStringGrid
         Left = 0
         Top = 0
-        Width = 447
-        Height = 96
+        Width = 491
+        Height = 92
         Align = alClient
         ColCount = 7
         DefaultColWidth = 60
@@ -485,23 +485,23 @@ object FrmMain: TFrmMain
     object MENU_VIEW: TMenuItem
       Caption = 'View (&V)'
       object MENU_VIEW_ONLINEHUMAN: TMenuItem
-        Caption = '????(&O)'
+        Caption = 'Online Characters (&O)'
         OnClick = MENU_VIEW_ONLINEHUMANClick
       end
       object MENU_VIEW_SESSION: TMenuItem
-        Caption = '????(&S)'
+        Caption = 'Session (&S)'
         OnClick = MENU_VIEW_SESSIONClick
       end
       object MENU_VIEW_LEVEL: TMenuItem
-        Caption = '????(&L)'
+        Caption = 'Level (&L)'
         OnClick = MENU_VIEW_LEVELClick
       end
       object MENU_VIEW_LIST: TMenuItem
-        Caption = '????(&L)'
+        Caption = 'List (&L)'
         OnClick = MENU_VIEW_LISTClick
       end
       object MENU_VIEW_KERNELINFO: TMenuItem
-        Caption = '????(&K)'
+        Caption = 'Kernel Info (&K)'
         OnClick = MENU_VIEW_KERNELINFOClick
       end
     end
@@ -543,26 +543,26 @@ object FrmMain: TFrmMain
     object MENU_MANAGE: TMenuItem
       Caption = 'Manage (&M)'
       object MENU_MANAGE_ONLINEMSG: TMenuItem
-        Caption = '????(&S)'
+        Caption = 'Online Message(&S)'
         OnClick = MENU_MANAGE_ONLINEMSGClick
       end
       object MENU_MANAGE_PLUG: TMenuItem
-        Caption = '????(&P)'
+        Caption = 'Manage Plugins(&P)'
         OnClick = MENU_MANAGE_PLUGClick
       end
       object MENU_MANAGE_CASTLE: TMenuItem
-        Caption = '????(&C)'
+        Caption = 'Manage Castle (&C)'
         OnClick = MENU_MANAGE_CASTLEClick
       end
       object MENU_MANAGE_SYS: TMenuItem
-        Caption = '????(&G)'
+        Caption = 'Manage System (&G)'
         OnClick = MENU_MANAGE_SYSClick
       end
     end
     object MENU_TOOLS: TMenuItem
       Caption = 'Tools (&T)'
       object MENU_TOOLS_IPSEARCH: TMenuItem
-        Caption = '????(&S)'
+        Caption = 'Search IP(&S)'
         OnClick = MENU_TOOLS_IPSEARCHClick
       end
     end

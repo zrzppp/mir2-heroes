@@ -3,14 +3,14 @@ object ftmPlugInManage: TftmPlugInManage
   Top = 332
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #21151#33021#25554#20214
+  Caption = 'Plugins'
   ClientHeight = 230
   ClientWidth = 441
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   PixelsPerInch = 96
@@ -30,7 +30,7 @@ object ftmPlugInManage: TftmPlugInManage
     Top = 16
     Width = 75
     Height = 25
-    Caption = #37197#21046'(&C)'
+    Caption = 'Config (&C)'
     TabOrder = 1
     OnClick = ButtonConfigClick
   end

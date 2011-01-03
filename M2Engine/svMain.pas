@@ -518,21 +518,21 @@ begin
     IntToStr(wMinute) + ':' +
     IntToStr(wSecond) + ' ' + sSrvType + sVerType; { +
   IntToStr(g_dwEngineRunTime) + g_sProcessName + '-' + g_sOldProcessName;}
-  LbUserCount.Caption := '怪物(' + IntToStr(UserEngine.MonsterCount) + ') 人物(登录:' +
+  LbUserCount.Caption := 'Mob Count:' + IntToStr(UserEngine.MonsterCount) + ' Player Count:' +
     //IntToStr(UserEngine.OnlinePlayObject) + '/' +
-  IntToStr(UserEngine.LoadPlayCount) + '/释放:' +
-    IntToStr(UserEngine.m_PlayObjectFreeList.Count) + '/在线:' +
+  IntToStr(UserEngine.LoadPlayCount) + ' Player Free:' +
+    IntToStr(UserEngine.m_PlayObjectFreeList.Count) + ' Player Object:' +
     IntToStr(UserEngine.PlayObjectCount) + '/' +
 
-  ') Hero(登录:' + IntToStr(UserEngine.m_LoadHeroList.Count) + '/释放:' +
-    IntToStr(UserEngine.m_HeroObjectFreeList.Count) + '/在线:' +
+  ' Hero List:' + IntToStr(UserEngine.m_LoadHeroList.Count) + ' Hero Load:' +
+    IntToStr(UserEngine.m_HeroObjectFreeList.Count) + ' Hero Free:' +
     IntToStr(UserEngine.m_HeroObjectList.Count) + ')';
   {
   Label1.Caption:= 'Run' + IntToStr(nRunTimeMin) + '/' + IntToStr(nRunTimeMax) + ' ' +
                    'Soc' + IntToStr(g_nSockCountMin) + '/' + IntToStr(g_nSockCountMax) + ' ' +
                    'Usr' + IntToStr(g_nUsrTimeMin) + '/' + IntToStr(g_nUsrTimeMax);
   }
-  Label1.Caption := Format('处理(%d/%d) 传输(%d/%d) 角色(%d/%d)', [nRunTimeMin, nRunTimeMax, g_nSockCountMin, g_nSockCountMax, g_nUsrTimeMin, g_nUsrTimeMax]);
+  Label1.Caption := Format('Test1(%d/%d) Test2(%d/%d) Test3(%d/%d)', [nRunTimeMin, nRunTimeMax, g_nSockCountMin, g_nSockCountMax, g_nUsrTimeMin, g_nUsrTimeMax]);
   {
   Label2.Caption:= 'Hum' + IntToStr(g_nHumCountMin) + '/' + IntToStr(g_nHumCountMax) + ' ' +
                    'Mon' + IntToStr(g_nMonTimeMin) + '/' + IntToStr(g_nMonTimeMax) + ' ' +
@@ -541,7 +541,7 @@ begin
                    'Npc' + IntToStr(UserEngine.dwProcessNpcTimeMin) + '/' + IntToStr(UserEngine.dwProcessNpcTimeMax) + ' ' +
                    '(' + IntToStr(g_nProcessHumanLoopTime) + ')';
   }
-  Label2.Caption := Format('人物(%d/%d) 循环(%d/%d) 交易(%d/%d) 管理(%d/%d) (%d)', [g_nHumCountMin,
+  Label2.Caption := Format('Test4(%d/%d) Test5(%d/%d) Test6(%d/%d) Test7(%d/%d) (%d)', [g_nHumCountMin,
     g_nHumCountMax,
       dwUsrRotCountMin,
       dwUsrRotCountMax,
@@ -558,7 +558,7 @@ begin
                    'MonP' + IntToStr(g_nMonProcTime) + '/' + IntToStr(g_nMonProcTimeMin) + '/' + IntToStr(g_nMonProcTimeMax) + ' ' +
                    'ObjRun' + IntToStr(g_nBaseObjTimeMin) + '/' + IntToStr(g_nBaseObjTimeMax);
  }
-  Label20.Caption := Format('刷新怪物(%d/%d/%d) 处理怪物(%d/%d/%d) 角色处理(%d/%d)', [g_nMonGenTime, g_nMonGenTimeMin, g_nMonGenTimeMax, g_nMonProcTime, g_nMonProcTimeMin, g_nMonProcTimeMax, g_nBaseObjTimeMin, g_nBaseObjTimeMax]);
+  Label20.Caption := Format('Test8(%d/%d/%d) Test9(%d/%d/%d) Test10(%d/%d)', [g_nMonGenTime, g_nMonGenTimeMin, g_nMonGenTimeMax, g_nMonProcTime, g_nMonProcTimeMin, g_nMonProcTimeMax, g_nBaseObjTimeMin, g_nBaseObjTimeMax]);
 
   //MemStatus.Caption:='内存: ' + IntToStr(ROUND(AllocMemSize / 1024)) + 'KB';// + ' 内存块数: ' + IntToStr(AllocMemCount);
   //Lbcheck.Caption:='check' + IntToStr(g_CheckCode.dwThread0) + '/w' + IntToStr(g_ProcessMsg.wIdent) + '/' + IntToStr(g_ProcessMsg.nParam1) + '/' +  IntToStr(g_ProcessMsg.nParam2) + '/' +  IntToStr(g_ProcessMsg.nParam3) + '/' + g_ProcessMsg.sMsg;
@@ -569,7 +569,7 @@ begin
   tTimeCount := GetTickCount() / (24 * 60 * 60 * 1000);
   if tTimeCount >= 36 then LbTimeCount.Font.Color := clRed
   else LbTimeCount.Font.Color := clBlack;
-  LbTimeCount.Caption := CurrToStr(tTimeCount) + '天';
+  LbTimeCount.Caption := CurrToStr(tTimeCount) + ' Time';
   {
   //004E5B78
   for i:= Low(RunSocket.GateList) to High(RunSocket.GateList) do begin
@@ -589,19 +589,19 @@ begin
   Label3.Caption:=sGate;
   }
 
-  MemStatus.Caption := '内存: ' + IntToStr(ROUND(AllocMemSize / 1024)) + 'KB'; // + ' 内存块数: ' + IntToStr(AllocMemCount);
+  MemStatus.Caption := 'Memory Status: ' + IntToStr(ROUND(AllocMemSize / 1024)) + 'KB'; // + ' 内存块数: ' + IntToStr(AllocMemCount);
 
   MemoryStatus.dwLength := SizeOf(MemoryStatus);
   GlobalMemoryStatus(MemoryStatus);
-  LTotalRAM.Caption := Format('%s%dM', ['物理内存总量:', MemoryStatus.dwTotalPhys div 1000000]);
+  LTotalRAM.Caption := Format('%s%dM', ['Total RAM:', MemoryStatus.dwTotalPhys div 1000000]);
   //LTotalRAM.Caption := Format('ClosedEvent:%d/EventList:%d', [g_EventManager.m_ClosedEventList.Count, g_EventManager.m_EventList.Count]);
 
-  LFreeRAM.Caption := Format('%s%dM', ['可用物理内存:', MemoryStatus.dwAvailPhys div 1000000]);
+  LFreeRAM.Caption := Format('%s%dM', ['Free RAM:', MemoryStatus.dwAvailPhys div 1000000]);
   //LTotalPage.Caption := Format('%d' + b, [ms.dwTotalPageFile]);
   //LPageFree.Caption := Format('%d' + b, [ms.dwAvailPageFile]);
-  LTotalVirtual.Caption := Format('%s%dM', ['虚拟内存总量:', MemoryStatus.dwTotalVirtual div 1000000]);
-  LFreeVirtual.Caption := Format('%s%dM', ['可用虚拟内存:', MemoryStatus.dwAvailVirtual div 1000000]);
-  LMemoryLoad.Caption := Format('%s%d %%', ['内存使用比率:', MemoryStatus.dwMemoryLoad]);
+  LTotalVirtual.Caption := Format('%s%dM', ['Total Virt:', MemoryStatus.dwTotalVirtual div 1000000]);
+  LFreeVirtual.Caption := Format('%s%dM', ['Free Virt:', MemoryStatus.dwAvailVirtual div 1000000]);
+  LMemoryLoad.Caption := Format('%s%d %%', ['Memory Load:', MemoryStatus.dwMemoryLoad]);
 
  { s28 := s28 + Format('物理内存总量:%d M', [MemoryStatus.dwTotalPhys div 1000000]) + #13;
   s28 := s28 + Format('可用物理内存:%d M', [MemoryStatus.dwAvailPhys div 1000000]) + #13;
@@ -2103,7 +2103,7 @@ var
   sIPaddr: string;
 begin
   try
-    sIPaddr := '192.168.0.1';
+    sIPaddr := '127.0.0.1';
     //sIPaddr := InputBox('IP所在地区查询', '输入IP地址:', '192.168.0.1');
     if not InputQuery('IP所在地区查询', '输入IP地址:', sIPaddr) then Exit;
     if not IsIPaddr(sIPaddr) then begin

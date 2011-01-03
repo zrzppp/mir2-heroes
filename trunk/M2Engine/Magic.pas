@@ -2212,6 +2212,10 @@ begin
         end;
       end;
 
+    SKILL_ENERGYREPULSOR: begin // Energy Repulsor
+        if MagPushArround(PlayObject, UserMagic.btLevel) > 0 then boTrain := True;
+      end;
+
     SKILL_PURIFICATION: begin // Purification
         if MagMakeUnTreatment(PlayObject,
           UserMagic,
@@ -2284,9 +2288,7 @@ begin
           boTrain := True;
       end;
     //道士
-    SKILL_48: begin //气功波
-        if MagPushArround(PlayObject, UserMagic.btLevel) > 0 then boTrain := True;
-      end;
+
     SKILL_49: begin //净化术
         boTrain := True;
       end;

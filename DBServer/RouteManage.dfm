@@ -1,50 +1,49 @@
 object frmRouteManage: TfrmRouteManage
-  Left = 971
-  Top = 177
+  Left = 699
+  Top = 197
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #32593#20851#36335#30001#37197#32622
-  ClientHeight = 223
-  ClientWidth = 481
+  Caption = 'Game Gate'
+  ClientHeight = 279
+  ClientWidth = 601
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
   ShowHint = True
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 15
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 465
-    Height = 209
-    Caption = #32593#20851#36335#30001#34920
+    Left = 10
+    Top = 10
+    Width = 581
+    Height = 261
+    Caption = 'Connections'
     TabOrder = 0
     object ListViewRoute: TListView
-      Left = 8
-      Top = 16
-      Width = 449
-      Height = 153
+      Left = 10
+      Top = 20
+      Width = 561
+      Height = 191
       Columns = <
         item
-          Caption = #24207#21495
-          Width = 40
+          Caption = 'Index'
         end
         item
-          Caption = #35282#33394#32593#20851
-          Width = 80
+          Caption = 'IP'
+          Width = 100
         end
         item
-          Caption = #32593#20851#25968#37327
-          Width = 60
+          Caption = 'Connection'
+          Width = 75
         end
         item
-          Caption = #28216#25103#32593#20851
-          Width = 1000
+          Caption = 'IP and Port'
+          Width = 1250
         end>
       GridLines = True
       ReadOnly = True
@@ -54,42 +53,42 @@ object frmRouteManage: TfrmRouteManage
       OnClick = ButtonDeleteClick
     end
     object ButtonEdit: TButton
-      Left = 88
-      Top = 176
-      Width = 73
-      Height = 25
-      Hint = #20462#25913#36873#23450#30340#32593#20851#36335#30001
-      Caption = #32534#36753'(&E)'
+      Left = 110
+      Top = 220
+      Width = 91
+      Height = 31
+      Hint = '?????????'
+      Caption = 'Edit (&E)'
       TabOrder = 1
       OnClick = ButtonDeleteClick
     end
     object ButtonDelete: TButton
-      Left = 168
-      Top = 176
-      Width = 73
-      Height = 25
-      Hint = #21024#38500#36873#23450#30340#32593#20851#36335#30001
-      Caption = #21024#38500'(&D)'
+      Left = 210
+      Top = 220
+      Width = 91
+      Height = 31
+      Hint = '?????????'
+      Caption = 'Delete (&D)'
       TabOrder = 2
       OnClick = ButtonDeleteClick
     end
     object ButtonOK: TButton
-      Left = 384
-      Top = 176
-      Width = 73
-      Height = 25
-      Hint = #20445#23384#32593#20851#36335#30001#35774#32622#36864#20986
-      Caption = #30830#23450'(&O)'
+      Left = 480
+      Top = 220
+      Width = 91
+      Height = 31
+      Hint = '??????????'
+      Caption = 'OK (&O)'
       TabOrder = 3
       OnClick = ButtonDeleteClick
     end
     object ButtonAddRoute: TButton
-      Left = 8
-      Top = 176
-      Width = 73
-      Height = 25
-      Hint = #20462#25913#36873#23450#30340#32593#20851#36335#30001
-      Caption = #22686#21152'(&A)'
+      Left = 10
+      Top = 220
+      Width = 91
+      Height = 31
+      Hint = '?????????'
+      Caption = 'Add (&A)'
       TabOrder = 4
       OnClick = ButtonDeleteClick
     end

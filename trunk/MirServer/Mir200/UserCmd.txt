@@ -1,9 +1,3 @@
 ;Custom Commands
 ;Command	Number
-说话	1
-会员服务	2
-娱乐	3
-行会服务	4
-挂机	5
-召唤	7
-PK	8
+test	1

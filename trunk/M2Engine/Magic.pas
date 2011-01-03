@@ -2216,6 +2216,10 @@ begin
         if MagPushArround(PlayObject, UserMagic.btLevel) > 0 then boTrain := True;
       end;
 
+    SKILL_FROSTCRUNCH: begin // Frost Crunch
+        if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
+      end;
+
     SKILL_PURIFICATION: begin // Purification
         if MagMakeUnTreatment(PlayObject,
           UserMagic,
@@ -2256,20 +2260,18 @@ begin
             boTrain := True;
         end;
       end;
-    SKILL_41: begin //狮子吼
+    SKILL_LIONROAR: begin // Lion Roar
         if MagGroupMb(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then
           boTrain := True;
       end;
-    SKILL_42: begin //狂风斩
+    SKILL_TWINDRAKEBLADE: begin //狂风斩
         if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
       end;
     SKILL_43: begin //破空剑
         if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
       end;
     //法师
-    SKILL_44: begin //结冰掌
-        if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
-      end;
+
 
     SKILL_46: begin //分身术
         BaseObject := MagMakeSelf(PlayObject, TargeTActorObject, UserMagic);

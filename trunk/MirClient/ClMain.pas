@@ -4239,6 +4239,10 @@ begin
       end else                          // CrossHalfMoon
         if g_boCanCrsHit and (g_MySelf.m_Abil.MP >= 6) and TargetInSwordCrsAttackRange(tdir) then begin
         nHitMsg := CM_CRSHIT;
+      end else
+        if g_boCanTwnHit and (g_MySelf.m_Abil.MP >= 10) then begin
+        g_boCanTwnHit := False;
+        nHitMsg := CM_TWINHIT;
       end;
 
       g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);

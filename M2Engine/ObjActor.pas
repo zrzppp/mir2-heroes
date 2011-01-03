@@ -6494,7 +6494,7 @@ begin
             SKILL_SINSU, {30}
             SKILL_PURIFICATION,
             SKILL_46,
-            SKILL_59: begin
+            SKILL_SUMMONHOLYDEVA: begin
               if m_boSelSelf then begin
                 BaseObject := Self;
                 nTargetX := m_nCurrX;

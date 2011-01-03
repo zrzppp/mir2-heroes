@@ -1,7 +1,34 @@
 ;Legend of Mir 2 Server MapInfo File
 ;Last Updated 01/04 By Geoff
 
-[0 BichonProvince 0] SNOW(1)
+[grly Grly 0] DUEL
+
+[1002 Duel_Map] DUEL
+[1003 Duel_Map] DUEL
+[1004 Duel_Map] DUEL
+[1005 Duel_Map] DUEL
+
+[NZ010 NZ010]
+[NZ004 NZ004] 
+[NZ001 NZ001] 
+[NZ003 NZ003]
+[NZ002 NZ002] 
+[NZ013 NZ013] 
+[NZ005 NZ005] 
+[NZ015 NZ015]
+[NZ006 NZ006] 
+[NZ014 NZ014] 
+[NZ009 NZ009]
+[JZ002 JZ002] 
+[NZ016 NZ016]
+[NZ017 NZ017] 
+[JZ001 JZ001] 
+[JZ006 JZ006] 
+[JZ003 JZ003] 
+[JZ004 JZ004] 
+[JZ005 JZ005] 
+
+[0 BichonProvince 0] SNOW(3)
 
 
 ;Buildings

@@ -1,11 +1,11 @@
 object FrmMain: TFrmMain
-  Left = 246
-  Top = 145
+  Left = 986
+  Top = 415
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = '??????'
-  ClientHeight = 253
-  ClientWidth = 569
+  Caption = 'DBServer'
+  ClientHeight = 239
+  ClientWidth = 488
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
@@ -18,12 +18,12 @@ object FrmMain: TFrmMain
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
-  TextHeight = 14
+  TextHeight = 12
   object MemoLog: TMemo
     Left = 0
     Top = 0
-    Width = 569
-    Height = 95
+    Width = 488
+    Height = 81
     Align = alTop
     ScrollBars = ssVertical
     TabOrder = 0
@@ -32,97 +32,97 @@ object FrmMain: TFrmMain
   end
   object Panel: TPanel
     Left = 0
-    Top = 95
-    Width = 569
-    Height = 66
+    Top = 81
+    Width = 488
+    Height = 57
     Align = alTop
     TabOrder = 1
     object LabelLoadHumRcd: TLabel
-      Left = 215
-      Top = 9
-      Width = 36
-      Height = 14
-      Caption = '??????'
+      Left = 184
+      Top = 8
+      Width = 48
+      Height = 12
+      Caption = 'Load Hum'
     end
     object LabelSaveHumRcd: TLabel
-      Left = 215
-      Top = 37
-      Width = 36
-      Height = 14
+      Left = 184
+      Top = 32
+      Width = 48
+      Height = 12
       BiDiMode = bdLeftToRight
-      Caption = '??????'
+      Caption = 'Save Hum'
       ParentBiDiMode = False
     end
     object LabelLoadHeroRcd: TLabel
-      Left = 345
-      Top = 9
-      Width = 36
-      Height = 14
-      Caption = '??????'
+      Left = 296
+      Top = 8
+      Width = 54
+      Height = 12
+      Caption = 'Load Hero'
     end
     object LabelSaveHeroRcd: TLabel
-      Left = 345
-      Top = 37
-      Width = 36
-      Height = 14
-      Caption = '??????'
+      Left = 296
+      Top = 32
+      Width = 54
+      Height = 12
+      Caption = 'Save Hero'
     end
     object LabelCreateHero: TLabel
-      Left = 112
-      Top = 9
-      Width = 24
-      Height = 14
-      Caption = '????'
+      Left = 96
+      Top = 8
+      Width = 72
+      Height = 12
+      Caption = 'Created Hero'
     end
     object LabelCreateHum: TLabel
-      Left = 9
-      Top = 9
-      Width = 24
-      Height = 14
-      Caption = '????'
+      Left = 8
+      Top = 8
+      Width = 66
+      Height = 12
+      Caption = 'Created Hum'
     end
     object LabelDeleteHum: TLabel
-      Left = 9
-      Top = 37
-      Width = 24
-      Height = 14
-      Caption = '????'
+      Left = 8
+      Top = 32
+      Width = 42
+      Height = 12
+      Caption = 'Del Hum'
     end
     object LabelDeleteHero: TLabel
-      Left = 112
-      Top = 37
-      Width = 24
-      Height = 14
-      Caption = '????'
+      Left = 96
+      Top = 32
+      Width = 54
+      Height = 12
+      Caption = 'Del Hero:'
     end
     object LabelWorkStatus: TLabel
-      Left = 541
-      Top = 9
-      Width = 5
-      Height = 18
+      Left = 464
+      Top = 8
+      Width = 6
+      Height = 12
       Font.Charset = GB2312_CHARSET
       Font.Color = clGreen
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = '??'
       Font.Style = []
       ParentFont = False
       Visible = False
     end
     object CheckBoxShowMainLogMsg: TCheckBox
-      Left = 485
-      Top = 28
-      Width = 76
-      Height = 20
-      Caption = '????'
+      Left = 416
+      Top = 24
+      Width = 65
+      Height = 17
+      Caption = 'Show Log'
       TabOrder = 0
       OnClick = CheckBoxShowMainLogMsgClick
     end
   end
   object ModuleGrid: TStringGrid
     Left = 0
-    Top = 161
-    Width = 569
-    Height = 92
+    Top = 138
+    Width = 488
+    Height = 101
     Align = alClient
     ColCount = 3
     DefaultColWidth = 158
@@ -147,64 +147,64 @@ object FrmMain: TFrmMain
     Left = 168
     Top = 16
     object MENU_CONTROL: TMenuItem
-      Caption = '??(&C)'
+      Caption = 'Control (&C)'
       object MENU_CONTROL_START: TMenuItem
-        Caption = '????(&S)'
+        Caption = 'Start (&S)'
         OnClick = MENU_CONTROL_STARTClick
       end
       object MENU_CONTROL_STOP: TMenuItem
-        Caption = '????(&T)'
+        Caption = 'Stop (&T)'
         OnClick = MENU_CONTROL_STOPClick
       end
       object N1: TMenuItem
-        Caption = '????'
+        Caption = 'Reload'
         object G1: TMenuItem
-          Caption = '????(&G)'
+          Caption = 'Reload Gate ID/IP Table (&G)'
           OnClick = G1Click
         end
         object C1: TMenuItem
-          Caption = '??????(&C)'
+          Caption = 'Reload Char Name List (&C)'
           OnClick = C1Click
         end
       end
       object MENU_CONTROL_EXIT: TMenuItem
-        Caption = '??(&X)'
+        Caption = 'Exit (&X)'
         OnClick = MENU_CONTROL_EXITClick
       end
     end
     object MENU_OPTION: TMenuItem
-      Caption = '??(&O)'
+      Caption = 'Options (&O)'
       object MENU_OPTION_GENERAL: TMenuItem
-        Caption = '????(&G)'
+        Caption = 'General (&G)'
         OnClick = MENU_OPTION_GENERALClick
       end
       object MENU_OPTION_GAMEGATE: TMenuItem
-        Caption = '????(&R)'
+        Caption = 'Game Gate(&R)'
         OnClick = MENU_OPTION_GAMEGATEClick
       end
     end
     object MENU_MANAGE: TMenuItem
-      Caption = '??(&M)'
+      Caption = 'Manage (&M)'
       object MENU_MANAGE_DATA: TMenuItem
-        Caption = '????(&D)'
+        Caption = 'Manage Data(&D)'
         OnClick = MENU_MANAGE_DATAClick
       end
       object MENU_RANKING: TMenuItem
-        Caption = '?????(&R)'
+        Caption = 'Ranking (&R)'
         OnClick = MENU_RANKINGClick
       end
     end
     object MENU_TEST: TMenuItem
-      Caption = '??(&T)'
+      Caption = 'Test (&T)'
       object MENU_TEST_SELGATE: TMenuItem
-        Caption = '????(&S)'
+        Caption = 'Test Select Gate (&S)'
         OnClick = MENU_TEST_SELGATEClick
       end
     end
     object MENU_HELP: TMenuItem
-      Caption = '??(&H)'
+      Caption = 'Help (&H)'
       object MENU_HELP_VERSION: TMenuItem
-        Caption = '??(&A)'
+        Caption = 'Help (&A)'
         OnClick = MENU_HELP_VERSIONClick
       end
     end

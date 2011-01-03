@@ -323,7 +323,7 @@ begin
   end;
   m_DefMsg := MakeDefaultMsg(DBR_SAVEMAGICLIST, 1, 0, 0, 0);
   SendSocket(EncodeMessage(m_DefMsg));
-  MainOutMessage(Format('技能数据库加载完成(%d)...', [g_MagicList.Count]));
+  MainOutMessage(Format('Loaded Magic List (%d)...', [g_MagicList.Count]));
 end;
 
 procedure TServerClient.SaveStdItemList(nItemCount: Integer; sMsg: string);
@@ -343,7 +343,7 @@ begin
   end;
   m_DefMsg := MakeDefaultMsg(DBR_SAVESTDITEMLIST, 1, 0, 0, 0);
   SendSocket(EncodeMessage(m_DefMsg));
-  MainOutMessage(Format('物品数据库加载完成(%d)...', [g_StdItemList.Count]));
+  MainOutMessage(Format('Item List Loaded (%d)...', [g_StdItemList.Count]));
 end;
 
 procedure TServerClient.LoadHumanRcd(sMsg: string);

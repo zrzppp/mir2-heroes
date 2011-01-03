@@ -72,14 +72,14 @@ begin
   IdGrid.Cells[6, 0] := 'Adress(cont)';
   IdGrid.Cells[7, 0] := '备注';
 
-  ChrGrid.Cells[0, 0] := '索引号';
-  ChrGrid.Cells[1, 0] := '人物名称';
-  ChrGrid.Cells[2, 0] := '登录帐号';
-  ChrGrid.Cells[3, 0] := '是否禁用';
-  ChrGrid.Cells[4, 0] := '禁用时间';
-  ChrGrid.Cells[5, 0] := '操作计数';
-  ChrGrid.Cells[6, 0] := '选择编号';
-  ChrGrid.Cells[7, 0] := '是否是英雄';
+  ChrGrid.Cells[0, 0] := 'Index';
+  ChrGrid.Cells[1, 0] := 'Character';
+  ChrGrid.Cells[2, 0] := 'ID';
+  ChrGrid.Cells[3, 0] := 'Deleted';
+  ChrGrid.Cells[4, 0] := 'Mod Date';
+  ChrGrid.Cells[5, 0] := 'Count';
+  ChrGrid.Cells[6, 0] := 'Select ID';
+  ChrGrid.Cells[7, 0] := 'Hero';
 end;
 
 procedure TFrmIDHum.EdUserIdKeyPress(Sender: TObject; var Key: Char);

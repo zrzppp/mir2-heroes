@@ -12444,13 +12444,13 @@ begin
     if (X >= DBottom.Left + 666) and (Y >= SCREENHEIGHT - 73) and
       (X <= DBottom.Left + 730) and (Y <= SCREENHEIGHT - 73 + 13) then begin
       if g_MySelf.m_Abil.MaxExp > 0 then begin
-        sStr := '当前经验' + FloatToStrFixFmt(100 * g_MySelf.m_Abil.Exp / g_MySelf.m_Abil.MaxExp, 3, 2) + '%\';
+        sStr := 'Experience ' + FloatToStrFixFmt(100 * g_MySelf.m_Abil.Exp / g_MySelf.m_Abil.MaxExp, 3, 2) + '%\';
         DScreen.ShowHint(DBottom.Left + 666, SCREENHEIGHT - 73 + 13, sStr, clWhite, False);
       end;
     end else
       if (X >= DBottom.Left + 666) and (X <= DBottom.Left + 730) and
       (Y >= SCREENHEIGHT - 40) and (Y <= SCREENHEIGHT - 40 + 13) then begin
-      sStr := '包裹负重' + IntToStr(g_MySelf.m_Abil.Weight) + '/' + IntToStr(g_MySelf.m_Abil.MaxWeight);
+      sStr := 'Weight ' + IntToStr(g_MySelf.m_Abil.Weight) + '/' + IntToStr(g_MySelf.m_Abil.MaxWeight);
       DScreen.ShowHint(DBottom.Left + 666, SCREENHEIGHT - 40 + 13, sStr, clWhite, False);
     end else begin
       DScreen.ClearHint;
@@ -12464,7 +12464,7 @@ begin
         end;
       end;
       if g_MySelf.m_Abil.MaxExp > 0 then begin
-        sStr := '当前经验' + FloatToStrFixFmt(100 * g_MySelf.m_Abil.Exp / g_MySelf.m_Abil.MaxExp, 3, 2) + '%\';
+        sStr := 'Experience ' + FloatToStrFixFmt(100 * g_MySelf.m_Abil.Exp / g_MySelf.m_Abil.MaxExp, 3, 2) + '%\';
         DScreen.ShowHint(X, SCREENHEIGHT, sStr, clWhite, True);
       end;
     end else

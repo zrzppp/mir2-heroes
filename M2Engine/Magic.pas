@@ -1852,7 +1852,7 @@ end;
 function TMagicManager.IsWarrSkill(wMagIdx: Integer): Boolean; //是否是战士技能
 begin
   Result := False;
-  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_SLAYING, SKILL_THRUSTING, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_40 {40}, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
+  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_SLAYING, SKILL_THRUSTING, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_CROSSHALFMOON, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
     Result := True;
 end;
 
@@ -2181,21 +2181,27 @@ begin
             boTrain := True;
         end;
       end;
-    SKILL_SNOWWIND {33}: begin //冰咆哮
+    SKILL_SNOWWIND {33}: begin // Ice Storm
         if MagBigExplosion(PlayObject,
           PlayObject.GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(PlayObject.m_WAbil.MC), Integer(HiWord(PlayObject.m_WAbil.MC) - LoWord(PlayObject.m_WAbil.MC)) + 1),
           nTargetX,
           nTargetY,
-          g_Config.nSnowWindRange {1}, AT_ICE) then
+          g_Config.nSnowWindRange, AT_ICE) then
           boTrain := True;
       end;
-    SKILL_UNAMYOUNSUL {34}: begin //解毒术
+
+    SKILL_FLAMEDISRUPTOR: begin // Flame Disruptor
+        if MagMakeFireDay(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
+      end;
+
+    SKILL_PURIFICATION: begin // Purification
         if MagMakeUnTreatment(PlayObject,
           UserMagic,
           nTargetX,
           nTargetY,
           TargeTActorObject) then boTrain := True;
       end;
+
     SKILL_WINDTEBO {35}: if MagWindTebo(PlayObject, UserMagic) then boTrain := True;
 
     //冰焰
@@ -2242,9 +2248,7 @@ begin
     SKILL_44: begin //结冰掌
         if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
       end;
-    SKILL_45: begin //灭天火
-        if MagMakeFireDay(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
-      end;
+
     SKILL_46: begin //分身术
         BaseObject := MagMakeSelf(PlayObject, TargeTActorObject, UserMagic);
         if BaseObject <> nil then begin
@@ -2786,7 +2790,7 @@ begin
     if (abs(PlayObject.m_nCurrX - PoseBaseObject.m_nCurrX) <= 1) and
       (abs(PlayObject.m_nCurrY - PoseBaseObject.m_nCurrY) <= 1) and
       (PlayObject.m_Abil.Level > PoseBaseObject.m_Abil.Level) then begin
-      if Random(20) < UserMagic.btLevel * 6 + 6 + (PlayObject.m_Abil.Level - PoseBaseObject.m_Abil.Level) then begin
+      if Random(20) < UserMagic.btLevel * 6 + 46 + (PlayObject.m_Abil.Level - PoseBaseObject.m_Abil.Level) then begin
         PoseBaseObject.CharPushed(GetNextDirection(PlayObject.m_nCurrX, PlayObject.m_nCurrY, PoseBaseObject.m_nCurrX, PoseBaseObject.m_nCurrY), _MAX(0, UserMagic.btLevel - 1) + 1);
         Result := True;
       end;

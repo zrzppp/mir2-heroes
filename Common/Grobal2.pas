@@ -1506,7 +1506,7 @@ type
 
   TMagic = record
     wMagicId: Word;
-    sMagicName: string[12];
+    sMagicName: string[20];
     btEffectType: Byte;
     btEffect: Byte;
     bt11: Byte;

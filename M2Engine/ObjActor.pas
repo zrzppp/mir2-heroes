@@ -273,8 +273,8 @@ type
     m_dwWalkWaitTick: LongWord;
     m_boWalkWaitLocked: Boolean;
     m_nNextHitTime: Integer;
-    m_MagicOneSwordSkill: pTUserMagic;
-    m_MagicPowerHitSkill: pTUserMagic;
+    m_MagicOneSwordSkill: pTUserMagic; // Fencing
+    m_MagicPowerHitSkill: pTUserMagic; // Slaying
     m_MagicErgumSkill: pTUserMagic; //刺杀剑法
     m_MagicBanwolSkill: pTUserMagic; //半月弯刀
     m_MagicFireSwordSkill: pTUserMagic;
@@ -6406,14 +6406,12 @@ begin
           end;
         end;
       end;
-    SKILL_40: begin //双龙斩 抱月刀法
+    SKILL_CROSSHALFMOON: begin // Cross Half Moon
         if m_MagicCrsSkill <> nil then begin
           if not m_boCrsHitkill then begin
             SkillCrsOnOff(True);
-            //SendSocket(nil, '+CRS');
           end else begin
             SkillCrsOnOff(False);
-            //SendSocket(nil, '+UCRS');
           end;
         end;
         Result := True;
@@ -6494,7 +6492,7 @@ begin
             SKILL_DEJIWONHO {15},
             SKILL_BIGHEALLING {29},
             SKILL_SINSU, {30}
-            SKILL_UNAMYOUNSUL,
+            SKILL_PURIFICATION,
             SKILL_46,
             SKILL_59: begin
               if m_boSelSelf then begin
@@ -16915,7 +16913,7 @@ begin
           end;
         end;
       end;
-    SKILL_40: begin //双龙斩 抱月刀法
+    SKILL_CROSSHALFMOON: begin // Cross Half Moon
         if m_MagicCrsSkill <> nil then begin
           if not m_boCrsHitkill then begin
             SkillCrsOnOff(True);
@@ -18247,7 +18245,7 @@ begin
     Exit;
   end;
   if ((sHumanName <> '') and (sHumanName[1] = '?')) or (sHumanName = '') or (sSkillName = '') or (nLevel < 0) or not (nLevel in [0..3]) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称  技能名称 修炼等级(0-3)', c_Red, t_Hint);
+    SysMsg('Useage: @' + Cmd.sCmd + ' PlayerName MagicName Level(1-3)', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
@@ -18257,12 +18255,12 @@ begin
   end;
   Magic := UserEngine.FindMagic(sSkillName);
   if Magic = nil then begin
-    SysMsg(Format('%s 技能名称不正确！！！', [sSkillName]), c_Red, t_Hint);
+    SysMsg(Format('Unknown Skill: %s', [sSkillName]), c_Red, t_Hint);
     Exit;
   end;
 
   if PlayObject.IsTrainingSkill(Magic.wMagicId) then begin
-    SysMsg(Format('%s 技能已修炼过了！！！', [sSkillName]), c_Red, t_Hint);
+    SysMsg(Format('Already Learnt: %s', [sSkillName]), c_Red, t_Hint);
     Exit;
   end;
   New(UserMagic);
@@ -18274,7 +18272,7 @@ begin
   PlayObject.m_MagicList.Add(UserMagic);
   PlayObject.SendAddMagic(UserMagic);
   PlayObject.RecalcAbilitys;
-  SysMsg(Format('%s 的 %s 技能修炼成功！！！', [sHumanName, sSkillName]), c_Green, t_Hint);
+  SysMsg(Format('%s Has Learnt: %s ', [sHumanName, sSkillName]), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdTrainingSkill(Cmd: pTGameCmd; sHumanName, sSkillName: string;
@@ -18289,13 +18287,13 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (sSkillName = '') or (nLevel <= 0) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称  技能名称 修炼等级(0-3)', c_Red, t_Hint);
+    SysMsg('Useage: @' + Cmd.sCmd + ' PlayerName MagicName Level(1-3)', c_Red, t_Hint);
     Exit;
   end;
   nLevel := _MIN(3, nLevel);
   PlayObject := UserEngine.GetPlayObject(sHumanName);
   if PlayObject = nil then begin
-    SysMsg(Format('%s不在线，或在其它服务器上！！', [sHumanName]), c_Red, t_Hint);
+    SysMsg(Format('%s Is not Online', [sHumanName]), c_Red, t_Hint);
     Exit;
   end;
   for I := 0 to PlayObject.m_MagicList.Count - 1 do begin
@@ -30738,7 +30736,7 @@ begin
       SKILL_SHIELD: begin //魔法盾
           m_Magic31Skill := UserMagic;
         end;
-      SKILL_40: begin //抱月弯刀
+      SKILL_CROSSHALFMOON: begin // CrossHalfMoon - ID: 34
           m_MagicCrsSkill := UserMagic;
         end;
       SKILL_41: begin

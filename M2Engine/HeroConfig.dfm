@@ -1,6 +1,6 @@
 object frmHeroConfig: TfrmHeroConfig
-  Left = 591
-  Top = 239
+  Left = 637
+  Top = 320
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = '????'
@@ -27,36 +27,29 @@ object frmHeroConfig: TfrmHeroConfig
       Caption = '????'
       object Label15: TLabel
         Left = 9
-        Top = 345
-        Width = 28
+        Top = 393
+        Width = 61
         Height = 14
-        Caption = '????:'
-      end
-      object Label17: TLabel
-        Left = 159
-        Top = 345
-        Width = 26
-        Height = 14
-        Caption = '? ??:'
+        Caption = 'Recall Time'
       end
       object GroupBoxLevelExp: TGroupBox
         Left = 9
-        Top = 9
-        Width = 198
-        Height = 226
-        Caption = '????'
+        Top = 8
+        Width = 184
+        Height = 273
+        Caption = 'Experience settings'
         TabOrder = 0
         object Label37: TLabel
-          Left = 13
-          Top = 193
-          Width = 16
+          Left = 29
+          Top = 225
+          Width = 68
           Height = 14
-          Caption = '??:'
+          Caption = 'Mass update'
         end
         object ComboBoxLevelExp: TComboBox
-          Left = 56
-          Top = 187
-          Width = 132
+          Left = 8
+          Top = 243
+          Width = 116
           Height = 22
           Style = csDropDownList
           ItemHeight = 14
@@ -66,8 +59,8 @@ object frmHeroConfig: TfrmHeroConfig
         object GridLevelExp: TStringGrid
           Left = 9
           Top = 19
-          Width = 179
-          Height = 160
+          Width = 168
+          Height = 190
           ColCount = 2
           DefaultRowHeight = 18
           RowCount = 1001
@@ -1081,21 +1074,21 @@ object frmHeroConfig: TfrmHeroConfig
         end
       end
       object GroupBox8: TGroupBox
-        Left = 215
-        Top = 9
-        Width = 150
-        Height = 58
-        Caption = '??'
+        Left = 199
+        Top = 8
+        Width = 170
+        Height = 65
+        Caption = 'Experience multiplier'
         TabOrder = 1
         object Label23: TLabel
-          Left = 13
+          Left = 5
           Top = 28
-          Width = 28
+          Width = 89
           Height = 14
-          Caption = '????:'
+          Caption = 'KillMon Exp Rate'
         end
         object EditKillMonExpRate: TSpinEdit
-          Left = 79
+          Left = 103
           Top = 23
           Width = 62
           Height = 23
@@ -1108,28 +1101,28 @@ object frmHeroConfig: TfrmHeroConfig
         end
       end
       object GroupBox29: TGroupBox
-        Left = 215
-        Top = 75
-        Width = 150
-        Height = 76
+        Left = 200
+        Top = 80
+        Width = 169
+        Height = 81
         Caption = '????'
         TabOrder = 2
         object Label61: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 75
           Height = 14
-          Caption = '????:'
+          Caption = 'Starting Level'
         end
         object Label7: TLabel
           Left = 9
           Top = 51
-          Width = 28
+          Width = 92
           Height = 14
-          Caption = '????:'
+          Caption = 'Hero Name Color'
         end
         object LabelHeroNameColor: TLabel
-          Left = 131
+          Left = 155
           Top = 49
           Width = 10
           Height = 20
@@ -1138,7 +1131,7 @@ object frmHeroConfig: TfrmHeroConfig
           ParentColor = False
         end
         object EditStartLevel: TSpinEdit
-          Left = 79
+          Left = 103
           Top = 19
           Width = 62
           Height = 23
@@ -1150,9 +1143,9 @@ object frmHeroConfig: TfrmHeroConfig
           OnChange = EditStartLevelChange
         end
         object EditHeroNameColor: TSpinEdit
-          Left = 79
+          Left = 104
           Top = 47
-          Width = 53
+          Width = 52
           Height = 23
           Hint = '???????'
           MaxValue = 255
@@ -1164,31 +1157,31 @@ object frmHeroConfig: TfrmHeroConfig
       end
       object GroupBox59: TGroupBox
         Left = 373
-        Top = 9
+        Top = 8
         Width = 160
-        Height = 104
-        Caption = '????'
+        Height = 105
+        Caption = 'Attack Speed'
         TabOrder = 3
         object Label131: TLabel
           Left = 9
           Top = 19
-          Width = 28
+          Width = 39
           Height = 14
-          Caption = '????:'
+          Caption = 'Warrior'
         end
         object Label132: TLabel
           Left = 9
           Top = 47
-          Width = 28
+          Width = 36
           Height = 14
-          Caption = '????:'
+          Caption = 'Wizard'
         end
         object Label133: TLabel
           Left = 9
           Top = 75
-          Width = 28
+          Width = 33
           Height = 14
-          Caption = '????:'
+          Caption = 'Taoist'
         end
         object SpinEditWarrorAttackTime: TSpinEdit
           Left = 84
@@ -1233,26 +1226,26 @@ object frmHeroConfig: TfrmHeroConfig
       end
       object ButtonHeroExpSave: TButton
         Left = 457
-        Top = 370
+        Top = 386
         Width = 76
         Height = 29
-        Caption = '??(&S)'
+        Caption = 'Save'
         TabOrder = 4
         OnClick = ButtonHeroExpSaveClick
       end
       object GroupBox1: TGroupBox
-        Left = 215
-        Top = 159
-        Width = 150
-        Height = 76
-        Caption = '????'
+        Left = 199
+        Top = 192
+        Width = 170
+        Height = 89
+        Caption = 'Bag Item Count'
         TabOrder = 5
         object Label1: TLabel
           Left = 9
           Top = 51
-          Width = 28
+          Width = 69
           Height = 14
-          Caption = '????:'
+          Caption = 'Need Level :'
         end
         object SpinEditNeedLevel: TSpinEdit
           Left = 79
@@ -1273,7 +1266,7 @@ object frmHeroConfig: TfrmHeroConfig
           Height = 22
           ItemHeight = 14
           TabOrder = 1
-          Text = '?????'
+          Text = '10'
           OnChange = ComboBoxBagItemCountChange
           Items.Strings = (
             '20?'
@@ -1284,38 +1277,38 @@ object frmHeroConfig: TfrmHeroConfig
       end
       object GroupBox2: TGroupBox
         Left = 9
-        Top = 243
-        Width = 328
-        Height = 85
-        Caption = '????'
+        Top = 296
+        Width = 336
+        Height = 81
+        Caption = 'Auto Pot ?'
         TabOrder = 6
         object Label124: TLabel
           Left = 9
           Top = 25
-          Width = 52
+          Width = 96
           Height = 14
-          Caption = '????????:'
+          Caption = 'Eat HP Item Rate'
         end
         object Label125: TLabel
           Left = 9
           Top = 53
-          Width = 64
+          Width = 97
           Height = 14
-          Caption = '??????????:'
+          Caption = 'Eat MP Item Rate'
         end
         object Label126: TLabel
           Left = 233
           Top = 25
-          Width = 46
+          Width = 12
           Height = 14
-          Caption = '% ?????'
+          Caption = '%'
         end
         object Label3: TLabel
           Left = 233
           Top = 53
-          Width = 46
+          Width = 12
           Height = 14
-          Caption = '% ?????'
+          Caption = '%'
         end
         object SpinEditEatHPItemRate: TSpinEdit
           Left = 168
@@ -1346,7 +1339,7 @@ object frmHeroConfig: TfrmHeroConfig
       end
       object EditRecallHeroTime: TSpinEdit
         Left = 75
-        Top = 341
+        Top = 389
         Width = 76
         Height = 23
         MaxValue = 1000
@@ -1356,67 +1349,67 @@ object frmHeroConfig: TfrmHeroConfig
         OnChange = EditRecallHeroTimeChange
       end
       object EditRecallHeroHint: TEdit
-        Left = 215
-        Top = 341
-        Width = 318
+        Left = 151
+        Top = 389
+        Width = 298
         Height = 22
         TabOrder = 8
         Text = '??????????.??%d???????'
         OnChange = EditRecallHeroHintChange
       end
       object GroupBox78: TGroupBox
-        Left = 345
-        Top = 243
-        Width = 170
-        Height = 48
+        Left = 352
+        Top = 296
+        Width = 179
+        Height = 81
         Caption = '??????????'
         TabOrder = 9
         object CheckBoxHeroUseBagItem: TCheckBox
-          Left = 9
-          Top = 19
+          Left = 17
+          Top = 51
           Width = 151
           Height = 20
-          Caption = '????????'
+          Caption = 'Hero Use Bag Item '
           TabOrder = 0
           OnClick = CheckBoxHeroUseBagItemClick
         end
       end
       object CheckBoxSafeNoAllowTargetBB: TCheckBox
-        Left = 345
-        Top = 308
+        Left = 369
+        Top = 324
         Width = 151
         Height = 20
-        Caption = '?????????'
+        Caption = 'No Allow Target'
         TabOrder = 10
         OnClick = CheckBoxSafeNoAllowTargetBBClick
       end
       object GroupBox66: TGroupBox
         Left = 373
-        Top = 121
+        Top = 113
         Width = 160
         Height = 114
-        Caption = '????'
+        Caption = 'Walk Speed'
         TabOrder = 11
         object Label8: TLabel
           Left = 9
           Top = 79
-          Width = 28
+          Width = 33
           Height = 14
-          Caption = '????:'
+          Caption = 'Taoist'
         end
         object Label9: TLabel
           Left = 9
           Top = 51
-          Width = 28
+          Width = 36
           Height = 14
-          Caption = '????:'
+          Caption = 'Wizard'
         end
         object Label16: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 39
           Height = 14
-          Caption = '????:'
+          Caption = 'Warrior'
         end
         object EditHeroWarrorWalkTime: TSpinEdit
           Left = 86
@@ -1461,25 +1454,25 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 9
         Width = 207
         Height = 104
-        Caption = '???????'
+        Caption = 'On death options'
         TabOrder = 0
         object CheckBoxKillByMonstDropUseItem: TCheckBox
           Left = 9
-          Top = 19
-          Width = 142
-          Height = 20
+          Top = 24
+          Width = 184
+          Height = 15
           Hint = '????????????????????????'
-          Caption = '????????'
+          Caption = 'Kill By Mon Drop User Item'
           TabOrder = 0
           OnClick = CheckBoxKillByMonstDropUseItemClick
         end
         object CheckBoxKillByHumanDropUseItem: TCheckBox
           Left = 9
           Top = 37
-          Width = 142
+          Width = 184
           Height = 20
           Hint = '????????????????????????'
-          Caption = '????????'
+          Caption = 'Kill By Hum Drop Item'
           TabOrder = 1
           OnClick = CheckBoxKillByHumanDropUseItemClick
         end
@@ -1489,7 +1482,7 @@ object frmHeroConfig: TfrmHeroConfig
           Width = 132
           Height = 20
           Hint = '?????????????????????'
-          Caption = '???????'
+          Caption = 'Die Scatter Bag'
           TabOrder = 2
           OnClick = CheckBoxDieScatterBagClick
         end
@@ -1499,7 +1492,7 @@ object frmHeroConfig: TfrmHeroConfig
           Width = 170
           Height = 20
           Hint = '?????????????????'
-          Caption = '?????????'
+          Caption = 'Red Die Scatter Bag'
           TabOrder = 3
           OnClick = CheckBoxDieRedScatterBagAllClick
         end
@@ -1509,28 +1502,28 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 9
         Width = 309
         Height = 104
-        Caption = '?????'
+        Caption = 'Rates'
         TabOrder = 1
         object Label130: TLabel
           Left = 9
           Top = 21
-          Width = 28
+          Width = 25
           Height = 14
-          Caption = '????:'
+          Caption = 'Rate'
         end
         object Label2: TLabel
           Left = 9
           Top = 49
-          Width = 28
+          Width = 25
           Height = 14
-          Caption = '????:'
+          Caption = 'Rate'
         end
         object Label134: TLabel
           Left = 9
           Top = 77
-          Width = 28
+          Width = 25
           Height = 14
-          Caption = '????:'
+          Caption = 'Rate'
         end
         object ScrollBarDieDropUseItemRate: TScrollBar
           Left = 75
@@ -1614,33 +1607,33 @@ object frmHeroConfig: TfrmHeroConfig
       object GroupBox3: TGroupBox
         Left = 9
         Top = 0
-        Width = 207
+        Width = 328
         Height = 113
-        Caption = '??'
+        Caption = 'Dragon Point'
         TabOrder = 0
         object Label4: TLabel
           Left = 9
           Top = 28
-          Width = 34
+          Width = 96
           Height = 14
-          Caption = '?????:'
+          Caption = 'Max Dragon Point'
         end
         object Label5: TLabel
           Left = 9
           Top = 56
-          Width = 40
+          Width = 97
           Height = 14
-          Caption = '??????:'
+          Caption = 'Add Dragon Point'
         end
         object Label6: TLabel
           Left = 9
           Top = 84
-          Width = 52
+          Width = 125
           Height = 14
-          Caption = '????????:'
+          Caption = 'Decrease Dragon Point'
         end
         object EditMaxFirDragonPoint: TSpinEdit
-          Left = 135
+          Left = 231
           Top = 23
           Width = 62
           Height = 23
@@ -1652,7 +1645,7 @@ object frmHeroConfig: TfrmHeroConfig
           OnChange = EditMaxFirDragonPointChange
         end
         object EditAddFirDragonPoint: TSpinEdit
-          Left = 135
+          Left = 231
           Top = 51
           Width = 62
           Height = 23
@@ -1664,7 +1657,7 @@ object frmHeroConfig: TfrmHeroConfig
           OnChange = EditAddFirDragonPointChange
         end
         object EditDecFirDragonPoint: TSpinEdit
-          Left = 135
+          Left = 231
           Top = 79
           Width = 62
           Height = 23
@@ -1681,7 +1674,7 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 370
         Width = 76
         Height = 29
-        Caption = '??(&S)'
+        Caption = 'Save'
         TabOrder = 1
         OnClick = ButtonHeroAttackSaveClick
       end
@@ -1690,7 +1683,7 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 120
         Width = 168
         Height = 116
-        Caption = '???'
+        Caption = 'Skill'
         TabOrder = 2
         object Label135: TLabel
           Left = 9

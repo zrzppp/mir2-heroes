@@ -89,7 +89,6 @@ type
     EditSkill65Rate: TSpinEdit;
     Label15: TLabel;
     EditRecallHeroTime: TSpinEdit;
-    Label17: TLabel;
     EditRecallHeroHint: TEdit;
     GroupBox78: TGroupBox;
     CheckBoxHeroUseBagItem: TCheckBox;
@@ -340,7 +339,7 @@ begin
     GridLevelExp.Cells[1, I] := IntToStr(g_Config.dwNeedExps[I]);
   end;
 
-  GroupBoxLevelExp.Caption := Format('升级经验(最高有效等级%d)', [g_Config.nMaxLevel]);
+  GroupBoxLevelExp.Caption := Format('Experience Settings)', [g_Config.nMaxLevel]);
 
   EditStartLevel.Value := g_Config.nHeroStartLevel;
   EditKillMonExpRate.Value := g_Config.nHeroKillMonExpRate;
@@ -348,11 +347,11 @@ begin
 
   for I := Low(g_Config.HeroBagItemCounts) to High(g_Config.HeroBagItemCounts) do begin
     case I of
-      0: s01 := '10格';
-      1: s01 := '20格';
-      2: s01 := '30格';
-      3: s01 := '35格';
-      4: s01 := '40格';
+      0: s01 := '10 Item';
+      1: s01 := '20 Item';
+      2: s01 := '30 Item';
+      3: s01 := '35 Item';
+      4: s01 := '40 Item';
     end;
     ComboBoxBagItemCount.Items.AddObject(s01, TObject(g_Config.HeroBagItemCounts[I]));
   end;
@@ -424,25 +423,25 @@ begin
     GridLevelExp.Cells[0, I] := IntToStr(I);
   end;
 
-  ComboBoxLevelExp.AddItem('原始经验值', TObject(s_OldLevelExp));
-  ComboBoxLevelExp.AddItem('标准经验值', TObject(s_StdLevelExp));
-  ComboBoxLevelExp.AddItem('当前1/2倍经验', TObject(s_2Mult));
-  ComboBoxLevelExp.AddItem('当前1/5倍经验', TObject(s_5Mult));
-  ComboBoxLevelExp.AddItem('当前1/8倍经验', TObject(s_8Mult));
-  ComboBoxLevelExp.AddItem('当前1/10倍经验', TObject(s_10Mult));
-  ComboBoxLevelExp.AddItem('当前1/20倍经验', TObject(s_20Mult));
-  ComboBoxLevelExp.AddItem('当前1/30倍经验', TObject(s_30Mult));
-  ComboBoxLevelExp.AddItem('当前1/40倍经验', TObject(s_40Mult));
-  ComboBoxLevelExp.AddItem('当前1/50倍经验', TObject(s_50Mult));
-  ComboBoxLevelExp.AddItem('当前1/60倍经验', TObject(s_60Mult));
-  ComboBoxLevelExp.AddItem('当前1/70倍经验', TObject(s_70Mult));
-  ComboBoxLevelExp.AddItem('当前1/80倍经验', TObject(s_80Mult));
-  ComboBoxLevelExp.AddItem('当前1/90倍经验', TObject(s_90Mult));
-  ComboBoxLevelExp.AddItem('当前1/100倍经验', TObject(s_100Mult));
-  ComboBoxLevelExp.AddItem('当前1/150倍经验', TObject(s_150Mult));
-  ComboBoxLevelExp.AddItem('当前1/200倍经验', TObject(s_200Mult));
-  ComboBoxLevelExp.AddItem('当前1/250倍经验', TObject(s_250Mult));
-  ComboBoxLevelExp.AddItem('当前1/300倍经验', TObject(s_300Mult));
+  ComboBoxLevelExp.AddItem('Old exp', TObject(s_OldLevelExp));
+  ComboBoxLevelExp.AddItem('Standard exp', TObject(s_StdLevelExp));
+  ComboBoxLevelExp.AddItem('1/2 Current exp', TObject(s_2Mult));
+  ComboBoxLevelExp.AddItem('1/5 Current exp', TObject(s_5Mult));
+  ComboBoxLevelExp.AddItem('1/8 Current exp', TObject(s_8Mult));
+  ComboBoxLevelExp.AddItem('1/10 Current exp', TObject(s_10Mult));
+  ComboBoxLevelExp.AddItem('1/20 Current exp', TObject(s_20Mult));
+  ComboBoxLevelExp.AddItem('1/30 Current exp', TObject(s_30Mult));
+  ComboBoxLevelExp.AddItem('1/40 Current exp', TObject(s_40Mult));
+  ComboBoxLevelExp.AddItem('1/50 Current exp', TObject(s_50Mult));
+  ComboBoxLevelExp.AddItem('1/60 Current exp', TObject(s_60Mult));
+  ComboBoxLevelExp.AddItem('1/70 Current exp', TObject(s_70Mult));
+  ComboBoxLevelExp.AddItem('1/80 Current exp', TObject(s_80Mult));
+  ComboBoxLevelExp.AddItem('1/90 Current exp', TObject(s_90Mult));
+  ComboBoxLevelExp.AddItem('1/100 Current exp', TObject(s_100Mult));
+  ComboBoxLevelExp.AddItem('1/150 Current exp', TObject(s_150Mult));
+  ComboBoxLevelExp.AddItem('1/200 Current exp', TObject(s_200Mult));
+  ComboBoxLevelExp.AddItem('1/250 Current exp', TObject(s_250Mult));
+  ComboBoxLevelExp.AddItem('1/300 current exp', TObject(s_300Mult));
   OldLevelExpScheme := s_None;
 end;
 

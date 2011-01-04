@@ -313,7 +313,7 @@ type
     m_dwLatestKTZHitTick: LongWord; //0x530
     m_dwLatestZRJFHitTick: LongWord; //0x530
 
-    m_dwSkill50DelayTimeTick: LongWord;
+    m_dwSkillUltimateEnhancerDelayTimeTick: LongWord;
 
     m_dwDoMotaeboTick: LongWord; //0x534
     m_boDenyRefStatus: Boolean; //是否刷新在地图上信息；
@@ -8767,11 +8767,9 @@ begin
           end;
         end;
 
-        if (m_dwStatusArrTimeOutTick[2] <= 0) and {(m_wStatusArrValue[2] <= 0) and }  AllowUseMagic(50) and (GetTickCount - m_dwSkill50DelayTimeTick >= g_Config.nSkill50DelayTime * 1000) then begin {无极真气}
+        if (m_dwStatusArrTimeOutTick[2] <= 0) and AllowUseMagic(36) and (GetTickCount - m_dwSkillUltimateEnhancerDelayTimeTick >= g_Config.nSkill50DelayTime * 1000) then begin {无极真气}
           m_boSelSelf := True;
-          //m_SkillUseTick[50] := GetTickCount;
-          //m_dwSkill50DelayTimeTick := GetTickCount;
-          Result := 50;
+          Result := 36;
           Exit;
         end;
 
@@ -9893,7 +9891,7 @@ begin
 
 
   if m_wStatusArrValue[0] > 0 then
-    m_WAbil.DC := MakeLong(LoWord(m_WAbil.DC), _MIN(MAXHUMPOWER, HiWord(m_WAbil.DC) + 2 + m_wStatusArrValue[0]));
+    m_WAbil.DC := MakeLong(LoWord(m_WAbil.DC), _MIN(MAXHUMPOWER, HiWord(m_WAbil.DC) + m_wStatusArrValue[0]));
 
   if m_wStatusArrValue[6] > 0 then begin
     if LoWord(m_WAbil.DC) > (HiWord(m_WAbil.DC) - m_wStatusArrValue[6]) then
@@ -9903,7 +9901,7 @@ begin
   end;
 
   if m_wStatusArrValue[1] > 0 then
-    m_WAbil.MC := MakeLong(LoWord(m_WAbil.MC), _MIN(MAXHUMPOWER, HiWord(m_WAbil.MC) + 2 + m_wStatusArrValue[1]));
+    m_WAbil.MC := MakeLong(LoWord(m_WAbil.MC), _MIN(MAXHUMPOWER, HiWord(m_WAbil.MC) + m_wStatusArrValue[1]));
 
   if m_wStatusArrValue[7] > 0 then begin
     if LoWord(m_WAbil.MC) > (HiWord(m_WAbil.MC) - m_wStatusArrValue[7]) then
@@ -9913,7 +9911,7 @@ begin
   end;
 
   if m_wStatusArrValue[2] > 0 then
-    m_WAbil.SC := MakeLong(LoWord(m_WAbil.SC), _MIN(MAXHUMPOWER, HiWord(m_WAbil.SC) + 2 + m_wStatusArrValue[2]));
+    m_WAbil.SC := MakeLong(LoWord(m_WAbil.SC), _MIN(MAXHUMPOWER, HiWord(m_WAbil.SC) + m_wStatusArrValue[2]));
 
   if m_wStatusArrValue[8] > 0 then begin
     if LoWord(m_WAbil.SC) > (HiWord(m_WAbil.SC) - m_wStatusArrValue[8]) then
@@ -23130,7 +23128,7 @@ begin
   m_nDealGoldPose := 0;
   m_boPlayOffLine := True; //是否允许下线触发
   m_dwDedingUseTick := GetTickCount - g_Config.nDedingUseTime * 1000;
-  m_dwSkill50DelayTimeTick := GetTickCount - g_Config.nSkill50DelayTime * 1000;
+  m_dwSkillUltimateEnhancerDelayTimeTick := GetTickCount - g_Config.nSkill50DelayTime * 1000;
   m_nCopyHumanLevel := 0;
   m_boAllowReAlive := False; //是否允许复活
   m_nShowMessagePosition := 0;
@@ -38786,18 +38784,24 @@ function TPlayObject.AbilityUp(UserMagic: pTUserMagic): Boolean;
     Result := Round(nPower / (UserMagic.MagicInfo.btTrainLv + 1) * (UserMagic.btLevel + 1)) + (UserMagic.MagicInfo.btDefPower + Random(UserMagic.MagicInfo.btDefMaxPower - UserMagic.MagicInfo.btDefPower));
   end;
 var
-  nSpellPoint, n14: Integer;
+  nSpellPoint, n14, Power: Integer;
 begin
   Result := False;
   nSpellPoint := GetSpellPoint(UserMagic);
   if nSpellPoint > 0 then begin
     if m_WAbil.MP < nSpellPoint then Exit;
-    n14 := (Random(10 + UserMagic.btLevel) + UserMagic.btLevel) * _MAX(UserMagic.btLevel, 1);
+    n14 := GetAttackPower(GetPower(60) + 5 * LoWord(m_WAbil.SC), 5 * (ShortInt(HiWord(m_WAbil.SC) - LoWord(m_WAbil.SC)) + 1));
     m_dwStatusArrTimeOutTick[0] := GetTickCount + n14 * 1000;
 
-    m_wStatusArrValue[0] := GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(m_WAbil.SC), Integer(HiWord(m_WAbil.SC) - LoWord(m_WAbil.SC)) + 1);
+    Power := ((HiWord(m_WAbil.SC)-1) div 5) + 1;
+    if (Power >= 8) then begin
+      Power := 8;
+      m_wStatusArrValue[0] := 8;
+    end else begin
+      m_wStatusArrValue[0] := Power;
+    end;
 
-    SysMsg('Increased DC: ' + IntToStr(m_wStatusArrValue[0]) + ' For: ' + IntToStr(n14) + ' Seconds', c_Green, t_Hint);
+    SysMsg('Increased Physical Power By: ' + IntToStr(Power) + ' For: ' + IntToStr(n14) + ' Seconds', c_Green, t_Hint);
     RecalcAbilitys();
     SendMsg(Self, RM_ABILITY, 0, 0, 0, 0, '');
     Result := True;

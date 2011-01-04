@@ -10397,7 +10397,7 @@ begin
             m_WAbil.HP := m_WAbil.MaxHP;
             HealthSpellChanged;
             nCheckCode := 1008;
-            SysMsg(g_sRevivalRecoverMsg {'∏¥ªÓΩ‰÷∏…˙–ß£¨ÃÂ¡¶ª÷∏¥'}, c_Green, t_Hint);
+            SysMsg(g_sRevivalRecoverMsg {'You have been revived!'}, c_Green, t_Hint);
           end;
         end else
           if m_LastHiter <> nil then begin
@@ -10409,7 +10409,7 @@ begin
             m_WAbil.HP := m_WAbil.MaxHP;
             HealthSpellChanged;
             nCheckCode := 1008;
-            SysMsg(g_sRevivalRecoverMsg {'∏¥ªÓΩ‰÷∏…˙–ß£¨ÃÂ¡¶ª÷∏¥'}, c_Green, t_Hint);
+            SysMsg(g_sRevivalRecoverMsg {'You have been revived!'}, c_Green, t_Hint);
           end;
         end;
         nCheckCode := 2004;
@@ -13046,14 +13046,14 @@ begin
             SendSocket(@m_DefMsg, EncodeBuffer(@OAbility, SizeOf(TOAbility)));
             if g_Config.boOldClientShowHiLevel and (m_Abil.Level > 255) then begin
               SysMsg(g_sClientVersionTooOld {'”…”⁄ƒ˙ π”√µƒøÕªß∂À∞Ê±æÃ´¿œ¡À£¨Œﬁ∑®’˝»∑œ‘ æ»ÀŒÔ–≈œ¢£°£°£°'}, c_Red, t_Hint);
-              SysMsg('µ±«∞µ»º∂: ' + IntToStr(m_Abil.Level), c_Green, t_Hint);
-              SysMsg('µ±«∞…˙√¸÷µ: ' + IntToStr(m_WAbil.HP) + '-' + IntToStr(m_WAbil.MaxHP), c_Blue, t_Hint);
-              SysMsg('µ±«∞ƒß∑®÷µ: ' + IntToStr(m_WAbil.MP) + '-' + IntToStr(m_WAbil.MaxMP), c_Red, t_Hint);
-              SysMsg('µ±«∞∑¿”˘¡¶: ' + IntToStr(LoWord(m_WAbil.AC)) + '-' + IntToStr(HiWord(m_WAbil.AC)), c_Green, t_Hint);
-              SysMsg('µ±«∞ƒß∑¿¡¶: ' + IntToStr(LoWord(m_WAbil.MAC)) + '-' + IntToStr(HiWord(m_WAbil.MAC)), c_Blue, t_Hint);
-              SysMsg('µ±«∞π•ª˜¡¶: ' + IntToStr(LoWord(m_WAbil.DC)) + '-' + IntToStr(HiWord(m_WAbil.DC)), c_Red, t_Hint);
-              SysMsg('µ±«∞ƒß∑®¡¶: ' + IntToStr(LoWord(m_WAbil.MC)) + '-' + IntToStr(HiWord(m_WAbil.MC)), c_Green, t_Hint);
-              SysMsg('µ±«∞µ¿ ı÷µ: ' + IntToStr(LoWord(m_WAbil.SC)) + '-' + IntToStr(HiWord(m_WAbil.SC)), c_Blue, t_Hint);
+              SysMsg('Level: ' + IntToStr(m_Abil.Level), c_Green, t_Hint);
+              SysMsg('HP: ' + IntToStr(m_WAbil.HP) + '-' + IntToStr(m_WAbil.MaxHP), c_Blue, t_Hint);
+              SysMsg('MP: ' + IntToStr(m_WAbil.MP) + '-' + IntToStr(m_WAbil.MaxMP), c_Red, t_Hint);
+              SysMsg('AC¶: ' + IntToStr(LoWord(m_WAbil.AC)) + '-' + IntToStr(HiWord(m_WAbil.AC)), c_Green, t_Hint);
+              SysMsg('AMC¶: ' + IntToStr(LoWord(m_WAbil.MAC)) + '-' + IntToStr(HiWord(m_WAbil.MAC)), c_Blue, t_Hint);
+              SysMsg('DC¶: ' + IntToStr(LoWord(m_WAbil.DC)) + '-' + IntToStr(HiWord(m_WAbil.DC)), c_Red, t_Hint);
+              SysMsg('MC¶: ' + IntToStr(LoWord(m_WAbil.MC)) + '-' + IntToStr(HiWord(m_WAbil.MC)), c_Green, t_Hint);
+              SysMsg('SC: ' + IntToStr(LoWord(m_WAbil.SC)) + '-' + IntToStr(HiWord(m_WAbil.SC)), c_Blue, t_Hint);
             end;
           end else begin
             SendSocket(@m_DefMsg, EncodeBuffer(@m_WAbil, SizeOf(TAbility)));
@@ -16224,6 +16224,7 @@ begin
         end;
         if CompareText(sCmd, g_GameCommand.ReLoadNpc.sCmd) = 0 then begin
           CmdReloadNpc(sParam1);
+          SysMsg('NPCs Reloaded', c_Green, t_Hint);
           Exit;
         end;
         if CompareText(sCmd, g_GameCommand.RELOADMANAGE.sCmd) = 0 then begin
@@ -16240,6 +16241,7 @@ begin
         end;
         if CompareText(sCmd, g_GameCommand.RELOADMONITEMS.sCmd) = 0 then begin
           CmdReloadMonItems();
+          SysMsg('Mon Items Reloaded', c_Green, t_Hint);
           Exit;
         end;
         if CompareText(sCmd, g_GameCommand.RELOADDIARY.sCmd) = 0 then begin
@@ -16247,23 +16249,23 @@ begin
         end;
         if CompareText(sCmd, g_GameCommand.RELOADITEMDB.sCmd) = 0 then begin
           FrmDB.LoadItemsDB();
-          SysMsg('ŒÔ∆∑ ˝æ›ø‚÷ÿ–¬º”‘ÿÕÍ≥…°£', c_Green, t_Hint);
+          SysMsg('Item DB Reloaded', c_Green, t_Hint);
           Exit;
         end;
         if CompareText(sCmd, g_GameCommand.RELOADMAGICDB.sCmd) = 0 then begin
           FrmDB.LoadMagicDB();
-          SysMsg('ƒß∑® ˝æ›ø‚÷ÿ–¬º”‘ÿÕÍ≥…°£', c_Green, t_Hint);
+          SysMsg('Magic DB Reloaded', c_Green, t_Hint);
           Exit;
         end;
         if CompareText(sCmd, g_GameCommand.RELOADMONSTERDB.sCmd) = 0 then begin
           FrmDB.LoadMonsterDB();
-          SysMsg('π÷ŒÔ ˝æ›ø‚÷ÿ–¬º”‘ÿÕÍ≥…°£', c_Green, t_Hint);
+          SysMsg('Monster DB Reloaded', c_Green, t_Hint);
           Exit;
         end;
         if CompareText(sCmd, g_GameCommand.RELOADMINMAP.sCmd) = 0 then begin
           FrmDB.LoadMinMap();
           g_MapManager.ReSetMinMap();
-          SysMsg('–°µÿÕº≈‰÷√÷ÿ–¬º”‘ÿÕÍ≥…°£', c_Green, t_Hint);
+          SysMsg('Minimaps Reloaded', c_Green, t_Hint);
           Exit;
         end;
 
@@ -16355,7 +16357,7 @@ begin
       end;
     end;
 
-    SysMsg('@' + sCmd + ' ¥À√¸¡Ó≤ª’˝»∑£¨ªÚ√ª”–◊„πªµƒ»®œﬁ£°£°£°', c_Red, t_Hint);
+    SysMsg('@' + sCmd + ' Unknown Command', c_Red, t_Hint);
   except
     on E: Exception do begin
       MainOutMessage(Format(sExceptionMsg, [sData]));

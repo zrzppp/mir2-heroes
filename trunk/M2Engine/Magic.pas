@@ -2195,8 +2195,8 @@ begin
       end;
 
     SKILL_ULTIMATEENHANCER: begin // Ultimate Enhancer
-        if (GetTickCount - PlayObject.m_dwSkill50DelayTimeTick >= g_Config.nSkill50DelayTime * 1000) and (PlayObject.m_dwStatusArrTimeOutTick[2] <= 0) then begin
-          PlayObject.m_dwSkill50DelayTimeTick := GetTickCount;
+        if (GetTickCount - PlayObject.m_dwSkillUltimateEnhancerDelayTimeTick >= g_Config.nSkill50DelayTime * 1000) and (PlayObject.m_dwStatusArrTimeOutTick[0] <= 0) then begin
+          PlayObject.m_dwSkillUltimateEnhancerDelayTimeTick := GetTickCount;
           if PlayObject.m_btRaceServer = RC_PLAYOBJECT then begin
             if TPlayObject(PlayObject).AbilityUp(UserMagic) then
               boTrain := True;

@@ -1,5 +1,9 @@
 program BlendHumData;
 
+
+
+
+
 uses
   Forms,
   Main in 'Main.pas' {frmMain},
@@ -16,6 +20,8 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TMapEditForm, MapEditForm);
+  Application.CreateForm(TDataViewerForm, DataViewerForm);
   Application.Run;
 end.
 

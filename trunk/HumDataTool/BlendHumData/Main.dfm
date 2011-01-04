@@ -1,35 +1,35 @@
 object frmMain: TfrmMain
-  Left = 458
-  Top = 217
+  Left = 261
+  Top = 179
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'MakeGM'#20154#29289#25968#25454#21512#24182'V20100901'
-  ClientHeight = 501
-  ClientWidth = 749
+  Caption = 'MakeGM??????V20100901'
+  ClientHeight = 585
+  ClientWidth = 874
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 14
   object LabelStatus: TRzLabel
-    Left = 360
-    Top = 384
-    Width = 6
-    Height = 12
+    Left = 420
+    Top = 448
+    Width = 4
+    Height = 14
     BlinkIntervalOff = 1
     BlinkIntervalOn = 1
   end
   object StatusBar: TRzStatusBar
     Left = 0
-    Top = 482
-    Width = 749
+    Top = 526
+    Width = 874
     Height = 19
     BorderInner = fsNone
     BorderOuter = fsNone
@@ -40,7 +40,7 @@ object frmMain: TfrmMain
     object ProgressStatus: TRzProgressStatus
       Left = 0
       Top = 0
-      Width = 449
+      Width = 524
       Height = 19
       Align = alLeft
       ParentShowHint = False
@@ -50,9 +50,9 @@ object frmMain: TfrmMain
       TotalParts = 0
     end
     object RzStatusPane: TRzStatusPane
-      Left = 449
+      Left = 524
       Top = 0
-      Width = 300
+      Width = 350
       Height = 19
       Align = alClient
       BlinkIntervalOff = 1
@@ -61,804 +61,804 @@ object frmMain: TfrmMain
   end
   object Panel: TRzPanel
     Left = 0
-    Top = 97
-    Width = 749
-    Height = 352
+    Top = 113
+    Width = 874
+    Height = 411
     Align = alTop
     BorderOuter = fsLowered
     TabOrder = 1
     object ScrollBox: TScrollBox
       Left = 2
       Top = 2
-      Width = 745
-      Height = 348
+      Width = 870
+      Height = 407
       Align = alClient
       TabOrder = 0
       object RzGroupBox1: TRzGroupBox
-        Left = 8
-        Top = 8
-        Width = 353
-        Height = 225
-        Caption = #25968#25454#24211'1'#65288#20027#24211#65289
+        Left = 9
+        Top = 9
+        Width = 412
+        Height = 263
+        Caption = 'Old Data'
         TabOrder = 0
         object RzLabel1: TRzLabel
-          Left = 16
-          Top = 24
-          Width = 30
-          Height = 12
+          Left = 19
+          Top = 28
+          Width = 31
+          Height = 14
           Caption = 'ID.DB'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel2: TRzLabel
-          Left = 16
-          Top = 48
-          Width = 36
-          Height = 12
+          Left = 19
+          Top = 56
+          Width = 43
+          Height = 14
           Caption = 'Hum.db'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel3: TRzLabel
-          Left = 16
-          Top = 72
-          Width = 36
-          Height = 12
+          Left = 19
+          Top = 84
+          Width = 33
+          Height = 14
           Caption = 'Mir.db'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel4: TRzLabel
-          Left = 16
-          Top = 96
-          Width = 54
-          Height = 12
+          Left = 19
+          Top = 112
+          Width = 51
+          Height = 14
           Caption = 'GuildBase'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel5: TRzLabel
-          Left = 16
-          Top = 120
-          Width = 60
-          Height = 12
+          Left = 19
+          Top = 140
+          Width = 59
+          Height = 14
           Caption = 'BigStorage'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel20: TRzLabel
-          Left = 16
-          Top = 144
-          Width = 72
-          Height = 12
+          Left = 19
+          Top = 168
+          Width = 57
+          Height = 14
           Caption = 'SellOff.Sell'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel21: TRzLabel
-          Left = 16
-          Top = 168
-          Width = 72
-          Height = 12
+          Left = 19
+          Top = 196
+          Width = 63
+          Height = 14
           Caption = 'SellOff.Gold'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel24: TRzLabel
-          Left = 16
-          Top = 192
-          Width = 60
-          Height = 12
+          Left = 19
+          Top = 224
+          Width = 57
+          Height = 14
           Caption = '!Setup.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object ButtonEditIDDB1: TRzButtonEdit
-          Left = 64
-          Top = 24
-          Width = 281
-          Height = 20
+          Left = 75
+          Top = 28
+          Width = 328
+          Height = 22
           Text = 'D:\MirServer\LoginSrv\IDDB\Id.DB'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditIDDB1ButtonClick
         end
         object ButtonEditHumDB1: TRzButtonEdit
-          Left = 64
-          Top = 48
-          Width = 281
-          Height = 20
+          Left = 75
+          Top = 56
+          Width = 328
+          Height = 22
           Text = 'D:\MirServer\DBServer\FDB\Hum.DB'
           TabOrder = 1
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditHumDB1ButtonClick
         end
         object ButtonEditMirDB1: TRzButtonEdit
-          Left = 64
-          Top = 72
-          Width = 281
-          Height = 20
+          Left = 75
+          Top = 84
+          Width = 328
+          Height = 22
           Text = 'D:\MirServer\DBServer\FDB\Mir.DB'
           TabOrder = 2
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditMirDB1ButtonClick
         end
         object ButtonEditGuildBase1: TRzButtonEdit
-          Left = 80
-          Top = 96
-          Width = 265
-          Height = 20
+          Left = 93
+          Top = 112
+          Width = 310
+          Height = 22
           Text = 'D:\MirServer\Mir200\GuildBase'
           TabOrder = 3
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditGuildBase1ButtonClick
         end
         object ButtonEditBigStorage1: TRzButtonEdit
-          Left = 80
-          Top = 120
-          Width = 265
-          Height = 20
+          Left = 93
+          Top = 140
+          Width = 310
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_Storage\UserStorage.db'
           TabOrder = 4
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditBigStorage1ButtonClick
         end
         object ButtonEditSellOffSell1: TRzButtonEdit
-          Left = 96
-          Top = 144
-          Width = 249
-          Height = 20
+          Left = 112
+          Top = 168
+          Width = 291
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_SellOff\UserSellOff.sell'
           TabOrder = 5
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditSellOffSell1ButtonClick
         end
         object ButtonEditSellOffGold1: TRzButtonEdit
-          Left = 96
-          Top = 168
-          Width = 249
-          Height = 20
+          Left = 112
+          Top = 196
+          Width = 291
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_SellOff\UserSellOff.gold'
           TabOrder = 6
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditSellOffGold1ButtonClick
         end
         object ButtonEditSetup1: TRzButtonEdit
-          Left = 88
-          Top = 192
-          Width = 257
-          Height = 20
+          Left = 103
+          Top = 224
+          Width = 300
+          Height = 22
           Text = 'D:\MirServer\Mir200\!Setup.txt'
           TabOrder = 7
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditSetup1ButtonClick
         end
       end
       object RzGroupBox2: TRzGroupBox
-        Left = 367
-        Top = 8
-        Width = 353
-        Height = 225
-        Caption = #25968#25454#24211'2'#65288#20174#24211#65289
+        Left = 428
+        Top = 9
+        Width = 412
+        Height = 263
+        Caption = 'New Data'
         TabOrder = 1
         object RzLabel6: TRzLabel
-          Left = 16
-          Top = 24
-          Width = 30
-          Height = 12
+          Left = 19
+          Top = 28
+          Width = 31
+          Height = 14
           Caption = 'ID.DB'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel7: TRzLabel
-          Left = 16
-          Top = 48
-          Width = 36
-          Height = 12
+          Left = 19
+          Top = 56
+          Width = 43
+          Height = 14
           Caption = 'Hum.db'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel8: TRzLabel
-          Left = 16
-          Top = 72
-          Width = 36
-          Height = 12
+          Left = 19
+          Top = 84
+          Width = 33
+          Height = 14
           Caption = 'Mir.db'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel9: TRzLabel
-          Left = 16
-          Top = 96
-          Width = 54
-          Height = 12
+          Left = 19
+          Top = 112
+          Width = 51
+          Height = 14
           Caption = 'GuildBase'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel10: TRzLabel
-          Left = 16
-          Top = 120
-          Width = 60
-          Height = 12
+          Left = 19
+          Top = 140
+          Width = 59
+          Height = 14
           Caption = 'BigStorage'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel22: TRzLabel
-          Left = 16
-          Top = 144
-          Width = 72
-          Height = 12
+          Left = 19
+          Top = 168
+          Width = 57
+          Height = 14
           Caption = 'SellOff.Sell'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel23: TRzLabel
-          Left = 16
-          Top = 168
-          Width = 72
-          Height = 12
+          Left = 19
+          Top = 196
+          Width = 63
+          Height = 14
           Caption = 'SellOff.Gold'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel25: TRzLabel
-          Left = 16
-          Top = 192
-          Width = 60
-          Height = 12
+          Left = 19
+          Top = 224
+          Width = 57
+          Height = 14
           Caption = '!Setup.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object ButtonEditIDDB2: TRzButtonEdit
-          Left = 64
-          Top = 24
-          Width = 281
-          Height = 20
+          Left = 75
+          Top = 28
+          Width = 328
+          Height = 22
           Text = 'D:\MirServer\LoginSrv\IDDB\Id.DB'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditIDDB2ButtonClick
         end
         object ButtonEditHumDB2: TRzButtonEdit
-          Left = 64
-          Top = 48
-          Width = 281
-          Height = 20
+          Left = 75
+          Top = 56
+          Width = 328
+          Height = 22
           Text = 'D:\MirServer\DBServer\FDB\Hum.DB'
           TabOrder = 1
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditHumDB2ButtonClick
         end
         object ButtonEditMirDB2: TRzButtonEdit
-          Left = 64
-          Top = 72
-          Width = 281
-          Height = 20
+          Left = 75
+          Top = 84
+          Width = 328
+          Height = 22
           Text = 'D:\MirServer\DBServer\FDB\Mir.DB'
           TabOrder = 2
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditMirDB2ButtonClick
         end
         object ButtonEditGuildBase2: TRzButtonEdit
-          Left = 80
-          Top = 96
-          Width = 265
-          Height = 20
+          Left = 93
+          Top = 112
+          Width = 310
+          Height = 22
           Text = 'D:\MirServer\Mir200\GuildBase'
           TabOrder = 3
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditGuildBase2ButtonClick
         end
         object ButtonEditBigStorage2: TRzButtonEdit
-          Left = 80
-          Top = 120
-          Width = 265
-          Height = 20
+          Left = 93
+          Top = 140
+          Width = 310
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_Storage\UserStorage.db'
           TabOrder = 4
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditBigStorage2ButtonClick
         end
         object ButtonEditSellOffSell2: TRzButtonEdit
-          Left = 96
-          Top = 144
-          Width = 249
-          Height = 20
+          Left = 112
+          Top = 168
+          Width = 291
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_SellOff\UserSellOff.sell'
           TabOrder = 5
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditSellOffSell2ButtonClick
         end
         object ButtonEditSellOffGold2: TRzButtonEdit
-          Left = 96
-          Top = 168
-          Width = 249
-          Height = 20
+          Left = 112
+          Top = 196
+          Width = 291
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_SellOff\UserSellOff.gold'
           TabOrder = 6
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditSellOffGold2ButtonClick
         end
         object ButtonEditSetup2: TRzButtonEdit
-          Left = 88
-          Top = 192
-          Width = 257
-          Height = 20
+          Left = 103
+          Top = 224
+          Width = 300
+          Height = 22
           Text = 'D:\MirServer\Mir200\!Setup.txt'
           TabOrder = 7
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = ButtonEditSetup2ButtonClick
         end
       end
       object RzGroupBox3: TRzGroupBox
-        Left = 8
-        Top = 240
-        Width = 353
-        Height = 97
-        Caption = #35013#22791#32465#23450#25991#20214#65288#20027#65289
+        Left = 9
+        Top = 280
+        Width = 412
+        Height = 113
+        Caption = '??????(?)'
         TabOrder = 2
         object RzLabel14: TRzLabel
-          Left = 8
-          Top = 21
-          Width = 114
-          Height = 12
+          Left = 9
+          Top = 25
+          Width = 115
+          Height = 14
           Caption = 'ItemBindAccount.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel17: TRzLabel
-          Left = 8
-          Top = 45
-          Width = 114
-          Height = 12
+          Left = 9
+          Top = 53
+          Width = 118
+          Height = 14
           Caption = 'ItemBindChrName.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel18: TRzLabel
-          Left = 8
-          Top = 69
-          Width = 108
-          Height = 12
+          Left = 9
+          Top = 81
+          Width = 104
+          Height = 14
           Caption = 'ItemBindIPaddr.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object EditBindAccountA: TRzButtonEdit
-          Left = 136
-          Top = 18
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 21
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\ItemBindAccount.txt'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditBindAccountAButtonClick
         end
         object EditBindCharNameA: TRzButtonEdit
-          Left = 136
-          Top = 42
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 49
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\ItemBindChrName.txt'
           TabOrder = 1
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditBindCharNameAButtonClick
         end
         object EditBindIPaddrA: TRzButtonEdit
-          Left = 136
-          Top = 66
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 77
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\ItemBindIPaddr.txt'
           TabOrder = 2
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditBindIPaddrAButtonClick
         end
       end
       object RzGroupBox4: TRzGroupBox
-        Left = 367
-        Top = 240
-        Width = 353
-        Height = 97
-        Caption = #35013#22791#32465#23450#25991#20214#65288#20174#65289
+        Left = 428
+        Top = 280
+        Width = 412
+        Height = 113
+        Caption = '??????(?)'
         TabOrder = 3
         object RzLabel26: TRzLabel
-          Left = 8
-          Top = 21
-          Width = 114
-          Height = 12
+          Left = 9
+          Top = 25
+          Width = 115
+          Height = 14
           Caption = 'ItemBindAccount.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel27: TRzLabel
-          Left = 8
-          Top = 45
-          Width = 114
-          Height = 12
+          Left = 9
+          Top = 53
+          Width = 118
+          Height = 14
           Caption = 'ItemBindChrName.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel28: TRzLabel
-          Left = 8
-          Top = 69
-          Width = 108
-          Height = 12
+          Left = 9
+          Top = 81
+          Width = 104
+          Height = 14
           Caption = 'ItemBindIPaddr.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object EditBindAccountB: TRzButtonEdit
-          Left = 136
-          Top = 18
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 21
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\ItemBindAccount.txt'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditBindAccountBButtonClick
         end
         object EditBindCharNameB: TRzButtonEdit
-          Left = 136
-          Top = 42
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 49
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\ItemBindChrName.txt'
           TabOrder = 1
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditBindCharNameBButtonClick
         end
         object EditBindIPaddrB: TRzButtonEdit
-          Left = 136
-          Top = 66
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 77
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\ItemBindIPaddr.txt'
           TabOrder = 2
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditBindIPaddrBButtonClick
         end
       end
       object RzGroupBox6: TRzGroupBox
-        Left = 367
-        Top = 344
-        Width = 353
-        Height = 49
-        Caption = #35760#24518#29289#21697#25991#20214#65288#20174#65289
+        Left = 428
+        Top = 401
+        Width = 412
+        Height = 58
+        Caption = '??????(?)'
         TabOrder = 4
         object RzLabel30: TRzLabel
-          Left = 8
-          Top = 21
-          Width = 120
-          Height = 12
+          Left = 9
+          Top = 25
+          Width = 123
+          Height = 14
           Caption = 'RememberItemList.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object EditRememberItemListB: TRzButtonEdit
-          Left = 136
-          Top = 18
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 21
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\RememberItemList.txt'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditRememberItemListBButtonClick
         end
       end
       object RzGroupBox5: TRzGroupBox
-        Left = 8
-        Top = 344
-        Width = 353
-        Height = 49
-        Caption = #35760#24518#29289#21697#25991#20214#65288#20027#65289
+        Left = 9
+        Top = 401
+        Width = 412
+        Height = 58
+        Caption = '??????(?)'
         TabOrder = 5
         object RzLabel29: TRzLabel
-          Left = 8
-          Top = 21
-          Width = 120
-          Height = 12
+          Left = 9
+          Top = 25
+          Width = 123
+          Height = 14
           Caption = 'RememberItemList.txt'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object EditRememberItemListA: TRzButtonEdit
-          Left = 136
-          Top = 18
-          Width = 209
-          Height = 20
+          Left = 159
+          Top = 21
+          Width = 244
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\RememberItemList.txt'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditRememberItemListAButtonClick
         end
       end
       object RzGroupBox7: TRzGroupBox
-        Left = 8
-        Top = 399
-        Width = 353
-        Height = 74
-        Caption = #25361#25112#25968#25454#65288#20027#65289
+        Left = 9
+        Top = 466
+        Width = 412
+        Height = 86
+        Caption = '????(?)'
         TabOrder = 6
         object RzLabel31: TRzLabel
-          Left = 8
-          Top = 21
-          Width = 54
-          Height = 12
+          Left = 9
+          Top = 25
+          Width = 52
+          Height = 14
           Caption = 'Duel.Duel'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel33: TRzLabel
-          Left = 8
-          Top = 44
+          Left = 9
+          Top = 51
           Width = 54
-          Height = 12
+          Height = 14
           Caption = 'Duel.Item'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object EditDuelInfoA: TRzButtonEdit
-          Left = 68
-          Top = 18
-          Width = 277
-          Height = 20
+          Left = 79
+          Top = 21
+          Width = 324
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_Duel\Duel.Duel'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditDuelInfoAButtonClick
         end
         object EditDuelItemA: TRzButtonEdit
-          Left = 68
-          Top = 44
-          Width = 277
-          Height = 20
+          Left = 79
+          Top = 51
+          Width = 324
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_Duel\Duel.Item'
           TabOrder = 1
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditDuelItemAButtonClick
         end
       end
       object RzGroupBox8: TRzGroupBox
-        Left = 367
-        Top = 399
-        Width = 353
-        Height = 74
-        Caption = #25361#25112#25968#25454#65288#20174#65289
+        Left = 428
+        Top = 466
+        Width = 412
+        Height = 86
+        Caption = '????(?)'
         TabOrder = 7
         object RzLabel32: TRzLabel
-          Left = 8
-          Top = 21
-          Width = 54
-          Height = 12
+          Left = 9
+          Top = 25
+          Width = 52
+          Height = 14
           Caption = 'Duel.Duel'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object RzLabel34: TRzLabel
-          Left = 8
-          Top = 44
+          Left = 9
+          Top = 51
           Width = 54
-          Height = 12
+          Height = 14
           Caption = 'Duel.Item'
           BlinkIntervalOff = 1
           BlinkIntervalOn = 1
         end
         object EditDuelInfoB: TRzButtonEdit
-          Left = 68
-          Top = 18
-          Width = 277
-          Height = 20
+          Left = 79
+          Top = 21
+          Width = 324
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_Duel\Duel.Duel'
           TabOrder = 0
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditDuelInfoBButtonClick
         end
         object EditDuelItemB: TRzButtonEdit
-          Left = 68
-          Top = 44
-          Width = 277
-          Height = 20
+          Left = 79
+          Top = 51
+          Width = 324
+          Height = 22
           Text = 'D:\MirServer\Mir200\Envir\Market_Duel\Duel.Item'
           TabOrder = 1
-          AltBtnWidth = 15
-          ButtonWidth = 15
+          AltBtnWidth = 18
+          ButtonWidth = 18
           OnButtonClick = EditDuelItemBButtonClick
         end
       end
       object RzGroupBox9: TRzGroupBox
-        Left = 5
-        Top = 479
-        Width = 715
-        Height = 290
-        Caption = #33258#23450#20041#21464#37327#21512#24182
+        Left = 6
+        Top = 559
+        Width = 834
+        Height = 338
+        Caption = '???????'
         TabOrder = 8
         object RzGroupBox10: TRzGroupBox
-          Left = 9
-          Top = 16
-          Width = 347
-          Height = 233
-          Caption = #20027#21306
+          Left = 11
+          Top = 19
+          Width = 404
+          Height = 272
+          Caption = '??'
           TabOrder = 0
           object ListBoxDynamicVarA: TListBox
-            Left = 12
-            Top = 20
-            Width = 325
-            Height = 173
-            ItemHeight = 12
+            Left = 14
+            Top = 23
+            Width = 379
+            Height = 202
+            ItemHeight = 14
             TabOrder = 0
             OnClick = ListBoxDynamicVarAClick
             OnMouseDown = ListBoxDynamicVarAMouseDown
           end
           object EditDynamicVarA: TRzButtonEdit
-            Left = 12
-            Top = 199
-            Width = 325
-            Height = 20
+            Left = 14
+            Top = 232
+            Width = 379
+            Height = 22
             TabOrder = 1
-            AltBtnWidth = 15
-            ButtonWidth = 15
+            AltBtnWidth = 18
+            ButtonWidth = 18
             OnButtonClick = EditDynamicVarAButtonClick
           end
         end
         object RzGroupBox11: TRzGroupBox
-          Left = 362
-          Top = 16
-          Width = 347
-          Height = 233
-          Caption = #20174#21306
+          Left = 422
+          Top = 19
+          Width = 405
+          Height = 272
+          Caption = '??'
           TabOrder = 1
           object ListBoxDynamicVarB: TListBox
-            Left = 12
-            Top = 20
-            Width = 325
-            Height = 173
-            ItemHeight = 12
+            Left = 14
+            Top = 23
+            Width = 379
+            Height = 202
+            ItemHeight = 14
             TabOrder = 0
             OnClick = ListBoxDynamicVarBClick
             OnMouseDown = ListBoxDynamicVarBMouseDown
           end
           object EditDynamicVarB: TRzButtonEdit
-            Left = 12
-            Top = 199
-            Width = 325
-            Height = 20
+            Left = 14
+            Top = 232
+            Width = 379
+            Height = 22
             TabOrder = 1
-            AltBtnWidth = 15
-            ButtonWidth = 15
+            AltBtnWidth = 18
+            ButtonWidth = 18
             OnButtonClick = EditDynamicVarBButtonClick
           end
         end
         object ButtonDynamicVarAdd: TButton
-          Left = 543
-          Top = 256
-          Width = 75
-          Height = 25
-          Caption = #22686#21152
+          Left = 634
+          Top = 299
+          Width = 87
+          Height = 29
+          Caption = '??'
           TabOrder = 2
           OnClick = ButtonDynamicVarAddClick
         end
         object ButtonDynamicVarDel: TButton
-          Left = 624
-          Top = 256
-          Width = 75
-          Height = 25
-          Caption = #21024#38500
+          Left = 728
+          Top = 299
+          Width = 88
+          Height = 29
+          Caption = '??'
           Enabled = False
           TabOrder = 3
           OnClick = ButtonDynamicVarDelClick
         end
       end
       object RzGroupBox12: TRzGroupBox
-        Left = 5
-        Top = 775
-        Width = 715
-        Height = 290
-        Caption = #21517#31216#21015#34920#21512#24182
+        Left = 6
+        Top = 904
+        Width = 834
+        Height = 339
+        Caption = '??????'
         TabOrder = 9
         object RzGroupBox13: TRzGroupBox
-          Left = 9
-          Top = 16
-          Width = 347
-          Height = 233
-          Caption = #20027#21306
+          Left = 11
+          Top = 19
+          Width = 404
+          Height = 272
+          Caption = '??'
           TabOrder = 0
           object ListBoxCharNameA: TListBox
-            Left = 12
-            Top = 20
-            Width = 325
-            Height = 173
-            ItemHeight = 12
+            Left = 14
+            Top = 23
+            Width = 379
+            Height = 202
+            ItemHeight = 14
             TabOrder = 0
             OnClick = ListBoxCharNameAClick
             OnMouseDown = ListBoxCharNameAMouseDown
           end
           object EditCharNameA: TRzButtonEdit
-            Left = 12
-            Top = 199
-            Width = 325
-            Height = 20
+            Left = 14
+            Top = 232
+            Width = 379
+            Height = 22
             TabOrder = 1
-            AltBtnWidth = 15
-            ButtonWidth = 15
+            AltBtnWidth = 18
+            ButtonWidth = 18
             OnButtonClick = EditCharNameAButtonClick
           end
         end
         object RzGroupBox14: TRzGroupBox
-          Left = 362
-          Top = 16
-          Width = 347
-          Height = 233
-          Caption = #20174#21306
+          Left = 422
+          Top = 19
+          Width = 405
+          Height = 272
+          Caption = '??'
           TabOrder = 1
           object ListBoxCharNameB: TListBox
-            Left = 12
-            Top = 20
-            Width = 325
-            Height = 173
-            ItemHeight = 12
+            Left = 14
+            Top = 23
+            Width = 379
+            Height = 202
+            ItemHeight = 14
             TabOrder = 0
             OnClick = ListBoxCharNameBClick
             OnMouseDown = ListBoxCharNameBMouseDown
           end
           object EditCharNameB: TRzButtonEdit
-            Left = 12
-            Top = 199
-            Width = 325
-            Height = 20
+            Left = 14
+            Top = 232
+            Width = 379
+            Height = 22
             TabOrder = 1
-            AltBtnWidth = 15
-            ButtonWidth = 15
+            AltBtnWidth = 18
+            ButtonWidth = 18
             OnButtonClick = EditCharNameBButtonClick
           end
         end
         object ButtonCharNameAdd: TButton
-          Left = 543
-          Top = 256
-          Width = 75
-          Height = 25
-          Caption = #22686#21152
+          Left = 634
+          Top = 299
+          Width = 87
+          Height = 29
+          Caption = '??'
           TabOrder = 2
           OnClick = ButtonCharNameAddClick
         end
         object ButtonCharNameDel: TButton
-          Left = 624
-          Top = 256
-          Width = 75
-          Height = 25
-          Caption = #21024#38500
+          Left = 728
+          Top = 299
+          Width = 88
+          Height = 29
+          Caption = '??'
           Enabled = False
           TabOrder = 3
           OnClick = ButtonCharNameDelClick
@@ -869,110 +869,110 @@ object frmMain: TfrmMain
   object RzPanel1: TRzPanel
     Left = 0
     Top = 0
-    Width = 749
-    Height = 97
+    Width = 874
+    Height = 113
     Align = alTop
     BorderOuter = fsBump
     TabOrder = 2
     object RzLabel11: TRzLabel
-      Left = 160
-      Top = 12
-      Width = 24
-      Height = 12
-      Caption = #21019#24314
+      Left = 187
+      Top = 14
+      Width = 25
+      Height = 14
+      Caption = 'Days'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
     end
     object RzLabel12: TRzLabel
-      Left = 240
-      Top = 12
-      Width = 36
-      Height = 12
-      Caption = #22825#26410#21040
+      Left = 280
+      Top = 14
+      Width = 18
+      Height = 14
+      Caption = '???'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
     end
     object RzLabel13: TRzLabel
-      Left = 320
-      Top = 12
-      Width = 12
-      Height = 12
-      Caption = #32423
+      Left = 373
+      Top = 14
+      Width = 28
+      Height = 14
+      Caption = 'Level'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
     end
     object RzLabel15: TRzLabel
-      Left = 160
-      Top = 60
-      Width = 24
-      Height = 12
-      Caption = #36317#20170
+      Left = 187
+      Top = 70
+      Width = 25
+      Height = 14
+      Caption = 'Days'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
     end
     object RzLabel16: TRzLabel
-      Left = 240
-      Top = 60
-      Width = 48
-      Height = 12
-      Caption = #22825#26410#35775#38382
+      Left = 280
+      Top = 70
+      Width = 24
+      Height = 14
+      Caption = '????'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
     end
     object RzLabel19: TRzLabel
-      Left = 368
-      Top = 68
-      Width = 48
-      Height = 12
-      Caption = #20445#23384#30446#24405
+      Left = 397
+      Top = 79
+      Width = 92
+      Height = 14
+      Caption = 'Save Directory'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
     end
     object CheckBoxClearHumLevel: TRzCheckBox
-      Left = 8
-      Top = 8
-      Width = 145
-      Height = 17
-      Caption = #28165#29702#20154#29289#65288#26410#21040#31561#32423#65289
+      Left = 9
+      Top = 9
+      Width = 112
+      Height = 20
+      Caption = 'Clear Hum Level'
       State = cbUnchecked
       TabOrder = 0
       OnClick = CheckBoxClearHumLevelClick
     end
     object CheckBoxClearDeleteHum: TRzCheckBox
-      Left = 8
-      Top = 24
-      Width = 129
-      Height = 17
-      Caption = #28165#29702#20154#29289#65288#24050#21024#38500#65289
+      Left = 9
+      Top = 28
+      Width = 151
+      Height = 20
+      Caption = 'Delete Hum'
       State = cbUnchecked
       TabOrder = 1
       OnClick = CheckBoxClearDeleteHumClick
     end
     object CheckBoxClearID1: TRzCheckBox
-      Left = 8
-      Top = 56
-      Width = 145
-      Height = 17
-      Caption = #28165#29702#36134#21495#65288#20037#26410#35775#38382#65289
+      Left = 9
+      Top = 65
+      Width = 104
+      Height = 20
+      Caption = '????(????)'
       State = cbUnchecked
       TabOrder = 2
       OnClick = CheckBoxClearID1Click
     end
     object CheckBoxClearID2: TRzCheckBox
-      Left = 8
-      Top = 72
-      Width = 153
-      Height = 17
-      Caption = #28165#29702#36134#21495#65288#26080#35282#33394#36134#21495#65289
+      Left = 9
+      Top = 84
+      Width = 120
+      Height = 20
+      Caption = '????(?????)'
       State = cbUnchecked
       TabOrder = 3
       OnClick = CheckBoxClearID2Click
     end
     object NumericEditDay: TRzNumericEdit
-      Left = 192
-      Top = 8
-      Width = 41
-      Height = 20
+      Left = 216
+      Top = 9
+      Width = 48
+      Height = 22
       TabOrder = 4
       OnChange = NumericEditDayChange
       Max = 999999999.000000000000000000
@@ -980,10 +980,10 @@ object frmMain: TfrmMain
       DisplayFormat = '0'
     end
     object NumericEditLevel: TRzNumericEdit
-      Left = 280
-      Top = 8
-      Width = 33
-      Height = 20
+      Left = 327
+      Top = 9
+      Width = 38
+      Height = 22
       TabOrder = 5
       OnChange = NumericEditLevelChange
       Max = 65535.000000000000000000
@@ -991,10 +991,10 @@ object frmMain: TfrmMain
       DisplayFormat = '0'
     end
     object NumericEditDay1: TRzNumericEdit
-      Left = 192
-      Top = 56
-      Width = 41
-      Height = 20
+      Left = 224
+      Top = 65
+      Width = 48
+      Height = 22
       TabOrder = 6
       OnChange = NumericEditDay1Change
       Max = 999999999.000000000000000000
@@ -1002,109 +1002,109 @@ object frmMain: TfrmMain
       DisplayFormat = '0'
     end
     object ButtonEditSaveDir: TRzButtonEdit
-      Left = 422
-      Top = 64
-      Width = 290
-      Height = 20
+      Left = 492
+      Top = 75
+      Width = 339
+      Height = 22
       Text = '.\'
       TabOrder = 7
-      AltBtnWidth = 15
-      ButtonWidth = 15
+      AltBtnWidth = 18
+      ButtonWidth = 18
       OnButtonClick = ButtonEditSaveDirButtonClick
     end
     object CheckBoxBigStorage: TRzCheckBox
-      Left = 496
-      Top = 8
-      Width = 97
-      Height = 17
-      Caption = #21512#24182#26080#38480#20179#24211
+      Left = 579
+      Top = 9
+      Width = 113
+      Height = 20
+      Caption = '??????'
       Checked = True
       State = cbChecked
       TabOrder = 8
       OnClick = CheckBoxBigStorageClick
     end
     object CheckBoxSellOff: TRzCheckBox
-      Left = 496
-      Top = 24
-      Width = 73
-      Height = 17
-      Caption = #21512#24182#25293#21334
+      Left = 579
+      Top = 28
+      Width = 85
+      Height = 20
+      Caption = '????'
       Checked = True
       State = cbChecked
       TabOrder = 9
       OnClick = CheckBoxSellOffClick
     end
     object CheckBoxCheckCopyItems: TRzCheckBox
-      Left = 352
-      Top = 8
-      Width = 97
-      Height = 17
-      Caption = #21024#38500#22797#21046#35013#22791
+      Left = 411
+      Top = 9
+      Width = 134
+      Height = 20
+      Caption = 'Check Copy Items'
       Checked = True
       State = cbChecked
       TabOrder = 10
       OnClick = CheckBoxCheckCopyItemsClick
     end
     object CheckBoxSetItemMakeIndex: TRzCheckBox
-      Left = 352
-      Top = 24
-      Width = 129
-      Height = 17
-      Caption = #37325#26032#25490#21015#29289#21697'ID'#32534#21495
+      Left = 411
+      Top = 28
+      Width = 150
+      Height = 20
+      Caption = 'Item Make Index'
       Checked = True
       State = cbChecked
       TabOrder = 11
       OnClick = CheckBoxSetItemMakeIndexClick
     end
     object CheckBoxClearNotDataHum: TRzCheckBox
-      Left = 8
-      Top = 40
-      Width = 153
-      Height = 17
-      Caption = #28165#29702#20154#29289#65288#26080#25968#25454#35282#33394#65289
+      Left = 9
+      Top = 47
+      Width = 179
+      Height = 20
+      Caption = '????(?????)'
       State = cbUnchecked
       TabOrder = 12
       OnClick = CheckBoxClearNotDataHumClick
     end
     object RzCheckBoxItemBind: TRzCheckBox
-      Left = 599
-      Top = 8
-      Width = 121
-      Height = 17
-      Caption = #21512#24182#35013#22791#32465#23450#25968#25454
+      Left = 699
+      Top = 9
+      Width = 141
+      Height = 20
+      Caption = '????????'
       Checked = True
       State = cbChecked
       TabOrder = 13
       OnClick = RzCheckBoxItemBindClick
     end
     object RzCheckBoxDuel: TRzCheckBox
-      Left = 496
-      Top = 41
-      Width = 97
-      Height = 17
-      Caption = #21512#24182#25361#25112#25968#25454
+      Left = 579
+      Top = 48
+      Width = 113
+      Height = 20
+      Caption = '??????'
       Checked = True
       State = cbChecked
       TabOrder = 14
       OnClick = RzCheckBoxDuelClick
     end
     object RzCheckBoxItemDblClick: TRzCheckBox
-      Left = 599
-      Top = 24
-      Width = 121
-      Height = 17
-      Caption = #21512#24182#35760#24518#29289#21697#25968#25454
+      Left = 699
+      Top = 28
+      Width = 141
+      Height = 20
+      Caption = '????????'
       Checked = True
       State = cbChecked
       TabOrder = 15
       OnClick = RzCheckBoxItemDblClickClick
     end
     object CheckBoxDeleteLowLevel: TCheckBox
-      Left = 352
-      Top = 40
-      Width = 138
-      Height = 17
-      Caption = #22810#20010#35282#33394#20445#30041#39640#31561#32423#30340
+      Left = 411
+      Top = 47
+      Width = 161
+      Height = 20
+      Caption = 'Delete Low Level'
       Checked = True
       State = cbChecked
       TabOrder = 16
@@ -1113,45 +1113,29 @@ object frmMain: TfrmMain
   end
   object Panel1: TPanel
     Left = 0
-    Top = 447
-    Width = 749
-    Height = 35
+    Top = 545
+    Width = 874
+    Height = 40
     Align = alBottom
     TabOrder = 3
     object LabelVersion: TRzLabel
-      Left = 8
-      Top = 9
-      Width = 174
-      Height = 12
-      Caption = #29256#26435#25152#26377' (C) 2010-2020 MakeGM'
+      Left = 9
+      Top = 11
+      Width = 158
+      Height = 14
+      Caption = '???? (C) 2010-2020 MakeGM'
       BlinkIntervalOff = 1
       BlinkIntervalOn = 1
-    end
-    object RzURLLabel1: TRzURLLabel
-      Left = 328
-      Top = 8
-      Width = 125
-      Height = 13
-      Caption = 'http://www.MakeGM.com'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clHighlight
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsUnderline]
-      ParentFont = False
-      BlinkIntervalOff = 1
-      BlinkIntervalOn = 1
-      URL = 'http://www.MakeGM.com'
     end
     object RzURLLabel2: TRzURLLabel
-      Left = 208
-      Top = 8
-      Width = 111
+      Left = 267
+      Top = 17
+      Width = 116
       Height = 13
-      Caption = 'http://www.51pao.com'
+      Caption = 'http://www.lomcn.co.uk'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clHighlight
-      Font.Height = -11
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsUnderline]
       ParentFont = False
@@ -1160,10 +1144,11 @@ object frmMain: TfrmMain
       URL = 'http://www.51pao.com'
     end
     object BitBtnStart: TRzBitBtn
-      Left = 477
-      Top = 4
-      Width = 81
-      Caption = #24320#22987#21512#24182
+      Left = 557
+      Top = 5
+      Width = 94
+      Height = 29
+      Caption = 'Start'
       TabOrder = 0
       OnClick = BitBtnStartClick
       Glyph.Data = {
@@ -1218,11 +1203,14 @@ object frmMain: TfrmMain
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      Spacing = 5
     end
     object BitBtnLog: TRzBitBtn
-      Left = 564
-      Top = 4
-      Caption = #26085#35760
+      Left = 658
+      Top = 5
+      Width = 88
+      Height = 29
+      Caption = 'Log'
       TabOrder = 1
       OnClick = BitBtnLogClick
       Glyph.Data = {
@@ -1277,11 +1265,14 @@ object frmMain: TfrmMain
         81D781D781D7E8E8E8E8E8AC81D781D781D781D781D7E8E8E8E8E8E881AC81AC
         81AC81AC81E8E8E8E8E8E8E881AC81AC81AC81AC81E8E8E8E8E8}
       NumGlyphs = 2
+      Spacing = 5
     end
     object BitBtnCLose: TRzBitBtn
-      Left = 645
-      Top = 4
-      Caption = #36864#20986
+      Left = 753
+      Top = 5
+      Width = 87
+      Height = 29
+      Caption = 'Close'
       TabOrder = 2
       OnClick = BitBtnCLoseClick
       Glyph.Data = {
@@ -1336,6 +1327,7 @@ object frmMain: TfrmMain
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      Spacing = 5
     end
   end
   object OpenDialog: TOpenDialog

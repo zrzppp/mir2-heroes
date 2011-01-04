@@ -152,7 +152,6 @@ type
     Label52: TLabel;
     EditDecPkPointTime: TSpinEdit;
     EditDecPkPointCount: TSpinEdit;
-    Label53: TLabel;
     GroupBox24: TGroupBox;
     Label54: TLabel;
     EditPKFlagTime: TSpinEdit;
@@ -252,11 +251,9 @@ type
     EditHumanFreeDelayTime: TSpinEdit;
     GroupBox46: TGroupBox;
     Label89: TLabel;
-    Label90: TLabel;
     EditMakeGhostTime: TSpinEdit;
     Label91: TLabel;
     EditClearDropOnFloorItemTime: TSpinEdit;
-    Label92: TLabel;
     GroupBox47: TGroupBox;
     Label93: TLabel;
     Label94: TLabel;
@@ -279,7 +276,6 @@ type
     Label99: TLabel;
     EditSendOnlineTime: TSpinEdit;
     CheckBoxSendOnlineCount: TCheckBox;
-    Label100: TLabel;
     GroupBox52: TGroupBox;
     Label101: TLabel;
     Label102: TLabel;

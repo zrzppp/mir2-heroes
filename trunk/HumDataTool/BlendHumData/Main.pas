@@ -157,7 +157,6 @@ type
     CheckBoxClearNotDataHum: TRzCheckBox;
     Panel1: TPanel;
     LabelVersion: TRzLabel;
-    RzURLLabel1: TRzURLLabel;
     RzURLLabel2: TRzURLLabel;
     BitBtnStart: TRzBitBtn;
     BitBtnLog: TRzBitBtn;

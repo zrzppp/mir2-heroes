@@ -3,7 +3,7 @@ object frmHeroConfig: TfrmHeroConfig
   Top = 320
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = '????'
+  Caption = 'Hero Config'
   ClientHeight = 468
   ClientWidth = 571
   Color = clBtnFace
@@ -24,7 +24,7 @@ object frmHeroConfig: TfrmHeroConfig
     ActivePage = TabSheet1
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = '????'
+      Caption = 'Options'
       object Label15: TLabel
         Left = 9
         Top = 393
@@ -1105,7 +1105,7 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 80
         Width = 169
         Height = 81
-        Caption = '????'
+        Caption = 'Start Level An Color'
         TabOrder = 2
         object Label61: TLabel
           Left = 9
@@ -1266,7 +1266,7 @@ object frmHeroConfig: TfrmHeroConfig
           Height = 22
           ItemHeight = 14
           TabOrder = 1
-          Text = '10'
+          Text = '10 Item'
           OnChange = ComboBoxBagItemCountChange
           Items.Strings = (
             '20?'
@@ -1447,7 +1447,7 @@ object frmHeroConfig: TfrmHeroConfig
       end
     end
     object TabSheet2: TTabSheet
-      Caption = '????'
+      Caption = 'Death Drops'
       ImageIndex = 1
       object GroupBox67: TGroupBox
         Left = 9
@@ -1602,7 +1602,7 @@ object frmHeroConfig: TfrmHeroConfig
       end
     end
     object TabSheet3: TTabSheet
-      Caption = '????'
+      Caption = 'Skills'
       ImageIndex = 2
       object GroupBox3: TGroupBox
         Left = 9
@@ -1683,14 +1683,14 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 120
         Width = 168
         Height = 116
-        Caption = 'Skill'
+        Caption = 'Skill Rate'
         TabOrder = 2
         object Label135: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 37
           Height = 14
-          Caption = '????:'
+          Caption = 'Skill 60'
         end
         object EditSkill60Rate: TSpinEdit
           Left = 84
@@ -1710,14 +1710,14 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 119
         Width = 172
         Height = 117
-        Caption = '???'
+        Caption = 'Skill Rate'
         TabOrder = 3
         object Label10: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 37
           Height = 14
-          Caption = '????:'
+          Caption = 'Skill 61'
         end
         object EditSkill61Rate: TSpinEdit
           Left = 84
@@ -1737,14 +1737,14 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 120
         Width = 176
         Height = 116
-        Caption = '????'
+        Caption = 'Skill Rate'
         TabOrder = 4
         object Label11: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 37
           Height = 14
-          Caption = '????:'
+          Caption = 'Skill 62'
         end
         object EditSkill62Rate: TSpinEdit
           Left = 84
@@ -1764,14 +1764,14 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 243
         Width = 168
         Height = 115
-        Caption = '????'
+        Caption = 'Skill Rate'
         TabOrder = 5
         object Label12: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 37
           Height = 14
-          Caption = '????:'
+          Caption = 'Skill 63'
         end
         object EditSkill63Rate: TSpinEdit
           Left = 84
@@ -1791,14 +1791,14 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 243
         Width = 172
         Height = 116
-        Caption = '????'
+        Caption = 'Skill Rate'
         TabOrder = 6
         object Label13: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 37
           Height = 14
-          Caption = '????:'
+          Caption = 'Skill 64'
         end
         object EditSkill64Rate: TSpinEdit
           Left = 84
@@ -1818,14 +1818,14 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 247
         Width = 176
         Height = 116
-        Caption = '????'
+        Caption = 'Skill Rate'
         TabOrder = 7
         object Label14: TLabel
           Left = 9
           Top = 23
-          Width = 28
+          Width = 37
           Height = 14
-          Caption = '????:'
+          Caption = 'Skill 65'
         end
         object EditSkill65Rate: TSpinEdit
           Left = 84

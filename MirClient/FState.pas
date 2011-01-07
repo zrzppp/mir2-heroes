@@ -9953,7 +9953,7 @@ begin
     if not BoStorageMenu then begin
       TextOut(sx(19), sY(11), 'Item List');
       TextOut(sx(156), sY(11), 'Price');
-      TextOut(sx(245), sY(11), 'Dura.');
+      TextOut(sx(245), sY(11), 'Durability');
       lh := LISTLINEHEIGHT;
       menuline := _MIN(MAXMENU, MenuList.Count - MenuTop);
       //惑前 府胶飘
@@ -9980,8 +9980,8 @@ begin
            TextOut (SX(245), SY(32 + m*lh), str);}
       end;
     end else begin
-      TextOut(sx(19), sY(11), '物品列表');
-      TextOut(sx(156), sY(11), '持久');
+      TextOut(sx(19), sY(11), 'Custody list');
+      TextOut(sx(156), sY(11), 'Durability');
       TextOut(sx(245), sY(11), '');
       lh := LISTLINEHEIGHT;
       menuline := _MIN(MAXMENU, MenuList.Count - MenuTop);
@@ -10171,9 +10171,9 @@ begin
     with dsurface do begin
       actionname := '';
       case SpotDlgMode of
-        dmSell: actionname := '出售: ';
-        dmRepair: actionname := '修理: ';
-        dmStorage: actionname := ' 保管物品';
+        dmSell: actionname := 'Sell: ';
+        dmRepair: actionname := 'Repair: ';
+        dmStorage: actionname := 'Store?;
         dmSellOff: actionname := '寄售物品: ';
         dmChange: actionname := '修改物品: ';
       end;
@@ -10306,7 +10306,7 @@ end;
 
 {------------------------------------------------------------------------}
 
-//魔法 虐 汲沥 芒 (促捞倔 肺弊)
+//Magic
 
 {------------------------------------------------------------------------}
 
@@ -10450,8 +10450,7 @@ begin
 end;
 {------------------------------------------------------------------------}
 
-//扁夯芒狼 固聪 滚瓢
-
+//Panel Buttons
 {------------------------------------------------------------------------}
 
 
@@ -10503,7 +10502,7 @@ end;
 
 {------------------------------------------------------------------------}
 
-//弊缝 促捞倔肺弊
+//Group
 
 {------------------------------------------------------------------------}
 
@@ -10583,7 +10582,7 @@ var
 begin
   if (GetTickCount > g_dwChangeGroupModeTick) and (g_GroupMembers.Count = 0) then begin
     DialogSize := 1;
-    DMessageDlg('输入想加入编组人物名称：', [mbOk, mbAbort]);
+    DMessageDlg('Input the name of the player you wish to group.', [mbOk, mbAbort]);
     who := Trim(DlgEditText);
     if who <> '' then begin
       g_dwChangeGroupModeTick := GetTickCount + 5000; //timeout 5檬
@@ -10598,7 +10597,7 @@ var
 begin
   if (GetTickCount > g_dwChangeGroupModeTick) and (g_GroupMembers.Count > 0) then begin
     DialogSize := 1;
-    DMessageDlg('输入想加入编组人物名称：', [mbOk, mbAbort]);
+    DMessageDlg('Input the name of the player you wish to group.', [mbOk, mbAbort]);
     who := Trim(DlgEditText);
     if who <> '' then begin
       g_dwChangeGroupModeTick := GetTickCount + 5000; //timeout 5檬
@@ -10613,7 +10612,7 @@ var
 begin
   if (GetTickCount > g_dwChangeGroupModeTick) and (g_GroupMembers.Count > 0) then begin
     DialogSize := 1;
-    DMessageDlg('输入想退出编组人物名称：', [mbOk, mbAbort]);
+    DMessageDlg('Input the name of the player you wish to delete.', [mbOk, mbAbort]);
     who := Trim(DlgEditText);
     if who <> '' then begin
       g_dwChangeGroupModeTick := GetTickCount + 5000; //timeout 5檬
@@ -11438,7 +11437,7 @@ begin
       end;
       if Length(sData) > 4000 then begin
         sData := Copy(sData, 1, 4000);
-        DMessageDlg('公告内容超过限制大小，公告内容将被截短！', [mbOk]);
+        DMessageDlg('Last part was removed due to the length of the notice (4000 chars max).', [mbOk]);
       end;
       frmMain.SendGuildUpdateNotice(sData);
     end;
@@ -11452,7 +11451,7 @@ var
   I: Integer;
 begin
   if GuildMembers.Count <= 0 then begin
-    DMessageDlg('请先打开成员列表。', [mbOk]);
+    DMessageDlg('Press [LIST] to call up information on Guild members.', [mbOk]);
     Exit;
   end;
 
@@ -11493,7 +11492,7 @@ begin
       end;
       if Length(sData) > 5000 then begin
         sData := Copy(sData, 1, 5000);
-        DMessageDlg('内容超过限制大小，内容将被截短！', [mbOk]);
+        DMessageDlg('Last part was removed due to long length of sentence.', [mbOk]);
       end;
       frmMain.SendGuildUpdateGrade(sData);
     end;
@@ -11569,44 +11568,43 @@ end;
 
 procedure TFrmDlg.DGDAddMemClick(Sender: TObject; X, Y: Integer);
 begin
-  DMessageDlg('请输入想加入' + Guild + '的人物名称：', [mbOk, mbAbort]);
+  DMessageDlg('Type character name you want to add as a Guild Member.', [mbOk, mbAbort]);
   if DlgEditText <> '' then
     frmMain.SendGuildAddMem(DlgEditText);
 end;
 
 procedure TFrmDlg.DGDDelMemClick(Sender: TObject; X, Y: Integer);
 begin
-  DMessageDlg('请输入想要开除的人物名称：', [mbOk, mbAbort]);
+  DMessageDlg('Type character name you want to delete from the Guild.', [mbOk, mbAbort]);
   if DlgEditText <> '' then
     frmMain.SendGuildDelMem(DlgEditText);
 end;
 
 procedure TFrmDlg.DGDEditNoticeClick(Sender: TObject; X, Y: Integer);
 begin
-  GuildEditHint := '[修改行会公告内容。]';
+  GuildEditHint := '[Edit Guild Notice.]';
   ShowGuildEditNotice;
 end;
 
 procedure TFrmDlg.DGDEditGradeClick(Sender: TObject; X, Y: Integer);
 begin
-  GuildEditHint := '[修改行会成员的等级和职位。 # 警告 : 不能增加行会成员/删除行会成员。]';
+  GuildEditHint := '[Amend rank and position of Guild Members.]';
   ShowGuildEditGrade;
 end;
 
 procedure TFrmDlg.DGDAllyClick(Sender: TObject; X, Y: Integer);
 begin
-  if mrOk = DMessageDlg('对方结盟行会必需在 [允许结盟]状态下。\' +
-    '而且二个行会的掌门必须面对面。\' +
-    '是否确认行会结盟？', [mbOk, mbCancel])
-    then
-    frmMain.SendSay('@联盟');
+  if mrOk = DMessageDlg('To create an alliance, the other Guild should be under the state of [AbleToAlly]\' +
+    'and you should face with opponent Guild Chief.\' +
+    'Would you like to make alliance?', [mbOK, mbCancel]) then
+    FrmMain.SendSay('@Alliance');
 end;
 
 procedure TFrmDlg.DGDBreakAllyClick(Sender: TObject; X, Y: Integer);
 begin
-  DMessageDlg('请输入您想取消结盟的行会的名字：', [mbOk, mbAbort]);
+  DMessageDlg('Please type the name of Guild you want break your alliance.', [mbOk, mbAbort]);
   if DlgEditText <> '' then
-    frmMain.SendSay('@取消联盟 ' + DlgEditText);
+    frmMain.SendSay('@CancelAlliance ' + DlgEditText);
 end;
 
 
@@ -11724,10 +11722,10 @@ begin
     L := DAdjustAbility.SurfaceX(DAdjustAbility.Left) + 36;
     m := DAdjustAbility.SurfaceY(DAdjustAbility.Top) + 22;
 
-    TextOut(L, m, '你当前还有剩余部份属性点未分配。', clSilver);
-    TextOut(L, m + 14, '请根据自己的意向，调整自己的属性值。', clSilver);
-    TextOut(L, m + 14 * 2, '些属性点数，下不可以重新分配。', clSilver);
-    TextOut(L, m + 14 * 3, '在分配时要小心选择。', clSilver);
+    TextOut(L, m, 'Congratulations: you are moved up to the next level!.', clSilver);
+    TextOut(L, m + 14, 'Choose the ability you want to raise', clSilver);
+    TextOut(L, m + 14 * 2, 'You can choose only one time so', clSilver);
+    TextOut(L, m + 14 * 3, 'It is better to choose very carefully.', clSilver);
 
     L := DAdjustAbility.SurfaceX(DAdjustAbility.Left) + 100; //66;
     m := DAdjustAbility.SurfaceY(DAdjustAbility.Top) + 101;

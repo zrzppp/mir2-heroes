@@ -12532,6 +12532,7 @@ begin
     ini.WriteInteger('Client Options', 'ServerPort', g_nServerPort);
     ini.WriteInteger('Client Options', 'ScreenWidth', SCREENWIDTH);
     ini.WriteInteger('Client Options', 'ScreenHeight', SCREENHEIGHT);
+    ini.WriteInteger('Client Options', 'InterfaceType', g_nInterfaceType);
 
     ini.WriteInteger('Client Setup', 'LineColor', g_btFColor);
     ini.WriteInteger('Client Setup', 'RectangleColor', g_btBColor);

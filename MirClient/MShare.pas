@@ -707,7 +707,7 @@ var
 
   g_nCurFont: Integer = 0;
   g_sCurFontName: string = 'MS Sans Serif';
-  g_nInterfaceType: Integer;
+  g_nInterfaceType: Integer = 1;
 
   g_sFontName: string = 'MS Sans Serif';
 

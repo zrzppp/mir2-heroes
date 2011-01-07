@@ -10173,7 +10173,7 @@ begin
       case SpotDlgMode of
         dmSell: actionname := 'Sell: ';
         dmRepair: actionname := 'Repair: ';
-        dmStorage: actionname := 'Store?;
+        dmStorage: actionname := 'Store';
         dmSellOff: actionname := '寄售物品: ';
         dmChange: actionname := '修改物品: ';
       end;

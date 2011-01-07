@@ -1134,7 +1134,7 @@ begin
   GetWindowThreadProcessId(Handle, @g_nSelfThreadProcessId);
   g_sAppFilePath := ExtractFilePath(Application.ExeName);
   //Sets Main Interface 0 = Original, 1 = CQFir, 2 = Original again? or not used.
-  g_ConfigClient.btMainInterface := 1; //2;
+  //g_ConfigClient.btMainInterface := g_nInterfaceType; //2;
   FInterval2 := 1;
   FInterval := 50;
   FOldTime := TimeGetTime;
@@ -1166,6 +1166,7 @@ begin
     g_nServerPort := ini.ReadInteger('Client Options', 'ServerPort', g_nServerPort);
     SCREENWIDTH := ini.ReadInteger('Client Options', 'ScreenWidth', SCREENWIDTH);
     SCREENHEIGHT := ini.ReadInteger('Client Options', 'ScreenHeight', SCREENHEIGHT);
+    g_nInterfaceType := ini.ReadInteger('Client Options','InterfaceType', g_nInterfaceType);
 
     ini.ReadInteger('Client Setup', 'LineColor', g_btFColor);
     ini.ReadInteger('Client Setup', 'RectangleColor', g_btBColor);
@@ -1173,6 +1174,10 @@ begin
     ini.Free;
   end;
 {$IFEND}
+
+  //Sets Main Interface 0 = Original, 1 = CQFir, 2 = Original again? or not used.
+  g_ConfigClient.btMainInterface := g_nInterfaceType; //2;
+
   MAPSURFACEWIDTH := SCREENWIDTH;
   if (g_ConfigClient.btMainInterface = 1) or (SCREENWIDTH = 1024) then begin
     MAPSURFACEHEIGHT := SCREENHEIGHT;

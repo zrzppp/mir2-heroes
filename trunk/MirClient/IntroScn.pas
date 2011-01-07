@@ -608,7 +608,7 @@ begin
   Result := True;
   m_EdNewId.Text := Trim(m_EdNewId.Text);
   if Length(m_EdNewId.Text) < 3 then begin
-    FrmDlg.DMessageDlg('登录帐号的长度必须大于3位.', [mbOk]);
+    FrmDlg.DMessageDlg('ID in use, please enter a new ID', [mbOk]);
     Beep;
     m_EdNewId.SetFocus;
     Result := False;
@@ -684,7 +684,7 @@ begin
     end;
     if Sender = m_EdNewPasswd then begin
       if Length(m_EdNewPasswd.Text) < 4 then begin
-        FrmDlg.DMessageDlg('密码长度必须大于 4位.', [mbOk]);
+        FrmDlg.DMessageDlg('New Password', [mbOk]);
         Beep;
         m_EdNewPasswd.SetFocus;
         Exit;
@@ -692,7 +692,7 @@ begin
     end;
     if Sender = m_EdConfirm then begin
       if m_EdNewPasswd.Text <> m_EdConfirm.Text then begin
-        FrmDlg.DMessageDlg('二次输入的密码不一至！！！', [mbOk]);
+        FrmDlg.DMessageDlg('Confirm new password', [mbOk]);
         Beep;
         m_EdConfirm.SetFocus;
         Exit;
@@ -750,39 +750,38 @@ begin
   hx := TEdit(Sender).Left + TEdit(Sender).Width + 10;
   hy := TEdit(Sender).Top + TEdit(Sender).Height - 18;
   if Sender = m_EdNewId then begin
-    FrmDlg.NAHelps.Add('您的帐号名称可以包括：');
-    FrmDlg.NAHelps.Add('字符、数字的组合。');
-    FrmDlg.NAHelps.Add('可以使用QQ、手机号码或邮箱地址。');
-    FrmDlg.NAHelps.Add('帐号名称长度必须为4或以上。');
-    FrmDlg.NAHelps.Add('登陆帐号并游戏中的人物名称。');
-    FrmDlg.NAHelps.Add('请仔细输入创建帐号所需信息。');
-    FrmDlg.NAHelps.Add('您的登陆帐号可以登陆游戏');
-    FrmDlg.NAHelps.Add('及我们网站，以取得一些相关信息。');
+    FrmDlg.NAHelps.Add('Your ID can be a combination of');
+    FrmDlg.NAHelps.Add('Your ID can be a combination of');
+    FrmDlg.NAHelps.Add('it must be a minimum of 4 letters.');
+    FrmDlg.NAHelps.Add('Your ID is not your character');
+    FrmDlg.NAHelps.Add('name in the game, Choose your ID');
+    FrmDlg.NAHelps.Add('carefully, because it is essential');
+    FrmDlg.NAHelps.Add('to use all our services.');
     FrmDlg.NAHelps.Add('');
-    FrmDlg.NAHelps.Add('建议您的登陆帐号不要与游戏中的角');
-    FrmDlg.NAHelps.Add('色名相同，');
-    FrmDlg.NAHelps.Add('以确保你的密码不会被爆力破解。');
+    FrmDlg.NAHelps.Add('We suggest you use a different');
+    FrmDlg.NAHelps.Add('name from the one you would like');
+    FrmDlg.NAHelps.Add('to use for your character.');
   end;
   if Sender = m_EdNewPasswd then begin
-    FrmDlg.NAHelps.Add('您的密码可以是字符及数字的组合，');
-    FrmDlg.NAHelps.Add('但密码长度必须至少4位。');
-    FrmDlg.NAHelps.Add('建议您的密码内容不要过于简单，');
-    FrmDlg.NAHelps.Add('以防被人猜到。');
-    FrmDlg.NAHelps.Add('请记住您输入的密码，如果丢失密码');
-    FrmDlg.NAHelps.Add('将无法登录游戏。');
+    FrmDlg.NAHelps.Add('Your password can be a');
+    FrmDlg.NAHelps.Add('combination of characters');
+    FrmDlg.NAHelps.Add('and numbers and it must be a');
+    FrmDlg.NAHelps.Add('minimum of 4 letters.');
     FrmDlg.NAHelps.Add('');
+    FrmDlg.NAHelps.Add('Remember that your password is');
+    FrmDlg.NAHelps.Add('essential to play our game,');
+    FrmDlg.NAHelps.Add('so be sure to make a note of it.');
     FrmDlg.NAHelps.Add('');
-    FrmDlg.NAHelps.Add('');
-    FrmDlg.NAHelps.Add('');
-    FrmDlg.NAHelps.Add('');
+    FrmDlg.NAHelps.Add('We advise you to not use a simple password');
+    FrmDlg.NAHelps.Add('to avoid the risk of account hacking.');
   end;
   if Sender = m_EdConfirm then begin
-    FrmDlg.NAHelps.Add('再次输入密码');
-    FrmDlg.NAHelps.Add('以确认。');
+    FrmDlg.NAHelps.Add('Type password again');
+    FrmDlg.NAHelps.Add('for confirmation.');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdYourName then begin
-    FrmDlg.NAHelps.Add('请输入您的全名.');
+    FrmDlg.NAHelps.Add('Type your full name.');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdSSNo then begin
@@ -796,50 +795,57 @@ begin
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdBirthDay then begin
-    FrmDlg.NAHelps.Add('请输入您的生日');
-    FrmDlg.NAHelps.Add('例如：1977/10/15');
-    FrmDlg.NAHelps.Add('');
+    FrmDlg.NAHelps.Add('Please type your birth date, month,');
+    FrmDlg.NAHelps.Add('years. ex(1975/08/21)');
+    FrmDlg.NAHelps.Add('Year , Month and Day');
   end;
   if Sender = m_EdQuiz1 then begin
-    FrmDlg.NAHelps.Add('请输入第一个密码提示问题');
-    FrmDlg.NAHelps.Add('这个提示将用于密码丢失后找');
-    FrmDlg.NAHelps.Add('回密码用。');
+    FrmDlg.NAHelps.Add('Please type a question only');
+    FrmDlg.NAHelps.Add('you know the answer to.');
+    FrmDlg.NAHelps.Add('');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdAnswer1 then begin
-    FrmDlg.NAHelps.Add('请输入上面问题的');
-    FrmDlg.NAHelps.Add('答案。');
+    FrmDlg.NAHelps.Add('please type an answer to the');
+    FrmDlg.NAHelps.Add('above question.');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdQuiz2 then begin
-    FrmDlg.NAHelps.Add('请输入第二个密码提示问题');
-    FrmDlg.NAHelps.Add('这个提示将用于密码丢失后找');
-    FrmDlg.NAHelps.Add('回密码用。');
+    FrmDlg.NAHelps.Add('Please type a question only');
+    FrmDlg.NAHelps.Add('you know the answer to.');
+    FrmDlg.NAHelps.Add('');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdAnswer2 then begin
-    FrmDlg.NAHelps.Add('请输入上面问题的');
-    FrmDlg.NAHelps.Add('答案。');
+    FrmDlg.NAHelps.Add('please type an answer to the');
+    FrmDlg.NAHelps.Add('above question.');
     FrmDlg.NAHelps.Add('');
   end;
   if (Sender = m_EdYourName) or (Sender = m_EdQuiz1) or (Sender = m_EdQuiz2) or (Sender = m_EdAnswer1) or (Sender = m_EdAnswer2) then begin
-    FrmDlg.NAHelps.Add('您输入的信息必须真实正确的信息');
-    FrmDlg.NAHelps.Add('如果使用了虚假的注册信息');
-    FrmDlg.NAHelps.Add('您的帐号将被取消。');
+    FrmDlg.NAHelps.Add('You are solely responsible');
+    FrmDlg.NAHelps.Add('for the information you give us');
+    FrmDlg.NAHelps.Add('if you use false information,');
+    FrmDlg.NAHelps.Add('You will not be able to use');
+    FrmDlg.NAHelps.Add('all our services.');
+    FrmDlg.NAHelps.Add('Your account may be removed');
+    FrmDlg.NAHelps.Add('if you provide');
+    FrmDlg.NAHelps.Add('false information.');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdPhone then begin
-    FrmDlg.NAHelps.Add('请输入您的电话');
-    FrmDlg.NAHelps.Add('号码。');
+    FrmDlg.NAHelps.Add('Please type in your telephone');
+    FrmDlg.NAHelps.Add('number(compulsory).');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdMobPhone then begin
-    FrmDlg.NAHelps.Add('请输入您的手机号码。');
+    FrmDlg.NAHelps.Add('Your mobile telephone number');
     FrmDlg.NAHelps.Add('');
   end;
   if Sender = m_EdEMail then begin
-    FrmDlg.NAHelps.Add('请输入您的邮件地址。您的邮件将被');
-    FrmDlg.NAHelps.Add('接收最近更新的一些信息');
+    FrmDlg.NAHelps.Add('Please type your E-mail address.');
+    FrmDlg.NAHelps.Add('Your E-mail will be used to access');
+    FrmDlg.NAHelps.Add('some of our services. You can');
+    FrmDlg.NAHelps.Add('receive latest update information.');
     FrmDlg.NAHelps.Add('');
   end;
 end;
@@ -1038,7 +1044,7 @@ begin
   SafeFillChar(m_NewIdRetryAdd, SizeOf(TUserEntryAdd), #0);
   m_boUpdateAccountMode := True;
   NewIdRetry(True);
-  FrmDlg.NewAccountTitle := '(请填写帐号相关信息。)';
+  FrmDlg.NewAccountTitle := '(Please complete all the required fields of the account information)';
 end;
 
 procedure TLoginScene.OkClick;
@@ -1168,7 +1174,7 @@ begin
     frmMain.SendChgPw(uid, passwd, newpasswd);
     ChgpwCancel;
   end else begin
-    FrmDlg.DMessageDlg('二次输入的密码不匹配！！！。', [mbOk]);
+    FrmDlg.DMessageDlg('Password confirmation is not correct.', [mbOk]);
     m_EdChgNewPw.SetFocus;
   end;
 end;
@@ -1327,7 +1333,7 @@ begin
     end;
     g_sSelChrName := chrname;
     frmMain.SendSelChr(chrname);
-  end else FrmDlg.DMessageDlg('还没创建游戏角色！\点击创建角色按钮创建一个游戏角色。', [mbOk]);
+  end else FrmDlg.DMessageDlg('At first you should make new character.\If you select <NEW CHARACTER> you can make a new character.', [mbOk]);
 end;
 
 procedure TSelectChrScene.SelChrNewChrClick;
@@ -1337,7 +1343,7 @@ begin
     else MakeNewChar(1);
     FrmDlg.DFindChr.Visible := False;
   end else
-    FrmDlg.DMessageDlg('一个帐号最多只能创建二个游戏角色！', [mbOk]);
+    FrmDlg.DMessageDlg('You can have up to 2 characters per server for every single account.', [mbOk]);
 end;
 
 procedure TSelectChrScene.SelChrEraseChrClick;
@@ -1348,7 +1354,7 @@ begin
   if ChrArr[0].Valid and ChrArr[0].Selected then n := 0;
   if ChrArr[1].Valid and ChrArr[1].Selected then n := 1;
   if (ChrArr[n].Valid) and (not ChrArr[n].FreezeState) and (ChrArr[n].UserChr.Name <> '') then begin
-    if mrYes = FrmDlg.DMessageDlg('"' + ChrArr[n].UserChr.Name + '" 是否确认删除此游戏角色？', [mbYes, mbNo, mbCancel]) then
+    if mrYes = FrmDlg.DMessageDlg('"' + ChrArr[n].UserChr.Name + '" Are you sure you want to delete character?', [mbYes, mbNo, mbCancel]) then
       frmMain.SendDelChr(ChrArr[n].UserChr.Name);
   end;
 end;

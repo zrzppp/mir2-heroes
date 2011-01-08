@@ -2800,7 +2800,8 @@ var
   idx, ax, ay: Integer;
   d: TTexture;
 begin
-  if ((m_btWeapon - m_btSex = 38 * 2) or (m_btWeapon - m_btSex = 56 * 2)) and (m_WeaponGlimmerSurface <> nil) then begin
+//Weapon Glow
+  if ((m_btWeapon - m_btSex = 38 * 2) or (m_btWeapon - m_btSex = 56 * 2) or (m_btWeapon - m_btSex = 105 * 2) or (m_btWeapon - m_btSex = 106 * 2) or (m_btWeapon - m_btSex = 107 * 2)) and (m_WeaponGlimmerSurface <> nil) then begin
     DrawBlend(dsurface, ddx + m_nWGpx, ddy + m_nWGpy, m_WeaponGlimmerSurface); //武器发光效果
   end;
 end;
@@ -5365,11 +5366,18 @@ begin
       m_WeaponSurface := g_cboWeaponImages.GetCachedImage(2000 * m_btWeapon + m_nCurrentFrame, m_nWpx, m_nWpy);
       m_WeaponGlimmerSurface := nil;
     end else begin
+    //Weapon Glows
       m_WeaponSurface := GetWWeaponImg(m_btWeapon, m_btSex, m_nCurrentFrame, m_nWpx, m_nWpy);
       if (m_btWeapon - m_btSex = 38 * 2) then
         m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
       if (m_btWeapon - m_btSex = 56 * 2) then
         m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(1200 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
+      if (m_btWeapon - m_btSex = 105 * 2) then
+        m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(8400 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
+      if (m_btWeapon - m_btSex = 106 * 2) then
+        m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(9600 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
+      if (m_btWeapon - m_btSex = 107 * 2) then
+        m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(10800 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
     end;
 
     if m_WeaponSurface = nil then

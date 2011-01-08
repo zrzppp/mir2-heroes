@@ -6552,6 +6552,8 @@ begin
                 if d <> nil then
                   DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
               end else
+              //end;
+              //Weapon 56
                 if (g_UseItems[U_WEAPON].s.Shape = 56) and (Idx = 1880) then begin
                 if (g_dwWeapon56Index[0] < 1890) or (g_dwWeapon56Index[0] > 1899) then
                   g_dwWeapon56Index[0] := 1890;
@@ -6563,11 +6565,65 @@ begin
                   g_dwWeapon56Index[0] := 1890;
 
                 d := GetWStateImg(g_dwWeapon56Index[0], ax, ay);
+
                 if d <> nil then
                   DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+
+                end;
+               //Weapon 105
+                if (g_UseItems[U_WEAPON].s.Shape = 105) and (Idx = 2523) then begin
+                if (g_dwWeapon105Index[0] < 2530) or (g_dwWeapon105Index[0] > 2537) then
+                  g_dwWeapon105Index[0] := 2530;
+                if GetTickCount - g_dwWeapon105Tick[0] > 100 then begin
+                  g_dwWeapon105Tick[0] := GetTickCount;
+                  g_dwWeapon105Index[0] := g_dwWeapon105Index[0] + 1;
+                end;
+                if (g_dwWeapon105Index[0] < 2530) or (g_dwWeapon105Index[0] > 2537) then
+                  g_dwWeapon105Index[0] := 2530;
+
+                d := GetWStateImg(g_dwWeapon105Index[0], ax, ay);
+
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+               //end Weapon 105
+               end;
+               //Weapon 106
+                if (g_UseItems[U_WEAPON].s.Shape = 106) and (Idx = 2524) then begin
+                if (g_dwWeapon106Index[0] < 2550) or (g_dwWeapon106Index[0] > 2559) then
+                  g_dwWeapon106Index[0] := 2550;
+                if GetTickCount - g_dwWeapon106Tick[0] > 100 then begin
+                  g_dwWeapon106Tick[0] := GetTickCount;
+                  g_dwWeapon106Index[0] := g_dwWeapon106Index[0] + 1;
+                end;
+                if (g_dwWeapon106Index[0] < 2550) or (g_dwWeapon106Index[0] > 2559) then
+                  g_dwWeapon106Index[0] := 2550;
+
+                d := GetWStateImg(g_dwWeapon106Index[0], ax, ay);
+
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+               //end Weapon 106
+                end else
+               //Weapon 107
+                if (g_UseItems[U_WEAPON].s.Shape = 107) and (Idx = 2525) then begin
+                if (g_dwWeapon107Index[0] < 2560) or (g_dwWeapon107Index[0] > 2569) then
+                  g_dwWeapon107Index[0] := 2560;
+                if GetTickCount - g_dwWeapon107Tick[0] > 100 then begin
+                  g_dwWeapon107Tick[0] := GetTickCount;
+                  g_dwWeapon107Index[0] := g_dwWeapon107Index[0] + 1;
+                end;
+                if (g_dwWeapon107Index[0] < 2560) or (g_dwWeapon107Index[0] > 2569) then
+                  g_dwWeapon107Index[0] := 2560;
+
+                d := GetWStateImg(g_dwWeapon107Index[0], ax, ay);
+
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+               //end Weapon 107
               end;
             end;
           end;
+        //end;
           if g_UseItems[U_HELMET].s.Name <> '' then begin
             Idx := g_UseItems[U_HELMET].s.looks;
             if Idx >= 0 then begin

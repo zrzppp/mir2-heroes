@@ -1607,6 +1607,13 @@ var
 
   g_dwWeapon56Tick: array[0..2] of LongWord;
   g_dwWeapon56Index: array[0..2] of Integer;
+  //Weapon Glow State
+  g_dwWeapon105Tick: array[0..2] of LongWord;
+  g_dwWeapon105Index: array[0..2] of Integer;
+  g_dwWeapon106Tick: array[0..2] of LongWord;
+  g_dwWeapon106Index: array[0..2] of Integer;
+  g_dwWeapon107Tick: array[0..2] of LongWord;
+  g_dwWeapon107Index: array[0..2] of Integer;
 
   g_CartInfoList: TGList;
 

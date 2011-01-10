@@ -4907,20 +4907,40 @@ begin
         if ((m_nCurrentAction >= SM_100HIT) and (m_nCurrentAction <= SM_103HIT)) or ((m_nCurrentAction = SM_SPELL) and (m_CurMagic.EffectNumber in [104..111])) then begin
           m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
         end else begin
-          if m_btEffect >= 100 then begin
+          if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
             m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+            DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+         end else begin
+          if m_btEffect >= 150 then begin
+            m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+            DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
           end else begin
             m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+            DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
           end;
         end;
+      end;
       end else begin
         if ((m_nCurrentAction >= SM_100HIT) and (m_nCurrentAction <= SM_103HIT)) or ((m_nCurrentAction = SM_SPELL) and (m_CurMagic.EffectNumber in [104..111])) then begin
           m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
         end else begin
-          if m_btEffect >= 100 then begin
+           if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
             m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+           DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+          end else begin
+          if m_btEffect >= 150 then begin
+            m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+          DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
           end else begin
             m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+           DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+          end;
           end;
         end;
       end;
@@ -5333,20 +5353,40 @@ begin
           if (m_nCurrentAction >= SM_100HIT) and (m_nCurrentAction <= SM_103HIT) or ((m_nCurrentAction = SM_SPELL) and (m_CurMagic.EffectNumber in [104..111])) then begin
             m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
           end else begin
-            if m_btEffect >= 100 then begin
+            if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
               m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+              DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
             end else begin
+            if m_btEffect >= 150 then begin
+            m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+            DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+          end else begin
               m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+              DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
             end;
+          end;
           end;
         end else begin
           if (m_nCurrentAction >= SM_100HIT) and (m_nCurrentAction <= SM_103HIT) or ((m_nCurrentAction = SM_SPELL) and (m_CurMagic.EffectNumber in [104..111])) then begin
             m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
           end else begin
-            if m_btEffect >= 100 then begin
+             if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
               m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+              DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
             end else begin
+            if m_btEffect >= 150 then begin
+            m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+            DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+          end else begin
               m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+             DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+            end;
             end;
           end;
         end;

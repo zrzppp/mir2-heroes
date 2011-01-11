@@ -6537,6 +6537,30 @@ begin
               if d <> nil then
                 dsurface.Draw(SurfaceX(bbx + ax), SurfaceY(bby + ay), d.ClientRect, d, True);
             end;
+
+            //Load HumEffect image on state armour
+            if (g_UseItems[U_DRESS].s.AniCount = 113) and (Idx = 2540) then begin
+                d:= GetWStateImg(Idx + 1, ax, ay);
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+            end else
+            if (g_UseItems[U_DRESS].s.AniCount = 114) and (Idx = 2542) then begin
+                d:= GetWStateImg(Idx + 1, ax, ay);
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+            end;
+
+            if (g_UseItems[U_DRESS].s.AniCount = 109) and (Idx = 2420) then begin
+                d:= GetWStateImg(Idx + 5, ax, ay);
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+            end else
+            if (g_UseItems[U_DRESS].s.AniCount = 110) and (Idx = 2421) then begin
+                d:= GetWStateImg(Idx + 5, ax, ay);
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+            end;
+
           end;
           if g_UseItems[U_WEAPON].s.Name <> '' then begin
             Idx := g_UseItems[U_WEAPON].s.looks;
@@ -6549,6 +6573,12 @@ begin
               end;
               if (g_UseItems[U_WEAPON].s.Shape = 38) and (Idx = 1404) then begin
                 d := GetWStateImg(Idx - 1, ax, ay);
+                if d <> nil then
+                  DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
+              end else
+
+              if (g_UseItems[U_WEAPON].s.Shape = 103) and (Idx = 2423) then begin
+                d := GetWStateImg(Idx + 4, ax, ay);
                 if d <> nil then
                   DrawBlend(dsurface, SurfaceX(bbx + ax), SurfaceY(bby + ay), d);
               end else

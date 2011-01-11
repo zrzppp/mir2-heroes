@@ -2801,7 +2801,7 @@ var
   d: TTexture;
 begin
 //Weapon Glow
-  if ((m_btWeapon - m_btSex = 38 * 2) or (m_btWeapon - m_btSex = 56 * 2) or (m_btWeapon - m_btSex = 105 * 2) or (m_btWeapon - m_btSex = 106 * 2) or (m_btWeapon - m_btSex = 107 * 2)) and (m_WeaponGlimmerSurface <> nil) then begin
+  if ((m_btWeapon - m_btSex = 38 * 2) or (m_btWeapon - m_btSex = 56 * 2) or (m_btWeapon - m_btSex = 105 * 2) or (m_btWeapon - m_btSex = 106 * 2) or (m_btWeapon - m_btSex = 107 * 2) or (m_btWeapon - m_btSex = 103 * 2)) and (m_WeaponGlimmerSurface <> nil) then begin
     DrawBlend(dsurface, ddx + m_nWGpx, ddy + m_nWGpy, m_WeaponGlimmerSurface); //武器发光效果
   end;
 end;
@@ -4908,19 +4908,19 @@ begin
           m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
         end else begin
           if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
-            m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
-            DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+            m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+            //DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
          end else begin
-          if m_btEffect >= 150 then begin
+          {if m_btEffect >= 150 then begin
             m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
-            DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+            //DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+            end else begin  }
 
-          end else begin
             m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
-            DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+            //DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
-          end;
+          //end;
         end;
       end;
       end else begin
@@ -4928,19 +4928,19 @@ begin
           m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
         end else begin
            if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
-            m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
-           DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
-
-          end else begin
-          if m_btEffect >= 150 then begin
             m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
-          DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+           //DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
           end else begin
-            m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
-           DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+          {if m_btEffect >= 150 then begin
+            m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+          //DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+          end else begin  }
 
-          end;
+            m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+          // DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+
+          //end;
           end;
         end;
       end;
@@ -5354,19 +5354,19 @@ begin
             m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
           end else begin
             if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
-              m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
-              DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+              m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
+            //  DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
             end else begin
-            if m_btEffect >= 150 then begin
+            {if m_btEffect >= 150 then begin
             m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
-            DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+           // DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+          end else begin  }
 
-          end else begin
               m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + (m_btDir * 8) + m_nFrame, m_nSpx, m_nSpy);
-              DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+           //   DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
-            end;
+            //end;
           end;
           end;
         end else begin
@@ -5374,19 +5374,19 @@ begin
             m_HumWinSurface := g_cboHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
           end else begin
              if ((m_btEffect >= 100) and (m_btEffect <= 149)) then begin
-              m_HumWinSurface := g_WHum1WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
-              DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
+              m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
+            //  DScreen.AddChatBoardString ('HumEffect1: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
             end else begin
-            if m_btEffect >= 150 then begin
+            {if m_btEffect >= 150 then begin
             m_HumWinSurface := g_WHum2WingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
-            DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+          //  DScreen.AddChatBoardString ('HumEffect2: ' + IntToStr(m_btEffect), clBlue, clWhite);
+          end else begin  }
 
-          end else begin
               m_HumWinSurface := g_WHumWingImages.GetCachedImage(m_nHumWinOffset + m_nCurrentFrame, m_nSpx, m_nSpy);
-             DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
+         //    DScreen.AddChatBoardString ('HumEffect: ' + IntToStr(m_btEffect), clBlue, clWhite);
 
-            end;
+            //end;
             end;
           end;
         end;
@@ -5418,6 +5418,8 @@ begin
         m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(9600 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
       if (m_btWeapon - m_btSex = 107 * 2) then
         m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(10800 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
+      if (m_btWeapon - m_btSex = 103 * 2) then
+        m_WeaponGlimmerSurface := g_WHum2WingImages.GetCachedImage(6000 + HUMANFRAME * m_btSex + m_nCurrentFrame, m_nWGpx, m_nWGpy);
     end;
 
     if m_WeaponSurface = nil then

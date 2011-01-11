@@ -12199,23 +12199,23 @@ begin
   end;
 
   if Sender = DButFunc1 then begin
-    if DButFunc1.Downed then sMsg := '允许所有公聊信息' else sMsg := '拒绝所有公聊信息';
+    if DButFunc1.Downed then sMsg := 'Show Public Chat' else sMsg := 'Block Public Chat';
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   if Sender = DButFunc2 then begin
-    if DButFunc2.Downed then sMsg := '允许所有喊话信息' else sMsg := '拒绝所有喊话信息';
+    if DButFunc2.Downed then sMsg := 'Show System Messages' else sMsg := 'Block System Messages';
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   if Sender = DButFunc3 then begin
-    if DButFunc3.Downed then sMsg := '允许所有私聊信息' else sMsg := '拒绝所有私聊信息';
+    if DButFunc3.Downed then sMsg := 'Show Private Chat' else sMsg := 'Block Private Chat';
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   if Sender = DButFunc4 then begin
-    if DButFunc4.Downed then sMsg := '允许行会聊天信息' else sMsg := '拒绝行会聊天信息';
+    if DButFunc4.Downed then sMsg := 'Show Guild Chat' else sMsg := 'Block Guild Chat';
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   if Sender = DButFunc5 then begin
-    sMsg := 'ChatButFunc5';
+    sMsg := 'Allow Shout';
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   {nLocalX := Butt.LocalX(X - Butt.Left);
@@ -12728,32 +12728,32 @@ begin
     if Sender = DButFunc3 then begin
     g_boShowWhisperMsg := not DButFunc3.Downed;
     if g_boShowWhisperMsg then begin
-      sMsg := '允许接受私聊信息';
+      sMsg := 'Show Private Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
     end else begin
-      sMsg := '拒绝接受私聊信息';
+      sMsg := 'Hide Private Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
     end;
   end else
     if Sender = DButFunc4 then begin
     g_boShowGuildMsg := not DButFunc4.Downed;
     if g_boShowGuildMsg then begin
-      sMsg := '允许接受行会喊话信息';
+      sMsg := 'Show Guild Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
     end else begin
-      sMsg := '拒绝接受行会喊话信息';
+      sMsg := 'Hide Guild Chat';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
     end;
   end else
     if Sender = DButFunc5 then begin
     g_boAutoShowHearMsg := not DButFunc5.Downed;
     if g_boAutoShowHearMsg then begin
-      sMsg := '启用了自动喊话功能，聊天框中内容已记录为喊话内容';
+      sMsg := 'Auto Shout is enabled';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
       g_dwAutoShowMsgTick := GetTickCount;
       g_sAutoShowMsg := EdChat.Text;
     end else begin
-      sMsg := '自动喊话功能已关闭';
+      sMsg := 'Auto Shout is disabled';
       DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
     end;
   end;
@@ -14861,12 +14861,12 @@ var
 begin
   if (g_MouseSellItems.sCharName <> '') and (g_MouseSellItems.SellItem.s.Name <> '') then begin
     if g_nSellItemType = 6 then begin
-      sHintString := '你是否要取回 ' + g_MouseSellItems.SellItem.s.Name + ' ?';
+      sHintString := 'Do you want to get back ' + g_MouseSellItems.SellItem.s.Name + '?';
     end else
       if g_nSellItemType = 7 then begin
-      sHintString := '你是否要取回 ' + g_MouseSellItems.SellItem.s.Name + ' 的寄售款？';
+      sHintString := 'Do you want to get back ' + g_MouseSellItems.SellItem.s.Name + ' from Consignment?';
     end else begin
-      sHintString := '你是否确认购买 ' + g_MouseSellItems.SellItem.s.Name + ' ?';
+      sHintString := 'Are you sure you want to buy ' + g_MouseSellItems.SellItem.s.Name + '?';
     end;
     if mrOk = FrmDlg.DMessageDlg(sHintString, [mbOk, mbCancel]) then begin
       if g_nSellItemType = 7 then begin
@@ -15644,7 +15644,7 @@ var
 begin
   nHintX := DOpenUpgrade.SurfaceX(DOpenUpgrade.Left);
   nHintY := DOpenUpgrade.SurfaceY(DOpenUpgrade.Top);
-  DScreen.ShowHint(nHintX, nHintY, '装备升级', clWhite, True);
+  DScreen.ShowHint(nHintX, nHintY, 'Upgrade', clWhite, True);
 end;
 
 procedure TFrmDlg.DStartUpgradeClick(Sender: TObject; X, Y: Integer);
@@ -15679,7 +15679,7 @@ var
 begin
   nHintX := DStartUpgrade.SurfaceX(DStartUpgrade.Left);
   nHintY := DStartUpgrade.SurfaceY(DStartUpgrade.Top);
-  DScreen.ShowHint(nHintX, nHintY, '开始升级装备', clWhite, True);
+  DScreen.ShowHint(nHintX, nHintY, 'Start Upgrade', clWhite, True);
 end;
 
 procedure TFrmDlg.DButtonDuelClick(Sender: TObject; X, Y: Integer);

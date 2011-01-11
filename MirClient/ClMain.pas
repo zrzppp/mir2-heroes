@@ -2037,7 +2037,7 @@ end;
 
 procedure TfrmMain.AppLogout;
 begin
-  if mrOk = FrmDlg.DMessageDlg('你是否退出 ?', [mbOk, mbCancel]) then begin
+  if mrOk = FrmDlg.DMessageDlg('Are you sure you want to log-out?', [mbOk, mbCancel]) then begin
     DScreen.ClearHint;
     Logout;
   end;
@@ -2045,7 +2045,7 @@ end;
 
 procedure TfrmMain.AppExit;
 begin
-  if mrOk = FrmDlg.DMessageDlg('你真的要退出游戏吗?', [mbOk, mbCancel]) then begin
+  if mrOk = FrmDlg.DMessageDlg('Are you sure you want to exit the game?', [mbOk, mbCancel]) then begin
     if g_boBagLoaded then
       Savebags('.\Data\' + g_sServerName + '.' + g_sSelChrName + '.itm', @g_ItemArr);
     g_boBagLoaded := False;
@@ -3195,7 +3195,7 @@ begin
         end;
       end;
     end;
-  end else DScreen.AddSysMsg('魔法值不够....', 30, 40, clAqua);
+  end else DScreen.AddSysMsg('Not enough MP....', 30, 40, clAqua);
 end;
 
 procedure TfrmMain.UseMagicSpell(who, effnum, targetx, targety, magic_id: Integer);
@@ -3432,19 +3432,19 @@ begin
       g_ItemArr[idx].S.Name := '';
       if (g_ItemArr[idx].S.StdMode = 4) and (g_ItemArr[idx].S.Shape < 100) then begin
         if g_ItemArr[idx].S.Shape < 50 then begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_EatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Would you like to learn ' + g_EatingItem.S.Name + '?', [mbYes, mbNo]) then begin
             g_ItemArr[idx] := g_EatingItem;
             Exit;
           end;
         end else begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_EatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Will you use' + g_EatingItem.S.Name + '?', [mbYes, mbNo]) then begin
             g_ItemArr[idx] := g_EatingItem;
             Exit;
           end;
         end;
       end;
       if (g_ItemArr[idx].S.StdMode = 49) {and (g_ItemArr[idx].Dura >= g_ItemArr[idx].DuraMax)} then begin
-        if mrYes <> FrmDlg.DMessageDlg('是否释放' + g_EatingItem.S.Name + '的经验?', [mbYes, mbNo]) then begin
+        if mrYes <> FrmDlg.DMessageDlg('Will you release ' + g_EatingItem.S.Name + ' experience?', [mbYes, mbNo]) then begin
           g_ItemArr[idx] := g_EatingItem;
           Exit;
         end;
@@ -3461,12 +3461,12 @@ begin
       g_MovingItem.Item.S.Name := '';
       if (g_EatingItem.S.StdMode = 4) and (g_EatingItem.S.Shape < 100) then begin
         if g_EatingItem.S.Shape < 50 then begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_EatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Would you like to learn "' + g_EatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
             AddItemBag(g_EatingItem);
             Exit;
           end;
         end else begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_EatingItem.S.Name + '"?', [mbYes, mbNo]) then
+          if mrYes <> FrmDlg.DMessageDlg('Would you like to learn "' + g_EatingItem.S.Name + '"?', [mbYes, mbNo]) then
           begin
             AddItemBag(g_EatingItem);
             Exit;
@@ -3474,7 +3474,7 @@ begin
         end;
       end;
       if (g_ItemArr[idx].S.StdMode = 49) {and (g_ItemArr[idx].Dura >= g_ItemArr[idx].DuraMax)} then begin
-        if mrYes <> FrmDlg.DMessageDlg('是否释放' + g_EatingItem.S.Name + '的经验?', [mbYes, mbNo]) then begin
+        if mrYes <> FrmDlg.DMessageDlg('Will you release ' + g_EatingItem.S.Name + ' experience?', [mbYes, mbNo]) then begin
           g_ItemArr[idx] := g_EatingItem;
           Exit;
         end;
@@ -3500,12 +3500,12 @@ begin
       g_HeroItemArr[idx].S.Name := '';
       if (g_HeroEatingItem.S.StdMode = 4) and (g_HeroEatingItem.S.Shape < 100) then begin
         if g_HeroEatingItem.S.Shape < 50 then begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Would you like your Hero to learn "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
             g_HeroItemArr[idx] := g_HeroEatingItem;
             Exit;
           end;
         end else begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Would you like your Hero to learn  "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
             g_HeroItemArr[idx] := g_HeroEatingItem;
             Exit;
           end;
@@ -3525,12 +3525,12 @@ begin
       g_MovingItem.Item.S.Name := '';
       if (g_HeroEatingItem.S.StdMode = 4) and (g_HeroEatingItem.S.Shape < 100) then begin
         if g_HeroEatingItem.S.Shape < 50 then begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Would you like your Hero to learn "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
             AddHeroItemBag(g_HeroEatingItem);
             Exit;
           end;
         end else begin
-          if mrYes <> FrmDlg.DMessageDlg('是否确认开始练习 "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
+          if mrYes <> FrmDlg.DMessageDlg('Would you like your Hero to learn "' + g_HeroEatingItem.S.Name + '"?', [mbYes, mbNo]) then begin
             AddHeroItemBag(g_HeroEatingItem);
             Exit;
           end;
@@ -5283,7 +5283,7 @@ begin
   g_boServerConnected := False;
   if (g_ConnectionStep in [cnsStart, cnsLogin]) and (not g_boSendLogin) then begin
     if not g_boShowVersionBmp then begin
-      FrmDlg.DMessageDlg('连接已经关闭...', [mbOk]);
+      FrmDlg.DMessageDlg('Connection Closed...', [mbOk]);
       Close;
     end;
   end;
@@ -5867,8 +5867,8 @@ begin
   if Length(rstr) >= 2 then begin
     if (rstr[1] = '@') and (rstr[2] = '@') then begin
       if rstr = '@@buildguildnow' then
-        FrmDlg.DMessageDlg('请输入行会名称.', [mbOk, mbAbort])
-      else FrmDlg.DMessageDlg('输入信息.', [mbOk, mbAbort]);
+        FrmDlg.DMessageDlg ('Please type the name for your new Guild.', [mbOk, mbAbort])
+         else FrmDlg.DMessageDlg ('Please input.', [mbOk, mbAbort]);
       param := Trim(FrmDlg.DlgEditText);
       rstr := rstr + #13 + param;
     end;
@@ -6468,7 +6468,7 @@ begin
           HTTPGetCheckPro.GetString;
         end;
       end else begin
-        FrmDlg.DMessageDlg('连接已经关闭...', [mbOk]);
+        FrmDlg.DMessageDlg('Connection Closed...', [mbOk]);
         Close;
       end;
     end;
@@ -6549,13 +6549,15 @@ procedure TfrmMain.ClientNewIDFail(nFailCode: Integer);
 begin
   case nFailCode of
     0: begin
-        FrmDlg.DMessageDlg('帐号 "' + MakeNewId + '" 已被其他的玩家使用了。\请选择其它帐号名注册。', [mbOk]);
+        FrmDlg.DMessageDlg ('"' + MakeNewId + '" is already used by another player.\' +
+                                            'Please use a different name.',
+                                            [mbOK]);
         LoginScene.NewIdRetry(False);
       end;
-    1: FrmDlg.DMessageDlg('验证码输入错误，请重新输入！！！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('此帐号名被禁止使用！', [mbOk]);
+    1: FrmDlg.DMessageDlg('Verfication Code error. Please re-enter the code!', [mbOk]);
+    -2: FrmDlg.DMessageDlg('Account name has been banned', [mbOk]);
   else begin
-      FrmDlg.DMessageDlg('帐号创建失败，请确认帐号是否包括空格、及非法字符！Code: ' + IntToStr(nFailCode), [mbOk]);
+      FrmDlg.DMessageDlg('ID creation Faliled. Please check it does not contain space,\ special characters, or an illegible letter. Code: ' + IntToStr(nFailCode), [mbOk]);
     end;
   end;
   LoginScene.ShowLoginBox;
@@ -6565,10 +6567,10 @@ procedure TfrmMain.ClientLoginFail(nFailCode: Integer);
 begin
   case nFailCode of
     -1: FrmDlg.DMessageDlg('Wrong Password.\Please try again, if you have forgotten your password, \contact the support team.', [mbOk]);
-    -2: FrmDlg.DMessageDlg('密码输入错误超过3次，此帐号被暂时锁定，请稍候再登录！ Error 2', [mbOk]);
-    -3: FrmDlg.DMessageDlg('此帐号已经登录或被异常锁定，请稍候再登录！ Error 3', [mbOk]);
-    -4: FrmDlg.DMessageDlg('这个帐号访问失败！\请使用其他帐号登录，\或者申请付费注册。 Error 4', [mbOk]);
-    -5: FrmDlg.DMessageDlg('这个帐号被锁定！ Error 5', [mbOk]);
+    -2: FrmDlg.DMessageDlg('Wrong Password 3 times in a row.\You will not be able to connect for a while.', [mbOK]);
+    -3: FrmDlg.DMessageDlg('This account is actually in use or locked by abnormal termination.\Please try again later.', [mbOK]);
+    -4: FrmDlg.DMessageDlg('This account has no access rights.\please change account,\or apply for paid registration.', [mbOK]);
+    -5: FrmDlg.DMessageDlg('Your account has expired or it may have been suspended', [mbOK]);
   else FrmDlg.DMessageDlg('Account does not exist.\Please check your account name and try again.', [mbOk]);
   end;
   LoginScene.PassWdFail;
@@ -6576,16 +6578,16 @@ end;
 
 procedure TfrmMain.ClientUpdateAccountSuccess();
 begin
-  FrmDlg.DMessageDlg('您的帐号信息更新成功。\' +
-    '请妥善保管您的帐号和密码。\' +
-    '并且不要因任何原因把帐号和密码告诉任何其他人。\' +
-    '如果忘记了密码，你可以通过我们的主页重新找回。', [mbOk]);
+  FrmDlg.DMessageDlg ('Your account is now updated.\' +
+  'Please store your account and password in a safe place\' +
+  'and do not reveal them to anyone for any reason.\' +
+  'If you forget your password, you can retrieve it through our home page.\(http://www.rodmir.net)', [mbOk]);
   ClientGetSelectServer;
 end;
 
 procedure TfrmMain.ClientUpdateAccountFail();
 begin
-  FrmDlg.DMessageDlg('更新帐号失败..', [mbOk]);
+  FrmDlg.DMessageDlg('Updating account failed.', [mbOk]);
   ClientGetSelectServer;
 end;
 
@@ -6594,43 +6596,43 @@ begin
   g_boDoFastFadeOut := False;
   g_boDoFadeIn := False;
   g_boDoFadeOut := False;
-  FrmDlg.DMessageDlg('服务器认证失败..', [mbOk]);
+  FrmDlg.DMessageDlg('Fatal error! Server verification failed.', [mbOk]);
   Close;
 end;
 
 procedure TfrmMain.ClientNewChrFail(nFailCode: Integer);
 begin
   case nFailCode of
-    0: FrmDlg.DMessageDlg('[错误信息] 输入的角色名称包含非法字符！ 错误代码 = 0', [mbOk]);
-    2: FrmDlg.DMessageDlg('[错误信息] 创建角色名称已被其他人使用！ 错误代码 = 2', [mbOk]);
-    3: FrmDlg.DMessageDlg('[错误信息] 您只能创建二个游戏角色！ 错误代码 = 3', [mbOk]);
-    4: FrmDlg.DMessageDlg('[错误信息] 创建角色时出现错误！ 错误代码 = 4', [mbOk]);
-  else FrmDlg.DMessageDlg('[错误信息] 创建角色时出现未知错误！', [mbOk]);
+    0: FrmDlg.DMessageDlg('[Failure] Character name contains illegal letters. Code = 0', [mbOk]);
+    2: FrmDlg.DMessageDlg ('[Failure] This name already exists', [mbOk]);
+    3: FrmDlg.DMessageDlg ('[Failure] You cannot make two characters on one account. \Please contact the Game Master.', [mbOk]);
+    4: FrmDlg.DMessageDlg ('[Failure] Character creating failure. Error=4', [mbOk]);
+    else FrmDlg.DMessageDlg ('[Failure] Unknown error. Please contact hompage.', [mbOk]);
   end;
 end;
 
 procedure TfrmMain.ClientChgPasswdSuccess();
 begin
-  FrmDlg.DMessageDlg('密码修改成功.', [mbOk]);
+  FrmDlg.DMessageDlg('Password has been successfully changed  j.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientChgPasswdFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('输入的原始密码不正确！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('此帐号被锁定！', [mbOk]);
-  else FrmDlg.DMessageDlg('输入的新密码长度小于四位！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('Wrong password. Password cannot be changed.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('Account is locked. Try again in a while. (5 minutes).', [mbOk]);
+    else FrmDlg.DMessageDlg ('Password is less than four digits, you cannot change it.', [mbOk]);
+    end;
 end;
 
 procedure TfrmMain.ClientDelChrFail(nFailCode: Integer);
 begin
-  FrmDlg.DMessageDlg('[错误信息] 删除游戏角色时出现错误！', [mbOk]);
+  FrmDlg.DMessageDlg('[Failure] Failed to delete Character', [mbOk]);
 end;
 
 procedure TfrmMain.ClientStartPlayFail();
 begin
-  FrmDlg.DMessageDlg('此服务器满员！', [mbOk]);
+  FrmDlg.DMessageDlg('Server if full. Please try again', [mbOk]);
   ClientGetSelectServer();
 end;
 
@@ -7084,7 +7086,7 @@ begin
   g_boDoFastFadeOut := False;
   g_boDoFadeIn := False;
   g_boDoFadeOut := False;
-  FrmDlg.DMessageDlg('服务器连接被强行中断。\连接时间可能超过限制。', [mbOk]);
+  FrmDlg.DMessageDlg('Server connection has been terminated.\Connection time limit has been reached', [mbOk]);
   Close;
 end;
 
@@ -8023,7 +8025,7 @@ begin
     AddItemBag(g_SellDlgItemSellWait);
   end;
   g_SellDlgItemSellWait.S.Name := '';
-  FrmDlg.DMessageDlg('您不能卖此物品.', [mbOk]);
+  FrmDlg.DMessageDlg('You cannot sell this item.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientObjRepairCost(nGold: Integer);
@@ -8054,7 +8056,7 @@ begin
     AddItemBag(g_SellDlgItemSellWait);
   end;
   g_SellDlgItemSellWait.S.Name := '';
-  FrmDlg.DMessageDlg('您不能修理此物品.', [mbOk]);
+  FrmDlg.DMessageDlg('You cannot repair this item.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientObjStorageOK(DefMsg: pTDefaultMessage);
@@ -8062,9 +8064,9 @@ begin
   FrmDlg.LastestClickTime := GetTickCount;
   if DefMsg.ident <> SM_STORAGE_OK then begin
     if DefMsg.ident = SM_STORAGE_FULL then begin
-      FrmDlg.DMessageDlg('您的个人仓库已经满了，不能再保管任何东西了.', [mbOk]);
-    end else begin
-      FrmDlg.DMessageDlg('您不能寄存物品.', [mbOk]);
+      FrmDlg.DMessageDlg ('Your personal warehouse is full. You cannot store any more.', [mbOk]);
+      end else begin
+      FrmDlg.DMessageDlg ('You cant carry any more.', [mbOk]);
     end;
     if g_SellDlgItemSellWait.S.Name <> '' then begin
       AddItemBag(g_SellDlgItemSellWait);
@@ -8078,9 +8080,9 @@ begin
   FrmDlg.LastestClickTime := GetTickCount;
   if DefMsg.ident <> SM_TAKEBACKSTORAGEITEM_OK then begin
     if DefMsg.ident = SM_TAKEBACKSTORAGEITEM_FULLBAG then begin
-      FrmDlg.DMessageDlg('您无法携带更多物品了.', [mbOk]);
+      FrmDlg.DMessageDlg ('You cannot carry any more.', [mbOk])
     end else begin
-      FrmDlg.DMessageDlg('您无法取回物品.', [mbOk]);
+      FrmDlg.DMessageDlg ('You cannot get back.', [mbOk]);
     end;
   end else begin
     FrmDlg.DelStorageItem(DefMsg.Recog);
@@ -8098,27 +8100,27 @@ procedure TfrmMain.ClientObjBuyItemFail(nFailCode: Integer);
 begin
   FrmDlg.LastestClickTime := GetTickCount;
   case nFailCode of
-    1: FrmDlg.DMessageDlg('此物品被卖出.', [mbOk]);
-    2: FrmDlg.DMessageDlg('您无法携带更多物品了.', [mbOk]);
-    3: FrmDlg.DMessageDlg('您没有足够的钱来购买此物品.', [mbOk]);
-  end;
+    1: FrmDlg.DMessageDlg ('Item is sold out.', [mbOk]);
+    2: FrmDlg.DMessageDlg ('No more items can be carried.', [mbOk]);
+    3: FrmDlg.DMessageDlg ('You have not enough Gold to purchase item.', [mbOk]);
+    end;
 end;
 
 procedure TfrmMain.ClientObjMakeDrugOK(nGold: Integer);
 begin
   FrmDlg.LastestClickTime := GetTickCount;
   g_MySelf.m_nGold := nGold;
-  FrmDlg.DMessageDlg('物品成功打造', [mbOk]);
+  FrmDlg.DMessageDlg('Item has been created correctly.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientObjMakeDrugFail(nFailCode: Integer);
 begin
   FrmDlg.LastestClickTime := GetTickCount;
   case nFailCode of
-    1: FrmDlg.DMessageDlg('坷幅啊 惯积沁嚼聪促.', [mbOk]);
-    2: FrmDlg.DMessageDlg('发生了错误', [mbOk]);
-    3: FrmDlg.DMessageDlg(g_sGoldName {'金币'} + '不足.', [mbOk]);
-    4: FrmDlg.DMessageDlg('你缺乏所必需的物品。', [mbOk]);
+    1: FrmDlg.DMessageDlg ('An error occurred.', [mbOk]);
+    2: FrmDlg.DMessageDlg ('No more items can be carried.', [mbOk]);
+    3: FrmDlg.DMessageDlg (g_sGoldName + 'required.', [mbOk]);
+    4: FrmDlg.DMessageDlg ('You lack necessary items.', [mbOk]);
   end;
 end;
 
@@ -8141,45 +8143,45 @@ procedure TfrmMain.ClientObjCreateGroupFail(nFailCode: Integer);
 begin
   g_dwChangeGroupModeTick := GetTickCount;
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('编组还未成立或者你还不够等级创建！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('输入的人物名称不正确！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('您想邀请加入编组的人已经加入了其它组！', [mbOk]);
-    -4: FrmDlg.DMessageDlg('对方不允许编组！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('Already added in group.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('The name to be added in group is not correct.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('The user you want to invite in group is already in another group.', [mbOk]);
+    -4: FrmDlg.DMessageDlg ('The opponent is not on Allow Group.', [mbOk]);
+    end;
 end;
 
 procedure TfrmMain.ClientObjGroupAddManFail(nFailCode: Integer);
 begin
   g_dwChangeGroupModeTick := GetTickCount;
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('编组还未成立或者你还不够等级创建！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('输入的人物名称不正确！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('已经加入编组！', [mbOk]);
-    -4: FrmDlg.DMessageDlg('对方不允许编组！', [mbOk]);
-    -5: FrmDlg.DMessageDlg('您想邀请加入编组的人已经加入了其它组！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('Group is not organized yet or you have no access.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('Already joined a Group.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('Members limit already reached.', [mbOk]);
+    -4: FrmDlg.DMessageDlg ('You are not in a Group yet.', [mbOk]);
+    -5: FrmDlg.DMessageDlg ('You wanted to invite the human who joined grouping already to join other groups!', [mbOk]);
+    end;
 end;
 
 procedure TfrmMain.ClientObjGroupDelManFail(nFailCode: Integer);
 begin
   g_dwChangeGroupModeTick := GetTickCount;
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('编组还未成立或者您还不够等级创建。', [mbOk]);
-    -2: FrmDlg.DMessageDlg('输入的人物名称不正确！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('此人不在本组中！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('Group is not organized yet or you have no access.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('The name to be added in group is not correct.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('You are not in a Group yet.', [mbOk]);
+    end;
 end;
 
 procedure TfrmMain.ClientObjOpenGuildDlgFail();
 begin
   g_dwQueryMsgTick := GetTickCount;
-  FrmDlg.DMessageDlg('您还没有加入行会！', [mbOk]);
+  FrmDlg.DMessageDlg ('You are not in a Guild yet.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientObjDealtryFail();
 begin
   g_dwQueryMsgTick := GetTickCount;
-  FrmDlg.DMessageDlg('只有二人面对面才能进行交易。', [mbOk]);
+  FrmDlg.DMessageDlg ('Deal was cancelled .\To deal correctly you must face the other party.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientObjDealMenu(sData: string);
@@ -8260,70 +8262,70 @@ end;
 procedure TfrmMain.ClientObjGuildAddMemberFail(nFailCode: Integer);
 begin
   case nFailCode of
-    1: FrmDlg.DMessageDlg('你没有权利使用这个命令。', [mbOk]);
-    2: FrmDlg.DMessageDlg('想加入进来的成员应该来面对掌门人。', [mbOk]);
-    3: FrmDlg.DMessageDlg('对方已经加入我们的行会。', [mbOk]);
-    4: FrmDlg.DMessageDlg('对方已经加入其他行会。', [mbOk]);
-    5: FrmDlg.DMessageDlg('对方不允许加入行会。', [mbOk]);
-  end;
+    1: FrmDlg.DMessageDlg('You must be Guild leader to add members.', [mbOk]);
+    2: FrmDlg.DMessageDlg('Members who want to enter should face you.', [mbOk]);
+    3: FrmDlg.DMessageDlg('This person already joined your Guild.', [mbOk]);
+    4: FrmDlg.DMessageDlg('This person is already in a Guild.', [mbOk]);
+    5: FrmDlg.DMessageDlg('Opponent is not allowed to enter the Guild.', [mbOk]);
+    end;
 end;
 
 procedure TfrmMain.ClientObjGuildDelMemberFail(nFailCode: Integer);
 begin
   case nFailCode of
-    1: FrmDlg.DMessageDlg('不能使用命令！', [mbOk]);
-    2: FrmDlg.DMessageDlg('此人非本行会成员！', [mbOk]);
-    3: FrmDlg.DMessageDlg('行会掌门人不能开除自己！', [mbOk]);
-    4: FrmDlg.DMessageDlg('不能使用命令Z！', [mbOk]);
+    1: FrmDlg.DMessageDlg ('Only Guild leaders can remove members.', [mbOk]);
+    2: FrmDlg.DMessageDlg ('This person is not a member', [mbOk]);
+    3: FrmDlg.DMessageDlg ('Guild chief cannot withdraw himself.', [mbOk]);
+    4: FrmDlg.DMessageDlg ('This person is not a member', [mbOk]);
   end;
 end;
 
 procedure TfrmMain.ClientObjGuildRankUpdateFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -2: FrmDlg.DMessageDlg('[提示信息] 掌门人位置不能为空。', [mbOk]);
-    -3: FrmDlg.DMessageDlg('[提示信息] 新的行会掌门人已经被传位。', [mbOk]);
-    -4: FrmDlg.DMessageDlg('[提示信息] 一个行会最多只能有二个掌门人。', [mbOk]);
-    -5: FrmDlg.DMessageDlg('[提示信息] 掌门人位置不能为空。', [mbOk]);
-    -6: FrmDlg.DMessageDlg('[提示信息] 不能添加成员/删除成员。', [mbOk]);
-    -7: FrmDlg.DMessageDlg('[提示信息] 职位重复或者出错。', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('[ChangeError] Chief place is empty.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('[ChangeError] Position of chief is empty.', [mbOk]);
+    -4: FrmDlg.DMessageDlg ('[ChangeError] Guild chief cannot be more than 2 people.', [mbOk]);
+    -5: FrmDlg.DMessageDlg ('[ChangeError] New Guild chief has to be connected.', [mbOk]);
+    -6: FrmDlg.DMessageDlg ('[ChangeError] Cannot AddMember/DelMember.', [mbOk]);
+    -7: FrmDlg.DMessageDlg ('[ChangeError] Between 0 and 99', [mbOk]);
   end;
 end;
 
 procedure TfrmMain.ClientObjGuildMakeAllyFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('您无此权限！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('结盟失败！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('行会结盟必须双方掌门人面对面！', [mbOk]);
-    -4: FrmDlg.DMessageDlg('对方行会掌门人不允许结盟！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('You need to face the other guild leader.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('Failure in alliance.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('You should face with Guild chief with whom you want to ally.', [mbOk]);
+    -4: FrmDlg.DMessageDlg ('Other Guild chief do not allow alliance.', [mbOk]);
+   end;
 end;
 
 procedure TfrmMain.ClientObjGuildBreakAllyFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('解除结盟！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('此行会不是您行会的结盟行会！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('没有此行会！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('You have no access.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('You are not in alliance with that Guild.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('This is not an existing Guild.', [mbOk]);
+   end;
 end;
 
 procedure TfrmMain.ClientObjBuildGuildOK();
 begin
   FrmDlg.LastestClickTime := GetTickCount;
-  FrmDlg.DMessageDlg('行会建立成功。', [mbOk]);
+  FrmDlg.DMessageDlg('Guild created sucessfully.', [mbOk]);
 end;
 
 procedure TfrmMain.ClientObjBuildGuildFail(nFailCode: Integer);
 begin
   FrmDlg.LastestClickTime := GetTickCount;
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('您已经加入其它行会。', [mbOk]);
-    -2: FrmDlg.DMessageDlg('缺少创建费用。', [mbOk]);
-    -3: FrmDlg.DMessageDlg('你没有准备好需要的全部物品。', [mbOk]);
-  else FrmDlg.DMessageDlg('创建行会失败！！！', [mbOk]);
-  end;
+    -1: FrmDlg.DMessageDlg ('already joined Guild.', [mbOk]);
+    -2: FrmDlg.DMessageDlg ('You don''t have the required registration fee.', [mbOk]);
+    -3: FrmDlg.DMessageDlg ('You don''t have the required item of registration.', [mbOk]);
+    else FrmDlg.DMessageDlg('Name must between 1 to 16 characters', [mbOk]);
+   end;
 end;
 
 procedure TfrmMain.ClientObjMenuOK(sData: string);
@@ -8369,20 +8371,20 @@ end;
 procedure TfrmMain.ClientObjBuyShopItemFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('[失败]你的' + g_sGameGoldName + '不足！！！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('[失败]你包裹已满！！！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('[失败]你购买的物品不存在！！！', [mbOk]);
-  else FrmDlg.DMessageDlg('[失败]未知错误！！！', [mbOk]);
+    -1: FrmDlg.DMessageDlg('[Error]Not enough ' + g_sGameGoldName, [mbOk]);
+    -2: FrmDlg.DMessageDlg('[Error]Your bag is full', [mbOk]);
+    -3: FrmDlg.DMessageDlg('[Error]Item does not exist', [mbOk]);
+  else FrmDlg.DMessageDlg('[Error]Unknown error', [mbOk]);
   end;
 end;
 
 procedure TfrmMain.ClientObjBuySellOffItemFail(nFailCode: Integer);
 begin
   case nFailCode of
-    1: FrmDlg.DMessageDlg('[失败]你购买的物品不存在！！！', [mbOk]);
-    2: FrmDlg.DMessageDlg('[失败]你包裹已满！！！', [mbOk]);
-    3: FrmDlg.DMessageDlg('[失败]你的' + g_sGameGoldName + '不足！！！', [mbOk]);
-  else FrmDlg.DMessageDlg('[失败]未知错误！！！', [mbOk]);
+    1: FrmDlg.DMessageDlg('[Error]Your Item does not exist', [mbOk]);
+    2: FrmDlg.DMessageDlg('[Error]Your bag is full', [mbOk]);
+    3: FrmDlg.DMessageDlg('[Error]Not enough ' + g_sGameGoldName, [mbOk]);
+  else FrmDlg.DMessageDlg('[Error]Unknown error', [mbOk]);
   end;
 end;
 
@@ -8398,9 +8400,9 @@ begin
   AddItemBag(g_SellDlgItemSellWait);
   g_SellDlgItemSellWait.S.Name := '';
   case nFailCode of
-    -1, -4: FrmDlg.DMessageDlg('[失败]此物品不允许寄售！！！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('[失败]你寄售的物品已经超过最大限制！！！', [mbOk]);
-  else FrmDlg.DMessageDlg('[失败]未知错误！！！', [mbOk]);
+    -1, -4: FrmDlg.DMessageDlg('This item cannot be consigned', [mbOk]);
+    -3: FrmDlg.DMessageDlg('You have reached the maximum number of Consigned items', [mbOk]);
+  else FrmDlg.DMessageDlg('Unknown error', [mbOk]);
   end;
 end;
 
@@ -8679,7 +8681,7 @@ end;
 
 procedure TfrmMain.ClientGetDelChrFail(nFailError: Integer);
 begin
-  FrmDlg.DMessageDlg('[失败] 你最多只能为一个账号设置2个角色。', [mbOk]);
+  FrmDlg.DMessageDlg('You can only have two characters', [mbOk]);
 end;
 
 procedure TfrmMain.ClientGetDelChrOK(sData: string);
@@ -8771,10 +8773,10 @@ procedure TfrmMain.ClientObjDueltryFail(nFailCode: Integer);
 begin
   g_dwQueryMsgTick := GetTickCount;
   case nFailCode of
-    0: FrmDlg.DMessageDlg('只有二人面对面才能申请挑战。', [mbOk]);
-    -1: FrmDlg.DMessageDlg('你们的挑战还没有分出胜负。', [mbOk]);
-    -2: FrmDlg.DMessageDlg('你或者对方的挑战申请已经超出限制。', [mbOk]);
-  else FrmDlg.DMessageDlg('申请挑战失败。', [mbOk]);
+    0: FrmDlg.DMessageDlg('You must face an opponent to challenge them', [mbOk]);
+    -1: FrmDlg.DMessageDlg('Your challenge has yet to be accepted', [mbOk]);
+    -2: FrmDlg.DMessageDlg('Challenge request has exceeded limit', [mbOk]);
+  else FrmDlg.DMessageDlg('Challenge request failed', [mbOk]);
   end;
 end;
 
@@ -9018,10 +9020,10 @@ end;
 procedure TfrmMain.ClientObjBuyStoreItemFail(DefMsg: pTDefaultMessage); //摆摊物品购买失败
 begin
   case DefMsg.Recog of
-    -1: FrmDlg.DMessageDlg('[失败] 你的' + GetStorePriceName(DefMsg.tag) + '不足！', [mbOk]);
-    -2: FrmDlg.DMessageDlg('[失败] 该物品不存在！', [mbOk]);
-    -3: FrmDlg.DMessageDlg('[失败] 你的包裹已经满了！', [mbOk]);
-  else FrmDlg.DMessageDlg('[失败] 未知原因！', [mbOk]);
+    -1: FrmDlg.DMessageDlg('[Error] You lack' + GetStorePriceName(DefMsg.tag), [mbOk]);
+    -2: FrmDlg.DMessageDlg('Item does not exist', [mbOk]);
+    -3: FrmDlg.DMessageDlg('Bag is ful', [mbOk]);
+  else FrmDlg.DMessageDlg('Unknown Error', [mbOk]);
   end;
 end;
 
@@ -9486,7 +9488,7 @@ begin
 
     {==================================排行榜=================================}
     SM_SENGRANKING: ClientGetRanking(@DefMsg, sBody);
-    SM_SENGMYRANKING_FAIL: FrmDlg.DMessageDlg('你没有上榜或不在该榜！！！', [mbOk]);
+    SM_SENGMYRANKING_FAIL: FrmDlg.DMessageDlg('Unable to get list', [mbOk]);
     {==================================英雄相关=================================}
     SM_HEROLOGON: ClientObjHeroLogOn(@DefMsg, sBody);
     SM_HEROLOGON_OK: ClientObjHeroLogOnOK(DefMsg.Recog);
@@ -9652,7 +9654,7 @@ begin
     SM_SENDSELLOFFGOODSLIST: ClientGetSellItems(@DefMsg, sBody);
     SM_BUYSHOPITEM_FAIL: ClientObjBuyShopItemFail(DefMsg.Recog);
     SM_GETREGINFO: ClientGetRegInfo(@DefMsg, sBody);
-    SM_SENDBUYSELLOFFITEM_OK: FrmDlg.DMessageDlg('购买成功！！！', [mbOk]);
+    SM_SENDBUYSELLOFFITEM_OK: FrmDlg.DMessageDlg('Item bought', [mbOk]);
     SM_SENDBUYSELLOFFITEM_FAIL: ClientObjBuySellOffItemFail(DefMsg.Recog);
     SM_SENDUSERSELLOFFITEM_OK: ClientObjSellSellOffItemOK();
     SM_SENDUSERSELLOFFITEM_FAIL: ClientObjSellSellOffItemFail(DefMsg.Recog); //寄售物品失败
@@ -10069,7 +10071,7 @@ begin
   if body <> '' then begin
     DecodeBuffer(body, @cu, SizeOf(TClientItem));
     AddItemBag(cu);
-    DScreen.AddSysMsg(cu.S.Name + ' 被发现.', 30, 40, clAqua);
+    DScreen.AddSysMsg(cu.S.Name + ' found.', 30, 40, clAqua);
   end;
 end;
 
@@ -10234,7 +10236,7 @@ begin
   if body <> '' then begin
     DecodeBuffer(body, @cu, SizeOf(TClientItem));
     AddHeroItemBag(cu);
-    DScreen.AddSysMsg('英雄包裹 ' + cu.S.Name + ' 被发现.', 30, 40, clAqua);
+    DScreen.AddSysMsg('Hero found ' + cu.S.Name, 30, 40, clAqua);
   end;
 end;
 
@@ -13242,7 +13244,7 @@ end;
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   if (g_MySelf <> nil) and (g_ConnectionStep = cnsPlay) then begin
-    if mrOk = FrmDlg.DMessageDlg('你真的要退出游戏吗?', [mbOk, mbCancel]) then begin
+    if mrOk = FrmDlg.DMessageDlg('Are you sure you want to exit the game?', [mbOk, mbCancel]) then begin
       if g_boBagLoaded then
         Savebags('.\Data\' + g_sServerName + '.' + g_sSelChrName + '.itm', @g_ItemArr);
       g_boBagLoaded := False;

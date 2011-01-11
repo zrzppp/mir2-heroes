@@ -5737,7 +5737,7 @@ begin
       g_boItemMoving := False;
       g_MovingItem.Item.s.Name := '';
       DialogSize := 1;
-      DMessageDlg('你想放下多少' + g_sGoldName + '数量?', [mbOk, mbAbort]);
+      DMessageDlg('Please enter amount of ' + g_sGoldName, [mbOk, mbAbort]);
       GetValidStrVal(DlgEditText, valstr, [' ']);
       dropgold := Str_ToInt(valstr, 0);
       frmMain.SendDropGold(dropgold);
@@ -8156,7 +8156,7 @@ procedure TFrmDlg.GetMouseItemInfo(Actor: TActor; MouseItem: pTClientItem; var i
       HintList.AddObject('Magic Element: ' + GetAtomTypeStr(Value[2]) + '+' + IntToStr(Value[5]), TObject(GetRGB(222)));
     end;
     if Value[6] > 0 then begin
-      HintList.AddObject('Weak Element: ' + GetAtomTypeStr(Value[3]) + '+' + IntToStr(Value[6]), TObject(GetRGB(254)));
+      HintList.AddObject('Weak Element: ' + GetAtomTypeStr(Value[3]) + '-' + IntToStr(Value[6]), TObject(GetRGB(254)));
     end;
   end;
 
@@ -10310,7 +10310,7 @@ begin
         g_MovingItem.Item.s.Name := '';
         g_boItemMoving := False;
         if SpotDlgMode = dmSellOff then begin
-          DMessageDlg('输入出售价格：', [mbOk, mbAbort]);
+          DMessageDlg('Enter selling price：', [mbOk, mbAbort]);
           g_sSellPriceStr := IntToStr(Str_ToInt(Trim(DlgEditText), -1));
           {if StrToInt(g_sSellPriceStr) < 0 then begin
             g_MovingItem.Item := g_SellDlgItem;
@@ -11158,7 +11158,7 @@ begin
             DialogSize := 1;
             g_boItemMoving := False;
             g_MovingItem.Item.s.Name := '';
-            DMessageDlg('请输入要' + g_sGoldName + '数量：', [mbOk, mbAbort]);
+            DMessageDlg('Enter amount of ' + g_sGoldName, [mbOk, mbAbort]);
             GetValidStrVal(DlgEditText, valstr, [' ']);
             DGold := Str_ToInt(valstr, 0);
             if (DGold <= (g_nDealGold + g_MySelf.m_nGold)) and (DGold > 0) then begin
@@ -12650,7 +12650,7 @@ end;
 procedure TFrmDlg.DShopBuyClick(Sender: TObject; X, Y: Integer);
 begin
   if g_MouseShopItems.ShopItem.StdItem.Name <> '' then begin
-    if mrOk = DMessageDlg('是否确实购买 ' + g_MouseShopItems.ShopItem.StdItem.Name + ' ？', [mbOk, mbCancel]) then begin
+    if mrOk = DMessageDlg('Are you sure you want to purchase: ' + g_MouseShopItems.ShopItem.StdItem.Name, [mbOk, mbCancel]) then begin
       frmMain.SendBuyShopItem(g_MouseShopItems.ShopItem.StdItem.Name, g_MouseShopItems.ShopItem.btItemType);
     end;
   end;
@@ -15972,7 +15972,7 @@ begin
   if not g_boDuelEnd and (GetTickCount > g_dwDuelActionTick) then begin
     if not g_boItemMoving then begin
       DialogSize := 1;
-      DMessageDlg('请输入要' + g_sGameGoldName + '数量：', [mbOk, mbAbort]);
+      DMessageDlg('Please enter amount of' + g_sGameGoldName, [mbOk, mbAbort]);
       GetValidStrVal(DlgEditText, valstr, [' ']);
       DGold := Str_ToInt(valstr, 0);
       if (DGold <= (g_nDuelGold + g_MySelf.m_nGameGold)) and (DGold > 0) then begin
@@ -15980,7 +15980,7 @@ begin
               //DScreen.AddChatBoardString('frmMain.SendChangeDuelGold(DGold): ' + IntToStr(DGold), clWhite, clPurple);
         g_dwDuelActionTick := GetTickCount + 4000;
       end else begin
-        DMessageDlg('你的元宝不足 ' + IntToStr(DGold) + ' ！', [mbOk]);
+        DMessageDlg('Not enough Gold ' + IntToStr(DGold) + '!', [mbOk]);
         DGold := 0;
       end;
     end;
@@ -17502,7 +17502,7 @@ begin
 
   if g_MySelf.m_boStartStore or g_boStartStoreing then Exit;
   if g_boItemMoving then begin
-    DMessageDlg('请先放下移动的物品！', [mbOk]);
+    DMessageDlg('Do not move the item', [mbOk]);
     Exit;
   end;
 
@@ -17554,7 +17554,7 @@ procedure TFrmDlg.DUserStoreBuyClick(Sender: TObject; X, Y: Integer);
 begin
   if g_nStoreMasterRecogId = g_MySelf.m_nRecogId then Exit;
   if g_SelectStoreItem.Item.s.Name <> '' then begin
-    if mrOk = DMessageDlg('是否确实购买' + g_sStoreMasterName + '的 ' + g_SelectStoreItem.Item.s.Name + ' ？', [mbOk, mbCancel]) then begin
+    if mrOk = DMessageDlg('Do you want to buy this item from: ' + g_sStoreMasterName + ' Item: ' + g_SelectStoreItem.Item.s.Name + '?', [mbOk, mbCancel]) then begin
       frmMain.SendBuyStoreItem(g_SelectStoreItem.Item.s.Name, g_SelectStoreItem.Item.MakeIndex, g_nStoreMasterRecogId);
     end;
   end;
@@ -18981,7 +18981,7 @@ var
   ItemList: TStringList;
   ShowItem: pTShowItem;
 begin
-  if mrOk = FrmDlg.DMessageDlg('你想恢复成系统默认设置吗 ?', [mbOk, mbCancel]) then begin
+  if mrOk = FrmDlg.DMessageDlg('Are you sure you want to reset settings?', [mbOk, mbCancel]) then begin
     g_ShowItemList.BackUp;
     for I := 0 to DMemoTab2.Count - 1 do begin
       ItemList := DMemoTab2.Items[I];

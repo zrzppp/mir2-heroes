@@ -13232,7 +13232,7 @@ begin
       for I := U_DRESS to U_CHARM do begin
         if g_UseItems[I].S.Name <> '' then begin
           if g_UseItems[I].Dura <= Round(g_UseItems[I].DuraMax * 10 / 100) then begin
-            sHint := g_UseItems[I].S.Name + ' ³Ö¾Ã¹ýµÍ';
+            sHint := g_UseItems[I].S.Name + ' durability is low!';
             DScreen.AddChatBoardString(sHint, clyellow, clRed);
           end;
         end;

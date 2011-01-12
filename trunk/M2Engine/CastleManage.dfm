@@ -1,45 +1,45 @@
 object frmCastleManage: TfrmCastleManage
-  Left = 636
-  Top = 295
+  Left = -32
+  Top = 162
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = #22478#22561#31649#29702
-  ClientHeight = 279
-  ClientWidth = 564
+  Caption = '????'
+  ClientHeight = 349
+  ClientWidth = 705
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 15
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 193
-    Height = 257
-    Caption = #22478#22561#21015#34920
+    Left = 10
+    Top = 10
+    Width = 241
+    Height = 321
+    Caption = 'Castle'
     TabOrder = 0
     object ListViewCastle: TListView
-      Left = 8
-      Top = 16
-      Width = 177
-      Height = 233
+      Left = 10
+      Top = 20
+      Width = 221
+      Height = 291
       Columns = <
         item
-          Caption = #24207#21495
-          Width = 36
+          Caption = 'ID'
+          Width = 45
         end
         item
-          Caption = #32534#21495
-          Width = 36
+          Caption = 'ID'
+          Width = 45
         end
         item
-          Caption = #21517#31216
-          Width = 100
+          Caption = 'Name'
+          Width = 125
         end>
       GridLines = True
       ReadOnly = True
@@ -50,104 +50,104 @@ object frmCastleManage: TfrmCastleManage
     end
   end
   object GroupBox2: TGroupBox
-    Left = 208
-    Top = 8
-    Width = 353
-    Height = 257
-    Caption = #22478#22561#20449#24687
+    Left = 260
+    Top = 10
+    Width = 441
+    Height = 321
+    Caption = 'Stat'
     TabOrder = 1
     object PageControlCastle: TPageControl
-      Left = 8
-      Top = 16
-      Width = 337
-      Height = 233
+      Left = 10
+      Top = 20
+      Width = 421
+      Height = 291
       ActivePage = TabSheet4
       TabOrder = 0
       object TabSheet1: TTabSheet
-        Caption = #22522#26412#29366#24577
+        Caption = 'General'
         object GroupBox3: TGroupBox
-          Left = 5
-          Top = 5
-          Width = 321
-          Height = 92
+          Left = 6
+          Top = 6
+          Width = 402
+          Height = 115
           TabOrder = 0
           object Label2: TLabel
-            Left = 8
-            Top = 20
-            Width = 54
-            Height = 12
-            Caption = #25152#23646#34892#20250':'
+            Left = 10
+            Top = 25
+            Width = 39
+            Height = 15
+            Caption = 'Owner:'
           end
           object Label1: TLabel
-            Left = 8
-            Top = 44
-            Width = 54
-            Height = 12
-            Caption = #36164#37329#24635#25968':'
+            Left = 10
+            Top = 55
+            Width = 29
+            Height = 15
+            Caption = 'Gold:'
           end
           object Label3: TLabel
-            Left = 8
-            Top = 68
-            Width = 54
-            Height = 12
-            Caption = #24403#22825#25910#20837':'
+            Left = 10
+            Top = 85
+            Width = 36
+            Height = 15
+            Caption = 'Today:'
           end
           object Label7: TLabel
-            Left = 152
-            Top = 44
-            Width = 30
-            Height = 12
-            Caption = #31561#32423':'
+            Left = 190
+            Top = 55
+            Width = 23
+            Height = 15
+            Caption = 'Tec:'
           end
           object Label8: TLabel
-            Left = 152
-            Top = 68
-            Width = 30
-            Height = 12
-            Caption = #33021#28304':'
+            Left = 190
+            Top = 85
+            Width = 24
+            Height = 15
+            Caption = 'Pwr:'
           end
           object EditOwenGuildName: TEdit
-            Left = 64
-            Top = 16
-            Width = 169
-            Height = 20
+            Left = 80
+            Top = 20
+            Width = 211
+            Height = 23
             TabOrder = 0
           end
           object EditTotalGold: TSpinEdit
-            Left = 64
-            Top = 40
-            Width = 81
-            Height = 21
+            Left = 80
+            Top = 50
+            Width = 101
+            Height = 24
             MaxValue = 2000000000
             MinValue = 0
             TabOrder = 1
             Value = 0
           end
           object EditTodayIncome: TSpinEdit
-            Left = 64
-            Top = 64
-            Width = 81
-            Height = 21
+            Left = 80
+            Top = 80
+            Width = 101
+            Height = 24
             MaxValue = 2000000000
             MinValue = 0
             TabOrder = 2
             Value = 0
           end
           object EditTechLevel: TSpinEdit
-            Left = 184
-            Top = 40
-            Width = 49
-            Height = 21
+            Left = 230
+            Top = 50
+            Width = 61
+            Height = 24
             MaxValue = 2000000000
             MinValue = 0
             TabOrder = 3
             Value = 0
           end
           object EditPower: TSpinEdit
-            Left = 184
-            Top = 64
-            Width = 49
-            Height = 21
+            Left = 230
+            Top = 80
+            Width = 61
+            Height = 24
             MaxValue = 2000000000
             MinValue = 0
             TabOrder = 4
@@ -156,39 +156,39 @@ object frmCastleManage: TfrmCastleManage
         end
       end
       object TabSheet3: TTabSheet
-        Caption = #23432#21355#29366#24577
+        Caption = 'Defence'
         ImageIndex = 2
         object GroupBox5: TGroupBox
-          Left = 5
+          Left = 6
           Top = 0
-          Width = 318
-          Height = 201
+          Width = 398
+          Height = 251
           TabOrder = 0
           object ListViewGuard: TListView
-            Left = 8
-            Top = 16
-            Width = 300
-            Height = 145
+            Left = 10
+            Top = 20
+            Width = 375
+            Height = 181
             Columns = <
               item
-                Caption = #24207#21495
-                Width = 36
+                Caption = 'ID'
+                Width = 45
               end
               item
-                Caption = #21517#31216
-                Width = 80
+                Caption = 'Name'
+                Width = 100
               end
               item
-                Caption = #24231#26631
-                Width = 60
+                Caption = 'Co'
+                Width = 75
               end
               item
-                Caption = #34880#37327
-                Width = 80
+                Caption = 'HP'
+                Width = 100
               end
               item
-                Caption = #22478#38376#29366#24577
-                Width = 60
+                Caption = 'Stat'
+                Width = 75
               end>
             GridLines = True
             ReadOnly = True
@@ -197,158 +197,159 @@ object frmCastleManage: TfrmCastleManage
             ViewStyle = vsReport
           end
           object ButtonRefresh: TButton
-            Left = 240
-            Top = 168
-            Width = 65
-            Height = 25
-            Caption = #21047#26032'(&R)'
+            Left = 300
+            Top = 210
+            Width = 81
+            Height = 31
+            Caption = '&Reload'
             TabOrder = 1
             OnClick = ButtonRefreshClick
           end
         end
       end
       object TabSheet2: TTabSheet
-        Caption = #35774#32622
+        Caption = 'Name'
         ImageIndex = 1
         object GroupBox4: TGroupBox
-          Left = 5
-          Top = 5
-          Width = 321
-          Height = 196
+          Left = 6
+          Top = 6
+          Width = 402
+          Height = 245
           TabOrder = 0
           object Label4: TLabel
-            Left = 8
-            Top = 20
-            Width = 54
-            Height = 12
-            Caption = #22478#22561#21517#31216':'
+            Left = 10
+            Top = 25
+            Width = 37
+            Height = 15
+            Caption = 'Name:'
           end
           object Label5: TLabel
-            Left = 8
-            Top = 44
-            Width = 54
-            Height = 12
-            Caption = #25152#23646#34892#20250':'
+            Left = 10
+            Top = 55
+            Width = 39
+            Height = 15
+            Caption = 'Owner:'
           end
           object Label6: TLabel
-            Left = 176
-            Top = 68
-            Width = 54
-            Height = 12
-            Caption = #22238#22478#22320#22270':'
+            Left = 220
+            Top = 85
+            Width = 33
+            Height = 15
+            Caption = 'Map#:'
           end
           object Label9: TLabel
-            Left = 8
-            Top = 92
-            Width = 54
-            Height = 12
-            Caption = #22238#22478#22352#26631':'
+            Left = 10
+            Top = 115
+            Width = 43
+            Height = 15
+            Caption = 'Co-Ord:'
           end
           object Label10: TLabel
-            Left = 176
-            Top = 92
-            Width = 54
-            Height = 12
-            Caption = #23494#36947#22320#22270':'
+            Left = 220
+            Top = 115
+            Width = 28
+            Height = 15
+            Caption = 'Sent:'
           end
           object Label11: TLabel
-            Left = 8
-            Top = 68
-            Width = 54
-            Height = 12
-            Caption = #30343#23467#22320#22270':'
+            Left = 10
+            Top = 85
+            Width = 26
+            Height = 15
+            Caption = 'Map:'
           end
           object EditCastleName: TEdit
-            Left = 64
-            Top = 16
-            Width = 249
-            Height = 20
+            Left = 80
+            Top = 20
+            Width = 311
+            Height = 23
             TabOrder = 0
           end
           object EditCastleOfGuild: TEdit
-            Left = 64
-            Top = 40
-            Width = 249
-            Height = 20
+            Left = 80
+            Top = 50
+            Width = 311
+            Height = 23
             TabOrder = 1
           end
           object EditHomeMap: TEdit
-            Left = 232
-            Top = 64
-            Width = 81
-            Height = 20
+            Left = 290
+            Top = 80
+            Width = 101
+            Height = 23
             TabOrder = 2
           end
           object EditTunnelMap: TEdit
-            Left = 232
-            Top = 88
-            Width = 81
-            Height = 20
+            Left = 290
+            Top = 110
+            Width = 101
+            Height = 23
             TabOrder = 3
           end
           object EditPalace: TEdit
-            Left = 64
-            Top = 64
-            Width = 105
-            Height = 20
+            Left = 80
+            Top = 80
+            Width = 131
+            Height = 23
             TabOrder = 4
           end
           object SpinEditNomeX: TSpinEdit
-            Left = 64
-            Top = 88
-            Width = 57
-            Height = 21
+            Left = 80
+            Top = 110
+            Width = 71
+            Height = 24
             MaxValue = 0
             MinValue = 0
             TabOrder = 5
             Value = 0
           end
           object SpinEditNomeY: TSpinEdit
-            Left = 120
-            Top = 88
-            Width = 49
-            Height = 21
+            Left = 150
+            Top = 110
+            Width = 61
+            Height = 24
             MaxValue = 0
             MinValue = 0
             TabOrder = 6
             Value = 0
           end
           object ButtonSave: TButton
-            Left = 240
-            Top = 160
-            Width = 75
-            Height = 25
-            Caption = #20445#23384'(&S)'
+            Left = 300
+            Top = 200
+            Width = 94
+            Height = 31
+            Caption = '&Save'
             TabOrder = 7
             OnClick = ButtonSaveClick
           end
         end
       end
       object TabSheet4: TTabSheet
-        Caption = #25915#22478#30003#35831
+        Caption = 'Wars'
         ImageIndex = 3
         object GroupBox6: TGroupBox
-          Left = 8
+          Left = 10
           Top = 0
-          Width = 313
-          Height = 201
+          Width = 391
+          Height = 251
           TabOrder = 0
           object ListViewAttackSabukWall: TListView
-            Left = 8
-            Top = 16
-            Width = 297
-            Height = 145
+            Left = 10
+            Top = 20
+            Width = 371
+            Height = 181
             Columns = <
               item
-                Caption = #24207#21495
+                Caption = 'ID'
+                Width = 63
               end
               item
-                Caption = #34892#20250#21517#31216
-                Width = 150
+                Caption = 'Guild'
+                Width = 188
               end
               item
-                Caption = #25915#22478#26102#38388
-                Width = 80
+                Caption = 'Date'
+                Width = 100
               end>
             GridLines = True
             ReadOnly = True
@@ -358,38 +359,38 @@ object frmCastleManage: TfrmCastleManage
             OnClick = ListViewAttackSabukWallClick
           end
           object ButtonAttackAd: TButton
-            Left = 8
-            Top = 168
-            Width = 65
-            Height = 25
-            Caption = #22686#21152'(&A)'
+            Left = 10
+            Top = 210
+            Width = 81
+            Height = 31
+            Caption = '&Add'
             TabOrder = 1
             OnClick = ButtonAttackAdClick
           end
           object ButtonAttackEdit: TButton
-            Left = 80
-            Top = 168
-            Width = 65
-            Height = 25
-            Caption = #32534#36753'(&E)'
+            Left = 100
+            Top = 210
+            Width = 81
+            Height = 31
+            Caption = '&Edit'
             TabOrder = 2
             OnClick = ButtonAttackEditClick
           end
           object ButtonAttackDel: TButton
-            Left = 152
-            Top = 168
-            Width = 65
-            Height = 25
-            Caption = #21024#38500'(&D)'
+            Left = 190
+            Top = 210
+            Width = 81
+            Height = 31
+            Caption = '&Delete'
             TabOrder = 3
             OnClick = ButtonAttackDelClick
           end
           object ButtonAttackR: TButton
-            Left = 240
-            Top = 168
-            Width = 67
-            Height = 25
-            Caption = #21047#26032'(&R)'
+            Left = 300
+            Top = 210
+            Width = 84
+            Height = 31
+            Caption = '&Reload'
             TabOrder = 4
             OnClick = ButtonAttackRClick
           end

@@ -94,22 +94,22 @@ procedure TfrmGameCmd.FormCreate(Sender: TObject);
 begin
   PageControl.ActivePageIndex := 0;
   StringGridGameCmd.RowCount := 50;
-  StringGridGameCmd.Cells[0, 0] := '游戏命令';
-  StringGridGameCmd.Cells[1, 0] := '所需权限';
-  StringGridGameCmd.Cells[2, 0] := '命令格式';
-  StringGridGameCmd.Cells[3, 0] := '命令说明';
+  StringGridGameCmd.Cells[0, 0] := 'Command';
+  StringGridGameCmd.Cells[1, 0] := 'Permission';
+  StringGridGameCmd.Cells[2, 0] := 'Command Paramaters';
+  StringGridGameCmd.Cells[3, 0] := 'Description';
 
   StringGridGameMasterCmd.RowCount := 105;
-  StringGridGameMasterCmd.Cells[0, 0] := '游戏命令';
-  StringGridGameMasterCmd.Cells[1, 0] := '所需权限';
-  StringGridGameMasterCmd.Cells[2, 0] := '命令格式';
-  StringGridGameMasterCmd.Cells[3, 0] := '命令说明';
+  StringGridGameMasterCmd.Cells[0, 0] := 'Command';
+  StringGridGameMasterCmd.Cells[1, 0] := 'Permission';
+  StringGridGameMasterCmd.Cells[2, 0] := 'Command Paramaters';
+  StringGridGameMasterCmd.Cells[3, 0] := 'Description';
 
   StringGridGameDebugCmd.RowCount := 41;
-  StringGridGameDebugCmd.Cells[0, 0] := '游戏命令';
-  StringGridGameDebugCmd.Cells[1, 0] := '所需权限';
-  StringGridGameDebugCmd.Cells[2, 0] := '命令格式';
-  StringGridGameDebugCmd.Cells[3, 0] := '命令说明';
+  StringGridGameDebugCmd.Cells[0, 0] := 'Command';
+  StringGridGameDebugCmd.Cells[1, 0] := 'Permission';
+  StringGridGameDebugCmd.Cells[2, 0] := 'Command Paramaters';
+  StringGridGameDebugCmd.Cells[3, 0] := 'Description';
 
 
 end;

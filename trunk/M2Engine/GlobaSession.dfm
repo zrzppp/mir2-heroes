@@ -1,25 +1,25 @@
 object frmGlobaSession: TfrmGlobaSession
-  Left = 185
-  Top = 147
+  Left = 94
+  Top = 117
   BorderStyle = bsSingle
-  Caption = #26597#30475#20840#23616#20250#35805
-  ClientHeight = 348
-  ClientWidth = 536
+  Caption = '??????'
+  ClientHeight = 435
+  ClientWidth = 670
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 15
   object StringGrid: TStringGrid
-    Left = 8
-    Top = 29
-    Width = 523
-    Height = 163
+    Left = 10
+    Top = 36
+    Width = 654
+    Height = 204
     DefaultRowHeight = 18
     FixedCols = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect]

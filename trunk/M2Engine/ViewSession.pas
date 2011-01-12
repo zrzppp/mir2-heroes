@@ -32,12 +32,12 @@ uses IdSrvClient, M2Share;
 
 procedure TfrmViewSession.FormCreate(Sender: TObject);
 begin
-  GridSession.Cells[0, 0] := '序号';
-  GridSession.Cells[1, 0] := '登录帐号';
-  GridSession.Cells[2, 0] := '登录地址';
-  GridSession.Cells[3, 0] := '会话ID号';
-  GridSession.Cells[4, 0] := '充值';
-  GridSession.Cells[5, 0] := '充值模式';
+  GridSession.Cells[0, 0] := 'No.';
+  GridSession.Cells[1, 0] := 'User ID';
+  GridSession.Cells[2, 0] := 'IP Address';
+  GridSession.Cells[3, 0] := 'Session ID';
+  GridSession.Cells[4, 0] := 'Payment';
+  GridSession.Cells[5, 0] := 'Pay mode';
 end;
 
 procedure TfrmViewSession.Open;

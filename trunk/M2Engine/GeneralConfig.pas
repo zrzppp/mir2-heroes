@@ -80,7 +80,6 @@ type
     EditVentureDir: TEdit;
     Label25: TLabel;
     ButtonShareDirSave: TButton;
-    Label26: TLabel;
     TabSheet1: TTabSheet;
     GroupBox8: TGroupBox;
     ColorBoxHint: TColorBox;

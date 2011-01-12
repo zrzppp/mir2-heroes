@@ -655,30 +655,30 @@ end;
 
 procedure TfrmViewList.FormCreate(Sender: TObject);
 begin
-  GridItemBindAccount.Cells[0, 0] := '物品名称';
-  GridItemBindAccount.Cells[1, 0] := '物品IDX';
-  GridItemBindAccount.Cells[2, 0] := '物品系列号';
-  GridItemBindAccount.Cells[3, 0] := '绑定帐号';
+  GridItemBindAccount.Cells[0, 0] := 'Item Name';
+  GridItemBindAccount.Cells[1, 0] := 'Item IDX';
+  GridItemBindAccount.Cells[2, 0] := 'Item No.';
+  GridItemBindAccount.Cells[3, 0] := 'Account';
 
-  GridItemBindCharName.Cells[0, 0] := '物品名称';
-  GridItemBindCharName.Cells[1, 0] := '物品IDX';
-  GridItemBindCharName.Cells[2, 0] := '物品系列号';
-  GridItemBindCharName.Cells[3, 0] := '绑定人物';
+  GridItemBindCharName.Cells[0, 0] := 'Item Name';
+  GridItemBindCharName.Cells[1, 0] := 'Item IDX';
+  GridItemBindCharName.Cells[2, 0] := 'Item No.';
+  GridItemBindCharName.Cells[3, 0] := 'Character Name';
 
-  GridItemBindIPaddr.Cells[0, 0] := '物品名称';
-  GridItemBindIPaddr.Cells[1, 0] := '物品IDX';
-  GridItemBindIPaddr.Cells[2, 0] := '物品系列号';
-  GridItemBindIPaddr.Cells[3, 0] := '绑定IP';
+  GridItemBindIPaddr.Cells[0, 0] := 'Item Name';
+  GridItemBindIPaddr.Cells[1, 0] := 'Item IDX';
+  GridItemBindIPaddr.Cells[2, 0] := 'Item No.';
+  GridItemBindIPaddr.Cells[3, 0] := 'IP Address';
 
 
-  StringGridMonDropLimit.Cells[0, 0] := '物品名称';
-  StringGridMonDropLimit.Cells[1, 0] := '爆数量';
-  StringGridMonDropLimit.Cells[2, 0] := '限制数量';
-  StringGridMonDropLimit.Cells[3, 0] := '未爆数量';
+  StringGridMonDropLimit.Cells[0, 0] := 'Item Name';
+  StringGridMonDropLimit.Cells[1, 0] := 'Drop Count';
+  StringGridMonDropLimit.Cells[2, 0] := 'Count Limit';
+  StringGridMonDropLimit.Cells[3, 0] := 'No. drop Count';
 
-  GridItemNameList.Cells[0, 0] := '原始名称';
-  GridItemNameList.Cells[1, 0] := '物品编号';
-  GridItemNameList.Cells[2, 0] := '自定义名称';
+  GridItemNameList.Cells[0, 0] := 'Item Name';
+  GridItemNameList.Cells[1, 0] := 'New IDX';
+  GridItemNameList.Cells[2, 0] := 'Character Name';
 
   TabSheetMonDrop.TabVisible := True;
 

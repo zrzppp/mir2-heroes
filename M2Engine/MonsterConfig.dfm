@@ -1,56 +1,56 @@
 object frmMonsterConfig: TfrmMonsterConfig
-  Left = 668
-  Top = 429
+  Left = 272
+  Top = 48
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = #24618#29289#35774#32622
-  ClientHeight = 320
-  ClientWidth = 616
+  Caption = 'Monster Options'
+  ClientHeight = 400
+  ClientWidth = 770
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 15
   object PageControl1: TPageControl
-    Left = 8
-    Top = 8
-    Width = 601
-    Height = 297
-    ActivePage = TabSheet1
+    Left = 10
+    Top = 10
+    Width = 751
+    Height = 371
+    ActivePage = TabSheet2
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = #22522#26412#21442#25968
+      Caption = 'Gold'
       object GroupBox1: TGroupBox
-        Left = 8
-        Top = 8
-        Width = 577
-        Height = 257
+        Left = 10
+        Top = 10
+        Width = 721
+        Height = 321
         TabOrder = 0
         object GroupBox8: TGroupBox
-          Left = 8
-          Top = 16
-          Width = 153
-          Height = 73
-          Caption = #29190#29289#21697#35774#32622
+          Left = 10
+          Top = 20
+          Width = 191
+          Height = 91
+          Caption = 'Drops'
           TabOrder = 0
           object Label23: TLabel
-            Left = 11
-            Top = 24
-            Width = 42
-            Height = 12
-            Caption = #37329#24065#22534':'
+            Left = 14
+            Top = 30
+            Width = 24
+            Height = 15
+            Caption = 'Max:'
           end
           object EditMonOneDropGoldCount: TSpinEdit
-            Left = 60
-            Top = 20
-            Width = 77
-            Height = 21
+            Left = 75
+            Top = 25
+            Width = 96
+            Height = 24
             MaxValue = 99999999
             MinValue = 1
             TabOrder = 0
@@ -58,28 +58,28 @@ object frmMonsterConfig: TfrmMonsterConfig
             OnChange = EditMonOneDropGoldCountChange
           end
           object CheckBoxDropGoldToPlayBag: TCheckBox
-            Left = 8
-            Top = 48
-            Width = 137
-            Height = 17
-            Caption = #37329#24065#30452#25509#20837#32972#21253
+            Left = 10
+            Top = 60
+            Width = 171
+            Height = 21
+            Caption = 'AutoBag'
             TabOrder = 1
             OnClick = CheckBoxDropGoldToPlayBagClick
           end
         end
         object ButtonGeneralSave: TButton
-          Left = 504
-          Top = 221
-          Width = 65
-          Height = 25
-          Caption = #20445#23384'(&S)'
+          Left = 630
+          Top = 276
+          Width = 81
+          Height = 32
+          Caption = 'Save(&S)'
           TabOrder = 1
           OnClick = ButtonGeneralSaveClick
         end
       end
     end
     object TabSheet2: TTabSheet
-      Caption = #24618#29289#31867#22411
+      Caption = 'Blank'
       ImageIndex = 1
     end
   end

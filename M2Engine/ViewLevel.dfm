@@ -1,40 +1,40 @@
 object frmViewLevel: TfrmViewLevel
-  Left = 657
-  Top = 155
+  Left = 381
+  Top = 231
   Width = 320
   Height = 308
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = #20154#29289#31561#32423#23646#24615
+  Caption = 'Level and EXP List'
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = #23435#20307
+  Font.Name = '??'
   Font.Style = []
   OldCreateOrder = False
   Position = poOwnerFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 12
+  TextHeight = 15
   object GroupBox10: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 121
-    Height = 49
-    Caption = #20154#29289#31561#32423
+    Left = 10
+    Top = 10
+    Width = 151
+    Height = 61
+    Caption = 'Select Level'
     TabOrder = 0
     object Label4: TLabel
-      Left = 8
-      Top = 20
-      Width = 30
-      Height = 12
-      Caption = #31561#32423':'
+      Left = 10
+      Top = 25
+      Width = 32
+      Height = 15
+      Caption = 'Level:'
     end
     object EditHumanLevel: TSpinEdit
-      Left = 44
-      Top = 15
-      Width = 45
-      Height = 21
+      Left = 55
+      Top = 19
+      Width = 56
+      Height = 24
       EditorEnabled = False
       MaxValue = 0
       MinValue = 0
@@ -44,41 +44,39 @@ object frmViewLevel: TfrmViewLevel
     end
   end
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 64
-    Width = 121
-    Height = 49
-    Caption = #20154#29289#32844#19994
+    Left = 10
+    Top = 80
+    Width = 151
+    Height = 61
+    Caption = 'Select Class'
     TabOrder = 1
     object Label1: TLabel
-      Left = 8
-      Top = 20
-      Width = 30
-      Height = 12
-      Caption = #32844#19994':'
+      Left = 10
+      Top = 25
+      Width = 36
+      Height = 15
+      Caption = 'Class:'
     end
     object ComboBoxJob: TComboBox
-      Left = 40
-      Top = 16
-      Width = 73
-      Height = 20
+      Left = 50
+      Top = 20
+      Width = 91
+      Height = 23
       Style = csDropDownList
-      ItemHeight = 12
-      ItemIndex = 0
+      ItemHeight = 15
       TabOrder = 0
-      Text = #27494#22763
       OnChange = ComboBoxJobChange
       Items.Strings = (
-        #27494#22763
-        #39764#27861#24072
-        #36947#22763)
+        'Warrior'
+        'Wizard'
+        'Taoist')
     end
   end
   object GridHumanInfo: TStringGrid
-    Left = 136
-    Top = 8
-    Width = 169
-    Height = 257
+    Left = 170
+    Top = 10
+    Width = 211
+    Height = 321
     ColCount = 2
     DefaultRowHeight = 18
     RowCount = 13
@@ -103,11 +101,11 @@ object frmViewLevel: TfrmViewLevel
       18)
   end
   object ButtonClose: TButton
-    Left = 32
-    Top = 152
-    Width = 65
-    Height = 25
-    Caption = #20851#38381'(&C)'
+    Left = 40
+    Top = 190
+    Width = 81
+    Height = 31
+    Caption = '&Close'
     TabOrder = 3
     OnClick = ButtonCloseClick
   end

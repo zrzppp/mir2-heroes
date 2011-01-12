@@ -66,19 +66,19 @@ end;
 
 procedure TfrmViewLevel.FormCreate(Sender: TObject);
 begin
-  GridHumanInfo.Cells[0, 0] := 'ÊôÐÔ';
-  GridHumanInfo.Cells[1, 0] := 'ÊýÖµ';
-  GridHumanInfo.Cells[0, 1] := '¾­ÑéÖµ';
-  GridHumanInfo.Cells[0, 2] := '·ÀÓù';
-  GridHumanInfo.Cells[0, 3] := 'Ä§·À';
-  GridHumanInfo.Cells[0, 4] := '¹¥»÷Á¦';
-  GridHumanInfo.Cells[0, 5] := 'Ä§·¨';
-  GridHumanInfo.Cells[0, 6] := 'µÀÊõ';
-  GridHumanInfo.Cells[0, 7] := 'ÉúÃüÖµ';
-  GridHumanInfo.Cells[0, 8] := 'Ä§·¨Öµ';
-  GridHumanInfo.Cells[0, 9] := '±³°ü';
-  GridHumanInfo.Cells[0, 10] := '¸ºÖØ';
-  GridHumanInfo.Cells[0, 11] := 'ÍóÁ¦';
+  GridHumanInfo.Cells[0, 0] := 'Stat';
+  GridHumanInfo.Cells[1, 0] := 'Value';
+  GridHumanInfo.Cells[0, 1] := 'EXP';
+  GridHumanInfo.Cells[0, 2] := 'AC';
+  GridHumanInfo.Cells[0, 3] := 'MAC';
+  GridHumanInfo.Cells[0, 4] := 'DC¦';
+  GridHumanInfo.Cells[0, 5] := 'MC';
+  GridHumanInfo.Cells[0, 6] := 'SC';
+  GridHumanInfo.Cells[0, 7] := 'Health';
+  GridHumanInfo.Cells[0, 8] := 'Magic';
+  GridHumanInfo.Cells[0, 9] := 'Bag Weight';
+  GridHumanInfo.Cells[0, 10] := 'Wear Weight';
+  GridHumanInfo.Cells[0, 11] := 'Hand Weight';
 end;
 
 procedure TfrmViewLevel.RecalcHuman;

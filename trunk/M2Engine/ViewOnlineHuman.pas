@@ -122,7 +122,7 @@ var
   PlayObject: TPlayObject;
   HeroObject: THeroObject;
 begin
-  PanelStatus.Caption := '正在取得数据...';
+  PanelStatus.Caption := 'Refreshing Grid...';
   GridHuman.Visible := False;
   GridHuman.Cells[0, 1] := '';
   GridHuman.Cells[1, 1] := '';
@@ -225,21 +225,21 @@ end;
 procedure TfrmViewOnlineHuman.FormCreate(Sender: TObject);
 begin
   ViewList := TStringList.Create;
-  GridHuman.Cells[0, 0] := '序号';
+  GridHuman.Cells[0, 0] := 'Idx';
   if CheckBoxHero.Checked then begin
-    GridHuman.Cells[1, 0] := '英雄名称';
+    GridHuman.Cells[1, 0] := 'CharName';
   end else begin
-    GridHuman.Cells[1, 0] := '人物名称';
+    GridHuman.Cells[1, 0] := 'CharName';
   end;
-  GridHuman.Cells[2, 0] := '性别';
-  GridHuman.Cells[3, 0] := '职业';
-  GridHuman.Cells[4, 0] := '等级';
-  GridHuman.Cells[5, 0] := '地图';
-  GridHuman.Cells[6, 0] := '座标';
-  GridHuman.Cells[7, 0] := '登录帐号';
-  GridHuman.Cells[8, 0] := '登录IP';
-  GridHuman.Cells[9, 0] := '权限';
-  GridHuman.Cells[10, 0] := '所在地区';
+  GridHuman.Cells[2, 0] := 'Sex';
+  GridHuman.Cells[3, 0] := 'Class';
+  GridHuman.Cells[4, 0] := 'Level';
+  GridHuman.Cells[5, 0] := 'Map';
+  GridHuman.Cells[6, 0] := 'Co-Ord';
+  GridHuman.Cells[7, 0] := 'Account';
+  GridHuman.Cells[8, 0] := 'AccountIP';
+  GridHuman.Cells[9, 0] := 'Perm';
+  GridHuman.Cells[10, 0] := 'Country';
   GridHuman.Cells[11, 0] := g_Config.sGameGoldName;
   GridHuman.Cells[12, 0] := g_Config.sGamePointName;
 

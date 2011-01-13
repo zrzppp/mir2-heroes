@@ -763,8 +763,8 @@ begin
   ComboBoxLineNoticeColor.Items.Add('蓝色');
   GridLevelExp.ColWidths[0] := 30;
   GridLevelExp.ColWidths[1] := 100;
-  GridLevelExp.Cells[0, 0] := '等级';
-  GridLevelExp.Cells[1, 0] := '经验值';
+  GridLevelExp.Cells[0, 0] := 'Lvl';
+  GridLevelExp.Cells[1, 0] := 'Exp';
   for I := 1 to GridLevelExp.RowCount - 1 do begin
     GridLevelExp.Cells[0, I] := IntToStr(I);
   end;

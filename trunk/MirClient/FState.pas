@@ -13697,15 +13697,15 @@ begin
           end;
 
         end else begin
-          TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24), '左键双击可以装备');
-          TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24 + 14), 'ALT + R 键刷新包裹');
+          TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24), 'Double Click Item to Equip');
+          TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24 + 14), 'ALT + R to refresh Inventory');
           //TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24 + 14 * 2), 'CTRL + B 英雄挂机');
         end;
       end;
     end else begin
       with dsurface do begin
-        TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24), '左键双击可以装备');
-        TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24 + 14), 'ALT + R 键刷新包裹');
+        TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24), 'Double Click Item to Equip');
+        TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24 + 14), 'ALT + R to refresh Inventory');
         //TextOut(DHeroItemGrid.SurfaceX(DHeroItemGrid.Left) - 2, DHeroItemGrid.SurfaceY(DHeroItemGrid.Top + DHeroItemGrid.Height + 24 + 14 * 2), 'CTRL + B 英雄挂机');
       end;
     end;

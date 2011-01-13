@@ -28,7 +28,7 @@
 [JZ004 JZ004] 
 [JZ005 JZ005] 
 
-[0 BichonProvince 0] SNOW(3)
+[0 BichonProvince 0] SNOW(1) OPENSTORE
 
 
 ;Buildings
@@ -298,7 +298,7 @@ D012  77,197  -> D011  127,202
 D012  189,144 -> DM011 5,10
 DM011 6,10    -> D012  189,145
 
-[1 WoomyonWoods 0]
+[1 WoomyonWoods 0] 
 0	324,34 -> 1		559,553
 0	325,34 -> 1		560,553
 0	325,35 -> 1		560,554
@@ -526,7 +526,7 @@ D422	22,42  -> D421	 361,20
 [G013 FootbalMap11   0] SAFE DAY NORECONNECT(0) NORECALL
 [G014 FootbalMap12   0] FIGHT DAY NORECONNECT(0) NORECALL
 
-[3   MongchonProvince  0] SNOW(1)
+[3   MongchonProvince  0] OPENSTORE
 
 
 2	296,58 -> 3		273,750

@@ -9,7 +9,7 @@ uses
   DWinCtl, ClFunc, magiceff, SoundUtil, clEvent, Wave, IniFiles, Registry,
   Spin, ComCtrls, Grids, Menus, Mask, MShare, Share, StrUtils, HTTPGet, MD5EncodeStr,
   SoundEngn, ShellApi, tlHelp32, psAPI, PlugIn, GameImages,
-  PathFind, zLibx, MPlayer, OleCtrls, GuaJi;
+  PathFind, zLibx, MPlayer, WMPLib_TLB, OleCtrls, GuaJi;
 
 const
   BO_FOR_TEST = False;

@@ -9,10 +9,12 @@
 */
 
 #define ComConst_STooManyParams 65216
-#define OleConst_SCannotActivate 65217
-#define OleConst_SNoWindowHandle 65218
-#define OleConst_SInvalidLicense 65219
-#define OleConst_SNotLicensed 65220
+#define ComConst_SDCOMNotInstalled 65217
+#define OleConst_SCannotActivate 65218
+#define OleConst_SNoWindowHandle 65219
+#define OleConst_SInvalidLicense 65220
+#define OleConst_SNotLicensed 65221
+#define OleConst_sNoRunningObject 65222
 #define DXConsts_SDLLNotLoaded 65232
 #define DXConsts_SScanline 65233
 #define DXConsts_SNoForm 65234
@@ -320,10 +322,12 @@
 STRINGTABLE
 BEGIN
 	ComConst_STooManyParams,	"Dispatch methods do not support more than 64 parameters"
+	ComConst_SDCOMNotInstalled,	"DCOM not installed"
 	OleConst_SCannotActivate,	"OLE control activation failed"
 	OleConst_SNoWindowHandle,	"Could not obtain OLE control window handle"
 	OleConst_SInvalidLicense,	"License information for %s is invalid"
 	OleConst_SNotLicensed,	"License information for %s not found. You cannot use this control in design mode"
+	OleConst_sNoRunningObject,	"Unable to retrieve a pointer to a running object registered with OLE for %s/%s"
 	DXConsts_SDLLNotLoaded,	"%s not loaded"
 	DXConsts_SScanline,	"Index of the scanning line exceeded the range. (%d)"
 	DXConsts_SNoForm,	"Form not found"

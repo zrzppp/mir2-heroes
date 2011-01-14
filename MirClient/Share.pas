@@ -124,7 +124,7 @@ const
 
   EFFECTIMAGEDIR = 'Data\';
   NPCFACEIMAGEFILE = 'Data\NpcFace.wil';
-  FNPCIMAGESFILE = 'Data\F-Npc.Data';
+  FNPCIMAGESFILE = 'Data\NPC2.wil';
 
 {$IF MIRSCLIENT = 0}
   MAINIMAGEFILE = 'Data\Prguse.wil';

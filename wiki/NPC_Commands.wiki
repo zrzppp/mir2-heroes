@@ -4,6 +4,8 @@
 = Introduction =
 
 List of #IF and #ACT NPC Commands, currently unfiltered.
+Majority of these commands can be used on a Hero by adding Hero. to the front of the commands.
+For example: HERO.GIVE Candle
 
 
 = #IF Commands =

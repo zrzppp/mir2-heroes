@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary List of NPC Commands
 #labels IFCommands,ACTCommands,NPC
 
 = Introduction =

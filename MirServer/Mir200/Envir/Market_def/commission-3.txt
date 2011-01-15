@@ -1,19 +1,12 @@
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
-;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
-;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 (@getsellgold @selloff @buyoff @@dealgold)
 [@main]
-#ACT
-GAMEGOLD + 10
-CREDITPOINT + 5
-BONUSPOINT + 5
 #SAY
 <Sell Item/@selloff>       <www.lomcn.co.uk/FCOLOR=254>\ \
 <Dresses/@Dress>        <Weapons/@Weapon>        <Accessories/@Jewelry>        <Charms/@Chram>\ \
 <Other Items/@OtherItem>\
-<All Items/@AllItem>\
-<Deal GM/@dealgm>      <最新功能→/AUTOCOLOR=254,251,168,191,250,70,245,249,253><Give Item/@GiveItem>\ \
-<Self Gold/@selfgold>          <Retreive Item/@MyItem>
+<All Items/@AllItem>\ \
+;<Deal GM/@dealgm>      <最新功能→/AUTOCOLOR=254,251,168,191,250,70,245,249,253><Give Item/@GiveItem>\ \
+<Collect Money from Sales/@selfgold>          <Retreive unsold Item/@MyItem>
 
 [@getsellgold]
 #ACT

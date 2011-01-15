@@ -1,6 +1,6 @@
 object frmHeroConfig: TfrmHeroConfig
-  Left = 637
-  Top = 320
+  Left = 199
+  Top = 114
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Hero Config'
@@ -21,7 +21,7 @@ object frmHeroConfig: TfrmHeroConfig
     Top = 9
     Width = 552
     Height = 450
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Options'
@@ -1362,7 +1362,7 @@ object frmHeroConfig: TfrmHeroConfig
         Top = 296
         Width = 179
         Height = 81
-        Caption = '??????????'
+        Caption = 'Hero Functions'
         TabOrder = 9
         object CheckBoxHeroUseBagItem: TCheckBox
           Left = 17

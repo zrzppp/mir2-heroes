@@ -14547,6 +14547,9 @@ begin
   SellItemIndex := -1;
   MoveSellItemIndex := -1;
   DUserSellOff.Visible := True;
+  DMerchantDlg.Visible := False;
+  DSellDlg.Visible := False;
+  SetDFocus(FrmDlg.DUserSellOff);
   EdSearch.SetFocus;
 end;
 
@@ -14652,15 +14655,15 @@ begin
       dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
     //Font.Color := clWhite;
     case g_nSellItemType of
-      0: sName := '所有物品';
-      1: sName := '所有衣服';
-      2: sName := '所有武器';
-      3: sName := '所有首饰';
-      4: sName := '所有宝石';
-      5: sName := '其他物品';
-      6: sName := '我的物品';
-      7: sName := '取款';
-      8: sName := '查询物品';
+      0: sName := 'Everything';
+      1: sName := 'Clothes';
+      2: sName := 'Weapons';
+      3: sName := 'Jewelry';
+      4: sName := 'Stones';
+      5: sName := 'Other';
+      6: sName := 'Your Items';
+      7: sName := 'Withdrawal';
+      8: sName := 'Search';
     end;
 
     with dsurface do begin
@@ -14673,13 +14676,13 @@ begin
       end;
 
       TextOut(SurfaceX(Left) + 410 - TextWidth(sPage) div 2, SurfaceY(Top) + 14, sPage);
-      TextOut(SurfaceX(Left) + 73 - TextWidth('AA'), SurfaceY(Top) + 45, '物品');
-      TextOut(SurfaceX(Left) + 233 - TextWidth('AA'), SurfaceY(Top) + 45, '价格');
+      TextOut(SurfaceX(Left) + 73 - TextWidth('AA'), SurfaceY(Top) + 45, 'Item');
+      TextOut(SurfaceX(Left) + 233 - TextWidth('AA'), SurfaceY(Top) + 45, 'Price');
 
       if g_nSellItemType in [6, 7] then begin
-        TextOut(SurfaceX(Left) + 394 - TextWidth('AA'), SurfaceY(Top) + 45, '状态');
+        TextOut(SurfaceX(Left) + 394 - TextWidth('AA'), SurfaceY(Top) + 45, 'Status');
       end else begin
-        TextOut(SurfaceX(Left) + 394 - TextWidth('AA'), SurfaceY(Top) + 45, '卖家');
+        TextOut(SurfaceX(Left) + 394 - TextWidth('AA'), SurfaceY(Top) + 45, 'Seller');
       end;
     end;
 
@@ -14711,10 +14714,10 @@ begin
           sName := g_SellItems[I].SellItem.s.Name;
           sPrice := IntToStr(abs(nPrice));
           if g_nSellItemType = 6 then begin
-            sCharName := '未售出';
+            sCharName := 'Unsold';
           end else
             if g_nSellItemType = 7 then begin
-            sCharName := '已售出';
+            sCharName := 'Sold';
           end else begin
             sCharName := g_SellItems[I].sCharName;
           end;
@@ -14732,7 +14735,7 @@ begin
       if d <> nil then
         dsurface.Draw(SurfaceX(DSellItem.Left), SurfaceY(DSellItem.Top), d.ClientRect, d, True);
       with dsurface do begin
-        sName := '寄售日期：' + DateTimeToStr(g_MouseSellItems.dSellDateTime);
+        sName := 'Item Added: ' + DateTimeToStr(g_MouseSellItems.dSellDateTime);
         TextOut(SurfaceX(Left) + 19, SurfaceY(Top) + 274, sName);
       end;
       with dsurface do begin
@@ -14861,12 +14864,12 @@ var
 begin
   if (g_MouseSellItems.sCharName <> '') and (g_MouseSellItems.SellItem.s.Name <> '') then begin
     if g_nSellItemType = 6 then begin
-      sHintString := 'Do you want to get back ' + g_MouseSellItems.SellItem.s.Name + '?';
+      sHintString := '1:Do you want to get back ' + g_MouseSellItems.SellItem.s.Name + '?';
     end else
       if g_nSellItemType = 7 then begin
-      sHintString := 'Do you want to get back ' + g_MouseSellItems.SellItem.s.Name + ' from Consignment?';
+      sHintString := 'Do you want to collect the money from the sale of ' + g_MouseSellItems.SellItem.s.Name + '?';
     end else begin
-      sHintString := 'Are you sure you want to buy ' + g_MouseSellItems.SellItem.s.Name + '?';
+      sHintString := 'Are you sure you want to buy/get back ' + g_MouseSellItems.SellItem.s.Name + '?';
     end;
     if mrOk = FrmDlg.DMessageDlg(sHintString, [mbOk, mbCancel]) then begin
       if g_nSellItemType = 7 then begin
@@ -14874,6 +14877,7 @@ begin
         Exit;
       end;
       frmMain.SendBuySellItem(g_MouseSellItems.SellItem.MakeIndex, g_MouseSellItems.SellItem.s.Name);
+      frmMain.SendQuerySellItems(g_nSellItemType, g_nSellItemPage, g_sSellItem);
     end;
   end;
 end;
@@ -19289,7 +19293,7 @@ procedure TFrmDlg.EdSearchDirectPaint(Sender: TObject; dsurface: TTexture);
 begin
   if EdSearch.Text = '' then
     with EdSearch do
-      dsurface.TextOut(SurfaceX(Left) + 2, SurfaceY(Top) + 2, '[输入物品名称]', $005894B8);
+      dsurface.TextOut(SurfaceX(Left) + 2, SurfaceY(Top) + 2, '[Search Items]', $005894B8);
 end;
 
 

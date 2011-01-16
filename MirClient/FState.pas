@@ -16941,7 +16941,7 @@ begin
           g_dwShowEditChatTick := GetTickCount;
           Inc(g_nShowEditChatCount);
         end else g_dwShowEditChatTick := GetTickCount;
-        DScreen.ShowHint(DEdChat.SurfaceX(X), DEdChat.SurfaceY(DEdChat.Top), '鼠标左键点击拖动，可以移动聊天框', clWhite {clYellow}, False);
+        DScreen.ShowHint(DEdChat.SurfaceX(X), DEdChat.SurfaceY(DEdChat.Top), 'Click and drag to move the chat box', clWhite {clYellow}, False);
       end;
     end;
   end;
@@ -18361,11 +18361,11 @@ begin
               g_MouseItem.s.Name := '';
             end;
           end else begin
-            DScreen.ShowHintA(SurfaceX(Left + Width), SurfaceY(Top) + 16, '点击查询 ' + Caption + ' 的信息', clInfoText, True);
+            DScreen.ShowHintA(SurfaceX(Left + Width), SurfaceY(Top) + 16, 'Click to check ' + Caption + ' message', clInfoText, True);
           end;
         end;
-      1: DScreen.ShowHintA(SurfaceX(Left + Width), SurfaceY(Top) + 16, '点击播放 ' + Caption, clInfoText, True); //clWhite
-      2: DScreen.ShowHintA(SurfaceX(Left + Width), SurfaceY(Top) + 16, '点击打开 ' + Caption, clInfoText, True);
+      1: DScreen.ShowHintA(SurfaceX(Left + Width), SurfaceY(Top) + 16, 'Click to play ' + Caption, clInfoText, True); //clWhite
+      2: DScreen.ShowHintA(SurfaceX(Left + Width), SurfaceY(Top) + 16, 'Click to open ' + Caption, clInfoText, True);
     end;
   end;
 end;

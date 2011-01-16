@@ -773,7 +773,7 @@ end;
 procedure TCastleOfficial.Click(PlayObject: TPlayObject; sLabel: string);
 begin
   if m_Castle = nil then begin
-    PlayObject.SysMsg('NPC不属于城堡！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('NPC not part of a Castle!', c_Red, t_Hint);
     Exit;
   end;
   if TUserCastle(m_Castle).IsMasterGuild(TGUild(PlayObject.m_MyGuild)) or (PlayObject.m_btPermission >= 3) then
@@ -841,7 +841,7 @@ begin
   try
     //    PlayObject.m_nScriptGotoCount:=0;
     if m_Castle = nil then begin
-      PlayObject.SysMsg('NPC不属于城堡！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('NPC not part of a Castle!', c_Red, t_Hint);
       Exit;
     end;
     if (sData <> '') and (sData[1] = '@') then begin
@@ -949,7 +949,7 @@ var
   ObjUnit: pTObjUnit;
 begin
   if m_Castle = nil then begin
-    PlayObject.SysMsg('NPC不属于城堡！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('NPC is not part of a Castle', c_Red, t_Hint);
     Exit;
   end;
   if TUserCastle(m_Castle).m_nTotalGold >= g_Config.nHireGuardPrice then begin
@@ -968,17 +968,17 @@ begin
             TGuardUnit(ObjUnit.ActorObject).m_nX550 := ObjUnit.nX;
             TGuardUnit(ObjUnit.ActorObject).m_nY554 := ObjUnit.nY;
             TGuardUnit(ObjUnit.ActorObject).m_nDirection := 3;
-            PlayObject.SysMsg('雇佣成功.', c_Green, t_Hint);
+            PlayObject.SysMsg('Guard hired.', c_Green, t_Hint);
           end;
         end else begin
-          PlayObject.SysMsg('现在无法雇佣！！！', c_Red, t_Hint);
+          PlayObject.SysMsg('Unable to hire!', c_Red, t_Hint);
         end;
       end
     end else begin
-      PlayObject.SysMsg('指令错误！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('Command error', c_Red, t_Hint);
     end;
   end else begin
-    PlayObject.SysMsg('城内资金不足！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('Insufficient funds', c_Red, t_Hint);
   end;
   {
   if UserCastle.m_nTotalGold >= g_Config.nHireGuardPrice then begin
@@ -1019,7 +1019,7 @@ var
   ObjUnit: pTObjUnit;
 begin
   if m_Castle = nil then begin
-    PlayObject.SysMsg('NPC不属于城堡！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('NPC not part of a Castle!', c_Red, t_Hint);
     Exit;
   end;
   if TUserCastle(m_Castle).m_nTotalGold >= g_Config.nHireArcherPrice then begin
@@ -1038,19 +1038,19 @@ begin
             TGuardUnit(ObjUnit.ActorObject).m_nX550 := ObjUnit.nX;
             TGuardUnit(ObjUnit.ActorObject).m_nY554 := ObjUnit.nY;
             TGuardUnit(ObjUnit.ActorObject).m_nDirection := 3;
-            PlayObject.SysMsg('雇佣成功.', c_Green, t_Hint);
+            PlayObject.SysMsg('Archer hired.', c_Green, t_Hint);
           end;
         end else begin
-          PlayObject.SysMsg('现在无法雇佣！！！', c_Red, t_Hint);
+          PlayObject.SysMsg('Unable to hire.', c_Red, t_Hint);
         end;
       end else begin
-        PlayObject.SysMsg('早已雇佣！！！', c_Red, t_Hint);
+        PlayObject.SysMsg('Unable to hire.', c_Red, t_Hint);
       end;
     end else begin
-      PlayObject.SysMsg('指令错误！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('Command error.', c_Red, t_Hint);
     end;
   end else begin
-    PlayObject.SysMsg('城内资金不足！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('Insufficient funds', c_Red, t_Hint);
   end;
   {
   if UserCastle.m_nTotalGold >= g_Config.nHireArcherPrice then begin
@@ -3051,7 +3051,7 @@ begin
                 PlayObject.GameGoldChanged;
                 OnlinePlayObject := UserEngine.GetPlayObject(AddSellOffInfo.sCharName);
                 if OnlinePlayObject <> nil then begin
-                  OnlinePlayObject.SysMsg(PlayObject.m_sCharName + ' 购买了你的 ' + sItemName, c_Red, t_Hint);
+                  OnlinePlayObject.SysMsg(PlayObject.m_sCharName + ' purchased your ' + sItemName, c_Red, t_Hint);
                 end;
 
                 if g_boGameLogGameGold then begin
@@ -4725,7 +4725,7 @@ begin
   UserItem := @PlayObject.m_UseItems[nWhere];
   StdItem := UserEngine.GetStdItem(UserItem.wIndex);
   if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-    PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('You are not wearing an eligible Items.', c_Red, t_Hint);
     Exit;
   end;
 
@@ -4892,7 +4892,7 @@ begin
                   Exit;
                 end;
                 SaveItemBindAccount();
-                SysMsg(Format('%s[%s]IDX[%d]系列号[%d]持久[%d-%d]，绑定到%s成功。',
+                SysMsg(Format('%s[%s]IDX:[%d] Serial Number:[%d] Dura:[%d-%d]，%s has been bound.',
                   [GetUseItemName(nItem),
                   UserEngine.GetStdItemName(UserItem.wIndex),
                     UserItem.wIndex,
@@ -4901,7 +4901,7 @@ begin
                     UserItem.DuraMax,
                     sBindName]),
                     c_Blue, t_Hint);
-                PlayObject.SysMsg(Format('你的%s[%s]已经绑定到%s[%s]上了。',
+                PlayObject.SysMsg(Format('Item %s[%s]is already bound to %s[%s] you.',
                   [GetUseItemName(nItem),
                   UserEngine.GetStdItemName(UserItem.wIndex),
                     sType,
@@ -4950,7 +4950,7 @@ begin
                     UserItem.DuraMax,
                     sBindName]),
                     c_Blue, t_Hint);
-                PlayObject.SysMsg(Format('你的%s[%s]已经绑定到%s[%s]上了。',
+                PlayObject.SysMsg(Format('Item %s[%s]is already bound to %s[%s] you.',
                   [GetUseItemName(nItem),
                   UserEngine.GetStdItemName(UserItem.wIndex),
                     sType,
@@ -4999,7 +4999,7 @@ begin
                     UserItem.DuraMax,
                     sBindName]),
                     c_Blue, t_Hint);
-                PlayObject.SysMsg(Format('你的%s[%s]已经绑定到%s[%s]上了。',
+                PlayObject.SysMsg(Format('Item %s[%s]is already bound to %s[%s] you.',
                   [GetUseItemName(nItem),
                   UserEngine.GetStdItemName(UserItem.wIndex),
                     sType,
@@ -14811,7 +14811,7 @@ begin
   PlayObject.SendMsg(PlayObject, RM_ADJUST_BONUS, 0, 0, 0, 0, '');
   PlayObject.RecalcLevelAbilitys;
   PlayObject.RecalcAbilitys;
-  PlayObject.SysMsg('分配点数已复位！！！', c_Red, t_Hint);
+  PlayObject.SysMsg('Ability Points have been reset', c_Red, t_Hint);
 end;
 
 procedure TNormNpc.ActionOfRestReNewLevel(PlayObject: TPlayObject;
@@ -15302,7 +15302,7 @@ begin
   UserItem := @PlayObject.m_UseItems[nWhere];
   StdItem := UserEngine.GetStdItem(UserItem.wIndex);
   if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-    PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('You are not wearing any eligible Item.', c_Red, t_Hint);
     Exit;
   end;
   Result := PlayObject.CheckItemBindUse(UserItem, True) = 2;
@@ -15646,7 +15646,7 @@ begin
   UserItem := @PlayObject.m_UseItems[nWhere];
   StdItem := UserEngine.GetStdItem(UserItem.wIndex);
   if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-    PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('You are not wearing any eligible Items.', c_Red, t_Hint);
     Exit;
   end;
   cMethod := QuestConditionInfo.sParam2[1];
@@ -16413,7 +16413,7 @@ begin
   UserItem := @PlayObject.m_UseItems[nWhere];
   StdItem := UserEngine.GetStdItem(UserItem.wIndex);
   if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-    PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('You are not wearing any eligible Items.', c_Red, t_Hint);
     Exit;
   end;
 
@@ -16428,7 +16428,7 @@ begin
   nPoint := Random(nPoint);
   nValType := Random(14);
   if nRate <> 0 then begin
-    PlayObject.SysMsg('装备升级失败！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('Item upgrade failed.', c_Red, t_Hint);
     Exit;
   end;
   if nValType = 14 then begin
@@ -16445,7 +16445,7 @@ begin
     UserItem.btValue[nValType] := UserItem.btValue[nValType] + nAddPoint;
   end;
   PlayObject.SendUpdateItem(UserItem);
-  PlayObject.SysMsg('装备升级成功', c_Green, t_Hint);
+  PlayObject.SysMsg('Item upgraded successfully', c_Green, t_Hint);
   PlayObject.SysMsg(StdItem.Name + ': ' +
     IntToStr(UserItem.Dura) + '/' +
     IntToStr(UserItem.DuraMax) + '/' +
@@ -16494,7 +16494,7 @@ begin
     UserItem := @PlayObject.m_UseItems[nWhere];
     StdItem := UserEngine.GetStdItem(UserItem.wIndex);
     if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-      PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('You are not wearing any eligible Items.', c_Red, t_Hint);
       Exit;
     end;
 
@@ -16511,15 +16511,15 @@ begin
     if not (nRatePoint in [0..10]) then begin
       case nUpgradeItemStatus of //
         0: begin
-            PlayObject.SysMsg('装备升级未成功！！！', c_Red, t_Hint);
+            PlayObject.SysMsg('Item upgrade failed', c_Red, t_Hint);
           end;
         1: begin
             PlayObject.SendDelItems(UserItem);
             UserItem.wIndex := 0;
-            PlayObject.SysMsg('装备破碎！！！', c_Red, t_Hint);
+            PlayObject.SysMsg('Item was broken!', c_Red, t_Hint);
           end;
         2: begin
-            PlayObject.SysMsg('装备升级失败，装备属性恢复默认！！！', c_Red, t_Hint);
+            PlayObject.SysMsg('Item upgrade failed and has been restored to default Stats', c_Red, t_Hint);
             if nValType <> 14 then
               UserItem.btValue[nValType] := 0;
           end;
@@ -16540,7 +16540,7 @@ begin
       UserItem.btValue[nValType] := UserItem.btValue[nValType] + nAddPoint;
     end;
     PlayObject.SendUpdateItem(UserItem);
-    PlayObject.SysMsg('装备升级成功', c_Green, t_Hint);
+    PlayObject.SysMsg('Item upgraded', c_Green, t_Hint);
     PlayObject.SysMsg(StdItem.Name + ': ' +
       IntToStr(UserItem.Dura) + '/' +
       IntToStr(UserItem.DuraMax) + '-' +
@@ -16577,7 +16577,7 @@ begin
     UserItem := @PlayObject.m_UseItems[nWhere];
     StdItem := UserEngine.GetStdItem(UserItem.wIndex);
     if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-      PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('You are not wearing any eligible Items.', c_Red, t_Hint);
       Exit;
     end;
 
@@ -16595,15 +16595,15 @@ begin
     if not (nRatePoint in [0..10]) then begin
       case nUpgradeItemStatus of //
         0: begin
-            PlayObject.SysMsg('装备升级未成功！！！', c_Red, t_Hint);
+            PlayObject.SysMsg('Item upgrade failed', c_Red, t_Hint);
           end;
         1: begin
             PlayObject.SendDelItems(UserItem);
             UserItem.wIndex := 0;
-            PlayObject.SysMsg('装备破碎！！！', c_Red, t_Hint);
+            PlayObject.SysMsg('Item was broken!', c_Red, t_Hint);
           end;
         2: begin
-            PlayObject.SysMsg('装备升级失败，装备属性恢复默认！！！', c_Red, t_Hint);
+            PlayObject.SysMsg('Item upgrade failed and has been restored to default Stats', c_Red, t_Hint);
             UserItem.AddValue[nValType1] := 0;
             UserItem.AddValue[nValType1 + 3] := 0;
             PlayObject.SendUpdateItem(UserItem);
@@ -16624,7 +16624,7 @@ begin
     UserItem.AddValue[nValType1 + 3] := UserItem.AddValue[nValType1 + 3] + nAddPoint;
     if UserItem.AddValue[nValType1 + 3] > 0 then UserItem.AddValue[nValType1] := nValType;
     PlayObject.SendUpdateItem(UserItem);
-    PlayObject.SysMsg('装备升级成功', c_Green, t_Hint);
+    PlayObject.SysMsg('Item upgraded', c_Green, t_Hint);
     PlayObject.SysMsg(StdItem.Name + ': ' +
       IntToStr(UserItem.Dura) + '/' +
       IntToStr(UserItem.DuraMax) + '-' +
@@ -16767,7 +16767,7 @@ begin
   UserItem := @PlayObject.m_UseItems[nWhere];
   StdItem := UserEngine.GetStdItem(UserItem.wIndex);
   if (UserItem.wIndex <= 0) or (StdItem = nil) then begin
-    PlayObject.SysMsg('你身上没有戴指定物品！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('You are not wearing any eligible Items.', c_Red, t_Hint);
     Exit;
   end;
   nOValue := UserItem.AddValue[12];
@@ -18304,10 +18304,10 @@ begin
       PlayObject.GoldChanged();
       PlayObject.ReQuestGuildWar(sGuildName);
     end else begin
-      PlayObject.SysMsg('你没有足够的金币！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('You do not have enough Gold.', c_Red, t_Hint);
     end;
   end else begin
-    PlayObject.SysMsg('行会 ' + sGuildName + ' 不存在！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('The Guild ' + sGuildName + '  does not exist.', c_Red, t_Hint);
   end;
   Result := 1;
 end;
@@ -18339,33 +18339,33 @@ begin
         PlayObject.DelBagItem(UserItem.MakeIndex, g_Config.sZumaPiece);
         GotoLable(PlayObject, '~@request_ok', False);
       end else begin
-        PlayObject.SysMsg('你现在无法请求攻城！！！', c_Red, t_Hint);
+        PlayObject.SysMsg('Unable to request War.', c_Red, t_Hint);
       end;
       (*{$IFEND}*)
 
     end else begin
-      PlayObject.SysMsg('你没有' + g_Config.sZumaPiece + '！！！', c_Red, t_Hint);
+      PlayObject.SysMsg('You need one ' + g_Config.sZumaPiece + '!', c_Red, t_Hint);
     end;
   end else begin
-    PlayObject.SysMsg('你的请求被取消！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('Your request has been canceled', c_Red, t_Hint);
   end;
 end;
 
 procedure TCastleOfficial.RepairDoor(PlayObject: TPlayObject);
 begin
   if m_Castle = nil then begin
-    PlayObject.SysMsg('NPC不属于城堡！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('NPC not part of a Castle.', c_Red, t_Hint);
     Exit;
   end;
   if TUserCastle(m_Castle).m_nTotalGold >= g_Config.nRepairDoorPrice then begin
     if TUserCastle(m_Castle).RepairDoor then begin
       Dec(TUserCastle(m_Castle).m_nTotalGold, g_Config.nRepairDoorPrice);
-      PlayObject.SysMsg('修理成功。', c_Green, t_Hint);
+      PlayObject.SysMsg('Repair successful', c_Green, t_Hint);
     end else begin
-      PlayObject.SysMsg('城门不需要修理！！！', c_Green, t_Hint);
+      PlayObject.SysMsg('Gates need repairing', c_Green, t_Hint);
     end;
   end else begin
-    PlayObject.SysMsg('城内资金不足！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('Insufficient funds', c_Red, t_Hint);
   end;
   {
   if UserCastle.m_nTotalGold >= g_Config.nRepairDoorPrice then begin
@@ -18385,19 +18385,19 @@ procedure TCastleOfficial.RepairWallNow(nWallIndex: Integer;
   PlayObject: TPlayObject);
 begin
   if m_Castle = nil then begin
-    PlayObject.SysMsg('NPC不属于城堡！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('NPC is not part of a Castle', c_Red, t_Hint);
     Exit;
   end;
 
   if TUserCastle(m_Castle).m_nTotalGold >= g_Config.nRepairWallPrice then begin
     if TUserCastle(m_Castle).RepairWall(nWallIndex) then begin
       Dec(TUserCastle(m_Castle).m_nTotalGold, g_Config.nRepairWallPrice);
-      PlayObject.SysMsg('修理成功。', c_Green, t_Hint);
+      PlayObject.SysMsg('Repair successful', c_Green, t_Hint);
     end else begin
-      PlayObject.SysMsg('城门不需要修理！！！', c_Green, t_Hint);
+      PlayObject.SysMsg('Walls need repairing', c_Green, t_Hint);
     end;
   end else begin
-    PlayObject.SysMsg('城内资金不足！！！', c_Red, t_Hint);
+    PlayObject.SysMsg('Insufficient funds', c_Red, t_Hint);
   end;
   {
   if UserCastle.m_nTotalGold >= g_Config.nRepairWallPrice then begin

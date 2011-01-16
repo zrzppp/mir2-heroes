@@ -11005,7 +11005,7 @@ var
 begin
   New(pcm);
   DecodeBuffer(body, @(pcm^), SizeOf(TClientMagic));
-  if pcm.Def.wMagicId in [100..111] then begin
+  {if pcm.Def.wMagicId in [100..111] then begin
     g_SerieMagicList.Add(pcm);
     if FrmDlg.DSerieMagicMenu.Count <= 0 then begin
       FrmDlg.DSerieMagicMenu.Add('清除技能', nil);
@@ -11013,13 +11013,13 @@ begin
       FrmDlg.DSerieMagicMenu.Add('-', nil);
     end;
     FrmDlg.DSerieMagicMenu.Add(pcm.Def.sMagicName, nil);
-  end else begin
+  end else begin  }
     g_MagicList.Add(pcm);
     FrmDlg.DComboboxAutoUseMagic.Items.AddObject(pcm.Def.sMagicName, TObject(pcm));
     FrmDlg.DComboboxGuajiQunti.Items.AddObject(pcm.Def.sMagicName, TObject(pcm));
     FrmDlg.DComboboxGuajiGeti.Items.AddObject(pcm.Def.sMagicName, TObject(pcm));
   end;
-end;
+//end;
 
 procedure TfrmMain.ClientGetDelMagic(magid: Integer);
 var
@@ -11102,7 +11102,7 @@ begin
       New(pcm);
       DecodeBuffer(Data, @(pcm^), SizeOf(TClientMagic));
       if pcm.Def.sMagicName <> '' then begin
-        if pcm.Def.wMagicId in [100..111] then begin
+        {if pcm.Def.wMagicId in [100..111] then begin
           g_SerieMagicList.Add(pcm);
           if (g_SerieMagicList.Count > 0) and (FrmDlg.DSerieMagicMenu.Count <= 0) then begin
             FrmDlg.DSerieMagicMenu.Add('清除技能', nil);
@@ -11110,7 +11110,7 @@ begin
             FrmDlg.DSerieMagicMenu.Add('-', nil);
           end;
           FrmDlg.DSerieMagicMenu.Add(pcm.Def.sMagicName, nil);
-        end else begin
+        end else begin      }
           g_MagicList.Add(pcm);
           FrmDlg.DComboboxAutoUseMagic.Items.AddObject(pcm.Def.sMagicName, TObject(pcm));
           FrmDlg.DComboboxGuajiQunti.Items.AddObject(pcm.Def.sMagicName, TObject(pcm));
@@ -11120,7 +11120,7 @@ begin
         Dispose(pcm);
         Break;
       end;
-    end else Break;
+   // end else Break;
   end;
   FrmDlg.DComboboxAutoUseMagic.itemindex := g_Config.nAutoUseMagicIdx;
 

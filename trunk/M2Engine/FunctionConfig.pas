@@ -1241,15 +1241,15 @@ end;
 
 procedure TfrmFunctionConfig.FormCreate(Sender: TObject);
 begin
-  GridBoneFamm.Cells[0, 0] := '人物等级';
-  GridBoneFamm.Cells[1, 0] := '怪物名称';
-  GridBoneFamm.Cells[2, 0] := '数量';
-  GridBoneFamm.Cells[3, 0] := '等级';
+  GridBoneFamm.Cells[0, 0] := 'Char Lvl';
+  GridBoneFamm.Cells[1, 0] := 'Mob Name';
+  GridBoneFamm.Cells[2, 0] := 'Amount';
+  GridBoneFamm.Cells[3, 0] := 'Level';
 
-  GridDogz.Cells[0, 0] := '人物等级';
-  GridDogz.Cells[1, 0] := '怪物名称';
-  GridDogz.Cells[2, 0] := '数量';
-  GridDogz.Cells[3, 0] := '等级';
+  GridDogz.Cells[0, 0] := 'Char Lvl';
+  GridDogz.Cells[1, 0] := '筂ob Name';
+  GridDogz.Cells[2, 0] := 'Amount';
+  GridDogz.Cells[3, 0] := 'Level';
   FunctionConfigControl.ActivePageIndex := 0;
   MagicPageControl.ActivePageIndex := 0;
 {$IF (SoftVersion = VERPRO) or (SoftVersion = VERENT)}

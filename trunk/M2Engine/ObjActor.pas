@@ -18307,8 +18307,8 @@ begin
         UserMagic.btLevel,
         UserMagic.nTranPoint,
         '');
-      PlayObject.SysMsg(Format('%s的修改炼等级为%d', [sSkillName, nLevel]), c_Green, t_Hint);
-      SysMsg(Format('%s的技能%s修炼等级为%d', [sHumanName, sSkillName, nLevel]), c_Green, t_Hint);
+      PlayObject.SysMsg(Format('%s skill has be changed to level %d', [sSkillName, nLevel]), c_Green, t_Hint);
+      SysMsg(Format('%s skill name %s has been changed to level %d', [sHumanName, sSkillName, nLevel]), c_Green, t_Hint);
       Break;
     end;
   end;
@@ -18321,7 +18321,7 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sHumName = '') or (nPoint <= 0) then begin
-    SysMsg('命令格式: @' + sCmd + ' 人物名称  金币数量', c_Red, t_Hint);
+    SysMsg('Format: @' + sCmd + ' CharacterName  Gold', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumName);
@@ -18333,8 +18333,8 @@ begin
       PlayObject.m_nGameGold := 2000000;
     end;
     PlayObject.GoldChanged();
-    SysMsg(sHumName + '的游戏点已增加' + IntToStr(nPoint) + '.', c_Green, t_Hint);
-    PlayObject.SysMsg('游戏点已增加' + IntToStr(nPoint) + '.', c_Green, t_Hint);
+    SysMsg(sHumName + 'Game point has been increased ' + IntToStr(nPoint) + '.', c_Green, t_Hint);
+    PlayObject.SysMsg('Game point has been increased ' + IntToStr(nPoint) + '.', c_Green, t_Hint);
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumName]), c_Red, t_Hint);
   end;
@@ -19125,8 +19125,8 @@ begin
   PlayObject.m_boPasswordLocked := False;
   PlayObject.m_boUnLockStoragePwd := False;
   PlayObject.m_sStoragePwd := '';
-  PlayObject.SysMsg('你的保护密码已被清除！！！', c_Green, t_Hint);
-  SysMsg(Format('%s的保护密码已被清除！！！', [sHumanName]), c_Green, t_Hint);
+  PlayObject.SysMsg('Storage password has been removed', c_Green, t_Hint);
+  SysMsg(Format('%s storage password has been removed', [sHumanName]), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdClearMapMonster(Cmd: pTGameCmd; sMapName, sMonName, sItems: string);
@@ -19539,7 +19539,7 @@ begin
     Exit;
   end;
   if sHumName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称', c_Red, t_Hint);
+    SysMsg('Format: @' + Cmd.sCmd + ' CharacterName', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumName);
@@ -19559,8 +19559,8 @@ begin
     Inc(PlayObject.m_nBonusPoint, nTotleUsePoint);
     PlayObject.SendMsg(PlayObject, RM_ADJUST_BONUS, 0, 0, 0, 0, '');
     PlayObject.HasLevelUp(0);
-    PlayObject.SysMsg('分配点数已复位！！！', c_Red, t_Hint);
-    SysMsg(sHumName + ' 的分配点数已复位.', c_Green, t_Hint);
+    PlayObject.SysMsg('Stat points have been cleared', c_Red, t_Hint);
+    SysMsg(sHumName + ' stat points have been cleared', c_Green, t_Hint);
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumName]), c_Red, t_Hint);
   end;
@@ -20360,8 +20360,8 @@ begin
         PlayObject.SendDelMagic(UserMagic);
         PlayObject.m_MagicList.Delete(I);
         Dispose(UserMagic);
-        PlayObject.SysMsg(Format('技能%s已删除。', [sSkillName]), c_Green, t_Hint);
-        SysMsg(Format('%s的技能%s已删除。', [sHumanName, sSkillName]), c_Green, t_Hint);
+        PlayObject.SysMsg(Format('%s has been removed', [sSkillName]), c_Green, t_Hint);
+        SysMsg(Format('%s skill %s has been removed', [sHumanName, sSkillName]), c_Green, t_Hint);
         Break;
       end;
     end;
@@ -22245,7 +22245,7 @@ begin
             UserItem.DuraMax,
             sBindName]),
             c_Blue, t_Hint);
-        PlayObject.SysMsg(Format('你的%s[%s]已经绑定到%s[%s]上了。',
+        PlayObject.SysMsg(Format('Item %s[%s] has already been bound %s[%s].',
           [GetUseItemName(nItem),
           UserEngine.GetStdItemName(UserItem.wIndex),
             sType,
@@ -22287,7 +22287,7 @@ begin
             UserItem.DuraMax,
             sBindName]),
             c_Blue, t_Hint);
-        PlayObject.SysMsg(Format('你的%s[%s]已经绑定到%s[%s]上了。',
+        PlayObject.SysMsg(Format('Item %s[%s] has already been bound %s[%s].',
           [GetUseItemName(nItem),
           UserEngine.GetStdItemName(UserItem.wIndex),
             sType,
@@ -22330,7 +22330,7 @@ begin
             UserItem.DuraMax,
             sBindName]),
             c_Blue, t_Hint);
-        PlayObject.SysMsg(Format('你的%s[%s]已经绑定到%s[%s]上了。',
+        PlayObject.SysMsg(Format('Item %s[%s] has already been bound %s[%s].',
           [GetUseItemName(nItem),
           UserEngine.GetStdItemName(UserItem.wIndex),
             sType,
@@ -28093,7 +28093,7 @@ begin
                             UserItem34 := UserItem^;}
                           end else begin
                             boEatOK := False;
-                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, g_Config.sGameGoldName + '不够无法释放聚灵珠经验！');
+                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Not enough' + g_Config.sGameGoldName + 'for this function!');
                           end;
                         end;
                       1: begin //金币提取经验
@@ -28119,7 +28119,7 @@ begin
                           end else begin
 
                             boEatOK := False;
-                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, '金币不够无法释放聚灵珠经验！');
+                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Not enough Gold for this function!');
                           end;
                         end;
                       2: begin //声望提取经验
@@ -28145,7 +28145,7 @@ begin
                           end else begin
                             boEatOK := False;
 
-                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, '声望不够无法释放聚灵珠经验！');
+                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Not enough Credit for this function!');
                           end;
                         end;
                       3: begin //活跃提取经验
@@ -28167,14 +28167,14 @@ begin
                             UserItem34 := UserItem^;}
                           end else begin
                             boEatOK := False;
-                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, g_Config.sGamePointName + '不够无法释放聚灵珠经验！');
+                            SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0,'Not enough' + g_Config.sGamePointName + ' for this function!');
                           end;
                         end;
                     else boEatOK := False;
                     end;
                   end else begin
                     boEatOK := False;
-                    SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, '还没有聚满，无法释放聚灵珠经验！');
+                    SendMsg(Self, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Unable to use.');
                   end;
                 end;
               31: begin //解包物品
@@ -28534,7 +28534,7 @@ begin
   if m_boDeath or m_boGhost or (m_boDealing) or (m_boDueling) or m_boStore then Exit;
 
   if m_boIsUnknowActor or PlayObject.m_boIsUnknowActor then begin
-    SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '身份无法识别,不能挑战！！！');
+    SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Player not found.');
     Exit;
   end;
 
@@ -28563,8 +28563,8 @@ begin
 
         Envir := g_MapManager.GetDuelMap;
         if (Envir = nil) (*{$IF CHECKCRACK = 1} or (not (UserReg.Mode in [1..2])){$IFEND}*) then begin
-          SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
-          PlayObject.SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
+          SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
+          PlayObject.SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
           SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
           Exit;
         end;
@@ -28648,7 +28648,7 @@ begin
     if (PlayObject <> nil) and (PlayObject.GetPoseCreate = Self) and (not PlayObject.m_boDealing) and (not PlayObject.m_boDeath) and (not PlayObject.m_boGhost) then begin
       if (PlayObject.m_boAllowDeal and PlayObject.m_boCanDeal) then begin
         if m_boIsUnknowActor or PlayObject.m_boIsUnknowActor then begin
-          SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '身份无法识别,不能交易！！！');
+          SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Unable to Deal');
           Exit;
         end;
         PlayObject.m_boDealType := True;
@@ -29094,7 +29094,7 @@ var
 begin
   if m_boDeath or m_boGhost or m_boStartDuel or m_boDealing or m_boDueling or m_boStore or (m_NewStatus <> sNone) then Exit;
   if m_boIsUnknowActor or PlayObject.m_boIsUnknowActor then begin
-    SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '身份无法识别,不能挑战！！！');
+    SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Player not found.');
     Exit;
   end;
   if g_Config.boDisableDuel then begin
@@ -29121,8 +29121,8 @@ begin
 
         Envir := g_MapManager.GetDuelMap;
         if (Envir = nil) (*{$IF CHECKCRACK = 1} or (not (UserReg.Mode in [1..2])){$IFEND} *) then begin
-          SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
-          PlayObject.SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
+          SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
+          PlayObject.SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
           SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
           Exit;
         end;
@@ -29222,13 +29222,13 @@ begin
       (not PlayObject.m_boDeath) and (not PlayObject.m_boGhost) and (not PlayObject.m_boStartDuel) then begin
       if (PlayObject.m_boAllowDuel and PlayObject.m_boCanDuel) then begin
         if m_boIsUnknowActor or PlayObject.m_boIsUnknowActor then begin
-          SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '身份无法识别,不能挑战！！！');
+          SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Player not found.');
           Exit;
         end;
         Envir := g_MapManager.GetDuelMap;
         if (Envir = nil) then begin
-          SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
-          PlayObject.SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
+          SysMsg('No Map available for Duel, please wait and try again', c_Red, t_Hint);
+          PlayObject.SysMsg('No Map available for Duel, please wait and try again', c_Red, t_Hint);
           SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
           Exit;
         end;
@@ -29591,21 +29591,21 @@ begin
 
   if not m_PEnvir.m_boOpenStore then begin
     SendDefMessage(SM_SENDSTARTSTORE_FAIL, 0, 0, 0, 0, ''); //摆摊失败
-    SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '当前地图禁止摆摊');
+    SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'You cannot open a Stall on this Map.');
     Exit;
   end;
 
   if g_Config.boSafeCanStore then begin
     if not InSafeZone then begin
       SendDefMessage(SM_SENDSTARTSTORE_FAIL, 0, 0, 0, 0, ''); //摆摊失败
-      SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '非安全区，禁止摆摊！！！');
+      SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'You cannot Store items on this Map.');
       Exit;
     end;
   end;
   if g_Config.boOpenStoreCheckLevel then begin
     if m_WAbil.Level < g_Config.nOpenStoreCheckLevel then begin
       SendDefMessage(SM_SENDSTARTSTORE_FAIL, 0, 0, 0, 0, ''); //摆摊失败
-      SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '你的等级小于' + IntToStr(g_Config.nOpenStoreCheckLevel) + '级，禁止摆摊！！！');
+      SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'You must be level ' + IntToStr(g_Config.nOpenStoreCheckLevel) + ' to open Store.');
 
       Exit;
     end;
@@ -30190,18 +30190,18 @@ begin
                 PlayObject.m_MyGuild := m_MyGuild;
                 PlayObject.m_sGuildRankName := TGUild(m_MyGuild).GetRankName(PlayObject, PlayObject.m_nGuildRankNo);
                 PlayObject.RefShowName();
-                PlayObject.SysMsg('你已加入行会: ' + TGUild(m_MyGuild).sGuildName + ' 当前封号为: ' + PlayObject.m_sGuildRankName, c_Green, t_Hint);
+                PlayObject.SysMsg('You have joined the Guild: ' + TGUild(m_MyGuild).sGuildName + ' Your Title is: ' + PlayObject.m_sGuildRankName, c_Green, t_Hint);
                 nC := 0;
               end else begin
                 nC := 6;
                 //SysMsg('你的行会成员数最高限制为：' + IntToStr(TGUild(m_MyGuild).m_nMemberMaxLimit), c_Red, t_Hint);
-                SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, '你的行会成员数最高限制为：' + IntToStr(TGUild(m_MyGuild).m_nMemberMaxLimit));
+                SendMsg(g_ManageNPC, RM_MENU_OK, 0, Integer(Self), 0, 0, 'Your Guild is limited to ' + IntToStr(TGUild(m_MyGuild).m_nMemberMaxLimit) + ' members');
               end;
             end else nC := 4; //'对方已经加入其他行会。'
           end else nC := 3; //004DEEF4 '对方已经加入我们的行会。'
         end else begin //004DEEFD
           nC := 5; //'对方不允许加入行会。'
-          PlayObject.SysMsg('你拒绝加入行会。 [允许命令为 @' + g_GameCommand.LETGUILD.sCmd + ']', c_Red, t_Hint);
+          PlayObject.SysMsg('You must allow Guild joining [Command is @' + g_GameCommand.LETGUILD.sCmd + ']', c_Red, t_Hint);
         end;
       end else nC := 2; //004DEF15 '想加入进来的成员应该来面对掌门人。'
     end else nC := 2;

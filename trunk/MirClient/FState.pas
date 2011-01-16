@@ -17259,7 +17259,7 @@ begin
           List := TStringList.Create;
           try
             GetMouseItemInfo(g_MySelf, @g_MouseItem, iname, d1, d2, d3, useable);
-            HintList.AddObject('售价: ' + IntToStr(g_MouseItem.s.Price) + ' ' + GetStorePriceName(g_StoreItems[Idx].btSellType), TObject(clLime));
+            HintList.AddObject('Price: ' + IntToStr(g_MouseItem.s.Price) + ' ' + GetStorePriceName(g_StoreItems[Idx].btSellType), TObject(clLime));
             List.AddStrings(HintList);
 
             GetMouseItemInfo(g_MySelf, @g_UseItems[nWhere], iname, d1, d2, d3, useable);
@@ -17378,7 +17378,7 @@ begin
     g_MouseItem := g_StoreRemoteItems[Idx].Item;
     if g_MouseItem.s.Name <> '' then begin
       GetMouseItemInfo(g_MySelf, @g_MouseItem, iname, d1, d2, d3, useable);
-      HintList.AddObject('售价: ' + IntToStr(g_MouseItem.s.Price) + ' ' + GetStorePriceName(g_StoreRemoteItems[Idx].btSellType), TObject(clLime));
+      HintList.AddObject('Price: ' + IntToStr(g_MouseItem.s.Price) + ' ' + GetStorePriceName(g_StoreRemoteItems[Idx].btSellType), TObject(clLime));
       with DGUserStore do
         DScreen.ShowHint(SurfaceX(Left + ACol * ColWidth),
           SurfaceY(Top + (ARow + 1) * RowHeight),
@@ -17470,7 +17470,7 @@ begin
     if d <> nil then
       dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
     if g_MySelf.m_boStartStore then begin
-      sStoreName := g_MySelf.m_sUserName + '的摊位';
+      sStoreName := g_MySelf.m_sUserName + ' Stall';
       with dsurface do begin
         TextOut(SurfaceX(Left) + 86, SurfaceY(Top) + 56, sStoreName);
       end;

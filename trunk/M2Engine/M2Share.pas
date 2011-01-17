@@ -49,7 +49,7 @@ const
   tM2Server = 3;
   PN_GETRGB = 'GETRGB';
   PN_GAMEDATALOG = 'GAMEDATALOG';
-  sSTRING_GOLDNAME = '½ð±Ò';
+  sSTRING_GOLDNAME = 'Gold';
 
   SKILL_FIREBALL = 1;
   SKILL_HEALLING = 2;

@@ -1,0 +1,27 @@
+[BaseInfo]
+Job = 0
+Gender = 1
+Hair = 3
+Magic = FlamingSword,Halfmoon,Fencing,LionRoar
+
+[UseItems]
+DRESSNAME = DivineArmor(M)
+WEAPONNAME = Excalibur
+RIGHTHANDNAME =
+NECKLACENAME = LegendNecklace
+HELMETNAME = LegendHelmet
+ARMRINGLNAME = LegendBracelet
+ARMRINGRNAME = LegendBracelet
+RINGLNAME = LegendRing
+RINGRNAME = LegendRing
+BUJUKNAME = 
+BELTNAME =
+BOOTSNAME = LegendBoots
+CHARMNAME =
+DieDropUseItemRate = 50
+
+;Allow Corpse Searching (Shift Click) (1=Allow 0=Don't allow)
+ButchItem = 1
+
+;死亡是否不掉装备(1=不掉 0=掉)
+NoDropItem = 0

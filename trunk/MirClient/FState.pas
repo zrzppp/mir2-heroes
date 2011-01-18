@@ -7513,7 +7513,7 @@ begin
       icon := pm.Def.btEffect * 2;
       if pm.Def.btEffect = 50 then icon := 84;
       //if pm.Def.btEffect = 51 then icon := 94;
-
+//Milo
       if pm.Def.btEffect = 70 then icon := 1 * 2;
       if pm.Def.btEffect = 71 then icon := 3 * 2;
       if pm.Def.btEffect = 72 then icon := 10 * 2;
@@ -8965,21 +8965,21 @@ begin
     if (g_ServerConfig.btShowClientItemStyle = 0) then begin
       if g_ServerConfig.boAllowItemAddPoint then begin
         case MouseItem.s.AddPoint[1] of
-          1: HintList.AddObject('1物理伤害减少: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          2: HintList.AddObject('2魔法伤害减少: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          3: HintList.AddObject('3忽视目标防御: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          4: HintList.AddObject('4所有伤害反射: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
-          5: HintList.AddObject('5增加攻击伤害: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          1: HintList.AddObject('Physical Damage Reduction:' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          2: HintList.AddObject('Magic Damage Reduction: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          3: HintList.AddObject('Ignore Defense: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          4: HintList.AddObject('Reflect Damage: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
+          5: HintList.AddObject('Attack Damage: ' + IntToStr(MouseItem.s.AddPoint[2]) + '%', TObject(clFuchsia));
         end;
-        if MouseItem.s.AddPoint[3] > 0 then HintList.AddObject('6物理防御增强: ' + IntToStr(MouseItem.s.AddPoint[3]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[4] > 0 then HintList.AddObject('7魔法防御增强: ' + IntToStr(MouseItem.s.AddPoint[4]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[5] > 0 then HintList.AddObject('8物理攻击增强: ' + IntToStr(MouseItem.s.AddPoint[5]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[6] > 0 then HintList.AddObject('9魔法攻击增强: ' + IntToStr(MouseItem.s.AddPoint[6]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[7] > 0 then HintList.AddObject('10道术攻击增强: ' + IntToStr(MouseItem.s.AddPoint[7]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[8] > 0 then HintList.AddObject('11增加进入失明状态: ' + IntToStr(MouseItem.s.AddPoint[8]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[9] > 0 then HintList.AddObject('12增加进入混乱状态: ' + IntToStr(MouseItem.s.AddPoint[9]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[10] > 0 then HintList.AddObject('13减少进入失明状态: ' + IntToStr(MouseItem.s.AddPoint[10]) + '%', TObject(GetRGB(180)));
-        if MouseItem.s.AddPoint[11] > 0 then HintList.AddObject('14减少进入混乱状态: ' + IntToStr(MouseItem.s.AddPoint[11]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[3] > 0 then HintList.AddObject('Physical Defence Increase: ' + IntToStr(MouseItem.s.AddPoint[3]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[4] > 0 then HintList.AddObject('Magic Defence Increase: ' + IntToStr(MouseItem.s.AddPoint[4]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[5] > 0 then HintList.AddObject('Physical Attack Increase: ' + IntToStr(MouseItem.s.AddPoint[5]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[6] > 0 then HintList.AddObject('Magic Attack Increase: ' + IntToStr(MouseItem.s.AddPoint[6]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[7] > 0 then HintList.AddObject('Soul Attack Increase: ' + IntToStr(MouseItem.s.AddPoint[7]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[8] > 0 then HintList.AddObject('Blind Chance: ' + IntToStr(MouseItem.s.AddPoint[8]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[9] > 0 then HintList.AddObject('Chaos Chance: ' + IntToStr(MouseItem.s.AddPoint[9]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[10] > 0 then HintList.AddObject('Blind Protection: ' + IntToStr(MouseItem.s.AddPoint[10]) + '%', TObject(GetRGB(180)));
+        if MouseItem.s.AddPoint[11] > 0 then HintList.AddObject('Chaos Protection: ' + IntToStr(MouseItem.s.AddPoint[11]) + '%', TObject(GetRGB(180)));
         //if MouseItem.s.AddPoint[12] > 0 then HintList.AddObject('移动加速: ' + IntToStr(MouseItem.s.AddPoint[12]) + '%', TObject(GetRGB(68)));
         //if MouseItem.s.AddPoint[13] > 0 then HintList.AddObject('攻击加速: ' + IntToStr(MouseItem.s.AddPoint[13]) + '%', TObject(GetRGB(68)));
       end;

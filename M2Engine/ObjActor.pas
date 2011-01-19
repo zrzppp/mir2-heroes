@@ -9192,8 +9192,8 @@ begin
   if not boFound then begin
     if m_btRaceServer = RC_HEROOBJECT then begin
       case btItemType of
-        0: THeroObject(Self).SysMsg('½ğ´´Ò©ÒÑ¾­ÓÃÍê£¡£¡£¡', 251, 249, t_Hint);
-        1: THeroObject(Self).SysMsg('Ä§·¨Ò©ÒÑ¾­ÓÃÍê£¡£¡£¡', 251, 180, t_Hint);
+        0: THeroObject(Self).SysMsg('HP Potion has been used', 251, 249, t_Hint);
+        1: THeroObject(Self).SysMsg('MP Potion has been used', 251, 180, t_Hint);
       end;
     end;
   end;
@@ -10804,11 +10804,11 @@ begin
                 end;
               STATE_DEFENCEUP: begin
                   boNeedRecalc := True;
-                  SysMsg('·ÀÓùÁ¦»Ø¸´Õı³£', c_Green, t_Hint);
+                  SysMsg('Defence returned to normal.', c_Green, t_Hint);
                 end;
               STATE_MAGDEFENCEUP: begin
                   boNeedRecalc := True;
-                  SysMsg('Ä§ÓùÁ¦»Ø¸´Õı³£', c_Green, t_Hint);
+                  SysMsg('Magic Defence returned to normal.', c_Green, t_Hint);
                 end;
               STATE_BUBBLEDEFENCEUP: begin
                   m_boAbilMagBubbleDefence := False;
@@ -10827,22 +10827,22 @@ begin
           boNeedRecalc := True;
           case I of
             0, 6: begin
-                SysMsg('¹¥»÷Á¦»Ø¸´Õı³£', c_Green, t_Hint);
+                SysMsg('Attack Power returned to normal.', c_Green, t_Hint);
               end;
             1, 7: begin
-                SysMsg('Ä§·¨Á¦»Ø¸´Õı³£', c_Green, t_Hint);
+                SysMsg('Magic Power returned to normal.', c_Green, t_Hint);
               end;
             2, 8: begin
-                SysMsg('µÀÊõ»Ø¸´Õı³£', c_Green, t_Hint);
+                SysMsg('Soul Power returned to normal.', c_Green, t_Hint);
               end;
             3: begin
-                SysMsg('¹¥»÷ËÙ¶È»Ø¸´Õı³£', c_Green, t_Hint);
+                SysMsg('Attack Speed returned to normal.', c_Green, t_Hint);
               end;
             4: begin
-                SysMsg('ÌåÁ¦»Ø¸´Õı³£', c_Green, t_Hint);
+                SysMsg('HP returned to normal.', c_Green, t_Hint);
               end;
             5: begin
-                SysMsg('Ä§·¨Öµ»Ø¸´Õı³£', c_Green, t_Hint);
+                SysMsg('MP returned to normal', c_Green, t_Hint);
               end;
           end;
         end else begin
@@ -11064,14 +11064,14 @@ begin
     if not m_boStartDuel then begin
       if InLockRect(m_PEnvir, m_nCurrX, m_nCurrY) then begin
         if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-          SysMsg('±»Î´ÖªµÄÁ¦Á¿×èµ²£¬ÎŞ·¨Í¨¹ı£¡£¡£¡', c_Red, t_Hint);
+          SysMsg('Blocked by unknown forces!', c_Red, t_Hint);
         end;
         Exit;
       end;
     end else begin
       if m_PEnvir.m_boDuel and m_PEnvir.m_boDueling and InLockRect(m_PEnvir, m_nCurrX, m_nCurrY) then begin
         if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-          SysMsg('±»Î´ÖªµÄÁ¦Á¿×èµ²£¬ÎŞ·¨Í¨¹ı£¡£¡£¡', c_Red, t_Hint);
+          SysMsg('You are currently in a dual area, you cannot leave!', c_Red, t_Hint);
         end;
         Exit;
       end;
@@ -11086,7 +11086,7 @@ begin
         if not Envir.m_boDueling then begin
           nError := 6;
           if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-            SysMsg('±ÈÈüÉĞÎ´¿ªÊ¼£¬ÎŞ·¨½øÈëÈü³¡£¡£¡£¡', c_Red, t_Hint);
+            SysMsg('Dual has not started yet. Unable to enter Map.', c_Red, t_Hint);
           end;
           Exit;
         end;
@@ -11206,7 +11206,7 @@ begin
     if m_boStore or (m_btRaceServer = 122) then Exit; //°ÚÌ¯½ûÖ¹²Ù×÷  ïÚ³µ½ûÖ¹
     if InLockRect(m_PEnvir, m_nCurrX, m_nCurrY) then begin
       if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-        SysMsg('±»Î´ÖªµÄÁ¦Á¿×èµ²£¬ÎŞ·¨Í¨¹ı£¡£¡£¡', c_Red, t_Hint);
+        SysMsg('Blocked by unknown forces.', c_Red, t_Hint);
       end;
       Exit;
     end;
@@ -11780,7 +11780,7 @@ begin
           m_dwQueryItemBagTick := GetTickCount();
           ClientQueryBagItems();
         end else begin
-          SysMsg('°ü¹üË¢ĞÂÊ§°Ü£¬ÇëÉÔºóÔÚÊÔ...', 255, 253, t_Hint);
+          SysMsg('Bag refresh failed, try again.', 255, 253, t_Hint);
         end;
       end;
     CM_QUERYUSERSTATE: begin //82
@@ -12352,11 +12352,11 @@ begin
                   SendSocket(nil, sSTATUS_GOOD + IntToStr(GetTickCount));
                 end;
                 if m_boTestSpeedMode then
-                  SysMsg(Format('ËÙ¶ÈÒì³£ Ident: %d Time: %d', [ProcessMsg.wIdent, dwDelayTime]), c_Red, t_Hint);
+                  SysMsg(Format('Speed Error Ident: %d Time: %d', [ProcessMsg.wIdent, dwDelayTime]), c_Red, t_Hint);
               end else begin
                 if m_boTestSpeedMode then begin
                   //SysMsg(format('²Ù×÷ÑÓ³Ù Ident: %d Time: %d',[ProcessMsg.wIdent,dwDelayTime]),c_Red,t_Hint);
-                  SysMsg('²Ù×÷ÑÓ³Ù Ident: ' + IntToStr(ProcessMsg.wIdent) + ' Time: ' + IntToStr(dwDelayTime), c_Red, t_Hint);
+                  SysMsg('Operation Delay Ident: ' + IntToStr(ProcessMsg.wIdent) + ' Time: ' + IntToStr(dwDelayTime), c_Red, t_Hint);
                 end;
                 SendDelayMsg(Self, ProcessMsg.wIdent, ProcessMsg.wParam, ProcessMsg.nParam1, ProcessMsg.nParam2, ProcessMsg.nParam3, '', dwDelayTime);
                 Result := False;
@@ -13049,10 +13049,10 @@ begin
               SysMsg('Level: ' + IntToStr(m_Abil.Level), c_Green, t_Hint);
               SysMsg('HP: ' + IntToStr(m_WAbil.HP) + '-' + IntToStr(m_WAbil.MaxHP), c_Blue, t_Hint);
               SysMsg('MP: ' + IntToStr(m_WAbil.MP) + '-' + IntToStr(m_WAbil.MaxMP), c_Red, t_Hint);
-              SysMsg('AC¦: ' + IntToStr(LoWord(m_WAbil.AC)) + '-' + IntToStr(HiWord(m_WAbil.AC)), c_Green, t_Hint);
-              SysMsg('AMC¦: ' + IntToStr(LoWord(m_WAbil.MAC)) + '-' + IntToStr(HiWord(m_WAbil.MAC)), c_Blue, t_Hint);
-              SysMsg('DC¦: ' + IntToStr(LoWord(m_WAbil.DC)) + '-' + IntToStr(HiWord(m_WAbil.DC)), c_Red, t_Hint);
-              SysMsg('MC¦: ' + IntToStr(LoWord(m_WAbil.MC)) + '-' + IntToStr(HiWord(m_WAbil.MC)), c_Green, t_Hint);
+              SysMsg('AC: ' + IntToStr(LoWord(m_WAbil.AC)) + '-' + IntToStr(HiWord(m_WAbil.AC)), c_Green, t_Hint);
+              SysMsg('AMC: ' + IntToStr(LoWord(m_WAbil.MAC)) + '-' + IntToStr(HiWord(m_WAbil.MAC)), c_Blue, t_Hint);
+              SysMsg('DC: ' + IntToStr(LoWord(m_WAbil.DC)) + '-' + IntToStr(HiWord(m_WAbil.DC)), c_Red, t_Hint);
+              SysMsg('MC: ' + IntToStr(LoWord(m_WAbil.MC)) + '-' + IntToStr(HiWord(m_WAbil.MC)), c_Green, t_Hint);
               SysMsg('SC: ' + IntToStr(LoWord(m_WAbil.SC)) + '-' + IntToStr(HiWord(m_WAbil.SC)), c_Blue, t_Hint);
             end;
           end else begin
@@ -14762,14 +14762,14 @@ begin
         Dec(m_dwKillMonExpRateTime);
         if m_dwKillMonExpRateTime = 0 then begin
           m_nKillMonExpRate := 100;
-          SysMsg('¾­Ñé±¶Êı»Ö¸´Õı³£...', c_Red, t_Hint);
+          SysMsg('Experience multiplier has returned to normal.', c_Red, t_Hint);
         end;
       end;
       if m_dwPowerRateTime > 0 then begin
         Dec(m_dwPowerRateTime);
         if m_dwPowerRateTime = 0 then begin
           m_nPowerRate := 100;
-          SysMsg('¹¥»÷Á¦±¶Êı»Ö¸´Õı³£...', c_Red, t_Hint);
+          SysMsg('Attack Power multipler has returned to normal.', c_Red, t_Hint);
         end;
       end;
     end;
@@ -14931,8 +14931,8 @@ begin
   end;
   RecalcAbilitys();
   g_dwSpiritMutinyTick := GetTickCount + g_Config.dwSpiritMutinyTime;
-  UserEngine.SendBroadCastMsg('ÉñÖ®Æíµ»£¬ÌìµØÕğÅ­£¬Ê¬ºá±éÒ°...', t_System);
-  SysMsg('Æíµ»·¢³öÇ¿ÁÒµÄÓîÖæĞ§Ó¦' {£¬ÄãÒÑ¾­µÃµ½' + IntToStr(nSpirit) + '±¶µÄÁ¦Á¿'}, c_Green, t_Hint);
+  UserEngine.SendBroadCastMsg('Message 101ÉñÖ®Æíµ»£¬ÌìµØÕğÅ­£¬Ê¬ºá±éÒ°...', t_System);
+  SysMsg('Message 102 Æíµ»·¢³öÇ¿ÁÒµÄÓîÖæĞ§Ó¦' {£¬ÄãÒÑ¾­µÃµ½' + IntToStr(nSpirit) + '±¶µÄÁ¦Á¿'}, c_Green, t_Hint);
 end;
 
 procedure TPlayObject.LogonTimcCost();
@@ -15496,7 +15496,7 @@ begin
     end;
     if CompareText(sCmd, g_GameCommand.REMTEMSG.sCmd) = 0 then begin
       m_boRemoteMsg := True;
-      SysMsg('ÔÊĞí½ÓÊÜÏûÏ¢¡£', c_Green, t_Hint);
+      SysMsg('You are allowed to receive messages now.', c_Green, t_Hint);
       Exit;
     end;
     if CompareText(sCmd, g_GameCommand.DEAR.sCmd) = 0 then begin
@@ -16130,7 +16130,7 @@ begin
             SysMsg(PlayObject.m_sCharName + ': [' + IntToStr(nFlag) + '] = OFF', c_Green, t_Hint);
           end;
         end else begin
-          SysMsg('@' + g_GameCommand.SETFLAG.sCmd + ' ÈËÎïÃû³Æ ±êÖ¾ºÅ Êı×Ö(0 - 1)', c_Red, t_Hint);
+          SysMsg('@' + g_GameCommand.SETFLAG.sCmd + ' CharacterName Flag Status(0 - 1)', c_Red, t_Hint);
         end;
         Exit;
       end;
@@ -16623,12 +16623,12 @@ begin
             m_dwAttackCount := 0;
             dwDelayTime := g_Config.dwDropOverSpeed;
             if m_boTestSpeedMode then
-              SysMsg('¹¥»÷Ã¦¸´Î»£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+              SysMsg('Attack speed error ' + IntToStr(dwDelayTime), c_Red, t_Hint);
           end else m_dwAttackCount := 0;
           Exit;
         end else begin
           if m_boTestSpeedMode then
-            SysMsg('¹¥»÷²½Ã¦£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+            SysMsg('Attack speed error ' + IntToStr(dwDelayTime), c_Red, t_Hint);
           Exit;
         end;
       end;
@@ -16726,12 +16726,12 @@ begin
           m_dwMoveCount := 0;
           dwDelayTime := g_Config.dwDropOverSpeed;
           if m_boTestSpeedMode then
-            SysMsg('ÂíÅÜ²½Ã¦¸´Î»£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+            SysMsg('Horse Run error ' + IntToStr(dwDelayTime), c_Red, t_Hint);
         end else m_dwMoveCount := 0;
         Exit;
       end else begin
         if m_boTestSpeedMode then
-          SysMsg('ÂíÅÜ²½Ã¦£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+          SysMsg('Horse Run error ' + IntToStr(dwDelayTime), c_Red, t_Hint);
         Exit;
       end;
     end;
@@ -16821,12 +16821,12 @@ begin
           m_dwMagicAttackCount := 0;
           dwDelayTime := g_Config.dwMagicHitIntervalTime div 3;
           if m_boTestSpeedMode then
-            SysMsg('Ä§·¨Ã¦¸´Î»£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+            SysMsg('Spell error' + IntToStr(dwDelayTime), c_Red, t_Hint);
         end else m_dwMagicAttackCount := 0;
         Exit;
       end else begin
         if m_boTestSpeedMode then
-          SysMsg('Ä§·¨Ã¦£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+          SysMsg('Spell error' + IntToStr(dwDelayTime), c_Red, t_Hint);
         Exit;
       end;
     end;
@@ -17486,12 +17486,12 @@ begin
           m_dwMoveCount := 0;
           dwDelayTime := g_Config.dwRunIntervalTime div 3;
           if m_boTestSpeedMode then
-            SysMsg('ÅÜ²½Ã¦¸´Î»£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+            SysMsg('Running error.' + IntToStr(dwDelayTime), c_Red, t_Hint);
         end else m_dwMoveCount := 0;
         Exit;
       end else begin
         if m_boTestSpeedMode then
-          SysMsg('ÅÜ²½Ã¦£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+          SysMsg('Running error.' + IntToStr(dwDelayTime), c_Red, t_Hint);
         Exit;
       end;
     end;
@@ -17582,12 +17582,12 @@ begin
           m_dwMoveCount := 0;
           dwDelayTime := g_Config.dwWalkIntervalTime div 3;
           if m_boTestSpeedMode then
-            SysMsg('×ßÂ·Ã¦¸´Î»£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+            SysMsg('Walk error' + IntToStr(dwDelayTime), c_Red, t_Hint);
         end else m_dwMoveCount := 0;
         Exit;
       end else begin
         if m_boTestSpeedMode then
-          SysMsg('×ßÂ·Ã¦£¡£¡£¡' + IntToStr(dwDelayTime), c_Red, t_Hint);
+          SysMsg('Walk error' + IntToStr(dwDelayTime), c_Red, t_Hint);
         Exit;
       end;
     end;
@@ -17745,20 +17745,20 @@ begin
   if m_bo42kill then begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        SysMsg('¿ªÆô¿ñ·çÕ¶', c_Green, t_Hint);
+        SysMsg('Skill42 ready', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        THeroObject(Self).SysMsg('¿ªÆô¿ñ·çÕ¶', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('Skill42 ready', c_Green, t_Hint);
     end;
   end else begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        SysMsg('¹Ø±Õ¿ñ·çÕ¶', c_Green, t_Hint);
+        SysMsg('Skill42 failed', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        THeroObject(Self).SysMsg('¹Ø±Õ¿ñ·çÕ¶', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('Skill42 failed.', c_Green, t_Hint);
     end;
   end;
 end;
@@ -17769,20 +17769,20 @@ begin
   if m_bo43kill then begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        SysMsg('¿ªÆôÆÆ¿Õ½£', c_Green, t_Hint);
+        SysMsg('Skill43 ready', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        THeroObject(Self).SysMsg('¿ªÆôÆÆ¿Õ½£', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('Skill43 ready', c_Green, t_Hint);
     end;
   end else begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        SysMsg('¹Ø±ÕÆÆ¿Õ½£', c_Green, t_Hint);
+        SysMsg('Skill43 failed', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        THeroObject(Self).SysMsg('¹Ø±ÕÆÆ¿Õ½£', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('Skill43 failed', c_Green, t_Hint);
     end;
   end;
 end;
@@ -17793,20 +17793,20 @@ begin
   if m_bo60kill then begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        SysMsg('¿ªÆôÆÆ»êÕ¶', c_Green, t_Hint);
+        SysMsg('Skill60 ready', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        THeroObject(Self).SysMsg('¿ªÆôÆÆ»êÕ¶', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('Skill60 ready', c_Green, t_Hint);
     end;
   end else begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        SysMsg('¹Ø±ÕÆÆ»êÕ¶', c_Green, t_Hint);
+        SysMsg('Skill60 failed', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        THeroObject(Self).SysMsg('¹Ø±ÕÆÆ»êÕ¶', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('Skill60 failed', c_Green, t_Hint);
     end;
   end;
 end;
@@ -18356,8 +18356,8 @@ begin
       PlayObject.m_nGameGold := 0;
     end;
     PlayObject.GoldChanged();
-    SysMsg(sHumName + 'µÄÓÎÏ·µãÒÑ¼õÉÙ' + IntToStr(nPoint) + '.', c_Green, t_Hint);
-    PlayObject.SysMsg('ÓÎÏ·µãÒÑ¼õÉÙ' + IntToStr(nPoint) + '.', c_Green, t_Hint);
+    SysMsg(sHumName + 'GameGold has been removed: ' + IntToStr(nPoint) + '.', c_Green, t_Hint);
+    PlayObject.SysMsg('GameGold has been removed: ' + IntToStr(nPoint) + '.', c_Green, t_Hint);
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumName]), c_Red, t_Hint);
   end;
@@ -18506,7 +18506,7 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sHumName = '') or (nCount <= 0) then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ  ½ğ±ÒÊıÁ¿', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' CharacterName  Gold', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumName);
@@ -18518,7 +18518,7 @@ begin
       PlayObject.m_nGold := PlayObject.m_nGoldMax;
     end;
     PlayObject.GoldChanged();
-    SysMsg(sHumName + 'µÄ½ğ±ÒÒÑÔö¼Ó' + IntToStr(nCount) + '.', c_Green, t_Hint);
+    SysMsg(sHumName + ' gold has been increased by ' + IntToStr(nCount) + '.', c_Green, t_Hint);
     //004CD6F6
     if g_boGameLogGold then
       AddGameDataLog('14' + #9 +
@@ -18532,7 +18532,7 @@ begin
         sHumName);
   end else begin
     FrontEngine.AddChangeGoldList(t_Gold, m_sCharName, sHumName, nCount);
-    SysMsg(sHumName + ' ÏÖÔÚ²»ÔÚÏß£¬µÈÆäÉÏÏßÊ±½ğ±Ò½«×Ô¶¯Ôö¼Ó', c_Green, t_Hint);
+    SysMsg(sHumName + ' Player is not currently online. Gold will be added when they next login.', c_Green, t_Hint);
   end;
 end;
 
@@ -18546,11 +18546,11 @@ begin
     Exit;
   end;
   if nServerIndex <> 0 then begin
-    SysMsg('Õâ¸öÃüÁîÖ»ÄÜÊ¹ÓÃÔÚÖ÷·şÎñÆ÷ÉÏ', c_Red, t_Hint);
+    SysMsg('This command can only be used on the main server.', c_Red, t_Hint);
     Exit;
   end;
   if (sGuildName = '') or (sGuildChief = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ĞĞ»áÃû³Æ ÕÆÃÅÈËÃû³Æ', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' GuildName Leader', c_Red, t_Hint);
     Exit;
   end;
 
@@ -18563,7 +18563,7 @@ begin
   if g_GuildManager.MemberOfGuild(sGuildChief) = nil then begin
     if g_GuildManager.AddGuild(sGuildName, sGuildChief) then begin
       //UserEngine.SendServerGroupMsg(SS_205, nServerIndex, sGuildName + '/' + sGuildChief);
-      SysMsg('ĞĞ»áÃû³Æ: ' + sGuildName + ' ÕÆÃÅÈË: ' + sGuildChief, c_Green, t_Hint);
+      SysMsg('GuildName: ' + sGuildName + ' Leader: ' + sGuildChief, c_Green, t_Hint);
       boAddState := True;
     end;
   end;
@@ -18592,7 +18592,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ ¾­ÑéÖµ', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Experience', c_Red, t_Hint);
     Exit;
   end;
   dwExp := Str_ToInt(sExp, 0);
@@ -18628,7 +18628,7 @@ begin
     Exit;
   end;
   if sHumanName = '' then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ µÈ¼¶', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Level', c_Red, t_Hint);
     Exit;
   end;
 
@@ -18676,7 +18676,7 @@ begin
     Exit;
   end;
   if (sHumName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ ÊôĞÔµãÊı(²»ÊäÈëÎª²é¿´µãÊı)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Points', c_Red, t_Hint);
     Exit;
   end;
 
@@ -18796,7 +18796,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (sDearName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ ÅäÅ¼Ãû³Æ(Èç¹ûÎª ÎŞ ÔòÇå³ı)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name PartnersName', c_Red, t_Hint);
     Exit;
   end;
 
@@ -18805,11 +18805,11 @@ begin
     if CompareText(sDearName, 'ÎŞ') = 0 then begin
       PlayObject.m_sDearName := '';
       PlayObject.RefShowName;
-      SysMsg(sHumanName + ' µÄÅäÅ¼ÃûÇå³ı³É¹¦¡£', c_Green, t_Hint);
+      SysMsg(sHumanName + ' Partner was removed.', c_Green, t_Hint);
     end else begin
       PlayObject.m_sDearName := sDearName;
       PlayObject.RefShowName;
-      SysMsg(sHumanName + ' µÄÅäÅ¼Ãû¸ü¸Ä³É¹¦¡£', c_Green, t_Hint);
+      SysMsg(sHumanName + ' Partnet was changed.', c_Green, t_Hint);
     end;
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumanName]), c_Red, t_Hint);
@@ -18833,7 +18833,7 @@ begin
     nSex := 1;
   end;
   if (sHumanName = '') or (nSex = -1) then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ ĞÔ±ğ(ÄĞ¡¢Å®)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Gender(0-1)', c_Red, t_Hint);
     Exit;
   end;
 
@@ -18842,12 +18842,12 @@ begin
     if PlayObject.m_btGender <> nSex then begin
       PlayObject.m_btGender := nSex;
       PlayObject.FeatureChanged();
-      SysMsg(PlayObject.m_sCharName + ' µÄĞÔ±ğÒÑ¸Ä±ä¡£', c_Green, t_Hint);
+      SysMsg(PlayObject.m_sCharName + ' Gender changed.', c_Green, t_Hint);
     end else begin
-      SysMsg(PlayObject.m_sCharName + ' µÄĞÔ±ğÎ´¸Ä±ä£¡£¡£¡', c_Red, t_Hint);
+      SysMsg(PlayObject.m_sCharName + ' Gender change failed.', c_Red, t_Hint);
     end;
   end else begin
-    SysMsg(sHumanName + 'Ã»ÓĞÔÚÏß£¡£¡£¡', c_Red, t_Hint);
+    SysMsg(sHumanName + ' is not online.', c_Red, t_Hint);
   end;
 end;
 
@@ -18857,21 +18857,21 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sMakeIndex = '') or (sItemIndex = '') or (sItemName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + sCmd + ' ÎïÆ·±àºÅ ÎïÆ·IDºÅ ÎïÆ·Ãû³Æ', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' ItemNumber ItemID ItemName', c_Red, t_Hint);
     Exit;
   end;
   nMakeIndex := Str_ToInt(sMakeIndex, -1);
   nItemIndex := Str_ToInt(sItemIndex, -1);
   if (nMakeIndex <= 0) or (nItemIndex < 0) then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + sCmd + ' ÎïÆ·±àºÅ ÎïÆ·IDºÅ ÎïÆ·Ãû³Æ', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' ItemNumber ItemID ItemName', c_Red, t_Hint);
     Exit;
   end;
   if ItemUnit.AddCustomItemName(nMakeIndex, nItemIndex, sItemName) then begin
     ItemUnit.SaveCustomItemName();
-    SysMsg('ÎïÆ·Ãû³ÆÉèÖÃ³É¹¦¡£', c_Green, t_Hint);
+    SysMsg('Item name changed.', c_Green, t_Hint);
     Exit;
   end;
-  SysMsg('´ËÎïÆ·£¬ÒÑ¾­ÉèÖÃÁËÆäËüµÄÃû³Æ£¡£¡£¡', c_Red, t_Hint);
+  SysMsg('Failed to change item name.', c_Red, t_Hint);
 end;
 
 procedure TPlayObject.CmdChangeJob(Cmd: pTGameCmd; sHumanName, sJobName: string); //004CC714
@@ -18937,7 +18937,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (sMasterName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ Ê¦Í½Ãû³Æ(Èç¹ûÎª ÎŞ ÔòÇå³ı)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name MasterName', c_Red, t_Hint);
     Exit;
   end;
 
@@ -18947,13 +18947,13 @@ begin
       PlayObject.m_sMasterName := '';
       PlayObject.RefShowName;
       PlayObject.m_boMaster := False;
-      SysMsg(sHumanName + ' µÄÊ¦Í½ÃûÇå³ı³É¹¦¡£', c_Green, t_Hint);
+      SysMsg(sHumanName + ' Master was removed.', c_Green, t_Hint);
     end else begin
       PlayObject.m_sMasterName := sMasterName;
       if (sIsMaster <> '') and (sIsMaster[1] = '1') then PlayObject.m_boMaster := True
       else PlayObject.m_boMaster := False;
       PlayObject.RefShowName;
-      SysMsg(sHumanName + ' µÄÊ¦Í½Ãû¸ü¸Ä³É¹¦¡£', c_Green, t_Hint);
+      SysMsg(sHumanName + ' Master has been changed.', c_Green, t_Hint);
     end;
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumanName]), c_Red, t_Hint);
@@ -18990,7 +18990,7 @@ begin
   end;
 
   if (sCASTLENAME = '') or (sGuildName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ³Ç±¤Ãû³Æ ĞĞ»áÃû³Æ', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Castle Guild', c_Red, t_Hint);
     Exit;
   end;
   Castle := g_CastleManager.Find(sCASTLENAME);
@@ -19013,9 +19013,9 @@ begin
     Castle.GetCastle(Guild);
     {if boFlag then
       UserEngine.SendServerGroupMsg(SS_211, nServerIndex, sGuildName);  }
-    SysMsg(Castle.m_sName + ' ËùÊôĞĞ»áÒÑ¾­¸ü¸ÄÎª ' + sGuildName, c_Green, t_Hint);
+    SysMsg(Castle.m_sName + ' ownership changed to ' + sGuildName, c_Green, t_Hint);
   end else begin
-    SysMsg('ĞĞ»á ' + sGuildName + '»¹Ã»½¨Á¢£¡£¡£¡', c_Red, t_Hint);
+    SysMsg('Guild ' + sGuildName + ' not found.', c_Red, t_Hint);
   end;
 end;
 
@@ -19050,12 +19050,12 @@ begin
   if (m_btPermission < 6) then Exit;
   nCount := Str_ToInt(sUserCount, -1);
   if (sUserCount = '') or (nCount < 1) or ((sUserCount <> '') and (sUserCount[1] = '?')) then begin
-    SysMsg('ÉèÖÃ·şÎñÆ÷×î¸ßÉÏÏßÈËÊı¡£', c_Red, t_Hint);
-    SysMsg('ÃüÁî¸ñÊ½: @' + sCmd + ' ÈËÊı', c_Red, t_Hint);
+    SysMsg('Set maximum number of Players', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' Number', c_Red, t_Hint);
     Exit;
   end;
   g_Config.nUserFull := nCount;
-  SysMsg(Format('·şÎñÆ÷ÉÏÏßÈËÊıÏŞÖÆ: %d', [nCount]), c_Green, t_Hint);
+  SysMsg(Format('Number allowed online set to: %d', [nCount]), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdChangeZenFastStep(sCmd, sFastStep: string);
@@ -19065,12 +19065,12 @@ begin
   if (m_btPermission < 6) then Exit;
   nFastStep := Str_ToInt(sFastStep, -1);
   if (sFastStep = '') or (nFastStep < 1) or ((sFastStep <> '') and (sFastStep[1] = '?')) then begin
-    SysMsg('ÉèÖÃ¹ÖÎïĞĞ¶¯ËÙ¶È¡£', c_Red, t_Hint);
-    SysMsg('ÃüÁî¸ñÊ½: @' + sCmd + ' ËÙ¶È', c_Red, t_Hint);
+    SysMsg('Change Monster Speed', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' Number', c_Red, t_Hint);
     Exit;
   end;
   g_Config.nZenFastStep := nFastStep;
-  SysMsg(Format('¹ÖÎïĞĞ¶¯ËÙ¶È: %d', [nFastStep]), c_Green, t_Hint);
+  SysMsg(Format('Monster speed changed: %d', [nFastStep]), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdClearBagItem(Cmd: pTGameCmd; sHumanName: string);
@@ -19114,8 +19114,8 @@ var
 begin
   if (m_btPermission < nPermission) then Exit;
   if (sHumanName = '') or ((sHumanName <> '') and (sHumanName[1] = '?')) then begin
-    SysMsg('Çå³ıÍæ¼ÒµÄ²Ö¿âÃÜÂë£¡£¡£¡', c_Red, t_Hint);
-    SysMsg(Format('ÃüÁî¸ñÊ½: @%s ÈËÎïÃû³Æ', [sCmd]), c_Red, t_Hint);
+    SysMsg('Clear Password for players storage', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s Name', [sCmd]), c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
@@ -19146,7 +19146,7 @@ begin
     Exit;
   end;
   if (sMapName = '') or (sMonName = '') or (sItems = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' µØÍ¼ºÅ(* ÎªËùÓĞ) ¹ÖÎïÃû³Æ(* ÎªËùÓĞ) µôÎïÆ·(0,1)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Map Monster Drops(0-1)', c_Red, t_Hint);
     Exit;
   end;
   boKillAll := False;
@@ -19176,10 +19176,10 @@ begin
   MonList.Free;
 
   if Envir = nil then begin
-    SysMsg('ÊäÈëµÄµØÍ¼²»´æÔÚ£¡£¡£¡', c_Red, t_Hint);
+    SysMsg('Map not found', c_Red, t_Hint);
     Exit;
   end;
-  SysMsg('ÒÑÇå³ı¹ÖÎïÊı: ' + IntToStr(nMonCount), c_Red, t_Hint);
+  SysMsg('Monsters removed: ' + IntToStr(nMonCount), c_Red, t_Hint);
 end;
 
 procedure TPlayObject.CmdClearMission(Cmd: pTGameCmd; sHumanName: string);
@@ -19191,20 +19191,20 @@ begin
     Exit;
   end;
   if (sHumanName = '') then begin
-    SysMsg('ÃüÁî¸ñÊ½: @' + Cmd.sCmd + ' ÈËÎïÃû³Æ)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name)', c_Red, t_Hint);
     Exit;
   end;
   if sHumanName[1] = '?' then begin
-    SysMsg('´ËÃüÁîÓÃÓÚÇå³ıÈËÎïµÄÈÎÎñ±êÖ¾¡£', c_Blue, t_Hint);
+    SysMsg('This command clears flags for the player', c_Blue, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
   if PlayObject = nil then begin
-    SysMsg(Format('%s²»ÔÚÏß£¬»òÔÚÆäËü·şÎñÆ÷ÉÏ£¡£¡', [sHumanName]), c_Red, t_Hint);
+    SysMsg(Format('%s is not online!', [sHumanName]), c_Red, t_Hint);
     Exit;
   end;
   FillChar(PlayObject.m_QuestFlag, SizeOf(TQuestFlag), #0);
-  SysMsg(Format('%sµÄÈÎÎñ±êÖ¾ÒÑ¾­È«²¿ÇåÁã¡£', [sHumanName]), c_Green, t_Hint);
+  SysMsg(Format('%s flags have been removed', [sHumanName]), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdContestPoint(Cmd: pTGameCmd; sGuildName: string);

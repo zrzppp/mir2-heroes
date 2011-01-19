@@ -7014,7 +7014,6 @@ begin
       end;
     end;
   end;
-  Result := False;
 end;
 
 function TNormNpc.ConditionOfCheckMC(BaseObject: TActorObject;
@@ -9496,7 +9495,7 @@ begin
           BaseObject.HasLevelUp(BaseObject.m_Abil.Level - 1);
         end;
     end;
-    BaseObject.SysMsg('您当前经验点数为: ' + IntToStr(BaseObject.m_Abil.Exp) + '/' + IntToStr(BaseObject.m_Abil.MaxExp), c_Green, t_Hint);
+    BaseObject.SysMsg('Your current Experience points are: ' + IntToStr(BaseObject.m_Abil.Exp) + '/' + IntToStr(BaseObject.m_Abil.MaxExp), c_Green, t_Hint);
     Exit;
   end;
 
@@ -9543,7 +9542,7 @@ begin
           BaseObject.HasLevelUp(BaseObject.m_Abil.Level - 1);
         end;
     end;
-    BaseObject.SysMsg('您当前等级为: ' + IntToStr(BaseObject.m_Abil.Level), c_Green, t_Hint);
+    BaseObject.SysMsg('Your current level is: ' + IntToStr(BaseObject.m_Abil.Level), c_Green, t_Hint);
     Exit;
   end;
 
@@ -13322,7 +13321,7 @@ var
   ActorObject: TActorObject;
 begin
   if m_boSpaceLock then begin
-    BaseObject.SysMsg('空间已经被锁定！', c_Red, t_Notice);
+    BaseObject.SysMsg('PK Zone has been locked', c_Red, t_Notice);
     Exit;
   end;
 
@@ -13359,7 +13358,7 @@ begin
   BaseObjectList.Free;
 
   if boFind then begin
-    BaseObject.SysMsg('当前范围内已经有空间已经被锁定！', c_Red, t_Notice);
+    BaseObject.SysMsg('PK Zone already created in this Area', c_Red, t_Notice);
   end else begin
     BaseObjectList := TList.Create;
     GetMapActorObjects(m_PEnvir, m_nCurrX, m_nCurrY, nRange - 1, BaseObjectList);

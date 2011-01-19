@@ -1,6 +1,6 @@
 object frmHeroConfig: TfrmHeroConfig
-  Left = 199
-  Top = 114
+  Left = 201
+  Top = 116
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Hero Config'

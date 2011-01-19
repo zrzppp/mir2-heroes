@@ -7977,7 +7977,7 @@ procedure TfrmMain.ClientObjGoldChanged(DefMsg: pTDefaultMessage);
 begin
   SoundUtil.PlaySound(s_money);
   if DefMsg.Recog > g_MySelf.m_nGold then begin
-    DScreen.AddSysMsg(IntToStr(DefMsg.Recog - g_MySelf.m_nGold) + ' ' + g_sGoldName + ' ±ª∑¢œ÷.', 30, 40, clAqua);
+    DScreen.AddSysMsg(IntToStr(DefMsg.Recog - g_MySelf.m_nGold) + ' ' + g_sGoldName + ' found.', 30, 40, clAqua);
   end;
   g_MySelf.m_nGold := DefMsg.Recog;
   g_MySelf.m_nGameGold := MakeLong(DefMsg.param, DefMsg.tag);

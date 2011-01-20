@@ -190,7 +190,7 @@ const
   BDE = 0;
   ADO = 1;
 
-  DBTYPE = BDE;
+  DBTYPE = ADO;
 
   USELOCALCODE = 0;
   USEREMOTECODE = 1;
@@ -4539,7 +4539,7 @@ var
   //===============================================================
 
   sDBName: string = 'HeroDB'; //BDE 数据源名称
-  g_sADODBString: string = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\Data.mdb;Persist Security Info=False'; //ADO 数据源名称
+  g_sADODBString: string = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=.\Envir\Database.mdb;Persist Security Info=False'; //ADO 数据源名称
 
 {$IF OEMVER = OEM775}
   g_LevelInfo: array[0..MAXLEVEL] of TLevelInfo;

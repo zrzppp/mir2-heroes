@@ -1691,7 +1691,7 @@ begin
     if g_Config.boNoAllowWarRangeUseSpaceSkill then begin
       Castle := g_CastleManager.InCastleWarArea(BaseObject);
       if (Castle <> nil) and Castle.m_boUnderWar then begin
-        BaseObject.SysMsg('攻城区域不允许使用！！！', c_Red, t_Hint);
+        BaseObject.SysMsg('Cannot use during War.', c_Red, t_Hint);
         Exit;
       end;
     end;
@@ -1744,13 +1744,13 @@ begin
       for I := nTargetX - nRange - 1 to nTargetX + nRange - 1 do begin
         for II := nTargetY - nRange - 1 to nTargetY + nRange - 1 do begin
           if BaseObject.InSafeZone(BaseObject.m_PEnvir, I, II) then begin
-            BaseObject.SysMsg('安全区不允许使用！！！', c_Red, t_Hint);
+            BaseObject.SysMsg('Cannot use in Safe Zone.', c_Red, t_Hint);
             Exit;
           end;
           if g_Config.boNoAllowWarRangeUseSpaceSkill then begin
             Castle := g_CastleManager.InCastleWarArea(BaseObject.m_PEnvir, I, II); //攻城区域不允许使用
             if (Castle <> nil) and Castle.m_boUnderWar then begin
-              BaseObject.SysMsg('攻城区域不允许使用！！！', c_Red, t_Hint);
+              BaseObject.SysMsg('Cannot use during War.', c_Red, t_Hint);
               Exit;
             end;
           end;
@@ -1764,14 +1764,14 @@ begin
           boFind := False;
 
           if BaseObject.InSafeZone(BaseObject.m_PEnvir, I, II) then begin
-            BaseObject.SysMsg('安全区不允许使用！！！', c_Red, t_Hint);
+            BaseObject.SysMsg('Cannot use in Safe Zone.', c_Red, t_Hint);
             Exit;
           end;
 
           if g_Config.boNoAllowWarRangeUseSpaceSkill then begin
             Castle := g_CastleManager.InCastleWarArea(BaseObject.m_PEnvir, I, II);
             if (Castle <> nil) and Castle.m_boUnderWar then begin
-              BaseObject.SysMsg('攻城区域不允许使用！！！', c_Red, t_Hint);
+              BaseObject.SysMsg('Cannot use during War.', c_Red, t_Hint);
               Exit;
             end;
           end;

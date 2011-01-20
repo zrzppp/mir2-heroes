@@ -1608,7 +1608,7 @@ begin
           ClientQueryBagItems();
           RefBagItemCount;
         end else begin
-          SysMsg('包裹刷新失败，请稍后在试...', 255, 253, t_Hint);
+          SysMsg('Bag reload failed, please try again.', 255, 253, t_Hint);
         end;
       end;
 
@@ -2941,37 +2941,37 @@ begin
           if LoWord(StdItem.DC) > 0 then begin
             m_wStatusArrValue[0 {0x218}] := LoWord(StdItem.DC);
             m_dwStatusArrTimeOutTick[0 {0x220}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('攻击力增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Attack Power increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoWord(StdItem.MC) > 0 then begin
             m_wStatusArrValue[1 {0x219}] := LoWord(StdItem.MC);
             m_dwStatusArrTimeOutTick[1 {0x224}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('魔法力增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Magic Power increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoByte(StdItem.SC) > 0 then begin
             m_wStatusArrValue[2 {0x21A}] := LoWord(StdItem.SC);
             m_dwStatusArrTimeOutTick[2 {0x228}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('道术增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Soul Power increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if HiWord(StdItem.AC) > 0 then begin
             m_wStatusArrValue[3 {0x21B}] := HiWord(StdItem.AC);
             m_dwStatusArrTimeOutTick[3 {0x22C}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('攻击速度增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Attack Speed increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoWord(StdItem.AC) > 0 then begin
             m_wStatusArrValue[4 {0x21C}] := LoWord(StdItem.AC);
             m_dwStatusArrTimeOutTick[4 {0x230}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('生命值增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Defence increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoWord(StdItem.MAC) > 0 then begin
             m_wStatusArrValue[5 {0x21D}] := LoWord(StdItem.MAC);
             m_dwStatusArrTimeOutTick[5 {0x234}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('魔法值增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Magic Defence increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if bo06 then begin
@@ -3144,7 +3144,7 @@ begin
     n14 := (Random(10 + UserMagic.btLevel) + UserMagic.btLevel) * _MIN(UserMagic.btLevel, 1);
     m_dwStatusArrTimeOutTick[2 {0x228}] := GetTickCount + n14 * 1000;
     m_wStatusArrValue[2 {0x218}] := MakeLong(LoWord(m_WAbil.SC), HiWord(m_WAbil.SC) - 2 - (m_Abil.Level div 7)) * 2;
-    SysMsg('道术增加' + IntToStr(m_wStatusArrValue[2 {0x218}]) + '点 ' + IntToStr(n14) + '秒', c_Green, t_Hint);
+    SysMsg('SC Increased by ' + IntToStr(m_wStatusArrValue[2 {0x218}]) + ' points for ' + IntToStr(n14) + ' seconds', c_Green, t_Hint);
     RecalcAbilitys();
     SendMsg(Self, RM_ABILITY, 0, 0, 0, 0, '');
     SendMsg(Self, RM_SUBABILITY, 0, 0, 0, 0, '');
@@ -4306,14 +4306,14 @@ begin
         Dec(m_dwKillMonExpRateTime);
         if m_dwKillMonExpRateTime = 0 then begin
           m_nKillMonExpRate := 100;
-          SysMsg('经验倍数恢复正常...', c_Red, t_Hint);
+          SysMsg('Experience rate returned to normal.', c_Red, t_Hint);
         end;
       end;
       if m_dwPowerRateTime > 0 then begin
         Dec(m_dwPowerRateTime);
         if m_dwPowerRateTime = 0 then begin
           m_nPowerRate := 100;
-          SysMsg('攻击力倍数恢复正常...', c_Red, t_Hint);
+          SysMsg('Attack power returned to normal.', c_Red, t_Hint);
         end;
       end;
     end;

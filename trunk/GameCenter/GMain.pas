@@ -49,9 +49,7 @@ type
     CheckBoxLoginGate: TCheckBox;
     CheckBoxSelGate: TCheckBox;
     CheckBoxRunGate: TCheckBox;
-    CheckBoxRunGate1: TCheckBox;
     EditRunGate1Program: TEdit;
-    CheckBoxRunGate2: TCheckBox;
     EditRunGate2Program: TEdit;
     TimerStartGame: TTimer;
     TimerStopGame: TTimer;
@@ -128,37 +126,11 @@ type
     CheckBoxDynamicIPMode: TCheckBox;
     GroupBox20: TGroupBox;
     CheckBoxDisableAutoGame: TCheckBox;
-    TabSheet14: TTabSheet;
-    GroupBox21: TGroupBox;
-    Label24: TLabel;
-    Label25: TLabel;
-    Label26: TLabel;
-    LabelConnect: TLabel;
-    Label27: TLabel;
-    MemoGameList: TMemo;
-    EditNoticeUrl: TEdit;
-    Memo1: TMemo;
-    Button2: TButton;
-    EditClientForm: TSpinEdit;
     ServerSocket: TServerSocket;
     Timer: TTimer;
     GroupBox22: TGroupBox;
     LabelRunGate_GatePort1: TLabel;
     EditRunGate_GatePort1: TEdit;
-    LabelLabelRunGate_GatePort2: TLabel;
-    EditRunGate_GatePort2: TEdit;
-    LabelRunGate_GatePort3: TLabel;
-    EditRunGate_GatePort3: TEdit;
-    LabelRunGate_GatePort4: TLabel;
-    EditRunGate_GatePort4: TEdit;
-    LabelRunGate_GatePort5: TLabel;
-    EditRunGate_GatePort5: TEdit;
-    LabelRunGate_GatePort6: TLabel;
-    EditRunGate_GatePort6: TEdit;
-    LabelRunGate_GatePort7: TLabel;
-    EditRunGate_GatePort7: TEdit;
-    EditRunGate_GatePort8: TEdit;
-    LabelRunGate_GatePort78: TLabel;
     ButtonRunGateDefault: TButton;
     ButtonSelGateDefault: TButton;
     ButtonGeneralDefalult: TButton;
@@ -269,11 +241,6 @@ type
     LabelVersion: TLabel;
     Label60: TLabel;
     Label63: TLabel;
-    CheckBoxRunGate3: TCheckBox;
-    CheckBoxRunGate4: TCheckBox;
-    CheckBoxRunGate5: TCheckBox;
-    CheckBoxRunGate6: TCheckBox;
-    CheckBoxRunGate7: TCheckBox;
     GroupBox4: TGroupBox;
     ListViewDataBackup: TListView;
     GroupBox6: TGroupBox;
@@ -544,28 +511,28 @@ begin
   sGameName := Trim(EditGameName.Text);
   sExtIPAddr := Trim(EditGameExtIPaddr.Text);
   if sGameName = '' then begin
-    Application.MessageBox('游戏服务器名称输入不正确！！！', '提示信息', MB_OK + MB_ICONEXCLAMATION);
+    Application.MessageBox('Server Name entered incorrectly', 'Error', MB_OK + MB_ICONEXCLAMATION);
     EditGameName.SetFocus;
     Exit;
   end;
   if (sExtIPAddr = '') or not IsIPaddr(sExtIPAddr) then begin
-    Application.MessageBox('游戏服务器外部IP地址输入不正确！！！', '提示信息', MB_OK + MB_ICONEXCLAMATION);
+    Application.MessageBox('IP Address is invalid', 'Error', MB_OK + MB_ICONEXCLAMATION);
     EditGameExtIPaddr.SetFocus;
     Exit;
   end;
 
   if (sGameDirectory = '') or not DirectoryExists(sGameDirectory) then begin
-    Application.MessageBox('游戏目录输入不正确！！！', '提示信息', MB_OK + MB_ICONEXCLAMATION);
+    Application.MessageBox('Server Directory not found', 'Error', MB_OK + MB_ICONEXCLAMATION);
     EditGameDir.SetFocus;
     Exit;
   end;
   if not (sGameDirectory[Length(sGameDirectory)] = '\') then begin
-    Application.MessageBox('游戏目录名称最后一个字符必须为"\"！！！', '提示信息', MB_OK + MB_ICONEXCLAMATION);
+    Application.MessageBox('Last Character in Directory must be "\"', 'Error', MB_OK + MB_ICONEXCLAMATION);
     EditGameDir.SetFocus;
     Exit;
   end;
   if sHeroDBName = '' then begin
-    Application.MessageBox('游戏数据库名称输入不正确！！！', '提示信息', MB_OK + MB_ICONEXCLAMATION);
+    Application.MessageBox('Database name entered incorrectly', 'Error', MB_OK + MB_ICONEXCLAMATION);
     EditHeroDB.SetFocus;
     Exit;
   end;
@@ -589,7 +556,7 @@ var
 begin
   nPort := Str_ToInt(Trim(EditLoginGate_GatePort.Text), -1);
   if (nPort < 0) or (nPort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditLoginGate_GatePort.SetFocus;
     Exit;
   end;
@@ -608,7 +575,7 @@ var
 begin
   nPort := Str_ToInt(Trim(EditSelGate_GatePort.Text), -1);
   if (nPort < 0) or (nPort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditSelGate_GatePort.SetFocus;
     Exit;
   end;
@@ -616,7 +583,7 @@ begin
 
   nPort := Str_ToInt(Trim(EditSelGate_GatePort1.Text), -1);
   if (nPort < 0) or (nPort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditSelGate_GatePort1.SetFocus;
     Exit;
   end;
@@ -629,62 +596,14 @@ var
   nPort1, nPort2, nPort3, nPort4, nPort5, nPort6, nPort7, nPort8: Integer;
 begin
   nPort1 := Str_ToInt(Trim(EditRunGate_GatePort1.Text), -1);
-  nPort2 := Str_ToInt(Trim(EditRunGate_GatePort2.Text), -1);
-  nPort3 := Str_ToInt(Trim(EditRunGate_GatePort3.Text), -1);
-  nPort4 := Str_ToInt(Trim(EditRunGate_GatePort4.Text), -1);
-  nPort5 := Str_ToInt(Trim(EditRunGate_GatePort5.Text), -1);
-  nPort6 := Str_ToInt(Trim(EditRunGate_GatePort6.Text), -1);
-  nPort7 := Str_ToInt(Trim(EditRunGate_GatePort7.Text), -1);
-  nPort8 := Str_ToInt(Trim(EditRunGate_GatePort8.Text), -1);
 
   if (nPort1 < 0) or (nPort1 > 65535) then begin
-    Application.MessageBox('网关一端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditRunGate_GatePort1.SetFocus;
     Exit;
   end;
-  if (nPort2 < 0) or (nPort2 > 65535) then begin
-    Application.MessageBox('网关二端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort2.SetFocus;
-    Exit;
-  end;
-  if (nPort3 < 0) or (nPort3 > 65535) then begin
-    Application.MessageBox('网关三端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort3.SetFocus;
-    Exit;
-  end;
-  if (nPort4 < 0) or (nPort4 > 65535) then begin
-    Application.MessageBox('网关四端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort4.SetFocus;
-    Exit;
-  end;
-  if (nPort5 < 0) or (nPort5 > 65535) then begin
-    Application.MessageBox('网关五端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort5.SetFocus;
-    Exit;
-  end;
-  if (nPort6 < 0) or (nPort6 > 65535) then begin
-    Application.MessageBox('网关六端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort6.SetFocus;
-    Exit;
-  end;
-  if (nPort7 < 0) or (nPort7 > 65535) then begin
-    Application.MessageBox('网关七端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort7.SetFocus;
-    Exit;
-  end;
-  if (nPort8 < 0) or (nPort8 > 65535) then begin
-    Application.MessageBox('网关八端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
-    EditRunGate_GatePort8.SetFocus;
-    Exit;
-  end;
+
   g_RunGateInfo[0].nGatePort := nPort1;
-  g_RunGateInfo[1].nGatePort := nPort2;
-  g_RunGateInfo[2].nGatePort := nPort3;
-  g_RunGateInfo[3].nGatePort := nPort4;
-  g_RunGateInfo[4].nGatePort := nPort5;
-  g_RunGateInfo[5].nGatePort := nPort6;
-  g_RunGateInfo[6].nGatePort := nPort7;
-  g_RunGateInfo[7].nGatePort := nPort8;
   PageControl3.ActivePageIndex := 4;
 end;
 
@@ -696,12 +615,12 @@ begin
   nServerPort := Str_ToInt(Trim(EditLoginServerServerPort.Text), -1);
 
   if (nGatePort < 0) or (nGatePort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditLoginServerGatePort.SetFocus;
     Exit;
   end;
   if (nServerPort < 0) or (nServerPort > 65535) then begin
-    Application.MessageBox('通讯端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditLoginServerServerPort.SetFocus;
     Exit;
   end;
@@ -718,12 +637,12 @@ begin
   nServerPort := Str_ToInt(Trim(EditDBServerServerPort.Text), -1);
 
   if (nGatePort < 0) or (nGatePort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditDBServerGatePort.SetFocus;
     Exit;
   end;
   if (nServerPort < 0) or (nServerPort > 65535) then begin
-    Application.MessageBox('通讯端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditDBServerServerPort.SetFocus;
     Exit;
   end;
@@ -738,7 +657,7 @@ var
 begin
   nPort := Str_ToInt(Trim(EditLogServerPort.Text), -1);
   if (nPort < 0) or (nPort > 65535) then begin
-    Application.MessageBox('端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditLogServerPort.SetFocus;
     Exit;
   end;
@@ -753,12 +672,12 @@ begin
   nGatePort := Str_ToInt(Trim(EditM2ServerGatePort.Text), -1);
   nMsgSrvPort := Str_ToInt(Trim(EditM2ServerMsgSrvPort.Text), -1);
   if (nGatePort < 0) or (nGatePort > 65535) then begin
-    Application.MessageBox('网关端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditM2ServerGatePort.SetFocus;
     Exit;
   end;
   if (nMsgSrvPort < 0) or (nMsgSrvPort > 65535) then begin
-    Application.MessageBox('通讯端口设置错误！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Port entered incorrectly', 'Error', MB_OK + MB_ICONERROR);
     EditM2ServerMsgSrvPort.SetFocus;
     Exit;
   end;
@@ -861,8 +780,8 @@ begin
   g_IniConf.WriteBool('LogServer', 'GetStart', g_boLogServer_GetStart);
 
 
-  Application.MessageBox('配置文件已经保存完毕...', '提示信息', MB_OK + MB_ICONINFORMATION);
-  if Application.MessageBox('是否生成新的游戏服务器配置文件...', '提示信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+  Application.MessageBox('Server Config file has been saved', 'Message', MB_OK + MB_ICONINFORMATION);
+  if Application.MessageBox('Do you want to generate a new Server Config file?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
     ButtonGenGameConfigClick(ButtonGenGameConfig);
   end;
   PageControl3.ActivePageIndex := 0;
@@ -933,8 +852,6 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   Caption := m_sCapTion;
   LabelVersion.Caption := m_sVersion;
-  MemoGameList.Clear;
-  MemoGameList.Lines.Add(m_sGameList);
 
   m_boOpen := False;
   g_nFormIdx := g_IniConf.ReadInteger('Setup', 'FormID', g_nFormIdx);
@@ -966,7 +883,7 @@ begin
   //  ButtonGenGameConfig.Enabled:=False;
   GenGameConfig();
   RefGameConsole();
-  Application.MessageBox('引擎配置文件已经生成完毕...', '提示信息', MB_OK + MB_ICONINFORMATION);
+  Application.MessageBox('Server Config file has been generated', 'Message', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TfrmMain.GenGameConfig;
@@ -1459,27 +1376,6 @@ begin
   CheckBoxRunGate.Checked := g_RunGateInfo[0].boGetStart;
   CheckBoxRunGate.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
 
-  CheckBoxRunGate1.Checked := g_RunGateInfo[1].boGetStart;
-  CheckBoxRunGate1.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
-  CheckBoxRunGate2.Checked := g_RunGateInfo[2].boGetStart;
-  CheckBoxRunGate2.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
-  CheckBoxRunGate3.Checked := g_RunGateInfo[3].boGetStart;
-  CheckBoxRunGate3.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
-  CheckBoxRunGate4.Checked := g_RunGateInfo[4].boGetStart;
-  CheckBoxRunGate4.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
-  CheckBoxRunGate5.Checked := g_RunGateInfo[5].boGetStart;
-  CheckBoxRunGate5.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
-  CheckBoxRunGate6.Checked := g_RunGateInfo[6].boGetStart;
-  CheckBoxRunGate6.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
-  CheckBoxRunGate7.Checked := g_RunGateInfo[7].boGetStart;
-  CheckBoxRunGate7.Hint := Format('程序所在位置: %s%s%s', [g_sGameDirectory, g_sRunGate_Directory, g_sRunGate_ProgramFile]);
-
   EditGameDir.Text := g_sGameDirectory;
   EditHeroDB.Text := g_sHeroDBName;
   EditGameName.Text := g_sGameName;
@@ -1500,13 +1396,6 @@ begin
 
   EditRunGate_Connt.Value := g_nRunGate_Count;
   EditRunGate_GatePort1.Text := IntToStr(g_RunGateInfo[0].nGatePort);
-  EditRunGate_GatePort2.Text := IntToStr(g_RunGateInfo[1].nGatePort);
-  EditRunGate_GatePort3.Text := IntToStr(g_RunGateInfo[2].nGatePort);
-  EditRunGate_GatePort4.Text := IntToStr(g_RunGateInfo[3].nGatePort);
-  EditRunGate_GatePort5.Text := IntToStr(g_RunGateInfo[4].nGatePort);
-  EditRunGate_GatePort6.Text := IntToStr(g_RunGateInfo[5].nGatePort);
-  EditRunGate_GatePort7.Text := IntToStr(g_RunGateInfo[6].nGatePort);
-  EditRunGate_GatePort8.Text := IntToStr(g_RunGateInfo[7].nGatePort);
 
   EditLoginServer_MainFormX.Value := g_nLoginServer_MainFormX;
   EditLoginServer_MainFormY.Value := g_nLoginServer_MainFormY;
@@ -1578,27 +1467,6 @@ procedure TfrmMain.CheckBoxRunGateClick(Sender: TObject);
 begin
   if Sender = CheckBoxRunGate then begin
     g_RunGateInfo[0].boGetStart := CheckBoxRunGate.Checked;
-  end else
-    if Sender = CheckBoxRunGate1 then begin
-    g_RunGateInfo[1].boGetStart := CheckBoxRunGate1.Checked;
-  end else
-    if Sender = CheckBoxRunGate2 then begin
-    g_RunGateInfo[2].boGetStart := CheckBoxRunGate2.Checked;
-  end else
-    if Sender = CheckBoxRunGate3 then begin
-    g_RunGateInfo[3].boGetStart := CheckBoxRunGate3.Checked;
-  end else
-    if Sender = CheckBoxRunGate4 then begin
-    g_RunGateInfo[4].boGetStart := CheckBoxRunGate4.Checked;
-  end else
-    if Sender = CheckBoxRunGate5 then begin
-    g_RunGateInfo[5].boGetStart := CheckBoxRunGate5.Checked;
-  end else
-    if Sender = CheckBoxRunGate6 then begin
-    g_RunGateInfo[6].boGetStart := CheckBoxRunGate6.Checked;
-  end else
-    if Sender = CheckBoxRunGate7 then begin
-    g_RunGateInfo[7].boGetStart := CheckBoxRunGate7.Checked;
   end;
 end;
 
@@ -1607,24 +1475,24 @@ begin
   SetWindowPos(Self.Handle, Self.Handle, Self.Left, Self.Top, Self.Width, Self.Height, $40);
   case m_nStartStatus of
     0: begin
-        if Application.MessageBox('Are you sure you want to start server?', 'Starting Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to start the Server?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           StartGame();
         end;
       end;
     1: begin
-        if Application.MessageBox('Are you sure you want to stop server?', 'Stopping Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to restart the Server?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           TimerStartGame.Enabled := False;
           m_nStartStatus := 2;
           ButtonStartGame.Caption := g_sButtonStopGame;
         end;
       end;
     2: begin
-        if Application.MessageBox('Are you sure you want to stop server?', 'Stopping Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to stop the Server?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           StopGame();
         end;
       end;
     3: begin
-        if Application.MessageBox('Are you sure you want to stop server?111111', 'Stopping Server', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+        if Application.MessageBox('Are you sure you want to restart the Server?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
           TimerStopGame.Enabled := False;
           m_nStartStatus := 2;
           ButtonStartGame.Caption := g_sButtonStopGame;
@@ -1715,7 +1583,7 @@ end;
 procedure TfrmMain.StopGame;
 begin
   ButtonStartGame.Caption := g_sButtonStopStopGame;
-  MainOutMessage('Server has been closed...');
+  MainOutMessage('正在开始停止服务器...');
   TimerCheckRun.Enabled := False;
   TimerStopGame.Enabled := True;
   m_nStartStatus := 3;
@@ -2497,7 +2365,7 @@ procedure TfrmMain.ButtonReLoadConfigClick(Sender: TObject);
 begin
   LoadConfig();
   RefGameConsole();
-  Application.MessageBox('配置重加载完成...', '提示信息', MB_OK + MB_ICONINFORMATION);
+  Application.MessageBox('Configuration file reloaded.', 'Message', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TfrmMain.EditLoginGate_MainFormXChange(Sender: TObject);
@@ -2678,14 +2546,14 @@ end;
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   if m_nStartStatus = 2 then begin
-    if Application.MessageBox('游戏服务器正在运行，是否停止游戏服务器 ?', '确认信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+    if Application.MessageBox('Server is still running, do you want to also close the Server?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
       ButtonStartGameClick(ButtonStartGame);
     end;
     CanClose := False;
     Exit;
   end;
 
-  if Application.MessageBox('是否确认关闭控制台 ?', '确认信息', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
+  if Application.MessageBox('Are you sure you want to Exit?', 'Message', MB_YESNO + MB_ICONQUESTION) = mrYes then begin
     CanClose := True;
   end else begin
     CanClose := False;
@@ -2725,13 +2593,6 @@ begin
   if not m_boOpen then Exit;
   g_nRunGate_Count := EditRunGate_Connt.Value;
   g_RunGateInfo[0].boGetStart := g_nRunGate_Count >= 1;
-  g_RunGateInfo[1].boGetStart := g_nRunGate_Count >= 2;
-  g_RunGateInfo[2].boGetStart := g_nRunGate_Count >= 3;
-  g_RunGateInfo[3].boGetStart := g_nRunGate_Count >= 4;
-  g_RunGateInfo[4].boGetStart := g_nRunGate_Count >= 5;
-  g_RunGateInfo[5].boGetStart := g_nRunGate_Count >= 6;
-  g_RunGateInfo[6].boGetStart := g_nRunGate_Count >= 7;
-  g_RunGateInfo[7].boGetStart := g_nRunGate_Count >= 8;
   if g_RunGateInfo[4].boGetStart then begin
     g_sDBServer_Config_GateAddr := g_sAllIPaddr;
   end else begin
@@ -2753,11 +2614,9 @@ end;
 function TfrmMain.StartService: Boolean;
 begin
   Result := False;
-  MainOutMessage('Game Center Started...');
+  MainOutMessage('正在启动游戏客户端控制器...');
   g_SessionList := TStringList.Create;
-  if FileExists(g_sGameFile) then begin
-    MemoGameList.Lines.LoadFromFile(g_sGameFile);
-  end;
+
   g_sNoticeUrl := g_IniConf.ReadString('Client', 'NoticeUrl', m_sNoticeUrl);
   g_nClientForm := g_IniConf.ReadInteger('Client', 'ClientForm', g_nClientForm);
   g_nServerPort := g_IniConf.ReadInteger('Client', 'ServerPort', g_nServerPort);
@@ -2765,8 +2624,7 @@ begin
 
   g_sServerAddr := g_IniConf.ReadString('Client', 'ServerAddr', g_sServerAddr);
   g_nServerPort := g_IniConf.ReadInteger('Client', 'ServerPort', g_nServerPort);
-  EditNoticeUrl.Text := g_sNoticeUrl;
-  EditClientForm.Value := g_nClientForm;
+
   try
     ServerSocket.Address := g_sServerAddr;
     ServerSocket.Port := g_nServerPort;
@@ -2775,12 +2633,12 @@ begin
     Timer.Enabled := True;
   except
     on e: ESocketError do begin
-      MainOutMessage(Format('Socket Error', [g_nServerPort]));
+      MainOutMessage(Format('端口%d打开异常，检查端口是否被其它程序占用！！！', [g_nServerPort]));
       MainOutMessage(e.message);
       Exit;
     end;
   end;
-  MainOutMessage('Loaded Config File...');
+  MainOutMessage('游戏控制台启动完成...');
   Result := True;
 end;
 
@@ -2829,13 +2687,7 @@ var
   sNoticeUrl: string;
 begin
   sSendText := '';
-  sNoticeUrl := Trim(EditNoticeUrl.Text);
-  for I := 0 to MemoGameList.Lines.Count - 1 do begin
-    sLineText := MemoGameList.Lines.Strings[I];
-    if (sLineText <> '') and (sLineText[1] <> ';') then begin
-      sSendText := sSendText + EncodeString(sLineText) + '\';
-    end;
-  end;
+
   DefMsg := MakeDefaultMsg(SM_SENDGAMELIST, 0, 0, 0, 0);
   SendSocket(Socket, EncodeMessage(DefMsg) + sSendText);
 
@@ -2907,45 +2759,37 @@ begin
   ProcessClientPacket();
   if GetTickCount - m_dwShowTick > 1000 then begin
     m_dwShowTick := GetTickCount();
-    LabelConnect.Caption := Format('端口：%d   当前连接数：%d', [ServerSocket.Port, ServerSocket.Socket.ActiveConnections]);
   end;
 end;
 
 procedure TfrmMain.Button2Click(Sender: TObject);
 begin
-  MemoGameList.Lines.SaveToFile(g_sGameFile);
   g_IniConf.WriteString('Client', 'NoticeUrl', g_sNoticeUrl);
   g_IniConf.WriteInteger('Client', 'ClientForm', g_nClientForm);
   g_IniConf.WriteString('Client', 'ServerAddr', g_sServerAddr);
   g_IniConf.WriteInteger('Client', 'ServerPort', g_nServerPort);
-  Button2.Enabled := False;
 end;
 
 procedure TfrmMain.EditNoticeUrlChange(Sender: TObject);
 begin
   if not m_boOpen then Exit;
-  g_sNoticeUrl := Trim(EditNoticeUrl.Text);
-  Button2.Enabled := True;
 end;
 
 procedure TfrmMain.EditClientFormChange(Sender: TObject);
 begin
   if not m_boOpen then Exit;
-  g_nClientForm := EditClientForm.Value;
-  Button2.Enabled := True;
 end;
 
 procedure TfrmMain.MemoGameListChange(Sender: TObject);
 begin
   if not m_boOpen then Exit;
-  Button2.Enabled := True;
 end;
 
 procedure TfrmMain.ButtonGeneralDefalultClick(Sender: TObject);
 begin
-  EditGameDir.Text := 'D:\MirServer\';
+  EditGameDir.Text := '.\';
   EditHeroDB.Text := 'HeroDB';
-  EditGameName.Text := '飘飘网络';
+  EditGameName.Text := 'LOMCN';
   EditGameExtIPaddr.Text := '127.0.0.1';
   CheckBoxDynamicIPMode.Checked := False;
 end;
@@ -2954,13 +2798,6 @@ procedure TfrmMain.ButtonRunGateDefaultClick(Sender: TObject);
 begin
   EditRunGate_Connt.Value := 3;
   EditRunGate_GatePort1.Text := '7200';
-  EditRunGate_GatePort2.Text := '7300';
-  EditRunGate_GatePort3.Text := '7400';
-  EditRunGate_GatePort4.Text := '7500';
-  EditRunGate_GatePort5.Text := '7600';
-  EditRunGate_GatePort6.Text := '7700';
-  EditRunGate_GatePort7.Text := '7800';
-  EditRunGate_GatePort8.Text := '7900';
 end;
 
 procedure TfrmMain.ButtonLoginGateDefaultClick(Sender: TObject);
@@ -3020,12 +2857,12 @@ var
   sAccount: string;
 begin
   if LoginServer.btStartStatus <> 2 then begin
-    Application.MessageBox('游戏登录服务器未启动！！！' + #13#13 + '启动游戏登录服务器后才能使用此功能。', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Login Server must be started first!', 'Message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
   sAccount := Trim(EditSearchLoginAccount.Text);
   if sAccount = '' then begin
-    Application.MessageBox('帐号不能为空！！！', '错误信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Account Name must not be empty', 'Message', MB_OK + MB_ICONERROR);
     EditSearchLoginAccount.SetFocus;
     Exit;
   end;
@@ -3062,7 +2899,7 @@ begin
 
   case DefMsg.Ident of //
     SG_USERACCOUNTNOTFOUND: begin
-        Application.MessageBox('帐号未找到！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+        Application.MessageBox('Account not found', 'Message', MB_OK + MB_ICONINFORMATION);
         Exit;
       end;
   else begin
@@ -3136,12 +2973,12 @@ begin
   sMemo := Trim(EditLoginAccountMemo1.Text);
   sMemo2 := Trim(EditLoginAccountMemo2.Text);
   if sAccount = '' then begin
-    Application.MessageBox('帐号不能不空！！！', '提示信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Account Name cannot be empty', 'Message', MB_OK + MB_ICONERROR);
     EditLoginAccount.SetFocus;
     Exit;
   end;
   if sPassword = '' then begin
-    Application.MessageBox('密码不能不空！！！', '提示信息', MB_OK + MB_ICONERROR);
+    Application.MessageBox('Account Password cannot be empty', 'Message', MB_OK + MB_ICONERROR);
     EditLoginAccountPasswd.SetFocus;
     Exit;
   end;
@@ -3175,9 +3012,9 @@ begin
   sData := Copy(sData, DEFBLOCKSIZE + 1, Length(sData) - DEFBLOCKSIZE);
   DefMsg := DecodeMessage(sDefMsg);
   case DefMsg.Recog of //
-    -1: Application.MessageBox('指定的帐号不存在！！！', '提示信息', MB_OK + MB_ICONERROR);
-    1: Application.MessageBox('帐号更新成功...', '提示信息', MB_OK + MB_ICONINFORMATION);
-    2: Application.MessageBox('帐号更新失败！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    -1: Application.MessageBox('Specified Account does not exist', 'Message', MB_OK + MB_ICONERROR);
+    1: Application.MessageBox('Account updated successfully', 'Message', MB_OK + MB_ICONINFORMATION);
+    2: Application.MessageBox('Account update failed', 'Error', MB_OK + MB_ICONINFORMATION);
   end; // case
 end;
 
@@ -3255,7 +3092,7 @@ begin
     end;
     Conini.Free;
   end;
-  Application.MessageBox('保存成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+  Application.MessageBox('Save succesful', 'Message', MB_OK + MB_ICONINFORMATION);
   ButtonBackSave.Enabled := True;
 end;
 
@@ -3269,15 +3106,15 @@ begin
   sSource := Trim(RzButtonEditSource.Text);
   sDest := Trim(RzButtonEditDest.Text);
   if sSource = '' then begin
-    Application.MessageBox('请选择数据目录！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Please select the Data Directory', 'Message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
   if sDest = '' then begin
-    Application.MessageBox('请选择备份目录！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Please Select the Backup Directory', 'Message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
   if g_BackUpManager.FindObject(sSource) <> nil then begin
-    Application.MessageBox('此数据目录已经存在！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Data Directory already exists', 'Message', MB_OK + MB_ICONINFORMATION);
     Exit;
   end;
   if RadioButtonBackMode1.Checked then begin
@@ -3302,7 +3139,7 @@ begin
   BackUpObject.m_boZip := CheckBoxZip.Checked;
   g_BackUpManager.AddObjectToList(BackUpObject);
   RefBackListToView();
-  Application.MessageBox('增加成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+  Application.MessageBox('Success', 'Message', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TfrmMain.ButtonBackDelClick(Sender: TObject);
@@ -3313,8 +3150,8 @@ begin
   if ListItem <> nil then begin
     if g_BackUpManager.DeleteObject(ListItem.Caption) then begin
       RefBackListToView();
-      Application.MessageBox('删除成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
-    end else Application.MessageBox('删除失败！！！', '提示信息', MB_OK + MB_ICONERROR);
+      Application.MessageBox('Delete success', 'Message', MB_OK + MB_ICONINFORMATION);
+    end else Application.MessageBox('Delete failed', 'Message', MB_OK + MB_ICONERROR);
   end;
 end;
 
@@ -3330,11 +3167,11 @@ begin
     sSource := Trim(RzButtonEditSource.Text);
     sDest := Trim(RzButtonEditDest.Text);
     if sSource = '' then begin
-      Application.MessageBox('请选择数据目录！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox('Please select the Data Directory', 'Message', MB_OK + MB_ICONINFORMATION);
       Exit;
     end;
     if sDest = '' then begin
-      Application.MessageBox('请选择备份目录！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox('Please select the Backup Directory', 'Message', MB_OK + MB_ICONINFORMATION);
       Exit;
     end;
     {if g_BackUpManager.FindObject(sSource) <> nil then begin
@@ -3362,7 +3199,7 @@ begin
       BackUpObject.m_btBackUpMode := 1;
     end;
     BackUpObject.m_boZip := CheckBoxZip.Checked;
-    Application.MessageBox('修改成功！！！', '提示信息', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Success', 'Message', MB_OK + MB_ICONINFORMATION);
   end;
 end;
 
@@ -3475,9 +3312,9 @@ begin
           sLineText := GetValidStr3(sLineText, sHomePage, ['|']);
           if (Str_ToInt(sVersion, -1) = g_nServerVersion) then begin
             if Str_ToInt(sUpDate, -1) <> g_nUpDateVersion then begin
-              MainOutMessage('发现M2Server新版本...');
-              if Application.MessageBox('发现M2Server新版本，是否更新M2Server？',
-                '重要更新！',
+              MainOutMessage('Found new M2Server update.');
+              if Application.MessageBox('Do you want to update the M2Server?',
+                'Message',
                 MB_YESNO + MB_ICONQUESTION) = IDYES then begin
                 ShellExecute(0, 'Open', PChar(Trim(sHomePage)), nil, nil, SW_SHOWNORMAL);
               end;

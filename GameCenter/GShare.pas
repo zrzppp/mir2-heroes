@@ -4,11 +4,11 @@ interface
 uses
   Windows, Messages, Classes, SysUtils, INIFiles, DataBackUp, Common;
 resourcestring
-  m_sNoticeUrl = 'http://www.MakeGM.com';
-  m_sGameName = 'MakeGM';
-  m_sCapTion = 'MakeGM控制台';
+  m_sNoticeUrl = 'http://www.lomcn.co.uk';
+  m_sGameName = 'LOMCN';
+  m_sCapTion = 'Mir2: Heroes GameCenter';
   m_sGameList = 'MakeGM|MakeGM|127.0.0.1|7000|http://www.MakeGM.com';
-  m_sVersion = '软件名称: MakeGM反外挂数据引擎控制台';
+  m_sVersion = 'Mir2: Heroes GameCenter';
 const
   MAXRUNGATECOUNT = 8;
 type
@@ -58,10 +58,10 @@ var
 
   g_nFormIdx: Integer;
   g_IniConf: Tinifile;
-  g_sButtonStartGame: string = 'Restart Server(&S)';
-  g_sButtonStopGame: string = 'Stop Server(&T)';
-  g_sButtonStopStartGame: string = 'Stop Server(&T)';
-  g_sButtonStopStopGame: string = 'Stop Server(&T)';
+  g_sButtonStartGame: string = '&Start Server';
+  g_sButtonStopGame: string = 'S&top Server';
+  g_sButtonStopStartGame: string = 'Server loading';
+  g_sButtonStopStopGame: string = 'Stop Server';
 
   g_sConfFile: string = '.\Config.ini';
   g_sGameDirectory: string = 'D:\MirServer\';

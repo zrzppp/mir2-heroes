@@ -19217,15 +19217,15 @@ begin
     Exit;
   end;
   if (sGuildName = '') or ((sGuildName <> '') and (sGuildName[1] = '?')) then begin
-    SysMsg('查看行会战的得分数。', c_Red, t_Hint);
-    SysMsg(Format('命令格式: @%s 行会名称', [Cmd.sCmd]), c_Red, t_Hint);
+    SysMsg('View a Guilds Contest Points', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s GuildName', [Cmd.sCmd]), c_Red, t_Hint);
     Exit;
   end;
   Guild := g_GuildManager.FindGuild(sGuildName);
   if Guild <> nil then begin
-    SysMsg(Format('%s 的得分为: %d', [sGuildName, Guild.nContestPoint]), c_Green, t_Hint);
+    SysMsg(Format('%s points are: %d', [sGuildName, Guild.nContestPoint]), c_Green, t_Hint);
   end else begin
-    SysMsg(Format('行会: %s 不存在！！！', [sGuildName]), c_Green, t_Hint);
+    SysMsg(Format('Guild %s does not exist.', [sGuildName]), c_Green, t_Hint);
   end;
 end;
 
@@ -19243,13 +19243,13 @@ begin
     Exit;
   end;
   if ((sParam1 <> '') and (sParam1[1] = '?')) then begin
-    SysMsg('开始行会争霸赛。', c_Red, t_Hint);
-    SysMsg(Format('命令格式: @%s', [Cmd.sCmd]), c_Red, t_Hint);
+    SysMsg('Start a Guild Contest on current Map.', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s', [Cmd.sCmd]), c_Red, t_Hint);
     Exit;
   end;
 
   if not m_PEnvir.m_boFight3Zone then begin
-    SysMsg('此命令不能在当前地图中使用！！！', c_Red, t_Hint);
+    SysMsg('Not available on this Map.', c_Red, t_Hint);
     Exit;
   end;
   List10 := TList.Create;
@@ -19272,7 +19272,7 @@ begin
     end;
   end;
 
-  SysMsg('行会争霸赛已经开始。', c_Green, t_Hint);
+  SysMsg('Guild Contest has already begun', c_Green, t_Hint);
   UserEngine.CryCry(RM_CRY, m_PEnvir, m_nCurrX, m_nCurrY, 1000, g_Config.btCryMsgFColor, g_Config.btCryMsgBColor, '- 行会战争已爆发。');
   s20 := '';
   for I := 0 to List14.Count - 1 do begin
@@ -19306,13 +19306,13 @@ begin
     Exit;
   end;
   if ((sParam1 <> '') and (sParam1[1] = '?')) then begin
-    SysMsg('结束行会争霸赛。', c_Red, t_Hint);
-    SysMsg(Format('命令格式: @%s', [Cmd.sCmd]), c_Red, t_Hint);
+    SysMsg('End the Guild Contest on this Map.', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s', [Cmd.sCmd]), c_Red, t_Hint);
     Exit;
   end;
 
   if not m_PEnvir.m_boFight3Zone then begin
-    SysMsg('此命令不能在当前地图中使用！！！', c_Red, t_Hint);
+    SysMsg('Command not available on this Map.', c_Red, t_Hint);
     Exit;
   end;
   List10 := TList.Create;
@@ -19345,7 +19345,7 @@ end;
 procedure TPlayObject.CmdAllowGroupReCall(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('此命令用于允许或禁止编组传送功能。', c_Red, t_Hint);
+    SysMsg('This command is used to allow or deny Group Recall', c_Red, t_Hint);
     Exit;
   end;
 
@@ -19367,13 +19367,13 @@ begin
     Exit;
   end;
   if (sGuildName = '') or ((sGuildName <> '') and (sGuildName[1] = '?')) then begin
-    SysMsg('查看行会争霸赛结果。', c_Red, t_Hint);
-    SysMsg(Format('命令格式: @%s 行会名称', [Cmd.sCmd]), c_Red, t_Hint);
+    SysMsg('View a Guilds Contest Points.', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s GuildName', [Cmd.sCmd]), c_Red, t_Hint);
     Exit;
   end;
 
   if not m_PEnvir.m_boFight3Zone then begin
-    SysMsg('此命令不能在当前地图中使用！！！', c_Red, t_Hint);
+    SysMsg('This command is not available on this Map.', c_Red, t_Hint);
     Exit;
   end;
   Guild := g_GuildManager.FindGuild(sGuildName);
@@ -19389,7 +19389,7 @@ begin
         1000,
         g_Config.btCryMsgFColor,
         g_Config.btCryMsgBColor,
-        Format(' - %s  : %d 分/死亡%d次。 ', [sHumanName, HiWord(nPoint), LoWord(nPoint)]));
+        Format(' - %s  : %d Message 103 分/死亡%d次。 ', [sHumanName, HiWord(nPoint), LoWord(nPoint)]));
     end;
   end;
   UserEngine.CryCry(RM_CRY,
@@ -19399,7 +19399,7 @@ begin
     1000,
     g_Config.btCryMsgFColor,
     g_Config.btCryMsgBColor,
-    Format(' - [%s] : %d 分。', [Guild.sGuildName, Guild.nContestPoint]));
+    Format(' - [%s] : %d minutes.', [Guild.sGuildName, Guild.nContestPoint]));
   UserEngine.CryCry(RM_CRY,
     m_PEnvir,
     m_nCurrX,
@@ -19413,28 +19413,28 @@ end;
 procedure TPlayObject.CmdDearRecall(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('命令格式: @' + sCmd + ' (夫妻传送，将对方传送到自己身边，对方必须允许传送。)', c_Green, t_Hint);
+    SysMsg('Usage: @' + sCmd, c_Green, t_Hint);
     Exit;
   end;
   if m_sDearName = '' then begin
-    SysMsg('你没有结婚！！！', c_Red, t_Hint);
+    SysMsg('You are not married.', c_Red, t_Hint);
     Exit;
   end;
   if m_PEnvir.m_boNODEARRECALL then begin
-    SysMsg('本地图禁止夫妻传送！！！', c_Red, t_Hint);
+    SysMsg('Cannot recall on this Map.', c_Red, t_Hint);
     Exit;
   end;
 
   if m_DearHuman = nil then begin
     if m_btGender = 0 then begin
-      SysMsg('你的老婆不在线！！！', c_Red, t_Hint);
+      SysMsg('Your wife is not online.', c_Red, t_Hint);
     end else begin
-      SysMsg('你的老公不在线！！！', c_Red, t_Hint);
+      SysMsg('Your husband is not online.', c_Red, t_Hint);
     end;
     Exit;
   end;
   if GetTickCount - m_dwDearRecallTick < 10000 then begin
-    SysMsg('稍等伙才能再次使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You must wait before using this command again.', c_Red, t_Hint);
     Exit;
   end;
   m_dwDearRecallTick := GetTickCount();
@@ -19452,23 +19452,23 @@ var
   MasterHuman: TPlayObject;
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('命令格式: @' + sCmd + ' (师徒传送，师父可以将徒弟传送到自己身边，徒弟必须允许传送。)', c_Green, t_Hint);
+    SysMsg('Usage: @' + sCmd, c_Green, t_Hint);
     Exit;
   end;
   if not m_boMaster then begin
-    SysMsg('只能师父才能使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You are not a Master.', c_Red, t_Hint);
     Exit;
   end;
   if m_MasterList.Count = 0 then begin
-    SysMsg('你的徒弟一个都不在线！！！', c_Red, t_Hint);
+    SysMsg('You have no Master.', c_Red, t_Hint);
     Exit;
   end;
   if m_PEnvir.m_boNOMASTERRECALL then begin
-    SysMsg('本地图禁止师徒传送！！！', c_Red, t_Hint);
+    SysMsg('Master recall is not alllowed on this map.', c_Red, t_Hint);
     Exit;
   end;
   if GetTickCount - m_dwMasterRecallTick < 10000 then begin
-    SysMsg('稍等伙才能再次使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You must wait before using this command again.', c_Red, t_Hint);
     Exit;
   end;
   for I := 0 to m_MasterList.Count - 1 do begin
@@ -19490,7 +19490,7 @@ begin
     Exit;
   end;
   if sHumName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumName);
@@ -19499,8 +19499,8 @@ begin
     PlayObject.m_nBonusPoint := 0;
     PlayObject.SendMsg(PlayObject, RM_ADJUST_BONUS, 0, 0, 0, 0, '');
     PlayObject.HasLevelUp(0);
-    PlayObject.SysMsg('分配点数已清除！！！', c_Red, t_Hint);
-    SysMsg(sHumName + ' 的分配点数已清除.', c_Green, t_Hint);
+    PlayObject.SysMsg('Points have been cleared.', c_Red, t_Hint);
+    SysMsg(sHumName + ' points have been cleared.', c_Green, t_Hint);
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumName]), c_Red, t_Hint);
   end;
@@ -19513,7 +19513,7 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sHumanName = '') or ((sHumanName <> '') and (sHumanName[1] = '?')) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 点数(为空则查看)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name RenewLevel', c_Red, t_Hint);
     Exit;
   end;
   nLevel := Str_ToInt(sLevel, -1);
@@ -19523,9 +19523,9 @@ begin
       PlayObject.m_btReLevel := nLevel;
       PlayObject.RefShowName();
     end;
-    SysMsg(sHumanName + ' 的转生等级为 ' + IntToStr(PlayObject.m_btReLevel), c_Green, t_Hint);
+    SysMsg(sHumanName + ' renew level set to ' + IntToStr(PlayObject.m_btReLevel), c_Green, t_Hint);
   end else begin
-    SysMsg(sHumanName + ' 没在线上！！！', c_Red, t_Hint);
+    SysMsg(sHumanName + ' is not online', c_Red, t_Hint);
   end;
 end;
 
@@ -19574,7 +19574,7 @@ end;
 procedure TPlayObject.CmdSearchDear(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('此命令用于查询配偶当前所在位置。', c_Red, t_Hint);
+    SysMsg('Find out where you Partner currently is.', c_Red, t_Hint);
     Exit;
   end;
   if m_sDearName = '' then begin
@@ -19609,7 +19609,7 @@ var
   Human: TPlayObject;
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('此命令用于查询师徒当前所在位置。', c_Red, t_Hint);
+    SysMsg('Find where your Pupil is.', c_Red, t_Hint);
     Exit;
   end;
   if m_sMasterName = '' then begin
@@ -19645,7 +19645,7 @@ var
   nPerission: Integer;
   PlayObject: TPlayObject;
 resourcestring
-  sOutFormatMsg = '[权限调整] %s (%s %d -> %d)';
+  sOutFormatMsg = '[Permissions Adjusted] %s (%s %d -> %d)';
 begin
   if (m_btPermission < Cmd.nPermissionMin) then begin
     SysMsg(g_sGameCommandPermissionTooLow, c_Red, t_Hint);
@@ -19653,7 +19653,7 @@ begin
   end;
   nPerission := Str_ToInt(sPermission, 0);
   if (sHumanName = '') or not (nPerission in [0..10]) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 权限等级(0 - 10)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name PermissionLevel(0-10)', c_Red, t_Hint);
     Exit;
   end;
 
@@ -19665,7 +19665,7 @@ begin
   if g_Config.boShowMakeItemMsg then
     MainOutMessage(Format(sOutFormatMsg, [m_sCharName, PlayObject.m_sCharName, PlayObject.m_btPermission, nPerission]));
   PlayObject.m_btPermission := nPerission;
-  SysMsg(sHumanName + ' 当前权限为: ' + IntToStr(PlayObject.m_btPermission), c_Red, t_Hint);
+  SysMsg(sHumanName + ' current permission level is: ' + IntToStr(PlayObject.m_btPermission), c_Red, t_Hint);
 end;
 
 procedure TPlayObject.CmdShowHumanFlag(sCmd: string; nPermission: Integer;
@@ -20061,7 +20061,7 @@ begin
     Exit;
   end;
   if (sEffect = '') or (Str_ToInt(sEffect, -1) <= 0) or (sTime = '') then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 类型(1-13) 时间(秒)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Effect(1-13) Time', c_Red, t_Hint);
     Exit;
   end;
   nEffectType := Str_ToInt(sEffect, -1);
@@ -20100,7 +20100,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (sItemName = '') or (sItemCount = '') or (sType = '') then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 物品名称 数量 类型(0,1,2))', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Item Quantity Type(0,1,2))', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
@@ -20181,7 +20181,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (sItemName = '') then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 物品名称 数量)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Item Quantity)', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
@@ -20248,17 +20248,17 @@ begin
     Exit;
   end;
   if nServerIndex <> 0 then begin
-    SysMsg('只能在主服务器上才可以使用此命令删除行会！！！', c_Red, t_Hint);
+    SysMsg('This command can only be used on the Main Server.', c_Red, t_Hint);
     Exit;
   end;
   if sGuildName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 行会名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' GuildName', c_Red, t_Hint);
     Exit;
   end;
   if g_GuildManager.DELGUILD(sGuildName) then begin
     //UserEngine.SendServerGroupMsg(SS_206, nServerIndex, sGuildName);
   end else begin
-    SysMsg('没找到' + sGuildName + '这个行会！！！', c_Red, t_Hint);
+    SysMsg('Guild ' + sGuildName + ' was not found.', c_Red, t_Hint);
   end;
 end;
 
@@ -20337,7 +20337,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (sSkillName = '') then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 技能名称)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Skill)', c_Red, t_Hint);
     Exit;
   end;
   if CompareText(sSkillName, 'All') = 0 then boDelAll := True
@@ -20375,7 +20375,7 @@ begin
     Exit;
   end;
   if sAccount = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 登录帐号 是否永久封(0,1)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' AccountID Setting(0,1) - 1 to block login, 0 to allow.', c_Red, t_Hint);
     Exit;
   end;
   g_DenyAccountList.Lock;
@@ -20383,10 +20383,10 @@ begin
     if (sFixDeny <> '') and (sFixDeny[1] = '1') then begin
       g_DenyAccountList.AddObject(sAccount, TObject(1));
       SaveDenyAccountList();
-      SysMsg(sAccount + '已加入禁止登录帐号列表', c_Green, t_Hint);
+      SysMsg(sAccount + ' added to blocked list.', c_Green, t_Hint);
     end else begin
       g_DenyAccountList.AddObject(sAccount, TObject(0));
-      SysMsg(sAccount + '已加入临时禁止登录帐号列表', c_Green, t_Hint);
+      SysMsg(sAccount + 'Account has been added to the Temp banned list.', c_Green, t_Hint);
     end;
   finally
     g_DenyAccountList.UnLock;
@@ -20400,7 +20400,7 @@ begin
     Exit;
   end;
   if sCharName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 是否永久封(0,1)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Setting(0,1) - 1 to ban Character, 0 to unban.', c_Red, t_Hint);
     Exit;
   end;
   g_DenyChrNameList.Lock;
@@ -20408,10 +20408,10 @@ begin
     if (sFixDeny <> '') and (sFixDeny[1] = '1') then begin
       g_DenyChrNameList.AddObject(sCharName, TObject(1));
       SaveDenyChrNameList();
-      SysMsg(sCharName + '已加入禁止人物列表', c_Green, t_Hint);
+      SysMsg(sCharName + ' has joined the list of banned names', c_Green, t_Hint);
     end else begin
       g_DenyChrNameList.AddObject(sCharName, TObject(0));
-      SysMsg(sCharName + '已加入临时禁止人物列表', c_Green, t_Hint);
+      SysMsg(sCharName + ' has been banned.', c_Green, t_Hint);
     end;
   finally
     g_DenyChrNameList.UnLock;
@@ -20425,7 +20425,7 @@ begin
     Exit;
   end;
   if sIPaddr = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' IP地址 是否永久封(0,1)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' IPAddress Setting(0,1) - 1 ban IPAddress, 0 allow IPAddress.', c_Red, t_Hint);
     Exit;
   end;
   g_DenyIPAddrList.Lock;
@@ -20433,10 +20433,10 @@ begin
     if (sFixDeny <> '') and (sFixDeny[1] = '1') then begin
       g_DenyIPAddrList.AddObject(sIPaddr, TObject(1));
       SaveDenyIPAddrList();
-      SysMsg(sIPaddr + '已加入禁止登录IP列表', c_Green, t_Hint);
+      SysMsg(sIPaddr + ' added to blocked list.', c_Green, t_Hint);
     end else begin
       g_DenyIPAddrList.AddObject(sIPaddr, TObject(0));
-      SysMsg(sIPaddr + '已加入临时禁止登录IP列表', c_Green, t_Hint);
+      SysMsg(sIPaddr + ' has been banned.', c_Green, t_Hint);
     end;
   finally
     g_DenyIPAddrList.UnLock;
@@ -20447,14 +20447,14 @@ procedure TPlayObject.CmdDisableFilter(sCmd, sParam1: string);
 begin
   if (m_btPermission < 6) then Exit;
   if (sParam1 <> '') and (sParam1[1] = '?') then begin
-    SysMsg('启用/禁止文字过滤功能。', c_Red, t_Hint);
+    SysMsg('Enable/Disable Word Filter.', c_Red, t_Hint);
     Exit;
   end;
   boFilterWord := not boFilterWord;
   if boFilterWord then begin
-    SysMsg('已启用文字过滤。', c_Green, t_Hint);
+    SysMsg('Text Filter is enabled.', c_Green, t_Hint);
   end else begin
-    SysMsg('已禁止文字过滤。', c_Green, t_Hint);
+    SysMsg('Text Filter is disabled.', c_Green, t_Hint);
   end;
 end;
 
@@ -20469,7 +20469,7 @@ begin
     Exit;
   end;
   if sAccount = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 登录帐号', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' AccountID', c_Red, t_Hint);
     Exit;
   end;
   boDelete := False;
@@ -20480,7 +20480,7 @@ begin
         if Integer(g_DenyAccountList.Objects[I]) <> 0 then
           SaveDenyAccountList;
         g_DenyAccountList.Delete(I);
-        SysMsg(sAccount + '已从禁止登录帐号列表中删除。', c_Green, t_Hint);
+        SysMsg(sAccount + ' removed from banned list.', c_Green, t_Hint);
         boDelete := True;
         Break;
       end;
@@ -20503,7 +20503,7 @@ begin
     Exit;
   end;
   if sCharName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' CharacterName', c_Red, t_Hint);
     Exit;
   end;
   boDelete := False;
@@ -20514,7 +20514,7 @@ begin
         if Integer(g_DenyChrNameList.Objects[I]) <> 0 then
           SaveDenyChrNameList;
         g_DenyChrNameList.Delete(I);
-        SysMsg(sCharName + '已从禁止登录人物列表中删除。', c_Green, t_Hint);
+        SysMsg(sCharName + ' removed from banned list.', c_Green, t_Hint);
         boDelete := True;
         Break;
       end;
@@ -20537,7 +20537,7 @@ begin
     Exit;
   end;
   if sIPaddr = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' IP地址', c_Red, t_Hint);
+    SysMsg('Usage @' + Cmd.sCmd + ' IPAddress', c_Red, t_Hint);
     Exit;
   end;
   boDelete := False;
@@ -20570,7 +20570,7 @@ begin
   g_DenyAccountList.Lock;
   try
     if g_DenyAccountList.Count <= 0 then begin
-      SysMsg('禁止登录帐号列表为空。', c_Green, t_Hint);
+      SysMsg('List is empty.', c_Green, t_Hint);
       Exit;
     end;
     for I := 0 to g_DenyAccountList.Count - 1 do begin
@@ -20593,7 +20593,7 @@ begin
   g_DenyChrNameList.Lock;
   try
     if g_DenyChrNameList.Count <= 0 then begin
-      SysMsg('禁止登录角色列表为空。', c_Green, t_Hint);
+      SysMsg('List is empty', c_Green, t_Hint);
       Exit;
     end;
     for I := 0 to g_DenyChrNameList.Count - 1 do begin
@@ -20618,7 +20618,7 @@ begin
   try
     nCount := g_DenyIPAddrList.Count;
     if g_DenyIPAddrList.Count <= 0 then begin
-      SysMsg('禁止登录角色列表为空。', c_Green, t_Hint);
+      SysMsg('List is empty.', c_Green, t_Hint);
     end;
     if nCount > 0 then begin
       for I := 0 to g_DenyIPAddrList.Count - 1 do begin
@@ -20639,7 +20639,7 @@ begin
     Exit;
   end;
   if sHumanName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
@@ -20648,7 +20648,7 @@ begin
   end;
   g_DisableSendMsgList.Add(sHumanName);
   SaveDisableSendMsgList();
-  SysMsg(sHumanName + ' 已加入禁言列表。', c_Green, t_Hint);
+  SysMsg(sHumanName + ' can no longer speak.', c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdDisableSendMsgList(Cmd: pTGameCmd);
@@ -20660,11 +20660,11 @@ begin
     Exit;
   end;
   if g_DisableSendMsgList.Count <= 0 then begin
-    SysMsg('禁言列表为空！！！', c_Red, t_Hint);
+    SysMsg('List is empty.', c_Red, t_Hint);
     Exit;
   end;
 
-  SysMsg('禁言列表:', c_Blue, t_Hint);
+  SysMsg('Gag List:', c_Blue, t_Hint);
   for I := 0 to g_DisableSendMsgList.Count - 1 do begin
     SysMsg(g_DisableSendMsgList.Strings[I], c_Green, t_Hint);
   end;
@@ -20680,7 +20680,7 @@ begin
     Exit;
   end;
   if sHumanName = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name', c_Red, t_Hint);
     Exit;
   end;
   for I := g_DisableSendMsgList.Count - 1 downto 0 do begin
@@ -20692,11 +20692,11 @@ begin
       end;
       g_DisableSendMsgList.Delete(I);
       SaveDisableSendMsgList();
-      SysMsg(sHumanName + ' 已从禁言列表中删除。', c_Green, t_Hint);
+      SysMsg(sHumanName + ' can now speak.', c_Green, t_Hint);
       Exit;
     end;
   end;
-  SysMsg(sHumanName + ' 没有被禁言！！！', c_Red, t_Hint);
+  SysMsg(sHumanName + ' was not found.', c_Red, t_Hint);
 end;
 
 procedure TPlayObject.CmdEndGuild;
@@ -20708,13 +20708,13 @@ begin
         m_MyGuild := nil;
         RefRankInfo(0, '');
         RefShowName(); //10/31
-        SysMsg('你已经退出行会。', c_Green, t_Hint);
+        SysMsg('You have quit the Guild.', c_Green, t_Hint);
       end;
     end else begin
-      SysMsg('行会掌门人不能这样退出行会！！！', c_Red, t_Hint);
+      SysMsg('Guild leader can not quit.', c_Red, t_Hint);
     end;
   end else begin
-    SysMsg('你都没加入行会！！！', c_Red, t_Hint);
+    SysMsg('You are not a member of a Guild', c_Red, t_Hint);
   end;
 end;
 
@@ -20724,7 +20724,7 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (nInt = 0) or (nTime = 0) or (nN = 0) then begin
-    SysMsg('命令格式: @' + g_GameCommand.FIREBURN.sCmd + ' nInt nTime nN', c_Red, t_Hint);
+    SysMsg('Usage: @' + g_GameCommand.FIREBURN.sCmd + ' nInt nTime nN', c_Red, t_Hint);
     Exit;
   end;
   FireBurnEvent := TFireBurnEvent.Create(Self, m_nCurrX, m_nCurrY, nInt, nTime, nN);
@@ -20742,7 +20742,7 @@ begin
   end;
 
   if sCASTLENAME = '' then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 城堡名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Castle', c_Red, t_Hint);
     Exit;
   end;
 
@@ -20754,7 +20754,7 @@ begin
       Castle.StartWallconquestWar();
 
       //UserEngine.SendServerGroupMsg(SS_212, nServerIndex, '');
-      s20 := '[' + Castle.m_sName + '攻城战已经开始]';
+      s20 := '[' + Castle.m_sName + ' war has started]';
       UserEngine.SendBroadCastMsg(s20, t_System);
       //UserEngine.SendServerGroupMsg(SS_204, nServerIndex, s20);
       Castle.MainDoorControl(True);
@@ -20810,25 +20810,25 @@ begin
             PlayObject := TPlayObject(m_GroupMembers.Objects[I]);
             if PlayObject.m_boAllowGroupReCall then begin
               if PlayObject.m_PEnvir.m_boNORECALL then begin
-                SysMsg(Format('%s 所在的地图不允许传送。', [PlayObject.m_sCharName]), c_Red, t_Hint);
+                SysMsg(Format('%s is not allowed to be recalled on this map.', [PlayObject.m_sCharName]), c_Red, t_Hint);
               end else begin
                 RecallHuman(PlayObject.m_sCharName);
               end;
             end else begin
-              SysMsg(Format('%s 不允许天地合一！！！', [PlayObject.m_sCharName]), c_Red, t_Hint);
+              SysMsg(Format('%s is not allowed', [PlayObject.m_sCharName]), c_Red, t_Hint);
             end;
           end;
           m_dwGroupRcallTick := GetTickCount();
           m_wGroupRcallTime := g_Config.nGroupRecallTime;
         end;
       end else begin
-        SysMsg(Format('%d 秒之后才可以再使用此功能！！！', [m_wGroupRcallTime]), c_Red, t_Hint);
+        SysMsg(Format('%d seconds before you can use this feature again.', [m_wGroupRcallTime]), c_Red, t_Hint);
       end;
     end else begin
-      SysMsg('此地图禁止使用此命令！！！', c_Red, t_Hint);
+      SysMsg('Not allowed on this Map.', c_Red, t_Hint);
     end;
   end else begin
-    SysMsg('您现在还无法使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You cannot use this feature.', c_Red, t_Hint);
   end;
 end;
 
@@ -20842,27 +20842,27 @@ var
   Castle: TUserCastle;
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('命令功能: 行会传送，行会掌门人可以将整个行会成员全部集中。', c_Red, t_Hint);
+    SysMsg('This command will recall all Guild Members.', c_Red, t_Hint);
     Exit;
   end;
 
   if not m_boGuildMove and (m_btPermission < 6) then begin
-    SysMsg('您现在还无法使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You cannot use this feature.', c_Red, t_Hint);
     Exit;
   end;
   if not IsGuildMaster then begin
-    SysMsg('行会掌门人才可以使用此功能！！！', c_Red, t_Hint);
+    SysMsg('Only Guild Leader can use this feature.', c_Red, t_Hint);
     Exit;
   end;
   if m_PEnvir.m_boNOGUILDRECALL then begin
-    SysMsg('本地图不允许使用此功能！！！', c_Red, t_Hint);
+    SysMsg('Guild Recall is not allowed on this Map.', c_Red, t_Hint);
     Exit;
   end;
   Castle := g_CastleManager.InCastleWarArea(Self);
 
   //if UserCastle.m_boUnderWar and UserCastle.InCastleWarArea(m_PEnvir,m_nCurrX,m_nCurrY) then begin
   if (Castle <> nil) and Castle.m_boUnderWar then begin
-    SysMsg('攻城区域不允许使用此功能！！！', c_Red, t_Hint);
+    SysMsg('Cannot us this feature during a war.', c_Red, t_Hint);
     Exit;
   end;
   nRecallCount := 0;
@@ -20875,7 +20875,7 @@ begin
   end else m_wGroupRcallTime := 0;
 
   if m_wGroupRcallTime > 0 then begin
-    SysMsg(Format('%d 秒之后才可以再使用此功能！！！', [m_wGroupRcallTime]), c_Red, t_Hint);
+    SysMsg(Format('%d seconds before you can use this feature again.', [m_wGroupRcallTime]), c_Red, t_Hint);
     Exit;
   end;
 
@@ -20891,20 +20891,20 @@ begin
         end;
         if PlayObject.m_boAllowGuildReCall then begin
           if PlayObject.m_PEnvir.m_boNORECALL then begin
-            SysMsg(Format('%s 所在的地图不允许传送。', [PlayObject.m_sCharName]), c_Red, t_Hint);
+            SysMsg(Format('%s is not allowed recall on this Map.', [PlayObject.m_sCharName]), c_Red, t_Hint);
           end else begin
             RecallHuman(PlayObject.m_sCharName);
             Inc(nRecallCount);
           end;
         end else begin
           Inc(nNoRecallCount);
-          SysMsg(Format('%s 不允许行会合一！！！', [PlayObject.m_sCharName]), c_Red, t_Hint);
+          SysMsg(Format('%s Message105不允许行会合一！！！', [PlayObject.m_sCharName]), c_Red, t_Hint);
         end;
       end;
     end;
   end;
   //  SysMsg('已传送' + IntToStr(nRecallCount) + '个成员，' + IntToStr(nNoRecallCount) + '个成员未被传送。',c_Green,t_Hint);
-  SysMsg(Format('已传送%d个成员，%d个成员未被传送。', [nRecallCount, nNoRecallCount]), c_Green, t_Hint);
+  SysMsg(Format('%d have been recalled, %d have not been recalled.', [nRecallCount, nNoRecallCount]), c_Green, t_Hint);
   m_dwGroupRcallTick := GetTickCount();
   m_wGroupRcallTime := g_Config.nGuildRecallTime;
 end;
@@ -20923,7 +20923,7 @@ begin
     Exit;
   end;
   if (sHumanName = '') or (nHair < 0) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 人物名称 类型值', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Name Hair', c_Red, t_Hint);
     Exit;
   end;
 
@@ -20931,7 +20931,7 @@ begin
   if PlayObject <> nil then begin
     PlayObject.m_btHair := nHair;
     PlayObject.FeatureChanged();
-    SysMsg(sHumanName + ' 的头发已改变。', c_Green, t_Hint);
+    SysMsg(sHumanName + ' has been changed.', c_Green, t_Hint);
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumanName]), c_Red, t_Hint);
   end;
@@ -20985,7 +20985,7 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sHumanName = '') or (nHungerPoint < 0) then begin
-    SysMsg('命令格式: @' + sCmd + ' 人物名称 能量值', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' Name HungerPoints', c_Red, t_Hint);
     Exit;
   end;
   PlayObject := UserEngine.GetPlayObject(sHumanName);
@@ -20993,9 +20993,9 @@ begin
     PlayObject.m_nHungerStatus := nHungerPoint;
     PlayObject.SendMsg(PlayObject, RM_MYSTATUS, 0, 0, 0, 0, '');
     PlayObject.RefMyStatus();
-    SysMsg(sHumanName + ' 的能量值已改变。', c_Green, t_Hint);
+    SysMsg(sHumanName + ' hunger has been set.', c_Green, t_Hint);
   end else begin
-    SysMsg(sHumanName + '没有在线！！！', c_Red, t_Hint);
+    SysMsg(sHumanName + ' is not online.', c_Red, t_Hint);
   end;
 end;
 
@@ -21066,7 +21066,7 @@ begin
   end else begin
     BaseObject := GetPoseCreate();
     if BaseObject = nil then begin
-      SysMsg('命令使用方法不正确，必须与角色面对面站好！！！', c_Red, t_Hint);
+      SysMsg('You must face person to kill them.', c_Red, t_Hint);
       Exit;
     end;
   end;
@@ -21080,20 +21080,20 @@ begin
     Exit;
   end;
   if not g_Config.boLockHumanLogin then begin
-    SysMsg('本服务器还没有启用登录锁功能！！！', c_Red, t_Hint);
+    SysMsg('Server does not allow Login locks.', c_Red, t_Hint);
     Exit;
   end;
 
   if m_boLockLogon and not m_boLockLogoned then begin
-    SysMsg('您还没有打开登录锁或还没有设置锁密码！！！', c_Red, t_Hint);
+    SysMsg('Your login is not locked.', c_Red, t_Hint);
     Exit;
   end;
 
   m_boLockLogon := not m_boLockLogon;
   if m_boLockLogon then begin
-    SysMsg('已开启登录锁', c_Green, t_Hint);
+    SysMsg('Lock has been removed.', c_Green, t_Hint);
   end else begin
-    SysMsg('已关闭登录锁', c_Green, t_Hint);
+    SysMsg('Account has been locked.', c_Green, t_Hint);
   end;
 end;
 
@@ -21342,7 +21342,7 @@ end;
 procedure TPlayObject.CmdMemberFunction(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('打开会员功能窗口.', c_Red, t_Hint);
+    SysMsg('Opens Member Function NPC', c_Red, t_Hint);
     Exit;
   end;
   if g_ManageNPC <> nil then begin
@@ -21354,7 +21354,7 @@ end;
 procedure TPlayObject.CmdMemberFunctionEx(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('打开会员功能窗口.', c_Red, t_Hint);
+    SysMsg('Opens Member Function EX Npc', c_Red, t_Hint);
     Exit;
   end;
   if g_FunctionNPC <> nil then begin
@@ -21372,7 +21372,7 @@ begin
     Exit;
   end;
   if (sX = '') or (sY = '') then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' X  Y', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' X  Y', c_Red, t_Hint);
     Exit;
   end;
   nX := Str_ToInt(sX, 0);
@@ -21381,7 +21381,7 @@ begin
   g_sMissionMap := m_sMapName;
   g_nMissionX := nX;
   g_nMissionY := nY;
-  SysMsg('怪物集中目标已设定为: ' + m_sMapName + '(' + IntToStr(g_nMissionX) + ':' + IntToStr(g_nMissionY) + ')', c_Green, t_Hint);
+  SysMsg('Mob Mission has been set: ' + m_sMapName + '(' + IntToStr(g_nMissionX) + ':' + IntToStr(g_nMissionY) + ')', c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdMob(Cmd: pTGameCmd; sMonName: string; nCount, nLevel: Integer); //004CC7F4
@@ -21541,7 +21541,7 @@ begin
   nAppr := Str_ToInt(sParam3, 0);
   boIsCastle := (Str_ToInt(sParam4, 0) = 1);
   if sParam1 = '' then begin
-    SysMsg('命令格式: @' + sCmd + ' NPC名称 脚本文件名 外形(数字) 属沙城(0,1)', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' NPCName TextFileName Type(0,1)', c_Red, t_Hint);
     Exit;
   end;
   Merchant := TMerchant.Create;
@@ -21575,12 +21575,12 @@ begin
   nY := Str_ToInt(sY, 0);
   MEnvir := g_MapManager.FindMap(g_sMissionMap);
   if (nX <= 0) or (nY <= 0) or (sMonName = '') or (nCount <= 0) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' X  Y 怪物名称 怪物数量', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' X  Y MonsterName MonsterAmount', c_Red, t_Hint);
     Exit;
   end;
   if not g_boMission or (MEnvir = nil) then begin
-    SysMsg('还没有设定怪物集中点！！！', c_Red, t_Hint);
-    SysMsg('请先用命令' + g_GameCommand.Mission.sCmd + '设置怪物的集中点。', c_Red, t_Hint);
+    SysMsg('Focus point for Monster has not been set', c_Red, t_Hint);
+    SysMsg('Use the command ' + g_GameCommand.Mission.sCmd + ' to create a Mission for mobs.', c_Red, t_Hint);
     Exit;
   end;
 
@@ -21592,7 +21592,7 @@ begin
       mon.m_nMissionY := g_nMissionY;
     end else Break;
   end;
-  SysMsg(IntToStr(nCount) + ' 只 ' + sMonName + ' 已正在往地图 ' + g_sMissionMap + ' ' + IntToStr(g_nMissionX) + ':' + IntToStr(g_nMissionY) + ' 集中。', c_Green, t_Hint);
+  SysMsg(IntToStr(nCount) + sMonName + ' have been added to ' + g_sMissionMap + ' ' + IntToStr(g_nMissionX) + ':' + IntToStr(g_nMissionY), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdNpcScript(sCmd: string; nPermission: Integer; sParam1, sParam2, sParam3: string);
@@ -21631,7 +21631,7 @@ begin
     end;
   end;
   if nNPCType < 0 then begin
-    SysMsg('命令使用方法不正确，必须与NPC面对面，才能使用此命令！！！', c_Red, t_Hint);
+    SysMsg('You must face the NPC to use this command', c_Red, t_Hint);
     Exit;
   end;
 
@@ -21649,7 +21649,7 @@ begin
       try
         LoadList.LoadFromFile(sScriptFileName);
       except
-        SysMsg('读取脚本文件错误: ' + sScriptFileName, c_Red, t_Hint);
+        SysMsg('Error reading script: ' + sScriptFileName, c_Red, t_Hint);
       end;
       for I := 0 to LoadList.Count - 1 do begin
         sScriptLine := Trim(LoadList.Strings[I]);
@@ -21803,12 +21803,12 @@ procedure TPlayObject.CmdReconnection(sCmd, sIPaddr, sPort: string);
 begin
   if (m_btPermission < 10) then Exit;
   if (sIPaddr <> '') and (sIPaddr[1] = '?') then begin
-    SysMsg('此命令用于改变客户端连接网关的IP及端口。', c_Blue, t_Hint);
+    SysMsg('This command is used to change the IP Address used for Client connections.', c_Blue, t_Hint);
     Exit;
   end;
 
   if (sIPaddr = '') or (sPort = '') then begin
-    SysMsg('命令格式: @' + sCmd + ' IP地址 端口', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' IPAddress Port', c_Red, t_Hint);
     Exit;
   end;
   if (sIPaddr <> '') and (sPort <> '') then begin
@@ -21874,7 +21874,7 @@ begin
   if (m_btPermission < 6) then Exit;
   FrmDB.LoadAdminList();
   //UserEngine.SendServerGroupMsg(213, nServerIndex, '');
-  SysMsg('管理员列表重新加载成功...', c_Green, t_Hint);
+  SysMsg('Admin List reloaded.', c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdReloadGuild(sCmd: string; nPermission: Integer;
@@ -21941,17 +21941,17 @@ begin
     if g_ManageNPC <> nil then begin
       g_ManageNPC.ClearScript();
       g_ManageNPC.LoadNpcScript();
-      SysMsg('重新加载登录脚本完成...', c_Green, t_Hint);
+      SysMsg('Logon script reloaded', c_Green, t_Hint);
     end else begin
-      SysMsg('重新加载登录脚本失败...', c_Green, t_Hint);
+      SysMsg('Failed to read Logon Script', c_Green, t_Hint);
     end;
   end else begin
     if g_FunctionNPC <> nil then begin
       g_FunctionNPC.ClearScript();
       g_FunctionNPC.LoadNpcScript();
-      SysMsg('重新加载功能脚本完成...', c_Green, t_Hint);
+      SysMsg('Q-Function reloaded.', c_Green, t_Hint);
     end else begin
-      SysMsg('重新加载功能脚本失败...', c_Green, t_Hint);
+      SysMsg('Failed to read Q-Function.', c_Green, t_Hint);
     end;
   end;
 end;
@@ -21959,7 +21959,7 @@ end;
 procedure TPlayObject.CmdReloadRobot;
 begin
   RobotManage.RELOADROBOT();
-  SysMsg('重新加载机器人配置完成...', c_Green, t_Hint);
+  SysMsg('Robot reloaded', c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdReloadRobotManage;
@@ -21968,9 +21968,9 @@ begin
   if g_RobotNPC <> nil then begin
     g_RobotNPC.ClearScript();
     g_RobotNPC.LoadNpcScript();
-    SysMsg('重新加载机器人专用脚本完成...', c_Green, t_Hint);
+    SysMsg('Robot scripts reloaded.', c_Green, t_Hint);
   end else begin
-    SysMsg('重新加载机器人专用脚本失败...', c_Green, t_Hint);
+    SysMsg('Failed to read Robot scripts.', c_Green, t_Hint);
   end;
 end;
 
@@ -21985,9 +21985,9 @@ begin
       Monster := UserEngine.MonsterList.Items[I];
       FrmDB.LoadMonitems(Monster.sName, Monster.ItemList);
     end;
-    SysMsg('怪物爆物品列表重加载完成...', c_Green, t_Hint);
+    SysMsg('MonItems reloaded.', c_Green, t_Hint);
   except
-    SysMsg('怪物爆物品列表重加载失败！！！', c_Green, t_Hint);
+    SysMsg('Failed to reload MonItems.', c_Green, t_Hint);
   end;
 end;
 
@@ -22002,9 +22002,9 @@ begin
   if CompareText('all', sParam) = 0 then begin
     FrmDB.ReLoadMerchants();
     UserEngine.ReloadMerchantList();
-    SysMsg('交易NPC重新加载完成！！！', c_Red, t_Hint);
+    SysMsg('NPCs reloaded.', c_Red, t_Hint);
     UserEngine.ReloadNpcList();
-    SysMsg('管理NPC重新加载完成！！！', c_Red, t_Hint);
+    SysMsg('Failed to reload NPCs', c_Red, t_Hint);
     Exit;
   end;
   TmpList := TList.Create;
@@ -22013,10 +22013,10 @@ begin
       Merchant := TMerchant(TmpList.Items[I]);
       Merchant.ClearScript;
       Merchant.LoadNpcScript;
-      SysMsg(Merchant.m_sCharName + '重新加载成功...', c_Green, t_Hint);
+      SysMsg(Merchant.m_sCharName + 'reloaded.', c_Green, t_Hint);
     end; // for
   end else begin
-    SysMsg('附近未发现任何交易NPC！！！', c_Red, t_Hint);
+    SysMsg('No NPCs found in Area', c_Red, t_Hint);
   end;
   TmpList.Clear;
   if UserEngine.GetNpcList(m_PEnvir, m_nCurrX, m_nCurrY, 9, TmpList) > 0 then begin
@@ -22024,10 +22024,10 @@ begin
       NPC := TNormNpc(TmpList.Items[I]);
       NPC.ClearScript;
       NPC.LoadNpcScript;
-      SysMsg(NPC.m_sCharName + '重新加载成功...', c_Green, t_Hint);
+      SysMsg(NPC.m_sCharName + 'reloaded.', c_Green, t_Hint);
     end; // for
   end else begin
-    SysMsg('附近未发现任何管理NPC！！！', c_Red, t_Hint);
+    SysMsg('No NPCs found in area.', c_Red, t_Hint);
   end;
   TmpList.Free;
 end;
@@ -22038,22 +22038,22 @@ var
 begin
   if m_boProbeNecklace or (m_btPermission >= 6) then begin
     if (sHumanName = '') then begin
-      SysMsg('命令格式: @' + sCmd + ' 人物名称', c_Red, t_Hint);
+      SysMsg('Usage: @' + sCmd + ' Name', c_Red, t_Hint);
       Exit;
     end;
     if ((GetTickCount - m_dwProbeTick) > 10000) or (m_btPermission >= 3) then begin
       m_dwProbeTick := GetTickCount();
       PlayObject := UserEngine.GetPlayObject(sHumanName);
       if PlayObject <> nil then begin
-        SysMsg(sHumanName + ' 现在位于 ' + PlayObject.m_PEnvir.sMapDesc + '(' + PlayObject.m_PEnvir.sMapName + ') ' + IntToStr(PlayObject.m_nCurrX) + ':' + IntToStr(PlayObject.m_nCurrY), c_Blue, t_Hint);
+        SysMsg(sHumanName + ' is located on ' + PlayObject.m_PEnvir.sMapDesc + '(' + PlayObject.m_PEnvir.sMapName + ') ' + IntToStr(PlayObject.m_nCurrX) + ':' + IntToStr(PlayObject.m_nCurrY), c_Blue, t_Hint);
       end else begin
-        SysMsg(sHumanName + ' 现在不在线，或位于其它服务器上！！！', c_Red, t_Hint);
+        SysMsg(sHumanName + ' is not online.', c_Red, t_Hint);
       end;
     end else begin
-      SysMsg(IntToStr((GetTickCount - m_dwProbeTick) div 1000 - 10) + ' 秒之后才可以再使用此功能！！！', c_Red, t_Hint);
+      SysMsg(IntToStr((GetTickCount - m_dwProbeTick) div 1000 - 10) + ' seconds before you can use this command again.', c_Red, t_Hint);
     end;
   end else begin
-    SysMsg('您现在还无法使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You cannot use this feature.', c_Red, t_Hint);
   end;
 end;
 
@@ -22066,7 +22066,7 @@ var
 begin
   if m_boProbeNecklace or (m_btPermission >= 6) then begin
     if (sMonName = '') then begin
-      SysMsg('命令格式: @' + sCmd + ' 怪物名称', c_Red, t_Hint);
+      SysMsg('Usage: @' + sCmd + ' Monster', c_Red, t_Hint);
       Exit;
     end;
     if ((GetTickCount - m_dwProbeTick) > 10000) or (m_btPermission >= 3) then begin
@@ -22075,17 +22075,17 @@ begin
       if UserEngine.GetMonsterByName(sMonName, MonList) > 0 then begin
         for I := 0 to MonList.Count - 1 do begin
           ActorObject := TActorObject(MonList.Items[I]);
-          SysMsg(IntToStr(I + 1) + '. ' + sMonName + ' 现在位于 ' + ActorObject.m_PEnvir.sMapDesc + '(' + ActorObject.m_PEnvir.sMapName + ') ' + IntToStr(ActorObject.m_nCurrX) + ':' + IntToStr(ActorObject.m_nCurrY), c_Blue, t_Hint);
+          SysMsg(IntToStr(I + 1) + '. ' + sMonName + ' is located on ' + ActorObject.m_PEnvir.sMapDesc + '(' + ActorObject.m_PEnvir.sMapName + ') ' + IntToStr(ActorObject.m_nCurrX) + ':' + IntToStr(ActorObject.m_nCurrY), c_Blue, t_Hint);
         end;
       end else begin
-        SysMsg(sMonName + ' 没有发现！！！', c_Red, t_Hint);
+        SysMsg(sMonName + ' was not found', c_Red, t_Hint);
       end;
       MonList.Free;
     end else begin
-      SysMsg(IntToStr((GetTickCount - m_dwProbeTick) div 1000 - 10) + ' 秒之后才可以再使用此功能！！！', c_Red, t_Hint);
+      SysMsg(IntToStr((GetTickCount - m_dwProbeTick) div 1000 - 10) + ' seconds before you can use this command again.', c_Red, t_Hint);
     end;
   end else begin
-    SysMsg('您现在还无法使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You cannot use this feature', c_Red, t_Hint);
   end;
 end;
 
@@ -22594,7 +22594,7 @@ var
 begin
   if (m_btPermission < 6) then Exit;
   if (sParam1 <> '') and (sParam1[1] = '?') then begin
-    SysMsg('此命令用于开始祈祷生效宝宝叛变。', c_Red, t_Hint);
+    SysMsg('Start a pet rebellion.', c_Red, t_Hint);
     Exit;
   end;
   nTime := Str_ToInt(sParam1, -1);
@@ -22604,18 +22604,18 @@ begin
     dwTime := g_Config.dwSpiritMutinyTime;
   end;
   g_dwSpiritMutinyTick := GetTickCount + dwTime;
-  SysMsg('祈祷叛变已开始。持续时长 ' + IntToStr(dwTime div 1000) + ' 秒。', c_Green, t_Hint);
+  SysMsg('Pet rebellion started for ' + IntToStr(dwTime div 1000) + ' seconds.', c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdSpirtStop(sCmd, sParam1: string);
 begin
   if (m_btPermission < 6) then Exit;
   if (sParam1 <> '') and (sParam1[1] = '?') then begin
-    SysMsg('此命令用于停止祈祷生效导致宝宝叛变。', c_Red, t_Hint);
+    SysMsg('Stop the Pet rebellion.', c_Red, t_Hint);
     Exit;
   end;
   g_dwSpiritMutinyTick := 0;
-  SysMsg('祈祷叛变已停止。', c_Green, t_Hint);
+  SysMsg('Pet rebellion stopped.', c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdStartQuest(Cmd: pTGameCmd; sQuestName: string);
@@ -22625,7 +22625,7 @@ begin
     Exit;
   end;
   if (sQuestName = '') then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 问答名称', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' QuestName', c_Red, t_Hint);
     Exit;
   end;
   UserEngine.SendQuestMsg(sQuestName);
@@ -22666,8 +22666,8 @@ end;
 procedure TPlayObject.CmdTakeOffHorse(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('下马命令，在骑马状态输入此命令下马。', c_Red, t_Hint);
-    SysMsg(Format('命令格式: @%s', [sCmd]), c_Red, t_Hint);
+    SysMsg('Unmount your horse command', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s', [sCmd]), c_Red, t_Hint);
     Exit;
   end;
   if not m_boOnHorse then Exit;
@@ -22678,13 +22678,13 @@ end;
 procedure TPlayObject.CmdTakeOnHorse(sCmd, sParam: string);
 begin
   if (sParam <> '') and (sParam[1] = '?') then begin
-    SysMsg('上马命令，在戴好马牌后输入此命令就可以骑上马。', c_Red, t_Hint);
-    SysMsg(Format('命令格式: @%s', [sCmd]), c_Red, t_Hint);
+    SysMsg('Mount Horse command.', c_Red, t_Hint);
+    SysMsg(Format('Usage: @%s', [sCmd]), c_Red, t_Hint);
     Exit;
   end;
   if m_boOnHorse then Exit;
   if (m_btHorseType = 0) then begin
-    SysMsg('骑马必须先戴上马牌！！！', c_Red, t_Hint);
+    SysMsg('You do not have a horse.', c_Red, t_Hint);
     Exit;
   end;
   m_boOnHorse := True;
@@ -22748,9 +22748,9 @@ begin
   end;
   m_boTestSpeedMode := not m_boTestSpeedMode;
   if m_boTestSpeedMode then begin
-    SysMsg('开启速度测试模式', c_Red, t_Hint);
+    SysMsg('Speed Test Mode started.', c_Red, t_Hint);
   end else begin
-    SysMsg('关闭速度测试模式', c_Red, t_Hint);
+    SysMsg('Speed Test Mode stopped.', c_Red, t_Hint);
   end;
 end;
 
@@ -22758,14 +22758,14 @@ procedure TPlayObject.CmdTestStatus(sCmd: string; nType, nTime: Integer);
 begin
   if (m_btPermission < 6) then Exit;
   if (not (nType in [Low(TStatusTime)..High(TStatusTime)])) or (nTime < 0) then begin
-    SysMsg('命令格式: @' + sCmd + ' 类型(0..11) 时长', c_Red, t_Hint);
+    SysMsg('Usage: @' + sCmd + ' Type(0..11) Time', c_Red, t_Hint);
     Exit;
   end;
   m_wStatusTimeArr[nType] := nTime * 1000;
   m_dwStatusArrTick[nType] := GetTickCount();
   m_nCharStatus := GetCharStatus();
   StatusChanged();
-  SysMsg(Format('状态编号:%d 时间长度: %d 秒', [nType, nTime]), c_Green, t_Hint);
+  SysMsg(Format('Status:%d Time: %d seconds', [nType, nTime]), c_Green, t_Hint);
 end;
 
 procedure TPlayObject.CmdTing(Cmd: pTGameCmd; sHumanName: string);
@@ -22841,10 +22841,10 @@ begin
         SysMsg(Format(g_sGameCommandPositionMoveCanotMoveToMap, [m_sMapName, sX, sY]), c_Green, t_Hint);
       end;
     end else begin
-      SysMsg('此地图禁止使用此命令！！！', c_Red, t_Hint);
+      SysMsg('Cannot use command on this Map.', c_Red, t_Hint);
     end;
   end else begin
-    SysMsg('您现在还无法使用此功能！！！', c_Red, t_Hint);
+    SysMsg('You cannot use this feature.', c_Red, t_Hint);
   end;
 end;
 
@@ -22894,7 +22894,7 @@ begin
   PlayObject := UserEngine.GetPlayObject(sHumanName);
   if PlayObject <> nil then begin
     PlayObject.ClearCopyItems();
-    SysMsg('清除完成！', c_Red, t_Hint);
+    SysMsg('Clear completed.', c_Red, t_Hint);
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumanName]), c_Red, t_Hint);
   end;
@@ -22914,7 +22914,7 @@ begin
   end;
   nRange := Str_ToInt(sRange, -1);
   if (nRange < 0) then begin
-    SysMsg('命令格式: @' + Cmd.sCmd + ' 范围(>0)', c_Red, t_Hint);
+    SysMsg('Usage: @' + Cmd.sCmd + ' Range(>0)', c_Red, t_Hint);
     Exit;
   end;
   ItemList := TList.Create;
@@ -22931,7 +22931,7 @@ begin
 
   ItemList.Free;
 
-  SysMsg('清除完成！', c_Red, t_Hint);
+  SysMsg('Clear completed.', c_Red, t_Hint);
 end;
 
 constructor TPlayObject.Create;
@@ -25172,7 +25172,7 @@ begin
     if m_MyGuild <> nil then begin
       m_sGuildRankName := TGUild(m_MyGuild).GetRankName(Self, m_nGuildRankNo);
       for I := 0 to TGUild(m_MyGuild).GuildWarList.Count - 1 do begin
-        SysMsg(TGUild(m_MyGuild).GuildWarList.Strings[I] + ' 正在与本行会进行行会战。', c_Green, t_Hint);
+        SysMsg(TGUild(m_MyGuild).GuildWarList.Strings[I] + ' is in the War list.', c_Green, t_Hint);
       end;
     end;
 
@@ -25183,8 +25183,8 @@ begin
       //    m_nGoldMax:=100000;
       m_nGoldMax := g_Config.nHumanTryModeMaxGold;
       if m_Abil.Level > g_Config.nTryModeLevel then begin
-        SysMsg('测试状态可以使用到第 ' + IntToStr(g_Config.nTryModeLevel) + ' 级。', c_Red, t_Hint);
-        SysMsg('链接中断，请到以下地址获得收费相关信息。(http://www.MakeGM.com)', c_Red, t_Hint);
+        SysMsg('TestMode can be used up to level  ' + IntToStr(g_Config.nTryModeLevel), c_Red, t_Hint);
+        SysMsg('See www.lomcn.co.uk for details', c_Red, t_Hint);
         m_boEmergencyClose := True;
         m_boPlayOffLine := False;
       end;
@@ -25193,7 +25193,7 @@ begin
     if (m_nPayMent = 3) and not bo6AB then
       SysMsg(g_sNowIsFreePlayMode {'当前服务器运行于测试模式.'}, c_Green, t_Hint);
     if g_Config.boVentureServer then
-      SysMsg('当前服务器运行于Venture Mode.', c_Green, t_Hint);
+      SysMsg('Server is in Venture Mode.', c_Green, t_Hint);
 
     if (m_MagicErgumSkill <> nil) and (not m_boUseThrusting) then begin
       m_boUseThrusting := True;
@@ -25818,10 +25818,10 @@ begin
   if THeroObject(m_MyHero) <> nil then begin
     THeroObject(m_MyHero).m_boAutoAttack := not THeroObject(m_MyHero).m_boAutoAttack;
     if THeroObject(m_MyHero).m_boAutoAttack then begin
-      THeroObject(m_MyHero).SysMsg('开始挂机！！！', 251, 249, t_Hint);
+      THeroObject(m_MyHero).SysMsg('Start Attacking.', 251, 249, t_Hint);
       //THeroObject(m_MyHero).m_btLastDir := THeroObject(m_MyHero).m_btDirection;
     end else begin
-      THeroObject(m_MyHero).SysMsg('停止挂机！！！', 251, 249, t_Hint);
+      THeroObject(m_MyHero).SysMsg('Stop Attacking.', 251, 249, t_Hint);
     end;
   end;
 end;
@@ -25944,11 +25944,11 @@ begin
   if THeroObject(m_MyHero).m_boProtectStatus then begin
     THeroObject(m_MyHero).m_nProtectTargetX := nX;
     THeroObject(m_MyHero).m_nProtectTargetY := nY;
-    THeroObject(m_MyHero).SysMsg(Format('开始守护.坐标(%d/%d)', [nX, nY]), c_Green, t_Hint)
+    THeroObject(m_MyHero).SysMsg(Format('Your Hero is now Protecting the area at (%d/%d).', [nX, nY]), c_Green, t_Hint)
   end else begin
     THeroObject(m_MyHero).m_nProtectTargetX := -1;
     THeroObject(m_MyHero).m_nProtectTargetY := -1;
-    THeroObject(m_MyHero).SysMsg('停止守护', c_Green, t_Hint);
+    THeroObject(m_MyHero).SysMsg('Hero has stopped protecting this area.', c_Green, t_Hint);
   end;
   //end;
 end;
@@ -28424,7 +28424,7 @@ begin
     m_GroupOwner.DelMember(Self);
     m_boAllowGroup := False;
   end else begin
-    SysMsg('如果你想退出，使用编组功能（删除按钮）', c_Red, t_Hint);
+    SysMsg('If you want to quit the group please use the Delete button.', c_Red, t_Hint);
   end;
 end;
 
@@ -28882,8 +28882,8 @@ begin
     end else begin
       Envir := g_MapManager.GetDuelMap;
       if Envir = nil then begin
-        SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
-        m_DealCreat.SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
+        SysMsg('No Map available, please wait and try again.', c_Red, t_Hint);
+        m_DealCreat.SysMsg('No Map available, please wait and try again.', c_Red, t_Hint);
         DealCancel();
         Exit;
       end;
@@ -29451,8 +29451,8 @@ begin
   if m_DuelCreat.m_boDuelOK then begin
     Envir := g_MapManager.GetDuelMap;
     if Envir = nil then begin
-      SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
-      m_DuelCreat.SysMsg('没有比赛场地可用，请稍候在试！！！', c_Red, t_Hint);
+      SysMsg('No Map available, please wait and try again.', c_Red, t_Hint);
+      m_DuelCreat.SysMsg('No Map available, please wait and try again.', c_Red, t_Hint);
       DuelCancel();
       Exit;
     end;
@@ -30242,7 +30242,7 @@ begin
           m_MyGuild := nil;
           RefRankInfo(0, '');
           RefShowName(); //10/31
-          SysMsg('行会' + s14 + '已被取消！！！', c_Red, t_Hint);
+          SysMsg('The guild ' + s14 + ' has been deleted.', c_Red, t_Hint);
           nC := 0;
         end
       end;
@@ -30473,41 +30473,41 @@ begin
   if (nPoint + nTotleUsePoint = m_nBonusPoint) and (m_nBonusPoint >= 0) and (nPoint >= 0) and (m_nBonusPoint >= nPoint) then begin
     if nTotleUsePoint > 0 then begin
       if m_BonusAbil.DC + BonusAbil.DC > High(Word) then begin
-        SysMsg('非法数据调整，附加属性物理攻击点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
       if m_BonusAbil.MC + BonusAbil.MC > High(Word) then begin
-        SysMsg('非法数据调整，附加属性魔法攻击点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
       if m_BonusAbil.SC + BonusAbil.SC > High(Word) then begin
-        SysMsg('非法数据调整，附加属性道术攻击点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
       if m_BonusAbil.AC + BonusAbil.AC > High(Word) then begin
-        SysMsg('非法数据调整，附加属性物理防御点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
       if m_BonusAbil.MAC + BonusAbil.MAC > High(Word) then begin
-        SysMsg('非法数据调整，附加属性魔法魔防点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
       if m_BonusAbil.Hit + BonusAbil.Hit > High(Word) then begin
-        SysMsg('非法数据调整，附加属性命中点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
       if m_BonusAbil.Speed + BonusAbil.Speed > High(Word) then begin
-        SysMsg('非法数据调整，附加属性躲避点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
 
       if m_BonusAbil.HP + BonusAbil.HP > High(Word) then begin
-        SysMsg('非法数据调整，附加属性健康点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
 
       if m_BonusAbil.MP + BonusAbil.MP > High(Word) then begin
-        SysMsg('非法数据调整，附加属性魔法点已超出65535！！！', c_Red, t_Hint);
+        SysMsg('Cannot increase stats further than 65535!', c_Red, t_Hint);
         Exit;
       end;
 
@@ -30527,7 +30527,7 @@ begin
       SendMsg(Self, RM_SUBABILITY, 0, 0, 0, 0, '');
     end;
   end else begin
-    SysMsg('非法数据调整！！！', c_Red, t_Hint);
+    SysMsg('Error adjusting stats.', c_Red, t_Hint);
   end;
 end;
 
@@ -31431,16 +31431,16 @@ begin
     Map := g_MapManager.FindMap(sMAP);
     if Map <> nil then begin
       if Map.GetMapCellInfo(nX, nY, MapCellInfo) then begin
-        SysMsg('标志: ' + IntToStr(MapCellInfo.chFlag), c_Green, t_Hint);
+        SysMsg('Flags: ' + IntToStr(MapCellInfo.chFlag), c_Green, t_Hint);
         if MapCellInfo.ObjList <> nil then begin
-          SysMsg('对象数: ' + IntToStr(MapCellInfo.ObjList.Count), c_Green, t_Hint);
+          SysMsg('Object Number: ' + IntToStr(MapCellInfo.ObjList.Count), c_Green, t_Hint);
         end;
       end else begin
-        SysMsg('取地图单元信息失败: ' + sMAP, c_Red, t_Hint);
+        SysMsg('Failed to get Map information: ' + sMAP, c_Red, t_Hint);
       end;
     end;
   end else begin
-    SysMsg('请按正确格式输入: ' + g_GameCommand.MAPINFO.sCmd + ' 地图号 X Y', c_Green, t_Hint);
+    SysMsg('Use the format: ' + g_GameCommand.MAPINFO.sCmd + ' MapName X Y', c_Green, t_Hint);
   end;
 end;
 
@@ -32743,14 +32743,14 @@ begin
                 end;
 
                 if (Event.m_OwnActorObject = Self) then
-                  SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                  SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
 
                 MasterObject := Master;
                 if MasterObject = nil then begin
                   if (Event.m_OwnActorObject <> Self) then begin
                     if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-                      SysMsg('被未知的力量阻挡，无法通过！！！', c_Red, t_Hint);
-                      SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                      SysMsg('Blocked by Unknown forces.', c_Red, t_Hint);
+                      SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
                     end;
                     Result := True;
                   end;
@@ -32759,8 +32759,8 @@ begin
                   if (MasterObject.m_SpaceOwner <> Event.m_OwnActorObject) then begin
                     if (MasterObject.m_SpaceOwner = m_SpaceOwner) or (m_SpaceOwner <> Event.m_OwnActorObject) then begin
                       if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-                        SysMsg('被未知的力量阻挡，无法通过！！！', c_Red, t_Hint);
-                        SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                        SysMsg('Blocked by Unknown forces.', c_Red, t_Hint);
+                        SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
                       end;
                       Result := True;
                       Exit;
@@ -32799,14 +32799,14 @@ begin
                   end;
 
                   if (Event.m_OwnActorObject = Self) then
-                    SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                    SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
 
                   MasterObject := Master;
                   if MasterObject = nil then begin
                     if (Event.m_OwnActorObject <> Self) then begin
                       if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-                        SysMsg('被未知的力量阻挡，无法通过！！！', c_Red, t_Hint);
-                        SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                        SysMsg('Blocked by Unknown forces.', c_Red, t_Hint);
+                        SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
                       end;
                       Result := True;
                     end;
@@ -32815,8 +32815,8 @@ begin
                     if (MasterObject.m_SpaceOwner <> Event.m_OwnActorObject) then begin
                       if (MasterObject.m_SpaceOwner = m_SpaceOwner) or (m_SpaceOwner <> Event.m_OwnActorObject) then begin
                         if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-                          SysMsg('被未知的力量阻挡，无法通过！！！', c_Red, t_Hint);
-                          SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                          SysMsg('Blocked by Unknown forces.', c_Red, t_Hint);
+                          SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
                         end;
                         Result := True;
                         Exit;
@@ -32864,14 +32864,14 @@ begin
                     end;
 
                     if (Event.m_OwnActorObject = Self) then
-                      SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                      SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
 
                     MasterObject := Master;
                     if MasterObject = nil then begin
                       if (Event.m_OwnActorObject <> Self) then begin
                         if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-                          SysMsg('被未知的力量阻挡，无法通过！！！', c_Red, t_Hint);
-                          SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                          SysMsg('Blocked by Unknown forces.', c_Red, t_Hint);
+                          SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
                         end;
                         Result := True;
                       end;
@@ -32880,8 +32880,8 @@ begin
                       if (MasterObject.m_SpaceOwner <> Event.m_OwnActorObject) then begin
                         if (MasterObject.m_SpaceOwner = m_SpaceOwner) or (m_SpaceOwner <> Event.m_OwnActorObject) then begin
                           if m_btRaceServer in [RC_PLAYOBJECT, RC_HEROOBJECT] then begin
-                            SysMsg('被未知的力量阻挡，无法通过！！！', c_Red, t_Hint);
-                            SysMsg(Format('锁定空间有效时间还有%d秒！！！', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
+                            SysMsg('Blocked by Unknown forces.', c_Red, t_Hint);
+                            SysMsg(Format('Area locked for %d seconds.', [Event.m_dwContinueTime div 1000 - (GetTickCount - Event.m_dwOpenStartTick) div 1000]), c_Red, t_Hint);
                           end;
                           Result := True;
                           Exit;
@@ -34783,7 +34783,7 @@ begin
   if (BaseObject = nil) or (BaseObject = Self) then Exit;
   if BaseObject.m_boDeath and (BaseObject.m_btRaceServer = RC_PLAYOBJECT) then begin
     if TPlayObject(BaseObject).m_boAllowReAlive then Result := True
-    else SysMsg('对方禁止复活！！！', c_Green, t_Hint);
+    else SysMsg('Target does not allow Resurrection.', c_Green, t_Hint);
   end;
 end;
 
@@ -36640,7 +36640,7 @@ begin
     m_boStartNewShield := False;
     SendRefMsg(RM_STATE_BUBBLEDEFENCEUP, m_btNewShieldType, Integer(Self), 0, 0, '');
     if m_btNewShieldType <> 0 then begin
-      SysMsg('护体神盾已经被击破！！！', c_Red, t_Hint);
+      SysMsg('Message106 护体神盾已经被击破！！！', c_Red, t_Hint);
     end;
     {UserMagic := nil;
     ActorObject := Self;
@@ -37623,37 +37623,37 @@ begin
           if LoWord(StdItem.DC) > 0 then begin
             m_wStatusArrValue[0 {0x218}] := LoWord(StdItem.DC);
             m_dwStatusArrTimeOutTick[0 {0x220}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('攻击力增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Attack Power increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoWord(StdItem.MC) > 0 then begin
             m_wStatusArrValue[1 {0x219}] := LoWord(StdItem.MC);
             m_dwStatusArrTimeOutTick[1 {0x224}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('魔法力增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Magic Power increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoByte(StdItem.SC) > 0 then begin
             m_wStatusArrValue[2 {0x21A}] := LoWord(StdItem.SC);
             m_dwStatusArrTimeOutTick[2 {0x228}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('道术增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Soul Power increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if HiWord(StdItem.AC) > 0 then begin
             m_wStatusArrValue[3 {0x21B}] := HiWord(StdItem.AC);
             m_dwStatusArrTimeOutTick[3 {0x22C}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('攻击速度增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Attack Speed increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoWord(StdItem.AC) > 0 then begin
             m_wStatusArrValue[4 {0x21C}] := LoWord(StdItem.AC);
             m_dwStatusArrTimeOutTick[4 {0x230}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('生命值增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Defence increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if LoWord(StdItem.MAC) > 0 then begin
             m_wStatusArrValue[5 {0x21D}] := LoWord(StdItem.MAC);
             m_dwStatusArrTimeOutTick[5 {0x234}] := GetTickCount + HiWord(StdItem.MAC) * 1000;
-            SysMsg('魔法值增加' + IntToStr(HiWord(StdItem.MAC)) + '秒', c_Green, t_Hint);
+            SysMsg('Magic Defence increased for ' + IntToStr(HiWord(StdItem.MAC)) + ' seconds', c_Green, t_Hint);
             bo06 := True;
           end;
           if bo06 then begin
@@ -37777,11 +37777,11 @@ begin
             if (Castle <> nil) and Castle.IsMasterGuild(TGUild(m_MyGuild)) then begin
               BaseObjectMove(Castle.m_sHomeMap, IntToStr(Castle.GetHomeX), IntToStr(Castle.GetHomeY));
             end else begin
-              SysMsg('无效', c_Red, t_Hint);
+              SysMsg('Invalid', c_Red, t_Hint);
             end;
             Result := True;
           end else begin
-            SysMsg('此处无法使用', c_Red, t_Hint);
+            SysMsg('Cannot use here.', c_Red, t_Hint);
           end;
         end;
       end;
@@ -38741,7 +38741,7 @@ begin
                       if ActorObject.m_wStatusArrValue[6] = 0 then begin
                         ActorObject.m_wStatusArrValue[6] := MakeLong(LoWord(ActorObject.m_WAbil.DC), HiWord(ActorObject.m_WAbil.DC) - 2 - (ActorObject.m_Abil.Level div 7));
                         ActorObject.m_dwStatusArrTimeOutTick[6] := GetTickCount + nSec * 1000;
-                        ActorObject.SysMsg('攻击力减少' + IntToStr(nSec) + '秒', c_Green, t_Hint);
+                        ActorObject.SysMsg('Attack Power reduced for ' + IntToStr(nSec) + ' seconds', c_Green, t_Hint);
                         bo06 := True;
                       end;
                     end;
@@ -38749,7 +38749,7 @@ begin
                       if ActorObject.m_wStatusArrValue[7] = 0 then begin
                         ActorObject.m_wStatusArrValue[7] := MakeLong(LoWord(ActorObject.m_WAbil.MC), HiWord(ActorObject.m_WAbil.MC) - 2 - (ActorObject.m_Abil.Level div 7));
                         ActorObject.m_dwStatusArrTimeOutTick[7] := GetTickCount + nSec * 1000;
-                        ActorObject.SysMsg('魔法力减少' + IntToStr(nSec) + '秒', c_Green, t_Hint);
+                        ActorObject.SysMsg('Magic Power reduced for ' + IntToStr(nSec) + ' seconds', c_Green, t_Hint);
                         bo06 := True;
                       end;
                     end;
@@ -38757,7 +38757,7 @@ begin
                       if ActorObject.m_wStatusArrValue[8] = 0 then begin
                         ActorObject.m_wStatusArrValue[8] := MakeLong(LoWord(ActorObject.m_WAbil.SC), HiWord(ActorObject.m_WAbil.SC) - 2 - (ActorObject.m_Abil.Level div 7));
                         ActorObject.m_dwStatusArrTimeOutTick[8] := GetTickCount + nSec * 1000;
-                        ActorObject.SysMsg('道术减少' + IntToStr(nSec) + '秒', c_Green, t_Hint);
+                        ActorObject.SysMsg('Soul Power reduced for ' + IntToStr(nSec) + ' seconds', c_Green, t_Hint);
                         bo06 := True;
                       end;
                     end;
@@ -39813,7 +39813,7 @@ begin
   dwCheckTime := GetTickCount - m_dwActionTick;
 
   if m_boTestSpeedMode then begin
-    SysMsg('间隔: ' + IntToStr(dwCheckTime), c_Blue, t_Notice);
+    SysMsg('Interval: ' + IntToStr(dwCheckTime), c_Blue, t_Notice);
   end;
 
   if m_wOldIdent = wIdent then begin //当二次操作一样时，则将 boFirst 设置为 真 ，退出由调用函数本身检查二个相同操作之间的间隔时间
@@ -41161,7 +41161,7 @@ begin
         PlayObject.SpaceMove(m_sMapName, n18, n1C, 0);
       end;
     end else begin
-      SysMsg('召唤失败！！！', c_Red, t_Hint);
+      SysMsg('Recall failed.', c_Red, t_Hint);
     end;
   end else begin
     SysMsg(Format(g_sNowNotOnLineOrOnOtherServer, [sHumName]), c_Red, t_Hint);
@@ -41175,16 +41175,16 @@ var
   boReQuestOK: Boolean;
 begin
   if not IsGuildMaster then begin
-    SysMsg('只有行会掌门人才能申请！！！', c_Red, t_Hint);
+    SysMsg('Only Guild Leader can request a War', c_Red, t_Hint);
     Exit;
   end;
   if nServerIndex <> 0 then begin
-    SysMsg('这个命令不能在本服务器上使用！！！', c_Red, t_Hint);
+    SysMsg('Now allowed on this server.', c_Red, t_Hint);
     Exit;
   end;
   Guild := g_GuildManager.FindGuild(sGuildName);
   if Guild = nil then begin
-    SysMsg('行会不存在！！！', c_Red, t_Hint);
+    SysMsg('Guild not found.', c_Red, t_Hint);
     Exit;
   end;
   boReQuestOK := False;

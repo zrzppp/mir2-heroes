@@ -7517,6 +7517,19 @@ begin
       if pm.Def.btEffect = 70 then icon := 1 * 2;
       if pm.Def.btEffect = 71 then icon := 3 * 2;
       if pm.Def.btEffect = 72 then icon := 10 * 2;
+      //New skill Icons
+      if pm.Def.btEffect = 100 then icon := 952;
+      if pm.Def.btEffect = 101 then icon := 950;
+      if pm.Def.btEffect = 102 then icon := 956;
+      if pm.Def.btEffect = 103 then icon := 954;
+      if pm.Def.btEffect = 104 then icon := 944;
+      if pm.Def.btEffect = 105 then icon := 942;
+      if pm.Def.btEffect = 106 then icon := 946;
+      if pm.Def.btEffect = 107 then icon := 940;
+      if pm.Def.btEffect = 108 then icon := 934;
+      if pm.Def.btEffect = 109 then icon := 936;
+      if pm.Def.btEffect = 110 then icon := 932;
+      if pm.Def.btEffect = 111 then icon := 930;
 
       if pm.Level >= 4 then begin
         case pm.Def.wMagicId of
@@ -7529,11 +7542,17 @@ begin
 
       if icon >= 0 then begin
         if not Downed then begin
-          d := g_WMagIconImages.Images[icon];
+          if pm.Def.btEffect in [100..111] then
+            d := g_WMainImages.Images[icon]
+          else
+            d := g_WMagIconImages.Images[icon];
           if d <> nil then
             dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
         end else begin
-          d := g_WMagIconImages.Images[icon + 1];
+          if pm.Def.btEffect in [100..111] then
+            d := g_WMainImages.Images[icon + 1]
+          else
+            d := g_WMagIconImages.Images[icon + 1];
           if d <> nil then
             dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
         end;
@@ -10446,7 +10465,11 @@ var
   d: TTexture;
 begin
   with DKsIcon do begin
-    d := g_WMagIconImages.Images[MagKeyIcon];
+  //DScreen.AddChatBoardString('[Icon: ' + IntToStr(MagKeyIcon) + ']', clGreen, clWhite);
+    if MagKeyIcon >= 930 then
+       d := g_WMainImages.Images[MagKeyIcon]
+     else
+       d := g_WMagIconImages.Images[MagKeyIcon];
     if d <> nil then
       dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
   end;

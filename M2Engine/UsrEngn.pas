@@ -4166,7 +4166,7 @@ begin
     if MagicList <> nil then begin
       for I := 0 to MagicList.Count - 1 do begin
         Magic := MagicList.Items[I];
-        if (Magic <> nil) and (Magic.sDescr = 'гЂал') then begin
+        if (Magic <> nil) and (Magic.sDescr = 'HeroOnly') then begin
           if Magic.wMagicId = nMagIdx then begin
             Result := Magic;
             Break;
@@ -4177,7 +4177,7 @@ begin
   end else begin
     for I := 0 to m_MagicList.Count - 1 do begin
       Magic := m_MagicList.Items[I];
-      if (Magic <> nil) and (Magic.sDescr = 'гЂал') then begin
+      if (Magic <> nil) and (Magic.sDescr = 'HeroOnly') then begin
         if Magic.wMagicId = nMagIdx then begin
           Result := Magic;
           Break;
@@ -4407,7 +4407,7 @@ begin
     if MagicList <> nil then begin
       for I := 0 to MagicList.Count - 1 do begin
         Magic := MagicList.Items[I];
-        if (Magic <> nil) and (Magic.sDescr = 'гЂал') then begin
+        if (Magic <> nil) and (Magic.sDescr = 'HeroOnly') then begin
           if CompareText(Magic.sMagicName, sMagicName) = 0 then begin
             Result := Magic;
             Break;
@@ -4418,7 +4418,7 @@ begin
   end else begin
     for I := 0 to m_MagicList.Count - 1 do begin
       Magic := m_MagicList.Items[I];
-      if (Magic <> nil) and (Magic.sDescr = 'гЂал') then begin
+      if (Magic <> nil) and (Magic.sDescr = 'HeroOnly') then begin
         if CompareText(Magic.sMagicName, sMagicName) = 0 then begin
           Result := Magic;
           Break;

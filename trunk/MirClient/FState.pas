@@ -8186,7 +8186,7 @@ procedure TFrmDlg.GetMouseItemInfo(Actor: TActor; MouseItem: pTClientItem; var i
     Result := '';
     if nLevel <= 6 then begin
       for I := 0 to nLevel - 1 do begin
-        Result := Result + '★';
+        Result := Result + '*';
       end;
     end;
   end;
@@ -8328,7 +8328,7 @@ begin
           if MouseItem.s.Reserved and $01 <> 0 then begin
             iname := '(*)' + iname;
             if HintList.Count > 0 then HintList.Delete(0);
-            HintList.InsertObject(0, '★(*)' + MouseItem.s.Name, TObject(MouseItem.s.AddValue[13]));
+            HintList.InsertObject(0, '*(*)' + MouseItem.s.Name, TObject(MouseItem.s.AddValue[13]));
           end;
 
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) +
@@ -8414,72 +8414,72 @@ begin
               end;
             4: begin
                 useable := True;
-                sTemp := '所需转生等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             40: begin
                 useable := True;
-                sTemp := '所需转生&等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & Player Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             41: begin
                 useable := True;
-                sTemp := '所需转生&攻击力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & DC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             42: begin
                 useable := True;
-                sTemp := '所需转生&魔法力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & MC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             43: begin
                 useable := True;
-                sTemp := '所需转生&道术: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & SC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             44: begin
                 useable := True;
-                sTemp := '所需转生&声望点: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & Reputation points: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             5: begin
                 useable := True;
-                sTemp := '所需声望点: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Reputation points: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             6: begin
                 useable := True;
-                sTemp := '行会成员专用';
+                sTemp := 'Must be a Guild Member';
                 line3 := line3 + sTemp;
               end;
             60: begin
                 useable := True;
-                sTemp := '行会掌门专用';
+                sTemp := '1:行会掌门专用';
                 line3 := line3 + sTemp;
               end;
             7: begin
                 useable := True;
-                sTemp := '沙城成员专用';
+                sTemp := '2:沙城成员专用';
                 line3 := line3 + sTemp;
               end;
             70: begin
                 useable := True;
-                sTemp := '沙城城主专用';
+                sTemp := '3:沙城城主专用';
                 line3 := line3 + sTemp;
               end;
             8: begin
                 useable := True;
-                sTemp := '会员专用';
+                sTemp := 'Members Only';
                 line3 := line3 + sTemp;
               end;
             81: begin
                 useable := True;
-                sTemp := '会员类型: =' + IntToStr(Loword(MouseItem.s.NeedLevel)) + '会员等级: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
+                sTemp := 'Member Type: =' + IntToStr(Loword(MouseItem.s.NeedLevel)) + 'Member Level: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
                 line3 := line3 + sTemp;
               end;
             82: begin
                 useable := True;
-                sTemp := '会员类型: >=' + IntToStr(Loword(MouseItem.s.NeedLevel)) + '会员等级: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
+                sTemp := 'Member Type: >=' + IntToStr(Loword(MouseItem.s.NeedLevel)) + 'Memeber Level: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
                 line3 := line3 + sTemp;
               end;
           end;
@@ -8576,72 +8576,72 @@ begin
               end;
             4: begin
                 useable := True;
-                sTemp := '所需转生等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             40: begin
                 useable := True;
-                sTemp := '所需转生&等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & Player Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             41: begin
                 useable := True;
-                sTemp := '所需转生&攻击力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & DC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             42: begin
                 useable := True;
-                sTemp := '所需转生&魔法力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & MC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             43: begin
                 useable := True;
-                sTemp := '所需转生&道术: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & SC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             44: begin
                 useable := True;
-                sTemp := '所需转生&声望点: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & Reputation points: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             5: begin
                 useable := True;
-                sTemp := '所需声望点: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Reputation points: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             6: begin
                 useable := True;
-                sTemp := '行会成员专用';
+                sTemp := 'Must be a Guild Member';
                 line3 := line3 + sTemp;
               end;
             60: begin
                 useable := True;
-                sTemp := '行会掌门专用';
+                sTemp := '1:行会掌门专用';
                 line3 := line3 + sTemp;
               end;
             7: begin
                 useable := True;
-                sTemp := '沙城成员专用';
+                sTemp := '2:沙城成员专用';
                 line3 := line3 + sTemp;
               end;
             70: begin
                 useable := True;
-                sTemp := '沙城城主专用';
+                sTemp := '3:沙城城主专用';
                 line3 := line3 + sTemp;
               end;
             8: begin
                 useable := True;
-                sTemp := '会员专用';
+                sTemp := 'Members Only';
                 line3 := line3 + sTemp;
               end;
             81: begin
                 useable := True;
-                sTemp := '会员类型: =' + IntToStr(Loword(MouseItem.s.NeedLevel)) + '会员等级: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
+                sTemp := 'Member Type: =' + IntToStr(Loword(MouseItem.s.NeedLevel)) + 'Member Level: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
                 line3 := line3 + sTemp;
               end;
             82: begin
                 useable := True;
-                sTemp := '会员类型: >=' + IntToStr(Loword(MouseItem.s.NeedLevel)) + '会员等级: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
+                sTemp := 'Member Type: >=' + IntToStr(Loword(MouseItem.s.NeedLevel)) + 'Member Level: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
                 line3 := line3 + sTemp;
               end;
           end;
@@ -8831,72 +8831,72 @@ begin
               end;
             4: begin
                 useable := True;
-                sTemp := '所需转生等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             40: begin
                 useable := True;
-                sTemp := '所需转生&等级: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & Player Level: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             41: begin
                 useable := True;
-                sTemp := '所需转生&攻击力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & DC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             42: begin
                 useable := True;
-                sTemp := '所需转生&魔法力: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & MC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             43: begin
                 useable := True;
-                sTemp := '所需转生&道术: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & SC: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             44: begin
                 useable := True;
-                sTemp := '所需转生&声望点: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Rebirth & Reputation points: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             5: begin
                 useable := True;
-                sTemp := '所需声望点: ' + IntToStr(MouseItem.s.NeedLevel);
+                sTemp := 'Requires Reputation points: ' + IntToStr(MouseItem.s.NeedLevel);
                 line3 := line3 + sTemp;
               end;
             6: begin
                 useable := True;
-                sTemp := '行会成员专用';
+                sTemp := 'Must be a Guild Member';
                 line3 := line3 + sTemp;
               end;
             60: begin
                 useable := True;
-                sTemp := '行会掌门专用';
+                sTemp := '1:行会掌门专用';
                 line3 := line3 + sTemp;
               end;
             7: begin
                 useable := True;
-                sTemp := '沙城成员专用';
+                sTemp := '2:沙城成员专用';
                 line3 := line3 + sTemp;
               end;
             70: begin
                 useable := True;
-                sTemp := '沙城城主专用';
+                sTemp := '3:沙城城主专用';
                 line3 := line3 + sTemp;
               end;
             8: begin
                 useable := True;
-                sTemp := '会员专用';
+                sTemp := 'Members Only';
                 line3 := line3 + sTemp;
               end;
             81: begin
                 useable := True;
-                sTemp := '会员类型: =' + IntToStr(Loword(MouseItem.s.NeedLevel)) + '会员等级: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
+                sTemp := 'Member Type: =' + IntToStr(Loword(MouseItem.s.NeedLevel)) + 'Member Level: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
                 line3 := line3 + sTemp;
               end;
             82: begin
                 useable := True;
-                sTemp := '会员类型: >=' + IntToStr(Loword(MouseItem.s.NeedLevel)) + '会员等级: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
+                sTemp := 'Member Type: >=' + IntToStr(Loword(MouseItem.s.NeedLevel)) + 'Member Level: >=' + IntToStr(Hiword(MouseItem.s.NeedLevel));
                 line3 := line3 + sTemp;
               end;
           end;
@@ -8935,7 +8935,7 @@ begin
       42: {//药材} begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' plow?';
           HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
-          HintList.AddObject('距犁', TObject(GetRGB(254)));
+          HintList.AddObject('Poison Ingredient', TObject(GetRGB(254)));
         end;
       43: {//矿石} begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight) + ' Purity' + IntToStr(Round(MouseItem.Dura / 1000));
@@ -12393,7 +12393,7 @@ begin
         old := MainForm.Canvas.Font.Size;
         MainForm.Canvas.Font.Size := 9;
         c := clyellow;
-        TextOut(DShop.SurfaceX(DShop.Left + 20), DShop.SurfaceY(DShop.Top + DShop.Height - 150), '★' + g_MouseShopItems.ShopItem.StdItem.Name, c);
+        TextOut(DShop.SurfaceX(DShop.Left + 20), DShop.SurfaceY(DShop.Top + DShop.Height - 150), '*' + g_MouseShopItems.ShopItem.StdItem.Name, c);
         c := clWhite;
         n := 0;
         for nIndex := Low(StringArray) to High(StringArray) do begin

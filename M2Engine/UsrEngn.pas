@@ -1698,7 +1698,7 @@ begin
     MainOutMessage(sExceptionMsg3);
   end;
 
-  if Assigned(PlugInEngine.ProcessHumans) then begin
+  {if Assigned(PlugInEngine.ProcessHumans) then begin
     PlugInEngine.ProcessHumans();
   end;
 
@@ -1743,7 +1743,7 @@ begin
     finally
       MemoryStream.Free;
     end;
-  end;
+  end;  }
 
   boCheckTimeLimit := False;
   try

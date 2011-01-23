@@ -46,12 +46,12 @@ var
   Buffer: Pointer;
   sText: string;
 begin
-  EditUpDateTime.Text := '';
-  EditProductName.Text := '';
-  EditProgram.Text := '';
-  EditWebSite.Text := ''; ;
-  EditBbsSite.Text := '';
-  EditVersion.Text := '';
+  EditUpDateTime.Text := '23/01/2011';
+  EditProductName.Text := 'Legend of Mir 2: Heroes';
+  EditProgram.Text := 'Thanks to the CQFir Team';
+  EditWebSite.Text := 'www.lomcn.co.uk'; ;
+  EditBbsSite.Text := 'http://code.google.com/p/mir2-heroes/';
+  EditVersion.Text := 'Beta Build';
 
   EditUpDateTime.ReadOnly := True;
   EditProductName.ReadOnly := True;
@@ -72,12 +72,12 @@ begin
 
   DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
 
-  EditUpDateTime.Text := ConfigOption.sUpDateTime;
+ { EditUpDateTime.Text := ConfigOption.sUpDateTime;
   EditProductName.Text := ConfigOption.sProductName;
   EditProgram.Text := ConfigOption.sProgram;
   EditWebSite.Text := ConfigOption.sWebSite;
   EditBbsSite.Text := ConfigOption.sBbsSite;
-  EditVersion.Text := Format(ConfigOption.sVersion, [0]);
+  EditVersion.Text := Format(ConfigOption.sVersion, [0]);   }
 
   ShowModal;
 end;

@@ -1014,26 +1014,14 @@ begin
     Application.ProcessMessages;
 
 //{$I VMProtectBeginVirtualization.inc}
-{$I VMProtectBeginUltra.inc}
-    g_MemoryStream.Seek(-ConfigOptionSize, soFromEnd);
-    SetLength(sText, ConfigOptionSize);
-    g_MemoryStream.Read(sText[1], ConfigOptionSize);
-
-    DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-
-    MainOutMessage(ConfigOption.sProductInfo);
-    MainOutMessage(ConfigOption.sWebSite);
-    MainOutMessage(ConfigOption.sBbsSite);
-    MainOutMessage(ConfigOption.sSellInfo1);
-
-{$I VMProtectEnd.inc}
 
     Application.ProcessMessages;
 
     PlugInEngine.StartPlugMoudle;
 
     MainOutMessage('Plugin Module started...');
-
+    ChangeGateSocket(True);
+    sCaptionExtText:='www.lomcn.co.uk';
     //Sleep(1000);
     //if g_boMinimize then Application.Minimize; //启动完成后最小化
     if g_boMinimize then SendMessage(Handle, WM_SYSCOMMAND, SC_MINIMIZE, 0);

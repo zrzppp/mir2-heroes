@@ -745,19 +745,7 @@ begin
 
   EditMaxLevel.MinValue := 1;
 //{$I VMProtectBeginVirtualization.inc}
-{$I VMProtectBeginUltra.inc}
 
-  Move(g_Buffer^, nLen, SizeOf(Integer));
-  SetLength(sBuffer, nLen);
-  Move(g_Buffer[SizeOf(Integer)], sBuffer[1], nLen);
-  DecryptBuffer(sBuffer, @UserReg, SizeOf(TUserReg));
-
-  if (StringCrc(UserReg.sDomainName) <> UserReg.nDomainName) then begin
-    g_Config.nMaxLevel := MAXLEVEL;
-    EditMaxLevel.OnChange := nil;
-  end;
-
-{$I VMProtectEnd.inc}
   ComboBoxLineNoticeColor.Items.Add('ºìÉ«');
   ComboBoxLineNoticeColor.Items.Add('ÂÌÉ«');
   ComboBoxLineNoticeColor.Items.Add('À¶É«');

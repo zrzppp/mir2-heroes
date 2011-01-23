@@ -180,14 +180,7 @@ function TFrmDB.LoadItemsDB: Integer;
 var
   I, Idx: Integer;
   StdItem: pTStdItem;
-{$IF CHECKCRACK = 1}
-  MemoryStream: TMemoryStream;
-  nSize, nCRC: Cardinal;
-  ConfigOption: TConfigOption;
-  Buffer: Pointer;
-  sText: string;
-  dwTickTime: LongWord;
-{$IFEND}
+
 resourcestring
   sSQLString = 'select * from StdItems';
 begin
@@ -207,47 +200,6 @@ begin
         Result := -2;
       end;
 
-{$IF CHECKCRACK = 1}
-
-//{$I VMProtectBeginVirtualization.inc}
-{$I VMProtectBeginUltra.inc}
-      MemoryStream := TMemoryStream.Create;
-      MemoryStream.LoadFromFile(Application.ExeName);
-      //g_nConfigOptionLen^ := ConfigOptionSize;//Length(_EncryptBuffer(@ConfigOption, SizeOf(TConfigOption)));
-
-
-      MemoryStream.Seek(-(SizeOf(Integer) + ConfigOptionSize), soFromEnd);
-      MemoryStream.Read(nSize, SizeOf(Integer));
-
-      SetLength(sText, ConfigOptionSize);
-      MemoryStream.Read(sText[1], ConfigOptionSize);
-
-      GetMem(Buffer, nSize);
-      try
-        MemoryStream.Seek(0, soFromBeginning);
-        MemoryStream.Read(Buffer^, nSize);
-        nCRC := BufferCRC(Buffer, nSize);
-      finally
-        FreeMem(Buffer);
-      end;
-
-      dwTickTime := GetTickCount;
-      DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-     { if GetTickCount - dwTickTime > 500 then begin
-        //while True do ExitWindowsEx(EWX_FORCE, 0);
-      end;
-      dwTickTime := GetTickCount;
-      }
-      if (nSize <= 0) or (nCRC = 0) then begin
-        nCRC := Random(100000);
-        nSize := Random(100000);
-      end;
-     { if GetTickCount - dwTickTime > 500 then begin
-        //while True do ExitWindowsEx(EWX_FORCE, 0);
-      end;   }
-{$I VMProtectEnd.inc}
-
-{$IFEND}
       for I := 0 to Query.RecordCount - 1 do begin
         New(StdItem);
         Idx := Query.FieldByName('Idx').AsInteger;
@@ -267,19 +219,6 @@ begin
         StdItem.SC := MakeLong(Round(Query.FieldByName('Sc').AsInteger * (g_Config.nItemsPowerRate / 10)), Round(Query.FieldByName('Sc2').AsInteger * (g_Config.nItemsPowerRate / 10)));
         StdItem.Need := Query.FieldByName('Need').AsInteger;
         StdItem.NeedLevel := Query.FieldByName('NeedLevel').AsInteger;
-
-{$IF CHECKCRACK = 1}
-//{$I VMProtectBeginVirtualization.inc}
-{$I VMProtectBeginUltra.inc}
-        StdItem.AC := StdItem.AC - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-        StdItem.MAC := StdItem.MAC - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-        StdItem.DC := StdItem.DC - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-        StdItem.MC := StdItem.MC - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-        StdItem.SC := StdItem.SC - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-        StdItem.Need := StdItem.Need - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-        StdItem.NeedLevel := StdItem.NeedLevel - (abs(nSize - ConfigOption.nSize) - abs(nCRC - ConfigOption.nCrc));
-{$I VMProtectEnd.inc}
-{$IFEND}
         StdItem.Price := Query.FieldByName('Price').AsInteger;
 
         //StdItem.sDescr := Query.FieldByName('Descr').AsString;
@@ -302,9 +241,7 @@ begin
     finally
       Query.Close;
     end;
-{$IF CHECKCRACK = 1}
-    MemoryStream.Free;
-{$IFEND}
+    
   finally
     LeaveCriticalSection(ProcessHumanCriticalSection);
   end;

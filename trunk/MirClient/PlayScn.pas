@@ -1139,11 +1139,11 @@ begin
   end;
   drawingbottomline := 0;
   if (g_MySelf = nil) then begin
-    msgstr := '正在退出游戏，请稍候...';
+    msgstr := 'Loading Character Select, please wait.';
     with MSurface do begin
       sFontName := MainForm.Canvas.Font.Name;
       FontSize := MainForm.Canvas.Font.Size;
-      MainForm.Canvas.Font.Name := '黑体';
+      MainForm.Canvas.Font.Name := 'Arial';
       MainForm.Canvas.Font.Size := 18;
       BoldTextOut((SCREENWIDTH - TextWidth(msgstr)) div 2, (SCREENHEIGHT - 600) + 200, msgstr);
       MainForm.Canvas.Font.Name := sFontName;
@@ -1166,7 +1166,7 @@ begin
   end;
 
   if g_NewStatus = sBlind then begin
-    msgstr := Format('你已进入失明状态，持续%d秒...', [g_NewStatusDelayTime]);
+    msgstr := Format('Your Character is blinded, will return to normal in %d seconds.', [g_NewStatusDelayTime]);
     with MSurface do begin
       FontSize := MainForm.Canvas.Font.Size;
       MainForm.Canvas.Font.Size := 18;
@@ -1805,7 +1805,7 @@ begin
 
   try
     if g_NewStatus = sConfusion then begin
-      msgstr := Format('你已进入混乱状态，持续%d秒...', [g_NewStatusDelayTime]);
+      msgstr := Format('Your Character is confused, will return to normal in %d seconds. ', [g_NewStatusDelayTime]);
       with m_ObjSurface do begin
         FontSize := MainForm.Canvas.Font.Size;
         MainForm.Canvas.Font.Size := 18;

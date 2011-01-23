@@ -1525,7 +1525,7 @@ begin
       g_nDownWorkCountMax := 0;
       g_sMerchantReadAddr := Trim(sMsg);
       CloseMDlg;
-      ShowMDlg(g_nCurMerchantFace, g_sCurMerchantName, '正在读取数据，请稍候...');
+      ShowMDlg(g_nCurMerchantFace, g_sCurMerchantName, 'Please wait.');
       frmMain.HTTPGetString.URL := g_sMerchantReadAddr;
       frmMain.HTTPGetString.GetString;
     end else

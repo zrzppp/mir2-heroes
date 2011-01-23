@@ -66,7 +66,7 @@ type
 const
   CLIENTTEST = 1; //0正式版   1测试
   MIRSCLIENT = 0; //0传奇 1外传
-  sVERSION = '版本号： 20100901';
+  sVERSION = 'www.lomcn.co.uk';
 
   GL_QUIT = 100;
 

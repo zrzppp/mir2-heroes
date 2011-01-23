@@ -570,6 +570,7 @@ object FrmMain: TFrmMain
       Caption = 'Help (&H)'
       object MENU_HELP_REGKEY: TMenuItem
         Caption = 'Information (&R)'
+        Visible = False
         OnClick = MENU_HELP_REGKEYClick
       end
       object MENU_HELP_ABOUT: TMenuItem

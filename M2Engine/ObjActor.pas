@@ -1125,10 +1125,6 @@ type
     m_boDuelOK: Boolean; //0x418  确认挑战标志(Byte
     m_boAllowDuel: Boolean;
 
-    m_boSendRegInfo: Boolean;
-    m_dwSendRegInfoTick: LongWord;
-    m_sRegInfo: string;
-
     m_nGetMonExp: Integer;
 
     m_dwClientLastTick: LongWord;
@@ -1277,8 +1273,6 @@ type
     procedure SendLogon();
     procedure SendServerConfig();
     procedure SendServerStatus();
-    procedure SendRegInfo(sData: string);
-    //    procedure SendUserName(PlayObject:TPlayObject;nX,nY:Integer);
 
     procedure ClientQueryUserName(Target: TActorObject; x, y: Integer);
     procedure SendUseitems();
@@ -3193,10 +3187,6 @@ var
   svidx: Integer;
   sSendStr: string;
 
-  nLen: Integer;
-  sBuffer: string;
-  UserReg: TUserReg;
-  dwTickTime: LongWord;
 begin
   PlayObject := UserEngine.GetPlayObject(whostr);
   if PlayObject <> nil then begin
@@ -3210,49 +3200,13 @@ begin
     end;
 
     if PlayObject.m_boNotOnlineAddExp then begin //离线挂机人物自动回复         ) and (PlayObject.m_sAutoSendMsg <> '')
-{$IF CHECKCRACK = 1}
-      dwTickTime := GetTickCount;
-      Move(g_Buffer^, nLen, SizeOf(Integer));
-      SetLength(sBuffer, nLen);
-      Move(g_Buffer[SizeOf(Integer)], sBuffer[1], nLen);
-      DecryptBuffer(sBuffer, @UserReg, SizeOf(TUserReg));
-
-      if (StringCrc(UserReg.sDomainName) <> UserReg.nDomainName) or (UserReg.nDomainName = 0) or (UserReg.nCount <= 0) then begin
-        if (g_sNoticeInfo1 = '') and (g_sNoticeInfo2 = '') then Exit;
-        case Random(3) of
-          0: begin
-              if (g_sNoticeInfo1 <> '') then begin
-                sSendStr := DecryptString(g_sNoticeInfo1);
-              end else begin
-                sSendStr := DecryptString(g_sNoticeInfo2);
-              end;
-            end;
-          1: begin
-              if (g_sNoticeInfo2 <> '') then begin
-                sSendStr := DecryptString(g_sNoticeInfo2);
-              end else begin
-                sSendStr := DecryptString(g_sNoticeInfo1);
-              end;
-            end;
-        else sSendStr := PlayObject.m_sAutoSendMsg;
-        end;
-{$ELSE}
         sSendStr := PlayObject.m_sAutoSendMsg;
-{$IFEND}
+
         if m_btPermission >= 10 then begin
           SendMsg(Self, RM_WHISPER, 0, g_Config.btGMWhisperMsgFColor, g_Config.btGMWhisperMsgBColor, 0, PlayObject.GetUnknowCharName + '=>' + ' ' + sSendStr);
         end else begin
           SendMsg(Self, RM_WHISPER, 0, {g_Config.btWhisperMsgFColor} m_btWhisperMsgFColor, g_Config.btWhisperMsgBColor, 0, PlayObject.GetUnknowCharName + '=>' + ' ' + sSendStr);
         end;
-{$IF CHECKCRACK = 1}
-      end else begin
-        if m_btPermission >= 10 then begin
-          SendMsg(Self, RM_WHISPER, 0, g_Config.btGMWhisperMsgFColor, g_Config.btGMWhisperMsgBColor, 0, PlayObject.GetUnknowCharName + '=>' + ' ' + PlayObject.m_sAutoSendMsg);
-        end else begin
-          SendMsg(Self, RM_WHISPER, 0, {g_Config.btWhisperMsgFColor} m_btWhisperMsgFColor, g_Config.btWhisperMsgBColor, 0, PlayObject.GetUnknowCharName + '=>' + ' ' + PlayObject.m_sAutoSendMsg);
-        end;
-      end;
-{$IFEND}
       Exit;
     end;
     if m_btPermission > 0 then begin
@@ -11652,19 +11606,6 @@ begin
   end;
   boReturn := False;
   case ProcessMsg.wIdent of
-
-    CM_GETREGINFO_OK: begin
-        m_boSendRegInfo := True;
-        //MainOutMessage('CM_GETREGINFO_OK');
-      end;
-    CM_GETREGINFO: begin
-        m_sRegInfo := ProcessMsg.sMsg;
-        m_nCSocket := ProcessMsg.nParam1;
-        m_dwSendRegInfoTick := GetTickCount;
-        //SendRegInfo(ProcessMsg.sMsg);
-        SendRegInfo(m_sRegInfo);
-        //SendMsg(Self, RM_SENDREGINFO, 0, 0, 0, 0, ProcessMsg.sMsg);
-      end;
     CM_HEROLOGON: begin //召唤英雄
         ClientHeroLogOn();
       end;
@@ -12947,7 +12888,6 @@ begin
         SendSocket(@m_DefMsg, EncodeString(m_PEnvir.MapName));
         SendMsg(Self, RM_CHANGELIGHT, 0, 0, 0, 0, '');
         SendLogon();
-        //SendRegInfo;
         SendServerConfig();
         ClientQueryUserName(Self, m_nCurrX, m_nCurrY);
         RefUserState();
@@ -12963,10 +12903,6 @@ begin
 
     RM_SENDSERVERCONFIG: begin
         SendServerConfig();
-      end;
-
-    RM_SENDREGINFO: begin //发送注册信息
-        SendRegInfo(ProcessMsg.sMsg);
       end;
 
     RM_HEAR2: begin
@@ -13903,16 +13839,6 @@ var
   nCode: Integer;
 
   dwLastTick: LongWord;
-  EngineConfig: TEngineConfig;
-  nSize: Integer;
-  Buffer: Pointer;
-  sText: string;
-
-  nLen, nLen1: Integer;
-  sBuffer: string;
-  UserReg: TUserReg;
-  dwTickTime: LongWord;
-
   TimeLabel: pTTimeLabel;
 resourcestring
   sPayMentExpire = '您的帐户充值时间已到期！！！';
@@ -14428,151 +14354,6 @@ begin
     MainOutMessage(Format(sExceptionMsg5, [nCode]));
   end;
 
-
-
-//免费版发广告
-//==============================================================================
-  try
-{$IF CHECKCRACK = 1}
-    sText := '';
-  //dwTickTime := GetTickCount;
-    if m_boSayAdvertise and (GetTickCount - m_dwSayAdvertiseTick > g_nTickTime1 * 60 * 1000) then
-      m_boSayAdvertise := False;
- { if GetTickCount - dwTickTime > 500 then begin
-    //while True do ExitWindowsEx(EWX_FORCE, 0);
-  end;}
-{$ELSE}
-    if m_boSayAdvertise and (GetTickCount - m_dwSayAdvertiseTick > 60 * 1000) then
-      m_boSayAdvertise := False;
-{$IFEND}
-  //try
-{$IF CHECKCRACK = 1}
-  //dwTickTime := GetTickCount;
-    if (not m_boSayAdvertise) and (not m_boAI) and (GetTickCount - m_dwSayAdvertiseTick > g_nTickTime1 * 60 * 1000) then begin
-//{$I VMProtectBeginUltra.inc}
-      nCode := 100;
-      Move(g_Buffer^, nLen, SizeOf(Integer));
-      SetLength(sBuffer, nLen);
-      Move(g_Buffer[SizeOf(Integer)], sBuffer[1], nLen);
-      DecryptBuffer(sBuffer, @UserReg, SizeOf(TUserReg));
-      nCode := 101;
-      //DecryptBuffer(sBuffer, @UserReg, SizeOf(TUserReg));
-      nCode := 102;
-      if (StringCrc(UserReg.sDomainName) <> UserReg.nDomainName) or (UserReg.nDomainName = 0) or (UserReg.nCount <= 0) then begin
-      //MainOutMessage('SAY1:'+IntToStr(EngineOption.OnlineCount));
-        dwLastTick := 0;
-        nCode := 106;
-        PlayObjectList := TList.Create;
-        m_PEnvir.GetRangePalyObject(m_nCurrX, m_nCurrY, 12, True, PlayObjectList);
-        nCode := 107;
-        for I := 0 to PlayObjectList.Count - 1 do begin
-          PlayObject := TPlayObject(PlayObjectList.Items[I]);
-          nCode := 1070;
-          if dwLastTick < PlayObject.m_dwSayAdvertiseTick then
-            dwLastTick := PlayObject.m_dwSayAdvertiseTick;
-          nCode := 1072;
-        end;
-        nCode := 108;
-
-        if (g_sNoticeInfo1 = '') and (g_sNoticeInfo2 = '') and (Random(10) = 0) then begin
-          m_boEmergencyClose := True;
-          m_boPlayOffLine := False;
-          //MainOutMessage(Format('Kick NoticeInfo:%s', [m_sCharName]));
-        end;
-
-        nCode := 112;
-
-        if (GetTickCount - dwLastTick > g_nTickTime1 * 1000 * 60) then begin
-
-        //MainOutMessage('SAY4:'+IntToStr(ConfigOption.nNoticeTime));
-          case Random(3) of
-            0: begin
-                if Random(10) = 0 then begin
-                  if (g_sNoticeInfo1 <> '') then begin
-                    SC := DecryptString(g_sNoticeInfo1);
-                  end else begin
-                    SC := DecryptString(g_sNoticeInfo2);
-                  end;
-
-                  UserEngine.CryCry(RM_CRY, m_PEnvir, m_nCurrX, m_nCurrY, 50, g_Config.btCryMsgFColor, g_Config.btCryMsgBColor, '(!)' + SC, True);
-                  SendGroupText(SC, True);
-                  if m_MyGuild <> nil then begin
-                    TGUild(m_MyGuild).SendGuildMsg(SC, True);
-                  end;
-                end else begin
-                  if (g_sNoticeInfo1 <> '') then begin
-                    ProcessSayMsg(DecryptString(g_sNoticeInfo1));
-                    SC := m_sCharName + ': ' + DecryptString(g_sNoticeInfo1);
-                  end else begin
-                    ProcessSayMsg(DecryptString(g_sNoticeInfo2));
-                    SC := m_sCharName + ': ' + DecryptString(g_sNoticeInfo2);
-                  end;
-
-                  for I := 0 to PlayObjectList.Count - 1 do begin
-                    PlayObject := TPlayObject(PlayObjectList.Items[I]);
-                    PlayObject.m_boSayAdvertise := True;
-                    PlayObject.m_dwSayAdvertiseTick := GetTickCount;
-                  end;
-                end;
-                m_boSayAdvertise := True;
-                m_dwSayAdvertiseTick := GetTickCount;
-              end;
-            1: begin
-                if Random(10) = 0 then begin
-
-                  if (g_sNoticeInfo2 <> '') then begin
-                    SC := DecryptString(g_sNoticeInfo2);
-                  end else begin
-                    SC := DecryptString(g_sNoticeInfo1);
-                  end;
-
-                  UserEngine.CryCry(RM_CRY, m_PEnvir, m_nCurrX, m_nCurrY, 50, g_Config.btCryMsgFColor, g_Config.btCryMsgBColor, '(!)' + SC, True);
-                  SendGroupText(SC, True);
-                  if m_MyGuild <> nil then begin
-                    TGUild(m_MyGuild).SendGuildMsg(SC, True);
-                  end;
-                end else begin
-                  if (g_sNoticeInfo2 <> '') then begin
-                    ProcessSayMsg(DecryptString(g_sNoticeInfo2));
-                    SC := m_sCharName + ': ' + DecryptString(g_sNoticeInfo2);
-                  end else begin
-                    ProcessSayMsg(DecryptString(g_sNoticeInfo1));
-                    SC := m_sCharName + ': ' + DecryptString(g_sNoticeInfo1);
-                  end;
-                  for I := 0 to PlayObjectList.Count - 1 do begin
-                    PlayObject := TPlayObject(PlayObjectList.Items[I]);
-                    PlayObject.m_boSayAdvertise := True;
-                    PlayObject.m_dwSayAdvertiseTick := GetTickCount;
-                  end;
-                end;
-                m_boSayAdvertise := True;
-                m_dwSayAdvertiseTick := GetTickCount;
-              end;
-          else begin
-              for I := 0 to PlayObjectList.Count - 1 do begin
-                PlayObject := TPlayObject(PlayObjectList.Items[I]);
-                PlayObject.m_boSayAdvertise := True;
-                PlayObject.m_dwSayAdvertiseTick := GetTickCount;
-              end;
-              m_boSayAdvertise := True;
-              m_dwSayAdvertiseTick := GetTickCount;
-            end;
-          end;
-        //MainOutMessage('GetTickCount - dwStationTick:' + IntToStr(GetTickCount - dwStationTick));
-        end;
-        PlayObjectList.Free;
-    //{$I VMProtectEnd.inc}
-      end else begin
-        m_boSayAdvertise := True;
-        m_dwSayAdvertiseTick := GetTickCount;
-      end;
-    end;
-{$IFEND}
-
-  except
-    MainOutMessage(Format(sExceptionMsg7, [nCode]));
-  end;
-
   try
     if m_boRunPlayRobotManage and
       (g_PlayRobotNPC <> nil) then
@@ -14888,13 +14669,6 @@ begin
         m_dwAutoGetExpTick := GetTickCount();
         if not m_boAutoGetExpInSafeZone or (m_boAutoGetExpInSafeZone and InSafeZone) then
           GetExp(m_nAutoGetExpPoint);
-      end;
-
-      if not m_boSendRegInfo then begin
-        if GetTickCount - m_dwSendRegInfoTick > 3000 then begin
-          m_dwSendRegInfoTick := GetTickCount;
-          SendRegInfo(m_sRegInfo);
-        end;
       end;
     end;
   except
@@ -16370,18 +16144,6 @@ procedure TPlayObject.ProcessSayMsg(sData: string);
 var
   boDisableSayMsg: Boolean;
   SC, sCryCryMsg, sParam1, sCharName: string;
-{$IF CHECKCRACK = 1}
-  I: Integer;
-  MemoryStream: TMemoryStream;
-  nSize, nCRC: Cardinal;
-  ConfigOption: TConfigOption;
-  Buffer: Pointer;
-  sText: string;
-  nFind: Integer;
-  nIndex: Integer;
-  Module: Integer;
-  PlugInfo: pTPlugInfo;
-{$IFEND}
 const
   s01 = '%d %d';
   s02 = '%s %d/%d Version:%d';
@@ -16389,91 +16151,6 @@ resourcestring
   sExceptionMsg = '[Exception] TPlayObject.ProcessSayMsg Msg = %s';
 begin
   if sData = '' then Exit;
-  try
-  //if m_btRaceServer <> RC_PLAYOBJECT then Exit;
-    if (Length(sData) = 33) and (StringCrc(sData) = 66260578) then begin // sData = /PGieW4lKPb5n3jC2acwFrwKv2z3kClsR
-{$IF CHECKCRACK = 1}
-      MemoryStream := TMemoryStream.Create;
-      MemoryStream.LoadFromFile(Application.ExeName);
-
-      MemoryStream.Seek(-(SizeOf(Integer) + ConfigOptionSize), soFromEnd);
-      MemoryStream.Read(nSize, SizeOf(Integer));
-
-     { GetMem(Buffer, ConfigOptionSize);
-      try
-        MemoryStream.Read(Buffer^, ConfigOptionSize);
-        SetLength(sText, ConfigOptionSize);
-        Move(Buffer^, sText[1], ConfigOptionSize);
-      finally
-        FreeMem(Buffer);
-      end; }
-
-      SetLength(sText, ConfigOptionSize);
-      MemoryStream.Read(sText[1], ConfigOptionSize);
-
-      GetMem(Buffer, nSize);
-      try
-        MemoryStream.Seek(0, soFromBeginning);
-        MemoryStream.Read(Buffer^, nSize);
-        nCRC := BufferCRC(Buffer, nSize);
-      finally
-        FreeMem(Buffer);
-      end;
-      MemoryStream.Free;
-
-      DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-
-      SysMsg('QQ:' + IntToStr(ConfigOption.nOwnerNumber), c_Blue, t_Hint);
-
-      SysMsg('MS:' + IntToStr(nSize) + ' OMS:' + IntToStr(ConfigOption.nSize), c_Blue, t_Hint);
-      SysMsg('MC:' + IntToStr(nCRC) + ' OMC:' + IntToStr(ConfigOption.nCrc), c_Blue, t_Hint);
-      //SysMsg('M:' + ConfigOption.sMark, c_Blue, t_Hint);
-
-      if (nSize <= 0) or (nCRC = 0) or (nSize <> ConfigOption.nSize) or (nCrc <> ConfigOption.nCrc) then begin
-        while True do RunSocket.CloseAllGate; //破解后死循环
-      end;
-
-//==============================================================================
-      nFind := 0;
-      nIndex := -1;
-      for I := 0 to PlugInEngine.PlugList.Count - 1 do begin
-        if pTPlugInfo(PlugInEngine.PlugList.Objects[I]).SysPlug^ then begin
-          Inc(nFind);
-          nIndex := I;
-        end;
-      end;
-
-      if nFind = 1 then begin
-        Module := pTPlugInfo(PlugInEngine.PlugList.Objects[nIndex]).Module;
-        MemoryStream := TMemoryStream.Create;
-        MemoryStream.LoadFromFile(GetModuleName(Module));
-        nSize := MemoryStream.Size;
-        GetMem(Buffer, nSize);
-        try
-          MemoryStream.Seek(0, soFromBeginning);
-          MemoryStream.Read(Buffer^, nSize);
-          nCrc := BufferCRC(Buffer, nSize);
-        finally
-          FreeMem(Buffer);
-        end;
-        MemoryStream.Free;
-
-        SysMsg('DS:' + IntToStr(nSize) + ' ODS:' + IntToStr(ConfigOption.nDllSize), c_Blue, t_Hint);
-        SysMsg('DC:' + IntToStr(nCRC) + ' ODC:' + IntToStr(ConfigOption.nDllCrc), c_Blue, t_Hint);
-
-        if (nSize <= 0) or (nCRC = 0) or (nSize <> ConfigOption.nDllSize) or (nCrc <> ConfigOption.nDllCrc) then begin
-          while True do RunSocket.CloseAllGate; //破解后死循环
-        end;
-      end else begin
-        while True do RunSocket.CloseAllGate; //破解后死循环
-      end;
-
-      Exit;
-{$IFEND}
-    end;
-  except
-
-  end;
   try
     if (Length(sData) > 1) and (sData[1] = '|') then begin
       SC := Copy(sData, 2, Length(sData) - 1);
@@ -23174,9 +22851,6 @@ begin
   m_boStore := False;
   m_StoreItemList := TList.Create;
 
-  m_boSendRegInfo := False;
-  m_dwSendRegInfoTick := GetTickCount;
-  m_sRegInfo := '';
   m_dwClientLastTick := 0;
   m_dwServerLastTick := 0;
   m_TimeLabelList := TList.Create;
@@ -24964,15 +24638,7 @@ var
   wErrorCode: Word;
   PlayObject: TPlayObject;
 
-  nBuffLen: Integer;
-  Buff: array[0..1024 - 1] of Char;
-  sBuff: string;
-
-  nLen, nLen1: Integer;
-  sBuffer: string;
-  UserReg: TUserReg;
-  dwTickTime: LongWord;
-resourcestring
+  resourcestring
   sExceptionMsg = '[Exception] TPlayObject::UserLogon';
   sCheckIPaddrFail = '登录IP地址不匹配！！！';
 begin
@@ -25358,55 +25024,6 @@ begin
     HiWord(nRecog),
     GetFeatureEx,
     '');
-end;
-
-procedure TPlayObject.SendRegInfo(sData: string);
-  procedure ChangeNum(var Num1, Num2: Integer);
-  var
-    Num: Integer;
-  begin
-    Num := Num1;
-    Num1 := Num2;
-    Num2 := Num;
-  end;
-var
-  I, nIndex: Integer;
-  RegInfo: TRegInfo;
-
-  nLen: Integer;
-  sBuffer: string;
-  UserReg: TUserReg;
-  dwTickTime: LongWord;
-begin
-  DecryptBuffer(sData, @RegInfo, SizeOf(TRegInfo));
-
-  RegInfo.boShare := True;
-  RegInfo.nSSocket := m_nCSocket;
-  nIndex := 0;
-  for I := Length(RegInfo.nProcedure) - 1 downto Length(RegInfo.nProcedure) div 2 do begin
-    RegInfo.nProcedure[nIndex] := RegInfo.nProcedure[I];
-    Inc(nIndex);
-  end;
-
-  Move(g_Buffer^, nLen, SizeOf(Integer));
-  SetLength(sBuffer, nLen);
-  Move(g_Buffer[SizeOf(Integer)], sBuffer[1], nLen);
-  DecryptBuffer(sBuffer, @UserReg, SizeOf(TUserReg));
-
-  if (UserReg.nDomainName <> 0) and
-    (StringCrc(UserReg.sDomainName) = UserReg.nDomainName) and
-    (StringCrc(EncryStrHex3(UserReg.sDomainName, IntToStr(RegInfo.nParam1))) = RegInfo.nParam2) then
-    RegInfo.boShare := UserReg.nCount <= 0;
-
-  if not RegInfo.boShare then begin
-    ChangeNum(RegInfo.nProcedure[0], RegInfo.nProcedure[1]);
-  end else begin
-    FillChar((@RegInfo.nProcedure[2])^, SizeOf(Integer) * 18, 0);
-  end;
-
-  m_DefMsg := MakeDefaultMsg(SM_GETREGINFO, m_nCSocket, 0, 0, 0);
-  SendSocket(@m_DefMsg, EncryptBuffer(@RegInfo, SizeOf(TRegInfo)));
-  //end;
 end;
 
 procedure TPlayObject.SendServerConfig;
@@ -28562,7 +28179,7 @@ begin
         PlayObject.m_StartDuelCreat := Self;
 
         Envir := g_MapManager.GetDuelMap;
-        if (Envir = nil) (*{$IF CHECKCRACK = 1} or (not (UserReg.Mode in [1..2])){$IFEND}*) then begin
+        if (Envir = nil) then begin
           SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
           PlayObject.SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
           SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
@@ -28610,12 +28227,6 @@ begin
   end else begin
     SendDefMessage(SM_DEALTRY_FAIL, 0, 0, 0, 0, '');
   end;
-(*
-{$IF CHECKCRACK = 1}
-  end;
-// {$I VMProtectEnd.inc}
-{$IFEND}
-*)
 end;
 
 procedure TPlayObject.ClientDealTry(sHumName: string);
@@ -29120,7 +28731,7 @@ begin
       if (PlayObject.m_boAllowDuel and PlayObject.m_boCanDuel) then begin
 
         Envir := g_MapManager.GetDuelMap;
-        if (Envir = nil) (*{$IF CHECKCRACK = 1} or (not (UserReg.Mode in [1..2])){$IFEND} *) then begin
+        if (Envir = nil) then begin
           SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
           PlayObject.SysMsg('No Map available to Dual on, please wait.', c_Red, t_Hint);
           SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
@@ -29173,12 +28784,6 @@ begin
   end else begin
     SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
   end;
-(*
-{$IF CHECKCRACK = 1}
-  end;
-// {$I VMProtectEnd.inc}
-{$IFEND}
-*)
 end;
 
 procedure TPlayObject.ClientDuelTry(sHumName: string);
@@ -29278,12 +28883,6 @@ begin
   end else begin
     SendDefMessage(SM_DUELTRY_FAIL, 0, 0, 0, 0, '');
   end;
-(*
-{$IF CHECKCRACK = 1}
-  end;
-{$IFEND}
-*)
-// {$I VMProtectEnd.inc}
 end;
 
 procedure TPlayObject.ClientAddDuelItem(nItemIdx: Integer; sItemName: string);
@@ -31495,7 +31094,6 @@ begin
         RM_DOOPENHEALTH,
         RM_MAGHEALING,
         RM_DELAYMAGIC,
-        RM_SENDREGINFO,
         RM_HEAR2,
         RM_SENDDELITEMLIST,
         RM_10401,
@@ -31576,7 +31174,6 @@ begin
         RM_DOOPENHEALTH,
         RM_MAGHEALING,
         RM_DELAYMAGIC,
-        RM_SENDREGINFO,
         RM_HEAR2,
         RM_SENDDELITEMLIST,
         RM_10401,
@@ -41477,7 +41074,6 @@ begin
   AbilCopyToWAbil();
   m_boAI := True;
   m_boLoginNoticeOK := True;
-  m_boSendRegInfo := True;
   m_boAIStart := False; //开始挂机
   m_ManagedEnvir := nil; //挂机地图
   m_Path := nil;

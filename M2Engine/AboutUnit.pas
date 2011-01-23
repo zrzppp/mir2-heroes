@@ -60,25 +60,6 @@ begin
   EditBbsSite.ReadOnly := True;
   EditVersion.ReadOnly := True;
 
-  GetMem(Buffer, ConfigOptionSize);
-  try
-    g_MemoryStream.Seek(-ConfigOptionSize, soFromEnd);
-    g_MemoryStream.Read(Buffer^, ConfigOptionSize);
-    SetLength(sText, ConfigOptionSize);
-    Move(Buffer^, sText[1], ConfigOptionSize);
-  finally
-    FreeMem(Buffer);
-  end;
-
-  DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-
- { EditUpDateTime.Text := ConfigOption.sUpDateTime;
-  EditProductName.Text := ConfigOption.sProductName;
-  EditProgram.Text := ConfigOption.sProgram;
-  EditWebSite.Text := ConfigOption.sWebSite;
-  EditBbsSite.Text := ConfigOption.sBbsSite;
-  EditVersion.Text := Format(ConfigOption.sVersion, [0]);   }
-
   ShowModal;
 end;
 

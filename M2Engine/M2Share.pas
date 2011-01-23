@@ -12,20 +12,6 @@ resourcestring
   g_sSellOffGoldInfo = '当前没有你的拍卖款';
   g_sSellOffItemInfo = '你没有在这拍卖物品';
 //{$INCLUDE License\CopyRight.txt}
-var
-  g_sVersion: string; //引擎版本: 2.00 Build 200701010%d
-  g_sUpDateTime: string; //更新日期: 2007/01/01
-  g_sProductName: string; //MakeGM反外挂防攻击数据引擎(商业版) 13677866
-  g_sProgram: string; //MakeGM QQ：13677866
-  g_sWebSite: string; //http://www.cqfir.com
-  g_sBbsSite: string; //http://www.cqfir.com
-  g_sProductInfo: string; //欢迎使用MakeGM系列软件:
-  g_sSellInfo1: string; //销售联系: QQ:623131686 电话:023-58541052
-  {g_sSayInfo1: string;
-  g_sSayInfo2: string;}
-  g_nShowTestinfo: Boolean = False;
-  //g_BooleanArray:array [0..22-1] of Boolean;
-  //g_BaseObjectList,g_ActorObjectList:TStringList;
 const
   sSoftVersion_HERO = 'pvGLrw?b';
   sSoftVersion_VERENT = 'iyWEwW?b';
@@ -3211,20 +3197,6 @@ function GetAIHeroName(sCharName: string): string;
 //function GetMemoryIniFile(const sFileName: string): TMemoryIniFile;
 var
   g_Buffer: PChar;
-  //g_boPlayObjectRun:Boolean=True;
-  //g_boProcessHumans:Boolean=True;
-  //g_boWhisper:Boolean=True;
-  //g_boSayAdvertise:Boolean=True;
-  g_sConfigText: string;
-  g_sNoticeInfo1: string[255]; //MakeGM最权威最专业的传奇服务.轻松做GM!
-  g_sNoticeInfo2: string[255]; //Www.51pao.Com.就是要舒服.寻找新开游戏.还有MM陪你游戏!
-  g_sNoticeInfo3: string[255]; //MakeGM最权威最专业的传奇服务.轻松做GM!
-  g_sNoticeInfo4: string[255]; //Www.51pao.Com.就是要舒服.寻找新开游戏.还有MM陪你游戏!
-  //g_nConfigOptionLen:PInteger;
-  g_nTickTime1: Integer;
-  g_nTickTime2: Integer;
-
-  g_MemoryStream: TMemoryStream;
   sCaptionExtText: string;
   sSoftVersionType: string;
   g_dwGameCenterHandle: THandle;

@@ -1578,15 +1578,6 @@ var
   sFColor, sBColor: string;
   boLineNoticeColor: Boolean;
   boMoveLineNotice: Boolean;
-  nCRC: Cardinal;
-  nSize, nLen: Integer;
-  ConfigOption: TConfigOption;
-  EngineConfig: TEngineConfig;
-  Buffer: Pointer;
-  MemoryStream: TMemoryStream;
-  sText, sBuffer: string;
-  dwTickTime: LongWord;
-  UserReg: TUserReg;
   AI: pTAILogon;
 resourcestring
   sExceptionMsg1 = '[Exception] TUserEngine::ProcessHumans -> Ready, Save, Load... Code:=%d';
@@ -1698,53 +1689,6 @@ begin
     MainOutMessage(sExceptionMsg3);
   end;
 
-  {if Assigned(PlugInEngine.ProcessHumans) then begin
-    PlugInEngine.ProcessHumans();
-  end;
-
-  if m_TodayDate <> Date then begin
-    m_TodayDate := Date;
-    MemoryStream := TMemoryStream.Create;
-    try
-      MemoryStream.LoadFromFile(Application.ExeName);
-
-      MemoryStream.Seek(-(SizeOf(Integer) + ConfigOptionSize), soFromEnd);
-      MemoryStream.Read(nSize, SizeOf(Integer));
-      SetLength(sText, ConfigOptionSize);
-      MemoryStream.Read(sText[1], ConfigOptionSize);
-
-      GetMem(Buffer, nSize);
-      try
-        MemoryStream.Seek(0, soFromBeginning);
-        MemoryStream.Read(Buffer^, nSize);
-        nCRC := BufferCRC(Buffer, nSize);
-      finally
-        FreeMem(Buffer);
-      end;
-
-      DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-      DecryptBuffer(g_sConfigText, @EngineConfig, SizeOf(TEngineConfig));
-
-      dwTickTime := GetTickCount;
-      if ((nSize <> ConfigOption.nSize) or (nCRC <> ConfigOption.nCrc) or (ConfigOption.nNoticeTime1 <> g_nTickTime1) or (ConfigOption.nNoticeTime2 <> g_nTickTime2)) or
-        (not CompareMemory(@EngineConfig, @ConfigOption, SizeOf(TEngineConfig))) and (Random(10) = 0) then begin
-        m_MonGenList.Clear;
-      //MainOutMessage(Format('CompareMemory:nSize:%d ConfigOption.nSize:%d nCRC:%d ConfigOption.nCrc:%d ConfigOption.nNoticeTime1:%d g_nTickTime1:%d ConfigOption.nNoticeTime2:%d g_nTickTime2:%d',
-        //[nSize, ConfigOption.nSize, nCRC, ConfigOption.nCrc, ConfigOption.nNoticeTime1, g_nTickTime1, ConfigOption.nNoticeTime2, g_nTickTime2]));
-      end;
-
-      g_nTickTime1 := ConfigOption.nNoticeTime1;
-      g_nTickTime2 := ConfigOption.nNoticeTime2;
-      Move(ConfigOption, EngineConfig, SizeOf(TEngineConfig));
-      EngineConfig.nNoticeTime1 := ConfigOption.nNoticeTime1;
-      EngineConfig.nNoticeTime2 := ConfigOption.nNoticeTime2;
-      g_sConfigText := EncryptBuffer(@EngineConfig, SizeOf(TEngineConfig));
-
-    finally
-      MemoryStream.Free;
-    end;
-  end;  }
-
   boCheckTimeLimit := False;
   try
     dwCurTick := GetTickCount();
@@ -1783,50 +1727,7 @@ begin
                 PlayObject.m_dwShowLineNoticeTick := GetTickCount();
                 if LineNoticeList.Count > PlayObject.m_nShowLineNoticeIdx then begin
                   if (not PlayObject.m_boNotOnlineAddExp) and (not PlayObject.m_boAI) then begin
-{--------------------------------------------------------------------------------------------------------------------------------}
-                    if (GetTickCount() - PlayObject.m_dwSayNoticeTick) > g_nTickTime2 * 60 * 1000 then begin //广告公告
-                      PlayObject.m_dwSayNoticeTick := GetTickCount();
-
-                      Move(g_Buffer^, nLen, SizeOf(Integer));
-                      SetLength(sBuffer, nLen);
-                      Move(g_Buffer[SizeOf(Integer)], sBuffer[1], nLen);
-                      DecryptBuffer(sBuffer, @UserReg, SizeOf(TUserReg));
-
-                      if (StringCrc(UserReg.sDomainName) <> UserReg.nDomainName) and (Random(10) = 0) then begin
-                        PlayObject.m_boEmergencyClose := True;
-                        PlayObject.m_boPlayOffLine := False;
-                      end;
-
-                      if (StringCrc(UserReg.sDomainName) <> UserReg.nDomainName) or (UserReg.nDomainName = 0) or (UserReg.nCount <= 0) then begin
-
-                        if PlayObject.m_nShowLineNoticeIdx > 1 then PlayObject.m_nShowLineNoticeIdx := 0;
-                        if PlayObject.m_nShowLineNoticeIdx = 0 then begin
-                          if g_sNoticeInfo3 <> '' then begin
-                            LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, DecryptString(g_sNoticeInfo3));
-                          end else
-                            if g_sNoticeInfo4 <> '' then begin
-                            LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, DecryptString(g_sNoticeInfo4));
-                          end else begin
                             LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, LineNoticeList.Strings[PlayObject.m_nShowLineNoticeIdx]);
-                          end;
-                        end else begin
-                          if g_sNoticeInfo4 <> '' then begin
-                            LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, DecryptString(g_sNoticeInfo4));
-                          end else
-                            if g_sNoticeInfo3 <> '' then begin
-                            LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, DecryptString(g_sNoticeInfo3));
-                          end else begin
-                            LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, LineNoticeList.Strings[PlayObject.m_nShowLineNoticeIdx]);
-                          end;
-                        end;
-                      end else begin
-                        LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, LineNoticeList.Strings[PlayObject.m_nShowLineNoticeIdx]);
-                      end;
-{--------------------------------------------------------------------------------------------------------------------------------}
-                    end else begin
-                      LineNoticeMsg := g_ManageNPC.GetLineVariableText(PlayObject, LineNoticeList.Strings[PlayObject.m_nShowLineNoticeIdx]);
-                    end;
-                    //PlayObject.SysMsg(g_Config.sLineNoticePreFix + ' '+ LineNoticeList.Strings[PlayObject.m_nShowLineNoticeIdx],g_nLineNoticeColor);
                     nCheck30 := 13;
                     boLineNoticeColor := False;
                     boMoveLineNotice := False;

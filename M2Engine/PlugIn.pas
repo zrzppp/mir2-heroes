@@ -754,12 +754,7 @@ begin
 end;
 
 procedure TPlugInManage.HookProcessHumans(Value: PChar; Len: Integer);
-var
-  sBuffer: string;
 begin
-  SetLength(sBuffer, Len);
-  Move(Value^, sBuffer[1], Len);
-  ProcessHumans := TStartProc(StrToInt(DecryptString(sBuffer)));
 end;
 //==============================================================================
 
@@ -1241,38 +1236,9 @@ begin
     if Module > 32 then begin
       Init := GetProcAddress(Module, 'Init');
       if @Init <> nil then begin
-{$IF CHECKCRACK = 1}
-        New(nSize); New(nCrc);
-        MemoryStream := TMemoryStream.Create;
-        MemoryStream.LoadFromFile(sPlugLibFileName);
-        nSize^ := MemoryStream.Size;
-        GetMem(Buffer, nSize^);
-        try
-          MemoryStream.Seek(0, soFromBeginning);
-          MemoryStream.Read(Buffer^, nSize^);
-          nCrc^ := BufferCRC(Buffer, nSize^);
-        finally
-          FreeMem(Buffer);
-        end;
-        MemoryStream.Free;
-//==============================================================================
-        SetLength(sText, ConfigOptionSize);
-        g_MemoryStream.Seek(-ConfigOptionSize, soFromEnd);
-        g_MemoryStream.Read(sText[1], ConfigOptionSize);
-
-        dwTickTime := GetTickCount;
-        DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-//==============================================================================
-        if (nSize^ = ConfigOption.nDllSize) and (nCRC^ = ConfigOption.nDllCrc) then begin
-          //MainOutMessage('(nSize^ = ConfigOption.nDllSize) and (nCRC^ = ConfigOption.nDllCrc)');
-{$IFEND}
           New(PlugInfo);
           New(PlugInfo.SysPlug);
           PlugInfo.DllName := sPlugLibFileName;
-{$IF CHECKCRACK = 1}Module := Module + (nSize^ - ConfigOption.nDllSize) + (nCRC^ - ConfigOption.nDllCrc); {$IFEND}
-          if GetTickCount - dwTickTime > 500 then begin
-            //while True do ExitWindowsEx(EWX_FORCE, 0);
-          end;
           PlugInfo.Module := Module;
           PlugEngine.Module := Module;
           PlugEngine.Buffer := @Buffs;
@@ -1284,10 +1250,6 @@ begin
             PlugList.AddObject(PlugInfo.sDesc, TObject(PlugInfo));
             InitM2ServerDllOK := True;
           end;
-{$IF CHECKCRACK = 1}
-        end;
-        Dispose(nSize); Dispose(nCrc);
-{$IFEND}
       end;
 
     end;

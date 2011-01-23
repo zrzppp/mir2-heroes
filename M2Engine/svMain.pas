@@ -680,59 +680,7 @@ begin
       Close;
       Exit;
     end;
-{$IF CHECKCRACK = 1}
-//{$I VMProtectBeginVirtualization.inc}
-{$I VMProtectBeginUltra.inc}
 
-    g_sConfigText := '';
-    g_sNoticeInfo1 := ''; //MakeGM最权威最专业的传奇服务.轻松做GM!
-    g_sNoticeInfo2 := ''; //Www.51pao.Com.就是要舒服.寻找新开游戏.还有MM陪你游戏!
-    sText := '';
-    //Showmessage(IntToStr(g_nConfigOptionLen^));
-
-    g_MemoryStream.Seek(-(SizeOf(Integer) + ConfigOptionSize), soFromEnd);
-    g_MemoryStream.Read(nSize, SizeOf(Integer));
-
-    SetLength(sText, ConfigOptionSize);
-    g_MemoryStream.Read(sText[1], ConfigOptionSize);
-
-    GetMem(Buffer, nSize);
-    try
-      g_MemoryStream.Seek(0, soFromBeginning);
-      g_MemoryStream.Read(Buffer^, nSize);
-      nCRC := BufferCRC(Buffer, nSize);
-    finally
-      FreeMem(Buffer);
-    end;
-
-    dwTickTime := GetTickCount;
-    DecryptBuffer(sText, @ConfigOption, SizeOf(TConfigOption));
-    {Showmessage('nSize:'+IntToStr(nSize^)+' ConfigOption.nSize:'+IntToStr(ConfigOption.nSize));
-    Showmessage('nCRC:'+IntToStr(nCRC^)+' ConfigOption.nCrc:'+IntToStr(ConfigOption.nCrc)); }
-
-    if (nSize <= 0) or (nCRC = 0) or
-      (nSize <> ConfigOption.nSize) or (nCRC <> ConfigOption.nCrc) then begin
-      Close;
-      Exit;
-    end else begin
-      g_nTickTime1 := ConfigOption.nNoticeTime1;
-      g_nTickTime2 := ConfigOption.nNoticeTime2;
-      Move(ConfigOption, EngineConfig, SizeOf(TEngineConfig));
-      //EngineConfig.nNoticeTime1 := ConfigOption.nNoticeTime1;
-      //EngineConfig.nNoticeTime2 := ConfigOption.nNoticeTime2;
-      //EngineConfig.boShareAllow := ConfigOption.boShareAllow;
-      g_sConfigText := EncryptBuffer(@EngineConfig, SizeOf(TEngineConfig));
-      g_sNoticeInfo1 := EncryptString(ConfigOption.sNoticeInfo1); //MakeGM最权威最专业的传奇服务.轻松做GM!
-      g_sNoticeInfo2 := EncryptString(ConfigOption.sNoticeInfo2); //Www.51pao.Com.就是要舒服.寻找新开游戏.还有MM陪你游戏!
-
-      g_sNoticeInfo3 := EncryptString(ConfigOption.sNoticeInfo3); //MakeGM最权威最专业的传奇服务.轻松做GM!
-      g_sNoticeInfo4 := EncryptString(ConfigOption.sNoticeInfo4); //Www.51pao.Com.就是要舒服.寻找新开游戏.还有MM陪你游戏!
-    end;
-    {if GetTickCount - dwTickTime > 500 then begin
-      //while True do ExitWindowsEx(EWX_FORCE, 0);
-    end; }
-{$I VMProtectEnd.inc}
-{$IFEND}
     if not LoadClientFile then begin
       Close;
       Exit;
@@ -1488,12 +1436,6 @@ begin
   CloseFile(F);
   Caption := '';
 
-  g_MemoryStream := TMemoryStream.Create;
-  g_MemoryStream.LoadFromFile(Application.ExeName);
-
-  g_nTickTime1 := 60;
-  g_nTickTime1 := 60;
-
   PlugInEngine.HookChangeCaptionText(ChangeCaptionText);
   PlugInEngine.HookChangeGateSocket(ChangeGateSocket);
   PlugInEngine.HookGetMaxPlayObjectCount(TUserEngine_GetMaxPlayObjectCount);
@@ -1780,7 +1722,6 @@ begin
       Dispose(pTItemEvent(g_RememberItemList.Objects[I]));
     end;
     FreeAndNil(g_RememberItemList);
-    FreeAndNil(g_MemoryStream);
 
 
     boServiceStarted := False;

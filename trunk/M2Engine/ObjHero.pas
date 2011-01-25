@@ -1755,7 +1755,7 @@ begin
         0: m_nItemBagCount := 10;
         1: m_nItemBagCount := 20;
         2: m_nItemBagCount := 30;
-        3: m_nItemBagCount := 35;
+        3: m_nItemBagCount := 40;
         4: m_nItemBagCount := 40;
       end;
       Break;

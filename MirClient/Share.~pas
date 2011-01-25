@@ -66,7 +66,7 @@ type
 const
   CLIENTTEST = 1; //0正式版   1测试
   MIRSCLIENT = 0; //0传奇 1外传
-  sVERSION = '版本号： 20100901';
+  sVERSION = 'www.lomcn.co.uk';
 
   GL_QUIT = 100;
 
@@ -124,7 +124,7 @@ const
 
   EFFECTIMAGEDIR = 'Data\';
   NPCFACEIMAGEFILE = 'Data\NpcFace.wil';
-  FNPCIMAGESFILE = 'Data\F-Npc.Data';
+  FNPCIMAGESFILE = 'Data\NPC2.wil';
 
 {$IF MIRSCLIENT = 0}
   MAINIMAGEFILE = 'Data\Prguse.wil';
@@ -212,7 +212,7 @@ const
 
   MAXBAGITEMCL = 46;
 
-  MAXFONT = 8;
+  MAXFONT = 1;
   ENEMYCOLOR = 69;
 
   NEARESTPALETTEINDEXFILE = 'Data\npal.idx';

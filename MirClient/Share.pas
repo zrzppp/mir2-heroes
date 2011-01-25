@@ -89,7 +89,7 @@ const
   RMCLIENT = 99;
   ClientType = 0; //普通的为0 ,99 为管理客户端
 
-  RMCLIENTTITLE = 'MakeGM';
+  RMCLIENTTITLE = 'Mir2 Heroes';
   DEBUG = 0;
   //SWH800 = 0;
   //SWH1024 = 1;
@@ -174,7 +174,7 @@ const
   MONIMAGEFILEEX = 'Graphics\Monster\%d.wil';
   MONPMFILE = 'Graphics\Monster\%d.pm';
 
-  CQFIRIMAGESFILE = 'Data\F-Cqfir.Data';
+  CQFIRIMAGESFILE = 'Data\Interface.Data';
 
   HORSEIMAGESFILE = 'Data\F-Horse.wil';
   HUMHORSEIMAGESFILE = 'Data\F-HumHorse.wil';

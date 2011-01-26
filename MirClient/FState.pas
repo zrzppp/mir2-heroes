@@ -8215,7 +8215,7 @@ procedure TFrmDlg.GetMouseItemInfo(Actor: TActor; MouseItem: pTClientItem; var i
     end; }
   end;
 var
-  sWgt, sTemp, sItemDesc: string;
+  sWgt, sTemp, sItemDesc, sDescr: string;
   I, nLine: Integer;
   dwExp, dwMaxExp: LongWord;
 begin
@@ -9008,8 +9008,6 @@ begin
         end else begin
           HintList.AddObject('Expires: Never', TObject(clyellow));
         end;
-
-        {
         if MouseItem.s.sDescr <> '' then begin
           if (MouseItem.s.StdMode = 31) and (MouseItem.s.AniCount <> 0) and (MouseItem.s.Shape = 1) then Exit;
           nLine := 0;
@@ -9028,7 +9026,7 @@ begin
           end;
           if sDescr <> '' then begin
             if nLine = 0 then begin
-              HintList.AddObject('物品说明: ' + sDescr, TObject(clyellow));
+              HintList.AddObject(sDescr, TObject(clWhite));
               Inc(nLine);
             end else begin
               HintList.AddObject(sDescr, TObject(clyellow));
@@ -9036,7 +9034,6 @@ begin
             end;
           end;
         end;
-        }
       end;
     end;
     g_ExtractStringList.Clear;

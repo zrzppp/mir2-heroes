@@ -221,7 +221,7 @@ begin
         StdItem.NeedLevel := Query.FieldByName('NeedLevel').AsInteger;
         StdItem.Price := Query.FieldByName('Price').AsInteger;
 
-        //StdItem.sDescr := Query.FieldByName('Descr').AsString;
+        StdItem.sDescr := Query.FieldByName('Descr').AsString;
 
         StdItem.NeedIdentify := GetGameLogItemNameList(StdItem.Name);
         if UserEngine.StdItemList.Count = Idx then begin

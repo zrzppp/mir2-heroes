@@ -1423,7 +1423,7 @@ type
     AddValue: TValue;
     AddPoint: TValue;
     MaxDate: TDateTime;
-    //sDescr: string[40];
+    sDescr: string[40];
 {$IFEND}
   end;
   pTStdItem = ^TStdItem;

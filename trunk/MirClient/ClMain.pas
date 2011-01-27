@@ -3915,18 +3915,8 @@ begin
     Exit;
   end;
 
-  if g_Config.boSmartLongHit and GetCanLongHit then begin
-    Result := CM_LONGHIT; //´ÌÉ±
-    Exit;
-  end;
-
   if g_boCanWideHit then begin
     Result := CM_WIDEHIT; //°ëÔÂ
-    Exit;
-  end;
-
-  if g_boCanLongHit then begin
-    Result := CM_LONGHIT; //´ÌÉ±
     Exit;
   end;
 
@@ -3970,9 +3960,6 @@ begin
     if g_boCanWideHit and (g_MySelf.m_Abil.MP >= 3) and TargetInSwordWideAttackRange(tdir) then begin
     Result := CM_WIDEHIT; //°ëÔÂ
   end else
-    if g_boCanLongHit and TargetInSwordLongAttackRange(tdir) then begin
-    Result := CM_LONGHIT; //´ÌÉ±
-  end else
     if g_boNextTimePowerHit then begin //¹¥É±
     Result := CM_POWERHIT;
   end else
@@ -3998,18 +3985,8 @@ begin
     Exit;
   end;
 
-  if g_Config.boSmartLongHit and GetCanLongHit then begin
-    Result := CM_LONGHIT; //´ÌÉ±
-    Exit;
-  end;
-
   if g_boCanWideHit then begin
     Result := CM_WIDEHIT; //°ëÔÂ
-    Exit;
-  end;
-
-  if g_boCanLongHit then begin
-    Result := CM_LONGHIT; //´ÌÉ±
     Exit;
   end;
 
@@ -4248,7 +4225,8 @@ begin
         if g_boCanTwnHit and (g_MySelf.m_Abil.MP >= 10) then begin
         g_boCanTwnHit := False;
         nHitMsg := CM_TWINHIT;
-      end;
+      end else
+        nHitMsg := SearchHitMsg(tdir);
 
       g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);
       g_dwLatestHitTick := GetTickCount;
@@ -4259,6 +4237,31 @@ begin
     g_nTargetX := dx;
     g_nTargetY := dy;
   end;
+
+   if (not target.m_boDeath) and TargetInSwordLongAttackRange(tdir, target, 1) then begin
+    if CanNextAction and ServerAcceptNextAction and CanNextHit then begin
+      //nHitMsg := SearchHitMsg(tdir);
+      if g_boSerieMagicing and (nHitMsg = CM_101HIT) then begin
+        SendSpellMsg(CM_SPELL, tdir, 0, 101, target.m_nRecogId); //g_SerieTarget.m_nCurrX, g_SerieTarget.m_nCurrY
+      end else begin
+        g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);
+      end;
+      g_dwLatestHitTick := GetTickCount;
+      //DebugOutStr('TfrmMain.AttackTarget:'+IntToStr(g_nCurrenMagic));
+      g_nCurrenMagic := 0;
+    end;
+    //DebugOutStr('TfrmMain.AttackTarget2');
+    Exit;
+  end;
+
+  if (abs(g_MySelf.m_nCurrX - target.m_nCurrX) <= 2) and (abs(g_MySelf.m_nCurrY - target.m_nCurrY) <= 2) and (not target.m_boDeath) then
+    g_ChrAction := caWalk
+  else g_ChrAction := caRun; //???
+
+  GetBackPosition(target.m_nCurrX, target.m_nCurrY, tdir, dx, dy);
+  g_nTargetX := dx;
+  g_nTargetY := dy;
+
 end;
 
 procedure TfrmMain.DXDrawMouseDown_(Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
@@ -4417,7 +4420,7 @@ begin
             if CanNextAction and ServerAcceptNextAction and CanNextHit then begin
 
               nHitMsg := CM_HIT+Random(3);
-              if g_boCanLongHit and TargetInSwordLongAttackRange(tdir) then begin
+             if g_boCanLongHit and TargetInSwordLongAttackRange(tdir) then begin
                 nHitMsg := CM_LONGHIT;
               end;
               if g_boCanWideHit and (g_MySelf.m_Abil.MP >= 3) and TargetInSwordWideAttackRange(tdir) then begin
@@ -4425,7 +4428,8 @@ begin
               end;
               if g_boCanCrsHit and (g_MySelf.m_Abil.MP >= 6) and TargetInSwordCrsAttackRange(tdir) then begin
                 nHitMsg := CM_CRSHIT;
-              end;
+              end else
+                 nHitMsg := SearchHitMsg(tdir);
 
               g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);
             end;

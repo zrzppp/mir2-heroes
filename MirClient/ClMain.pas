@@ -4209,7 +4209,7 @@ begin
   if (abs(g_MySelf.m_nCurrX - target.m_nCurrX) <= 1) and (abs(g_MySelf.m_nCurrY - target.m_nCurrY) <= 1) and (not target.m_boDeath) then begin
     if CanNextAction and ServerAcceptNextAction and CanNextHit then begin
 
-      if g_boNextTimePowerHit then begin // Slaying
+     { if g_boNextTimePowerHit then begin // Slaying
         g_boNextTimePowerHit := False;
         nHitMsg := CM_POWERHIT;
       end else                          // Thrusting
@@ -4225,7 +4225,7 @@ begin
         if g_boCanTwnHit and (g_MySelf.m_Abil.MP >= 10) then begin
         g_boCanTwnHit := False;
         nHitMsg := CM_TWINHIT;
-      end else
+      end else     }
         nHitMsg := SearchHitMsg(tdir);
 
       g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);
@@ -4419,7 +4419,7 @@ begin
             tdir := GetNextDirection(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, g_nMouseCurrX, g_nMouseCurrY);
             if CanNextAction and ServerAcceptNextAction and CanNextHit then begin
 
-              nHitMsg := CM_HIT+Random(3);
+             { nHitMsg := CM_HIT+Random(3);
              if g_boCanLongHit and TargetInSwordLongAttackRange(tdir) then begin
                 nHitMsg := CM_LONGHIT;
               end;
@@ -4428,7 +4428,7 @@ begin
               end;
               if g_boCanCrsHit and (g_MySelf.m_Abil.MP >= 6) and TargetInSwordCrsAttackRange(tdir) then begin
                 nHitMsg := CM_CRSHIT;
-              end else
+              end else  }
                  nHitMsg := SearchHitMsg(tdir);
 
               g_MySelf.SendMsg(nHitMsg, g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, tdir, 0, 0, '', 0);

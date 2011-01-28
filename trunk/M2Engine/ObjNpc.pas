@@ -3525,7 +3525,7 @@ begin
   m_WAbil.HP := m_WAbil.MaxHP;
   if n570 > 0 then begin
     if (GetTickCount - m_dw568) > 3 * 1000 then begin
-      ProcessSayMsg('总破坏力为  ' + IntToStr(n56C) + ',平均值为 ' + IntToStr(n56C div n570));
+      ProcessSayMsg('Total destructive power is  ' + IntToStr(n56C) + ', Average destructive power is ' + IntToStr(n56C div n570));
       n570 := 0;
       n56C := 0;
     end;

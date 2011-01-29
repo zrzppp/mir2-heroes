@@ -23720,8 +23720,8 @@ begin
       UserState.NAMECOLOR := GetCharColor(BaseObject);
       if BaseObject.m_btRaceServer = RC_HEROOBJECT then begin
         if (BaseObject.m_Master <> nil) then begin
-          UserState.GuildName := BaseObject.m_Master.m_sCharName;
-          UserState.GuildRankName := 'µÄÓ¢ÐÛ';
+          UserState.GuildName := BaseObject.m_Master.m_sCharName + '''s';
+          UserState.GuildRankName := 'Hero';
         end;
       end else begin
         if BaseObject.m_MyGuild <> nil then begin

@@ -3513,7 +3513,7 @@ begin
       Inc(n56C, ProcessMsg.wParam);
       m_dw568 := GetTickCount();
       Inc(n570);
-      ProcessSayMsg('破坏力为 ' + IntToStr(ProcessMsg.wParam) + ',平均值为 ' + IntToStr(n56C div n570));
+      ProcessSayMsg('Destructive power is  ' + IntToStr(ProcessMsg.wParam) + ', Average  is ' + IntToStr(n56C div n570));
     end;
   end;
   if ProcessMsg.wIdent = RM_MAGSTRUCK then

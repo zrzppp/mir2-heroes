@@ -3037,7 +3037,7 @@ begin
             end;
           end else n1C := 2;
         end else
-          if (PlayObject.m_nGameGold >= SellOffInfo.nSellGold) and (SellOffInfo.nSellGold > 0) then begin
+          if (PlayObject.m_nGold >= SellOffInfo.nSellGold) and (SellOffInfo.nSellGold > 0) then begin
           if PlayObject.IsEnoughBag then begin
             New(AddSellOffInfo);
             AddSellOffInfo^ := SellOffInfo^;
@@ -3047,8 +3047,8 @@ begin
                 UserItem^ := AddSellOffInfo.UserItem;
                 PlayObject.m_ItemList.Add(UserItem);
                 PlayObject.SendAddItem(UserItem);
-                Dec(PlayObject.m_nGameGold, AddSellOffInfo.nSellGold);
-                PlayObject.GameGoldChanged;
+                Dec(PlayObject.m_nGold, AddSellOffInfo.nSellGold);
+                PlayObject.GoldChanged;
                 OnlinePlayObject := UserEngine.GetPlayObject(AddSellOffInfo.sCharName);
                 if OnlinePlayObject <> nil then begin
                   OnlinePlayObject.SysMsg(PlayObject.m_sCharName + ' purchased your ' + sItemName, c_Red, t_Hint);
@@ -3088,7 +3088,7 @@ begin
     end;
   end;
   if n1C = 0 then begin
-    PlayObject.SendMsg(Self, RM_SENDBUYSELLOFFITEM_OK, 0, PlayObject.m_nGameGold, nInt, 0, '');
+    PlayObject.SendMsg(Self, RM_SENDBUYSELLOFFITEM_OK, 0, PlayObject.m_nGold, nInt, 0, '');
   end else begin
     PlayObject.SendMsg(Self, RM_SENDBUYSELLOFFITEM_FAIL, 0, n1C, 0, 0, '');
   end;

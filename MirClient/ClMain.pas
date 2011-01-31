@@ -7177,7 +7177,7 @@ procedure TfrmMain.ClientObjWinExp(DefMsg: pTDefaultMessage);
 begin
   // Experience Gained
   g_MySelf.m_Abil.Exp := LongWord(DefMsg.Recog);
-  DScreen.AddSysMsg('Gained ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' Experience', SCREENWIDTH - 150, 40, clLime);
+  DScreen.AddSysMsg('Gained ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' Experience', SCREENWIDTH - 150, 150, clLime);
 end;
 
 procedure TfrmMain.ClientObjLevelUp(DefMsg: pTDefaultMessage);
@@ -7871,7 +7871,7 @@ procedure TfrmMain.ClientObjHeroWinExp(DefMsg: pTDefaultMessage);
 begin
   if g_MyHero <> nil then begin
     g_MyHero.m_Abil.Exp := LongWord(DefMsg.Recog);
-    DScreen.AddSysMsg('Hero Gained ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' Experience', SCREENWIDTH - 150, 40, clLime); //SCREENWIDTH - 100, 40, clGreen);
+    DScreen.AddSysMsg('Hero Gained ' + IntToStr(LongWord(MakeLong(DefMsg.param, DefMsg.tag))) + ' Experience', SCREENWIDTH - 150, 150, clLime); //SCREENWIDTH - 100, 40, clGreen);
   end;
 end;
 

@@ -10276,11 +10276,11 @@ begin
         dmSell: actionname := 'Sell: ';
         dmRepair: actionname := 'Repair: ';
         dmStorage: actionname := 'Store';
-        dmSellOff: actionname := '寄售物品: ';
-        dmChange: actionname := '修改物品: ';
+        dmSellOff: actionname := '';
+        dmChange: actionname := 'Modify: ';
       end;
       if SpotDlgMode = dmSellOff then begin
-        TextOut(SurfaceX(Left + 8), SurfaceY(Top + 6), actionname + g_sSellPriceStr + ' ' + g_sGameGoldName);
+        TextOut(SurfaceX(Left + 8), SurfaceY(Top + 6), actionname + g_sSellPriceStr + ' ' + g_sGoldName);
       end else begin
         TextOut(SurfaceX(Left + 8), SurfaceY(Top + 6), actionname + g_sSellPriceStr);
       end;

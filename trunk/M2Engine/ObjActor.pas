@@ -24172,7 +24172,7 @@ begin
           end;
 
         end else
-          if (m_nGameGold >= SellOffInfo.nSellGold) and (SellOffInfo.nSellGold > 0) then begin
+          if (m_nGold >= SellOffInfo.nSellGold) and (SellOffInfo.nSellGold > 0) then begin
           if IsEnoughBag then begin
 
             if (SellOffInfo.UserItem.AddValue[0] = 1) and (GetDayCount(SellOffInfo.UserItem.MaxDate, Now) <= 0) then begin //删除到期装备
@@ -24187,8 +24187,8 @@ begin
                   UserItem^ := AddSellOffInfo.UserItem;
                   AddItemToBag(UserItem);
                   SendAddItem(UserItem);
-                  Dec(m_nGameGold, AddSellOffInfo.nSellGold);
-                  GameGoldChanged;
+                  Dec(m_nGold, AddSellOffInfo.nSellGold);
+                  GoldChanged;
                   OnlinePlayObject := UserEngine.GetPlayObject(AddSellOffInfo.sCharName);
                   if OnlinePlayObject <> nil then begin
                     OnlinePlayObject.SysMsg(m_sCharName + ' 购买了你的 ' + sItemName, c_Red, t_Hint);
@@ -24227,7 +24227,7 @@ begin
     end;
   end;
   if n1C = 0 then begin
-    SendMsg(Self, RM_SENDBUYSELLOFFITEM_OK, 0, m_nGameGold, nInt, 0, '');
+    SendMsg(Self, RM_SENDBUYSELLOFFITEM_OK, 0, m_nGold, nInt, 0, '');
   end else begin
     SendMsg(Self, RM_SENDBUYSELLOFFITEM_FAIL, 0, n1C, 0, 0, '');
   end;
@@ -24263,8 +24263,8 @@ begin
       if List20.m_SellEngine.UpDate(SellOffInfo, False) then begin
         s1C := '物品:' + UserEngine.GetStdItemName(SellOffInfo.UserItem.wIndex) + ' 金额:' + IntToStr(nSellGold) + ' 税:' + IntToStr(nRate) + g_Config.sGameGoldName + ' 拍卖日期:' + DateTimeToStr(SellOffInfo.dSellDateTime);
         SysMsg(s1C, c_Green, t_Hint);
-        Inc(m_nGameGold, nSellGold);
-        GameGoldChanged;
+        Inc(m_nGold, nSellGold);
+        GoldChanged;
         if g_boGameLogGameGold then begin
           AddGameDataLog(Format(g_sGameLogMsg1, [LOG_GAMEGOLD,
             m_sMapName,

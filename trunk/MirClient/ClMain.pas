@@ -8375,7 +8375,7 @@ end;
 procedure TfrmMain.ClientObjBuyShopItemFail(nFailCode: Integer);
 begin
   case nFailCode of
-    -1: FrmDlg.DMessageDlg('[Error]Not enough ' + g_sGameGoldName, [mbOk]);
+    -1: FrmDlg.DMessageDlg('[Error]Not enough ' + g_sGoldName, [mbOk]);
     -2: FrmDlg.DMessageDlg('[Error]Your bag is full', [mbOk]);
     -3: FrmDlg.DMessageDlg('[Error]Item does not exist', [mbOk]);
   else FrmDlg.DMessageDlg('[Error]Unknown error', [mbOk]);
@@ -8387,7 +8387,7 @@ begin
   case nFailCode of
     1: FrmDlg.DMessageDlg('[Error]Your Item does not exist', [mbOk]);
     2: FrmDlg.DMessageDlg('[Error]Your bag is full', [mbOk]);
-    3: FrmDlg.DMessageDlg('[Error]Not enough ' + g_sGameGoldName, [mbOk]);
+    3: FrmDlg.DMessageDlg('[Error]Not enough ' + g_sGoldName, [mbOk]);
   else FrmDlg.DMessageDlg('[Error]Unknown error', [mbOk]);
   end;
 end;

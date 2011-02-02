@@ -1,0 +1,45 @@
+[@main]
+#IF
+check [780] 1
+#ACT
+goto @flag
+#ELSEACT
+break
+
+[@flag]
+#IF
+check [782] 1
+#ACT
+break
+#ELSEACT
+goto @flag2
+
+[@flag2]
+#IF
+check [781] 1
+#ACT
+goto @item2
+
+[@item]
+#IF
+random 60
+#SAY
+Aww... how sad - but wait, with its dieing\
+breath, the chick gives you something...\ \
+#ACT
+give E
+set [781] 1
+#ELSEACT
+break
+
+[@item2]
+#IF
+random 60
+#SAY
+Aww... how sad - but wait, with its dieing\
+breath, the chick gives you something...\\
+#ACT
+give E
+set [782] 1
+#ELSEACT
+break

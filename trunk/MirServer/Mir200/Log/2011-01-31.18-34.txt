@@ -1,0 +1,19 @@
+2011-01-31 18:34:57 Total Guilds:0
+2011-01-31 18:34:57 1 Castles loaded...
+2011-01-31 18:34:57 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-01-31 18:34:57 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-01-31 18:34:57 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-01-31 18:34:57 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-01-31 18:34:58 LoginSrv(192.168.0.2:5600)connected...
+2011-01-31 18:34:59 Plugin Module started...
+2011-01-31 18:35:01 Database Server (192.168.0.2:6000)connected...
+2011-01-31 18:35:01 Rungate [0](192.168.0.2:2101)opened...
+2011-01-31 18:36:52 chg-server-fail-2 [0] -> [0] [grly]
+2011-01-31 18:44:56 Players Online: 2(2/0)
+2011-01-31 18:54:56 Players Online: 3(3/0)
+2011-01-31 19:04:56 Players Online: 3(3/0)
+2011-01-31 19:14:56 Players Online: 1(1/0)
+2011-01-31 19:24:56 Players Online: 0(0/0)
+2011-01-31 19:34:56 Players Online: 0(0/0)
+2011-01-31 19:44:56 Players Online: 0(0/0)
+2011-01-31 19:48:03 Database Server disconnected...

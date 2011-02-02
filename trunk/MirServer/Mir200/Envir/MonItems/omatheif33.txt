@@ -1,0 +1,60 @@
+1/20 StigmataStone
+1/10 BloodBone
+1/15 HolyWater
+1/50 BenedictionOil
+1/35 EasterEgg
+
+1/10 (HP)DrugLarge
+1/10 (MP)DrugLarge
+1/20 (HP)DrugXL
+1/20 (MP)DrugXL
+1/10 SunPotion(M)
+1/10 SunPotion(M)
+1/20 SunPotion(M)
+1/20 SunPotion(M)
+
+1/70 HealthStone(L)
+1/70 MagicStone(L)
+1/70 PowerStone(L)
+1/70 DCStone(M)
+1/70 MCStone(M)
+1/70 TaoStone(M)
+
+
+1/150 IronArmour(M)
+1/150 IronArmour(F)
+1/150 WizardRobe(M)
+1/150 WizardRobe(F)
+1/150 PearlArmour(M)
+1/150 PearlArmour(F)
+
+1/300 GreatAxe
+1/300 MageStaff
+1/300 SerpentSword
+
+1/500 SteelGlove
+1/500 DragonBracelet
+1/500 SoulSpringBracelet
+
+1/500 PowerRing
+1/500 TItanRing
+1/500 VioletRing
+
+1/600 GreenBead
+1/600 SoulNecklace
+1/600 DemonicBells
+
+1/600 BlackIronHelmet
+1/600 SpiritHelmet
+1/500 RecallHelmet
+
+1/150 BraveryGem
+1/150 MagicGem
+1/150 SoulGem
+1/150 DurabilityGem
+
+1/100 TwinDrakeBlade
+1/100 FlameDisruptor
+1/100 FrostCrunch
+1/100 EnergyRepulsor
+1/100 Purification

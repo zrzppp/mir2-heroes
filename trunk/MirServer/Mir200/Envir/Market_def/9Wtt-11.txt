@@ -1,0 +1,41 @@
+;Info [ Npc Name{TrainerTaoist} X=196 Y=322 MapName={WoomyonWoods} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [400] - Unknown
+;###############################################################
+
+[@main]
+#IF
+check [400] 0
+#SAY
+Holysword? Huh.. don't believe in the apprentice's words\
+it means nothing to us who stay in the Taoist world,\
+it's just a piece of iron...\ \
+<Then, is the sword an actual thing?/@next> \
+<I see, I wont depend on it/@deney>
+#ELSESAY
+If you want to know it quickly.\
+Go and see the owner of this school.\ \
+<Ok/@exit>
+
+[@deney]
+#IF
+#SAY
+What a good attitude you take!\
+I'll scold these boys who are still silly\
+Leave us alone, please!\ \
+<Ok/@exit>
+
+[@next]
+#IF
+#SAY
+Defenitly there is such a legend from the past but...\
+the owner of this school knows more details about it\
+go and ask him about it.\ \
+<Ok/@exit>
+#ACT
+SET [400] 1

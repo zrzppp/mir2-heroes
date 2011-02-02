@@ -1,0 +1,69 @@
+1/1 Gold 5000
+1/1 Gold 5000
+1/1 Gold 5000
+1/1 Gold 5000
+1/1 Gold 5000
+1/1 Gold 5000
+
+1/5 BenedictionOil
+1/5 BenedictionOil
+1/5 BenedictionOil
+
+1/6 3rdEyeBracelet
+1/6 SpellBracelet
+1/6 KnightBracelet
+
+1/5 GreatAxe
+1/5 SerpentSword
+1/5 MageStaff
+1/6 DragonSword
+1/7 JudgementMace
+1/7 BloodStealer
+1/7 SoulSpringWand
+
+1/10 PowerRing
+1/10 VioletRing
+1/10 TitanRing
+
+1/25 GreenBead
+1/25 SoulNecklace
+1/25 DemonicBells
+
+1/35 RecoveryRing
+1/35 RevivalRing
+1/35 FlameRing
+1/35 ParalysisRing
+1/35 MuscleRing
+
+1/60 ClearRing
+1/60 TeleportRing
+1/60 Protectionring
+
+1/2 LargeBone
+1/2 LargeBone
+1/2 LargeBone
+1/2 LargeBone
+
+1/40 BoundlessRing
+1/40 ThunderRing
+1/40 SoulRing
+
+1/60 8TrigamWheel
+1/60 HangMaWheel
+1/60 BokMaWheel
+
+1/250 WarSpiritBlade
+1/250 StoneBambooFan
+1/250 MagicScythe
+
+1/5 EnrichedPill
+1/3 EnhancedPill
+1/2 BasicPill
+
+1/40 RevivalAmulet
+
+1/40 BraveryOrb
+1/40 MagicOrb
+1/40 SoulOrb
+1/30 ProtectionOrb
+1/30 EvilSlayerOrb

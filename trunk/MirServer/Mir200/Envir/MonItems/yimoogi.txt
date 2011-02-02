@@ -1,0 +1,130 @@
+1/1    gold  50000
+
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+
+
+1/30   spiritdrug
+1/30   magicdrug
+1/30   stormdrug
+
+1/20     GreenBead
+1/20     GaleNecklace
+1/40    SoulNecklace
+1/40    DemonicBells
+
+1/20     BlackIronHelmet
+1/40 HelmetOfHero
+1/30 GreatHelmet
+1/30 WiseCoronet
+1/30 TaoCoronet
+
+1/30     PowerRing
+1/30    VioletRing
+1/30    TitanRing
+
+1/40     KnightBracelet
+1/150   DragonStaff
+1/200   SoulSabre
+1/60 WarSpiritBlade
+1/70 StoneBambooFan
+1/70 MagicScythe
+1/50 JudgementMace
+1/500 SwordOfWarGod
+1/600 BladeOfSorcery
+1/600 HeavenSword
+
+1/4     IceStorm
+1/4     SummonShinsu
+1/4     FlamingSword
+
+
+1/20   greenbead
+1/30   spiritdrug
+1/100   JudgementMace
+1/30   stormdrug
+
+
+1/10 PrinceSword
+1/10 MartialSword
+1/50 DragonSword
+
+
+1/8 MagicBracelet
+1/8 SerpentEyeRing
+1/10 MoralRing
+1/5 BlueJadeNecklace
+1/5 BambooPipe
+1/5 Convexlens
+1/3 GoldBracelet
+
+1/10 ShamanHelmet
+1/10 SkeletonHelmet
+1/15 BronzeGlove
+1/30 expelring
+1/30 coralring
+1/40 galering
+
+1/50 DragonRing
+1/50 PlatinumRing
+1/50 RubyRing
+1/50 SpellBracelet
+1/50 LifeNecklace
+1/50 ClawNecklace
+1/40 3rdEyeBracelet
+1/20 PearlNecklace
+
+1/10 SteelGlove
+1/20 BlackIronGlove
+1/10 DragonBracelet
+1/20 SoulBracelet
+1/100 SkillNecklace
+
+
+
+1/500 HeavenArmour(M)
+1/500 HeavenArmour(F)
+1/5   SteelArmour(M)
+1/5   SteelArmour(F)
+1/5   TitanArmour(F)
+1/5   TitanArmour(M)
+1/5   DragonRobe(M)
+1/5   DragonRobe(F)
+1/5   BlueJadeNecklace
+1/5   GoldBracelet
+
+1/20 BlackBoots
+1/20 GoldBelt
+1/10 ChainBelt
+1/10 SilkBoots
+1/10 BrassHelmet
+1/10 BronzeBelt
+
+
+1/150 Hallucination
+1/100 FlameField
+1/10 BenedictionOil
+
+1/5 Amulet
+1/5 Amulet
+1/5 WarGodOil
+1/5 WarGodOil
+1/5 MagicAidDrug

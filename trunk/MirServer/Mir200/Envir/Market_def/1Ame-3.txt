@@ -1,0 +1,120 @@
+(@buy @sell)
+;Info [ Npc Name{Milton} X=659 Y=301 MapName={MongchonProvince} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++40
++1
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [303] - Unknown
+; [350] - Unknown
+;###############################################################
+
+
+;Random Quest Tag (One in ten chance of being chosen).
+[@main]
+#IF
+random 10
+#ACT
+goto @QUEST
+#ELSEACT
+goto @normal
+
+[@QUEST]
+#IF
+check [350] 1
+#ACT
+goto @Q350
+break
+
+#IF
+check [303] 1
+#ACT
+goto @Q303
+#ELSEACT
+goto @normal
+
+[@normal]
+Welcome, what can I do for you <$USERNAME>?\ \
+<Buy/@buy> Meat\
+<Sell/@sell> Meat\
+<Cancel/@exit>
+
+[@Q350]
+#IF
+#ACT
+SET [351] 1
+#SAY
+You know my situation and you would not help me.\
+When I think about it, it makes me want to hate you.\
+you keep your wealth to yourself and do not share!\
+Look for the old person which connects the circuit in the waste abandoned mining area.\
+he and you are similar, he can give you help.
+
+[@Q303]
+#IF
+#SAY
+He so long as do get angry with whom, cannot again infer that person.\
+he and I were old friends, so long as you complete my one request,\
+I could ask for you.\ \
+<Accept/@Q303_1> request\
+<Reject/@Q303_2> request
+
+[@Q303_1]
+#IF
+checkgold 20000
+#ACT
+goto @Q303_1_1
+#ELSEACT
+goto @Q303_1_2
+
+[@Q303_2]
+#IF
+#ACT
+SET [350] 1
+#SAY
+I know what you are like.\
+You will only help yourself. Well if you're like that\
+then go away!\ \
+<Ok/@exit>
+
+[@Q303_1_1]
+#IF
+#ACT
+take gold 20000
+SET [303] 0
+SET [301] 0
+#SAY
+You will do my request? Oh, thank you.\
+My request is certainly not difficult,\
+You are rich? In our family economy is quite difficult,\
+I need 20000 gold coins. Sorry, this is embarresing.
+
+[@Q303_1_2]
+#IF
+#SAY
+I can see you are not rich. I'm very sorry, thank you for wanting\
+to help with request, but you do not have the 20000 gold coins I\
+need. If you get them please come back and help.\ \
+<Ok/@exit> 
+
+[@buy]
+Please choose what you want to buy.\ \ \
+<Back/@main>
+
+[@sell]
+We'll buy high quality at high price.\
+But we'll buy at low price meat stained with soil or burned by fire.\ \
+<Back/@main>
+
+
+[goods]
+;Item Amount Time
+Meat 1000 1
+Chicken 1000 1 
+

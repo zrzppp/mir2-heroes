@@ -1,0 +1,123 @@
+; ===================================
+; Npc Def NPC File : Bichon_Signpos-0
+; Shop Teleport npc in BichonProvince
+; -----------------------------------
+; Name: SignPost
+; Job: 
+; Map No: 0
+; Pos X 329
+; Pos Y 267
+; File name: *removed*
+; Comment: Shop Teleport npc in BichonProvince
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Hello! My name is Signpost.\
+My duty is to guide travelers through this area.\
+How can I help you?\ \
+<Use./@main-1> teleport to the village stores\
+<Ask./@ask> News of the village
+
+
+[@main-1]
+#SAY
+I will guide you to the desired location.\
+Where shall I teleport you?\ \
+<Weapon shop/@go-weap>   <Armour shop/@go-cloth>   <Inn/@go-inn>\
+<Accessory shop/@go-access>   <Reagent Store/@go-pot>   <Bichon Inner Wall/@go-palace>\
+<Book store/@go-book>  <Butcher's shop/@go-meat>\ \
+<End conversation/@exit>
+ 
+
+[@ask]
+#SAY
+What would you like to know?\ \
+<Ask./@ask-merchant> news of trust merchant\
+<Ask./@ask-inn> about an old man called OldmanInfinity at Inn\
+<Ask./@ask-heroes> about stone statues of heroes\ \
+<To top screen/@main>
+
+[@ask-merchant]
+#SAY
+It is heard that Easterninnkeeper drove away\
+trust merchants because it was too noisy\
+as many a people gathered in front of the inn.\
+Shall I guide you?\ \
+<Go to/@go-merchant> trust merchant    <Hear/@ask> other news
+
+[@ask-inn]
+#SAY
+Recently a old man is staying at Bichon Inn.\
+I've heard that he is looking for someone\
+who is willing to test his own power...\
+You should visit him sometime.\ \
+<Go to/@go-tavern> Bichon Inn.    <Hear/@ask> other news
+
+[@ask-heroes]
+#SAY
+Ah, and also, it is said that stone statues\
+of renowned heroes have been built.\
+Would you like to go see them?\ \
+<Go to see/@go-statues> stone statues    <Hear/@ask> other news
+
+
+[@go-weap]
+#ACT
+map 0103
+
+
+[@go-cloth]
+#ACT
+map 0106
+
+
+[@go-inn]
+#ACT
+map 0125
+
+
+[@go-access]
+#ACT
+map 0105
+
+
+[@go-pot]
+#ACT
+map 0108
+
+
+[@go-palace]
+#ACT
+map 0122
+
+
+[@go-book]
+#ACT
+map 0104
+
+
+[@go-meat]
+#ACT
+map 0102
+
+
+[@go-merchant]
+#ACT
+mapmove 0 263 256
+
+
+[@go-tavern]
+#ACT
+map 0101
+
+
+[@go-statues]
+#ACT
+mapmove 0 351 243
+
+[QUESTS]
+;ID Level Flag
+19  7  0 1 1 *

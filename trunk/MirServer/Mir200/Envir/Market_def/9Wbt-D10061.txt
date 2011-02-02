@@ -1,0 +1,171 @@
+;Info [ Npc Name{BigTaoist} X=11 Y=16 MapName={Great Taoist Tomb} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+#IF
+check [411] 1
+#ACT
+break
+
+#IF
+check [410] 1
+#SAY
+What is in the bottle is the fould blood of a RedmoonEvil I killed...\
+If you disguised yourself as a demon of a man by swearing on it your\
+clothes and holding an EvilApeHeart you can get the RedMoonSword. To\
+kill the RedMoonEvil and to get rid of the origin of the demon depends\
+upon you. It is hard ofr you to kill a RedMoonEvil alone. Band together\
+with many other heroes...\
+<Close/@exit>
+#ACT
+SET [411] 1
+break
+
+#IF
+check [409] 1
+#SAY
+You have not yet killed a RedMoonEvil...\
+I'll send you back there.\
+I pray that you may overcome the ordeal..\ \
+<Continue/@next_quest>
+#ACT
+break
+
+#IF
+check [408] 1
+checkitem BloodSwordChip 1
+#SAY
+Have you brought the BloodSwordChip? I must once again test your\
+ability. You must go through this test, and bring the\
+RedMoonEvilBlood to me. Then you will obtain the BloodSword.\ \
+<Next/@next_quest>
+#ACT
+break
+
+#IF
+check [406] 1
+#SAY
+Come on, bring me BloodSwordChip.\
+It's a ominous demonic sword.\
+You should seek out the sword before someone else gets it.\ \
+<Ok/@exit>
+#ACT
+break
+
+#IF
+check [405] 1
+#SAY
+Come here pal!\
+I have been waiting for you a long time...\
+It's your destiny you never escape from it even after you\
+die... Ah friend, Will you take my orders and get through\
+the hard way?\ \
+<I'll follow your orders with pleasure/@next>
+
+
+[@next]
+#IF
+#SAY
+Well, this is my duty. This is why I have waited for you\
+instead of leaving here. You came here with a JadeCrystal.\
+My name is Abel, and my nickname was Thunderman before I\
+died. Originally I had striven for martial art training\
+since I was 5 years old. When I was 30 years old, I was\
+never scared of anyone in the world. Then I was arrogant\
+for I took a pride in my martial art. Consequently it\
+made me a lot of enemies. But I was no longer\
+interested in community life.\ \
+<Next/@next1>
+
+[@next1]
+#IF
+#SAY
+For a very long time I searched for this monster. I searched\
+the forests, the rivers and everywhere I could think of. Eventually\
+I finally arrived here at Red Moon Valley's deepest room.\
+I saw the ooze all around the monster.\
+The monster roared crazily with all it's anger.\
+I was scared now.\
+But this monster had formidable strength and it was very dangerous.\ \
+<Next/@next2>
+
+[@next2]
+#IF
+#SAY
+Yes, I had collected a lot of the treasure from the Red Moon Evil,\
+I had picked up the BloodSword, but because it took so long\
+to cross the rivers and lakes, it was not in very good condition.\
+Because I had the sword, I was attacked by all the servants\
+of the RedMoonEvil. When I reached the broken pass, I was faced\
+with a great danger, then I saw the great river of blood,\
+the bodies were piled high, the stench of blood filed my head.\
+I was feeling arogant, because I had the sword....\ \
+<Next/@next3>
+
+[@next3]
+#IF
+#SAY
+I was snatching as much treasure as I could hold. While this was\
+happening the RedMoonEvil was killing people and there were bodies\
+everywhere. People were mutually massacred, the corpses filled in the\
+entire valley, rivers of blood... It is worth rejoicing that I had managed\
+to find the BloodSword.\ \
+<Next/@next4>
+
+[@next4]
+#IF
+#SAY
+All I felt was hatred, hatred for the RedMoonEvil. It had\
+destroyed many a great warrior, I fought my way towards it.\
+I stabbed at it with my sword, driving it into its heart.\
+I felt the evil of the bloodsword consume my body, its power\
+corrupting my every tought. I had to try and defeat its power.\
+I was carrying the bloodsword and the fragment of it that i had\
+found. Beware, for the bloodsword clouds the minds of the\
+innocent, and they turn to evil.\ \
+<Next/@next5>
+
+[@next5]
+#IF
+#SAY
+Although the RedMoonEvil had defeated me, my attack\
+left a piece of the bloodsword embedded into its heart.\
+For that very reason, it has never recovered completely,\
+and if you listen to what I tell you, then you will be able\
+to kill the beast yourself.\ \
+<Next/@next6>
+
+[@next6]
+#IF
+#SAY
+The RedMoonEvil created the BloodSword to turn those who bore it to turn evil.\
+Though, I embedded the BloodSwordPiece into its heart.\
+The RedMoonEvil had massacred hundreds of great warriors.\
+But still, warriors battled to reach its lair, just to try and defeat it.\
+I was the first to discover a BloodBword, I used it against its creator.\
+But the price for my crusade was a great one, I payed with my life.\
+For a while, my body and soul were together in harmony.\
+I am too old to continue my search for the BloodSwordPiece, you my friend\
+must continue my search for me.\ \
+<Ok/@exit>
+
+#ACT
+SET [406] 1
+
+[@next_quest]
+#IF
+checkhum D10071 2
+#SAY 
+There is already someone trying before you!\ \
+<Come back later/@exit>
+#ELSEACT
+take BloodSwordChip 1
+SET [409] 1
+MONCLEAR D10071
+PARAM1 D10071
+PARAM2 17
+PARAM3 21
+MONGEN RedMoonEvil1 1 0
+MAP D10071

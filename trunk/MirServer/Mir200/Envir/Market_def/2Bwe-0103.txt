@@ -1,0 +1,245 @@
+;Info [ Npc Name{Vincent} X=19 Y=18 MapName={ArmsStore} ]
+(@buy @sell @repair)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
++43
+
+;#########################################################
+; Brief Description of the switches used in this NPC.
+; [201] - Unknown
+; [202] - Unknown
+; [203] - This is set once you talk to Vincent.
+;         Now you can talk to Bill about the FateSword.
+; [204] - Unknown
+; [205] - Unknown
+; [210] - Unknown
+; [211] - Unknown
+; [212] - Unknown
+; [213] - Unknown
+; [214] - Unknown
+; [215] - Unknown
+; [216] - Unknown
+; [217] - Unknown
+; [218] - Unknown
+; [219] - Unknown
+; [220] - Unknown
+; [221] - Unknown
+; [222] - Unknown
+;#########################################################
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+Sorry but I do not deal with evil people like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+[@main-1]
+Glad to see you <$USERNAME>, how can I help?\ \
+<Buy/@buy> weapon\
+<Sell/@sell> weapon\
+<Repair/@repair> weapon\
+<Ask/@qweapon> about weapon\
+<Talk With/@talk>\
+<Teleport Out/@Tmove>\
+<Cancel/@exit>
+
+[@Tmove]
+#IF
+random 4
+#ACT
+mapmove 0 345 310
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 344 309
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 334 300
+break
+
+#IF
+random 4
+#ACT
+mapmove 0 334 301
+break
+
+#ELSEACT
+goto @Tmove
+
+[@buy]
+Please select the weapon you want to buy\ \ \
+  <Back/@main-1>
+
+[@sell]
+Lay down your weapon to be sold\ \ \
+  <Back/@main-1>
+
+[@repair]
+Would you like to repair your weapon?\ \
+  <Back/@main-1>
+
+[~@repair]
+Your weapon seems to be repaired fine.\\
+  <Back/@main-1>
+
+[@qweapon]
+The weapon bought from this store has some capacity limit,\
+but weapons aquired from monsters sometimes have special stats.\
+If you bring that special weapon to us we'll buy it at a higher price.\
+By the way, don't forget that the weapon price differs with its stats\
+Usually the higher the durability the higher the selling price.\ \
+ <Back/@main-1>
+
+
+[goods]
+;Item		Amount		Time
+WoodenSword     100         	1
+Dagger		100		1
+EbonySword	100		1	
+BronzeSword	100		1 
+ShortSword 	100		1
+Ironsword	100		1
+BronzeAxe	100		1
+Trident		100		1
+HookedSword	100		1
+Scimitar	100		1
+SteelSword	100		1
+PickAxe		100		1   
+
+
+;Quest Section of NPC
+
+[@talk]
+#IF
+check [205] 1
+#ACT
+goto @end
+break
+
+#IF
+check [203] 1
+#ACT
+goto @end
+break
+
+#IF
+check [202] 1
+#ACT
+goto @kang
+break
+
+#IF
+check [201] 1
+#ACT
+goto @talkwith
+break
+
+#ELSEACT
+goto @needgold
+break
+
+[@end]
+#IF
+#SAY
+It is a nice day to be open...\ \
+<Erm..Ok/@exit>
+
+
+[@needgold]
+#IF
+checkitem GoldOre 1
+#SAY
+What is that I see there glittering in your bag?\
+Is that a gold ore? Talking about gold ore,\
+Have you ever heard about the FateSword?\
+Bring me higher purity ores and i will tell you more\
+about the sword.\ \
+<Ok/@main-1>
+
+#ACT
+reset [201] 50
+set [201] 1
+#ELSESAY
+Quick go and get the ores I need... \ \ 
+<Ok/@exit>
+
+
+[@talkwith]
+#IF
+checkitem GoldOre 3
+checkdura GoldOre 15
+
+#SAY
+Ah I see you found the gold ores I need.\
+Good good, quickly give them to me.\
+I cannot pay you for them as I am having\
+to many expenses today.\
+Would you give them for free to me?\ \
+<Ok/@freegive> I'll give for free.\
+<No/@nogive> I need them.\
+
+#ELSESAY
+Quick go get the gold ores I need... \ \ 
+<Ok/@exit>
+
+[@freegive]
+#IF
+checkitem GoldOre 3
+checkdura GoldOre 10
+
+#ACT
+take GoldOre 2
+takecheckitem
+set [202] 1
+#SAY
+
+Thank you for being so generous!\
+I will give these gold ores to my friend Bill.\
+He knows everything about this FateSword.\
+He is also the only person who can make it.\
+But for him to make it there is a small thing\
+you must do for him.\ \
+<Next/@kang>
+
+
+[@nogive]
+Are you sure you cannot spare those nice GoldOres?\
+They are needed to make this FateSword.\
+Please me and Bill will need them.\
+Think about it!\ \
+<Give for Free/@freegive>\
+<Don't Give/@r_nogive>
+
+[@r_nogive]
+#IF
+#SAY
+Fine then dont give them. \
+Go and think about it! \ \
+<Ok/@exit>
+
+
+[@kang]
+#IF
+#SAY
+I will go and study these Ores now.\
+If you want to know more about this sword\
+then go talk to Bill.\
+<Ok/@exit>
+
+#ACT
+set [203] 1

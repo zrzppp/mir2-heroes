@@ -1,0 +1,42 @@
+; ===================================
+; Npc Def NPC File : Serpent_Signpos-2
+; Shop Teleport npc in SerpentValley
+; -----------------------------------
+; Name: SignPost
+; Job: 
+; Map No: 2
+; Pos X 504
+; Pos Y 485
+; File name: *removed*
+; Comment: Shop Teleport npc in SerpentValley
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Hello!\
+I'm the assistant here.\
+My duty is to guide travelers through this area.\
+How can I help you?\ \
+<Use./@main-1> teleport to village stores
+
+[@main-1]
+#SAY
+I will guide you to the desired store.\
+Where shall I teleport you?\ \
+<Weapon shop/@Weapon>   <Reagent store/@reagent>\ \
+I will be back <later/@exit>
+
+[@reagent]
+#ACT
+map 0117
+
+[@Weapon]
+#ACT
+map 0120
+
+
+[QUESTS]
+;ID Level Flag
+94 29  0 1 1 *

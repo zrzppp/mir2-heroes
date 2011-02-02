@@ -1,0 +1,23 @@
+1/1 Gold 12000
+1/2 Gold 4000
+
+1/1 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (HP)DrugXL
+1/2 (MP)DrugXL
+1/4 (HP)DrugXL
+1/4 (MP)DrugXL
+1/1 SunPotion(M)
+1/2 SunPotion(M)
+1/4 SunPotion(M)
+1/1 SunPotion
+1/2 SunPotion
+1/4 SunPotion
+
+1/1 WarGodOil
+1/1 BenedictionOil
+1/1 Apple
+1/1 Apple
+1/1 Apple
+1/1 Apple
+1/1 Apple

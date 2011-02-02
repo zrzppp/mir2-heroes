@@ -1,0 +1,27 @@
+[@main]
+#IF
+check [780] 1
+#ACT
+goto @flag
+#ELSEACT
+break
+
+[@flag]
+#IF
+check [783] 1
+#ACT
+break
+#ELSEACT
+goto @item
+
+[@item]
+#IF
+random 60
+#SAY
+As it bleats its last breath, the lamb\
+scrambles something into your bag...\ \
+#ACT
+give A
+set [783] 1
+#ELSEACT
+break

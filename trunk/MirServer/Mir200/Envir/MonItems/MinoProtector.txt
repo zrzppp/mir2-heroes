@@ -1,0 +1,59 @@
+1/5  gold  300
+1/25  (HP)DrugLarge
+1/40  (MP)DrugLarge
+1/50  SunPotion
+
+1/30000  StaminAidDrug
+1/30000  MagicAidDrug
+1/30000  StormDrug
+
+1/9600   ConvexLens
+
+1/4800   BambooPipe
+1/4800   ShamanHelmet
+1/4800   PurifierSword
+1/9600   CoralRing
+1/4800   ExpelRing
+
+1/7200   SkeletonHelmet
+1/7200   DeathGauntlet
+1/7200   PowerAxe
+
+1/2400   HeavyArmour(M)
+1/2400   HeavyArmour(F)
+1/2400   SoulArmour(F)
+1/2400   SoulArmour(M)
+1/2400   MagicRobe(M)
+1/2400   MagicRobe(F)
+1/2400   GoldRing
+1/2400   BlueJadeneck
+1/2400   GoldBracelet
+1/2400   MoralRing
+1/2400   CharmRing
+
+1/1200   MonkBracelet
+1/1200   EbonyBracelet
+1/1200   KrissSword
+1/1200   BlackRing
+1/1200   SerpentEyeRing
+1/1200   PearlRing
+1/1200   PrinceSword
+1/1200   MartialSword
+1/1200   HookedSpear
+1/1200   IronRing
+1/1200   TigerNecklace
+1/1200   PlatinumNeck
+1/1200   SkeletonRing
+1/1200   StrainBracelet
+
+1/500   HookedSword
+1/500   Scimitar
+1/500   Trident
+1/500   SteelSword
+1/500   BlueRing
+1/500   NagaNecklace
+1/500   AmberNeck
+1/500   PhoenixBead
+1/500   HardGlove
+1/500   MagicBracelet
+1/500   LanternNeck

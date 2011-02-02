@@ -1,0 +1,15 @@
+1/20 StigmataStone
+1/10 BloodBone
+1/15 HolyWater
+
+1/10 (HP)DrugLarge
+1/10 (MP)DrugLarge
+1/20 (HP)DrugXL
+1/20 (MP)DrugXL
+
+1/70 HealthStone(L)
+1/70 MagicStone(L)
+1/70 PowerStone(L)
+1/70 DCStone(L)
+1/70 MCStone(L)
+1/70 TaoStone(L)

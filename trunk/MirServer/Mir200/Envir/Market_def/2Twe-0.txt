@@ -1,0 +1,149 @@
+;Info [ Npc Name{Smith} X=297 Y=612 MapName={Bichon-Province} ]
+(@buy @sell @repair)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
++43
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will not help an evil person like you..\ \
+<Ok/@exit>
+
+#ELSEACT
+goto @main-1
+
+
+[@main-1]
+Welcome. Thanks for dropping in.\ \
+<Buy/@buy>  weapon\
+<Sell/@sell>  weapon\
+<Repair/@repair> weapon\
+<Ask/@QUEST> about weapon\
+<Close/@exit>
+
+
+[@QUEST]
+#IF
+check [755] 1
+#ACT
+goto @Q705
+break 
+
+#IF
+check [754] 1
+#ACT
+goto @Q704
+break
+
+#IF
+check [753] 1
+#ACT
+goto @Q703
+#ELSEACT
+goto @normal
+
+[@Q705]
+#IF
+#SAY
+Look for the guide, they will tell you what to do.\ \
+<Ok/@exit>
+
+
+[@Q704]
+#IF
+check [754] 1
+checklevel 5
+#ACT
+goto @Q704_1
+#ELSEACT
+goto @Q704_2
+
+[@Q704_2]
+#IF
+#SAY
+You need to be level 5 to help me.\
+Level up and then come and find me again.\ \
+<Ok/@exit>
+
+[@Q704_1]
+#IF
+#SAY
+Ah <$USERNAME> you are level 5 now!\
+To see you a higher level makes me happy.\
+Now you are a higher level I will give you a sword to\
+suit your new level. Look for the guide now, they will tell you\
+what to do.\ \
+<Ok/@exit>
+#ACT
+SET [755] 1
+give BronzeSword 1
+
+[@Q703]
+#IF
+checklevel 3
+#SAY
+Hello <$USERNAME>, did you listen to the guides talk and now\
+have decided to come and see me? I need you to practise\
+until you are level 5. Go now!\ \
+<Ok/@exit>
+#ACT
+SET [754] 1
+#ELSESAY
+Hello <$USERNAME>, did you listen to the guides talk and now\
+have decided to come and see me? My request is that you pracise\
+until you are level 5. Go now!\ \
+<Ok/@exit>
+
+[@Q703_2]
+#IF
+#SAY
+Your oportunity will be next time,\
+goodbye..\ \
+<Close/@exit>
+
+[@normal]
+#IF
+#SAY
+<$USERNAME> you understood enough about the Legend of Mir.\
+Good luck.\ \
+<Thanks/@exit>
+
+[@buy]
+Which item would you like to buy?\ \ \
+<back/@main>
+
+[@sell]
+Show me your weapon to be sold.\ \ \
+<Back/@main>
+
+[@repair]
+Would like to repair weapon? Show me your weapon that need it.\ \
+<Back/@main>
+
+[~@repair]
+It seems in good condition now.\ \
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+WoodenSword     100         	1
+Dagger		100		1
+EbonySword	100		1	
+BronzeSword	100		1 
+ShortSword 	100		1
+Ironsword	100		1
+BronzeAxe	100		1
+Trident		100		1
+HookedSword	100		1
+Scimitar	100		1
+SteelSword	100		1
+PickAxe		100		1

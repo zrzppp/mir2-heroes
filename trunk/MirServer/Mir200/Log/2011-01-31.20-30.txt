@@ -1,0 +1,25 @@
+2011-01-31 20:30:56 Total Guilds:0
+2011-01-31 20:30:56 1 Castles loaded...
+2011-01-31 20:30:56 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-01-31 20:30:56 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-01-31 20:30:56 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-01-31 20:30:56 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-01-31 20:30:57 LoginSrv(192.168.0.2:5600)connected...
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\1-GT7.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\Bichon/Statue/Aurora-0.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\Bichon/Statue/hell-0.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\Bichon/Statue/Testu6-0.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\Bichon/Statue/lilcooldoode-0.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\Bichon/Statue/catalyst-0.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\Bichon/Statue/kinky-0.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\GuildTerritory/Janice-GT40.txt
+2011-01-31 20:30:57 Script file not found: .\Envir\Market_Def\GuildTerritory/Janice-GT23.txt
+2011-01-31 20:30:59 Plugin Module started...
+2011-01-31 20:31:00 Database Server (192.168.0.2:6000)connected...
+2011-01-31 20:31:03 Rungate [0](192.168.0.2:2546)opened...
+2011-01-31 20:35:06 [等级调整] Azura (100 -> 10)
+2011-01-31 20:38:56 [Item] Azura BaseDress(M)(1073814238)
+2011-01-31 20:39:01 [Item] Azura IronSword(1073814239)
+2011-01-31 20:40:54 Players Online: 2(2/0)
+2011-01-31 20:45:04 Rungate [0](192.168.0.2:2546)closed...
+2011-01-31 20:45:04 Rungate (192.168.0.2:5000) closed...

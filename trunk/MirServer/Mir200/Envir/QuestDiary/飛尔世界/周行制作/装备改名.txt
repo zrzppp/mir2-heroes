@@ -1,0 +1,61 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@装备改名]
+{
+将要改名的装备戴身上,需要（声望2点）\ \
+╔┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╗\
+┆<盔　甲/@@useitemname0>┆<武　器/@@useitemname1>┆<项　链/@@useitemname3>┆<头　盔/@@useitemname4>┆<腰　带/@@useitemname10>┆<靴　子/@@useitemname11>┆\
+╚┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╝\ \
+╔┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╦┄┄┄╗\
+┆<左手镯/@@useitemname5>┆<右手镯/@@useitemname6>┆<左戒指/@@useitemname7>┆<右戒指/@@useitemname8>┆<宝　石/@@useitemname12>┆<勋　章/@@useitemname2>┆<返　回/@main>┆\
+╚┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╩┄┄┄╝\
+
+[@@useitemname0]
+#ACT
+ goto @ChangeName
+[@@useitemname1]
+#ACT
+ goto @ChangeName
+[@@useitemname2]
+#ACT
+ goto @ChangeName
+[@@useitemname3]
+#ACT
+ goto @ChangeName
+[@@useitemname4]
+#ACT
+ goto @ChangeName
+[@@useitemname5]
+#ACT
+ goto @ChangeName
+[@@useitemname6]
+#ACT
+ goto @ChangeName
+[@@useitemname7]
+#ACT
+ goto @ChangeName
+[@@useitemname8]
+#ACT
+ goto @ChangeName
+[@@useitemname10]
+#ACT
+ goto @ChangeName
+[@@useitemname11]
+#ACT
+ goto @ChangeName
+[@@useitemname12]
+#ACT
+ goto @ChangeName
+[@ChangeName]
+#if
+CHECKCREDITPOINT > 1
+#act 
+CREDITPOINT - 2
+SETSCRIPTFLAG 1 1
+MESSAGEBOX 装备改名成功! ! !
+GOTO @装备改名
+#ELSEACT
+MESSAGEBOX 装备改名失败!声望值没有2点
+Close
+}

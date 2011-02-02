@@ -1,0 +1,875 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@装备回收]
+{
+一级回收：一个<祖玛装备>换成8百经验和2万金币\
+二级回收：一个<赤月装备>换成2千经验和4万金币\
+三级回收：一个<赤月衣服>换为1点声望+5千经验+5W金币\
+四级回收：一个<魔龙装备>换为2点声望+1万经验+20活跃\
+五级回收：二个<战神系列>换为1个元宝+2万经验\ \
+<金盒回收/@金盒换元宝>：本服<四个金盒>可以兑换元宝40个          <返回首页/@main>\ \
+<①级回收/@使一级回收>    <②级回收/@使二级回收>    <③级回收/@使三级回收>    <④级回收/@使四级回收>    <⑤级回收/@使五级回收>\
+
+[@金盒换元宝]
+#if
+checkitem 金盒 4
+#ACT
+take 金盒 4
+GAMEGOLD + 40
+SENDCOLORMSG 0 251 249 恭喜『<$USERNAME>』用金盒成功兑换了40个元宝!
+GOTO @装备回收
+#ELSEACT
+SENDMSG 5 提示：你没有四个金盒！
+GOTO @装备回收
+[@使一级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的祖玛首饰：          『<返回/@装备回收>』 『<离开/@exit>』 ┆\
+╠┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╣\
+┆『<力量戒指/@回力戒>』┆『<骑士手镯/@回骑手>』┆『<绿色项链/@回绿项>』┆『<裁决之杖/@回阎手>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<泰坦戒指/@回泰戒>』┆『<三眼手镯/@回三手>』┆『<灵魂项链/@回灵项>』┆『<骨玉权杖/@骨头>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<紫 碧 螺/@回紫碧>』┆『<龙之手镯/@回龙手>』┆『<恶魔铃铛/@回恶铃>』┆『<龙 纹 剑/@龙纹>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+[@骨头]
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有骨玉权杖！
+GOTO @使一级回收
+[@龙纹]
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有龙纹剑！
+GOTO @使一级回收
+[@回力戒]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有力量戒指！
+GOTO @使一级回收
+
+[@回骑手]
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有骑士手镯！
+GOTO @使一级回收
+
+[@回阎手]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有阎罗手套！
+GOTO @使一级回收
+
+
+[@回泰戒]
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有泰坦戒指！
+GOTO @使一级回收
+
+
+[@回三手]
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有三眼手镯！
+GOTO @使一级回收
+
+[@回绿项]
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有绿色项链！
+GOTO @使一级回收
+
+[@回灵项]
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有灵魂项链！
+GOTO @使一级回收
+
+[@回紫碧]
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有紫碧螺！
+GOTO @使一级回收
+
+
+[@回龙手]
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有龙之手镯！
+GOTO @使一级回收
+
+[@回恶铃]
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+give 金币 20000
+CHANGEEXP + 800
+SENDMSG 6 提示：回收成功，金币增加：20000。经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+SENDMSG 5 提示：你没有恶魔铃铛！
+GOTO @使一级回收
+
+
+[@使二级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的赤月首饰：          『<返回/@装备回收>』 『<离开/@exit>』 ┆\
+╠┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╣\
+┆『<圣战戒指/@回圣戒>』┆『<圣战手镯/@回圣手>』┆『<圣战项链/@回圣项>』┆『<圣战头盔/@回圣头>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<天尊戒指/@回天戒>』┆『<天尊手镯/@回天手>』┆『<天尊项链/@回天项>』┆『<天尊头盔/@回天头>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<法神戒指/@回法戒>』┆『<法神手镯/@回法手>』┆『<法神项链/@回法项>』┆『<法神头盔/@回法头>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+
+[@回圣戒]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有圣战戒指！
+GOTO @使二级回收
+
+[@回圣手]
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有圣战手镯！
+GOTO @使二级回收
+
+[@回圣项]
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有圣战项链！
+GOTO @使二级回收
+
+[@回天戒]
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天尊戒指！
+GOTO @使二级回收
+
+[@回天手]
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天尊手镯！
+GOTO @使二级回收
+
+[@回天项]
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天尊项链！
+GOTO @使二级回收
+
+[@回法戒]
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有法神戒指！
+GOTO @使二级回收
+
+[@回法手]
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有法神手镯！
+GOTO @使二级回收
+
+[@回法项]
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有法神项链！
+GOTO @使二级回收
+
+[@回法头]
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有法神头盔！
+GOTO @使二级回收
+
+[@回天头]
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天尊头盔！
+GOTO @使二级回收
+
+[@回圣头]
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+CHANGEEXP + 2000
+give 金币 20000
+SENDMSG 6 提示：回收成功，您当前的经验值:<$EXP>
+GOTO @使二级回收
+#ELSEACT
+SENDMSG 5 提示：你没有圣战头盔！
+GOTO @使二级回收
+
+[@使三级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你要回收的衣服『<返回/@装备回收>』『<离开/@exit>』┆\
+╠┄┄┄┄┄┄┄┄╦┄┄┄┄┄┄┄┄╣\
+┆『<天 魔  神 甲/@天魔神甲>』┆『<圣 战  宝 甲/@圣战宝甲>』┆\
+╠┄┄┄┄┄┄┄┄╬┄┄┄┄┄┄┄┄╣\
+┆『<天 尊  道 袍/@天尊道袍>』┆『<天 师  长 袍/@天师长袍>』┆\
+╠┄┄┄┄┄┄┄┄╬┄┄┄┄┄┄┄┄╣\
+┆『<法 神  披 风/@法神披风>』┆『<霓 裳  羽 衣/@霓裳羽衣>』┆\
+╚┄┄┄┄┄┄┄┄╩┄┄┄┄┄┄┄┄╝\
+[@天魔神甲]
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+CHANGEEXP + 5000
+CREDITPOINT + 1
+give 金币 50000
+SENDMSG 6 提示：回收成功，当前声望为<$CREDITPOINT>点！经验值:<$EXP>！
+GOTO @使三级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天魔神甲！
+GOTO @使三级回收
+[@圣战宝甲]
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+CHANGEEXP + 5000
+CREDITPOINT + 1
+give 金币 50000
+SENDMSG 6 提示：回收成功，当前声望为<$CREDITPOINT>点！经验值:<$EXP>！
+GOTO @使三级回收
+#ELSEACT
+SENDMSG 5 提示：你没有圣战宝甲！
+GOTO @使三级回收
+[@天尊道袍]
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+CHANGEEXP + 5000
+CREDITPOINT + 1
+give 金币 50000
+SENDMSG 6 提示：回收成功，当前声望为<$CREDITPOINT>点！经验值:<$EXP>！
+GOTO @使三级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天尊道袍！
+GOTO @使三级回收
+[@天师长袍]
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+CHANGEEXP + 5000
+CREDITPOINT + 1
+give 金币 50000
+SENDMSG 6 提示：回收成功，当前声望为<$CREDITPOINT>点！经验值:<$EXP>！
+GOTO @使三级回收
+#ELSEACT
+SENDMSG 5 提示：你没有天师长袍！
+GOTO @使三级回收
+[@法神披风]
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+CHANGEEXP + 5000
+CREDITPOINT + 1
+give 金币 50000
+SENDMSG 6 提示：回收成功，当前声望为<$CREDITPOINT>点！经验值:<$EXP>！
+GOTO @使三级回收
+#ELSEACT
+SENDMSG 5 提示：你没有法神披风！
+GOTO @使三级回收
+[@霓裳羽衣]
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+CHANGEEXP + 5000
+CREDITPOINT + 1
+give 金币 50000
+SENDMSG 6 提示：回收成功，当前声望为<$CREDITPOINT>点！经验值:<$EXP>！
+GOTO @使三级回收
+#ELSEACT
+SENDMSG 5 提示：你没有霓裳羽衣！
+GOTO @使三级回收
+
+[@使四级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的魔龙首饰：    <返回上页/@装备回收>      <离开/@exit>┆\
+╠┄┄┄┄╦┄┄┄┄╦┄┄┄┄╦┄┄┄┄╦┄┄┄┄╣\
+┆<雷霆战戒/@回雷戒>┆<雷霆护腕/@回雷手>┆<雷霆项链/@回雷链>┆<雷霆战靴/@回雷靴>┆<雷霆腰带/@回雷腰>┆\
+╠┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╣\
+┆<光芒道戒/@回光戒>┆<光芒护腕/@回光手>┆<光芒项链/@回光链>┆<光芒道靴/@回光靴>┆<光芒腰带/@回光腰>┆\
+╠┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╣\
+┆<烈焰魔戒/@回烈戒>┆<烈焰护腕/@回烈手>┆<烈焰项链/@回烈链>┆<烈焰魔靴/@回烈靴>┆<烈焰腰带/@回烈腰>┆\
+╚┄┄┄┄╩┄┄┄┄╩┄┄┄┄╩┄┄┄┄╩┄┄┄┄╝\
+
+[@回雷戒]
+#if
+checkitem 雷霆战戒 1
+#ACT
+take 雷霆战戒 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有雷霆战戒！
+GOTO @使四级回收
+
+[@回雷手]
+#if
+checkitem 雷霆护腕 1
+#ACT
+take 雷霆护腕 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有雷霆护腕！
+GOTO @使四级回收
+
+[@回雷链]
+#if
+checkitem 雷霆项链 1
+#ACT
+take 雷霆项链 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有雷霆项链！
+GOTO @使四级回收
+
+[@回雷靴]
+#if
+checkitem 雷霆战靴 1
+#ACT
+take 雷霆战靴 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有雷霆战靴！
+GOTO @使四级回收
+
+[@回雷腰]
+#if
+checkitem 雷霆腰带 1
+#ACT
+take 雷霆腰带 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有雷霆腰带！
+GOTO @使四级回收
+
+[@回光戒]
+#if
+checkitem 光芒道戒 1
+#ACT
+take 光芒道戒 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有光芒道戒！
+GOTO @使四级回收
+
+[@回光手]
+#if
+checkitem 光芒护腕 1
+#ACT
+take 光芒护腕 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有光芒护腕！
+GOTO @使四级回收
+
+[@回光链]
+#if
+checkitem 光芒项链 1
+#ACT
+take 光芒项链 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有光芒项链！
+GOTO @使四级回收
+
+[@回光靴]
+#if
+checkitem 光芒道靴 1
+#ACT
+take 光芒道靴 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有光芒道靴！
+GOTO @使四级回收
+
+[@回光腰]
+#if
+checkitem 光芒腰带 1
+#ACT
+take 光芒腰带 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有光芒腰带！
+GOTO @使四级回收
+
+[@回烈戒]
+#if
+checkitem 烈焰魔戒 1
+#ACT
+take 烈焰魔戒 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有烈焰魔戒！
+GOTO @使四级回收
+
+[@回烈手]
+#if
+checkitem 烈焰护腕 1
+#ACT
+take 烈焰护腕 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有烈焰护腕！
+GOTO @使四级回收
+
+[@回烈链]
+#if
+checkitem 烈焰项链 1
+#ACT
+take 烈焰项链 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有烈焰项链！
+GOTO @使四级回收
+
+[@回烈靴]
+#if
+checkitem 烈焰魔靴 1
+#ACT
+take 烈焰魔靴 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有烈焰魔靴！
+GOTO @使四级回收
+
+[@回烈腰]
+#if
+checkitem 烈焰腰带 1
+#ACT
+take 烈焰腰带 1
+CHANGEEXP + 10000
+gamepoint + 20
+CREDITPOINT + 2
+SENDMSG 6 提示：您当前的经验值:<$EXP>.声望:<$CREDITPOINT>.活跃<$GAMEPOINT>!
+GOTO @使四级回收
+#ELSEACT
+SENDMSG 5 提示：你没有烈焰腰带！
+GOTO @使四级回收
+
+[@使五级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆<两个同样的装备换一个元宝>：    <返回上页/@装备回收>      <离开/@exit>┆\
+╠┄┄┄┄╦┄┄┄┄╦┄┄┄┄╦┄┄┄┄╦┄┄┄┄╣\
+┆<战神戒指/@回战神>┆<战神手镯/@回战手>┆<战神项链/@回战链>┆<战神圣靴/@回战靴>┆<战神腰带/@回战腰>┆\
+╠┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╣\
+┆<真魂戒指/@回真戒>┆<真魂手镯/@回真手>┆<真魂项链/@回真链>┆<真魂道靴/@回真靴>┆<真魂腰带/@回真腰>┆\
+╠┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╬┄┄┄┄╣\
+┆<圣魔戒指/@回魔戒>┆<圣魔手镯/@回魔手>┆<圣魔项链/@回魔链>┆<圣魔魔靴/@回魔靴>┆<圣魔腰带/@回魔腰>┆\
+╚┄┄┄┄╩┄┄┄┄╩┄┄┄┄╩┄┄┄┄╩┄┄┄┄╝\
+
+[@回战神]
+#if
+checkitem 战神戒指 2
+#ACT
+take 战神戒指 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个战神戒指！
+GOTO @使五级回收
+
+[@回战手]
+#if
+checkitem 战神手镯 2
+#ACT
+take 战神手镯 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个战神手镯！
+GOTO @使五级回收
+
+[@回战链]
+#if
+checkitem 战神项链 2
+#ACT
+take 战神项链 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个战神项链！
+GOTO @使五级回收
+
+[@回战靴]
+#if
+checkitem 战神圣靴 2
+#ACT
+take 战神圣靴 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个战神圣靴！
+GOTO @使五级回收
+
+[@回战腰]
+#if
+checkitem 战神腰带 2
+#ACT
+take 战神腰带 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个战神腰带！
+GOTO @使五级回收
+
+[@回真戒]
+#if
+checkitem 真魂戒指 2
+#ACT
+take 真魂戒指 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个真魂戒指！
+GOTO @使五级回收
+
+[@回真手]
+#if
+checkitem 真魂手镯 2
+#ACT
+take 真魂手镯 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个真魂手镯！
+GOTO @使五级回收
+
+[@回真链]
+#if
+checkitem 真魂项链 2
+#ACT
+take 真魂项链 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个真魂项链！
+GOTO @使五级回收
+
+[@回真靴]
+#if
+checkitem 真魂道靴 2
+#ACT
+take 真魂道靴 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个真魂道靴！
+GOTO @使五级回收
+
+[@回真腰]
+#if
+checkitem 真魂腰带 2
+#ACT
+take 真魂腰带 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个真魂腰带！
+GOTO @使五级回收
+
+[@回魔戒]
+#if
+checkitem 圣魔戒指 2
+#ACT
+take 圣魔戒指 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个圣魔戒指！
+GOTO @使五级回收
+
+[@回魔手]
+#if
+checkitem 圣魔手镯 2
+#ACT
+take 圣魔手镯 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个圣魔手镯！
+GOTO @使五级回收
+
+[@回魔链]
+#if
+checkitem 圣魔项链 2
+#ACT
+take 圣魔项链 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个圣魔项链！
+GOTO @使五级回收
+
+[@回魔靴]
+#if
+checkitem 圣魔法靴 2
+#ACT
+take 圣魔法靴 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个圣魔法靴！
+GOTO @使五级回收
+
+[@回魔腰]
+#if
+checkitem 圣魔腰带 2
+#ACT
+take 圣魔腰带 2
+GAMEGOLD + 1
+CHANGEEXP + 20000
+SENDMSG 6 提示：您当前的元宝为<$GAMEGOLD>个!
+GOTO @使五级回收
+#ELSEACT
+SENDMSG 5 提示：你没有两个圣魔腰带！
+GOTO @使五级回收
+}

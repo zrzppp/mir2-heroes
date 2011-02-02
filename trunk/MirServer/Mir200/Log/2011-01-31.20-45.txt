@@ -1,0 +1,38 @@
+2011-01-31 20:45:39 Total Guilds:0
+2011-01-31 20:45:39 1 Castles loaded...
+2011-01-31 20:45:39 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-01-31 20:45:39 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-01-31 20:45:39 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-01-31 20:45:39 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-01-31 20:45:39 LoginSrv(192.168.0.2:5600)connected...
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\1-GT7.txt
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\Bichon/Statue/Aurora-0.txt
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\Bichon/Statue/hell-0.txt
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\Bichon/Statue/Testu6-0.txt
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\Bichon/Statue/lilcooldoode-0.txt
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\Bichon/Statue/catalyst-0.txt
+2011-01-31 20:45:39 Script file not found: .\Envir\Market_Def\Bichon/Statue/kinky-0.txt
+2011-01-31 20:45:40 Script file not found: .\Envir\Market_Def\GuildTerritory/Janice-GT40.txt
+2011-01-31 20:45:40 Script file not found: .\Envir\Market_Def\GuildTerritory/Janice-GT23.txt
+2011-01-31 20:45:41 Plugin Module started...
+2011-01-31 20:45:42 Database Server (192.168.0.2:6000)connected...
+2011-01-31 20:45:43 Rungate [0](192.168.0.2:2587)opened...
+2011-01-31 20:49:35 [Item] Azura townteleport(1073814240)
+2011-01-31 20:55:25 [等级调整] Azura (10 -> 5000)
+2011-01-31 20:55:37 Players Online: 2(2/0)
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroHealing 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroSwordman 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroPoisoning 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroSoulFB 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroSoulShield 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroBlessedArm 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroHiding 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroMassHiding 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroCharGroup 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroMassHeal 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroSummonDeva 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HeroPurge 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:HTwinkleGuard 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:(H)Resurrection 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:03:32 [脚本错误]  脚本命令:ADDSKILL NPC名称:Hero 地图:3(340:321) 参数1:(H)AegisShield 参数2:3 参数3: 参数4: 参数5: 参数6:
+2011-01-31 21:05:37 Players Online: 2(2/0)

@@ -1,0 +1,53 @@
+; ===================================
+; Npc Def NPC File : Prajna_Signpos-5
+; Shop Teleport npc in PrajnaIsland
+; -----------------------------------
+; Name: SignPost
+; Job: 
+; Map No: 5
+; Pos X 504
+; Pos Y 485
+; File name: *removed*
+; Comment: Shop Teleport npc in PrajnaIsland
+
+;================================================= =
+;
+
+[@main]
+#SAY
+Hello!\
+My name is Signpost.\
+My duty is to guide travelers through this area.\
+How may I help you?\ \
+<Use./@main-1> teleport to the village stores
+
+[@main-1]
+#SAY
+I will guide you to the desired location.\
+Where shall I teleport you?\ \
+<Weapon shop/@weap>   <Armour shop/@cloth>\
+<Reagent store/@pot>   <Accessory shop/@jewel>\
+<Village Chief House/@chief>  
+
+[@jewel]
+#ACT
+map B352
+
+
+[@cloth]
+#ACT
+map B353
+
+[@weap]
+#ACT
+map B351
+
+[@pot]
+#ACT
+mapmove 5 160 316
+
+
+[@chief]
+#ACT
+map B354
+

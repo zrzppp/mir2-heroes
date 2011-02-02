@@ -1,0 +1,83 @@
+2011-02-01 15:41:09 Total Guilds:0
+2011-02-01 15:41:09 1 Castles loaded...
+2011-02-01 15:41:09 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-02-01 15:41:09 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-02-01 15:41:09 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-02-01 15:41:09 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-02-01 15:41:09 LoginSrv(192.168.0.2:5600)connected...
+2011-02-01 15:41:09 Merchant Initalize fail...OddOldMan 5(343:597)
+2011-02-01 15:41:09 Script file not found: .\Envir\Market_Def\9Enc5-11.txt
+2011-02-01 15:41:09 Script file not found: .\Envir\Market_Def\9Enc5-0.txt
+2011-02-01 15:41:09 Script file not found: .\Envir\Market_Def\Teleport-r001.txt
+2011-02-01 15:41:10 Plugin Module started...
+2011-02-01 15:41:12 Database Server (192.168.0.2:6000)connected...
+2011-02-01 15:41:15 Rungate [0](192.168.0.2:2067)opened...
+2011-02-01 15:42:02 [Item] Azura TitanArmour(M)(1073814353)
+2011-02-01 15:42:13 [Item] Azura SteelArmour(M)(1073814354)
+2011-02-01 15:42:50 [Item] Azura HeavenArmour(M)(1073814355)
+2011-02-01 15:44:21 [Item] Azura MirArmour(M)(1073814356)
+2011-02-01 15:45:30 [Item] Azura Omakingrobe(M)(1073814357)
+2011-02-01 15:45:47 [Item] Azura DragonRobe(M)(1073814358)
+2011-02-01 15:46:07 Players Online: 2(2/0)
+2011-02-01 15:47:23 [Item] Azura SmashRing(1073814359)
+2011-02-01 15:47:35 [Item] Azura MirSword(1073814360)
+2011-02-01 15:48:34 [Item] Azura TitanARmour(F)(1073814361)
+2011-02-01 15:51:07 Players Online: 3(3/0)
+2011-02-01 15:55:06 Reloaded Item Database...
+2011-02-01 15:56:07 Players Online: 3(3/0)
+2011-02-01 15:57:06 Reloaded Item Database...
+2011-02-01 15:57:42 Reloaded Item Database...
+2011-02-01 15:59:15 Reloaded Item Database...
+2011-02-01 15:59:48 [Item] Azura HeavenArmour(M)3(1073814362)
+2011-02-01 16:00:34 Reloaded Item Database...
+2011-02-01 16:01:07 Players Online: 3(3/0)
+2011-02-01 16:02:24 [Item] Azura (HP)DrugBundleXL(1073814363)
+2011-02-01 16:02:38 [Item] Azura (HP)DrugBundleXL(1073814364)
+2011-02-01 16:04:16 [Item] Azura OmaKingRobe(M)3(1073814365)
+2011-02-01 16:04:56 [Item] Azura Curse(1073814366)
+2011-02-01 16:05:33 [Item] Azura Amulet(1073814367)
+2011-02-01 16:06:06 [Item] Azura Hallucination(1073814368)
+2011-02-01 16:06:07 Players Online: 3(3/0)
+2011-02-01 16:06:25 [Item] Azura UltimateEnhancer(1073814369)
+2011-02-01 16:07:03 [Item] Azura EnergyRepulsor(1073814370)
+2011-02-01 16:08:46 [Item] Azura MeteorStrike(1073814371)
+2011-02-01 16:11:07 Players Online: 3(3/0)
+2011-02-01 16:15:20 Reloaded Magic Database...
+2011-02-01 16:16:07 Players Online: 2(2/0)
+2011-02-01 16:16:33 [Item] Azura curse(1073814372)
+2011-02-01 16:17:38 Reloaded Item Database...
+2011-02-01 16:19:15 Reloaded Magic Database...
+2011-02-01 16:19:26 Reloaded Magic Database...
+2011-02-01 16:20:06 [Item] Azura Curse(1073814373)
+2011-02-01 16:21:07 Players Online: 3(3/0)
+2011-02-01 16:23:48 Reloaded Magic Database...
+2011-02-01 16:25:10 [Item] Azura Blizzard(1073814374)
+2011-02-01 16:26:07 Players Online: 3(3/0)
+2011-02-01 16:27:36 Reloaded Magic Database...
+2011-02-01 16:29:35 Reloaded Magic Database...
+2011-02-01 16:31:07 Players Online: 3(3/0)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814375)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814376)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814377)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814378)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814379)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814380)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814381)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814382)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814383)
+2011-02-01 16:32:57 [Item] Azura SunPotion(M)(1073814384)
+2011-02-01 16:36:07 Players Online: 3(3/0)
+2011-02-01 16:39:44 [Level Change] Azura(DarkDestroyer 14 -> 20)
+2011-02-01 16:40:42 [Item] Azura ProtectionRing(1073814385)
+2011-02-01 16:41:08 Players Online: 3(3/0)
+2011-02-01 16:46:08 Players Online: 3(3/0)
+2011-02-01 16:51:08 Players Online: 3(3/0)
+2011-02-01 16:53:35 [Item] Azura PowerAxe(1073814386)
+2011-02-01 16:53:52 [Level Change] Azura(DarkDestroyer 20 -> 22)
+2011-02-01 16:55:46 [Item] Azura ThunderBolt(1073814387)
+2011-02-01 16:56:08 Players Online: 3(3/0)
+2011-02-01 16:58:57 [Item] Azura ParalysisRing(1073814388)
+2011-02-01 17:01:08 Players Online: 3(3/0)
+2011-02-01 17:04:28 LoginSrv(192.168.0.2:5600)disconnected...
+2011-02-01 17:04:32 Rungate [0](192.168.0.2:2067)closed...
+2011-02-01 17:04:37 Database Server disconnected...

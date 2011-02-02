@@ -1,0 +1,521 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@活动介绍]
+{
+<活动申明>：活动为服务器自动定期举行，绝对保证公平与公证！\
+　　　　　活动过程中如遇到服务器重启等不可抗现象导致活动\
+　　　　　无法正常进行，则活动自动结束，不做赔偿！\ \
+╔————╦————╦————╗    ╔————╦————╗\
+┆<武圣猛将/@武宗大会>┆<灭世魔神/@法宗大会>┆<无极天尊/@道宗大会>┆    ┆<武林至尊/@群英大会>┆<返回首页/@main>┆\
+╚————╩————╩————╝    ╚————╩————╝\
+[@武宗大会]
+活动名称：武圣猛将比武大会\
+详细规则：每周星期三下午13：10系统定期举行，服务器所有35级\
+　　　　　以上战士可报名参加。比赛开始后，玩家会被传送到指\ 
+　　　　　定比赛地图，<最后存活者为获胜者>。\ \
+获胜奖励：声望10点+元宝10个，武圣猛将封号。\ \
+<进入场地/@武宗入场地>　　　　　　　<谁是武圣猛将/@查看猛将>     　　   <返回上页/@活动介绍>
+[@法宗大会]
+活动名称：灭世魔神比武大会\
+详细规则：每周星期四下午13：10系统定期举行，服务器所有35级\
+　　　　　以上法师可报名参加。比赛开始后，玩家会被传送到指\ 
+　　　　　定比赛地图，<最后存活者为获胜者>。\ \
+获胜奖励：声望10点+元宝10个，灭世魔神封号。\ \
+<进入场地/@法宗入场地>　　　　　　　<谁是灭世魔神/@查看魔神>       　　 <返回上页/@活动介绍>
+[@道宗大会]
+活动名称：无极天尊比武大会\
+详细规则：每周星期五下午13：10系统定期举行，服务器所有35级\
+　　　　　以上道士可报名参加。比赛开始后，玩家会被传送到指\ 
+　　　　　定比赛地图，<最后存活者为获胜者>。\ \
+获胜奖励：声望10点+元宝10个，无极天尊封号。\ \
+<进入场地/@道宗入场地>　　　　　　　<谁是无极天尊/@查看天尊>      　　  <返回上页/@活动介绍>
+[@群英大会]
+活动名称：武林至尊比武大会\
+详细规则：每周星期六下午13：10系统定期举行，服务器所有65级\
+　　　　　以上任何职业可报名参加。比赛开始后，玩家会被传送\
+　　　　　到指定比赛地图群体PK，<最后存活者为获胜者>。\ \
+获胜奖励：声望20点+元宝10个，武林至尊封号。\ \
+<进入场地/@群英入场地>　　　　　　　<谁是武林至尊/@查看至尊>  　  　    <返回上页/@活动介绍>
+[@群英入场地]
+#IF
+CHECKLEVELEX < 65
+#ACT
+messagebox 武林至尊大会只有65级以上的玩家才能参加！
+break
+#IF
+dayofweek sat
+hour 13
+min 9
+#ACT
+SET [500] 1
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 10
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 11
+#ACT
+SET [500] 1
+SENDMSG 4 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 12
+#ACT
+SET [500] 1
+SENDMSG 4 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 13
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 14
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 15
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 16
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 17
+#ACT
+SENDMSG 4 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 18
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 19
+#ACT
+SET [500] 1
+SENDMSG 0 武林至尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove G004
+break
+#IF
+dayofweek sat
+hour 13
+min 20
+#ACT
+SET [500] 1
+mapmove G004
+#elseact
+messagebox 请星期六下午13：10准时参加！
+[@道宗入场地]
+#IF
+checkjob warrior
+#ACT
+messagebox 无极天尊比武大会只有道士才能参加！
+break
+#IF
+checkjob wizard
+#ACT
+messagebox 无极天尊比武大会只有道士才能参加！
+break
+#IF
+CHECKLEVELEX < 35
+#ACT
+messagebox 无极天尊比武大会只有35级道士才能参加！
+break
+#IF
+dayofweek fri
+hour 13
+min 9
+#ACT
+SET [500] 1
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 10
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 11
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 12
+#ACT
+SET [500] 1
+SENDMSG 4 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 13
+#ACT
+SET [500] 1
+SENDMSG 4 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 14
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 15
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 16
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 17
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 18
+#ACT
+SET [500] 1
+SENDMSG 4 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 19
+#ACT
+SET [500] 1
+SENDMSG 0 无极天尊比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2C
+break
+#IF
+dayofweek fri
+hour 13
+min 20
+#ACT
+SET [500] 1
+mapmove GA2C
+#elseact
+messagebox 请星期五下午13：10准时参加！
+[@法宗入场地]
+#IF
+checkjob warrior
+#ACT
+messagebox 灭世魔神比武大会只有法师才能参加！
+break
+#IF
+checkjob taoist
+#ACT
+messagebox 灭世魔神比武大会只有法师才能参加！
+break
+#IF
+CHECKLEVELEX < 35
+#ACT
+messagebox 灭世魔神比武大会只有35级法师才能参加！
+break
+#IF
+dayofweek thu
+hour 13
+min 9
+#ACT
+SET [500] 1
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 10
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 11
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 12
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 13
+#ACT
+SET [500] 1
+SENDMSG 4 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 14
+#ACT
+SET [500] 1
+SENDMSG 4 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 15
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 16
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 17
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 18
+#ACT
+SET [500] 1
+SENDMSG 4 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 19
+#ACT
+SET [500] 1
+SENDMSG 0 灭世魔神比武正在进行中.想参加比赛从游戏娱乐.活动专区进入!
+mapmove GA2B
+break
+#IF
+dayofweek thu
+hour 13
+min 20
+#ACT
+SET [500] 1
+mapmove GA2B
+#elseact
+messagebox 请星期四下午13：10准时参加！
+[@武宗入场地]
+#IF
+checkjob wizard
+#ACT
+messagebox 武宗大会只有战士才能参加！
+break
+#IF
+checkjob taoist
+#ACT
+messagebox 武宗大会只有战士才能参加！
+break
+#IF
+CHECKLEVELEX < 35
+#ACT
+messagebox 武宗大会只有35级战士才能参加！
+break
+#IF
+dayofweek wed
+hour 13
+min 9
+#ACT
+SET [500] 1
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 10
+#ACT
+SET [500] 1
+SENDMSG 0 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 11
+#ACT
+SET [500] 1
+SENDMSG 4 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 12
+#ACT
+SET [500] 1
+SENDMSG 0 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 13
+#ACT
+SET [500] 1
+SENDMSG 4 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 14
+#ACT
+SET [500] 1
+SENDMSG 4 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 15
+#ACT
+SET [500] 1
+SENDMSG 0 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 16
+#ACT
+SET [500] 1
+SENDMSG 0 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 17
+#ACT
+SET [500] 1
+SENDMSG 0 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 18
+#ACT
+SET [500] 1
+SENDMSG 4 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 19
+#ACT
+SET [500] 1
+SENDMSG 0 武宗比武大会正在进行中，请参加比赛的玩家从活动专区进入！
+mapmove GA2A
+break
+#IF
+dayofweek wed
+hour 13
+min 20
+#ACT
+SET [500] 1
+mapmove GA2A
+#elseact
+messagebox 请星期三下午13：10准时参加！
+}

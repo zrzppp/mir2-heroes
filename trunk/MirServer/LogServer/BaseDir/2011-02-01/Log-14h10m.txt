@@ -1,0 +1,2 @@
+1	0	0	12	D502	14	0	DarkDestroyer	0	0	1	0	2011-02-01 14:53:19
+1	0	0	19	D502	113	211	DarkDestroyer	FZ-0_F3-0	0	1	#WedgeMoth	2011-02-01 14:55:55

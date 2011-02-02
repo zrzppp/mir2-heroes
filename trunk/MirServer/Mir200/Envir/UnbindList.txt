@@ -1,0 +1,23 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052 
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;-----解开打包文件--------------
+100    (HP)DrugLarge
+101    (MP)DrugLarge
+102    (HP)DrugSmall
+103    (MP)DrugSmall
+104    (HP)DrugMedium
+105    (MP)DrugMedium
+106    DungeonEscape
+107    RandomTeleport
+108    TownTeleport
+109    TeleportHome
+110    GambleChip
+111    Amulet
+112    BrownLog
+113    RedLog
+114    BlueLog
+115    战歌神石 red poison
+116    灵魂宝石 green poison
+117    (HP)DrugXL
+118    (MP)DrugXL

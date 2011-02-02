@@ -1,0 +1,115 @@
+[@飛尔世界周行制作80级奖励]
+{
+#IF
+equal D1 0
+#ACT
+MOV D1 0
+GIVE 经验神丹 1
+SENDMSG 0 [%s]答对升级问题获得了经验神丹!
+break
+#IF
+equal D1 1
+#ACT
+MOV D1 0
+GIVEEX 精灵腰带 1
+SENDMSG 0 [%s]答对升级问题获得了精灵腰带!
+break
+#IF
+equal D1 2
+#ACT
+MOV D1 0
+GIVEEX 精灵头盔 1
+SENDMSG 0 [%s]答对升级问题获得了精灵头盔!
+break
+#IF
+equal D1 3
+#ACT
+MOV D1 0
+GIVE 含笑半步颠 1
+SENDMSG 0 [%s]答对升级问题获得了含笑半步颠!
+break
+#IF
+equal D1 4
+#ACT
+MOV D1 0
+GIVE 骰子 1
+SENDMSG 0 [%s]答对升级问题获得了骰子!
+break
+#IF
+equal D1 5
+#ACT
+MOV D1 0
+GIVE 庆典蛋糕 1
+SENDMSG 0 [%s]答对升级问题获得了庆典蛋糕!
+break
+#IF
+equal D1 6
+#ACT
+MOV D1 0
+GIVE 5元宝 1
+SENDMSG 0 [%s]答对升级问题获得了5元宝!
+break
+#IF
+equal D1 7
+#ACT
+MOV D1 0
+GIVE ②小时双倍卡 1
+SENDMSG 0 [%s]答对升级问题获得了②小时双倍卡!
+break
+#IF
+equal D1 8
+#ACT
+MOV D1 0
+GIVE 元宝练级卷 1
+SENDMSG 0 [%s]答对升级问题获得了元宝练级卷!
+break
+#IF
+equal D1 9
+#ACT
+MOV D1 0
+GIVE 紫铜钥匙 1
+SENDMSG 0 [%s]答对升级问题获得了紫铜钥匙!
+break
+#IF
+equal D1 10
+#ACT
+MOV D1 0
+GIVE 气魔石(小) 1
+SENDMSG 0 [%s]答对升级问题获得了气魔石(小)!
+break
+#IF
+equal D1 11
+#ACT
+MOV D1 0
+GIVE 热血石 1
+SENDMSG 0 [%s]答对升级问题获得了热血石!
+break
+#IF
+equal D1 12
+#ACT
+MOV D1 0
+GIVE 祝福石 1
+SENDMSG 0 [%s]答对升级问题获得了祝福石!
+break
+#IF
+equal D1 13
+#ACT
+MOV D1 0
+GIVE 蚩尤之角 1
+SENDMSG 0 [%s]答对升级问题获得了蚩尤之角!
+break
+#IF
+equal D1 14
+#ACT
+MOV D1 0
+GIVE 爱老虎油 1
+SENDMSG 0 [%s]答对升级问题获得了爱老虎油!
+break
+#IF
+equal D1 15
+#ACT
+MOV D1 0
+GIVE 还魂符 1
+SENDMSG 0 [%s]答对升级问题获得了还魂符!
+break
+}

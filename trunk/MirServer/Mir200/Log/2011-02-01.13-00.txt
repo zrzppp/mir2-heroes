@@ -1,0 +1,20 @@
+2011-02-01 13:00:48 Total Guilds:0
+2011-02-01 13:00:48 1 Castles loaded...
+2011-02-01 13:00:48 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-02-01 13:00:48 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-02-01 13:00:48 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-02-01 13:00:48 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-02-01 13:00:49 LoginSrv(192.168.0.2:5600)connected...
+2011-02-01 13:00:49 Merchant Initalize fail...OddOldMan 5(343:597)
+2011-02-01 13:00:49 Script file not found: .\Envir\Market_Def\9Enc5-11.txt
+2011-02-01 13:00:49 Script file not found: .\Envir\Market_Def\9Enc5-0.txt
+2011-02-01 13:00:49 TimeStoneMerchant Initalize fail... (m.PEnvir=nil)
+2011-02-01 13:00:49 Script file not found: .\Envir\Market_Def\Teleport-r001.txt
+2011-02-01 13:00:50 Plugin Module started...
+2011-02-01 13:00:51 Rungate [0](192.168.0.2:1595)opened...
+2011-02-01 13:00:52 Database Server (192.168.0.2:6000)connected...
+2011-02-01 13:01:21 [Item] Azura Townteleport(1073814265)
+2011-02-01 13:05:47 Players Online: 3(3/0)
+2011-02-01 13:10:10 [Item] Azura RedPoison(1073814266)
+2011-02-01 13:10:47 Players Online: 3(3/0)
+2011-02-01 13:15:47 Players Online: 2(2/0)

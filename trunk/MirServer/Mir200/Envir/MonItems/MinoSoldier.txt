@@ -1,0 +1,56 @@
+1/6  gold  400
+1/10000 gold  10000
+
+;1/40000 Scroll3
+
+1/10000 SpiritDrug
+
+1/10  (HP)DrugSmall
+1/20  (MP)DrugSmall
+1/50   SunPotion
+
+1/1400    MonkBracelet
+1/1400    EbonyBracelet
+1/1400    KrissSword
+1/1400    BlackRing
+1/1400    SerpentEyeRing
+1/1400    PearlRing
+1/1400    PrinceSword
+1/1400    MartialSword
+1/1400    HookedSpear
+1/1400    IronRing
+1/1400    TigerNecklace
+1/1400    PlatinumNeck
+1/1400    SkeletonRing
+1/1400    StrainBracelet
+
+1/500   HookedSword
+1/500   Scimitar
+1/500   Trident
+1/500   SteelSword
+1/500   BlueRing
+1/500   NagaNecklace
+1/500   AmberNeck
+1/500   PhoenixBead
+1/500   HardGlove
+1/500   MagicBracelet
+1/500   LanternNeck
+1/500   IronSword
+1/500   ShortSword
+1/500   BronzeHelmet
+1/500   LightArmour(M)
+1/500   LightArmour(F)
+1/500   BronzeAxe
+1/500   EbonyNecklace
+1/500   YellowNecklace
+1/500   BlackNecklace
+1/500   magichelmet
+1/500   BronzeSword
+1/500   ThinBracelet
+1/500   GlassRing
+1/500   HexagonalRing
+1/500   LeatherGlove
+1/500   SilverBracelet
+1/500   °­Ã¶ÆÈÁö
+1/500   HornRing
+1/500   LargeBracelet

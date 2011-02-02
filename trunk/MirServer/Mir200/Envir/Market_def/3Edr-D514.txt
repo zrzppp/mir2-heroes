@@ -1,0 +1,26 @@
+;Info [ Npc Name{Alexander} X=19 Y=25 MapName={Library} ]
+(@repair)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
++10
++11
+
+[@main]
+Welcome to this dangerous place my friend,\
+here you can repair your armour.\ \
+<Repair/@repair> armour\
+<Cancel/@exit>
+
+
+[@repair]
+Put in your armour for repair\
+<Back/@main>
+
+[~@repair]
+Your armour seems repaired fine.\ \
+<Back/@main>
+
+[goods]
+;Item		Amount		Time

@@ -1,0 +1,45 @@
+;Info [ Npc Name{Tony} X=663 Y=304 MapName={MongchonProvince} ]
+(@buy @sell)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++30
++3
++25
+
+;Sabuk Wall General Store
+[@main]
+I will Sell and Buy Items to you.\ \
+Members of <$OWNERGUILD> will get a discount on my\
+prices because <$LORD> said so.\
+
+<Buy/@buy> Items\
+<Sell/@sell> Items\
+<Close/@exit>
+
+
+[@buy]
+Which items do you need?\ \ \
+ <Back/@main>
+
+[@sell]
+We buy Candles, Amulets, Scrolls RepairOils, etc.\
+ <Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle		200	1
+Torch		200	1
+EternalFlame	200	1
+DungeonEscape	200	1
+EscapeBundle	200	1
+RandomTeleport	200	1
+RandomBundle	200	1
+RepairOil	200	1
+TeleportHome	200	1
+Telehomebundle  200	1
+Amulet		200	1
+AmuletBundle	200	1

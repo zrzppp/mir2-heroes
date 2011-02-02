@@ -1,0 +1,64 @@
+1/20 StigmataStone
+1/10 BloodBone
+1/15 HolyWater
+1/50 BenedictionOil
+1/35 EasterEgg
+
+1/10 (HP)DrugLarge
+1/10 (MP)DrugLarge
+1/20 (HP)DrugXL
+1/20 (MP)DrugXL
+1/10 SunPotion(M)
+1/10 SunPotion(M)
+1/20 SunPotion(M)
+1/20 SunPotion(M)
+
+1/100 HealthStone(XL)
+1/100 MagicStone(XL)
+1/100 PowerStone(XL)
+1/70 DCStone(L)
+1/70 MCStone(L)
+1/70 TaoStone(L)
+
+1/400 WarSpiritBlade
+1/400 MagicScythe
+1/400 StoneBambooFan
+
+1/500 BaekTaGlove
+1/500 HolyTaoWheel
+1/500 SpiritReformer
+
+1/500 OmaSpiritRing
+1/500 ThunderRing
+1/500 TaeGukRing
+
+1/600 HeroNecklace
+1/600 AdamantineNecklace
+1/600 RequiemNecklace
+
+1/600 GreatHelmet
+1/600 WiseCoronet
+1/600 TaoCoronet
+
+1/800 BraveryOrb
+1/800 MagicOrb
+1/800 SoulOrb
+1/800 DurabilityOrb
+
+1/800 HolyDCStone
+1/800 HolyMCStone
+1/800 HolyTaoStone
+
+1/700 Vampirism
+1/700 Hallucination
+1/700 Entrapment
+1/600 BladeAvalanche
+1/600 Mirroring
+1/600 Curse
+1/500 TwinDrakeBlade
+1/500 CrossHalfmoon
+1/500 FrostCrunch
+1/500 FlameDisruptor
+1/500 EnergyRepulsor
+1/500 Purification
+1/700 SummonHolyDeva

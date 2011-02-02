@@ -1,0 +1,4 @@
+1	0	0	19	D711	205	198	DarkDestroyer	FZ-0_F3-0	0	1	#BlackBoar	2011-02-01 14:33:25
+1	0	0	12	D711	10	0	DarkDestroyer	0	0	1	0	2011-02-01 14:33:28
+1	0	0	12	D711	11	0	DarkDestroyer	0	0	1	0	2011-02-01 14:35:49
+1	0	0	19	3	330	326	DarkDestroyer	FZ-0_F3-0	0	1	#ArcherGuard	2011-02-01 14:37:13

@@ -1,0 +1,20 @@
+;Info [ Npc Name{Dean} X=3 Y=19 MapName={Blacksmith} ]
+(@s_repair)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
+
+[@main]
+I can do special repairs on your weapon. Special repair\
+costs more than normal repair, but you won't lose durability.\
+By order of <$LORD> members of <$OWNERGUILD> will get a\
+discount on my prices\ \
+<Repair/@s_repair>\
+<No thanks/@exit>
+
+[goods]
+;Item		Amount		Time

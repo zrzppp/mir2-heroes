@@ -1,0 +1,47 @@
+; ===================================
+; Npc Def NPC File : Sailor-5
+; npc in PrajnaIsland
+; -----------------------------------
+; Name: Sailor
+; Job: 
+; Map No: 5
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: npc in PrajnaIsland
+
+;================================================= =
+;
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will never teleport such an evil person as you!\ \
+<Exit/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+#SAY
+ Anyone wants to go to the mainland,please board.\
+ not so much time left for the departure.\ \
+ <Pay 2000gold/@brdmove> and board\
+ <talk with the sailor/@talk>
+ 
+[@talk]
+ Our ship might look old but she hasn't had one single accident\
+ for 30 years.\ \
+ <back/@main-1>
+
+[@brdmove]
+#IF
+checkgold 2000
+#ACT
+take gold 2000
+mapmove 0 252 674
+break
+#ELSESAY
+You Dont Have enough gold to use my Service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>

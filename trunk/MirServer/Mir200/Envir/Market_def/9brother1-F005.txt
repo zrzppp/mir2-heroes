@@ -1,0 +1,85 @@
+;Info [ Npc Name{Brother} X=12 Y=14 MapName={Warmap4} ]
+;NPC done by Warped
+;Brother 1
+
+[@main]
+#IF
+random 3
+#ACT
+goto @next1
+break
+
+#IF
+random 3
+#SAY
+Hi I'm one of the 4 famous brothers.\
+We are know for the special oils we can make.\
+With some special ingredients we can only find here,\
+in this dangerous place.\
+Only problem is i lost my book.
+My book with the receipt for the oils.\
+If you can't help me,
+I show you the way ouy of here.\
+<Next/@go>\
+break
+
+#IF
+random 3
+#SAY
+Hi I'm one of the 4 famous brothers.\
+We are know for the special oils we can make.\
+With some special ingredients we can only find here,\
+in this dangerous place.\
+Only problem is i lost my book.
+My book with the receipt for the oils.\
+If you can't help me,
+I show you the way ouy of here.\
+<Next/@go>\
+
+[@next]
+Hi I'm one of the 4 famous brothers.\
+We are know for the special oils we can make.\
+With some special ingredients we can only find here,\
+in this dangerous place.\
+Only problem is i lost my book.
+My book with the receipt for the oils.\
+If you can't help me,
+I show you the way ouy of here.\
+<Next/@go>\
+
+[@go]
+#ACT
+mapmove 3
+
+[@next1]
+#IF 
+checkitem BookOfOils 1
+checkitem OldGinseng 1
+#ACT
+goto @next2
+#ELSEACT
+goto @next
+
+[@next2]
+I see you found my grandfathers BookOfOils.\
+I'm not that good in making those oils though.\
+but i can make 1 special oil.\
+only thing i need to make it is a medium\
+sunpot and 900000 gold you want me to make it?\
+<Yes/@next3>\
+<No thanks/@exit>
+
+[@next3]
+#IF
+checkitem BookOfOils 1
+checkitem OldGinseng 1
+checkgold 900000
+#ACT
+take BookOfOils 1
+take OldGinseng 1
+take gold 900000
+give BenedictionOil 1
+goto @exit
+#ELSESAY
+Sorry you are missing some indgredients.\\
+<Exit/@exit>

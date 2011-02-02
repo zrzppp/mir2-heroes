@@ -1,0 +1,6 @@
+1/5 gold 50
+1/20 (hp)drugsmall
+1/20 (MP)drugsmall
+1/400 dcstone(s)
+1/400 mcstone(s)
+1/400 taostone(s)

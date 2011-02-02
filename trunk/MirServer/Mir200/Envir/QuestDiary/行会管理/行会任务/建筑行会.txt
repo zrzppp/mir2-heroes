@@ -1,0 +1,240 @@
+[@建筑]
+{
+建筑度需要收集大量的物品才能提升，收集到相关物品后，\
+不但建筑度能够得到提升，并且还能增加自己的荣誉值。\
+如果运气好，还能得到一些额外的奖励哦！\ \
+<物品收集/@xiangguanwupin>\ \
+<返回上页/@main>
+[@xiangguanwupin]
+找到相应物品，回来贡献给行会，就能够提升建筑度和自己\
+的声望值和经验值！<有可能还会获得元宝>\ \
+<恶魔铃铛/@生命链>　   <紫碧螺戒/@红戒指>　   <龙之手镯/@思贝儿>　   <骨玉权杖/@骨玉权仗>\
+<灵魂项链/@天珠链>　   <泰坦戒指/@铂金戒>　   <三眼手镯/@心灵镯>　   <龙 纹 剑/@龙纹剑>\
+<绿色项链/@幽灵链>　   <力量戒指/@龙之戒>　   <骑士手镯/@幽灵套>　   <裁决之杖/@裁决之杖>\
+<黑铁头盔/@黑铁头>     <返回上页/@MAIN>\
+[@黑铁头]
+#IF
+checkitem 黑铁头盔 1
+#ACT
+set [120] 1
+take 黑铁头盔 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有黑铁头盔！
+goto @xiangguanwupin
+[@裁决之杖]
+#IF
+checkitem 裁决之杖 1
+#ACT
+set [120] 1
+take 裁决之杖 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有裁决之杖！
+goto @xiangguanwupin
+[@龙纹剑]
+#IF
+checkitem 龙纹剑 1
+#ACT
+set [120] 1
+take 龙纹剑 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有龙纹剑！
+goto @xiangguanwupin
+[@骨玉权仗]
+#IF
+checkitem 骨玉权杖 1
+#ACT
+set [120] 1
+take 骨玉权杖 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有骨玉权杖！
+goto @xiangguanwupin
+[@幽灵套]
+#IF
+checkitem 骑士手镯 1
+#ACT
+set [120] 1
+take 骑士手镯 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有骑士手镯！
+goto @xiangguanwupin
+[@龙之戒]
+#IF
+checkitem 力量戒指 1
+#ACT
+set [120] 1
+take 力量戒指 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有力量戒指！
+goto @xiangguanwupin
+[@幽灵链]
+#IF
+checkitem 绿色项链 1
+#ACT
+set [120] 1
+take 绿色项链 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有绿色项链！
+goto @xiangguanwupin
+[@心灵镯]
+#IF
+checkitem 三眼手镯 1
+#ACT
+set [120] 1
+take 三眼手镯 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有三眼手镯！
+goto @xiangguanwupin
+[@铂金戒]
+#IF
+checkitem 泰坦戒指 1
+#ACT
+set [120] 1
+take 泰坦戒指 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有泰坦戒指！
+goto @xiangguanwupin
+[@天珠链]
+#IF
+checkitem 灵魂项链 1
+#ACT
+set [120] 1
+take 灵魂项链 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有灵魂项链！
+goto @xiangguanwupin
+[@思贝儿]
+#IF
+checkitem 龙之手镯 1
+#ACT
+set [120] 1
+take 龙之手镯 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有龙之手镯！
+goto @xiangguanwupin
+[@生命链]
+#IF
+checkitem 恶魔铃铛 1
+#ACT
+set [120] 1
+take 恶魔铃铛 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有恶魔铃铛！
+goto @xiangguanwupin
+[@红戒指]
+#IF
+checkitem 紫碧螺 1
+#ACT
+set [120] 1
+take 紫碧螺 1
+GUILDBUILDPOINT + 1
+movr d0 10
+goto @意外奖励
+break
+#IF
+#ACT
+SENDMSG 6 你身上没有紫碧螺！
+goto @xiangguanwupin
+[@意外奖励]
+#IF
+Check [120] 0
+#act
+mapmove T225
+break
+#IF
+equal d0 2
+#ACT
+set [120] 0
+give 金币 20000
+SENDCOLORMSG 0 251 249 [%s]在行会建筑任务中获得奖励：金币增加2W
+goto @xiangguanwupin
+break
+#IF
+equal d0 5
+#ACT
+set [120] 0
+CREDITPOINT + 1
+SENDCOLORMSG 0 251 249 [%s]在行会建筑任务中获得奖励：声望指数+1
+goto @xiangguanwupin
+break
+#IF
+equal d0 8
+#ACT
+set [120] 0
+CHANGEEXP + 10000
+SENDCOLORMSG 0 251 249 [%s]在行会建筑任务中获得奖励：经验指数+1W
+goto @xiangguanwupin
+break
+#IF
+equal d0 10
+#ACT
+set [120] 0
+gamepoint + 50
+SENDCOLORMSG 0 251 249 [%s]在行会建筑任务中获得奖励：活跃指数+50
+goto @xiangguanwupin
+break
+#IF
+#ACT
+set [120] 0
+goto @xiangguanwupin
+break
+}

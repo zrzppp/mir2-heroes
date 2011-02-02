@@ -1,0 +1,56 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@升级至尊]
+{
+想赐予手镯哪种力量?<请将需要升级的手镯配带在右边>\
+<注意>:每件装备升级单属性不能超过3点............\ \
+<手镯攻击/@手镯攻击>\
+<手镯魔法/@手镯魔法>\
+<手镯道术/@手镯道术>\ \
+[@手镯攻击]
+#IF
+CheckItemAddValue 5 2 > 3
+#ACT
+SENDMSG 7 提示：该装备升级攻击属性已经已超过3点，不能再进行提升
+break
+CLOSE
+#if
+CHECKUSEITEM 5
+#ACT
+UPGRADEITEMEX 5 2 50 1 0
+CLOSE
+#ELSEACT
+SENDMSG 7 提示：你右边没有带手镯!
+CLOSE
+[@手镯魔法]
+#IF
+CheckItemAddValue 5 3 > 3
+#ACT
+SENDMSG 7 提示：该装备升级魔法属性已经已超过3点，不能再进行提升
+break
+CLOSE
+#if
+CHECKUSEITEM 5
+#ACT
+UPGRADEITEMEX 5 3 50 1 0
+CLOSE
+#ELSEACT
+SENDMSG 7 提示：你右边没有带手镯!
+CLOSE
+[@手镯道术]
+#IF
+CheckItemAddValue 5 4 > 3
+#ACT
+SENDMSG 7 提示：该装备升级道术属性已经已超过3点，不能再进行提升
+break
+CLOSE
+#if
+CHECKUSEITEM 5
+#ACT
+UPGRADEITEMEX 5 4 50 1 0
+CLOSE
+#ELSEACT
+SENDMSG 7 提示：你右边没有带手镯!
+CLOSE
+}

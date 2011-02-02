@@ -1,0 +1,53 @@
+2011-02-01 17:11:52 Total Guilds:0
+2011-02-01 17:11:52 1 Castles loaded...
+2011-02-01 17:11:52 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-02-01 17:11:52 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-02-01 17:11:52 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-02-01 17:11:52 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-02-01 17:11:52 LoginSrv(192.168.0.2:5600)connected...
+2011-02-01 17:11:52 Merchant Initalize fail...OddOldMan 5(343:597)
+2011-02-01 17:11:52 Script file not found: .\Envir\Market_Def\9Enc5-11.txt
+2011-02-01 17:11:52 Script file not found: .\Envir\Market_Def\9Enc5-0.txt
+2011-02-01 17:11:53 Script file not found: .\Envir\Market_Def\Teleport-r001.txt
+2011-02-01 17:11:53 Plugin Module started...
+2011-02-01 17:11:55 Database Server (192.168.0.2:6000)connected...
+2011-02-01 17:11:56 Rungate [0](192.168.0.2:2264)opened...
+2011-02-01 17:16:50 Players Online: 3(3/0)
+2011-02-01 17:21:50 Players Online: 3(3/0)
+2011-02-01 17:26:23 [Item] Azura MirArmour(M)3(1073814389)
+2011-02-01 17:26:31 [等级调整] Azura (1 -> 55)
+2011-02-01 17:26:50 Players Online: 3(3/0)
+2011-02-01 17:26:59 [Item] Azura MirSword(1073814390)
+2011-02-01 17:31:50 Players Online: 3(3/0)
+2011-02-01 17:34:47 Reloaded Monster Database...
+2011-02-01 17:36:07 Reloaded Monster Database...
+2011-02-01 17:36:50 Players Online: 3(3/0)
+2011-02-01 17:38:53 Reloaded Monster Database...
+2011-02-01 17:39:52 [等级调整] Azura (55 -> 65571)
+2011-02-01 17:40:08 Reloaded Monster Database...
+2011-02-01 17:41:50 Players Online: 3(3/0)
+2011-02-01 17:45:12 Reloaded Monster Database...
+2011-02-01 17:46:50 Players Online: 3(3/0)
+2011-02-01 17:51:50 Players Online: 3(3/0)
+2011-02-01 17:56:50 Players Online: 3(3/0)
+2011-02-01 18:01:50 Players Online: 3(3/0)
+2011-02-01 18:06:50 Players Online: 3(3/0)
+2011-02-01 18:11:50 Players Online: 3(3/0)
+2011-02-01 18:16:50 Players Online: 3(3/0)
+2011-02-01 18:21:50 Players Online: 3(3/0)
+2011-02-01 18:26:50 Players Online: 3(3/0)
+2011-02-01 18:28:20 [Item] Azura BrownChestnut(1073814391)
+2011-02-01 18:31:50 Players Online: 3(3/0)
+2011-02-01 18:36:01 [Item] Azura SwordOfWarGod(1073814392)
+2011-02-01 18:36:32 [Item] Azura GreatBlueFoxRing(1073814393)
+2011-02-01 18:36:32 [Item] Azura GreatBlueFoxRing(1073814394)
+2011-02-01 18:36:50 Players Online: 3(3/0)
+2011-02-01 18:38:40 [Item] Azura AgilityGem(1073814395)
+2011-02-01 18:39:45 [Item] Azura (HP)DrugBundleXL(1073814396)
+2011-02-01 18:41:51 Players Online: 4(4/0)
+2011-02-01 18:45:40 Reloaded Item Database...
+2011-02-01 18:46:51 Players Online: 4(4/0)
+2011-02-01 18:51:51 Players Online: 4(4/0)
+2011-02-01 18:53:20 [Item] Azura YellowPoison(L)(1073814397)
+2011-02-01 18:54:45 [Item] Azura TownTeleport(1073814398)
+2011-02-01 18:56:51 Players Online: 3(3/0)

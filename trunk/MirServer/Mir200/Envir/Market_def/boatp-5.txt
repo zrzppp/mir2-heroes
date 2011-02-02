@@ -1,0 +1,19 @@
+;Info [ Npc Name{Sailor} X=122 Y=353 MapName={PrajnaIsland} ]
+[@Main]
+Anyone who wants to go to the mainland, please board.\
+Not much time left until departure.\ \
+<Pay 2000 gold and board/@Board>\
+<Talk with the Sailor/@Talk>
+
+[@Talk]
+The ship might look old but she hasn't had one single accident\
+for 30 years.\ \
+<Back/@Main>
+
+[@Board]
+#IF
+checkgold 2000
+#ACT
+take gold 2000
+mapmove 0 252 673
+break

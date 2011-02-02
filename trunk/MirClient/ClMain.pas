@@ -13231,13 +13231,17 @@ var
   sHint: string;
 begin
   if g_Config.boDuraWarning and (g_MySelf <> nil) { and (not g_MySelf.m_boDeath)} then begin
-    if GetTickCount - g_dwHintItemDuraTick > 1000 * 2 then begin
+    if GetTickCount - g_dwHintItemDuraTick > 1000 * 150 then begin
       g_dwHintItemDuraTick := GetTickCount;
       for I := U_DRESS to U_CHARM do begin
         if g_UseItems[I].S.Name <> '' then begin
           if g_UseItems[I].Dura <= Round(g_UseItems[I].DuraMax * 10 / 100) then begin
-            sHint := g_UseItems[I].S.Name + ' durability is low!';
-            DScreen.AddChatBoardString(sHint, clyellow, clRed);
+            sHint := g_UseItems[I].S.Name + ' durability is low! Your item may break if Durability reaches 0';
+
+            //if not PlayScene.EdChat.Visible then begin
+              DScreen.AddSysMsg(sHint, SCREENWIDTH - 150, 450, clYellow);
+            //else
+               DScreen.AddChatBoardString(sHint, clyellow, clRed);
           end;
         end;
       end;

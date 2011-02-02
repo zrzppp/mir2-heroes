@@ -1,0 +1,94 @@
+;Info [ Npc Name{Kurtis} X=173 Y=319 MapName={PrajnaIsland} ]
+;Settings
+(@Buy)
+%100
++0
++42
+
+[@main]
+#SAY
+People call me Kurtis.\
+I'm the lone soul that wanders around the world.\ \
+<Make poison/@makedrug>\
+<Listen to te explination/@listen>\
+<Talk with Kurtis/@talk>\
+<Close/@exit>
+
+[@makedrug]
+You want to make some poison?\
+Then choose which type of poison you want to make.\ \
+<Back/@main>
+
+[@listen]
+#SAY
+Here, you can make two types of poison.\ \
+Effect of <Grey Poison/@grey>\
+Effect of <Yellow Poison/@yellow>\
+Ingredient for making <Grey Poison/@ing1>\
+Ingredient for making <Yellow Poison/@ing2>\ \
+<Back/@main>
+
+[@grey]
+#SAY
+Oh, Grey Poison? You see... Taoists can practice the art\
+of "Poisoning" and when they do that with Grey Poison\
+their opponents' Hit Points drop.\ \
+<Back/@listen>
+
+[@yellow]
+#SAY
+Oh, Yellow Poison? You see... Taoists can practice the\
+art of "Poisoning" and when they do that with Yellow Poison\
+their opponents' Armour Class drop.\ \
+<Back/@listen>
+
+[@ing1]
+#SAY
+You need 1 <Cannibal Plant Fruit/@plantexp>, 2 Mandibles\
+of Spitting Spider and 4 Leaves of Cannibal Plant for\
+making Grey Poison. \ \
+<Back/@listen>
+
+[@plantexp]
+#SAY
+Oh... the Fruit? You see... When you chop down Cannibal\
+Plant, you sometimes get the fruit from it. But maybe\
+one in five instances, I guess....\ \
+<Back/@ing1>
+
+[@ing2]
+#SAY
+You need 1 <Maggot Pill/@maggotexp>, 1 Tail of Scorpion and\
+4 Leaves of Cannibal Plant for making Yellow Poison.\ \
+<Back/@listen>
+
+[@maggotexp]
+#SAY
+Oh... the Maggot Pill? You see... There are CaveMaggots\
+that look like round cocoon and can be found only\
+in caves. Kill them and you will get the pill.\ \
+<Back/@ing2>
+
+[@talk]
+#IF
+random 2
+#ACT
+goto @talk2
+#ELSEACT
+goto @talk3
+
+[@talk2]
+#SAY
+I wander around the World because I have the strict rules\
+of Taoist Schools. But I don't feel that I'm free yet...\ \
+<Back/@main>
+
+[@talk3]
+#SAY
+You'd better not buy any drugs from Sandford, the quack..\
+Never drink poison or drugs made by him. tst, tst...\ \
+<Back/@main>
+
+[Goods]
+YellowPoisn(S)		200	1
+GreyPoison(S)		200	1

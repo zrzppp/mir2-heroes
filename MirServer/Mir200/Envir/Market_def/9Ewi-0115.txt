@@ -1,0 +1,72 @@
+;Info [ Npc Name{ArchMage} X=5 Y=11 MapName={HouseOFHighLeveledWizard} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+#IF
+check [757] 1
+#ACT
+goto @Q707
+break 
+
+#IF
+check [756] 1
+#ACT
+goto @Q706
+#ELSEACT
+goto @normal
+
+[@Q707]
+You received the books already, didn't you?\
+Double click the book called by Fireball\
+Then as the book disappears you learn the skill\
+Hitting F11 button, you can check your martial art skills\
+To set up the skill, click on the skill and set the button (F1-F8)\
+Now go and visit Bookstore in BichonProvince\
+The owner of the Bookstore will advise you how to develop yourself.\
+The coordinates of the Bookstore are 323,247, Try to go there.\ \
+<Close/@exit>
+
+[@normal]
+I am GreatWizard, What's your name?\
+You don't answer me. Ok, I see what you mean.\
+Then I don't care whatever you do\ \
+<Close/@exit>
+
+[@Q706]
+#IF
+checklevel 7
+#SAY
+Let me test your ability, there are a lot of monsters called by\
+Sheep, Deer and Hen here. First, kill them all within 5 minutes.\
+Let me talk to you after you have finished.\ \
+<Close/@Q706_1>
+#ELSESAY
+I am GreatWizard, What's your name?\
+I think that helper advised you enough about the occupation, Wizard\
+Fireball is a first step for Wizard, To study Fireball\
+your level should be 7 or more\
+Come back again when you are level 7 or higher.\ \
+<Ok/@exit>
+
+
+[@Q706_1]
+#IF
+checkhum 01152 1
+#SAY
+There is already someone doing my test.\
+Please wait until the person is finished.\ \
+<Ok/@exit>
+#ELSEACT
+Monclear 01152
+Param1 01152
+Param2 19
+Param3 19
+MonGen Deer 10 10
+MonGen Hen 20 10
+MonGen Sheep 10 10
+TimeRecall 5
+map 01152
+
+

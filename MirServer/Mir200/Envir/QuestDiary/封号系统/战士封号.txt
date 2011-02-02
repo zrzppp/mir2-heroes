@@ -1,0 +1,41 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@战士封号]
+{
+#IF
+checknamelist ..\QuestDiary\封号系统\活动名单\至尊名单.txt
+#ACT
+#CALL [\封号系统\群英封号.txt] @战士群英封号
+break
+#IF
+checknamelist ..\QuestDiary\封号系统\活动名单\武圣名单.txt
+#ACT
+#CALL [\封号系统\武宗封号.txt] @武宗封号
+break
+#IF
+CHECKGUILDLIST ..\QuestDiary\行会管理\行会等级\5级.txt
+#ACT
+SETRANKLEVELNAME %s\行会星级：★★★★★
+break
+#IF
+CHECKGUILDLIST ..\QuestDiary\行会管理\行会等级\4级.txt
+#ACT
+SETRANKLEVELNAME %s\行会星级：★★★★
+break
+#IF
+CHECKGUILDLIST ..\QuestDiary\行会管理\行会等级\3级.txt
+#ACT
+SETRANKLEVELNAME %s\行会星级：★★★
+break
+#IF
+CHECKGUILDLIST ..\QuestDiary\行会管理\行会等级\2级.txt
+#ACT
+SETRANKLEVELNAME %s\行会星级：★★
+break
+#IF
+CHECKGUILDLIST ..\QuestDiary\行会管理\行会等级\1级.txt
+#ACT
+SETRANKLEVELNAME %s\行会星级：★
+break
+}

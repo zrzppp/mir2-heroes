@@ -1,0 +1,69 @@
+1/1 Gold 15000
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+
+1/30 SpiritDrug
+1/30 MagicDrug
+1/30 StormDrug
+
+1/25 GreatAxe
+1/25 MageStaff
+1/25 SerpentSword
+1/500 WarSpiritBlade
+
+1/70 Entrapment
+
+1/5 StrainBracelet
+1/5 MagicBracelet
+1/5 PearlRing
+1/5 BlackRing
+1/5 SerpentEyeRing
+1/5 HardGlove 
+1/5 LanternNecklace
+1/5 TigerNecklace
+1/5 GoldRing
+1/5 SkeletonRing
+1/5 MonkBracelet
+1/5 EbonyBracelet
+1/5 IronRing
+1/5 CharmRing
+1/5 MoralRing
+1/5 PlatinumNecklace
+1/5 DeathGauntlet
+1/5 BlueJadeNecklace
+1/5 BambooPipe
+1/5 Convexlens
+1/5 GoldBracelet
+
+1/5 ShamanHelmet
+1/5 SkeletonHelmet
+1/5 BronzeGlove
+1/5 ExpelRing
+1/5 CoralRing
+
+1/20 BlackIronOre
+1/20 BlackIronOre
+1/20 BlackIronOre
+1/45 GoldOre
+1/45 GoldOre
+1/70 PlatinumOre
+1/70 PlatinumOre
+1/70 PlatinumOre

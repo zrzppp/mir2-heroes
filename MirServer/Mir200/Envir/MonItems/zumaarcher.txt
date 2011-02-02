@@ -1,0 +1,5 @@
+1/10   gold 300
+1/50 EventBall(G)
+1/50 EventBall(O)
+1/100000 HeavenArmour(M)
+1/100000 HeavenArmour(F)

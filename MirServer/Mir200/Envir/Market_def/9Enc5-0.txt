@@ -1,0 +1,51 @@
+(@Sell)
+%100
++44
++45
+
+[@main]
+#IF
+#SAY
+Have you ever seen a chestnut tree \
+that bears mysterious chestnuts?\
+That trees bears chestnuts of various colors ranging \
+from Gold, Silver and Copper. They are all beautiful. \
+If you can find a chestnut like this, bring it to me. \
+Then I will pay you good. \ 
+ <I have one like that, do you want to have a look?/@next1>\
+ <Could you tell me more about the tree?/@next2>\
+ <I will get it right away/@exit>
+
+
+
+[@next1]
+
+#IF
+#SAY
+Oh oh...You got the chestnut right. \
+Ok. Will you sell it to me? \
+ <sell/@sell> \
+ <next time/@next3>
+
+
+[@next2]
+#IF
+#SAY
+That chestnut trees only grows around \
+Bichon and Woomyon regions. \
+They bears the special chestnuts at all 4 seasons.\
+The chestnuts are not edible \
+but they are used for making accessories. \
+If you find them, please bring them to me and sell them. \
+ <close/@exit>
+
+[@next3]
+#IF
+#SAY
+I see...If you find a good chestnut, \
+bring it to me anytime. \ \
+ <close/@exit>
+
+
+
+

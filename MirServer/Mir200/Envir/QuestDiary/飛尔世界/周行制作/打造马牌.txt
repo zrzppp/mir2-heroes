@@ -1,0 +1,159 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@马牌打造]
+{
+欢迎<$USERNAME>来到马牌打造系统.请你仔细的阅读下面的说明\ \
+1:打造马牌的材料:铁矿.铜矿.银矿.金矿.(比奇矿区可以挖到)!\
+2:马牌的层次等级:黄金马.穿云豹.踏雪豹.龙麟圣兽!\
+3:打造马牌有失败的可能性.失败之后将没收全部打造材料\
+4:打造成功.还能获得经验值.<马跑起来是一步四格.神速>!!\
+小提示:<桃源之门的怪物有机率爆出马牌>!\ \
+<查看配方/@配方>        <马牌属性/@马牌属性>        <开始打造/@马牌属性>        <返回上页/@MAIN>\
+[@配方]
+<马牌名字>-----------<需要材料>----------------<成功机率>\
+↓   ↓     ↓\
+黄金马:  铁矿7块.铜矿5块.银矿4块.金矿3块       <50%>\
+穿云豹:  铁矿8块.铜矿8块.银矿8块.金矿5块       <20%>\
+踏雪豹:  铁矿8块.铜矿8块.银矿8块.金矿8块       <10%>\
+龙麟兽:  铁矿10块.铜矿10块.银矿10块.金矿10块   <5%>\
+-------------------------------------------------------\
+<开始打造/@马牌属性>                                  <返回上页/@马牌打造>
+[@马牌属性]
+<打造黄金马/@黄金>: 物防3-7   魔防3-7  攻.魔.道为3-9\ \
+<打造穿云豹/@穿云>: 物防5-9   魔防5-9  攻.魔.道为5-12\ \
+<打造踏雪豹/@踏雪>: 物防7-12  魔防7-12 攻.魔.道为8-15\ \
+<打造龙麟兽/@龙麟>: 物防10-15 魔防10-15攻.魔.道为10-17 <返回/@马牌打造>\
+[@龙麟]
+#IF
+CHECKITEM 铁矿 10
+CHECKITEM 铜矿 10
+CHECKITEM 银矿 10
+CHECKITEM 金矿 10
+RANDOM 20
+#ACT
+TAKE 铁矿 10
+TAKE 铜矿 10
+TAKE 银矿 10
+TAKE 金矿 10
+GIVE 龙麟圣兽 1
+CHANGEEXP + 8000000
+SENDMSG 0 [%s]打造龙麟圣兽成功.经验增加:[800万]!
+GOTO @MAIN
+break
+#IF
+CHECKITEM 铁矿 10
+CHECKITEM 铜矿 10
+CHECKITEM 银矿 10
+CHECKITEM 金矿 10
+#ACT
+TAKE 铁矿 10
+TAKE 铜矿 10
+TAKE 银矿 10
+TAKE 金矿 10
+MESSAGEBOX 很遗憾.物品打造失败.
+GOTO @MAIN
+break
+#ELSEACT
+MESSAGEBOX 物品打造的材料数量不够.请仔细检查.
+CLOSE
+[@黄金]
+#IF
+CHECKITEM 铁矿 7
+CHECKITEM 铜矿 5
+CHECKITEM 银矿 4
+CHECKITEM 金矿 3
+RANDOM 5
+#ACT
+TAKE 铁矿 7
+TAKE 铜矿 5
+TAKE 银矿 4
+TAKE 金矿 3
+GIVE 黄金马牌 1
+CHANGEEXP + 800000
+SENDMSG 0 [%s]打造黄金马牌成功.经验增加:800000!
+GOTO @MAIN
+break
+#IF
+CHECKITEM 铁矿 7
+CHECKITEM 铜矿 5
+CHECKITEM 银矿 4
+CHECKITEM 金矿 3
+#ACT
+TAKE 铁矿 7
+TAKE 铜矿 5
+TAKE 银矿 4
+TAKE 金矿 3
+MESSAGEBOX 很遗憾.物品打造失败.
+GOTO @MAIN
+break
+#ELSEACT
+MESSAGEBOX 物品打造的材料数量不够.请仔细检查.
+CLOSE
+[@穿云]
+#IF
+CHECKITEM 铁矿 8
+CHECKITEM 铜矿 8
+CHECKITEM 银矿 8
+CHECKITEM 金矿 5
+RANDOM 8
+#ACT
+TAKE 铁矿 8
+TAKE 铜矿 8
+TAKE 银矿 8
+TAKE 金矿 5
+GIVE 穿云豹牌 1
+CHANGEEXP + 1500000
+MSENDMSG 0 [%s]打造穿云豹牌成功.经验增加:[150万]!
+GOTO @MAIN
+break
+#IF
+CHECKITEM 铁矿 8
+CHECKITEM 铜矿 8
+CHECKITEM 银矿 8
+CHECKITEM 金矿 5
+#ACT
+TAKE 铁矿 8
+TAKE 铜矿 8
+TAKE 银矿 8
+TAKE 金矿 5
+MESSAGEBOX 很遗憾.物品打造失败.
+GOTO @MAIN
+break
+#ELSEACT
+MESSAGEBOX 物品打造的材料数量不够.请仔细检查.
+CLOSE
+[@踏雪]
+#IF
+CHECKITEM 铁矿 8
+CHECKITEM 铜矿 8
+CHECKITEM 银矿 8
+CHECKITEM 金矿 8
+RANDOM 10
+#ACT
+TAKE 铁矿 8
+TAKE 铜矿 8
+TAKE 银矿 8
+TAKE 金矿 8
+GIVE 踏雪豹牌 1
+CHANGEEXP + 3000000
+MSENDMSG 0 [%s]打造踏雪豹牌成功.经验增加:[300万]!
+GOTO @MAIN
+break
+#IF
+CHECKITEM 铁矿 8
+CHECKITEM 铜矿 8
+CHECKITEM 银矿 8
+CHECKITEM 金矿 8
+#ACT
+TAKE 铁矿 8
+TAKE 铜矿 8
+TAKE 银矿 8
+TAKE 金矿 8
+MESSAGEBOX 很遗憾.物品打造失败.
+GOTO @MAIN
+break
+#ELSEACT
+MESSAGEBOX 物品打造的材料数量不够.请仔细检查.
+CLOSE
+}

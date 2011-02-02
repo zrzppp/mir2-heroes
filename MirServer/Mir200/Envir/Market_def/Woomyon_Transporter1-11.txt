@@ -1,0 +1,115 @@
+; ===================================
+; Npc Def NPC File : Woomyon_Transporter1-11
+; Town Teleport npc in TaoVillage
+; -----------------------------------
+; Name: Sigmund
+; Job: 
+; Map No: 11
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: Town Teleport npc in TaoVillage
+
+;================================================= =
+;
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will never teleport such an evil person as you!\ \
+<Ok/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+Hello I'm Sigmund, the wandering warrior.\
+I transport men and goods to other places\
+fast and safe. Just pay the fee\
+then i'll escort you to anywhere.\ 
+So what do you say?\ \
+<I'll use the service/@tele>\
+<Maybe next time/@exit>
+
+[@tele]
+Now which place you wanna go?\ \
+<Castle Bichon (500 gold)/@move1>\
+<Serpent Valley (1000 gold)/@move2>\
+<CastleGi-Ryoong (1000 gold)/@move3>\
+<Border village (1000 gold)/@move4>\
+<Ginko Tree Village (1000 gold)/@move5>\
+<Mongchon province (2000 gold)/@move6>\
+<Maybe next time/@exit>
+
+[@move1]
+#IF
+checkgold 500
+#ACT
+take gold 500
+mapmove 0 296 221
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move2]
+#IF
+checkgold 500
+#ACT
+take gold 500
+mapmove 2 500 485
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move3]
+#IF
+checkgold 1000
+#ACT
+take gold 1000
+mapmove 4 264 257
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move4]
+#IF
+checkgold 500
+#ACT
+take gold 500
+mapmove 0 289 617
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move5]
+#IF
+checkgold 500
+#ACT
+take gold 500
+mapmove 0 635 613
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move6]
+#IF
+checkgold 1000
+#ACT
+take gold 1000
+mapmove 3 361 342
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+

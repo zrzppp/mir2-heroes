@@ -1,0 +1,186 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@活跃兑换]
+{
+<兑换矿石>: 金刚石可以煅造武器.矿石可以合成害人毒药.骰子可以闯关!\
+　　　　　<金刚之石/@释放金刚>     <绿宝石矿/@释放绿宝>     <紫水晶矿/@释放紫水>     <兑换骰子/@释放骰子>\
+<兑换声望>: 兑换1点声望需要60点活跃点!\
+　　　　　<兑换声望/@dhsw> \
+<兑换经验>: 用活跃来换取不同的经验值!<等级必须大于65级>!\
+　　　　　<200点活跃换取二十万经验/@100万>\
+　　　　　<500点活跃换取六十万经验/@400万>\
+　　　　　<800点活跃换取九十万经验/@700万>\  
+　　　　　　　　　　　　　　　　　　　　　　　　　<返回首页/@main>\
+[@100万]
+#IF
+CHECKGAMEPOINT > 200
+checklevel 65
+#ACT
+GOTO @KYDH1
+break
+#ELSEACT
+MESSAGEBOX 你的活跃好像不够200点!或者你等级未到65级!
+GOTO @活跃兑换
+break
+[@KYDH1]
+#IF
+HERO.CHECKONLINE
+#ACT
+gamepoint - 200
+CHANGEEXP + 200000
+HERO.CHANGEEXP + 200000
+GOTO @活跃兑换
+break
+#ELSEACT
+gamepoint - 200
+CHANGEEXP + 200000
+GOTO @活跃兑换
+break
+[@400万]
+#IF
+CHECKGAMEPOINT > 500
+checklevel 65
+#ACT
+GOTO @KYDH2
+break
+#ELSEACT
+MESSAGEBOX  你的活跃好像不够500点!或者你等级未到65级!
+GOTO @活跃兑换
+break
+[@KYDH2]
+#IF
+HERO.CHECKONLINE
+#ACT
+gamepoint - 500
+CHANGEEXP + 600000
+HERO.CHANGEEXP + 600000
+GOTO @活跃兑换
+break
+#ELSEACT
+gamepoint - 500
+CHANGEEXP + 600000
+GOTO @活跃兑换
+break
+[@700万]
+#IF
+CHECKGAMEPOINT > 800
+checklevel 65
+#ACT
+GOTO @KYDH3
+break
+#ELSEACT
+MESSAGEBOX  你的活跃好像不够800点!或者你等级未到65级!
+GOTO @活跃兑换
+break
+[@KYDH3]
+#IF
+HERO.CHECKONLINE
+#ACT
+gamepoint - 800
+CHANGEEXP + 800000
+HERO.CHANGEEXP + 800000
+GOTO @活跃兑换
+break
+#ELSEACT
+gamepoint - 800
+CHANGEEXP + 800000
+GOTO @活跃兑换
+break
+
+[@dhsw]
+#IF
+CHECKCREDITPOINT > 254
+#ACT
+MESSAGEBOX 你的声望值已经到了最大值无法兑换!
+goto @活跃兑换
+break
+#IF
+checkgamepoint > 59
+#ACT
+gamepoint - 60
+CREDITPOINT + 1
+MESSAGEBOX 兑换成功。当前声望为<$CREDITPOINT>点！
+#ELSEACT
+MESSAGEBOX 兑换1点声望需要60点活跃点数！
+goto @活跃兑换
+break
+
+[@释放金刚]
+物品名称：金刚石\ \
+所需活跃指数为：<20>\ \
+当前活跃指数为：<$GAMEPOINT>\ \
+\ \
+<释放活跃/@得到金刚>　     <兑换30颗/@换30金刚>　     <返回/@活跃兑换>
+[@得到金刚]
+#IF
+CHECKGAMEPOINT < 20
+#ACT
+MESSAGEBOX 活跃指数不够！
+goto @释放金刚
+#ELSEACT
+give 金刚石 1
+GAMEPOINT - 20
+goto @释放金刚
+
+[@换30金刚]
+#IF
+CHECKGAMEPOINT < 600
+#ACT
+MESSAGEBOX 活跃指数不够！
+goto @释放金刚
+#ELSEACT
+give 金刚石30颗 1
+GAMEPOINT - 600
+goto @释放金刚
+
+[@释放绿宝]
+物品名称：绿宝石矿\ \
+所需活跃指数为：<50>\ \
+当前活跃指数为：<$GAMEPOINT>\ \
+<矿石的用途>：在封魔谷炼药师可以获得害人药品:一日丧命散!\ \
+<释放活跃/@得到绿宝>　<返回/@活跃兑换>
+[@得到绿宝]
+#IF
+CHECKGAMEPOINT < 49
+#ACT
+MESSAGEBOX 活跃指数不够！
+goto @释放绿宝
+#ELSEACT
+give 绿宝石矿 1
+GAMEPOINT - 50
+goto @释放绿宝
+[@释放紫水]
+物品名称：紫水晶矿\ \
+所需活跃指数为：<100>\ \
+当前活跃指数为：<$GAMEPOINT>\ \
+<矿石的用途>：在封魔谷炼药师可以获得害人药品:一日丧命散!\ \
+<释放活跃/@得到紫水>　<返回/@活跃兑换>
+[@得到紫水]
+#IF
+CHECKGAMEPOINT < 149
+#ACT
+MESSAGEBOX 活跃指数不够！
+goto @释放紫水
+#ELSEACT
+give 紫水晶矿 1
+GAMEPOINT - 150
+goto @释放紫水
+
+[@释放骰子]
+物品名称：骰子\ \
+所需活跃指数为：<1000>\ \
+当前活跃指数为：<$GAMEPOINT>\ \
+<骰子的用途>：使用次数30次.可进行闯关游戏.消灭BOSS,获得钥匙!\ \
+<释放活跃/@得到骰子>　<返回/@活跃兑换>
+[@得到骰子]
+#IF
+CHECKGAMEPOINT < 999
+#ACT
+MESSAGEBOX 活跃指数不够！
+goto @释放骰子
+#ELSEACT
+give 骰子 1
+GAMEPOINT - 1000
+goto @释放骰子
+}

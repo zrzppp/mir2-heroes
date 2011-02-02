@@ -1,0 +1,44 @@
+; ===================================
+; Npc Def NPC File : Prajna_Timestone1-5
+; PastBichon Teleport (PrajnaIsland)
+; -----------------------------------
+; Name: TimeStone
+; Job: 
+; Map No: 5
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: PastBichon Teleport (PrajnaIsland)
+
+;================================================= =
+;
+
+[@main]
+Worship me you little thing, then you will be able to\
+break the boundary of time and space to go to the past.\ \
+<to the past!/@tele>\
+<I will stay here/@exit>
+
+[@tele]
+#IF
+checklevel 40
+#ACT
+goto @level40
+#ELSEACT
+goto @lowlevel
+
+[@lowlevel]
+#IF
+checkitem TimeStonePiece 1
+#ACT
+take TimeStonePiece 1
+mapmove 6 63 247
+#ELSESAY
+I'm sorry you do not have a TimeStonePiece.\ \
+<Close/@exit>          
+
+[@level40]
+#ACT
+mapmove 6 63 247
+break
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

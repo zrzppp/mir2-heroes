@@ -1,0 +1,328 @@
+(@getsellgold @selloff @buyoff @@dealgold)
+[@main]
+#SAY
+<Sell Item/@selloff>       <www.lomcn.co.uk/FCOLOR=254>\ \
+<Dresses/@Dress>        <Weapons/@Weapon>        <Accessories/@Jewelry>        <Charms/@Chram>\ \
+<Other Items/@OtherItem>\
+<All Items/@AllItem>\ \
+;<Deal GM/@dealgm>      <最新功能→/AUTOCOLOR=254,251,168,191,250,70,245,249,253><Give Item/@GiveItem>\ \
+<Collect Money from Sales/@selfgold>          <Retreive unsold Item/@MyItem>
+
+[@getsellgold]
+#ACT
+goto @selfgold
+break
+[@dealgm]
+#ACT
+STARTTAKEGOLD
+break
+[@startdealgold]
+<$DEALGOLDPLAY>与你进行元宝转帐交易\ \
+请<输入转帐/@@dealgold>数量\ \ \ \
+<返回上页/@main>
+
+[@dealgoldpost]
+#ACT
+messagebox "After Deal Gold post"
+GOTO @main
+break
+
+[@dealgoldFail]
+#ACT
+messagebox "Deal Gold failed"
+GOTO @main
+break
+
+[@dealgoldInputFail]
+#ACT
+messagebox "Input failed"
+GOTO @main
+break
+
+[@dealgoldPlayError]
+#ACT
+messagebox "Error"
+GOTO @main
+break
+
+[@AllItem]
+#ACT
+goto @hanggun
+OPENUSERMARKET 0
+break
+[@Dress]
+#ACT
+goto @hanggun
+OPENUSERMARKET 1
+break
+[@Weapon]
+#ACT
+goto @hanggun
+OPENUSERMARKET 2
+break
+[@Jewelry]
+#ACT
+goto @hanggun
+OPENUSERMARKET 3
+break
+[@Chram]
+#ACT
+goto @hanggun
+OPENUSERMARKET 4
+break
+[@OtherItem]
+#ACT
+goto @hanggun
+OPENUSERMARKET 5
+break
+[@MyItem]
+#ACT
+goto @hanggun
+OPENUSERMARKET 6
+break
+[@selfgold]
+#ACT
+goto @hanggun
+OPENUSERMARKET 7
+break
+
+[@GiveItem]
+没带回城卷.随机传送卷没有了.背包的红和蓝也快完了..好不容易\
+进到这个地图!眼看BOSS就快死了.出现这些事你该怎么办?办理会员\
+你不愿花钱!那就试试邮寄系统.叫朋友邮寄一次只要<花费10点活跃/FCOLOR=254>!\
+┏━━━━━━━<选择邮寄物品直接入玩家名字/FCOLOR=250>━━━━━━━┓\
+┃  <随机传送包/@@InPutString1>   ┃   <行会回城卷/@@InPutString2>    ┃                  ┃\
+┃  <游戏回城卷/@@InPutString3>   ┃   <护身符(大)/@@InPutString4>    ┃  <超级魔法药五捆/@@InPutString9>  ┃\
+┃  <超级金创药/@@InPutString5>   ┃   <超级魔法药/@@InPutString6>    ┃  <超级金创药五捆/@@InPutString0>  ┃\
+┃  <灰色药粉大/@@InPutString7>   ┃   <黄色药粉大/@@InPutString8>    ┃    <返回上一页/@MAIN>    ┃\
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\
+[@InPutString1]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 随机传送卷包 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[随机传送卷包].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString2]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 行会回城卷 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[行会回城卷].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString3]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 回城卷 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[回城卷].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString4]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 护身符(大) 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[护身符(大)].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString5]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 超级金创药 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[超级金创药].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString6]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 超级魔法药 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[超级魔法药].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString7]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 灰色药粉(大量) 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[灰色药粉(大量)].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString8]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 9
+#ACT
+MessageBox [错误]：你的活跃不足10点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 黄色药粉(大量) 1
+gamepoint - 10
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了一个[黄色药粉(大量)].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString0]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 19
+#ACT
+MessageBox [错误]：你的活跃不足20点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 超级金创药 5
+gamepoint - 20
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了五个[超级金创药].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break
+[@InPutString9]
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox [错误]：当前人物所在的地图不允许邮寄物品!
+break
+#IF
+CHECKGAMEPOINT < 19
+#ACT
+MessageBox [错误]：你的活跃不足20点.不能使用该功能!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+S0.GIVE 超级魔法药 5
+gamepoint - 20
+SENDMSG 7 提示：给[<$STR(S0)>]邮寄的物品已经顺利送到.请他查收!
+S0.SENDMSG 7 注意：你的朋友给你送了五个[超级魔法药].在你包裹!
+GOTO @GiveItem
+break
+#ELSEACT
+MessageBox 当前该人物并没在游戏中.无法接受到你的物品!
+break

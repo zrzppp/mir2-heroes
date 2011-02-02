@@ -1,0 +1,107 @@
+1/1 Gold 55000
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+
+1/2 BenedictionOil
+
+1/30 SpiritDrug
+1/30 MagicDrug
+1/30 StormDrug
+
+1/110 PurpleFoxRing
+1/110 PurpleFoxBracelet
+1/110 PurpleFoxNecklace
+
+1/110 RedFoxRing
+1/110 RedFoxBracelet
+1/110 RedFoxNecklace
+
+1/110 BlueFoxRing
+1/110 BlueFoxBracelet
+1/110 BlueFoxNecklace
+
+1/180 GreatPurpleFoxRing
+1/180 GreatPurpleFoxBracelet
+1/180 GreatPurpleFoxNecklace
+
+1/180 GreatRedFoxRing
+1/180 GreatRedFoxBracelet
+1/180 GreatRedFoxNecklace
+
+1/180 GreatBlueFoxRing
+1/180 GreatBlueFoxBracelet
+1/180 GreatBlueFoxNecklace
+
+1/15 DragonSword
+1/40 DragonStaff
+1/40 SoulSabre
+1/40 DragonSlayer
+1/80 WarSpiritBlade
+1/80 StoneBambooFan
+1/80 MagicScythe
+
+1/5 StrainBracelet
+1/5 MagicBracelet
+1/5 PearlRing
+1/5 BlackRing
+1/5 SerpentEyeRing
+1/5 HardGlove 
+1/5 LanternNecklace
+1/5 TigerNecklace
+1/5 GoldRing
+1/5 SkeletonRing
+1/5 MonkBracelet
+1/5 EbonyBracelet
+1/5 IronRing
+1/5 CharmRing
+1/5 MoralRing
+1/5 PlatinumNecklace
+1/5 DeathGauntlet
+1/5 BlueJadeNecklace
+1/5 BambooPipe
+1/5 Convexlens
+1/5 GoldBracelet
+
+1/5 ShamanHelmet
+1/5 SkeletonHelmet
+1/5 BronzeGlove
+1/5 ExpelRing
+1/5 CoralRing
+
+1/10 GoldBelt
+1/20 BlackBoots
+
+1/5 FrostCrunch
+1/25 CrossHalfMoon
+1/25 FlameDisruptor
+1/25 UltimateEnhancer
+1/35 Purification
+1/40 EnergyRepulsor
+1/40 TwinDrakeBlade
+1/200 SummonHolyDeva
+1/600 FlameField
+1/600 Curse
+1/600 BladeAvalanche
+1/60 LionRoar
+
+1/120 BraveryOrb
+1/120 SoulOrb
+1/120 MagicOrb

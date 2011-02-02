@@ -1,0 +1,20 @@
+;Info [ Npc Name{Mike} X=203 Y=321 MapName={WoomyonWoods} ]
+(@s_repair)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%150
++10
++11
+
+[@main]
+Hello <$USERNAME>,\
+I learned the hidden skill to special repair armours.\
+I do a fine job repairing them.\
+It will cost a bit more though.\ \
+<Special repair/@s_repair> clothes\
+<Cancel/@exit>
+
+[goods]
+;Item		Amount		Time

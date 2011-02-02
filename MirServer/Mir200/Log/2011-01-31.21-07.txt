@@ -1,0 +1,19 @@
+2011-01-31 21:07:19 Total Guilds:0
+2011-01-31 21:07:19 1 Castles loaded...
+2011-01-31 21:07:19 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-01-31 21:07:19 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-01-31 21:07:19 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-01-31 21:07:19 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-01-31 21:07:20 LoginSrv(192.168.0.2:5600)connected...
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\1-GT7.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\Bichon/Statue/Aurora-0.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\Bichon/Statue/hell-0.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\Bichon/Statue/Testu6-0.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\Bichon/Statue/lilcooldoode-0.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\Bichon/Statue/catalyst-0.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\Bichon/Statue/kinky-0.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\GuildTerritory/Janice-GT40.txt
+2011-01-31 21:07:20 Script file not found: .\Envir\Market_Def\GuildTerritory/Janice-GT23.txt
+2011-01-31 21:07:22 Plugin Module started...
+2011-01-31 21:07:22 Database Server (192.168.0.2:6000)connected...
+2011-01-31 21:07:23 Rungate [0](192.168.0.2:2623)opened...

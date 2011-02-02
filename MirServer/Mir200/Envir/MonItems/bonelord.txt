@@ -1,0 +1,124 @@
+1/1 Gold 15000
+1/80 GoldBar 
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+
+1/5 BenedictionOil
+1/5 WarGodOil
+
+1/30 SpiritDrug
+1/30 MagicDrug
+1/30 StormDrug
+
+1/80 GaleNecklace
+1/50 GreenBead
+1/50 DemonicBells
+1/15 ClawNecklace
+1/50 SoulNecklace
+
+1/70 BlackIronHelmet
+1/70 HelmetOfHero
+1/60 GreatHelmet
+
+1/80 PowerRing
+1/80 VioletRing
+1/80 TitanRing
+
+1/75 KnightBracelet
+1/75 DragonBracelet
+1/55 SteelGlove
+
+1/145 SoulSpringWand
+1/145 JudgementMace
+1/145 WarMageStaff
+1/550 DragonStaff
+1/700 WarSpiritBlade
+1/700 MagicScythe
+1/700 StoneBambooFan
+1/11000 SwordOfWarGod
+
+1/35 IceStorm
+1/35 SummonShinsu
+1/35 FlamingSword
+1/70 CrossHalfMoon
+1/70 UltimateEnhancer
+1/70 FlameDisruptor
+1/600 SummonHolyDeva
+1/2100 Mirroring
+1/2100 BladeAvalanche
+
+1/5 StrainBracelet
+1/5 MagicBracelet
+1/5 PearlRing
+1/5 BlackRing
+1/5 SerpentEyeRing
+1/5 HardGlove 
+1/5 LanternNecklace
+1/5 TigerNecklace
+1/5 GoldRing
+1/5 SkeletonRing
+1/5 MonkBracelet
+1/5 EbonyBracelet
+1/5 IronRing
+1/5 CharmRing
+1/5 MoralRing
+1/5 PlatinumNecklace
+1/5 DeathGauntlet
+1/5 BlueJadeNecklace
+1/5 BambooPipe
+1/5 Convexlens
+1/5 GoldBracelet
+
+1/5 ShamanHelmet
+1/5 SkeletonHelmet
+1/5 BronzeGlove
+1/5 ExpelRing
+1/5 CoralRing
+1/10 GaleRing
+
+1/25 DragonRing
+1/25 PlatinumRing
+1/25 RubyRing
+1/30 SpellBracelet
+1/30 LifeNecklace
+1/30 ClawNecklace
+1/30 3rdEyeBracelet
+1/30 PearlNecklace
+
+1/5 HeavyArmour(M)
+1/5 HeavyArmour(F)
+1/5 SoulArmour(F)
+1/5 SoulArmour(M)
+1/5 MagicRobe(M)
+1/5 MagicRobe(F)
+1/40 SteelArmour(M)
+1/40 SteelArmour(F)
+1/40 TitanArmour(F)
+1/40 TitanArmour(M)
+1/40 DragonRobe(M)
+1/40 DragonRobe(F)
+1/10000 HeavenArmour(M)
+1/10000 HeavenArmour(F)
+1/40 AdamantineBelt
+
+1/290 BraveryOrb
+1/290 SoulOrb
+1/290 MagicOrb

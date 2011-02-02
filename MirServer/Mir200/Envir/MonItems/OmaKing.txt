@@ -1,0 +1,136 @@
+1/1 Gold 25000
+1/50 GoldBarBundle
+1/500 GoldChest
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+
+;Armours
+1/500 HeavenArmour(M)
+1/500 HeavenArmour(F)
+1/5 SteelArmour(M)
+1/5 SteelArmour(F)
+1/5 DragonRobe(M)
+1/5 DragonRobe(F)
+1/5 TitanArmour(M)
+1/5 TitanArmour(F)
+1/15 BlackIronHelmet
+1/15 HelmetOfHero
+1/10 GreatHelmet
+1/40 WiseCoronet
+1/40 TaoCoronet
+
+;Accessories
+1/25 GaleNecklace
+1/20 GreenBead
+1/20 DemonicBells
+1/20 SoulNecklace
+1/60 HeroNecklace
+1/60 AdamantineNecklace
+1/60 RequiemNecklace
+1/300 SkillNecklace
+
+1/70 8TrigamWheel
+1/70 HangMaWheel
+1/70 BokMaWheel
+1/90 BaekTaGlove
+1/90 SpiritReformer
+1/90 HolyTaoWheel
+1/20 DragonBracelet
+1/20 KnightBracelet
+1/20 SteelGlove
+
+1/25 PowerRing
+1/25 TitanRing
+1/25 VioletRing
+1/600 ProtectionRing
+1/50 BoundlessRing
+1/50 OmaSpiritRing
+1/50 ThunderRing
+1/70 NobleRing
+1/70 SoulRing
+1/70 TaeGukRing
+
+;Weapons
+1/120 DragonSlayer
+1/120 DragonStaff
+1/120 SoulSabre
+1/30 JudgementMace
+1/30 WarMageStaff
+1/30 SoulSpringWand
+1/400 SwordOfWarGod
+1/400 BladeOfSorcery
+1/400 HeavenSword
+
+;Spells
+1/20 CrossHalfMoon
+1/20 FlameDisruptor
+1/20 UltimateEnhancer
+1/25 EnergyRupulsor
+1/40 TwinDrakeBlade
+1/40 Purification
+1/40 LionRoar
+1/120 SummonHolyDeva
+1/120 Mirroring
+1/160 Entrapment
+1/160 Hallucination
+1/160 Vampirism
+1/400 FlameField
+1/400 BladeAvalanche
+1/400 Curse
+
+;Misc
+1/2 BenedictionOil
+1/2 BenedictionOil
+1/20 RedEyedSkull
+
+;Noob Items
+1/5 StrainBracelet
+1/5 MagicBracelet
+1/5 PearlRing
+1/5 BlackRing
+1/5 SerpentEyeRing
+1/5 HardGlove 
+1/5 LanternNecklace
+1/5 TigerNecklace
+1/5 GoldRing
+1/5 SkeletonRing
+1/5 MonkBracelet
+1/5 EbonyBracelet
+1/5 IronRing
+1/5 CharmRing
+1/5 MoralRing
+1/5 PlatinumNecklace
+1/5 DeathGauntlet
+1/5 BlueJadeNecklace
+1/5 BambooPipe
+1/5 Convexlens
+1/5 GoldBracelet
+
+1/5 ShamanHelmet
+1/5 SkeletonHelmet
+1/5 BronzeGlove
+1/5 ExpelRing
+1/5 CoralRing
+1/10 GaleRing
+
+1/80 BraveryOrb
+1/80 SoulOrb
+1/80 MagicOrb

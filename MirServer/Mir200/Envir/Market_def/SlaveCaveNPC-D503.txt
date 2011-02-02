@@ -1,0 +1,35 @@
+;Info [ Npc Name{Sander} X=116 Y=283 MapName={3FofZumaTemple} ]
+;NPC done by Warped
+
+;Slave Cave Quest
+[@main]
+#IF
+checklevel 30
+#SAY
+Hello <$USERNAME>\
+EYou are approaching a gateway between evil powers and the normal\
+world. Last year i was also here, and before i knew i was somewhere\
+else a place full of terror and evil monsters, I ran for my life.\
+There were loads of evil beast running after me.\
+I found a depp small corner where i could hide myself and where\
+those evil ctreatures couldn't reach me.\
+<Next/@next>\
+
+#ELSESAY
+Im busy. Come back later!\\
+<Exit/@exit>
+
+[@next]
+You want to proceed walking around here,\
+it's your choice. Byt dont say i didnt warn you.\\
+<Thanks for you addvice, I will leave now/@next2>\
+<Don't tell me what i should do or shouldn't do/@next3>
+
+[@next2]
+#ACT
+mapmove 3
+
+[@next3]
+#ACT
+mapmove F005
+TimeRecall 90

@@ -1,0 +1,106 @@
+1/1 Gold  25000
+1/600 GoldBar
+1/3500 GoldChest
+1/1 (HP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 (HP)DrugLarge
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+1/2 (MP)DrugXL
+
+1/10 BenedictionOil
+
+1/5   SpiritDrug
+1/5   MagicDrug
+1/5   StormDrug
+1/5   MagicAidDrug
+1/5   ImpactDrug
+1/5   StaminaAidDrug 	
+
+1/700  RedOrchidRing
+1/700  RedOrchidBracelet
+1/700  RedOrchidNecklace
+1/700  RedFlowerRing
+1/700  RedFlowerBracelet
+1/700  RedFlowerNecklace
+
+1/50 BloodStealer
+1/10 Apple
+1/10 Apple
+1/10 Apple
+
+1/20 GreatAxe
+1/20 MageStaff
+1/20 SerpentSword
+1/25 DragonSword
+1/195 JudgementMace
+1/195 SoulSpringWand
+1/195 WarMageStaff
+1/600 SoulSabre
+1/600 DragonSlayer
+1/600 DragonStaff
+1/1200 WarSpiritBlade
+
+1/100 BlackIronHelmet
+1/10 SkeletonHelmet
+1/10 ShamanHelmet
+
+1/15 PlatinumRing
+1/15 RubyRing
+1/15 DragonRing
+1/80 SpiritRing
+
+1/2 ExpelRing
+1/2 CoralRing
+
+1/95 KnightBracelet
+
+1/50 ClawNecklace
+1/50 PearlNecklace
+1/50 LifeNecklace
+
+1/75 IceStorm
+1/75 SummonShinsu
+1/75 FlamingSword
+1/400 LionRoar
+1/800 Curse
+1/800 Mirroring
+
+1/400 FreezingOrb
+1/200 DurabilityOrb
+1/360 BraveryOrb
+1/360 MagicOrb
+1/360 SoulOrb
+1/250 ProtectionOrb
+1/250 EvilSlayerOrb

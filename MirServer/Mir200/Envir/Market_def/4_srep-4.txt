@@ -1,0 +1,15 @@
+;Info [ Npc Name{Wayne} X=227 Y=223 MapName={CastleGi-Ryoong} ]
+;NPC Made By Geoff
+(@s_repair)
+;Settings
+%100
++5
++6
+
+[@main]
+Welcome. What do you want to repair?\ \
+Do special <repair/@s_repair>\
+<Close/@exit>
+
+[goods]
+;Item		Amount		Time

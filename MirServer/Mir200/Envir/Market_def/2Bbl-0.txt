@@ -1,0 +1,225 @@
+;Info [ Npc Name{Bill} X=302 Y=219 MapName={Bichon-Province} ]
+(@s_repair)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
++5
++6
+
+;#####################################################################
+; Brief Description of the switches used in this NPC.
+; [200] - Reset when you are given FateSword.
+; [203] - If you have spoken to Vincent before this is activated.
+; [204] - Set when you talk to Bill.
+; [205] - Set when you recieve FateSword so you cannot do quest twice.
+; [210] - Set if you don't listen.
+; [211] - Set when you recieve FateSwordBook.
+;#####################################################################
+
+;Pkr Tag (NPC won't talk to Pkrs)
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+Sorry but I don't want to help such an evil person..\ \
+<Ok/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+
+Glad to see you, how can I help?\ \
+<Special Repair/@s_repair> weapon.\
+<Have/@talk> a conversation.\
+<Never Mind/@exit>.
+
+[goods]
+;Item		Amount		Time
+
+;#######################################
+
+;Quest
+
+[@talk]
+#IF
+check [205] 1
+#ACT
+goto @quit
+break
+
+#IF
+check [211] 1
+#ACT
+goto @givekundo
+break
+
+#IF
+check [210] 1
+#ACT
+goto @kundo
+break
+
+#IF
+check [204] 1
+#ACT
+goto @accept
+break
+
+#IF
+check [203] 1
+#ACT
+goto @talk_1
+break
+
+#ELSEACT
+goto @quit
+
+[@quit]
+#IF
+#SAY
+Nice weather we have today.\ \
+<Ok/@exit>
+
+[@talk_1]
+Ah! I see you have visited my friend Vincent.\
+He is a little loony but he's an ok guy.\
+So you want me to tell you about the FateSword?\ \
+<Listen/@okheard>\
+<Dont Listen/@noheard>
+
+
+[@okheard]
+#IF
+checklevel 35
+#ACT
+goto @w_t_ok
+
+
+#ELSESAY
+I'm sorry little one. But the things that need\
+to be done are just to hard for such a low\
+level as you. Here is a prize for your efforts.\ \
+
+#ELSEACT
+reset [200] 20
+give LotteryTicket 5
+
+[@noheard]
+#IF
+#ACT
+reset [210] 10
+#SAY
+Fine, you choose not to listen.\
+Go away..\ \
+<Ok/@exit>
+
+
+[@w_t_ok]
+It's great that you chose to listen.\
+I will tell you something about this sword,\
+and how me and Vincent can make it.\ \
+<Next/@next>
+
+[@next]
+It all started a while back when our master\
+showed us a book called FateSwordBook.\
+In that book it is said how to create this sword.\
+But as our master said that we were not ready for\
+this powerfull sword he closed the book in front of\
+our eyes.\ \
+<Next/@next_1>
+
+[@next_1]
+The only thing we could see from the needed\
+ingredients were that you needed high purity\
+Gold Ore. After our master closed the book\
+evil spirits came and stole his book.\ \ 
+<Next/@next_2>
+ 
+[@next_2]
+He told us to go find a Warrior that would be\
+able to get his book back from these spirits.\
+And if this warrior was strong enough to rid \
+him from these spirits and bring his book back\
+he would send this warrior to me with this book\
+to make this FateSword.\ \
+<Next/@next_3>
+ 
+[@next_3]
+That is basically the story about it.\
+All i ask you to do is go and see my master.\
+He can decide if you are strong enough to\
+complete this task. He might be a little skeptic\
+and let you do one of his weird mind games.\ \
+<Next/@next_4>
+ 
+[@next_4]
+My master also is known as a rather shy man\
+that doesn't always want to talk.\
+So pick the right time to go and see him.\ \ 
+<Next/@next_5>
+
+[@next_5]
+So my friend.\
+Do you think you are ready to take on this\
+task, or have I scared you?\ \
+<I Accept/@accept>\
+<I Don't Accept/@exit>
+
+[@accept]
+#IF
+#ACT
+set [204] 1
+#SAY
+Go and talk to my Master.\
+He is somewhere in the woods.\ \
+<Ok/@exit>
+ 
+[@kundo]
+#IF
+checkitem FateSwordBook
+#ACT
+set [211] 1
+take FateSwordBook 1
+#SAY
+I see that you have the book!\
+It took us a long time to find the right person\
+to take on this hard quest and really finish it.\
+Many have died before you. I will now go research\
+this book and make the FateSword.\
+Please come back later and I will have it for you.\ \
+<Ok/@exit>
+
+#ELSESAY
+Where is the book my master gave you?\ 
+Quick go and get it! \ \
+<Ok/@exit>
+
+ 
+[@givekundo]
+#IF
+random 10
+#ACT
+goto @rankundo
+#ELSESAY
+Please Come Back later. \ \
+<Ok/@exit>
+
+
+[@rankundo]
+#IF
+checkjob warrior
+checklevel 35
+#ACT
+reset [200] 20
+set [205] 1
+give FateSword
+#SAY
+I have studied the book and made you this sword.\
+I hope you will like it!\
+It took some time to decipher all the ingredients\
+but I finally made it.\
+Maybe we will speak again some time.\ \
+<Bye/@exit>

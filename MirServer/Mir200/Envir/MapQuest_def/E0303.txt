@@ -1,0 +1,29 @@
+[@main]
+#IF
+check [780] 1
+#ACT
+goto @flag
+#ELSEACT
+break
+
+[@flag]
+#IF
+check [784] 1
+#ACT
+break
+#ELSEACT
+goto @item
+
+[@item]
+#IF
+random 60
+#SAY
+The mouldy 'thing' smiles as it\
+dies, and you take the small package\
+from its hand as it slowly falls to\
+the ground.\ \
+#ACT
+give R
+set [784] 1
+#ELSEACT
+break

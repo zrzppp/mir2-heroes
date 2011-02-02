@@ -1,0 +1,37 @@
+2011-02-01 18:59:25 Total Guilds:0
+2011-02-01 18:59:25 1 Castles loaded...
+2011-02-01 18:59:25 [Castle] Failed to load Castle MainDoor, check Monster DB: 沙巴克城门
+2011-02-01 18:59:25 [Castle] Failed to load Castle LeftWall, check Monster DB: 沙巴克左城墙
+2011-02-01 18:59:25 [Castle] Failed to load Castle CenterWall, check Monster DB: 沙巴克右城墙
+2011-02-01 18:59:25 [Castle] Failed to load Castle RightWall, check Monster DB: 沙巴克中城墙
+2011-02-01 18:59:26 LoginSrv(192.168.0.2:5600)connected...
+2011-02-01 18:59:26 Merchant Initalize fail...OddOldMan 5(343:597)
+2011-02-01 18:59:26 Script file not found: .\Envir\Market_Def\Teleport-r001.txt
+2011-02-01 18:59:27 Plugin Module started...
+2011-02-01 18:59:29 Database Server (192.168.0.2:6000)connected...
+2011-02-01 18:59:31 Rungate [0](192.168.0.2:3240)opened...
+2011-02-01 19:00:06 [Item] Azura TownTeleport(1073814399)
+2011-02-01 19:04:24 Players Online: 4(4/0)
+2011-02-01 19:04:55 [Item] Azura Amulet(M)(1073814400)
+2011-02-01 19:09:24 Players Online: 3(3/0)
+2011-02-01 19:14:24 Players Online: 3(3/0)
+2011-02-01 19:19:24 Players Online: 3(3/0)
+2011-02-01 19:24:24 Players Online: 3(3/0)
+2011-02-01 19:29:24 Players Online: 3(3/0)
+2011-02-01 19:34:24 Players Online: 3(3/0)
+2011-02-01 19:39:24 Players Online: 3(3/0)
+2011-02-01 19:44:24 Players Online: 3(3/0)
+2011-02-01 19:49:24 Players Online: 3(3/0)
+2011-02-01 19:54:24 Players Online: 3(3/0)
+2011-02-01 19:59:24 Players Online: 3(3/0)
+2011-02-01 20:04:24 Players Online: 3(3/0)
+2011-02-01 20:09:24 Players Online: 3(3/0)
+2011-02-01 20:14:24 Players Online: 2(2/0)
+2011-02-01 20:19:24 Players Online: 2(2/0)
+2011-02-01 20:24:24 Players Online: 2(2/0)
+2011-02-01 20:29:24 Players Online: 3(3/0)
+2011-02-01 20:34:24 Players Online: 3(3/0)
+2011-02-01 20:39:24 Players Online: 2(2/0)
+2011-02-01 20:44:24 Players Online: 2(2/0)
+2011-02-01 20:49:24 Players Online: 2(2/0)
+2011-02-01 20:54:24 Players Online: 3(3/0)

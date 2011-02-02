@@ -1,0 +1,142 @@
+; ===================================
+; Npc Def NPC File : Border_Transporter5-0
+; Town Teleport npc in BorderVillage
+; -----------------------------------
+; Name: Gilbert
+; Job: 
+; Map No: 0
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: Town Teleport npc in BorderVillage
+
+;================================================= =
+;
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will never teleport such an evil person as you!\ \
+<Ok/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+#IF
+CHECKLEVEL 50
+#ACT
+goto @level50check
+break
+#ELSEACT
+goto @main-2
+
+[@level50check]
+#IF
+CHECK [190] 1
+#ACT
+goto @main-2
+break
+#ELSESAY
+Wow, a mighty hero has come. Jason said one day\
+a mighty hero such as yourself shall reveal himself.\ \
+Jason will be pleased to meet you, go find him at\
+'Bichon-Province' (296,220). Tell him Gilbert sent you.\ \
+<I will do that/@exit>\
+<I would like to use your service/@tele>
+
+[@main-2]
+Hello I'm Gilbert, the wandering warrior.\
+I transport men and goods to other places\
+fast and safe. Just pay the fee\
+then i'll escort you to anywhere.\ 
+So what do you say?\ \
+<I'll use the service/@tele>\
+<Maybe next time/@exit>
+
+[@tele]
+Now which place you wanna go?\ \
+<Castle Bichon (500 gold)/@move1>\
+<Ginko Tree Village (500 gold)/@move2>\
+<Serpent Valley (1000 gold)/@move3>\
+<Tao School (1000 gold)/@move4>\
+<CastleGi-Ryoong (1000 gold)/@move5>\
+<Mongchon province (2000 gold)/@move6>\
+<Maybe next time/@exit>
+
+
+[@move1]
+#IF
+checkgold 500
+#ACT
+take gold 500
+mapmove 0 296 221
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move2]
+#IF
+checkgold 500
+#ACT
+take gold 500
+mapmove 0 635 613
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move3]
+#IF
+checkgold 1000
+#ACT
+take gold 1000
+mapmove 2 500 485
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move4]
+#IF
+checkgold 1000
+#ACT
+take gold 1000
+mapmove 11 164 337
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move5]
+#IF
+checkgold 1000
+#ACT
+take gold 1000
+mapmove 4 264 257
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[@move6]
+#IF
+checkgold 2000
+#ACT
+take gold 2000
+mapmove 3 361 342
+break
+#ELSESAY
+You don't have enough gold to use my service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>
+
+[QUESTS]
+;ID Level Flag
+61 15 0 1 1 *

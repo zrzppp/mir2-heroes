@@ -1,0 +1,1 @@
+2011-01-31 20:17:32 StartTimer exception:The table 'StdItems' is already opened exclusively by another user, or it is already open through the user interface and cannot be manipulated programmatically1

@@ -1,0 +1,48 @@
+; ===================================
+; Npc Def NPC File : Sailor-0
+; npc in BichonProvince (BorderVillage)
+; -----------------------------------
+; Name: Sailor
+; Job: 
+; Map No: 0
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: npc in BichonProvince (BorderVillage)
+
+;================================================= =
+;
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+I will never teleport such an evil person as you!\ \
+<Exit/@exit>
+#ELSEACT
+goto @main-1
+
+[@main-1]
+#SAY
+ The ferry to Prajna island will depart soon\
+ Passengers,please board the ship.\ \
+ <Pay 2000 gold and board/@brdmove>\
+ <talk/@talk>
+
+[@talk]
+ Prajna Island is full of rampaging monsters.\
+ Some braves may take this opportunity to boost and raise\
+ their reputation and fame but for the locals,it ain't nothing but just hell.\ \
+ <back/@main-1>
+ 
+[@brdmove]
+#IF
+checkgold 2000
+#ACT
+take gold 2000
+mapmove 5 124 353
+break
+#ELSESAY
+You Dont Have enough gold to use my Service!\
+Be gone, don't waste my time again!\ \
+<Exit/@exit>

@@ -1,0 +1,251 @@
+;Info [ Npc Name{Kunbun} X=235 Y=305 MapName={WoomyonWoods} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%100
+
+;###############################################################
+; Brief Description of the switches used in this NPC.
+; [308] - Unknown
+; [309] - Unknown
+;###############################################################
+
+;Kunbun Woomyon Woods
+[@main]
+#IF
+random 2
+#ACT
+goto @QUEST
+#ELSEACT
+goto @normal
+
+[@QUEST]
+#IF
+check [309] 1
+#ACT
+goto @Q309
+break
+
+#IF
+check [308] 1
+#ACT
+goto @Q308
+break
+
+#IF
+check [307] 1
+#ACT
+goto @Q307
+#ELSEACT
+goto @normal
+
+[@normal]
+A monster called OmaWarrior lives in Woomyon woods...\
+That monster is really strong...\ \
+<Ok/@exit>
+
+[@Q307]
+You know who I am...\
+What has happened to me? It's a strange thing...\ \
+<Ask/@Q307_1>about cooking \
+
+[@Q307_1]
+Do you know me? It's an old story...\
+A long time ago I'm used to cook food in the tavern in Bichon Wall..\
+Well... I miss that time...  It was really long time ago...\ \
+<Ask/@Q307_2> to cook again
+
+[@Q307_2]
+#IF
+random 2
+#ACT
+goto @Q307_3
+#ELSESAY
+What are you asking me? How can I trust you?\
+Go away please...\ \
+<Close/@exit>
+
+[@Q307_3]
+#IF
+random 2
+#SAY
+You look to me like someone I can trust...\
+Then will you do me a favor...\
+these days I wandered a little\ 
+and I found something strange...\ \
+<Next/@Q307_4>  
+
+#ELSESAY
+Do you want me to cook food? In order to do so\
+I should go back to Bichon...\
+I don't like Bichon Province...\
+Sorry, but you should give up...\ \
+<Close/@exit>
+
+[@Q307_4]
+I found this really strange place... there was a monster\
+and, even if I'm so weak, I tried to fight against it,\
+but I defeated it quite easily...\
+Also this place was so strange because I returned to actual\
+world automatically in a short time\
+It's a really strange place... try to have a look\ \
+<Next/@Q307_5>
+
+[@Q307_5]
+Please kill the monster there and get me its helmet!\
+If you do so I'll help you too...\
+I'll take you there and good luck...\ \
+<Ok, I'm ready!/@Q307_6>
+
+[@Q307_6]
+#IF
+checkhum Q001 1
+#SAY
+There is another player fighting right now, please wait\ \
+<Close/@exit>
+#ELSEACT
+goto @Q307_6_1
+
+[@Q307_6_1]
+#IF
+checkjob warrior
+#ACT
+goto @Q307_6_1_1
+break
+
+#IF
+checkjob wizard
+#ACT
+goto @Q307_6_1_2
+break
+
+#IF
+checkjob taoist
+#ACT
+goto @Q307_6_1_3
+break
+
+[@Q307_6_1_1]
+#IF
+#ACT
+Monclear Q001
+Param1 Q001
+Param2 10
+Param3 10
+MonGen BoneElite 2 1 10
+TimeRecall 1
+map Q001
+SET [308] 1
+
+[@Q307_6_1_2]
+#IF
+#ACT
+Monclear Q002
+Param1 Q002
+Param2 10
+Param3 10
+MonGen OmaWarrior 2 1 10
+TimeRecall 1
+map Q002
+SET [308] 1
+
+[@Q307_6_1_3]
+#IF
+#ACT
+Monclear Q003
+Param1 Q003
+Param2 10
+Param3 10
+MonGen GiantKeratoid 2 1 10
+TimeRecall 1
+map Q003
+SET [308] 1
+
+[@Q308]
+#IF
+checkitem Helmet 1
+#ACT
+goto @Q308_1
+#ELSEACT
+goto @Q308_2
+
+[@Q308_1]
+#IF
+#ACT
+SET [309] 1
+take Helmet 1
+#SAY
+What a hero you are! You killed that strong Monster\
+and brought me its helmet....\
+I owe you one!\
+I'll help you too because you worked for me...\ 
+Go and see Mr.Kim... I recommended you to him already...\ \
+<Close/@exit>
+   
+[@Q308_2]
+#IF
+random 5
+#SAY
+Did you looose against the monster? Well...\
+This monster is really strong...\
+Do you want to try again?\ \
+<Challenge/@Q308_2_1> again\
+<Challenge/@exit> later
+#ELSESAY
+I am too busy now so I can not grant you the access\
+come again later please...\ \
+<Close/@exit>
+
+[@Q308_2_1]
+#IF
+checkhum Q001 1
+#SAY
+There is another player fighting right now, please wait\ \
+<Ok/@exit>
+#ELSEACT
+goto @Q308_2_1_1
+
+[@Q308_2_1_1]
+#IF
+checkjob warrior 
+#ACT
+Monclear Q001
+Param1 Q001
+Param2 10
+Param3 10
+MonGen BoneElite 2 1 10
+TimeRecall 1
+map Q001
+break
+
+#IF 
+checkjob wizard
+#ACT
+Monclear Q002
+Param1 Q002
+Param2 10
+Param3 10
+MonGen OmaWarrior 2 1 10
+TimeRecall 1
+map Q002
+break
+
+#IF
+checkjob taoist
+#ACT
+Monclear Q003
+Param1 Q003
+Param2 10
+Param3 10
+MonGen GiantKeratoid 2 1 10
+TimeRecall 1
+map Q003
+break
+
+[@Q309]
+#IF
+#SAY
+Go to Mr. Kim, hurry up!\ \
+<Ok/@exit>

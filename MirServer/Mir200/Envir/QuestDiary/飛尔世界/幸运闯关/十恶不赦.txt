@@ -1,0 +1,126 @@
+[@周行制作八]
+{
+#IF
+CheckMonMap EM028 1
+#ACT
+GOTO @元宝过关2
+break
+#ELSEACT
+GOTO @正常过关2
+break
+[@正常过关2]
+#ACT
+movr d0 6
+inc d0 1
+playdice 1 @cube7
+#SAY
+正在决定你的命运.别激动.\
+[@元宝过关2]
+你很不幸的来到了陷阱关.你必须消灭该地图的所有怪物才能\
+继续摇骰子.如果在本地图死亡.将掉落1000W经验.你可以选择\
+回城然后重新挑战.或者使用元宝跳过本关怪物.\ \ \
+<使用元宝/@开始7>                                <回城算了/@回城>\
+[@回城]
+#ACT
+MAPMOVE 3 333 330
+[@开始7]
+#IF
+CHECKGAMEGOLD > 2
+#ACT
+GAMEGOLD - 2
+movr d0 6
+inc d0 1
+playdice 1 @cube7
+#SAY
+正在决定你的命运.别激动.\
+#ELSEACT
+MESSAGEBOX 元宝数目不够2个.可以打工获得.打BOSS获得.比武获得.装备回收获得!
+CLOSE
+[@cube7]
+#ACT
+messagebox 骰子的点数:<$STR(D0)>点\你可以移动:<$STR(D0)>步\
+goto @next_cube7
+break
+[@next_cube7]
+#IF
+equal d0 1
+#ACT
+goto @posi17
+break
+#IF
+equal d0 2 
+#ACT
+goto @posi27
+break
+#IF
+equal d0 3 
+#ACT
+goto @posi37
+break
+#IF
+equal d0 4 
+#ACT
+goto @posi47
+break
+#IF
+equal d0 5
+#ACT
+goto @posi57
+break
+#IF
+equal d0 6 
+#ACT
+goto @posi67
+break
+[@Posi17]
+#ACT
+batchDelay 1
+addbatch EM029
+batchmove
+break
+[@Posi27]
+#ACT
+batchDelay 1 
+addbatch EM029
+addbatch EM030
+batchmove
+break
+[@Posi37]
+#ACT
+batchDelay 1
+addbatch EM029
+addbatch EM030
+addbatch EM031
+batchmove
+break
+[@Posi47]
+#ACT
+batchDelay 1
+addbatch EM029
+addbatch EM030
+addbatch EM031
+addbatch EM032
+batchmove
+break
+[@Posi57]
+#ACT
+batchDelay 1
+addbatch EM029
+addbatch EM030
+addbatch EM031
+addbatch EM032
+addbatch EM033
+batchmove
+break
+[@Posi67]
+#ACT
+batchDelay 1
+addbatch EM029
+addbatch EM030
+addbatch EM031
+addbatch EM032
+addbatch EM033
+addbatch EM034
+batchmove
+break
+}

@@ -1,0 +1,122 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@刷怪]
+{
+<$USERNAME>:\ \
+你在这里可以享受到VIP的待遇.你可以自己刷怪练级\
+同时你也可以享受用元宝刷出BOSS打宝..极品装备就决定在于你的\
+一念之差.\ \ \
+<刷怪练级/@刷怪练级>        <刷怪打宝/@刷怪打宝>        <回到土城/@回去>\
+[@刷怪练级]
+#IF 
+checkgold 20000
+#ACT
+GOTO @开始刷怪练级
+#ELSEACT
+MESSAGEBOX 召唤一次怪物.需要金币2万!
+CLOSE
+[@开始刷怪练级]
+#IF
+CheckRangeMonCount 0139 24 27 50 < 1
+CHECKMAPHUMANCOUNT 0139 = 1
+#ACT
+take 金币 20000
+Param1 0139
+Param2 23
+Param3 26
+MonGen 专业练级怪 30 3
+CLOSE
+#ELSEACT
+MESSAGEBOX 刷怪失败的理由如下:\一:怪物没有全部清理干净\二:房间内只允许一个人练级
+CLOSE
+[@回去]
+#ACT
+MAPMOVE 3 330 333
+[@刷怪打宝]
+<$USERNAME>:\ \
+想感受一个人打BOSS吗?你可以根据自己的实力来决定\
+如果你想与你的朋友一起挑战.你只需要花20个元宝就可以了!\ \
+<元宝刷怪/@元宝刷怪>\
+<邀请朋友/@邀请朋友>\     
+     <返回上页/@刷怪>\
+[@元宝刷怪]
+<怪物名称>--------<爆出物品>------------<爆出机率>---<所需元宝数量>\
+↓↓↓↓\ \
+<黄泉教主/@黄泉教主>      42级各种新技能           40%           100个\
+<重装使者/@重装使者>      40级以上新衣服           30%           150个\
+<魔龙教主/@魔龙教主>      雷霆战神武魂系列         80%           200个\
+<龙邪教主/@龙邪教主>      武魂精灵系列装备         30%           300个\ \
+注意事项:<爆出机率仅供参考.每次随机坐标出现两只怪>    <返回上页/@刷怪>\
+[@重装使者]
+#IF
+CHECKGAMEGOLD > 149
+#ACT
+GAMEGOLD - 150
+Param1 0139
+Param2 23
+Param3 27
+MonGen 重装使者2 2 20
+GOTO @元宝刷怪
+#ELSEACT
+MESSAGEBOX 你身上没有足够的元宝来支付该项服务费用......
+[@黄泉教主]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+Param1 0139
+Param2 23
+Param3 27
+MonGen 黄泉教主2 2 20
+GOTO @元宝刷怪
+#ELSEACT
+MESSAGEBOX 你身上没有足够的元宝来支付该项服务费用......
+[@魔龙教主]
+#IF
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+Param1 0139
+Param2 23
+Param3 27
+MonGen 魔龙教主2 2 20
+GOTO @元宝刷怪
+#ELSEACT
+MESSAGEBOX 你身上没有足够的元宝来支付该项服务费用......
+[@龙邪教主]
+#IF
+CHECKGAMEGOLD > 299
+#ACT
+GAMEGOLD - 300
+Param1 0139
+Param2 23
+Param3 27
+MonGen 龙邪教主 2 20
+SENDMSG 7 提示:龙邪教主为隐身状态.请自行寻找刷新坐标!
+GOTO @元宝刷怪
+#ELSEACT
+MESSAGEBOX 你身上没有足够的元宝来支付该项服务费用......
+[@邀请朋友]
+你想邀请你的朋友一起挑战教主吗?\
+如果你想.那就能做到.但是你只能邀请一个人和你一起挑战BOSS\
+只需要输入他的名字.花20个元宝.我就可以让他直接飞到你的面前\ \
+注意:<被邀请的玩家必须在盟重武器店等候召唤>\ \
+<输入邀请朋友的名字/@@InPutString2>     <返回上页/@刷怪>
+[@InPutString2]
+#IF
+S0.CHECKMAPNAME D024A
+#ACT
+MessageBox 当前人物所在的地图不允许召唤!
+break
+#IF
+CHECKGAMEGOLD > 19
+S0.CHECKONLINE
+S0.CHECKMAPNAME 0159
+#ACT
+GAMEGOLD - 20
+RECALLHUMAN S0
+#ELSEACT
+MessageBox 邀请失败的原因如下:\1:身上并没有20个元宝支付该项服务费用\2:输入的名字错误或者此人当前不在线!\3:对方没有在盟重武器店等候召唤!
+CLOSE
+}

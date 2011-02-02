@@ -1,0 +1,207 @@
+;Info [ Npc Name{GambleWoman} X=10 Y=6 MapName={Preparationroom} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+#IF
+equal p9 0
+#ACT
+goto @main-1
+BreakTimeRecall 
+break
+
+#IF
+equal p9 1
+#ACT
+goto @race
+BreakTimeRecall 
+break
+
+#IF
+equal p9 2
+#ACT
+goto @cube
+BreakTimeRecall 
+break
+
+#IF
+equal p9 9
+#ACT
+goto @quit
+BreakTimeRecall 
+break
+
+[@main-1]
+#IF
+#ACT
+mov p9 0
+#SAY
+Welcome <$USERNAME> to the preparation room\
+Here I will provide you you with some commodities\ \
+It's all based on luck, so lets get lucky!\ \
+<Go/@penalty>
+
+[@Quit]
+#IF
+#ACT
+map B011
+
+[@Penalty]
+#IF
+random 3
+#SAY
+You have won a...\ \
+<Tell me!/@race>
+#ACT
+mov p9 1
+give SunPotion(M) 1
+break
+
+#IF
+random 3
+#SAY
+You have won a...\ \
+<Tell me!/@race>
+#ACT
+mov p9 1
+give GambleChip 3
+break
+
+#IF
+random 3
+#SAY
+You have won a...\ \
+<Tell me!/@race>
+#ACT
+mov p9 1
+give gold 10000
+break
+
+#ELSEACT
+goto @penalty
+
+[@race]
+Well done <$USERNAME>, now lets get going.\
+Role the dice...\ \
+<Role!/@pre_cube>
+
+[@pre_cube]
+#IF
+checkitem gamblechip 1
+#ACT
+mov p9 2
+take gamblechip 1
+movr d0 6
+inc d0 1
+playdice 1 @cube
+#SAY
+Continue\ \
+<Ok/@cube>
+#ELSESAY
+<$USERNAME>, you haven't got any chips!\
+Go get some if you want to gamble\ \
+<Silly me/@Quit>
+#ELSEACT
+mov p9 9
+
+[@cube]
+#SAY
+Hey, you roled a <$STR(D0)>\
+You can now move <$STR(D0)> rooms forward.\\
+<Sweet, lets move!/@next_cube>
+
+[@next_cube]
+#IF
+equal d0 1 
+#ACT
+goto @posi1
+break
+
+#IF
+equal d0 2 
+#ACT
+goto @posi2
+break
+
+#IF
+equal d0 3 
+#ACT
+goto @posi3
+break
+
+#IF
+equal d0 4 
+#ACT
+goto @posi4
+break
+
+#IF
+equal d0 5
+#ACT
+goto @posi5
+break
+
+#IF
+equal d0 6 
+#ACT
+goto @posi6
+break
+
+[@Posi1]
+#IF
+#ACT
+batchDelay 1
+addbatch B103
+batchmove
+
+[@Posi2]
+#IF
+#ACT
+batchDelay 1
+addbatch B103
+addbatch B104
+batchmove
+
+[@Posi3]
+#IF
+#ACT
+batchDelay 1
+addbatch B103
+addbatch B104
+addbatch B105
+batchmove
+
+[@Posi4]
+#IF
+#ACT
+batchDelay 1
+addbatch B103
+addbatch B104
+addbatch B105
+addbatch B106
+batchmove
+
+[@Posi5]
+#IF
+#ACT
+batchDelay 1
+addbatch B103
+addbatch B104
+addbatch B105
+addbatch B106
+addbatch B107
+batchmove
+
+[@Posi6]
+#IF
+#ACT
+batchDelay 1
+addbatch B103
+addbatch B104
+addbatch B105
+addbatch B106
+addbatch B107
+addbatch B108
+batchmove
+

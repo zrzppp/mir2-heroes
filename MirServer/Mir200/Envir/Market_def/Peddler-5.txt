@@ -1,0 +1,59 @@
+;Info [ Npc Name{Bart} X=148 Y=352 MapName={PrajnaIsland} ]
+;Settings
+(@buy @sell)
+%100
++30
++25
++3
+
+[@main]
+#SAY
+Damn, more customers?...\
+If you want to buy something, do it quickly.\ \
+<Buy/@buy>\
+<Sell/@sell>\
+<Talk with Bart/@talk>\
+<Close/@exit>
+
+[@talk]
+#IF
+random 2
+#ACT
+goto @talk1
+#ELSEACT
+goto @talk2
+
+[@talk1]
+#SAY
+Now, all sorts of cruel monsters have come too near\
+our village rampaging mercilessly. Business is\
+important but my life is even more so. Don't you\
+think so?\ \
+<Back/@main>
+
+[@talk2]
+#SAY
+Oh No! I have missed the ship! Why do you keep talking to me??\
+Will you take care of me? huh? Errrk~\ \
+<Back/@main>
+
+[@buy]
+Don't be slow! Buy quickly. I might miss the board.\
+I may look flurried but don't even think of cheating me.\ \
+ <Back/@main>
+
+[@sell]
+We buy Candles, Amulets, Scrolls RepairOils, etc.\ \
+ <Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle		200	1
+Torch		200	1
+DungeonEscape	200	1
+EscapeBundle	200	1
+RandomTeleport	200	1
+RandomBundle	200	1
+Amulet		200	1
+TownTeleport	200	1

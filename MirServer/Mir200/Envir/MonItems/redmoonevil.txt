@@ -1,0 +1,101 @@
+1/1    Gold  50000
+1/1 (HP)DrugLarge
+1/2 (HP)DrugLarge
+1/1 (MP)DrugLarge
+1/2 (MP)DrugLarge
+1/1 Sunpotion(M)
+1/1 Sunpotion(M)
+1/1 Sunpotion
+1/1 Sunpotion
+1/2 Sunpotion(M)
+1/2 Sunpotion(M)
+1/2 Sunpotion
+1/2 Sunpotion
+1/1 (HP)DrugXL
+1/2 (HP)DrugXL
+1/1 (MP)DrugXL
+1/2 (MP)DrugXL
+
+1/5   SpiritDrug
+1/5   MagicDrug
+1/5   StormDrug
+1/5   MagicAidDrug
+1/5   ImpactDrug
+1/5   StaminaAidDrug 	
+
+1/50  RedOrchidRing
+1/50  RedOrchidBracelet
+1/50  RedOrchidNecklace
+1/50  RedFlowerRing
+1/50  RedFlowerBracelet
+1/50  RedFlowerNecklace
+
+1/50 BloodStealer
+1/1 Apple
+1/1 Apple
+
+1/15  GreatAxe
+1/15  MageStaff
+1/15  Serpentsword
+1/50  DragonSword
+1/120  SpiritBlade
+1/175 JudgementMace
+1/175 SoulSpringWand
+1/175 WarMageStaff
+1/400 RedMoonSword
+
+1/85 BlackIronHelmet
+1/1  SkeletonHelmet
+1/1  ShamanHelmet
+
+1/12  PlatinumRing
+1/12  RubyRing
+1/12  DragonRing
+
+1/90  TitanRing
+1/90  Powerring
+1/90  VioletRing
+
+1/1   ExpelRing
+1/1   CoralRing
+
+1/90 KnightBracelet
+1/70  GreenBead
+1/90 HangMaWheel
+1/70  DemonicBells
+1/70  SoulNecklace
+1/15  PearlNecklace
+1/15  LifeNecklace
+1/110 GaleNecklace
+
+1/5   BenedictionOil
+1/5   BenedictionOil
+1/5   BenedictionOil
+1/5   BenedictionOil
+1/5   BenedictionOil
+1/5   BenedictionOil
+
+1/10000 ProbeNecklace
+
+1/75  SoulBracelet
+
+1/55 SteelArmour(M)
+1/55 SteelArmour(F)
+1/55 TitanArmour(M)
+1/55 TitanArmour(F)
+1/55 DragonRobe(M)
+1/55 DragonRobe(F)
+
+1/75 GreatHelmet
+1/120 WiseCoronet
+1/120 TaoCoronet
+
+1/45 IceStorm
+1/45 SummonShinsu
+1/45 FlamingSword
+1/60 CrossHalfMoon
+1/60 UltimateEnhancer
+1/60 FlameDisruptor
+1/1500 CrossHalfmoon
+1/3500 BladeAvalanche
+1/3500 Curse

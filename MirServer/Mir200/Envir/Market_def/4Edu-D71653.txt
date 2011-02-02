@@ -1,0 +1,30 @@
+;Info [ Npc Name{Barry} X=23 Y=27 MapName={reagentroom} ]
+(@buy)
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+;Settings
+%200
++0
+
+;General Store
+[@main]
+Welcome. How can I help you?\ \
+<Buy/@buy> an item\
+<Close/@exit> 
+
+
+[@buy]
+What items do you need?\
+<Back/@main>
+
+
+[goods]
+;Item		Amount		Time
+Candle              1000        1
+Torch               1000        1
+RandomTeleport      1000        1
+DungeonEscape       1000        1
+EscapeBundle        1000        1
+RandomBundle        1000        1
+

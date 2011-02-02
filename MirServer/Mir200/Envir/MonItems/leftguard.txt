@@ -1,0 +1,50 @@
+1/5 gold 2000
+
+1/25 	(HP)DrugBundle
+1/25 	(MP)DrugBundle
+1/10 	(HP)Druglarge
+1/10 	(MP)Druglarge
+1/20    SunPotion
+1/20 	Sunpotion(M)
+1/50 EventBall(5)
+
+1/150  HeavyArmour(F)
+1/150  HeavyArmour(M)
+1/150 MagicRobe(F)
+1/150 MagicRobe(M) 
+1/150 SoulArmour(F)
+1/150 SoulArmour(M)
+
+1/20 PrinceSword
+1/20 MartialSword
+1/20 HookedSpear
+1/20 KrissSword
+1/100 PowerAxe
+1/200 PurifierSword
+1/1700 WarSpiritBlade
+1/1700 MagicScythe
+
+1/80 StrainBracelet
+1/80 MagicBracelet
+1/80 HwanDevilRing
+1100 PlatinumRing
+1/80 SerpentEyeRing
+1/200 RubyRing
+1/80 HardGlove 
+1/50 IronRing
+1/150 DeathGauntlet
+1/150 BlueJadeNecklace
+1/150 BambooPipe
+1/150 Convexlens
+1/100 GoldBracelet
+
+1/500 ShamanHelmet
+1/500 SkeletonHelmet
+1/750 BronzeGlove
+1/750 expelring
+1/750 coralring
+1/1000 galering
+
+1/1000 SummonHolyDeva
+1/700 Hallucination
+1/700 Curse

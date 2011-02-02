@@ -1,0 +1,66 @@
+; ===================================
+; Npc Def NPC File : BichnInspector-5
+; BattleGround Teleport npc in PrajnaIsland
+; -----------------------------------
+; Name: BichnInspector
+; Job: 
+; Map No: 5
+; Pos X 
+; Pos Y 
+; File name: *removed*
+; Comment: BattleGround Teleport npc in PrajnaIsland
+
+;================================================= =
+;
+
+[@main]
+#IF
+#SAY
+I'm dispatched from the Bichon Wall,\
+preventing the crossed force from Bottomless Pit breaking out..\
+It may sound simple,but as a matter of fact,very difficult.\
+The monsters attempt to break the seal endlessly.\ \
+<We intend to protect the seal as well../@next>\ 
+<I understand/@exit>
+
+[@next]
+What? Do you know what kind of danger you are stepping into?\
+Even if it is to slay the monsters in BichonWall,\
+I cannot get involved in such nonsense.\ \
+<I do wish to get rid of these monsters./@next2>\
+<Is that so?/@exit>
+
+[@next2]
+Okay if you sat so, I must test your power.\
+first,organize the members into a group with three:\
+Warriors,Sorcerers,and Taoists Come with exactly 9 of you here.\
+Then i'll test how well they are united.\
+You will find the orbs in Prajna Island.\
+All members will hand over the orbs to the party leader,\
+and the leader needs to talk to me when ready with orbs.\ \
+<I am ready/@next3>
+
+[@next3]
+#IF
+CHECKGROUPJOBBALANCE 9
+#SAY
+Well now you have all the orbs you may enter.\ \
+<Ok let me in/@next4>
+
+#ELSESAY
+Sorry but you do not have the required amount of members or orbs!\
+Please come back to me when you do.\\
+<Okay,I will/@exit>
+
+[@next4]
+#IF
+#ACT
+timerecall 60
+mapmove EV003 196 142
+close
+
+#ELSESAY
+Sorry but you do not have the required amount of members or orbs!\
+Please come back to me when you do.\\
+<Okay,I will/@exit>
+

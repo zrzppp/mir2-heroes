@@ -1,0 +1,143 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@超级探测]
+{
+欢迎使用超级探测卷.想知道他的功效吗?那我来告诉你\ \
+1:可以探测到当前游戏在线的人物地图及坐标.并直接飞过去\
+2:可以探测到当前游戏内的怪物地图及坐标.并直接飞过去\ \
+飛到该人物身边需要[<20>]元宝     <输入需要探测的人物名字/@@InPutString2>\ \
+飛到该怪物身边需要[<$STR(G1)>]元宝     <输入需要探测的怪物名字/@@InPutString3>\
+[@InPutString2]
+#IF
+S0.CHECKONLINE
+#ACT
+GMEXECUTE 探测 S0
+DELAYGOTO 1 @CQFIRFR
+CLOSE
+#ELSEACT
+MessageBox 你要探测的人物当前并不在线.或者名字输入错误!
+break
+[@InPutString3]
+#ACT
+GMEXECUTE SEARCHMON S0
+DELAYGOTO 1 @CQFIRFGW
+CLOSE
+[@CQFIRFGW]
+探测到你输入的怪物了吗??<如果没探测到怪物请关闭对话框>\
+如果结果还令你满意的话.现在你可以花[<$STR(G1)>]元宝直接飞到它身边\
+打BOSS快人一步.让其他人慢慢的跑吧.\ \
+注意输入命令格式:<地图号>空格<X坐标>空格<Y坐标>.下面是例子\ \
+探测到BOSS的坐标是:比奇(0) 320:230.输入的例子是<0 320 230>\ \
+<强烈推荐>:                  <花费元宝飞到它身边/@@InPutString5>\
+[@CQFIRFR]
+你想飞到刚才你探测到的人物身边吗?需要[<20元宝>]\ \
+如果你想杀他.那不是易如反掌?这样好的机会还犹豫吗?\ \ \
+<强烈推荐>:                  <花费元宝飞到他身边/@花钱飞人物>\
+[@InPutString5]
+#IF
+CHECKMAPNAME T225
+#ACT
+MessageBox 你还在进行犯罪改造.暂时不能离开三峡监狱!
+break
+#IF
+CHECKCONTAINSTEXT S0 EM035
+#ACT
+MessageBox 该地图无任何BOSS.所以不允许你飞过去!
+break
+#IF
+CHECKCONTAINSTEXT S0 T225
+#ACT
+MessageBox 你要到牢房去送饭吗?真无聊!
+break
+#IF
+CHECKGAMEGOLD > G1
+#ACT
+GAMEGOLD - G1
+GMEXECUTE PM S0
+CLEARDELAYGOTO
+give 回城卷 1
+#ELSEACT
+MessageBox 身上没有[<$STR(G1)>]个元宝来支付该项服务费用
+CLOSE
+[@花钱飞人物]
+#IF
+CHECKMAPNAME T225
+#ACT
+MessageBox 你还在进行犯罪改造.暂时不能离开三峡监狱!
+break
+#IF
+S0.CHECKONLINE
+#ACT
+GOTO @人物在线可以飞
+break
+#ELSEACT
+MessageBox 当前该人物已经不在游戏中了.谁叫你速度慢的
+CLOSE
+[@人物在线可以飞]
+#IF
+S0.CHECKMAPNAME G012
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T240
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T103
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T103A
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T103B
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME 0150
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME N114
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME D024A
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME D023
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME EM035
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+S0.CHECKMAPNAME T225
+#ACT
+MessageBox 当前人物所在的地图不允许传送
+break
+#IF
+CHECKGAMEGOLD > 19
+#ACT
+GAMEGOLD - 20
+REGOTO S0
+CLEARDELAYGOTO
+give 回城卷 1
+#ELSEACT
+MessageBox 身上没有20个元宝来支付该项服务费用
+CLOSE
+}

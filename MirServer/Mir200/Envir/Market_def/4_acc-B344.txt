@@ -1,0 +1,103 @@
+;Info [ Npc Name{Monica} X=16 Y=14 MapName={} ]
+;NPC Made By Geoff
+(@buy @sell @repair)
+;Settings
+%100
++19
++20
++21
++22
++23
++24
++26
+
+[@main]
+Welcome, Sir/Ma'am.\
+Have you come here to buy accessories?\ \
+<Buy/@buy> clothes\
+<Sell/@sell> clothes\
+<Repair/@repair> clothes\
+<Talk/@talk> with Monica\
+<Move/@out> outside\
+<Close/@exit>
+
+[@buy]
+There are many accessories in this shop.\
+Please take you time and have a look.\ \
+<Back/@main>
+
+[@sell]
+Would you mind showing me the item you want to sell?\
+I hope you want to sell something that we don't\
+have.\ \
+<Back/@main>
+
+[@repair]
+You may think I'm too young but I'm quite adept at\
+the craft. Just give me a chance, I'll repair\
+it perfectly.\ \
+<Back/@main>
+
+[@talk]
+There is a mysterious cave north-west of this castle.\
+Whoever entered the cave never came back and\
+even though the authorities controlled the rumour,\
+almost everyone knows about it.\
+What? You've heard about it already?\ \
+<Back/@main>
+
+[@out]
+#ACT
+mapmove 4 233 234
+
+[goods]
+;Item		Amount		Time
+GoldNeckalce		100	1	
+PrecisionNeckl		100	1
+WarriorNecklce		100	1
+BlueCrystlNeck		100	1
+JadeNecklace		100	1
+ThinBracelet		100	1
+SilverBracelet		100	1
+IronBracer		100	1
+CopperRing		100	1
+HexagonalRing		100	1
+GlassRing               100     1
+WhiteJadeRing           100     1
+LeatherGlove		100	1
+LargeBracelet		100	1
+SteelBracelet           100     1
+MagicBracelet           100     1
+CharmRing               100     1
+HardGlove               100     1
+BlueKadeNeckl           100     1
+SerpentEyeRing          100     1
+ExpelRing               100     1
+BlueRing                100     1
+MonkBracelet            100     1
+BlackNeclakce           100     1
+YellowNecklace          100     1
+HornRing                100     1
+PlatinNecklace          100     1
+PhoenixBead             100     1
+EbonyNecklace           100     1
+DeathGauntlet           100     1
+MoralRing               100     1
+LanternNeckl            100     1
+TigerNecklace           100     1
+GoldRing                100     1
+AmberNecklace           100     1
+SkeletonRing            100     1
+NagaNecklace            100     1
+StrainBracelet          100     1
+BambooPipe              100     1
+BlackRing               100     1
+CoralRing               100     1
+IronRing                100     1
+ElusionNeckl            100     1
+SpellBracelet           100     1
+PearlRing               100     1
+EbonyBracelet           100     1
+GoldenTiara             100     1
+ConvexLens              100     1
+GoldBracelet            100     1

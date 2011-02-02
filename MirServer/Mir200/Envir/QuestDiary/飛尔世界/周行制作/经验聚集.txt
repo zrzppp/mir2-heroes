@@ -1,0 +1,427 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+[@经验功能]
+{
+<打怪可以获得经验.但是有什么办法能让经验进行交易呢?/FCOLOR=253>\
+<来看看我们为你制作的经验聚集功能吧.选择好你要杀的怪物等级/FCOLOR=250>\
+<我们就会给你一个对应的经验石.放到包裹里面就可以去打同等级/FCOLOR=249>\
+<的怪物.杀怪物到指定数量的时候..系统会给你一个对应的经验丹/FCOLOR=254>\
+你可以交易给别人.也可以自己享用.是不是很神气呢?快来试试吧\ \
+<选择40级怪物/@经验40级>   已经杀怪数量：[<$HUMAN(FIRA)>]\
+<选择55级怪物/@经验55级>   已经杀怪数量：[<$HUMAN(FIRB)>]\
+<选择70级怪物/@经验70级>   已经杀怪数量：[<$HUMAN(FIRC)>]        <返回首页/@MAIN>\
+[@经验40级]
+你选择消灭<1000个40级怪物/FCOLOR=254>.完成后将获得<一千万/FCOLOR=253>经验丹\
+你可以自己享用.也可以交易出售!\
+如果给你的经验石丢失.那你就只能等待明天再做了\
+不影响你以前打怪的数量.<沃玛怪物.疾风殿.挂机天堂等怪物40级/FCOLOR=250>\ \ \
+<确定接受/@接受40级0>\ \
+<返回上页/@经验功能>\
+[@接受40级0]
+#if
+dayofweek sun
+#act
+goto @sun-cqfircom
+break
+#if
+dayofweek mon
+#act
+goto @mon-cqfircom
+break
+#if
+dayofweek tue
+#act
+goto @tue-cqfircom
+break
+#if
+dayofweek wed
+#act
+goto @wed-cqfircom
+break
+#if
+dayofweek thu
+#act
+goto @thu-cqfircom
+break
+#if
+dayofweek fri
+#act
+goto @fri-cqfircom
+break
+#if
+dayofweek sat
+#act
+goto @sat-cqfircom
+break
+[@sun-cqfircom]
+#IF
+check [391] 0
+#act
+reset [391] 7
+SET [391] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@mon-cqfircom]
+#IF
+check [392] 0
+#act
+reset [391] 7
+SET [392] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@tue-cqfircom]
+#IF
+check [393] 0
+#act
+reset [391] 7
+SET [393] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@wed-cqfircom]
+#IF
+check [394] 0
+#act
+reset [391] 7
+SET [394] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@thu-cqfircom]
+#IF
+check [395] 0
+#act
+reset [391] 7
+SET [395] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@fri-cqfircom]
+#IF
+check [396] 0
+#act
+reset [391] 7
+SET [396] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@sat-cqfircom]
+#IF
+check [397] 0
+#act
+reset [391] 7
+SET [397] 1
+GOTO @接受40级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+[@接受40级]
+#IF
+Check [071] 0
+#ACT
+SET [071] 1
+GIVE 经验石[40级] 1
+messagebox 接受成功.推荐打怪地点:挂机天堂.沃玛大殿.幻境三层.四层
+CLOSE
+#ELSEACT
+messagebox 你已经接受消灭40级怪物了.还来找我做什么?
+break
+[@经验55级]
+你选择消灭<700个55级怪物/FCOLOR=254>.完成后将获得<五千万/FCOLOR=253>经验丹\
+你可以自己享用.也可以交易出售!\
+如果给你的经验石丢失.那你就只能等待明天再做了\
+不影响你以前打怪的数量.<祖码类.牛魔将军等怪物55级/FCOLOR=250>\ \ \
+<确定接受/@接受55级1>\ \
+<返回上页/@经验功能>\
+[@接受55级1]
+#if
+dayofweek sun
+#act
+goto @sun-cqfircom1
+break
+#if
+dayofweek mon
+#act
+goto @mon-cqfircom1
+break
+#if
+dayofweek tue
+#act
+goto @tue-cqfircom1
+break
+#if
+dayofweek wed
+#act
+goto @wed-cqfircom1
+break
+#if
+dayofweek thu
+#act
+goto @thu-cqfircom1
+break
+#if
+dayofweek fri
+#act
+goto @fri-cqfircom1
+break
+#if
+dayofweek sat
+#act
+goto @sat-cqfircom1
+break
+[@sun-cqfircom1]
+#IF
+check [391] 0
+#act
+reset [391] 7
+SET [391] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@mon-cqfircom1]
+#IF
+check [392] 0
+#act
+reset [391] 7
+SET [392] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@tue-cqfircom1]
+#IF
+check [393] 0
+#act
+reset [391] 7
+SET [393] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@wed-cqfircom1]
+#IF
+check [394] 0
+#act
+reset [391] 7
+SET [394] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@thu-cqfircom1]
+#IF
+check [395] 0
+#act
+reset [391] 7
+SET [395] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@fri-cqfircom1]
+#IF
+check [396] 0
+#act
+reset [391] 7
+SET [396] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@sat-cqfircom1]
+#IF
+check [397] 0
+#act
+reset [391] 7
+SET [397] 1
+GOTO @接受55级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+[@接受55级]
+#IF
+Check [072] 0
+#ACT
+SET [072] 1
+GIVE 经验石[55级] 1
+messagebox 接受成功.推荐打怪地点:祖玛寺庙.牛魔大殿.幻境!
+CLOSE
+#ELSEACT
+messagebox 你已经接受消灭55级怪物了.还来找我做什么?
+break
+[@经验70级]
+你选择消灭<400个70级怪物/FCOLOR=254>.完成后将获得<一亿五/FCOLOR=253>经验丹\
+你可以自己享用.也可以交易出售!\
+如果给你的经验石丢失.那你就只能等待明天再做了\
+不影响你以前打怪的数量.<魔龙战将.青蛙洞.暗之等怪物70级/FCOLOR=250>\ \ \
+<确定接受/@接受70级2>\ \
+<返回上页/@经验功能>\
+[@接受70级2]
+#if
+dayofweek sun
+#act
+goto @sun-cqfircom2
+break
+#if
+dayofweek mon
+#act
+goto @mon-cqfircom2
+break
+#if
+dayofweek tue
+#act
+goto @tue-cqfircom2
+break
+#if
+dayofweek wed
+#act
+goto @wed-cqfircom2
+break
+#if
+dayofweek thu
+#act
+goto @thu-cqfircom2
+break
+#if
+dayofweek fri
+#act
+goto @fri-cqfircom2
+break
+#if
+dayofweek sat
+#act
+goto @sat-cqfircom2
+break
+[@sun-cqfircom2]
+#IF
+check [391] 0
+#act
+reset [391] 7
+SET [391] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@mon-cqfircom2]
+#IF
+check [392] 0
+#act
+reset [391] 7
+SET [392] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@tue-cqfircom2]
+#IF
+check [393] 0
+#act
+reset [391] 7
+SET [393] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@wed-cqfircom2]
+#IF
+check [394] 0
+#act
+reset [391] 7
+SET [394] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@thu-cqfircom2]
+#IF
+check [395] 0
+#act
+reset [391] 7
+SET [395] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@fri-cqfircom2]
+#IF
+check [396] 0
+#act
+reset [391] 7
+SET [396] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+
+[@sat-cqfircom2]
+#IF
+check [397] 0
+#act
+reset [391] 7
+SET [397] 1
+GOTO @接受70级
+break
+#ELSEACT
+GOTO @重复做任务
+break
+[@接受70级]
+#IF
+Check [073] 0
+#ACT
+SET [073] 1
+GIVE 经验石[70级] 1
+messagebox 接受成功.推荐打怪地点:魔龙.龙邪洞.青蛙洞
+CLOSE
+#ELSEACT
+messagebox 你已经接受消灭70级怪物了.还来找我做什么?
+break
+[@重复做任务]
+#CALL [\飛尔世界\周行制作\重复聚集.txt] @经验重复
+}

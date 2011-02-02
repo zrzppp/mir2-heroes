@@ -1,0 +1,14 @@
+;Info [ Npc Name{GuildWar} X=41 Y=41 MapName={Warmap3} ]
+;;Co-Ords 48 61
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+Do you want to leave the fight?\ \
+<Yes/@back>\
+<No/@exit>
+
+[@back]
+#ACT
+map 3

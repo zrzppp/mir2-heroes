@@ -1,0 +1,70 @@
+;Info [ Npc Name{HighPriest} X=7 Y=5 MapName={HouseOfHighLeveledTaoist} ]
+
+;NPC Release 1 (2003) By Geoff
+;99% Translated NPCs Including Quests
+
+[@main]
+#IF
+check [757] 1
+#ACT
+goto @Q707
+break 
+
+#IF
+check [756] 1
+#ACT
+goto @Q706
+#ELSEACT
+goto @normal
+
+[@Q707]
+You received the books already, didn't you?\
+Double click the book called by Healing.\
+Then as the book disappears you learn the skill.\
+Hitting F11 button, you can check your martial art skills.\
+To set up the skill, click on the skill and set the button (F1-F8).\
+Now go and visit Bookstore in BichonProvince.\
+The owner of the Bookstore will advise you how to develop yourself.\
+The coordinates of the Bookstore are 323,247, try to go there.\ \
+<Close/@exit>
+
+[@normal]
+I am the HolyTaoist, what's your name?\
+You don't answer me. Ok, I see what you mean.\
+Then I don't care what you do\ \
+<Close/@exit>
+
+[@Q706]
+#IF
+checklevel 7
+#SAY
+Let me test your ability, there are a lot of monsters called by Sheep,\
+Deer and Hen here. First, kill them all within 5 minutes. Let me\
+talk to you after finishing it.\ \
+<Close/@Q706_1>
+#ELSESAY
+I am HolyTaoist, Nice to meet you...\
+I think the helper advised you enough about the occupation, Taoist\
+Healing is a first step for Taoist, To study Healing\
+Your level should be 7 or more\
+Come again later when you are level 7.\ \
+<Ok/@exit>
+
+[@Q706_1]
+#IF
+checkhum 01132 1
+#SAY
+At this moment there is someone else in the test\
+Please wait until the person's test is finished.\ \ 
+<Ok/@exit>
+
+#ELSEACT
+Monclear 01132
+Param1 01132
+Param2 10
+Param3 10
+MonGen Deer 10 10
+MonGen Hen 20 10
+MonGen Sheep 10 10
+TimeRecall 5
+map 01132

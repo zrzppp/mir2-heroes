@@ -1,7 +1,7 @@
 ﻿[Reg]
 Key=02358541052
 IP=222.182.164.153
-ServerAddr=192.168.0.2
+ServerAddr=127.0.0.1
 ServerPort=37000
 
 [Server]
@@ -16,11 +16,11 @@ TestServerUserLimit=2000
 ServiceMode=FALSE
 NonPKServer=FALSE
 
-DBAddr=192.168.0.2
+DBAddr=127.0.0.1
 DBPort=6000
-IDSAddr=192.168.0.2
+IDSAddr=127.0.0.1
 IDSPort=5600
-MsgSrvAddr=192.168.0.2
+MsgSrvAddr=127.0.0.1
 MsgSrvPort=4900
 
 HumLimit=30
@@ -36,7 +36,7 @@ CheckBlock=8000
 AvailableBlock=8000
 GateLoad=0
 
-LogServerAddr=192.168.0.2
+LogServerAddr=127.0.0.1
 LogServerPort=10000
 ViewHackMessage=FALSE
 ViewAdmissionFailure=FALSE
@@ -45,7 +45,7 @@ HalfFeeStart=2
 HalfFeeEnd=10
 
 DBName=HeroDB
-GateAddr=192.168.0.2
+GateAddr=127.0.0.1
 GatePort=5000
 SocCheckTimeOut=50
 ProcessMonstersLimit=100

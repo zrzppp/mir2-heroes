@@ -134,6 +134,9 @@ OriginalFilename=MirClient.exe
 ProductName=MakeGM?????
 ProductVersion=1.0.0.0
 Comments=
+[Excluded Packages]
+C:\Program Files\Indy 10 for Delphi 7\LibD7\dclIndyCore70.bpl=Indy 10 Core Design Time
+C:\Program Files\Indy 10 for Delphi 7\LibD7\dclIndyProtocols70.bpl=Indy 10 Protocols Design Time
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;

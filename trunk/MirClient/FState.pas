@@ -8,7 +8,7 @@ uses
   MapUnit, SoundUtil, ComCtrls, EncryptUnit, Share, WIL, ExtCtrls;
 
 const
-  BOTTOMBOARD800 = 371; //主操作介面图形号
+  BOTTOMBOARD800 = 371; // I just edited this1 (371)//主操作介面图形号
   BOTTOMBOARD1024 = 2; //主操作介面图形号
   VIEWCHATLINE = 9;
   MAXSTATEPAGE = 4;
@@ -1992,20 +1992,20 @@ begin
     DChatDlg.Width := 388;
     DChatDlg.Height := 126;
     DChatDlg.DParent := DBottom;
-    DChatDlg.Floating := False;
+    DChatDlg.Floating := True;    // I just edited this2 (False)
 
     DMemoChat.Left := 0;
     DMemoChat.Top := 0;
     DMemoChat.Width := 388;
     DMemoChat.Height := 12 * 9;
-    DMemoChat.SpareSize := DMemoChat.Height - 12 * 2;
+    DMemoChat.SpareSize := DMemoChat.Height - 12 * 9;
 
     EdChat.Left := 0;
     EdChat.Top := 12 * 9 + 4;
     EdChat.Width := 388;
-    EdChat.Height := 16;
+    EdChat.Height := 12 * 9; // Just Edited 16;
     EdChat.DParent := DChatDlg;
-    EdChat.Visible := False;
+    EdChat.Visible := True;
     EdChat.Text := '';
     EdChat.SelTextFontColor := clWhite;
 
@@ -2019,8 +2019,8 @@ begin
     DScrollChat.RightButton.OnDirectPaint := DScrollScrollDirectPaint;
     DScrollChat.CenterButton.OnDirectPaint := nil;
     DScrollChat.Left := DMemoChat.Width;
-    DScrollChat.Top := -90;
-    DScrollChat.Increment := 12;
+    DScrollChat.Top := 0;  //90
+    DScrollChat.Increment := 12;   // 12
     DScrollChat.LeftButton.Left := 1;
     DScrollChat.LeftButton.Top := 1;
     DScrollChat.RightButton.Left := 1;
@@ -2035,9 +2035,9 @@ begin
     DScrollChat.Width := 0;
     DScrollChat.Height := 0;
 
-    DScrollChat.VisibleScroll := False;
+    DScrollChat.VisibleScroll := True;
 
-    DShowChat.Visible := False;
+    DShowChat.Visible := True;
   end else begin
     d := g_WCqFirImages.Images[65];
     if d <> nil then begin
@@ -2323,17 +2323,17 @@ begin
     DChatDlg.Height := 12 * 9 + 2;
     DChatDlg.Width := DEdChat.Width;
     DChatDlg.Left := DBottom.Left;
-    DChatDlg.Top := SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; //SCREENHEIGHT - 251 + 118;
+    DChatDlg.Top := SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; //SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; SCREENHEIGHT - 251 + 118;
 
     DChatDlg.DParent := DBackground;
     DChatDlg.Floating := False;
     DChatDlg.Visible := False;
 
     DMemoChat.Left := 2;
-    DMemoChat.Top := 2;
+    DMemoChat.Top := 0;
     DMemoChat.Width := DChatDlg.Width - 18;
     DMemoChat.Height := 12 * 9;
-    DMemoChat.SpareSize := DMemoChat.Height - 12;
+    DMemoChat.SpareSize := 0; //DMemoChat.Height - 106;  //Lyncus Edited ChatScroll
     //DMemoChat.Border:=True;
 
     {DScrollChat.SetImgIndex(g_WMain2Images, 291);
@@ -2350,7 +2350,7 @@ begin
     DScrollChat.RightButton.OnDirectPaint := DScrollScrollDirectPaint;
     DScrollChat.OnDirectPaint := DScrollCenterScrollDirectPaint;
     DScrollChat.Left := DMemoChat.Width + 1;
-    DScrollChat.Top := 0;
+    DScrollChat.Top := 0; //Lyncus1
     DScrollChat.Height := DChatDlg.Height;
 
     DScrollChat.Increment := 12;
@@ -5569,11 +5569,11 @@ begin
   end;
 
   if DMemoChat.Count >= 9 then begin
-    while nNextHeight > 0 do begin
+    while nNextHeight > 8 do begin  // Just changed this3 0
       DScrollChat.Next;
       Dec(nNextHeight, DScrollChat.Increment);
     end;
-    nNextHeight := 0;
+    nNextHeight := 8;
   end;
  // DScrollChat.Position := DScrollChat.Position + nNextHeight;
   //DScrollChat.Next;

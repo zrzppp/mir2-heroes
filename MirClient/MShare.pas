@@ -1011,7 +1011,7 @@ var
   g_boShowJob: Boolean = False; //显示职业
   g_boShowLevel: Boolean = False; //显示等级
   g_boDuraAlert: Boolean = False; //物品持久警告
-  g_boMagicLock: Boolean = False; //魔法锁定
+  g_boMagicLock: Boolean = True; //魔法锁定
   g_boAutoPuckUpItem: Boolean = False;
 
   g_boShowHumanInfo: Boolean = True;
@@ -1206,7 +1206,7 @@ var
     boShowMoveLable: True;
     boBGSound: True;
     boItemHint: False;
-    boMagicLock: False; // Lock Magic Onto Target
+    boMagicLock: True; // Lock Magic Onto Target
     boOrderItem: True;
     boPickUpItemAll: False;
     boCloseGroup: True;
@@ -4660,7 +4660,7 @@ begin
   if ini <> nil then begin
     g_Config.boHideBlueLable := True;
     g_Config.boItemHint := False;
-    g_Config.boMagicLock := False;
+    g_Config.boMagicLock := True;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);

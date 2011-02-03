@@ -5451,7 +5451,7 @@ begin
   FRowSelect := False;
   FMaxHeight := 0;
   FMaxWidth := 0;
-  FItemSize := 16;
+  FItemSize := 12; //Edited By Lyncus 2/02/2011(Old Value:  16;)
   FSpareSize := 0;
   {if not (csDesigning in ComponentState) then begin
 

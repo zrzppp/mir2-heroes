@@ -1205,10 +1205,10 @@ var
     boShowItemName: False;
     boShowMoveLable: True;
     boBGSound: True;
-    boItemHint: False;
+    boItemHint: True;
     boMagicLock: True; // Lock Magic Onto Target
     boOrderItem: True;
-    boPickUpItemAll: False;
+    boPickUpItemAll: True;
     boCloseGroup: True;
     boDuraWarning: True;
     boNotNeedShift: False;
@@ -4659,7 +4659,7 @@ begin
   ini := TIniFile.Create(sFileName);
   if ini <> nil then begin
     g_Config.boHideBlueLable := True;
-    g_Config.boItemHint := False;
+    g_Config.boItemHint := True;
     g_Config.boMagicLock := True;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);

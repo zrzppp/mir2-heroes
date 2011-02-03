@@ -1983,7 +1983,7 @@ begin
     DCategorizeGuild.Visible := False;
     DCategorizeGroup.Visible := False;
     DCategorizePrivate.Visible := False;
-    DShowChat.Visible := False;
+    DShowChat.Visible := True;
 
 {-------------------------------------------------------------------------------}
 
@@ -1992,18 +1992,18 @@ begin
     DChatDlg.Width := 388;
     DChatDlg.Height := 126;
     DChatDlg.DParent := DBottom;
-    DChatDlg.Floating := True;    // I just edited this2 (False)
+    DChatDlg.Floating := False;    // I just edited this2 (False)
 
     DMemoChat.Left := 0;
     DMemoChat.Top := 0;
     DMemoChat.Width := 388;
     DMemoChat.Height := 12 * 9;
-    DMemoChat.SpareSize := DMemoChat.Height - 12 * 9;
+    DMemoChat.SpareSize := 0; //Edited By Lyncus 2/02/2011(Old Value:  DMemoChat.Height - 12 * 9;)
 
     EdChat.Left := 0;
     EdChat.Top := 12 * 9 + 4;
     EdChat.Width := 388;
-    EdChat.Height := 12 * 9; // Just Edited 16;
+    EdChat.Height := 12; // Just Edited 16;
     EdChat.DParent := DChatDlg;
     EdChat.Visible := True;
     EdChat.Text := '';
@@ -2020,7 +2020,7 @@ begin
     DScrollChat.CenterButton.OnDirectPaint := nil;
     DScrollChat.Left := DMemoChat.Width;
     DScrollChat.Top := 0;  //90
-    DScrollChat.Increment := 12;   // 12
+    DScrollChat.Increment := 15;   // 12
     DScrollChat.LeftButton.Left := 1;
     DScrollChat.LeftButton.Top := 1;
     DScrollChat.RightButton.Left := 1;
@@ -2035,7 +2035,7 @@ begin
     DScrollChat.Width := 0;
     DScrollChat.Height := 0;
 
-    DScrollChat.VisibleScroll := True;
+    DScrollChat.VisibleScroll := False;
 
     DShowChat.Visible := True;
   end else begin
@@ -2330,10 +2330,10 @@ begin
     DChatDlg.Visible := False;
 
     DMemoChat.Left := 2;
-    DMemoChat.Top := 0;
+    DMemoChat.Top := 2;
     DMemoChat.Width := DChatDlg.Width - 18;
     DMemoChat.Height := 12 * 9;
-    DMemoChat.SpareSize := 0; //DMemoChat.Height - 106;  //Lyncus Edited ChatScroll
+    DMemoChat.SpareSize := 0; //Edited By Lyncus 2/02/2011(Old Value:  DMemoChat.Height - 12 * 9;)
     //DMemoChat.Border:=True;
 
     {DScrollChat.SetImgIndex(g_WMain2Images, 291);
@@ -2353,7 +2353,7 @@ begin
     DScrollChat.Top := 0; //Lyncus1
     DScrollChat.Height := DChatDlg.Height;
 
-    DScrollChat.Increment := 12;
+    DScrollChat.Increment := 15;
     DScrollChat.LeftButton.Left := (DScrollChat.Width - DScrollChat.LeftButton.Width) div 2;
     DScrollChat.LeftButton.Top := 1;
     DScrollChat.RightButton.Left := (DScrollChat.Width - DScrollChat.RightButton.Width) div 2;
@@ -5569,11 +5569,11 @@ begin
   end;
 
   if DMemoChat.Count >= 9 then begin
-    while nNextHeight > 8 do begin  // Just changed this3 0
+    while nNextHeight > 0 do begin  // Just changed this3 0
       DScrollChat.Next;
       Dec(nNextHeight, DScrollChat.Increment);
     end;
-    nNextHeight := 8;
+    nNextHeight := 0;
   end;
  // DScrollChat.Position := DScrollChat.Position + nNextHeight;
   //DScrollChat.Next;
@@ -17024,7 +17024,7 @@ begin
     DShowChat.SetImgIndex(g_WCqFirImages, 145);
     SetChatVisible(True);
   end;
-  DMemoChat.SpareSize := DMemoChat.Height - 12;
+  DMemoChat.SpareSize := 0; //Edited By Lyncus 2/02/2011(Old Value:  DMemoChat.Height - 12 * 9;)
 end;
 
 procedure TFrmDlg.DEdChatDirectPaint(Sender: TObject;
@@ -18857,7 +18857,7 @@ begin
   DCheckBoxItemDuraHint.Checked := g_Config.boDuraWarning;
   DCheckBoxCompareItem.Checked := g_Config.boCompareItem;
 
-  DCheckBoxPickUpItemAll.Checked := False;
+  DCheckBoxPickUpItemAll.Checked := True;
   DCheckBoxBook.Checked := g_Config.boRenewBookIsAuto;
 
 
@@ -19422,17 +19422,17 @@ begin
 
         DCheckBox := TDCheckBox(ItemList.Objects[1]);
         DCheckBox.Top := nTop;
-        //DCheckBox.Checked := pTShowItem(DCheckBox.Data).boHintMsg;
+        DCheckBox.Checked := pTShowItem(DCheckBox.Data).boHintMsg;
         DCheckBox.Visible := True;
 
         DCheckBox := TDCheckBox(ItemList.Objects[2]);
         DCheckBox.Top := nTop;
-        //DCheckBox.Checked := pTShowItem(DCheckBox.Data).boPickup;
+        DCheckBox.Checked := pTShowItem(DCheckBox.Data).boPickup;
         DCheckBox.Visible := True;
 
         DCheckBox := TDCheckBox(ItemList.Objects[3]);
         DCheckBox.Top := nTop;
-        //DCheckBox.Checked := pTShowItem(DCheckBox.Data).boShowName;
+        DCheckBox.Checked := pTShowItem(DCheckBox.Data).boShowName;
         DCheckBox.Visible := True;
 
         TLines(ItemList).GetHeight;

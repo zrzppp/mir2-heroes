@@ -4139,7 +4139,7 @@ var
     sGMRedMsgpreFix: '〖ＧＭ〗';
     sMonSayMsgpreFix: '〖怪物〗';
     sCustMsgpreFix: '〖祝福〗';
-    sCastleMsgpreFix: '〖城主〗';
+    sCastleMsgpreFix: '';
     sGuildNotice: '公告';
     sGuildWar: '敌对行会';
     sGuildAll: '联盟行会';

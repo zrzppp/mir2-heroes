@@ -2708,7 +2708,7 @@ begin
             end;
         end;
       end;
-      sStoreName := '¡¾' + m_sUserName + 'µÄÌ¯Î»¡¿';
+      sStoreName := m_sUserName + ' Stall';
       BoldTextOut(
         m_nSayX - TextWidth(sStoreName) div 2,
         m_nSayY + Y, sStoreName, clLime);

@@ -2425,7 +2425,7 @@ begin
   case btType of
     0: Result := g_sGoldName;
     1: Result := g_sGameGoldName;
-    2: Result := 'ÉùÍû';
+    2: Result := 'Payment Point';
     3: Result := g_sGamePointName;
   end;
 end;

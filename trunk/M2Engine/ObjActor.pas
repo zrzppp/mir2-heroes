@@ -29305,7 +29305,7 @@ begin
   if (not CretInNearXY(PlayObject, nX, nY)) or (PlayObject.m_btRaceServer <> RC_PLAYOBJECT) then Exit;
 
   FillChar(UserState, SizeOf(TUserStoreStateInfo), #0);
-  UserState.UserName := PlayObject.m_sCharName + 'µÄÌ¯Î»';
+  UserState.UserName := PlayObject.m_sCharName + ' Stall';
   UserState.NAMECOLOR := GetCharColor(PlayObject);
   UserState.RecogId := Integer(PlayObject);
 

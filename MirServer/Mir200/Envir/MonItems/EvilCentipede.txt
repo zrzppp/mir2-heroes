@@ -91,8 +91,8 @@
 1/5 BenedictionOil
 1/5 BenedictionOil
 1/5 BenedictionOil
-1/50 ParalysisRing
-1/50 recoveryring
-1/50 SoulBracelet
+1/1500 ParalysisRing
+1/1500 recoveryring
+1/1500 SoulBracelet
 1/250 dragonslayer
 1/250 soulsabre

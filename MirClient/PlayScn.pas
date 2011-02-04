@@ -1659,7 +1659,20 @@ begin
             //DrawBlendAnti16(m_ObjSurface, ix + ax, iy + ay, dsurface, 0, 0, dsurface.Width, dsurface.Height);
                 end else DropItem.BoFlash := False;
               end;
-            //DrawItemName(m_ObjSurface, DropItem, ix, iy);
+              
+              { Ryan - Needs Changing, But Will Do For Now. }
+              ShowItem := g_ShowItemList.Find(DropItem.Name);
+              if (DropItem <> g_FocusItem) and (((ShowItem <> nil) and (ShowItem.boShowName)) or g_boShowAllItem) then
+              begin
+                with m_ObjSurface do
+                begin
+                  BoldTextOut(ix + HALFX - TextWidth(DropItem.Name) div 2,
+                  iy + HALFY - TextHeight(DropItem.Name) div 2,
+                                         DropItem.Name,
+                                         clWhite,
+                                         clBlack);
+                end;
+              end;
             end;
           end else begin
             boDrawItem := False;

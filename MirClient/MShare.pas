@@ -1043,7 +1043,7 @@ var
   //g_dwCanPhHitTick: LongWord;
 
   //g_ShowItemList: TGList;
-  g_boShowAllItem: Boolean = True; //显示地面所有物品名称
+  g_boShowAllItem: Boolea; //显示地面所有物品名称
 
   g_boDrawTileMap: Boolean = True;
   g_boDrawDropItem: Boolean = True;

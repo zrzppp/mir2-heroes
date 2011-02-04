@@ -6,14 +6,14 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, MMSystem, Forms, Dialogs,
   JSocket, ExtCtrls, Textures, DXDraws, DirectX, DXClass, DrawScrn, IntroScn, PlayScn,
   Grobal2, DIB, StdCtrls, WIL, HUtil32, EncryptUnit, Actor, Mpeg, MapUnit,
-  DWinCtl, ClFunc, magiceff, SoundUtil, clEvent, Wave, IniFiles, Registry,
+  DWinCtl, ClFunc, magiceff, SoundUtil, clEvent, IniFiles, Registry,
   Spin, ComCtrls, Grids, Menus, Mask, MShare, Share, StrUtils, HTTPGet, MD5EncodeStr,
   SoundEngn, ShellApi, tlHelp32, psAPI, PlugIn, GameImages,
   PathFind, zLibx, MPlayer, OleCtrls, GuaJi;
 
 const
   BO_FOR_TEST = False;
-  EnglishVersion = True; //TRUE;
+  EnglishVersion = True;
   BoNeedPatch = True;
 type
   TKornetWorld = record
@@ -2752,18 +2752,11 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
           Key := 0;
         end;
       end;
-    Word('Z'): begin
-        if ssCtrl in Shift then begin
-          g_boShowAllItem := not g_boShowAllItem;
-        end else
-          //if CanNextAction and ServerAcceptNextAction then begin
-          SendPickup; //捡物品
-          //end;
-        Key := 0;
-      end;
+
     {
     Alt + X 重新开始游戏（当角色死亡后特别有用）
     }
+    
     Word('R'): begin
         if ssAlt in Shift then begin //刷新包裹
           case g_QueryBagItem of
@@ -2848,10 +2841,21 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
         end;
         Key := 0;
       end;
+
+    { Ryan - [Todo] ~ Add Options(F12) For This, And Change To Both Working With TAB }
     VK_TAB: begin
-        // Pickup item if standing over it.
+      if ssCtrl in Shift then
+      begin
+        g_boShowAllItem := not g_boShowAllItem;
+      end else
+      begin
+        { Pickup Item Of Floor, If Actor Is Standing On It. }
         SendPickup;
+      
+        Key := 0;
       end;
+    end;
+
     Word('T'): begin
         if GetTickCount > g_dwQueryMsgTick then begin
           g_dwQueryMsgTick := GetTickCount + 3000;

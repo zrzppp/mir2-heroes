@@ -206,3 +206,9 @@ HellFire		200	1
 ThunderBolt		200	1
 Teleport		200	1
 GreatFireBal		200	1
+HeroFireBall		200	1
+HeroFencing		200	1
+HeroHealing		200	1
+HeroSlaying		200	1
+HeroThunderB		200	1
+HeroSoulFB		200	1

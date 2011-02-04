@@ -1043,7 +1043,9 @@ var
   //g_dwCanPhHitTick: LongWord;
 
   //g_ShowItemList: TGList;
-  g_boShowAllItem: Boolean = True; //显示地面所有物品名称
+
+  { Ryan - }
+  g_boShowAllItem: Boolean; //显示地面所有物品名称
 
   g_boDrawTileMap: Boolean = True;
   g_boDrawDropItem: Boolean = True;

@@ -2752,18 +2752,11 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
           Key := 0;
         end;
       end;
-    Word('Z'): begin
-        if ssCtrl in Shift then begin
-          g_boShowAllItem := not g_boShowAllItem;
-        end else
-          //if CanNextAction and ServerAcceptNextAction then begin
-          SendPickup; //捡物品
-          //end;
-        Key := 0;
-      end;
+
     {
     Alt + X 重新开始游戏（当角色死亡后特别有用）
     }
+
     Word('R'): begin
         if ssAlt in Shift then begin //刷新包裹
           case g_QueryBagItem of
@@ -2848,10 +2841,21 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
         end;
         Key := 0;
       end;
+
+    { Ryan - Todo ~ Add Options(F12) For This. }
     VK_TAB: begin
-        // Pickup item if standing over it.
+      if ssCtrl in Shift then
+      begin
+        g_boShowAllItem := not g_boShowAllItem;
+      end else
+      begin
+        { Pickup Item Of Floor, If Actor Is Standing On It. }
         SendPickup;
+      
+        Key := 0;
       end;
+    end;
+
     Word('T'): begin
         if GetTickCount > g_dwQueryMsgTick then begin
           g_dwQueryMsgTick := GetTickCount + 3000;

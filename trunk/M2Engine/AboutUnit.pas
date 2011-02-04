@@ -46,7 +46,7 @@ var
   Buffer: Pointer;
   sText: string;
 begin
-  EditUpDateTime.Text := '03/02/2011';
+  EditUpDateTime.Text := '04/02/2011';
   EditProductName.Text := 'Legend of Mir 2: Heroes';
   EditProgram.Text := 'Thanks to the CQFir Team';
   EditWebSite.Text := 'www.lomcn.co.uk'; ;

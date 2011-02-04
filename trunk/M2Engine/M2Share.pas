@@ -6743,8 +6743,8 @@ var
   g_sNowIsFreePlayMode: string = '当前服务器运行于测试模式.';
   sAttackModeOfAll: string = '[攻击模式: 全体攻击]';
   sAttackModeOfPeaceful: string = '[攻击模式: 和平攻击]';
-  sAttackModeOfDear: string = '[攻击模式: 夫妻攻击]';
-  sAttackModeOfMaster: string = '[攻击模式: 师徒攻击]';
+  sAttackModeOfDear: string = '[Attack Mode: Marriage]';
+  sAttackModeOfMaster: string = '[Attack Mode: Master]';
   sAttackModeOfGroup: string = '[攻击模式: 编组攻击]';
   sAttackModeOfGuild: string = '[攻击模式: 行会攻击]';
   sAttackModeOfRedWhite: string = '[攻击模式: 红名攻击]';

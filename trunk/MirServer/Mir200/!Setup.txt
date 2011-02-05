@@ -131,7 +131,7 @@ PayMentPointName=Payment Point
 [Setup]
 <<<<<<< .mine
 <<<<<<< .mine
-ItemNumber=282183245
+ItemNumber=291447877
 =======
 ItemNumber=198734533
 >>>>>>> .r122
@@ -450,8 +450,8 @@ RedPKProtectLevel=1
 ItemPowerRate=25000
 ItemExpRate=10000
 ScriptGotoCountLimit=10000
-HearMsgFColor=0
-HearMsgBColor=255
+HearMsgFColor=255
+HearMsgBColor=0
 WhisperMsgFColor=252
 WhisperMsgBColor=255
 GMWhisperMsgFColor=249
@@ -462,8 +462,8 @@ GreenMsgFColor=241
 GreenMsgBColor=255
 BlueMsgFColor=255
 BlueMsgBColor=252
-RedMsgFColor=255
-RedMsgBColor=58
+RedMsgFColor=58
+RedMsgBColor=233
 GuildMsgFColor=219
 GuildMsgBColor=255
 GroupMsgFColor=196

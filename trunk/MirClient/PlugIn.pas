@@ -1059,7 +1059,7 @@ end;
 
 procedure _AddChatBoardString(Data: PChar; FColor, BColor: Integer); stdcall;
 begin
-  DScreen.AddChatBoardString(StrPas(Data), FColor, BColor);
+  DScreen.AddChatBoardString(StrPas(Data), FColor);
 end;
 
 procedure _ShowHint(X, Y: Integer; Text: PChar; Color: TColor; drawup: Boolean); stdcall;

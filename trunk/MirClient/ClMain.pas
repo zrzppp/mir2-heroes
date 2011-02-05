@@ -2088,7 +2088,7 @@ begin
   while True do begin
     flname := 'Images' + IntToStr2(g_nCaptureSerial) + '.BMP';
     if not FileExists(sDirectory + flname) then begin
-      DScreen.AddChatBoardString('[Screenshot: ' + flname + '] saved.', clGreen, clWhite);
+      DScreen.AddChatBoardString('[Screenshot: ' + flname + '] saved.', clGreen);
       Break;
     end;
     Inc(g_nCaptureSerial);
@@ -2710,7 +2710,7 @@ begin
               (GetTickCount - g_dwLatestHitTick > 10000) or
               (g_MySelf.m_boDeath) then begin
               AppExit;
-            end else DScreen.AddChatBoardString('You cannot leave the Battle?..', clyellow, clRed);
+            end else DScreen.AddChatBoardString('You cannot leave the Battle?..', clYellow);
           end;
         end;
       end;
@@ -2766,7 +2766,7 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
                 if g_MySelf <> nil then begin
                   g_boQueryHumBagItem := True;
                   SendClientMessage(CM_QUERYBAGITEMS, 0, 0, 0, 0);
-                  DScreen.AddChatBoardString('Reloading Bag.', clWhite, clFuchsia);
+                  DScreen.AddChatBoardString('Reloading Bag.', clFuchsia);
                 end;
               end;
             q_QueryHero: begin
@@ -2774,13 +2774,13 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
                   g_QueryBagItem := q_QueryHum;
                   g_boQueryHeroBagItem := True;
                   SendClientMessage(CM_QUERYHEROBAGITEMS, 0, 0, 0, 0);
-                  DScreen.AddChatBoardString('Reloading Hero Bag.', clWhite, clFuchsia);
+                  DScreen.AddChatBoardString('Reloading Hero Bag.', clFuchsia);
                 end else begin
                   g_QueryBagItem := q_QueryHum;
                   if g_MySelf <> nil then begin
                     g_boQueryHumBagItem := True;
                     SendClientMessage(CM_QUERYBAGITEMS, 0, 0, 0, 0);
-                    DScreen.AddChatBoardString('Reloading Bag.', clWhite, clFuchsia);
+                    DScreen.AddChatBoardString('Reloading Bag.', clFuchsia);
                   end;
                 end;
               end;
@@ -2801,7 +2801,7 @@ Ctrl + F 改版游戏的字体，你可以选择8种不同的字体
             (GetTickCount - g_dwLatestHitTick > 10000) or
             (g_MySelf.m_boDeath) then begin
             AppLogout;
-          end else DScreen.AddChatBoardString('You cannot leave the Battle?.', clyellow, clRed);
+          end else DScreen.AddChatBoardString('You cannot leave the Battle?.', clYellow);
         end;
       end;
     {Word('Q'): begin
@@ -5622,7 +5622,7 @@ begin
       Msg := MakeDefaultMsg(CM_SAY, 1, MakeWord(g_Config.btHearMsgFColor, g_btWhisperMsgFColor), 0, 0);
     SendSocket(EncodeMessage(Msg) + EncodeString(Str));
     if Str[1] = '/' then begin
-      DScreen.AddChatBoardString(Str, GetRGB(g_btWhisperMsgFColor) {GetRGB(180)}, clWhite);
+      DScreen.AddChatBoardString(Str, GetRGB(g_btWhisperMsgFColor) {GetRGB(180)});
       GetValidStr3(Copy(Str, 2, Length(Str) - 1), WhisperName, [' ']);
     end;
   end;
@@ -6647,7 +6647,7 @@ end;
 procedure TfrmMain.ClientVersionFail();
 begin
   FrmDlg.DMessageDlg('Client Version does not match Required Version.', [mbOk]);
-  DScreen.AddChatBoardString('Please download the correct Version and try again.', clyellow, clRed);
+  DScreen.AddChatBoardString('Please download the correct Version and try again.', clyellow);
   CSocket.Close;
 end;
 
@@ -6714,13 +6714,13 @@ begin
   else g_boAllowGroup := False;
   g_boServerChanging := False;
   if g_wAvailIDDay > 0 then begin
-    DScreen.AddChatBoardString('您当前通过包月帐号充值。', clGreen, clWhite)
+    DScreen.AddChatBoardString('您当前通过包月帐号充值。', clGreen)
   end else if g_wAvailIPDay > 0 then begin
-    DScreen.AddChatBoardString('您当前通过包月IP 充值。', clGreen, clWhite)
+    DScreen.AddChatBoardString('您当前通过包月IP 充值。', clGreen)
   end else if g_wAvailIPHour > 0 then begin
-    DScreen.AddChatBoardString('您当前通过计时IP 充值。', clGreen, clWhite)
+    DScreen.AddChatBoardString('您当前通过计时IP 充值。', clGreen)
   end else if g_wAvailIDHour > 0 then begin
-    DScreen.AddChatBoardString('您当前通过计时帐号充值。', clGreen, clWhite)
+    DScreen.AddChatBoardString('您当前通过计时帐号充值。', clGreen)
   end;
   //FrmDlg.DMessageDlg('TfrmMain.ClientGetUserLogin', [mbOk]);
 end;
@@ -7420,37 +7420,37 @@ begin
   case DefMsg.ident of
     SM_GROUPMESSAGE: begin
         if g_boShowGroupMsg then begin
-          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)), GetRGB(HiByte(DefMsg.param)));
+          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)));
         end;
       end;
     SM_GUILDMESSAGE: begin
         if g_boShowGuildMsg then begin
-          sMsg := DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)), GetRGB(HiByte(DefMsg.param)));
+          sMsg := DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)));
           FrmDlg.AddGuildChat(sMsg);
         end;
       end;
     SM_WHISPER: begin
         if g_boShowWhisperMsg then begin
-          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)), GetRGB(HiByte(DefMsg.param)));
+          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)));
         end;
       end;
     SM_CRY: begin
         if g_boShowHearMsg then begin
-          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)), GetRGB(HiByte(DefMsg.param)));
+          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)));
         end;
       end;
     SM_SYSMESSAGE: begin
         if not g_boShowSysMessage then begin
-          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)), GetRGB(HiByte(DefMsg.param)));
+          DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)));
         end else begin
                 //DScreen.AddSysMoveMsg(Str, Msg.param);
         end;
       end;
     SM_HEAR: begin
         if (LoByte(DefMsg.param) = 255) and (HiByte(DefMsg.param) = 255) then begin
-          sMsg := DScreen.AddChatBoardString(sMsg, GetRGB(0), GetRGB(255));
+          sMsg := DScreen.AddChatBoardString(sMsg, GetRGB(0));
         end else begin
-          sMsg := DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)), GetRGB(HiByte(DefMsg.param)));
+          sMsg := DScreen.AddChatBoardString(sMsg, GetRGB(LoByte(DefMsg.param)));
         end;
         if g_NewStatus <> sBlind then begin
           Actor := PlayScene.FindActor(DefMsg.Recog);
@@ -8263,7 +8263,7 @@ end;
 procedure TfrmMain.ClientGetReadMiniMapFail();
 begin
   g_dwQueryMsgTick := GetTickCount;
-  DScreen.AddChatBoardString('No MiniMap Available.', clWhite, clRed);
+  DScreen.AddChatBoardString('No MiniMap Available.', clRed);
   g_nMiniMapIndex := -1;
 end;
 
@@ -8466,7 +8466,7 @@ begin
   g_UpgradeItemsWait[0].S.Name := '';
   g_UpgradeItemsWait[1].S.Name := '';
   g_UpgradeItemsWait[2].S.Name := '';
-  DScreen.AddChatBoardString('You have successfully upgraded the Item.', clWhite, clRed);
+  DScreen.AddChatBoardString('You have successfully upgraded the Item.', clRed);
   //DebugOutStr('TfrmMain.ClientObjUpgradeItemOK EncodeBuffer:' + EncodeBuffer(@g_UpgradeItems[0], SizeOf(TClientItem)));
   //FrmDlg.DMessageDlg('TfrmMain.ClientObjChangeItemOK！！！', [mbOk]);
 end;
@@ -8489,19 +8489,19 @@ begin
   case nFailCode of
     0: begin
         g_UpgradeItems := g_UpgradeItemsWait;
-        DScreen.AddChatBoardString('You have failed to upgrade this Item.', clWhite, clRed);
+        DScreen.AddChatBoardString('You have failed to upgrade this Item.', clRed);
       end;
     -1: begin
         g_UpgradeItems[0].S.Name := '';
         g_UpgradeItems[1].S.Name := '';
         g_UpgradeItems[2].S.Name := '';
-        DScreen.AddChatBoardString('You have broken this Item.', clWhite, clRed);
+        DScreen.AddChatBoardString('You have broken this Item.', clRed);
       end;
     -2: begin
         g_UpgradeItems[0] := g_UpgradeItemsWait[0];
         g_UpgradeItems[1].S.Name := '';
         g_UpgradeItems[2].S.Name := '';
-        DScreen.AddChatBoardString('You have failed to upgrade this Item.', clWhite, clRed);
+        DScreen.AddChatBoardString('You have failed to upgrade this Item.', clRed);
       end;
   end;
   //Move(g_UpgradeItemsWait,g_UpgradeItems,SizeOf(g_UpgradeItems));
@@ -8756,9 +8756,9 @@ begin
     sFontName := Canvas.Font.Name;
     nSize := Canvas.Font.Size;
     OColor := Canvas.Font.Color;
-    Canvas.Font.Name := 'Comic Sans MS';
+    Canvas.Font.Name := 'Arial';
     Canvas.Font.Size := 30;
-    Canvas.Font.Style := [fsBold];
+    Canvas.Font.Style := [];
     Canvas.Font.Color := clWhite;
 
     g_RandomSurface.Fill($005894B8);
@@ -9042,7 +9042,7 @@ begin
   //end else begin
     if (abs(g_MySelf.m_nCurrX - nX) <= 1) and (abs(g_MySelf.m_nCurrY - nY) <= 1) then begin
       LegendMap.Stop;
-      DScreen.AddChatBoardString(Format('You have reached the Coordinates set (%d:%d).', [nX, nY]), GetRGB(154), clWhite);
+      DScreen.AddChatBoardString(Format('You have reached the Coordinates set (%d:%d).', [nX, nY]), GetRGB(154));
     end else begin
       if LegendMap.StartFind then begin
         if (LegendMap.EndX <> nX) or (LegendMap.EndY <> nY) then
@@ -9056,7 +9056,7 @@ begin
       LegendMap.BeginY := g_MySelf.m_nCurrY;
       LegendMap.EndX := nX;
       LegendMap.EndY := nY;
-      DScreen.AddChatBoardString(Format('Automatically traveling to the location at (%d:%d), press any mouse button to stop.', [nX, nY]), GetRGB(154), clWhite);
+      DScreen.AddChatBoardString(Format('Automatically traveling to the location at (%d:%d), press any mouse button to stop.', [nX, nY]), GetRGB(154));
     end;
   end;
 end;
@@ -10232,7 +10232,7 @@ begin
   g_boBagLoaded := True;
 
   if g_boQueryHumBagItem then
-    DScreen.AddChatBoardString('Bag reloaded.', clWhite, clFuchsia);
+    DScreen.AddChatBoardString('Bag reloaded.', clFuchsia);
 end;
 
 //英雄相关
@@ -10482,7 +10482,7 @@ begin
   ArrangeHeroItemBag;
 
   if g_boQueryHeroBagItem then
-    DScreen.AddChatBoardString('Hero Bag reloaded.', clWhite, clFuchsia);
+    DScreen.AddChatBoardString('Hero Bag reloaded.', clFuchsia);
 end;
 
 procedure TfrmMain.ClientGetShopItems(DefMsg: pTDefaultMessage; body: string);
@@ -11876,7 +11876,7 @@ begin
   if sHumanName <> '' then begin
     ShowMsgActor := PlayScene.FindActor(sHumanName);
     if ShowMsgActor = nil then begin
-      DScreen.AddChatBoardString(Format('%s was not found', [sHumanName]), clWhite, clRed);
+      DScreen.AddChatBoardString(Format('%s was not found', [sHumanName]), clRed);
       Exit;
     end;
   end;
@@ -12715,7 +12715,7 @@ begin
 
   if (LegendMap.EndX > 0) and (LegendMap.EndY > 0) then begin
     if (abs(g_MySelf.m_nCurrX - LegendMap.EndX) <= 1) and (abs(g_MySelf.m_nCurrY - LegendMap.EndY) <= 1) then begin
-      DScreen.AddChatBoardString(Format('You have reached the location at (%d:%d).', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+      DScreen.AddChatBoardString(Format('You have reached the location at (%d:%d).', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154));
       LegendMap.Stop;
     end else begin
       if GetTickCount - g_dwAutoFindPathTick > 200 then begin
@@ -12731,7 +12731,7 @@ begin
         if LegendMap.StartFind then Exit;
 
         if Length(LegendMap.RunPath) <= 0 then begin
-          DScreen.AddChatBoardString(Format('Unable to reach location at (%d:%d)', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+          DScreen.AddChatBoardString(Format('Unable to reach location at (%d:%d)', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154));
           LegendMap.Stop;
         end else begin
           if (LegendMap.PathPositionIndex >= 0) and (LegendMap.PathPositionIndex < Length(LegendMap.RunPath)) then begin
@@ -12790,7 +12790,7 @@ begin
                   LegendMap.Find(g_MySelf.m_nCurrX, g_MySelf.m_nCurrY, LegendMap.EndX, LegendMap.EndY);
                   LegendMap.PathPositionIndex := 0;
                 end else begin
-                  DScreen.AddChatBoardString(Format('Unable to reach location at (%d:%d)', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+                  DScreen.AddChatBoardString(Format('Unable to reach location at (%d:%d)', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154));
                   LegendMap.Stop;
                 end;
               end;
@@ -13245,7 +13245,7 @@ begin
             //if not PlayScene.EdChat.Visible then begin
               DScreen.AddSysMsg(sHint, SCREENWIDTH - 150, 300, clYellow);
             //else
-               DScreen.AddChatBoardString(sHint, clyellow, clRed);
+               DScreen.AddChatBoardString(sHint, clyellow);
           end;
         end;
       end;

@@ -251,7 +251,7 @@ type
     procedure DrawScreenTop(MSurface: TTexture);
     procedure AddSysMsg(Msg: string; nX, nY: Integer; Color: TColor);
     procedure AddMoveMsg(sMsg: string; FColor, BColor: Byte; nX, nY, nCount: Integer);
-    function AddChatBoardString(Str: string; FColor, BColor: Integer): string;
+    function AddChatBoardString(Str: string; FColor: Integer): string;  //, TRANSPARENT: Integer): string;
     procedure ClearChatBoard;
     procedure ShowHint(X, Y: Integer; HintStringList1, HintStringList2: TStringList; drawup: Boolean); overload;
     procedure ShowHint(X, Y: Integer; HintStringList: TStringList; drawup: Boolean); overload;
@@ -737,7 +737,7 @@ begin
     MainForm.Canvas.Font.Charset := GB2312_CHARSET;
     MainForm.Canvas.Font.Name := g_sFontName;
     MainForm.Canvas.Font.Size := 30;
-    MainForm.Canvas.Font.Style := [fsBold];
+    MainForm.Canvas.Font.Style := [];
     nTextWidth := TextWidth(sMsg);
 
     wText := sMsg;
@@ -1281,9 +1281,9 @@ begin
   m_MoveMsgList.Add(DrawScreenMoveMsg);
 end;
 
-function TDrawScreen.AddChatBoardString(Str: string; FColor, BColor: Integer): string;
+function TDrawScreen.AddChatBoardString(Str: string; FColor: Integer): string; //, TRANSPARENT: Integer): string;
 begin
-  Result := FrmDlg.AddMemoChat(Str, FColor, BColor);
+  Result := FrmDlg.AddMemoChat(Str, FColor, TRANSPARENT);
 end;
 
 procedure TDrawScreen.ShowHint(X, Y: Integer; HintStringList1, HintStringList2: TStringList; drawup: Boolean);

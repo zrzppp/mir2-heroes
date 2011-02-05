@@ -4123,7 +4123,7 @@ begin
             7: sPosition := '左上';
           end;
           sHint := '[' + sName + ']已经出现，方位:' + sPosition + GetActorDir(nX, nY) + '，坐标:(' + Format('%d,%d', [nX, nY]) + ').';
-          DScreen.AddChatBoardString(sHint, clyellow);
+          DScreen.AddChatBoardString(sHint, clyellow, clRed);
         end;
       end;
     end;
@@ -4352,7 +4352,7 @@ begin
       7: sPosition := '左上';
     end;
     sHint := '发现[' + sName + ']，方位:' + sPosition + GetActorDir(nX, nY) + '，坐标:(' + Format('%d,%d', [nX, nY]) + ').';
-    DScreen.AddChatBoardString(sHint, clyellow);
+    DScreen.AddChatBoardString(sHint, clyellow, clBlue);
   end;
 end;
 {-------------------------------------------------------------------------------}

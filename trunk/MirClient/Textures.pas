@@ -2080,26 +2080,26 @@ end;
 
 procedure TTexture.TextRect(Rect: TRect;
   X, Y: Integer; const Text: string;
-  FColor: TColor; Bcolor: TColor);
+  FColor: TColor; BColor: TColor);
 begin
-  ImageFont.DrawRect(Self, Rect, X, Y, Text, FColor, Bcolor);
+  ImageFont.DrawRect(Self, Rect, X, Y, Text, FColor, BColor);
 end;
 
 procedure TTexture.TextOut(X, Y: Integer; const Text: string; FColor: TColor; Bcolor: TColor);
 begin
-  ImageFont.Draw(Self, X, Y, Text, FColor, Bcolor);
+  ImageFont.Draw(Self, X, Y, Text, FColor, BColor);
 end;
 
-procedure TTexture.BoldTextOut(X, Y: Integer; const Text: string; FColor: TColor; Bcolor: TColor);
+procedure TTexture.BoldTextOut(X, Y: Integer; const Text: string; FColor: TColor; BColor: TColor);
 begin
-  ImageFont.BoldDraw(Self, X, Y, Text, FColor, Bcolor);
+  ImageFont.BoldDraw(Self, X, Y, Text, FColor, BColor);
 end;
 
 procedure TTexture.BoldTextRect(Rect: TRect;
   X, Y: Integer; const Text: string;
   FColor: TColor; Bcolor: TColor);
 begin
-  ImageFont.BoldDrawRect(Self, Rect, X, Y, Text, FColor, Bcolor);
+  ImageFont.BoldDrawRect(Self, Rect, X, Y, Text, FColor, BColor);
 end;
 
 {--------------------------------TTextureList--------------------------------}
@@ -2504,7 +2504,7 @@ begin
   if Text = '' then Exit;
   SourceRect := Rect;
   if ClipRect(SourceRect, DIB.ClientRect) then begin
-    if FColor = clBlack then FColor := $00050505;
+    if FColor = clBlack then FColor := $00000000;
 
     Source := GetTextDIB(Text, FColor, Bcolor);
     if Source = nil then begin
@@ -2583,7 +2583,7 @@ begin
   if Text = '' then Exit;
   SourceRect := Rect;
   if ClipRect(SourceRect, DIB.ClientRect) then begin
-    if FColor = clBlack then FColor := $00050505;
+    if FColor = clBlack then FColor := $00000000;
 
     Source := GetTextDIB(Text, FColor, Bcolor);
     if Source = nil then begin
@@ -2842,7 +2842,7 @@ begin
   nDrawX := 0;
   if FontColor = clBlack then FontColor := $00050505;
   if SelFontColor = clBlack then SelFontColor := $00050505;
-  if SelBackColor = clBlack then SelBackColor := $00050505;
+  if SelBackColor = clBlack then SelBackColor := $00000000;
 
   if (AText <> '') and (ARect.Right > ARect.Left) then begin
 

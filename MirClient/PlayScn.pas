@@ -849,7 +849,7 @@ begin
 end;
 
 procedure TPlayScene.DrawItemName(dsurface: TTexture; DropItem: pTDropItem; X, Y: Integer);
-  procedure NameTextOut(FColor: Integer);
+  procedure NameTextOut(FColor, BColor: Integer);
   var
     sName: string;
     nWidth: Integer;
@@ -857,8 +857,9 @@ procedure TPlayScene.DrawItemName(dsurface: TTexture; DropItem: pTDropItem; X, Y
   begin
     sName := DropItem.Name;
     if sName <> '' then begin
-      with dsurface do
-        BoldTextOut(X + HALFX - TextWidth(sName) div 2, Y + HALFY - TextHeight(sName) div 2, sName, FColor);
+      with ImageCanvas do
+        BoldTextOut(X + HALFX - TextWidth(sName) + 1 div 2, Y + HALFY - TextHeight(sName)+ 1 div 2, sName, FColor, BColor);
+        //BoldTextOut(X + HALFX - TextWidth(sName) div 2, Y + HALFY - TextHeight(sName) div 2, sName, FColor);
     end;
   end;
 var
@@ -869,14 +870,14 @@ begin
   if Assigned(g_PlugInfo.HookShowItemName) then begin
     try
       if g_PlugInfo.HookShowItemName(PChar(DropItem.Name), btColor) then begin
-        NameTextOut(GetRGB(btColor));
+        NameTextOut(GetRGB(btColor), GetRGB(btColor));
         Exit;
       end;
     except
       DebugOutStr('g_PlugInfo.HookShowItemName');
     end;
   end else begin
-    NameTextOut(GetRGB(g_ConfigClient.btItemColor) {clWhite});
+    NameTextOut(GetRGB(g_ConfigClient.btItemColor), GetRGB(g_ConfigClient.btItemColor) {clWhite});
     {if g_Config.boShowItemName then begin //显示地面物品名称
       ShowItem := g_ShowItemList.Find(DropItem.Name);
       if (ShowItem <> nil) and ShowItem.boShowName then begin
@@ -1666,16 +1667,23 @@ begin
 
               { Ryan - DropViewName ~ Needs Changing, But Will Do For Now. }
               ShowItem := g_ShowItemList.Find(DropItem.Name);
+              ix := (DropItem.X - Map.m_ClientRect.Left) * UNITX + defx + SOFFX;
+              iy := (DropItem.Y - Map.m_ClientRect.Top - 1) * UNITY + defy + SOFFY;
               if (DropItem <> g_FocusItem) and (((ShowItem <> nil) and (ShowItem.boShowName)) or g_boShowAllItem) then
               begin
                 DropViewNameHeight := 18;
                 with m_ObjSurface do
                 begin
                   BoldTextOut(ix + HALFX - TextWidth(DropItem.Name) div 2,
-                  iy + HALFY - TextHeight(DropItem.Name) - DropViewNameHeight, 
+                  iy + HALFY - TextHeight(DropItem.Name) - DropViewNameHeight,
                                          DropItem.Name,
                                          clWhite,
-                                         clBlack);
+                                         $00050505);
+                  {BoldTextOut(ix + HALFX - TextWidth(DropItem.Name) div 2,
+                  iy + HALFY - TextHeight(DropItem.Name) - DropViewNameHeight,
+                                         DropItem.Name,
+                                         clWhite,
+                                         clBlack);}
 
                 end;
               end;

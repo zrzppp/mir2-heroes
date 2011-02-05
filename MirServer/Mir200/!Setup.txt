@@ -131,7 +131,7 @@ PayMentPointName=Payment Point
 [Setup]
 <<<<<<< .mine
 <<<<<<< .mine
-ItemNumber=291447877
+ItemNumber=294393511
 =======
 ItemNumber=198734533
 >>>>>>> .r122
@@ -212,8 +212,8 @@ TryModeUseStorage=0
 ShutRedMsgShowGMName=1
 CanShoutMsgLevel=20
 HumanFreeDelayTime=300000
-MakeGhostTime=30000
-ClearDropOnFloorItemTime=240000
+MakeGhostTime=60000
+ClearDropOnFloorItemTime=480000
 FloorItemCanPickUpTime=60000
 ShowMakeItemMsg=1
 SayMsgMaxLen=255
@@ -450,26 +450,26 @@ RedPKProtectLevel=1
 ItemPowerRate=25000
 ItemExpRate=10000
 ScriptGotoCountLimit=10000
-HearMsgFColor=255
-HearMsgBColor=0
-WhisperMsgFColor=252
+HearMsgFColor=0
+HearMsgBColor=255
+WhisperMsgFColor=168
 WhisperMsgBColor=255
 GMWhisperMsgFColor=249
 GMWhisperMsgBColor=255
 CryMsgFColor=0
 CryMsgBColor=151
-GreenMsgFColor=241
+GreenMsgFColor=219
 GreenMsgBColor=255
 BlueMsgFColor=255
 BlueMsgBColor=252
-RedMsgFColor=58
-RedMsgBColor=233
-GuildMsgFColor=219
+RedMsgFColor=0
+RedMsgBColor=58
+GuildMsgFColor=221
 GuildMsgBColor=255
-GroupMsgFColor=196
+GroupMsgFColor=253
 GroupMsgBColor=255
-CustMsgFColor=249
-CustMsgBColor=251
+CustMsgFColor=254
+CustMsgBColor=255
 MonRandomAddValue=100
 MakeRandomAddValue=100
 WeaponDCAddValueMaxLimit=4

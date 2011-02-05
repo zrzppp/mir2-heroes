@@ -71,7 +71,7 @@ begin
   if FStarted then begin
     FStarted := False;
     FPath := nil;
-    DScreen.AddChatBoardString('Í£Ö¹¹Ò»ú Ctrl + L', clYellow);
+    DScreen.AddChatBoardString('Í£Ö¹¹Ò»ú Ctrl + L', clYellow, clRed);
   end;
 end;
 

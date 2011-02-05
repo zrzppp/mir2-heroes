@@ -2005,7 +2005,7 @@ begin
     EdChat.Width := 388;
     EdChat.Height := 12; // Just Edited 16;
     EdChat.DParent := DChatDlg;
-    EdChat.Visible := True;
+    EdChat.Visible := False;
     EdChat.Text := '';
     EdChat.SelTextFontColor := clWhite;
 
@@ -2037,7 +2037,7 @@ begin
 
     DScrollChat.VisibleScroll := False;
 
-    DShowChat.Visible := True;
+    DShowChat.Visible := False;
   end else begin
     d := g_WCqFirImages.Images[65];
     if d <> nil then begin
@@ -2325,7 +2325,7 @@ begin
     DChatDlg.Left := DBottom.Left;
     DChatDlg.Top := SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; //SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; SCREENHEIGHT - 251 + 118;
 
-    DChatDlg.DParent := DBackground;
+    //DChatDlg.DParent := DBackground;
     DChatDlg.Floating := False;
     DChatDlg.Visible := False;
 
@@ -5309,7 +5309,7 @@ begin
             DLabel.OnMouseMove := DItemLabelMouseMove;
 
             if BColor = clblack then
-              DLabel.BackgroundColor := $00050505;
+              DLabel.BackgroundColor := TRANSPARENT;
             DLabel.Caption := temp;
             DLabel.Left := TLines(ItemList).Width;
             DLabel.Top := nTop;
@@ -5374,7 +5374,7 @@ begin
                 DLabel.OnClick := DItemLabelClick;
                 DLabel.OnMouseMove := DItemLabelMouseMove;
                 if BColor = clblack then
-                  DLabel.BackgroundColor := $00050505;
+                  DLabel.BackgroundColor := TRANSPARENT;
                 DLabel.Style := bsBase;
                 DLabel.Caption := sItemName;
                 DLabel.TData := sName + '|' + sItemName + '|' + sItemMakeIdex;
@@ -5415,7 +5415,7 @@ begin
               DLabel.OnClick := DItemLabelClick;
               DLabel.OnMouseMove := DItemLabelMouseMove;
               if BColor = clblack then
-                DLabel.BackgroundColor := $00050505;
+                DLabel.BackgroundColor := TRANSPARENT;
               DLabel.Style := bsBase;
               DLabel.Caption := sName;
               DLabel.TData := sItemName;
@@ -8023,9 +8023,9 @@ procedure TFrmDlg.DSoundClick();
 begin
   g_boSound := not g_boSound;
   if g_boSound then begin
-    DScreen.AddChatBoardString('[Sound Enabled]', clWhite, clblack);
+    DScreen.AddChatBoardString('[Sound Enabled]', clblack);
   end else begin
-    DScreen.AddChatBoardString('[Sound Disabled]', clWhite, clblack);
+    DScreen.AddChatBoardString('[Sound Disabled]', clblack);
     if Assigned(g_PlugInfo.MediaPlayer.StopPlay) then begin
       g_PlugInfo.MediaPlayer.StopPlay(nil);
     end;
@@ -10740,7 +10740,7 @@ begin
     (g_MySelf.m_boDeath) then begin
     frmMain.AppLogout;
   end else
-    DScreen.AddChatBoardString('You cannot log out during Battle.', clyellow, clRed);
+    DScreen.AddChatBoardString('You cannot log out during Battle.', clyellow);
 end;
 
 procedure TFrmDlg.DBotExitClick(Sender: TObject; X, Y: Integer);
@@ -10757,7 +10757,7 @@ begin
     //frmMain.AppExit;
     frmMain.Close;
   end else
-    DScreen.AddChatBoardString('You cannot Exit the game during Battle.', clyellow, clRed);
+    DScreen.AddChatBoardString('You cannot Exit the game during Battle.', clyellow);
 end;
 
 procedure TFrmDlg.DBotPlusAbilClick(Sender: TObject; X, Y: Integer);
@@ -12804,52 +12804,52 @@ begin
     g_boShowGroupMsg := not DButFunc1.Downed;
     if g_boShowGroupMsg then begin
       sMsg := 'Show General Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end else begin
       sMsg := 'Hide General Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end;
   end else
     if Sender = DButFunc2 then begin
     g_boShowHearMsg := not DButFunc2.Downed;
     if g_boShowHearMsg then begin
       sMsg := 'Show Shout Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end else begin
       sMsg := 'Hide Shout Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end;
   end else
     if Sender = DButFunc3 then begin
     g_boShowWhisperMsg := not DButFunc3.Downed;
     if g_boShowWhisperMsg then begin
       sMsg := 'Show Private Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end else begin
       sMsg := 'Hide Private Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end;
   end else
     if Sender = DButFunc4 then begin
     g_boShowGuildMsg := not DButFunc4.Downed;
     if g_boShowGuildMsg then begin
       sMsg := 'Show Guild Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end else begin
       sMsg := 'Hide Guild Chat';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(0));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end;
   end else
     if Sender = DButFunc5 then begin
     g_boAutoShowHearMsg := not DButFunc5.Downed;
     if g_boAutoShowHearMsg then begin
       sMsg := 'Auto Shout is enabled';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
       g_dwAutoShowMsgTick := GetTickCount;
       g_sAutoShowMsg := EdChat.Text;
     end else begin
       sMsg := 'Auto Shout is disabled';
-      DScreen.AddChatBoardString(sMsg, GetRGB(222), GetRGB(255));
+      DScreen.AddChatBoardString(sMsg, GetRGB(222));
     end;
   end;
 end;
@@ -16826,7 +16826,7 @@ begin
         LegendMap.BeginY := g_MySelf.m_nCurrY;
         LegendMap.EndX := LegendMap.Path[Length(LegendMap.Path) - 1].X;
         LegendMap.EndY := LegendMap.Path[Length(LegendMap.Path) - 1].Y;
-        DScreen.AddChatBoardString(Format('Automatically moving to (%d:%d)£¬press any Mouse Button to stop.', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+        DScreen.AddChatBoardString(Format('Automatically moving to (%d:%d)£¬press any Mouse Button to stop.', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154));
         Exit;
       end;
     end;
@@ -19091,7 +19091,7 @@ procedure TFrmDlg.DMemoChatDirectPaint(Sender: TObject;
 begin
   if g_ConfigClient.btMainInterface = 1 then begin
     with TDControl(Sender) do
-      dsurface.FillRectAlpha(Bounds(SurfaceX(Left), SurfaceY(Top), Width, Height), $00608490, 150); //$005894B8
+      dsurface.FillRectAlpha(Bounds(SurfaceX(Left), SurfaceY(Top), Width, Height), $00608490, 75); //$005894B8
   end;
 end;
 

@@ -78,15 +78,20 @@ Usually the higher the durability the higher the selling price.\ \
 
 [goods]
 ;Item		Amount		Time
+PickAxe		100		1
 WoodenSword     100         	1
 Dagger		100		1
-EbonySword	100		1	
-BronzeSword	100		1 
+EbonySword	100		1
+BronzeSword	100		1
 ShortSword 	100		1
 Ironsword	100		1
 BronzeAxe	100		1
+SteelAxe        100		1
 Trident		100		1
 HookedSword	100		1
 Scimitar	100		1
 SteelSword	100		1
-PickAxe		100		1
+MartialSword	100		1
+PrinceSword	100		1
+KrissSword	100		1
+HookedSpear	100		1

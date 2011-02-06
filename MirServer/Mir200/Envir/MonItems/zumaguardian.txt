@@ -8,6 +8,7 @@
 1/20 	Sunpotion(M)
 1/100   OldGinseng
 
+
 1/250  HeavyArmour(F)
 1/250  HeavyArmour(M)
 1/250 MagicRobe(F)
@@ -53,4 +54,8 @@
 1/750 expelring
 1/750 coralring
 1/1000 galering
+
+1/2500 ZumaJudgementMace
+1/2500 ZumaWarMageStaff
+1/2500 ZumaSoulSpringWand
 

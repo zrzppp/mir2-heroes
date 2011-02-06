@@ -99,3 +99,5 @@ It seems repaired fine.\ \ \
 ;Item		Amount		Time
 BronzeHelmet		100	1
 MagicHelmet		100	1
+SkeletonHelmet		100	1
+ShamanHelmet		100	1

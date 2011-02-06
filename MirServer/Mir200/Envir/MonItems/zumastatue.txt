@@ -55,3 +55,7 @@
 1/750 coralring
 1/1000 galering
 
+1/2500 ZumaJudgementMace
+1/2500 ZumaWarMageStaff
+1/2500 ZumaSoulSpringWand
+

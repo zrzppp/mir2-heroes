@@ -1,2 +1,64 @@
-1/50 EventBall(F)
-1/50 EventBall(N)
+1/5 gold 1500
+1/10 gold 750
+
+1/250 WorldTimePiece
+
+1/10 	(HP)Druglarge
+1/10 	(MP)Druglarge
+1/25 	(HP)Druglarge
+1/25 	(MP)Druglarge
+1/20    SunPotion
+1/20 	Sunpotion(M)
+
+
+1/150  HeavyArmour(F)
+1/150  HeavyArmour(M)
+1/150 MagicRobe(F)
+1/150 MagicRobe(M)
+1/250 IronArmour(M)
+1/250 IronArmour(F) 
+1/250 PearlArmour(M)
+1/250 PearlArmour(F) 
+1/150 WizardRobe(F)
+1/150 WizardRobe(M)
+
+1/20 PrinceSword
+1/20 HookedSpear
+1/20 KrissSword
+1/100 GreatAxe
+1/200 SerpentSword
+1/200 MageStaff
+1/1000 
+
+1/80 HardGlove 
+1/100 LanternNecklace
+1/100 TigerNecklace
+1/100 GoldRing
+1/150 SkeletonRing
+1/150 MonkBracelet
+1/165 HwanDevilRing
+1/225 HwanDevilBrace
+1/275 HwanDevilNecklace
+1/165 SmashRing
+1/225 SmashWheel
+1/275 SmashPendulum
+1/165 PurityRing
+1/225 PurityBracelet
+1/275 PurityNecklace
+1/100 CharmRing
+1/100 MoralRing
+1/100 PlatinumNecklace
+1/150 DeathGauntlet
+1/150 BlueJadeNecklace
+1/150 BambooPipe
+1/250 GaleNecklace
+1/250 DCStone(XL)
+1/250 MCStone(XL)
+1/250 SCStone(XL)
+
+1/500 ShamanHelmet
+1/500 SkeletonHelmet
+1/750 BronzeGlove
+1/750 expelring
+1/750 coralring
+1/1000 galering

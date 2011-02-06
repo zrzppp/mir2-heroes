@@ -100,16 +100,23 @@ It seems repaired fine.\ \ \
 
 [goods]
 ;Item		Amount		Time
-BaseDress(M)		100	1	
+BaseDress(M)		100	1
 BaseDress(F)		100	1
 LightArmour(M)		100	1
 LightArmour(F)		100	1
-MediumArmor(M)		100	1
-MediumArmor(F)		100	1
 HeavyArmour(M)		100	1
 HeavyArmour(F)		100	1
 SoulArmour(M)		100	1
 SoulArmour(F)		100	1
 MagicRobe(M)		100	1
 MagicRobe(F)		100	1
-
+IronArmour(M)		100	1
+IronArmour(F)		100	1
+PearlArmour(M)		100	1
+PearlArmour(F)		100	1
+WizardRobe(M)		100	1
+WizardRobe(F)		100	1
+BronzeHelmet		100	1
+MagicHelmet		100	1
+SkeletonHelmet		100	1
+ShamanHelmet		100	1

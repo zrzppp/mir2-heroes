@@ -1,20 +1,20 @@
 ; ===================================
-; Market Def NPC File : 4_Book-B347
-; 
+; Market Def NPC File : 5_Book-B355
+; BookShop (PrajnaIsland)
 ; -----------------------------------
-; Name: Darren
+; Name: Alfie
 ; Job: 
-; Map No: B347
-; Pos X 12
-; Pos Y 8
+; Map No: B355
+; Pos X 9
+; Pos Y 9
 ; File name: *removed*
-; Comment:
+; Comment: BookShop (PrajnaIsland)
 
 ;================================================= =
 ;
 
 ;Settings
-(@buy @sell @repair @s_repair)
+(@buy @sell @repair @s_repair @storage @getback)
 %100
 +3
 +4
@@ -34,7 +34,7 @@ goto @main-1
 Welcome, how may I help you?\ \
 <Buy/@buy> Books.\
 <Sell/@sell> Books.\
-<Listen to the explanation/@helpBooks> about skills\
+<Listen to the explanation/@helpBooks> about skills\ 
 <Cancel/@exit>
 
 

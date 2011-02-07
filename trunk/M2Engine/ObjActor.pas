@@ -32194,7 +32194,7 @@ begin
     for I := 0 to m_MagicList.Count - 1 do begin
       UserMagic := m_MagicList.Items[I];
       if (m_btRaceServer = RC_HEROOBJECT) or (UserMagic.MagicInfo.wMagicId = 31) then begin
-        if (UserMagic.MagicInfo.wMagicId in [13, 26, 31, 45]) then begin
+        if (UserMagic.MagicInfo.wMagicId in [160,161]) then begin
           if (UserMagic.btLevel >= 5) then begin
             UserMagic.btLevel := 0;
             //MainOutMessage('UserMagic.btLevel >= 5');
@@ -34780,7 +34780,7 @@ begin
   Result := False;
   btTrainLv := 3;
   if (m_btRaceServer = RC_HEROOBJECT) or (UserMagic.wMagIdx = 31) then begin
-    if UserMagic.wMagIdx in [13, 26, 31, 45] then begin
+    if UserMagic.wMagIdx in [160,161] then begin
       if (UserMagic.btLevel < 5) and (UserMagic.MagicInfo.btTrainLv >= UserMagic.btLevel) then
         n10 := UserMagic.btLevel
       else n10 := 0;

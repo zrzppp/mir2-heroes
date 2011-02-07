@@ -6885,14 +6885,14 @@ begin
               if pm.Level in [0..3] then trainlv := pm.Level
               else trainlv := 0;
               }
-              if pm.Def.wMagicId in [31] then begin //if pm.Def.wMagicId in [13, 26, 31, 45] then begin
+              if pm.Def.wMagicId in [160] then begin //if pm.Def.wMagicId in [13, 26, 31, 45] then begin
                 if not (pm.Level in [0..4]) then pm.Level := 0; //魔法最多3级
               end else begin
                 if not (pm.Level in [0..3]) then pm.Level := 0; //魔法最多3级
               end;
               TextOut(bbx + 48, bby + 8 + m * 37, pm.Def.sMagicName, c);
 
-              if pm.Def.wMagicId in [31] then begin //if pm.Def.wMagicId in [13, 26, 31, 45] then begin
+              if pm.Def.wMagicId in [160] then begin //if pm.Def.wMagicId in [13, 26, 31, 45] then begin
                 if pm.Level in [0..4] then begin
                   trainlv := pm.Level;
                   if trainlv >= 3 then trainlv := trainlv - 1;
@@ -13399,14 +13399,14 @@ begin
               hcolor := clWhite;
               if Ord(pm.Key) = 0 then hcolor := clGray;
 
-              if pm.Def.wMagicId in [13, 26, 31, 45] then begin
+              if pm.Def.wMagicId in [160,161] then begin
                 if not (pm.Level in [0..4]) then pm.Level := 0; //魔法最多4级
               end else begin
                 if not (pm.Level in [0..3]) then pm.Level := 0; //魔法最多3级
               end;
               TextOut(bbx + 48, bby + 8 + m * 37, pm.Def.sMagicName, hcolor);
 
-              if pm.Def.wMagicId in [13, 26, 31, 45] then begin
+              if pm.Def.wMagicId in [160,161] then begin
                 if pm.Level in [0..4] then begin
                   trainlv := pm.Level;
                   if trainlv >= 3 then trainlv := trainlv - 1;

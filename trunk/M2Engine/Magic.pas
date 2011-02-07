@@ -2557,7 +2557,7 @@ begin
     end;
   end;
 
-  if ((PlayObject.m_btRaceServer = RC_HEROOBJECT) and (UserMagic.wMagIdx in [13, 26, 45])) or (UserMagic.wMagIdx = 31) then
+  if ((PlayObject.m_btRaceServer = RC_HEROOBJECT) and (UserMagic.wMagIdx in [160,161])) then //or (UserMagic.wMagIdx = 31) then
     nMaxLevel := 4 else nMaxLevel := 3;
 
   if boTrain and (UserMagic.wMagIdx in [SKILL_61..SKILL_65]) and (PlayObject.m_btRaceServer <> RC_HEROOBJECT) then begin
@@ -2566,7 +2566,7 @@ begin
 
   if (UserMagic.btLevel < nMaxLevel) and (boTrain) then begin //4¼¶Ä§·¨
     boSmall := False;
-    if ((PlayObject.m_btRaceServer = RC_HEROOBJECT) and (UserMagic.wMagIdx in [13, 26, 45])) or (UserMagic.wMagIdx = 31) then begin
+    if ((PlayObject.m_btRaceServer = RC_HEROOBJECT) and (UserMagic.wMagIdx in [160,161])) then begin //or (UserMagic.wMagIdx = 31) then begin
       if UserMagic.btLevel >= 3 then begin
         boSmall := UserMagic.MagicInfo.TrainLevel[UserMagic.btLevel - 1] <= PlayObject.m_Abil.Level;
       end else begin

@@ -3827,7 +3827,7 @@ begin
 
   if Magic <> nil then begin
 
-    if (BaseObject.m_btRaceServer = RC_HEROOBJECT) and (Magic.wMagicId in [13, 26, 45]) then
+    if (BaseObject.m_btRaceServer = RC_HEROOBJECT) and (Magic.wMagicId in [160,161]) then
       nMaxLevel := 4 else nMaxLevel := 3;
 
     nLevel := _MIN(nMaxLevel, Str_ToInt(QuestActionInfo.sParam2, 0));
@@ -6339,7 +6339,7 @@ begin
   if Magic <> nil then begin
     for I := 0 to BaseObject.m_MagicList.Count - 1 do begin
       UserMagic := BaseObject.m_MagicList.Items[I];
-      if (BaseObject.m_btRaceServer = RC_HEROOBJECT) and (UserMagic.wMagIdx in [13, 26, 45]) then
+      if (BaseObject.m_btRaceServer = RC_HEROOBJECT) and (UserMagic.wMagIdx in [160,161]) then
         nMaxLevel := 4 else nMaxLevel := 3;
       if UserMagic.MagicInfo = Magic then begin
         case cMethod of

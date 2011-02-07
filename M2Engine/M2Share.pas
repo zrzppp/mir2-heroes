@@ -4131,21 +4131,21 @@ var
 {$IFEND}
     boHighLevelKillMonFixExp: False;
     boAddUserItemNewValue: True;
-    sLineNoticePreFix: '〖公告〗';
-    sSysMsgPreFix: '〖系统〗';
-    sGuildMsgPreFix: '〖行会〗';
-    sGroupMsgPreFix: '〖组队〗';
-    sHintMsgPreFix: '〖提示〗';
-    sGMRedMsgpreFix: '〖ＧＭ〗';
-    sMonSayMsgpreFix: '〖怪物〗';
-    sCustMsgpreFix: '〖祝福〗';
+    sLineNoticePreFix: '';
+    sSysMsgPreFix: '';
+    sGuildMsgPreFix: '';
+    sGroupMsgPreFix: '';
+    sHintMsgPreFix: '';
+    sGMRedMsgpreFix: '';
+    sMonSayMsgpreFix: '';
+    sCustMsgpreFix: '';
     sCastleMsgpreFix: '';
-    sGuildNotice: '公告';
+    sGuildNotice: 'Notice';
     sGuildWar: '敌对行会';
     sGuildAll: '联盟行会';
     sGuildMember: '行会成员';
     sGuildMemberRank: '行会成员';
-    sGuildChief: '掌门人';
+    sGuildChief: 'Guild Leader';
     boKickAllUser: False;
     boTestSpeedMode: False;
     ClientConf: (

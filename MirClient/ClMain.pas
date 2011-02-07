@@ -3118,36 +3118,28 @@ begin
 
       tdir := GetFlyDirection(390, 175, tx, ty);
 
-      //Ä§·¨Ëø¶¨
-      if (pcm.Def.wMagicId = 2)
-        or (pcm.Def.wMagicId = 14)
-        or (pcm.Def.wMagicId = 15)
-        or (pcm.Def.wMagicId = 19) or (pcm.Def.wMagicId in [60..65]) then begin
-        g_MagicTarget := g_FocusCret;
-      end else begin
-        if g_Config.boMagicLock then begin
-          if PlayScene.IsValidActor(g_MagicLockActor) then begin
-            if g_MagicLockActor.m_boDeath then g_MagicLockActor := nil;
-          end else g_MagicLockActor := nil;
-        end;
-        if not g_Config.boMagicLock or (PlayScene.IsValidActor(g_FocusCret) and (not g_FocusCret.m_boDeath)) or (g_MagicLockActor = nil) then begin
-          g_MagicLockActor := g_FocusCret;
-        end;
-        g_MagicTarget := g_MagicLockActor;
-      end;
+      //Magic Lock Milo
+      if (pcm.Def.wMagicID in [2,14,15,19,9,10,22,23,29,33,46,49,40,20,44,45,54,56,57,60,61,62,63,64,65]) //auto-targeting?
+            then begin
+           g_MagicTarget:=g_FocusCret;
+         end else begin
+         if not g_boMagicLock or (PlayScene.IsValidActor (g_FocusCret) and (not g_FocusCret.m_boDeath)) then begin
+           g_MagicLockActor:=g_FocusCret;
+           end;
+           g_MagicTarget:=g_MagicLockActor;
+         end;
 
-      if pcm.Def.wMagicId = 22 then g_MagicTarget := nil;
-      if not PlayScene.IsValidActor(g_MagicTarget) then
-        g_MagicTarget := nil;
+         if not PlayScene.IsValidActor (g_MagicTarget) then
+            g_MagicTarget := nil;
 
-      if g_MagicTarget = nil then begin
-        PlayScene.CXYfromMouseXY(tx, ty, targx, targy);
-        targid := 0;
-      end else begin
-        targx := g_MagicTarget.m_nCurrX;
-        targy := g_MagicTarget.m_nCurrY;
-        targid := g_MagicTarget.m_nRecogId;
-      end;
+         if g_MagicTarget = nil then begin
+            PlayScene.CXYfromMouseXY (tx, ty, targx, targy);
+            targid := 0;
+         end else begin
+            targx := g_MagicTarget.m_nCurrX;
+            targy := g_MagicTarget.m_nCurrY;
+            targid := g_MagicTarget.m_nRecogId;
+         end;
 
       if CanNextAction and ServerAcceptNextAction then begin
         g_dwLatestSpellTick := GetTickCount;
@@ -3169,17 +3161,16 @@ begin
             300: g_dwMagicDelayTime := Round(g_dwMagicDelayTime / _MAX(3, 1));
             200: g_dwMagicDelayTime := Round(g_dwMagicDelayTime / _MAX(4, 1));
             100: g_dwMagicDelayTime := Round(g_dwMagicDelayTime / _MAX(5, 1));
-            0: g_dwMagicDelayTime := Round(g_dwMagicDelayTime / _MAX(6, 1));
+            0: g_dwMagicDelayTime := Round(g_dwMagicDelayTime / _MAX(6, 1)); }
           end;
-          }
+
         end;
 
         case pmag.MagicSerial of
-          //0, 2, 11, 12, 15, 16, 17, 13, 23, 24, 26, 27, 28, 29: ;
-          2, 14, 15, 16, 17, 18, 19, 21,
-            12, 25, 26, 28, 29, 30, 31: ;
-        else g_dwLatestMagicTick := GetTickCount;
-        end;
+               2, 14, 15, 16, 17, 18, 19, 21,               //Affect spells except these
+               12, 25, 26, 28, 29, 30, 31..57,58, 65, 66: ;
+               else g_dwLatestMagicTick := GetTickCount;
+            end;
 
         g_dwMagicPKDelayTime := 0;
         if g_MagicTarget <> nil then
@@ -3198,7 +3189,7 @@ begin
           g_MySelf.SendMsg(CM_SPELL, targx, targy, tdir, Integer(pmag), targid, '', 0);
         end;
       end;
-    end;
+    //end;
   end else DScreen.AddSysMsg('Not enough MP....', 30, 40, clAqua);
 end;
 

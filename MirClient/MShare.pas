@@ -4526,7 +4526,7 @@ begin
   if ini <> nil then begin
     ini.WriteBool('Basic', 'HideBlueLable', g_Config.boHideBlueLable);
     ini.WriteBool('Basic', 'ItemHint', g_Config.boItemHint);
-    ini.WriteBool('Basic', 'MagicLock', g_Config.boMagicLock);
+    //ini.WriteBool('Basic', 'MagicLock', g_Config.boMagicLock);
     ini.WriteBool('Basic', 'OrderItem:', g_Config.boOrderItem);
     ini.WriteBool('Basic', 'CloseGroup', g_Config.boCloseGroup);
     ini.WriteBool('Basic', 'Music', g_Config.boBGSound);
@@ -4662,7 +4662,7 @@ begin
   if ini <> nil then begin
     g_Config.boHideBlueLable := True;
     g_Config.boItemHint := True;
-    g_Config.boMagicLock := True;
+    //g_Config.boMagicLock := True;
     g_Config.boOrderItem := ini.ReadBool('Basic', 'OrderItem:', g_Config.boOrderItem);
     g_Config.boBGSound := ini.ReadBool('Basic', 'Music', g_Config.boBGSound);
     g_Config.boDuraWarning := ini.ReadBool('Basic', 'DuraWarning', g_Config.boDuraWarning);

@@ -192,13 +192,28 @@ From Lvl 35 IceStorm\
 
 [goods]
 ;Item		Amount		Time
+;;Warrior
 Fencing			200	1
 Slaying			200	1
+Thrusting 		200	1
+HalfMoon 		200	1
+ShoulderDash 		200	1
+FlamingSword		200	1
+
+;;Taoist
 Healing			200	1
 SpiritSword		200	1
 Poisoning		200	1
 SoulFireBall		200	1
 SummonSkele		200	1
+Hiding 			200	1
+MassHiding 		200	1
+SoulShield 		200	1
+BlessedArmour 		200	1
+Revelation 		200	1
+TrapHexagon 		200	1
+
+;;Wizard
 FireBall		200	1
 Repulsion		200	1
 EShock			200	1
@@ -206,9 +221,19 @@ HellFire		200	1
 ThunderBolt		200	1
 Teleport		200	1
 GreatFireBal		200	1
-HeroFireBall		200	1
-HeroFencing		200	1
+FireBang 		200	1
+FireWall 		200	1
+Lightning 		200	1
+ThunderStorm 		200	1
+
+;;Hero
 HeroHealing		200	1
+HeroFencing		200	1
+HeroFireball		200	1
 HeroSlaying		200	1
 HeroThunderB		200	1
 HeroSoulFB		200	1
+HeroHalfmoon		200	1
+HeroSoulShield		200	1
+HeroBlessedArm		200	1
+HeroFirewall		200	1

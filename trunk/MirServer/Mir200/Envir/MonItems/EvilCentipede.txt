@@ -57,10 +57,10 @@
 1/50 SoulSpringWand
 1/50 WarmageStaff
 1/250 DragonStaff
-1/100 Clearring
-1/100 MuscleRing
-1/100 ProtectionRing
-1/100 RevivalRing
+1/1500 Clearring
+1/1500 MuscleRing
+1/1500 ProtectionRing
+1/1500 RevivalRing
 1/50 BlackIronHelmet
 1/10 SkeletonHelmet
 1/10 ShamanHelmet
@@ -73,7 +73,7 @@
 1/35 SpiritRing
 1/2 ExpelRing
 1/2 CoralRing
-1/500 TelePortRing
+1/1500 TelePortRing
 1/35 KnightBracelet
 1/35 greenbead
 1/50 demonicbells

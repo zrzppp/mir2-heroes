@@ -1,7 +1,7 @@
 1/5 gold 1500
 1/10 gold 750
 
-1/250 WorldTimePiece
+1/150 TimeStonePiece
 
 1/10 	(HP)Druglarge
 1/10 	(MP)Druglarge

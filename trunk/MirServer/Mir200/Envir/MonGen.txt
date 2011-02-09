@@ -1867,7 +1867,7 @@ D606   100  100    Centipede        100    15       10 50
 D606   100  100    EvilTongs  100    2        120
 
 ;;BigCentipede
-D606   83   168    BigCentipede      0      1        180
+D606   84   169    EvilCentipede      0      1        180
 D606   77   170    Centipede        10      30       5  80
 D606   77   170    Centipede0       10     1        60
 
@@ -2355,7 +2355,7 @@ D714   100  300    SnakeScorpion      100    3         5  50
 D714   300  300    SnakeScorpion      100    3         5  50
 D714   200  200    SnakeScorpion      200    50       10
 D714   200  200    WedgeMoth    200    55       10
-D714   200  200    WhiteBoar        200    1         120
+D714   200  200    WhiteEvilBoar        200    1         120
 D714   200  200    BugbatMaggot    200    50       10
 ;;JackPot Monster
 D714   200  200    RedBoar0       200    1         15
@@ -2376,7 +2376,7 @@ D715   200  200    WedgeMoth    200    100       10
 D715   200  200    SnakeScorpion      200    100       10
 D715   200  200    BlackBoar        200    100       10
 D715   200  200    BlackMaggot        200    100       10
-D715   200  200    WhiteBoar        200    1         120
+D715   200  200    WhiteEvilBoar        200    1         120
 D715   200  200    BugbatMaggot    200    60        10
 ;;JackPot Monster
 D715   200  200    RedBoar0       200    1         30
@@ -2734,9 +2734,9 @@ D716    25   25    BlackBoar0        25     1        120
 ;;AngledStoneTomb 7F
 D717    100  100    BlackMaggot        100    100       10
 D717    100  100    WedgeMoth    100    150       10
-D717    100  100    WhiteBoar0       100    28        120
-D717    100  100    WhiteBoar        100    2         120
-D717    100  100    WhiteBoar        100    2         240
+D717    100  100    WhiteEvilBoar0       100    28        120
+D717    100  100    WhiteEvilBoar        100    2         120
+D717    100  100    WhiteEvilBoar        100    2         240
 D717    100  100    EvilSnake      100    1         120
 D717    100  100    BugbatMaggot    100    30        10
 
@@ -4357,216 +4357,216 @@ D2079  67   67   LeftGuard    100  2   3
 ;;	BlackDragonHall					
 
 ;BlackDrgnDungeon						
-D2001	250	210	EvilTongs20	50	7	3
-D2001	250	210	EvilSnake20	50	7	3
-D2001	240	115	EvilTongs20	50	7	3
-D2001	240	115	EvilSnake20	50	7	3
-D2001	205	187	EvilTongs20	50	7	3
-D2001	205	187	EvilSnake20	50	7	3
-D2001	171	213	EvilTongs20	50	7	3
-D2001	171	213	EvilSnake20	50	7	3
-D2001	110	186	EvilTongs20	50	7	3
-D2001	110	186	EvilSnake20	50	7	3
-D2001	146	74	EvilTongs20	50	7	3
-D2001	146	74	EvilSnake20	50	7	3
-D2001	107	68	EvilTongs20	50	7	3
-D2001	107	68	EvilSnake20	50	7	3
-D2001	47	94	EvilTongs20	50	7	3
-D2001	47	94	EvilSnake20	50	7	3
+D2001	250	210	EvilTongs2	50	7	3
+D2001	250	210	EvilSnake2	50	7	3
+D2001	240	115	EvilTongs2	50	7	3
+D2001	240	115	EvilSnake2	50	7	3
+D2001	205	187	EvilTongs2	50	7	3
+D2001	205	187	EvilSnake2	50	7	3
+D2001	171	213	EvilTongs2	50	7	3
+D2001	171	213	EvilSnake2	50	7	3
+D2001	110	186	EvilTongs2	50	7	3
+D2001	110	186	EvilSnake2	50	7	3
+D2001	146	74	EvilTongs2	50	7	3
+D2001	146	74	EvilSnake2	50	7	3
+D2001	107	68	EvilTongs2	50	7	3
+D2001	107	68	EvilSnake2	50	7	3
+D2001	47	94	EvilTongs2	50	7	3
+D2001	47	94	EvilSnake2	50	7	3
 
 D2001	150	150	KingScorpion	150	1	120
 
 ;;Boom's	Monster					
-D2001	250	210	EvilTongs21	50	1	45
-D2001	250	210	EvilSnake21	50	1	45
+D2001	250	210	EvilTongs2	50	1	45
+D2001	250	210	EvilSnake2	50	1	45
 
 ;BlackSnakePalace						
-D2002	17	22	EvilSnake20	20	4	5
+D2002	17	22	EvilSnake2	20	4	5
 D2002	17	22	KingScorpion	20	1	120
-D2002	17	22	EvilTongs20	20	4	3
+D2002	17	22	EvilTongs2	20	4	3
 
 ;;Boom's	Monster					
-D2002	17	22	EvilSnake21	20	1	45
+D2002	17	22	EvilSnake2	20	1	45
 
 ;BlkDrgnDungen1F						
-D2003	272	265	Ghoul20	70	8	13
-D2003	272	265	ZumaArcher20	70	8	3
+D2003	272	265	Ghoul2	70	8	13
+D2003	272	265	ZumaArcher2	70	8	3
 D2003	272	265	WedgeMoth	70	18	3
-D2003	217	210	Ghoul20	70	8	13
-D2003	217	210	ZumaArcher20	70	8	3
+D2003	217	210	Ghoul2	70	8	13
+D2003	217	210	ZumaArcher2	70	8	3
 D2003	217	210	BugbatMaggot	100	13	5
-D2003	174	197	Ghoul20	70	8	3
-D2003	174	197	ZumaArcher20	70	8	3
+D2003	174	197	Ghoul2	70	8	3
+D2003	174	197	ZumaArcher2	70	8	3
 D2003	174	197	WedgeMoth	70	18	3
-D2003	110	133	Ghoul20	70	8	13
-D2003	110	133	ZumaArcher20	70	8	3
+D2003	110	133	Ghoul2	70	8	13
+D2003	110	133	ZumaArcher2	70	8	3
 D2003	110	133	BugbatMaggot	100	13	5
 D2003	62	115	Ghoul20	70	8	13
 D2003	62	115	ZumaArcher20	70	8	3
 D2003	62	115	WedgeMoth	70	8	3
 ;;Boom	Monser					
-D2003	62	115	Ghoul21	70	1	45
-D2003	272	265	ZumaArcher21	70	1	45
+D2003	62	115	Ghoul2	70	1	45
+D2003	272	265	ZumaArcher2	70	1	45
 
 ;BlkDrgnDungen2F						
-D2004	70	67	Ghoul20	50	6	3
-D2004	70	67	ZumaArcher20	50	6	3
+D2004	70	67	Ghoul2	50	6	3
+D2004	70	67	ZumaArcher2	50	6	3
 D2004	70	67	Bugbat	100	5	3
-D2004	37	51	ZumaArcher20	50	6	3
-D2004	37	51	Ghoul20	50	6	3
-D2004	37	51	Ghoul20	50	6	3
-D2004	37	51	Ghoul20	50	6	3
-D2004	39	36	ZumaArcher20	50	6	3
-D2004	39	36	Ghoul20	50	6	3
+D2004	37	51	ZumaArcher2	50	6	3
+D2004	37	51	Ghoul2	50	6	3
+D2004	37	51	Ghoul2 50	6	3
+D2004	37	51	Ghoul2	50	6	3
+D2004	39	36	ZumaArcher2	50	6	3
+D2004	39	36	Ghoul2	50	6	3
 D2004	39	36	WedgeMoth	100	10	3
 ;;Boom	Monser					
-D2004	39	36	Ghoul21	50	1	45
-D2004	39	36	ZumaArcher21	50	1	45
+D2004	39	36	Ghoul21	5	1	45
+D2004	39	36	ZumaArcher2	50	1	45
 
 ;PurgatoryHall						
-D2005	69	71	Ghoul20	50	4	10
-D2005	69	71	ZumaArcher20	50	4	10
+D2005	69	71	Ghoul20	5	4	10
+D2005	69	71	ZumaArcher2	50	4	10
 D2005	69	71	Bugbat	100	5	10
-D2005	49	51	ZumaArcher20	50	4	10
-D2005	49	51	Ghoul20	50	4	10
-D2005	33	33	Ghoul20	50	4	10
+D2005	49	51	ZumaArcher2	50	4	10
+D2005	49	51	Ghoul2	50	4	10
+D2005	33	33	Ghoul2	50	4	10
 D2005	33	33	WedgeMoth	100	8	5
 ;;Boom	Monser					
-D2005	49	51	Ghoul21	50	1	45
-D2005	69	71	ZumaArcher21	50	1	45
+D2005	49	51	Ghoul2	50	1	45
+D2005	69	71	ZumaArcher2	50	1	45
 
 ;WoomaPalace						
-D2006	69	71	Ghoul20	50	12	5
-D2006	69	71	ZumaArcher20	50	8	5
+D2006	69	71	Ghoul2	50	12	5
+D2006	69	71	ZumaArcher2	50	8	5
 D2006	69	71	Bugbat	100	5	5
-D2006	69	71	WoomaGuardian5	50	8	5
-D2006	49	51	ZumaArcher20	50	8	5
-D2006	49	51	Ghoul20	50	12	5
-D2006	49	51	WoomaGuardian5	50	16	5
+D2006	69	71	WoomaGuardian2	50	8	5
+D2006	49	51	ZumaArcher2	50	8	5
+D2006	49	51	Ghoul2	50	12	5
+D2006	49	51	WoomaGuardian2	50	16	5
 D2006	49	51	IncarnatedWT	50	9	120
-D2006	33	33	ZumaArcher20	50	9	5
-D2006	33	33	Ghoul20	50	9	5
+D2006	33	33	ZumaArcher2	50	9	5
+D2006	33	33	Ghoul2	50	9	5
 D2006	33	33	WedgeMoth	100	8	5
 ;;Boom	Monser					
-D2006	49	51	WoomaGuardian6	50	1	45
-D2006	33	33	ZumaArcher21	50	1	45
+D2006	49	51	WoomaGuardian2	50	1	45
+D2006	33	33	ZumaArcher2	50	1	45
 
 ;HwanMaJin						
-D2007	150	150	Ghoul20	70	16	3
-D2007	150	150	ZumaArcher20	70	12	3
+D2007	150	150	Ghoul2	70	16	3
+D2007	150	150	ZumaArcher2	70	12	3
 D2007	150	150	Bugbat	100	8	3
-D2007	150	150	ZumaStatue20	70	20	3
-D2007	150	150	ZumaGuardian20	100	20	3
-D2007	150	150	WhiteBoar20	70	20	3
+D2007	150	150	ZumaStatue2	70	20	3
+D2007	150	150	ZumaGuardian2	100	20	3
+D2007	150	150	WhiteBoar2	70	20	3
 D2007	150	150	WedgeMoth	70	20	3
 
-D2007	50	50	Ghoul20	70	16	3
-D2007	50	50	ZumaArcher20	70	12	3
+D2007	50	50	Ghoul2	70	16	3
+D2007	50	50	ZumaArcher2	70	12	3
 D2007	50	50	Bugbat	100	8	3
-D2007	50	50	ZumaStatue20	70	20	3
-D2007	50	50	ZumaGuardian20	100	20	3
-D2007	50	50	WhiteBoar20	70	16	3
+D2007	50	50	ZumaStatue2	70	20	3
+D2007	50	50	ZumaGuardian2	100	20	3
+D2007	50	50	WhiteBoar2	70	16	3
 D2007	50	50	WedgeMoth	70	10	3
 ;;Boom	Monser					
-D2007	150	150	WhiteBoar21	70	1	45
-D2007	150	150	ZumaStatue21	70	1	45
-D2007	150	150	ZumaGuardian21	100	1	45
+D2007	150	150	WhiteBoar2	70	1	45
+D2007	150	150	ZumaStatue2	70	1	45
+D2007	150	150	ZumaGuardian2	100	1	45
 
 ;NobleHogPalace						
-D2008	69	71	WhiteBoar20	50	22	5
-D2008	69	71	ZumaArcher20	50	22	5
+D2008	69	71	WhiteBoar2	50	22	5
+D2008	69	71	ZumaArcher2	50	22	5
 D2008	69	71	Bugbat	100	4	5
-D2008	69	71	ZumaStatue20	50	8	5
-D2008	49	51	ZumaArcher20	50	22	5
-D2008	49	51	WhiteBoar20	50	22	5
-D2008	49	51	ZumaStatue20	50	22	5
-D2008	49	51	ZumaGuardian20	100	24	5
-D2008	33	33	ZumaArcher20	50	22	5
-D2008	33	33	WhiteBoar20	50	22	5
+D2008	69	71	ZumaStatue2	50	8	5
+D2008	49	51	ZumaArcher2	50	22	5
+D2008	49	51	WhiteBoar2	50	22	5
+D2008	49	51	ZumaStatue2	50	22	5
+D2008	49	51	ZumaGuardian2	100	24	5
+D2008	33	33	ZumaArcher2	50	22	5
+D2008	33	33	WhiteBoar2	50	22	5
 D2008	33	33	WedgeMoth	100	8	5
 D2008	49	51	KingHog	100	2	120
 ;;Boom	Monser					
-D2008	69	71	WhiteBoar21	50	1	45
-D2008	33	33	ZumaArcher21	50	1	45
-D2008	49	51	ZumaStatue21	50	1	45
+D2008	69	71	WhiteBoar2	50	1	45
+D2008	33	33	ZumaArcher2	50	1	45
+D2008	49	51	ZumaStatue2	50	1	45
 
 
 ;SoleSpiritHall						
-D2009	69	71	WhiteBoar20	50	4	10
-D2009	69	71	ZumaArcher20	50	4	10
+D2009	69	71	WhiteBoar2	50	4	10
+D2009	69	71	ZumaArcher2	50	4	10
 D2009	69	71	Bugbat	100	4	10
-D2009	49	51	ZumaGuardian20	50	4	10
-D2009	49	51	ZumaStatue20	50	4	10
-D2009	33	33	ZumaStatue20	50	4	10
+D2009	49	51	ZumaGuardian2	50	4	10
+D2009	49	51	ZumaStatue2	50	4	10
+D2009	33	33	ZumaStatue2	50	4	10
 D2009	33	33	WedgeMoth	100	8	5
 ;;Boom	Monser					
-D2009	69	71	ZumaArcher21	50	1	45
-D2009	33	33	ZumaStatue21	50	1	45
-D2009	49	51	ZumaGuardian21	50	1	45
+D2009	69	71	ZumaArcher2	50	1	45
+D2009	33	33	ZumaStatue2	50	1	45
+D2009	49	51	ZumaGuardian2	50	1	45
 
 ;HwanMaJin_2						
-D2010	150	150	WhiteBoar20	70	26	3
-D2010	150	150	ZumaArcher20	70	26	3
+D2010	150	150	WhiteBoar2	70	26	3
+D2010	150	150	ZumaArcher2	70	26	3
 D2010	150	150	Bugbat	100	8	3
-D2010	150	150	ZumaStatue20	70	26	3
-D2010	150	150	ZumaGuardian20	100	20	3
-D2010	150	150	ZumaStatue20	70	16	3
+D2010	150	150	ZumaStatue2	70	26	3
+D2010	150	150	ZumaGuardian2	100	20	3
+D2010	150	150	ZumaStatue2	70	16	3
 D2010	150	150	WedgeMoth	70	20	3
 ;;Boom	Monser					
-D2010	150	150	WhiteBoar21	70	1	45
-D2010	150	150	ZumaGuardian21	100	1	45
+D2010	150	150	WhiteBoar2	70	1	45
+D2010	150	150	ZumaGuardian2	100	1	45
 
 
-D2010	50	50	WhiteBoar20	70	26	3
-D2010	50	50	ZumaArcher20	70	26	3
+D2010	50	50	WhiteBoar2	70	26	3
+D2010	50	50	ZumaArcher2	70	26	3
 D2007	50	50	Bugbat	100	8	3
-D2007	50	50	ZumaStatue20	70	26	3
-D2007	50	50	ZumaGuardian20	100	40	3
-D2007	50	50	ZumaStatue20	70	26	3
+D2007	50	50	ZumaStatue2	70	26	3
+D2007	50	50	ZumaGuardian2	100	40	3
+D2007	50	50	ZumaStatue2	70	26	3
 D2007	50	50	WedgeMoth	70	20	3
 ;;Boom	Monser					
-D2010	50	50	ZumaArcher21	70	1	45
-D2007	50	50	ZumaStatue21	70	1	45
+D2010	50	50	ZumaArcher2	70	1	45
+D2007	50	50	ZumaStatue2	70	1	45
 
 ;ZumaPalace						
-D2011	69	71	ZumaStatue20	50	22	5
-D2011	69	71	ZumaArcher20	50	22	5
-D2011	69	71	ZumaStatue20	50	22	5
-D2011	49	51	ZumaArcher20	50	22	5
-D2011	49	51	ZumaStatue20	50	22	5
-D2011	49	51	ZumaGuardian20	100	22	5
-D2011	33	33	ZumaArcher20	50	22	5
+D2011	69	71	ZumaStatue2	50	22	5
+D2011	69	71	ZumaArcher2	50	22	5
+D2011	69	71	ZumaStatue2	50	22	5
+D2011	49	51	ZumaArcher2	50	22	5
+D2011	49	51	ZumaStatue2	50	22	5
+D2011	49	51	ZumaGuardian2	100	22	5
+D2011	33	33	ZumaArcher2	50	22	5
 D2011	49	51	IncarnatedZT	50	1	120
 ;;Boom	Monser					
-D2011	33	33	ZumaArcher21	50	1	45
-D2011	49	51	ZumaStatue21	50	1	45
-D2011	49	51	ZumaGuardian21	100	1	45
+D2011	33	33	ZumaArcher2	50	1	45
+D2011	49	51	ZumaStatue2	50	1	45
+D2011	49	51	ZumaGuardian2	100	1	45
 
 ;PrisonHall						
-D2012	69	71	ZumaStatue20	50	3	10
-D2012	69	71	ZumaArcher20	50	3	10
+D2012	69	71	ZumaStatue2	50	3	10
+D2012	69	71	ZumaArcher2	50	3	10
 D2012	69	71	Bugbat	100	3	10
-D2012	49	51	ZumaGuardian20	50	3	10
-D2012	49	51	ZumaStatue20	50	3	10
-D2012	33	33	ZumaStatue20	50	3	10
+D2012	49	51	ZumaGuardian2	50	3	10
+D2012	49	51	ZumaStatue2	50	3	10
+D2012	33	33	ZumaStatue2	50	3	10
 D2012	33	33	WedgeMoth	100	8	10
 ;;Boom	Monser					
-D2012	69	71	ZumaArcher21	50	1	45
-D2012	49	51	ZumaStatue21	50	1	45
-D2012	49	51	ZumaGuardian21	50	1	45
+D2012	69	71	ZumaArcher2	50	1	45
+D2012	49	51	ZumaStatue2	50	1	45
+D2012	49	51	ZumaGuardian2	50	1	45
 
 ;DarkDevilPalace						
-D2013	69	71	ZumaArcher20	50	22	5
-D2013	49	51	ZumaArcher20	50	12	5
-D2013	33	33	ZumaArcher20	50	22	5
-D2013	69	71	ZumaGuardian20	50	22	5
-D2013	49	51	ZumaStatue20	50	12	5
-D2013	33	33	ZumaStatue20	50	22	5
+D2013	69	71	ZumaArcher2	50	22	5
+D2013	49	51	ZumaArcher2	50	12	5
+D2013	33	33	ZumaArcher2	50	22	5
+D2013	69	71	ZumaGuardian2	50	22	5
+D2013	49	51	ZumaStatue2	50	12	5
+D2013	33	33	ZumaStatue2	50	22	5
 D2013	49	51	DarkDevil	40	1	180
 ;;Boom	Monser					
-D2013	33	33	ZumaArcher21	50	1	45
-D2013	49	51	ZumaStatue21	50	1	45
-D2013	69	71	ZumaGuardian21	50	1	45
+D2013	33	33	ZumaArcher2	50	1	45
+D2013	49	51	ZumaStatue2	50	1	45
+D2013	69	71	ZumaGuardian2	50	1	45
 
 
 ;; PastBichon

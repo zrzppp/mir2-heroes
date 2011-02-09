@@ -100,6 +100,7 @@ Slaying			200	1
 Thrusting 		200	1
 HalfMoon 		200	1
 ShoulderDash 		200	1
+FlamingSword		200	1
 
 ;;Taoist
 Healing			200	1

@@ -10729,11 +10729,6 @@ end;
 
 procedure TFrmDlg.DBotLogoutClick(Sender: TObject; X, Y: Integer);
 begin
-  //强行退出
-  g_dwLatestStruckTick := GetTickCount() + 10001;
-  g_dwLatestMagicTick := GetTickCount() + 10001;
-  g_dwLatestHitTick := GetTickCount() + 10001;
-  //
   if (GetTickCount - g_dwLatestStruckTick > 10000) and
     (GetTickCount - g_dwLatestMagicTick > 10000) and
     (GetTickCount - g_dwLatestHitTick > 10000) or
@@ -10745,11 +10740,6 @@ end;
 
 procedure TFrmDlg.DBotExitClick(Sender: TObject; X, Y: Integer);
 begin
-  //强行退出
-  g_dwLatestStruckTick := GetTickCount() + 10001;
-  g_dwLatestMagicTick := GetTickCount() + 10001;
-  g_dwLatestHitTick := GetTickCount() + 10001;
-  //
   if (GetTickCount - g_dwLatestStruckTick > 10000) and
     (GetTickCount - g_dwLatestMagicTick > 10000) and
     (GetTickCount - g_dwLatestHitTick > 10000) or
@@ -14292,7 +14282,8 @@ begin
       frmMain.SendClientMessage(CM_HEROLOGON, 0, 0, 0, 0);
     end;
   end else begin
-    frmMain.SendClientMessage(CM_HEROLOGOUT, g_MyHero.m_nRecogId, 0, 0, 0);
+   frmMain.tmrHeroLogout.Enabled := True;
+   DScreen.AddChatBoardString('Your Hero will be logged out in 5 seconds', clyellow, clRed);
   end;
 end;
 

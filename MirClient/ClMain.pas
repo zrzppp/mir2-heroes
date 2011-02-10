@@ -3118,11 +3118,9 @@ begin
 
       tdir := GetFlyDirection(390, 175, tx, ty);
 
-      //Magic Lock Code, Back to original CQFir Version.
-if (pcm.Def.wMagicId = 2)
-        or (pcm.Def.wMagicId = 14)
-        or (pcm.Def.wMagicId = 15)
-        or (pcm.Def.wMagicId = 19) or (pcm.Def.wMagicId in [60..65]) then begin
+      //Magic Lock Code
+      if (pcm.Def.wMagicID in [2,14,15,19,9,10,22,23,29,33,46,49,40,20,44,45,54,56,57,60,61,62,63,64,65]) then begin
+      //Add Magic ID to list above to remove lock entirely. For mass attack/support skills.
         g_MagicTarget := g_FocusCret;
       end else begin
         if g_Config.boMagicLock then begin
@@ -3191,12 +3189,19 @@ if (pcm.Def.wMagicId = 2)
           //g_dwMagicPKDelayTime := Round(g_Config.dwMagicPKDelayTime / _MAX(frmFMain.TrackBarSpellSpeed.Position, 1));
         end;
 
+
+        if ((g_MagicTarget = nil) or (g_MagicTarget.m_btRace = 0) or (g_MagicTarget.m_btRace = RCC_MERCHANT)) then begin
+            PlayScene.CXYfromMouseXY(tx, ty, targx, targy);
+            g_MySelf.SendMsg(CM_SPELL, targx, targy, tdir, Integer(pmag), targid, '', 0);
+            g_MagicLockActor := nil;
+        end else begin
         if pcm.Def.wMagicId = 56 then begin
           PlayScene.CXYfromMouseXY(tx, ty, targx, targy);
           g_MySelf.SendMsg(CM_SPELL, targx, targy, tdir, Integer(pmag), 0, '', 0);
         end else begin
-          g_MySelf.SendMsg(CM_SPELL, targx, targy, tdir, Integer(pmag), targid, '', 0);
+            g_MySelf.SendMsg(CM_SPELL, targx, targy, tdir, Integer(pmag), targid, '', 0);
         end;
+       end;
       end;
     end;
   end else DScreen.AddSysMsg('Not enough MP....', 30, 40, clAqua);

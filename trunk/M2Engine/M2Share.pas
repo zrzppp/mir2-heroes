@@ -13521,6 +13521,9 @@ begin
     Config.WriteString('Names', 'BoneFamm', g_Config.sBoneFamm);
   g_Config.sBoneFamm := Config.ReadString('Names', 'BoneFamm', g_Config.sBoneFamm);
 
+  if Config.ReadString('Names', 'Deva', '') = '' then
+    Config.WriteString('Names', 'Deva', g_Config.sMoon);
+  g_Config.sMoon := Config.ReadString('Names', 'Deva', g_Config.sMoon);
 
   sLoadString := Config.ReadString('Names', 'GameGold', '');
   if sLoadString = '' then

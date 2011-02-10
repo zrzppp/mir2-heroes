@@ -1849,6 +1849,7 @@ begin
           if n > 80 then m_dwStruckFrameTime := n
           else m_dwStruckFrameTime := 80;
           m_dwLastStruckTime := GetTickCount;
+          g_dwLatestStruckTick := GetTickCount;
         end;
       SM_SPELL: begin
           m_btDir := Msg.dir;

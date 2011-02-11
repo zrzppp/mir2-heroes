@@ -41,6 +41,7 @@ type
     FindPathTimer: TTimer;
     TextureDevice1: TTextureDevice;
     TimerPlayMedia: TTimer;
+    tmrHeroLogout: TTimer;
     procedure DXDrawInitialize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word;
@@ -80,6 +81,7 @@ type
       MousePos: TPoint; var Handled: Boolean);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure TimerPlayMediaTimer(Sender: TObject);
+    procedure tmrHeroLogoutTimer(Sender: TObject);
   private
     WarningLevel: Integer;
     TimerCmd: TTimerCommand;
@@ -13380,6 +13382,12 @@ end;
 procedure TfrmMain.ClientCloseBigDiaLogBox();
 begin
   FrmDlg.CloseBigMDlg;
+end;
+
+procedure TfrmMain.tmrHeroLogoutTimer(Sender: TObject);
+begin
+  frmMain.SendClientMessage(CM_HEROLOGOUT, g_MyHero.m_nRecogId, 0, 0, 0);
+  tmrHeroLogout.Enabled := False;
 end;
 
 initialization

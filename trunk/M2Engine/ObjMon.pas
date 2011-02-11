@@ -248,7 +248,7 @@ begin
   m_boDupMode := False;
   bo554 := False;
   m_dwThinkTick := GetTickCount();
-  m_nViewRange := 6; //6
+  m_nViewRange := 5; //Set to OutTest Range, was 6 originally
   m_nRunTime := 250;
   m_dwSearchTime := 3000 + Random(2000);
   m_dwSearchTick := GetTickCount();

@@ -4,19 +4,48 @@
 (@@cqfirHero)
 
 [@main]
-#ACT
-;VIBRATION
 #SAY
-Disabled for first day of testing.
+<Use me to create a Hero, you must be level 30/FCOLOR=254> \
+<and have 500k in gold /FCOLOR=254>\ 
+<Please note Hero name must be less than 10 Characters/FCOLOR=254> \\ 
+<Create Hero/@herostep1>   \
+<Sell Hero/@delete>\  
+#ELSESAY
+Disabled for the moment, MiloFoxburr\        
+;<Auto Add HeroSkills/@HeroSkills> \
+;<Dual Skills/@dual> \
 
-
-;<Use me to Create a Hero!/FCOLOR=254>\ \
-;<Create Hero/@@cqfirHero>           <Auto Add HeroSkills/@HeroSkills> \
-;<Dual Skills/@dual> <Delete Hero/@delete>\ \
 
 [@delete]
-#ACT
+#IF 
+HAVEHERO
+#SAY
+This will completely remove your Hero and return 250k in gold \
+Make sure to empty your Hero Bag \
+You will have to start a new Hero at Level 1 again \ \
+<Yes I want to sell my Hero/@sellHero> <Back/@main>
+#ELSESAY
+You dont have a hero!! Be gone with you!! \ \
+<back/@main>
+
+[@sellHero]
+#SAY
+THIS CANNOT BE UNDONE! \
+Ensure your Hero is offline and click Sell Hero \ \
+<Sell Hero/@SellHero2> <Back/@main>
+
+
+[@sellHero2]
+#IF
+HERO.CHECKONLINE
+#SAY
+Hero must be offline for this
+#ELSEACT
+GIVE Gold 250000
 DELETEHERO
+#SAY
+Hero has been sold, you can now make a new one.
+
 
 [@dual]
 #ACT
@@ -96,6 +125,18 @@ HERO.GIVE HeroAmulet 1
 MESSAGEBOX "Skills added to Hero"
 CLOSE
 
+[@herostep1]
+#IF
+CHECKLEVELEX > 29
+CHECKGOLD 500000
+#SAY
+You need to be level 30 and pay 500,000 to create a hero. \
+Do you still want to create a hero? \ \
+<Yes/@@cqfirHero> \
+<No/@exit>
+#ELSESAY
+You must be level 30 and have 500k in gold! \
+
 [@cqfirHero]
 ;CREATEHERO 职业 性别
 <Choose your Hero/FCOLOR=253>    <Back/@main>\ \
@@ -104,28 +145,34 @@ CLOSE
 <Taoist (Male)/@CREATEHERO_TAOS_MAN>             <Taoist (Female)/@CREATEHERO_TAOS_WOM>\ \
 [@CREATEHERO_WARR_MAN]
 #ACT
+TAKE Gold 500000
 CREATEHERO 0 0
 goto @CreateingHero
 [@CREATEHERO_WARR_WOM]
 #ACT
+TAKE Gold 500000
 CREATEHERO 0 1
 goto @CreateingHero
 [@CREATEHERO_WIZA_MAN]
 #ACT
+TAKE Gold 500000
 CREATEHERO 1 0
 goto @CreateingHero
 [@CREATEHERO_WIZA_WOM]
 #ACT
+TAKE Gold 500000
 CREATEHERO 1 1
 goto @CreateingHero
 [@CREATEHERO_TAOS_MAN]
 #ACT
+TAKE Gold 500000
 CREATEHERO 2 0
 goto @CreateingHero
 [@CREATEHERO_TAOS_WOM]
 #ACT
+TAKE Gold 500000
 CREATEHERO 2 1
 goto @CreateingHero
 
 [@HeroNameFilter]
-Name not allowed\<Exit/@exit>
+Hero name must be less than 10 Characters\<Exit/@exit>

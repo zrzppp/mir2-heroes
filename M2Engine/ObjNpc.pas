@@ -1799,7 +1799,7 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
           User.SysMsg(sMsg + '你的好友 ' + TargetObject.GetUnknowCharName + ' 拒绝接受歌曲！！！', c_Red, t_Hint);
         end;
       end else begin
-        User.SysMsg(sMsg + g_sUserNotOnLine {'  没有在线！！！'}, c_Red, t_Hint);
+        User.SysMsg(sMsg + ' ' + g_sUserNotOnLine {'  没有在线！！！'}, c_Red, t_Hint);
       end;
     end;
   end;
@@ -2041,6 +2041,9 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
     boGotoLabel: Boolean;
     sGotoLabel: string;
     sNewMsg: string;
+
+    { Ryan - Temp Variable For Hero Name. }
+    sTempHeroNamePrefix: String;
   begin
     //MainOutMessage(sLabel +' sMsg:'+sMsg);
     if (User.m_sHeroCharName <> '') then begin
@@ -2050,7 +2053,7 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
         GotoLable(User, '@CreateingHero', False);
         Exit;
       end;
-      if (Length(sMsg) > 0) and (Length(sMsg) < 15) then begin
+      if (Length(sMsg) > 0) and (Length(sMsg) <= 10) then begin
         if Assigned(PlugInEngine.PlayObjectFilterMsg) then begin
           sSrcMsg := sMsg;
           if PlugInEngine.PlayObjectFilterMsg(User, PChar(sSrcMsg), @DestMsg, boGotoLabel) then begin
@@ -2061,7 +2064,10 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
           end;
         end;
 
-        User.m_sTempHeroName := sMsg;
+        { Ryan - Append Hero To End Of sMsg ~ Temp Fix }
+        sTempHeroNamePrefix := 'Hero';
+        User.m_sTempHeroName := sMsg + sTempHeroNamePrefix;
+
         sGotoLabel := Copy(sLabel, 2, Length(sLabel) - 1);
         GotoLable(User, sGotoLabel, False);
       end else begin
@@ -2072,37 +2078,6 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
     end;
   end;
 
-  {
-  procedure MakeHeroName(User: TPlayObject; sLabel, sMsg: string);
-  var
-    sGotoLabel: string;
-    sSrcMsg: string;
-    DestMsg: array[0..256] of Char;
-    boGotoLabel: Boolean;
-  begin
-    if User.m_boWaitHeroDate then Exit;
-    if User.m_boHasHero and (User.m_sHeroCharName <> '') then begin
-      GotoLable(User, '@HaveHero', False);
-    end else begin
-      if (Length(sMsg) > 0) and (Length(sMsg) < 15) then begin
-        if Assigned(PlugInEngine.PlayObjectFilterMsg) then begin
-          sSrcMsg := sMsg;
-          if PlugInEngine.PlayObjectFilterMsg(User, PChar(sSrcMsg), @DestMsg, boGotoLabel) then begin
-            User.m_sHeroCharName := '';
-            GotoLable(User, '@HeroNameFilter', False);
-            Exit;
-          end;
-        end;
-        User.m_sHeroCharName := sMsg;
-        sGotoLabel := Copy(sLabel, 2, Length(sLabel) - 1);
-        GotoLable(User, sGotoLabel, False);
-      end else begin
-        User.m_sHeroCharName := '';
-        GotoLable(User, '@HeroNameFilter', False);
-      end;
-    end;
-  end;
-  }
   procedure UpgradeItem(User: TPlayObject);
   begin
     User.SendMsg(Self, RM_SENDCHANGEITEM, 0, Integer(Self), 0, 0, '');

@@ -1,2 +1,0 @@
-; map X coordinate Y coordinate of the range name type of magic power of magic
-;3 332 330 10 5 100

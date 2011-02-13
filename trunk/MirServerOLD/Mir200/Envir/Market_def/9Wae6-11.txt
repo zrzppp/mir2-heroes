@@ -1,9 +1,0 @@
-;Info [ Npc Name{Apprentice} X=193 Y=323 MapName={WoomyonWoods} ]
-
-;NPC Release 1 (2003) By Geoff
-;99% Translated NPCs Including Quests
-
-[@main]
-Ugh... I have pain in my legs..
-Where can I take a rest?\ \
-<Close/@exit>

@@ -1,4 +1,0 @@
-IPLocal.dll
-M2Server.dll
-zPlugOfEngine.dll
-zPlugOfShop.dll

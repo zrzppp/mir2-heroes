@@ -3227,7 +3227,7 @@ begin
     end;
   end else begin
 
-    SysMsg(whostr + g_sUserNotOnLine {'  没有在线！！！'}, c_Red, t_Hint);
+    SysMsg(whostr + ' ' + g_sUserNotOnLine {'  没有在线！！！'}, c_Red, t_Hint);
   end;
 end;
 

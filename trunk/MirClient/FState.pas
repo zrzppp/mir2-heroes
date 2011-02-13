@@ -6955,8 +6955,8 @@ begin
       TextOut(SurfaceX(Left + 122 - TextWidth(g_sSelChrName) div 2),
         SurfaceY(Top + 23), g_MySelf.m_sUserName, g_MySelf.m_nNameColor);
       if StatePage = 0 then begin
-        TextOut(SurfaceX(Left + 45), SurfaceY(Top + 55),
-          g_sGuildName + ' ' + g_sGuildRankName, clSilver);
+        TextOut(SurfaceX(Left + 75), SurfaceY(Top + 55),
+          g_sGuildName + ' ' + g_sGuildRankName, clWhite); // clSilver
       end;
     end;
   end;
@@ -10451,7 +10451,7 @@ begin
       dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
     //Ä§·¨¿ì½Ý¼ü
     with dsurface do begin
-      TextOut(SurfaceX(Left + 95), SurfaceY(Top + 38), MagKeyMagName + ' ¿ì½Ý¼ü', clSilver);
+      TextOut(SurfaceX(Left + 95), SurfaceY(Top + 38), MagKeyMagName + ' Quick Key', clSilver);
     end;
   end;
 end;
@@ -11389,7 +11389,7 @@ begin
     with dsurface do begin
       TextOut(SurfaceX(Left + 122 - TextWidth(UserState1.UserName) div 2),
         SurfaceY(Top + 23), UserState1.UserName, UserState1.NameColor);
-      TextOut(SurfaceX(Left + 45), SurfaceY(Top + 58),
+      TextOut(SurfaceX(Left + 75), SurfaceY(Top + 58),
         UserState1.GuildName + ' ' + UserState1.GuildRankName, clSilver);
     end;
   end;

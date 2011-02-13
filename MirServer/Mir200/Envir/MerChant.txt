@@ -9,6 +9,7 @@
 Hero		3	340	321	Hero	0	36	0	0	0       0          0      2
 commission		3	330	315	Commission	0	36	0	0	0       0          0      2
 itemUpgrade	3	331	320	ItemUpgrade	0	86	0	0	0	0	0
+bigStorage	0	336	262	John	0	77	0
 
 ; Bichon Wall
 1Bme	0102	9	7	Kim	0	11	0	

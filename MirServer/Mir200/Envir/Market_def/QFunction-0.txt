@@ -28,44 +28,14 @@ CLOSE
 SENDMSG 5 "Hero name too long. Please shorten and try again."
 CLOSE
 
-[@GotoDuelMap]
-#IF
-;Get maps saved to the individual competition in variable S01
-GETDUELMAP S01
+[@PlayDie]
+#SAY
+You died!\ \
+Would you like to be revived in Town? \ \
+<Yes/@reviveTown>                           <No/@Exit>
+
+[@reviveTown]
 #ACT
-; lock LOCK X coordinate Y coordinate of the map the name of the scope of the type
-LOCK S01 20 20 6 4
-MAPMOVE <$STR(S01)> 20 20
-HEROLOGOUT
-SENDMSG 0 "[%s] has entered the [%M:%x:%y]. start a duel!"
-SENDMSG 0 "Welcome to enter [%M] watch [%s] of the duel!"
-# ELSEACT
-MessageBox has no venue to PK! Please wait!
-;===========================================================================
-
-;失败触发
-[@Defeat]
-\ \ \
-You have been defeated. \ \ \ \ \
-
-
-
-;胜利触发
-[@Victory]
-#ACT
-;解锁
-UNLOCK S01
-SENDMSG 0 "[%s] has won the Duel"
-
-
-[@取回物品];====这个需要加到脚本里面.当比武胜利的人去点的时候会给予物品
-#ACT
-GETDUELITEMS
-
-[@StdModeFunc1]
-#ACT
-TAKE HeartFireworks 1
-GMEXECUTE SHOWEFFECT 1 10
-
-
+GOHOME
+GMEXECUTE Realive self
 

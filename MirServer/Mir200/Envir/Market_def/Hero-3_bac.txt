@@ -1,0 +1,178 @@
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+;飛尔世界 www.cqfir.com  制作人:周行  QQ: 13677866  电话:023-58541052  
+;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+(@@cqfirHero)
+
+[@main]
+#SAY
+<Use me to create a Hero, you must be level 30/FCOLOR=254> \
+<and have 500k in gold /FCOLOR=254>\ 
+<Please note Hero name must be less than 10 Characters/FCOLOR=254> \\ 
+<Create Hero/@herostep1>   \
+<Sell Hero/@delete>\  
+#ELSESAY
+Disabled for the moment, MiloFoxburr\        
+;<Auto Add HeroSkills/@HeroSkills> \
+;<Dual Skills/@dual> \
+
+
+[@delete]
+#IF 
+HAVEHERO
+#SAY
+This will completely remove your Hero and return 250k in gold \
+Make sure to empty your Hero Bag \
+You will have to start a new Hero at Level 1 again \ \
+<Yes I want to sell my Hero/@sellHero> <Back/@main>
+#ELSESAY
+You dont have a hero!! Be gone with you!! \ \
+<back/@main>
+
+[@sellHero]
+#SAY
+THIS CANNOT BE UNDONE! \
+Ensure your Hero is offline and click Sell Hero \ \
+<Sell Hero/@SellHero2> <Back/@main>
+
+
+[@sellHero2]
+#IF
+HERO.CHECKONLINE
+#SAY
+Hero must be offline for this
+#ELSEACT
+GIVE Gold 250000
+DELETEHERO
+#SAY
+Hero has been sold, you can now make a new one.
+
+
+[@dual]
+#ACT
+HERO.CHANGELEVEL = 50
+HERO.GIVE BrokenSoulCut
+HERO.GIVE ChopChopStar
+HERO.GIVE ThunderClap
+HERO.GIVE SoulEaterSwamp
+HERO.GIVE LastJudgement
+HERO.GIVE DragonFlames
+HERO.GIVE HeroAmulet
+
+
+[@HeroSkills]
+#IF
+HERO.CHECKONLINE
+#ACT
+GOTO @addHeroSkills
+break
+#ELSEACT
+MESSAGEBOX "Hero must be online for this."
+break
+
+[@addHeroSkills]
+#IF
+HERO.checkjob warrior
+#ACT
+HERO.ADDSKILL HeroFencing 3
+HERO.ADDSKILL HeroSlaying 3
+HERO.ADDSKILL HeroHalfmoon 3
+HERO.ADDSKILL HeroFlamingSwo 3
+HERO.ADDSKILL HeroShoulderD 3
+HERO.ADDSKILL HeroWindChop 3
+HERO.ADDSKILL HeroSwordPierce 3
+HERO.ADDSKILL HeroCutOpen 3
+HERO.ADDSKILL HeroDeepStalker 3
+HERO.ADDSKILL HeroDailySword 3
+MESSAGEBOX "Skills added to Hero"
+CLOSE
+#IF
+HERO.checkjob wizard
+#ACT
+HERO.ADDSKILL HeroFireball 3
+HERO.ADDSKILL HeroRepulsion 3
+HERO.ADDSKILL HeroLightning 3
+HERO.ADDSKILL HeroThunderB 3
+HERO.ADDSKILL HeroFirewall 3
+HERO.ADDSKILL HeroThunderS 3
+HERO.ADDSKILL HeroMagicS 3
+HERO.ADDSKILL HeroIceStorm 3
+HERO.ADDSKILL HeroIcePalm 3
+HERO.ADDSKILL HeroThermalFire 3
+HERO.ADDSKILL HeroTwoPlace 3
+HERO.ADDSKILL HeroDragonFlame 3
+HERO.ADDSKILL HeroMeteorS 3
+MESSAGEBOX "Skills added to Hero"
+CLOSE
+#IF
+HERO.checkjob taoist
+#ACT
+HERO.ADDSKILL HeroHealing 3
+HERO.ADDSKILL HeroSwordman 3
+HERO.ADDSKILL HeroPoisoning 3
+HERO.ADDSKILL HeroSoulFB 3
+HERO.ADDSKILL HeroSoulShield 3
+HERO.ADDSKILL HeroBlessedArm 3
+HERO.ADDSKILL HeroHiding 3
+HERO.ADDSKILL HeroMassHiding 3
+HERO.ADDSKILL HeroCharGroup 3
+HERO.ADDSKILL HeroMassHeal 3
+HERO.ADDSKILL HeroSummonDeva 3
+HERO.ADDSKILL HeroPurge 3
+HERO.ADDSKILL HTwinkleGuard 3
+HERO.ADDSKILL (H)Resurrection 3
+HERO.ADDSKILL (H)AegisShield 3
+HERO.GIVE HeroAmulet 1
+MESSAGEBOX "Skills added to Hero"
+CLOSE
+
+[@herostep1]
+#IF
+CHECKLEVELEX > 29
+CHECKGOLD 500000
+#SAY
+You need to be level 30 and pay 500,000 to create a hero. \
+Do you still want to create a hero? \ \
+<Yes/@@cqfirHero> \
+<No/@exit>
+#ELSESAY
+You must be level 30 and have 500k in gold! \
+
+[@cqfirHero]
+;CREATEHERO 职业 性别
+<Choose your Hero/FCOLOR=253>    <Back/@main>\ \
+<Warrior (Male)/@CREATEHERO_WARR_MAN>             <Warrior (Female)/@CREATEHERO_WARR_WOM>\ \
+<Wizard (Male)/@CREATEHERO_WIZA_MAN>             <Wizard (Female)/@CREATEHERO_WIZA_WOM>\ \
+<Taoist (Male)/@CREATEHERO_TAOS_MAN>             <Taoist (Female)/@CREATEHERO_TAOS_WOM>\ \
+[@CREATEHERO_WARR_MAN]
+#ACT
+TAKE Gold 500000
+CREATEHERO 0 0
+goto @CreateingHero
+[@CREATEHERO_WARR_WOM]
+#ACT
+TAKE Gold 500000
+CREATEHERO 0 1
+goto @CreateingHero
+[@CREATEHERO_WIZA_MAN]
+#ACT
+TAKE Gold 500000
+CREATEHERO 1 0
+goto @CreateingHero
+[@CREATEHERO_WIZA_WOM]
+#ACT
+TAKE Gold 500000
+CREATEHERO 1 1
+goto @CreateingHero
+[@CREATEHERO_TAOS_MAN]
+#ACT
+TAKE Gold 500000
+CREATEHERO 2 0
+goto @CreateingHero
+[@CREATEHERO_TAOS_WOM]
+#ACT
+TAKE Gold 500000
+CREATEHERO 2 1
+goto @CreateingHero
+
+[@HeroNameFilter]
+Hero name must be less than 10 Characters\<Exit/@exit>

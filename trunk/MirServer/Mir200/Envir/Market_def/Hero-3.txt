@@ -5,9 +5,8 @@
 
 [@main]
 #SAY
-<Use me to create a Hero, you must be level 30/FCOLOR=254> \
-<and have 500k in gold /FCOLOR=254>\ 
-<Please note Hero name must be less than 10 Characters/FCOLOR=254> \\ 
+<Use me to create a Hero, you will need 500,000 gold/FCOLOR=254> \
+<Please note Hero name must be less than(<) or equal(=) to 10 Characters/FCOLOR=254> \\ 
 <Create Hero/@herostep1>   \
 <Sell Hero/@delete>\  
 #ELSESAY

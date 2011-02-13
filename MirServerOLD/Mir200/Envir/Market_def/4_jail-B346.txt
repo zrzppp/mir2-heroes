@@ -1,9 +1,0 @@
-;Info [ Npc Name{Edward} X=8 Y=12 MapName={} ]
-
-;NPC Release 1 (2003) By Geoff
-;99% Translated NPCs Including Quests
-
-[@main]
-You shouldn't be here!\
-Go away before I lock you up as well!\ \
-<Ok/@exit>

@@ -1,3 +1,0 @@
-;Custom Commands
-;Command	Number
-test	1

@@ -1,1 +1,0 @@
-Please note this folder is not currently used. You can find the Databases in Mir200\Envir\Database.mdb

@@ -1,0 +1,24 @@
+(@bigstorage @biggetback @getnextpage @getPreviouspage)
+%100
+[@main]
+Hello, I offer a much larger Storage Space.\
+<Store Items/@bigstorage>\
+<Get Back Items/@biggetback>\
+<Exit/@exit> 
+[@bigstorage]
+What would you like to store?\ \
+<Main/@main>
+
+[@biggetback]
+What would you like to get back?\ \
+<Previous Page/@getPreviouspage> <Next Page/@getnextpage> \
+<main/@main>
+
+[@getPreviouspage]
+#ACT
+goto @biggetback
+
+[@getnextpage]
+#ACT
+goto @biggetback
+

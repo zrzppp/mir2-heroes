@@ -1,9 +1,2 @@
 ; To reload this file type @ReloadManage on a GM
 [@Login]
-#if
-#act
-#say
-Testing\
-<Close/@exit> \ \
-File Location: \
-./Envir/MapQuest_def/QManage.txt\

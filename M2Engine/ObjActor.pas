@@ -10011,7 +10011,7 @@ begin
   if m_btRaceServer = RC_PLAYOBJECT then begin
     nShield := 0;
     if (m_Magic31Skill <> nil) and (m_Magic31Skill.btLevel >= 4) then nShield := 1;
-    SendUpdateMsg(Self, RM_CHARSTATUSCHANGED, m_nHitSpeed, m_nCharStatus, 0, nShield, '');
+    SendUpdateMsg(Self, RM_CHARSTATUSCHANGED, m_nHitSpeed, m_nCharStatus, 1, nShield, '');
   end;
   if (m_btRaceServer >= RC_ANIMAL) and (m_btRaceServer <> RC_PLAYMOSTER) and (m_btRaceServer <> RC_HEROOBJECT) then begin
     MonsterRecalcAbilitys();

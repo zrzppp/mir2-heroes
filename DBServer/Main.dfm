@@ -1,6 +1,6 @@
 object FrmMain: TFrmMain
-  Left = 300
-  Top = 427
+  Left = 215
+  Top = 222
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'DBServer'

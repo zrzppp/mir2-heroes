@@ -2248,8 +2248,6 @@ begin
             // New Running Method
             LB_RUN:
             stdcount := 1;
-            if (g_MySelf.m_nState and $00100000) <> 0 then
-                  stdcount := 0;
             if g_nRunReadyCount >= stdcount then begin
             crun := g_MySelf.CanRun;
             if (GetDistance(mx, my, dx, dy) >= 2) and (crun > 0) then begin

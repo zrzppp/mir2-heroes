@@ -32,6 +32,7 @@ type
     function MagMakeSinSuSlave(PlayObject: TActorObject; UserMagic: pTUserMagic): Boolean;
     function MagWindTebo(PlayObject: TActorObject; UserMagic: pTUserMagic): Boolean;
     function MagGroupLightening(PlayObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer; TargeTActorObject: TActorObject; var boSpellFire: Boolean): Boolean;
+    function MagFlameField(BaseObject: TActorObject; nPower: integer): Boolean;
 
     function MagLighteningForbidVoodoo(PlayObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer; TargeTActorObject: TActorObject; var boSpellFire: Boolean): Boolean;
 
@@ -2114,7 +2115,7 @@ begin
           nTargetY) > 0 then
           boTrain := True;
       end;
-    SKILL_FIREBOOM {23}: begin //±¬ÁÑ»ðÑæ
+    SKILL_FIREBOOM {23}: begin //FireBang
         if MagBigExplosion(PlayObject,
           PlayObject.GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(PlayObject.m_WAbil.MC), Integer(HiWord(PlayObject.m_WAbil.MC) - LoWord(PlayObject.m_WAbil.MC)) + 1),
           nTargetX,
@@ -2295,13 +2296,8 @@ begin
         end;
       end;
 
-    SKILL_47: begin //»ðÁúÆøÑæ
-        if MagBigExplosion(PlayObject,
-          PlayObject.GetAttackPower(GetPower(MPow(UserMagic)) + LoWord(PlayObject.m_WAbil.MC), Integer(HiWord(PlayObject.m_WAbil.MC) - LoWord(PlayObject.m_WAbil.MC)) + 1),
-          nTargetX,
-          nTargetY,
-          g_Config.nFireBoomRage {1}, AT_FIRE) then
-          boTrain := True;
+    SKILL_47: begin //FlameField
+        if MagFlameField(PlayObject,PlayObject.GetAttackPower (GetPower(MPow(UserMagic)) + LoWord(PlayObject.m_WAbil.MC),SmallInt(HiWord(PlayObject.m_WAbil.MC)-LoWord(PlayObject.m_WAbil.MC))+ 1)) then
       end;
     //µÀÊ¿
 
@@ -3022,6 +3018,32 @@ begin
       Result := True;
       if (BaseObject.m_nCurrX <> nTargetX) or (BaseObject.m_nCurrY <> nTargetY) then
         PlayObject.SendRefMsg(RM_10205, 0, BaseObject.m_nCurrX, BaseObject.m_nCurrY, 4 {type}, '');
+    end;
+  end;
+  BaseObjectList.Free;
+end;
+
+function TMagicManager.MagFlameField(BaseObject: TActorObject; nPower: integer): Boolean;
+var
+  I                :Integer;
+  BaseObjectList   :TList;
+  TargeTActorObject: TActorObject;
+  nPowerPoint: Integer;
+begin
+  Result         := False;
+  BaseObjectList := TList.Create;
+  BaseObject.GetMapActorObjects(BaseObject.m_PEnvir,BaseObject.m_nCurrX,BaseObject.m_nCurrY,2,BaseObjectList);
+  for I := 0 to BaseObjectList.Count - 1 do begin
+    TargeTActorObject :=TActorObject(BaseObjectList.Items[i]);
+    if BaseObject.IsProperTarget(TargeTActorObject) then begin
+      //BaseObject.SetTargetCreat(TargeTBaseObject);
+       nPowerPoint := nPower;
+       nPowerPoint := BaseObject._GetAtomPower(TargeTActorObject, AT_FIRE, nPower);
+      TargeTActorObject.m_boNotDefendoof := BaseObject.GetNotDefendoof; //Get element person is weak too?
+      nPowerPoint := nPowerPoint + BaseObject.GetAddPowerPoint(5, nPowerPoint);
+
+      TargeTActorObject.SendMsg(BaseObject,RM_MAGSTRUCK,0,nPowerPoint,Integer(TargeTActorObject.m_boNotDefendoof),0,'');
+      Result:=True;
     end;
   end;
   BaseObjectList.Free;

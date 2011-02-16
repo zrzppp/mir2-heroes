@@ -35,7 +35,7 @@ type
   end;
   pTItemPrice = ^TItemPrice;
   TGoods = record
-    sItemName: string[14];
+    sItemName: string[30];
     nCount: Integer;
     dwRefillTime: LongWord;
     dwRefillTick: LongWord;

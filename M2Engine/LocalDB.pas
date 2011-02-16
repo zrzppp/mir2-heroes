@@ -182,7 +182,7 @@ var
   StdItem: pTStdItem;
 
 resourcestring
-  sSQLString = 'select * from StdItems';
+  sSQLString = 'select * from StdItems order by idx';
 begin
   EnterCriticalSection(ProcessHumanCriticalSection);
   try
@@ -228,7 +228,7 @@ begin
           UserEngine.StdItemList.Add(StdItem);
           Result := 1;
         end else begin
-          Memo.Lines.Add(Format('加载物品(Idx:%d Name:%s)数据失败！！！', [Idx, StdItem.Name]));
+          Memo.Lines.Add(Format('Item (Idx:%d Name:%s) failed to load', [Idx, StdItem.Name]));
           Result := -100;
           Exit;
         end;

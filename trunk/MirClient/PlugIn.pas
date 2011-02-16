@@ -234,6 +234,7 @@ type
     WBookImages: TGameImages;
     WMiniMapImages: TGameImages;
     WCqFirImages: TGameImages;
+    WKInterfaceImages: TGameImages;
     WHorseImages: TGameImages;
     WHumHorseImages: TGameImages;
     WHairHorseImages: TGameImages;
@@ -2143,6 +2144,7 @@ begin
   PlugInfo.ImageManage.WBookImages := g_WBookImages;
   PlugInfo.ImageManage.WMiniMapImages := g_WMiniMapImages;
   PlugInfo.ImageManage.WCqFirImages := g_WCqFirImages;
+  PlugInfo.ImageManage.WKInterfaceImages := g_WKInterfaceImages;
   PlugInfo.ImageManage.WHorseImages := g_WHorseImages;
   PlugInfo.ImageManage.WHumHorseImages := g_WHumHorseImages;
   PlugInfo.ImageManage.WHairHorseImages := g_WHairHorseImages;

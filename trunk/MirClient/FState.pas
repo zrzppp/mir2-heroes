@@ -316,7 +316,6 @@ type
     DHeroSWBujuk: TDButton;
     DButtonDuel: TDButton;
     DHeroItemBag: TDWindow;
-    DHeroHealthStateWin: TDWindow;
     DShop: TDWindow;
     DMiniMap: TDWindow;
     DUpgrade: TDWindow;
@@ -650,6 +649,10 @@ type
     DCheckBoxHeroHP1: TDCheckBox;
     DCheckBoxHeroMP1: TDCheckBox;
     DMenuHeroItem: TDPopupMenu;
+    DHeroHealthStateWin: TDWindow;
+    DNewOption: TDWindow;
+    DButtonNewOption: TDButton;
+    DButtonHeroSkill: TDButton;
 
     procedure DBottomInRealArea(Sender: TObject; X, Y: Integer;
       var IsRealArea: Boolean);
@@ -849,8 +852,12 @@ type
       dsurface: TTexture);
     procedure DButtonShopDirectPaint(Sender: TObject;
       dsurface: TTexture);
+    procedure DButtonNewOptionDirectPaint(Sender: TObject;
+      dsurface: TTexture);
     procedure DShopDirectPaint(Sender: TObject;
       dsurface: TTexture);
+//    procedure DNewOptionDirectPaint(Sender: TObject;
+//      dsurface: TTexture);
     procedure DJewelryDirectPaint(Sender: TObject;
       dsurface: TTexture);
     procedure DShopExitClick(Sender: TObject; X, Y: Integer);
@@ -896,6 +903,7 @@ type
     procedure DButtonReCallHeroClick(Sender: TObject; X, Y: Integer);
     procedure DButtonHeroStateClick(Sender: TObject; X, Y: Integer);
     procedure DButtonHeroBagClick(Sender: TObject; X, Y: Integer);
+    procedure DButtonHeroSkillClick(Sender: TObject; X, Y: Integer);
     procedure DCloseHeroStateClick(Sender: TObject; X, Y: Integer);
     procedure DCloseHeroBagDirectPaint(Sender: TObject;
       dsurface: TTexture);
@@ -1051,6 +1059,7 @@ type
       Shift: TShiftState; X, Y: Integer);
 
     procedure DButtonShopClick(Sender: TObject; X, Y: Integer);
+    procedure DButtonNewOptionClick(Sender: TObject; X, Y: Integer);
     procedure DDuelOKClick(Sender: TObject; X, Y: Integer);
     procedure DDDuelGoldMouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
@@ -2038,7 +2047,8 @@ begin
     DScrollChat.VisibleScroll := False;
 
     DShowChat.Visible := True;
-  end else begin
+
+  end else if g_ConfigClient.btMainInterface in [1] then begin
     d := g_WCqFirImages.Images[65];
     if d <> nil then begin
       DBottom.Left := (SCREENWIDTH - d.Width) div 2;
@@ -2359,6 +2369,355 @@ begin
     DScrollChat.RightButton.Left := (DScrollChat.Width - DScrollChat.RightButton.Width) div 2;
     DScrollChat.RightButton.Top := DScrollChat.Height - DScrollChat.RightButton.Height - 1;
     DScrollChat.CenterButton.Left := (DScrollChat.Width - DScrollChat.CenterButton.Width) div 2;
+    DScrollChat.CenterButton.Top := DScrollChat.LeftButton.Top + DScrollChat.LeftButton.Height;
+
+   { DMemoChat.Left := DScrollChat.Width + 1;
+    DMemoChat.Top := 0;
+    DMemoChat.Width := DChatDlg.Width - 18;
+    DMemoChat.Height := 12 * 9;  }
+
+
+    SetInputVisible(False);
+    SetChatVisible(False);
+
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+    d := g_WKInterfaceImages.Images[1];
+    if d <> nil then begin
+      DBottom.Left := (SCREENWIDTH - d.Width) div 2;
+      DBottom.Top := SCREENHEIGHT - d.Height;
+      DBottom.SetImgIndex(g_WKInterfaceImages, 1);
+    end;
+  {-----------------------------------------------------------}
+
+   //底部状态栏的4个快捷按钮
+
+    DMyState.SetImgIndex(g_WKInterfaceImages, 1902); //状态
+    DMyState.Left := 680;
+    DMyState.Top := 124;
+
+    DMyBag.SetImgIndex(g_WKInterfaceImages, 1905); //包裹
+    DMyBag.Left := 703;
+    DMyBag.Top := 124;
+
+    DMyMagic.SetImgIndex(g_WKInterfaceImages, 1908); //魔法
+    DMyMagic.Left := 726;
+    DMyMagic.Top := 124;
+
+
+    DHelp.SetImgIndex(g_WKInterfaceImages, 1911); //摆摊
+    DHelp.Left := 749;
+    DHelp.Top := 124;
+    DHelp.OnDirectPaint := DMyStateDirectPaint;
+    DHelp.ClickCount := csGlass;
+
+    DButtonReCallHero.SetImgIndex(g_WKInterfaceImages, 1373); //英雄
+    DButtonReCallHero.Left := 641;
+    DButtonReCallHero.Top := 139;
+    DButtonReCallHero.ClickCount := csGlass;
+
+    DButtonNewOption.SetImgIndex(g_WKInterfaceImages, 1962); //英雄
+    DButtonNewOption.Left := 744;
+    DButtonNewOption.Top := 83;
+    DButtonNewOption.ClickCount := csGlass;
+
+    DButtonShop.Left := 696; //607              //商铺
+    DButtonShop.Top := 83;
+    DButtonShop.SetImgIndex(g_WKInterfaceImages, 828);
+    DButtonShop.ClickCount := csGlass;
+
+    DPlayTool.SetImgIndex(g_WKInterfaceImages, 1914); //影音
+    DPlayTool.Left := 772;
+    DPlayTool.Top := 124;
+
+    DNewOption.DParent := DBottom;
+    d := g_WKInterfaceImages.Images[1963];
+    if d <> nil then begin
+    DNewOption.Left := 746;
+    DNewOption.Top := - 171 {(SCREENHEIGHT - d.Height) div 2};
+    DNewOption.SetImgIndex(g_WKInterfaceImages, 1963);
+    end;
+
+    DBotLogout.DParent := DNewOption;
+    DBotLogout.SetImgIndex(g_WKInterfaceImages, 1969);
+    DBotLogout.Left := 3;
+    DBotLogout.Top := 32;
+    DBotLogout.OnDirectPaint := DMyStateDirectPaint;
+
+    DBotExit.DParent := DNewOption;
+    DBotExit.SetImgIndex(g_WKInterfaceImages, 1966);
+    DBotExit.Left := 3;
+    DBotExit.Top := 12;
+    DBotExit.OnDirectPaint := DMyStateDirectPaint;
+
+  //英雄
+    DHeroHealthStateWin.DParent := DBottom;
+    d := g_WKInterfaceImages.Images[2];
+    if d <> nil then begin
+      DHeroHealthStateWin.SetImgIndex(g_WKInterfaceImages, 2);
+      DHeroHealthStateWin.Left := 0;
+      DHeroHealthStateWin.Top := 49;
+     // DBottom.SetImgIndex(g_WKInterfaceImages, 2);
+    end;
+
+    DButtonHeroBag.DParent := DHeroHealthStateWin;
+    DButtonHeroState.DParent := DHeroHealthStateWin;
+    DButtonHeroSkill.DParent := DHeroHealthStateWin;
+
+    DButtonHeroBag.SetImgIndex(g_WKInterfaceImages, 2172);
+    DButtonHeroBag.Left := 643;
+    DButtonHeroBag.Top := 34;
+
+    DButtonHeroState.SetImgIndex(g_WKInterfaceImages, 2178);
+    DButtonHeroState.Left := 643;
+    DButtonHeroState.Top := 51;
+
+    DButtonHeroSkill.SetImgIndex(g_WKInterfaceImages, 2175);
+    DButtonHeroSkill.Left := 643;
+    DButtonHeroSkill.Top := 17;
+
+
+    DFirDragon.Visible := False;
+    DButtonDuel.Visible := False;
+    DShowChat.Visible := True;
+
+    DBotMiniMap.DParent := DNewOption;
+    DOnHouser.DParent := DNewOption;
+    DBotTrade.DParent := DNewOption;
+    DBotGuild.DParent := DNewOption;
+    DButOther.DParent := DNewOption;
+    DBotPlusAbil.DParent := DNewOption;
+    DButtonFriend.DParent := DNewOption;
+    DRanking.DParent := DNewOption;
+    DVoice.DParent := DNewOption;
+    DVoice.OnDirectPaint := DBotGroupDirectPaint;
+
+    DBotGroup.DParent := DNewOption;
+
+
+  //底部状态栏的小地图、交易、行会、组按钮
+    DBotMiniMap.SetImgIndex(g_WKInterfaceImages, 1974);
+    DBotMiniMap.Left := 3;
+    DBotMiniMap.Top := 107;
+
+
+    DBotTrade.SetImgIndex(g_WKInterfaceImages, 1983);
+    DBotTrade.Left := 3;
+    DBotTrade.Top := 164;
+
+    DBotGuild.SetImgIndex(g_WKInterfaceImages, 1995);
+    DBotGuild.Left := 3;
+    DBotGuild.Top := 240;
+
+    DBotGroup.SetImgIndex(g_WKInterfaceImages, 1992);
+    DBotGroup.Left := 3;
+    DBotGroup.Top := 221;
+
+    DOnHouser.SetImgIndex(g_WKInterfaceImages, 1977); //骑马
+    DOnHouser.Left := 3;
+    DOnHouser.Top := 126;
+
+    DButtonFriend.SetImgIndex(g_WKInterfaceImages, 1986); //关系系统
+    DButtonFriend.Left := 3;
+    DButtonFriend.Top := 183;
+
+    DRanking.SetImgIndex(g_WKInterfaceImages, 2001); //人物排行
+    DRanking.Left := 3;
+    DRanking.Top := 69;
+
+    DVoice.SetImgIndex(g_WKInterfaceImages, 1971);
+    DVoice.Left := 3;
+    DVoice.Top := 50;
+
+    DButOther.SetImgIndex(g_WKInterfaceImages, 1979);
+    DButOther.Left := 3;
+    DButOther.Top := 145;
+
+    {DBotPlusAbil.SetImgIndex(g_WKInterfaceImages, 1998);
+    DBotPlusAbil.Left := 3;
+    DBotPlusAbil.Top := 88;}
+
+    SetButVisible(False);
+
+
+    DMapTitle.SetImgIndex(g_WKInterfaceImages, 2091);
+    DMapTitle.Left := SCREENWIDTH - 125;
+    DMapTitle.Top := 0;
+    DMapTitle.Height := 17;
+
+    DButFunc1.Visible := False;
+    DButFunc2.Visible := False;
+    DButFunc3.Visible := False;
+    DButFunc4.Visible := False;
+
+    DButFunc5.DParent := DBackground;
+
+    DButFunc5.SetImgIndex(g_WCqFirImages, 94);
+    DButFunc5.Left := 0;
+    DButFunc5.Top := 0;
+
+    //DButFunc5.Downed := True; //是按钮处于摁住状态
+
+    DCategorizeSys.SetImgIndex(g_WCqFirImages, 106);
+    DCategorizeSys.Left := 150;
+    DCategorizeSys.Top := 520;
+
+    DCategorizeGuild.SetImgIndex(g_WCqFirImages, 108);
+    DCategorizeGuild.Left := 150 + 36;
+    DCategorizeGuild.Top := 520;
+
+    DCategorizeGroup.SetImgIndex(g_WCqFirImages, 110);
+    DCategorizeGroup.Left := 150 + 36 * 2;
+    DCategorizeGroup.Top := 520;
+
+    DCategorizePrivate.SetImgIndex(g_WCqFirImages, 112);
+    DCategorizePrivate.Left := 150 + 36 * 3;
+    DCategorizePrivate.Top := 520;
+
+
+
+    //DShowChat.SetImgIndex(g_WKInterfaceImages, 2057);
+    //DShowChat.Left := 373;
+    //DShowChat.Top := 2;
+
+
+
+  //Belt 快捷栏
+    DBelt1.Left := 256;
+    DBelt1.Width := 30;
+    DBelt1.Top := 4;
+    DBelt1.Height := 30;
+
+    DBelt2.Left := 256 + 36;
+    DBelt2.Width := 30;
+    DBelt2.Top := 4;
+    DBelt2.Height := 30;
+
+    DBelt3.Left := 256 + 36 * 2;
+    DBelt3.Width := 30;
+    DBelt3.Top := 4;
+    DBelt3.Height := 30;
+
+    DBelt4.Left := 256 + 36 * 3;
+    DBelt4.Width := 30;
+    DBelt4.Top := 4;
+    DBelt4.Height := 30;
+
+    DBelt5.Left := 256 + 36 * 4;
+    DBelt5.Width := 30;
+    DBelt5.Top := 4;
+    DBelt5.Height := 30;
+
+    DBelt6.Left := 256 + 36 * 5;
+    DBelt6.Width := 30;
+    DBelt6.Top := 4;
+    DBelt6.Height := 30;
+
+     {
+  //Belt 快捷栏
+    DBelt1.Left := 172;
+    DBelt1.Width := 30;
+    DBelt1.Top := 10;
+    DBelt1.Height := 29;
+
+    DBelt2.Left := DBelt1.Left + 37;
+    DBelt2.Width := 30;
+    DBelt2.Top := 10;
+    DBelt2.Height := 29;
+
+    DBelt3.Left := DBelt2.Left + 37;
+    DBelt3.Width := 30;
+    DBelt3.Top := 10;
+    DBelt3.Height := 29;
+
+    DBelt4.Left := DBelt3.Left + 37;
+    DBelt4.Width := 30;
+    DBelt4.Top := 10;
+    DBelt4.Height := 29;
+
+    DBelt5.Left := DBelt4.Left + 37;
+    DBelt5.Width := 30;
+    DBelt5.Top := 10;
+    DBelt5.Height := 29;
+
+    DBelt6.Left := DBelt5.Left + 37;
+    DBelt6.Width := 30;
+    DBelt6.Top := 10;
+    DBelt6.Height := 29;
+      }
+
+    DButtonOption1.SetImgIndex(g_WCqFirImages, 115);
+    DButtonOption1.Left := DBelt6.Left + 36 + 1;
+    DButtonOption1.Top := 10;
+
+    DButtonOption2.SetImgIndex(g_WCqFirImages, 117);
+    DButtonOption2.Left := DBelt6.Left + 36 + 1;
+    DButtonOption2.Top := 10 + 18;
+
+    DButtonOption1.Visible := True;
+    DButtonOption2.Visible := True;
+
+    DMyState.OnDirectPaint := DButtonShopDirectPaint;
+    DMyBag.OnDirectPaint := DButtonShopDirectPaint;
+    DMyMagic.OnDirectPaint := DButtonShopDirectPaint;
+    DPlayTool.OnDirectPaint := DButtonShopDirectPaint;
+    DHelp.OnDirectPaint := DButtonShopDirectPaint;
+    DButtonReCallHero.OnDirectPaint := DButtonShopDirectPaint;
+
+    // When Pressing Enter
+    EdChat.Left := 2;
+    EdChat.Top := 12 * 8 + 4;
+    EdChat.Width := 388;
+    EdChat.Height := 14;
+    EdChat.DParent := DChatDlg;
+    EdChat.Visible := True;
+    EdChat.Text := '';
+    EdChat.SelTextColor := $00DC802C;
+    EdChat.SelTextFontColor := clWhite;
+
+
+    DChatDlg.Height := 12 * 8;
+    DChatDlg.Width := 388;
+    DChatDlg.Left := DBottom.Left + 230; //+5
+    DChatDlg.Top := 56; //SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; //SCREENHEIGHT - DChatDlg.Height - DEdChat.Height - DBottom.Height; SCREENHEIGHT - 251 + 118;
+
+    DChatDlg.DParent := DBottom;
+    DChatDlg.Floating := False;
+    DChatDlg.Visible := True;
+
+    DMemoChat.Left := 2;
+    DMemoChat.Top := 0;
+    DMemoChat.Width := 388;
+    DMemoChat.Height := 12 * 8;
+    DMemoChat.SpareSize := 0; //Edited By Lyncus 2/02/2011(Old Value:  DMemoChat.Height - 12 * 9;)
+    //DMemoChat.Border:=True;
+
+    {DScrollChat.SetImgIndex(g_WMain2Images, 291);
+    DScrollChat.LeftButton.SetImgIndex(g_WMain2Images, 292);
+    DScrollChat.RightButton.SetImgIndex(g_WMain2Images, 294);
+    DScrollChat.CenterButton.SetImgIndex(g_WMain2Images, 581);}
+
+    d := g_WKInterfaceImages.Images[2];
+    if d <> nil then begin
+    DScrollChat.SetImgIndex(g_WKInterfaceImages, 2013);
+    end;
+
+    DScrollChat.LeftButton.SetImgIndex(g_WKInterfaceImages, 2018);
+    DScrollChat.RightButton.SetImgIndex(g_WKInterfaceImages, 2027);
+    DScrollChat.CenterButton.SetImgIndex(g_WKInterfaceImages, 2015);
+
+    DScrollChat.LeftButton.OnDirectPaint := DScrollScrollDirectPaint;
+    DScrollChat.RightButton.OnDirectPaint := DScrollScrollDirectPaint;
+    DScrollChat.OnDirectPaint := DScrollCenterScrollDirectPaint;
+    DScrollChat.Left := DMemoChat.Width + 5;
+    DScrollChat.Top := 25; //Lyncus1
+    DScrollChat.Height := DChatDlg.Height - 40;
+
+    DScrollChat.Increment := 14;
+    DScrollChat.LeftButton.Left := (DScrollChat.Width - DScrollChat.LeftButton.Width) div 3;
+    DScrollChat.LeftButton.Top := - 10;
+    DScrollChat.RightButton.Left := (DScrollChat.Width - DScrollChat.RightButton.Width) div 3;
+    DScrollChat.RightButton.Top := DScrollChat.Height - DScrollChat.RightButton.Height + 10;
+    DScrollChat.CenterButton.Left := (DScrollChat.Width - DScrollChat.CenterButton.Width) div 3;
     DScrollChat.CenterButton.Top := DScrollChat.LeftButton.Top + DScrollChat.LeftButton.Height;
 
    { DMemoChat.Left := DScrollChat.Width + 1;
@@ -5645,7 +6004,7 @@ procedure TFrmDlg.ViewBottomBox(Value: Boolean);
 begin
   DBottom.Visible := Value;
   DChatDlg.Visible := Value;
-  if g_ConfigClient.btMainInterface = 1 then begin
+  if g_ConfigClient.btMainInterface in [1,3] then begin
     SetButVisible(Value);
     DMapTitle.Visible := Value;
     SetInputVisible(Value);
@@ -7619,7 +7978,7 @@ procedure TFrmDlg.DBottomDirectPaint(Sender: TObject;
 var
   d: TTexture;
   rc: TRect;
-  btop, sx, sY, I, FColor, BColor: Integer;
+  btop, sx, sY, I, old, FColor, BColor: Integer;
   r: Real;
   Str: string;
 begin
@@ -7753,7 +8112,7 @@ begin
       end;
     end;
 
-  end else begin
+  end else if g_ConfigClient.btMainInterface in [1] then begin
     d := g_WCqFirImages.Images[65];
     if d <> nil then begin
       dsurface.Draw(DBottom.Left, DBottom.Top, d.ClientRect, d, False);
@@ -7883,6 +8242,104 @@ begin
     //PomiTextOut (dsurface, SCREENWIDTH div 2 + (SCREENWIDTH div 2 - (400 - 355)){755}, SCREENHEIGHT - 15, IntToStr(g_nMyHungryState));
     //饥饿程度
     end;
+
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+    d := g_WKInterfaceImages.Images[1];
+    if d <> nil then begin
+      dsurface.Draw(DBottom.Left, DBottom.Top, d.ClientRect, d, True);
+      btop := SCREENHEIGHT - d.Height;
+    end;
+
+    if g_MySelf <> nil then begin
+      if (g_MySelf.m_Abil.MaxHP > 0) and (g_MySelf.m_Abil.MaxMP > 0) then begin
+        if (g_MySelf.m_btJob = 0) and (g_MySelf.m_Abil.Level < 28) then begin
+
+          d := g_WKInterfaceImages.Images[3];
+          if d <> nil then begin
+            rc := d.ClientRect;
+            rc.Right := d.ClientRect.Right - 1;
+            dsurface.Draw(DBottom.Left + 0, btop + 78, rc, d, True);
+          end;
+          d := g_WKInterfaceImages.Images[6];
+          if d <> nil then begin
+            rc := d.ClientRect;
+            rc.Right := d.ClientRect.Right - 1;
+            rc.Top := Round(rc.Bottom / g_MySelf.m_Abil.MaxHP * (g_MySelf.m_Abil.MaxHP - g_MySelf.m_Abil.HP));
+            dsurface.Draw(DBottom.Left + 0, btop + 78 + rc.Top, rc, d, True);
+          end;
+        end else begin
+          d := g_WKInterfaceImages.Images[4];
+          if d <> nil then begin
+
+          // HP Image
+            rc := d.ClientRect;
+            rc.Right := d.ClientRect.Right div 2 - 2;
+            rc.Top := Round(rc.Bottom / g_MySelf.m_Abil.MaxHP * (g_MySelf.m_Abil.MaxHP - g_MySelf.m_Abil.HP));
+            dsurface.Draw(DBottom.Left - 0, btop + 78 + rc.Top, rc, d, True);
+
+          // MP Image
+            rc := d.ClientRect;
+            rc.Left := d.ClientRect.Right div 2;
+            rc.Right := d.ClientRect.Right - 1;
+            rc.Top := Round(rc.Bottom / g_MySelf.m_Abil.MaxMP * (g_MySelf.m_Abil.MaxMP - g_MySelf.m_Abil.MP));
+            dsurface.Draw(DBottom.Left - 0 + rc.Left, btop + 78 + rc.Top, rc, d, True);
+          end;
+        end;
+      end;
+
+      if (g_MySelf.m_Abil.MaxExp > 0) then begin
+      d := g_WKInterfaceImages.Images[7];
+
+        if d <> nil then begin
+          // Draw Exp
+          rc := d.ClientRect;
+          rc.Right := Round(rc.Right / g_MySelf.m_Abil.MaxExp * g_MySelf.m_Abil.Exp);
+          dsurface.Draw(DBottom.Left + 9, SCREENHEIGHT - d.Height, rc, d, True);
+        end;
+      end;
+
+      if (g_MySelf.m_Abil.MaxWeight > 0) then begin
+      d := g_WKInterfaceImages.Images[76];
+
+        if d <> nil then begin
+          // Draw BagWeight
+          rc := d.ClientRect;
+          if g_MySelf.m_Abil.Weight > 0 then r := g_MySelf.m_Abil.MaxWeight / g_MySelf.m_Abil.Weight
+          else r := 0;
+          if r > 0 then rc.Right := Round(rc.Right / r)
+          else rc.Right := 0;
+          dsurface.Draw(SCREENWIDTH div 2 + (SCREENWIDTH div 2 - (400 - 295)), SCREENHEIGHT - 47, rc, d, True);
+        end;
+       end;
+
+      with dsurface do begin
+            old := MainForm.Canvas.Font.Size;
+            MainForm.Canvas.Font.Size := 9;
+        BoldTextOut(DBottom.Left + 7, btop + 156, IntToStr(g_MySelf.m_Abil.Level));
+        BoldTextOut(DBottom.Left + 35, btop + 171,(g_MySelf.m_sUserName));
+        BoldTextOut(DBottom.Left + 693, btop + 167, GetGoldStr(g_MySelf.m_nGold));
+        BoldTextOut(DBottom.Left + 390, btop + 186, FloatToStrFixFmt(100 * g_MySelf.m_Abil.Exp / g_MySelf.m_Abil.MaxExp, 3, 2) + '%');
+
+        if g_MySelf <> nil then begin
+           if (g_MySelf.m_Abil.MaxHP > 0) and (g_MySelf.m_Abil.MaxMP > 0) then begin
+            if (g_MySelf.m_btJob = 0) and (g_MySelf.m_Abil.Level < 28) then begin
+            // Draw HP Warrior Under 28
+             Str := Format('HP(%d/%d)', [g_MySelf.m_Abil.HP, g_MySelf.m_Abil.MaxHP]);
+             BoldTextOut(DBottom.Left + 24 + (50 - TextWidth(Str)) div 2, SCREENHEIGHT - DBottom.Height + 111, Str);
+
+           end else if g_boShowWhiteHint then begin
+            // Draw HP
+            Str := Format('HP(%d/%d)', [g_MySelf.m_Abil.HP, g_MySelf.m_Abil.MaxHP]);
+            BoldTextOut(DBottom.Left + 24 + (50 - TextWidth(Str)) div 2, SCREENHEIGHT - DBottom.Height + 103, Str);
+
+            // Draw MP
+            Str := Format('MP(%d/%d)', [g_MySelf.m_Abil.MP, g_MySelf.m_Abil.MaxMP]);
+            BoldTextOut(DBottom.Left + 24 + (50 - TextWidth(Str)) div 2, SCREENHEIGHT - DBottom.Height + 122, Str);
+           end;
+         end;
+        end;
+      end;
+    end;
   end;
 end;
 
@@ -7899,8 +8356,10 @@ begin
 //{$ELSEIF SWH = SWH1024}
 //    d := g_WMain3Images.Images[BOTTOMBOARD800];
 //{$IFEND}
-  end else begin
+  end else if g_ConfigClient.btMainInterface in [1] then begin
     d := g_WCqFirImages.Images[65];
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+    d := g_WKInterfaceImages.Images[2];
   end;
   if d <> nil then begin
     if d.Pixels[X, Y] > 0 then IsRealArea := True
@@ -9230,7 +9689,7 @@ begin
       if (ssCtrl in Shift) then begin
         if g_ItemArr[Idx].s.Name <> '' then begin
           if not EdChat.Visible then begin
-            SetInputVisible(g_ConfigClient.btMainInterface = 1);
+            SetInputVisible(g_ConfigClient.btMainInterface in [1]);
             EdChat.Visible := True;
             EdChat.SetFocus;
           end;
@@ -12241,7 +12700,7 @@ begin
   nHintX := Butt.SurfaceX(Butt.Left);
   if g_ConfigClient.btMainInterface in [0, 2] then begin
     nHintY := DBottom.Top + Butt.Top - 20;
-  end else begin
+  end else if g_ConfigClient.btMainInterface in [1] then begin
     nHintY := DBottom.Top + Butt.Top - 25;
     if (Sender = DBotMiniMap) or (Sender = DOnHouser) or (Sender = DBotTrade)
       or (Sender = DBotGuild) or (Sender = DButtonFriend) or (Sender = DRanking)
@@ -12249,6 +12708,16 @@ begin
       nHintY := DBottom.SurfaceY(Butt.Top) - 25;
     if (Sender = DButtonHeroState) or (Sender = DButtonHeroBag) then
       nHintY := DBottom.SurfaceY(Butt.Top) + 30;
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+    nHintY := DBottom.Top + Butt.Top - 25;
+    if (Sender = DBotMiniMap) or (Sender = DOnHouser) or (Sender = DBotTrade)
+      or (Sender = DBotGuild) or (Sender = DButtonFriend) or (Sender = DRanking)
+      or (Sender = DVoice) or (Sender = DBotGroup) or (Sender = DButOther)
+      or (Sender = DBotLogout) or (Sender = DBotExit) then
+      nHintY := DNewOption.SurfaceY(Butt.Top) - 185;
+    if (Sender = DButtonHeroState) or (Sender = DButtonHeroBag) or (Sender = DButtonHeroSkill) then
+      nHintY := DHeroHealthStateWin.SurfaceY(Butt.Top) + 20;
+
   end;
   if Sender = DBotMiniMap then sMsg := 'MiniMap(Tab)';
   if Sender = DBotTrade then sMsg := 'Trade(T)';
@@ -12262,13 +12731,14 @@ begin
   if Sender = DMyMagic then sMsg := 'Magic(F11)';
   if Sender = DVoice then sMsg := 'Sound';
   if Sender = DButtonShop then sMsg := 'GameShop';
+  if Sender = DButtonNewOption then sMsg := 'Windows';
   if Sender = DButtonFriend then sMsg := 'Friends';
   if (Sender = DButtonDuel) or (Sender = DButOther) then sMsg := 'Duel';
   if Sender = DRanking then sMsg := 'Ranking';
   if Sender = DButtonReCallHero then sMsg := 'Hero';
   if Sender = DButtonHeroState then sMsg := 'Hero Status';
   if Sender = DButtonHeroBag then sMsg := 'Hero Inventory';
-
+  if Sender = DButtonHeroSkill then sMsg := 'Hero Spells';
   //if (g_MySelf.m_btHorse > 0) and (g_NewStatus > sNone) then Exit;
   if Sender = DOnHouser then sMsg := 'Ride Horse(CTRL+M)';
   if Sender = DHelp then sMsg := 'Stall';
@@ -12278,9 +12748,12 @@ begin
   if g_ConfigClient.btMainInterface in [0, 2] then begin
     nHintX := Butt.Left - 100;
     nHintY := DBottom.Top + Butt.Top;
-  end else begin
+  end else if g_ConfigClient.btMainInterface in [1] then begin
     nHintX := Butt.SurfaceX(Butt.Left);
     nHintY := Butt.SurfaceY(Butt.Top) - 20;
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+    nHintX := Butt.Left - 100;
+    nHintY := DBottom.Top + Butt.Top;
   end;
 
   if Sender = DButFunc1 then begin
@@ -12300,8 +12773,8 @@ begin
     DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   if Sender = DButFunc5 then begin
-    sMsg := 'Allow Shout';
-    DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
+    //sMsg := 'Allow Shout';
+    //DScreen.ShowHint(nHintX, nHintY, sMsg, clWhite {clYellow}, False);
   end;
   {nLocalX := Butt.LocalX(X - Butt.Left);
   nLocalY := Butt.LocalY(Y - Butt.Top);
@@ -12354,6 +12827,25 @@ begin
       MainForm.Canvas.Font.Style := MainForm.Canvas.Font.Style + [fsUnderline];
       BoldTextOut(SurfaceX(Left + 12), SurfaceY(Top + 190), g_sGamePointName);
       MainForm.Canvas.Font.Style := MainForm.Canvas.Font.Style - [fsUnderline];
+    end;
+  end;
+end;
+
+procedure TFrmDlg.DButtonNewOptionDirectPaint(Sender: TObject;
+  dsurface: TTexture);
+var
+  d: TDButton;
+  dd: TTexture;
+begin
+  if Sender is TDButton then begin
+    d := TDButton(Sender);
+    //d.DrawQuad(dsurface, Bounds(d.SurfaceX(d.Left), d.SurfaceY(d.Top), d.Width, d.Height), clRed, False, 150);
+    if d.Downed then begin
+      dd := nil;
+      if d.WLib <> nil then
+        dd := d.WLib.Images[d.FaceIndex];
+      if dd <> nil then
+        dsurface.Draw(d.SurfaceX(d.Left), d.SurfaceY(d.Top), dd.ClientRect, dd, g_ConfigClient.btMainInterface in [0, 2]);
     end;
   end;
 end;
@@ -13004,7 +13496,7 @@ begin
       end;
     end;
 
-  end else begin
+  end else if g_ConfigClient.btMainInterface in [1] then begin
 
     with DHeroHealthStateWin do begin
       d := nil;
@@ -13013,7 +13505,7 @@ begin
       if d <> nil then
         dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
 
-      Idx := -1;
+      Idx := 0;
       case g_MyHero.m_btSex of
         0:
           case g_MyHero.m_btJob of
@@ -13034,7 +13526,7 @@ begin
           if g_MyHero.m_boDeath then begin
             g_ImgMixSurface.SetSize(d.Width, d.Height);
             g_ImgMixSurface.Fill(0);
-            g_ImgMixSurface.Draw(0, 0, d.ClientRect, d, False);
+            g_ImgMixSurface.Draw(0, 0, d.ClientRect, d, True);
             DrawEffect(0, 0, g_ImgMixSurface, d, ceGrayScale);
             d := g_ImgMixSurface;
           end;
@@ -13095,6 +13587,103 @@ begin
       with dsurface do begin
         TextOut(Left + 62 + (88 - TextWidth(g_MyHero.m_sUserName)) div 2, Top + 6 + 12, g_MyHero.m_sUserName, g_MyHero.m_nNameColor);
         TextOut(Left + 148 + (44 - TextWidth(IntToStr(g_MyHero.m_Abil.Level))) div 2, Top + 6 + 12, IntToStr(g_MyHero.m_Abil.Level), g_MyHero.m_nNameColor);
+      end;
+    end;
+
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+
+    with DHeroHealthStateWin do begin
+      d := nil;
+      if WLib <> nil then
+        d := WLib.Images[FaceIndex];
+      if d <> nil then
+        dsurface.Draw(SurfaceX(Left), SurfaceY(Top), d.ClientRect, d, True);
+
+      Idx := 0;
+      case g_MyHero.m_btSex of
+        0:
+          case g_MyHero.m_btJob of
+            0: Idx := 1400;
+            1: Idx := 1401;
+            2: Idx := 1402;
+          end;
+        1:
+          case g_MyHero.m_btJob of
+            0: Idx := 1410;
+            1: Idx := 1411;
+            2: Idx := 1412;
+          end;
+      end;
+      if Idx > 0 then begin
+        d := g_WKInterfaceImages.Images[Idx];
+        if d <> nil then begin
+          if g_MyHero.m_boDeath then begin
+            g_ImgMixSurface.SetSize(d.Width, d.Height);
+            g_ImgMixSurface.Fill(0);
+            g_ImgMixSurface.Draw(0, 0, d.ClientRect, d, True);
+            DrawEffect(0, 0, g_ImgMixSurface, d, ceGrayScale);
+            d := g_ImgMixSurface;
+          end;
+          dsurface.Draw(SurfaceX(Left) + 108, SurfaceY(Top) + 68, d.ClientRect, d, True);
+        end;
+      end;
+
+      if g_HeroUseItems[U_BUJUK].s.Name <> '' then begin
+        if (g_HeroUseItems[U_BUJUK].s.StdMode = 25) and (g_HeroUseItems[U_BUJUK].s.Shape = 9) then begin
+
+          if g_MyHero.m_nAngryValue >= g_MyHero.m_nMaxAngryValue then begin
+            if GetTickCount - g_dwFirDragonTick > 500 then begin
+              g_dwFirDragonTick := GetTickCount;
+              Inc(g_nFirDragon);
+              if g_nFirDragon > 1 then g_nFirDragon := 0;
+            end;
+            if g_nFirDragon > 0 then
+              d := g_WCqFirImages.Images[130]
+            else d := g_WCqFirImages.Images[149];
+          end else begin
+            d := g_WCqFirImages.Images[130]; //显示怒槽
+          end;
+
+          if d <> nil then begin
+            rc := d.ClientRect;
+            if g_MyHero.m_nMaxAngryValue > 0 then
+              rc.Right := Round((rc.Right - rc.Left) / g_MyHero.m_nMaxAngryValue * g_MyHero.m_nAngryValue);
+            dsurface.Draw(Left + 55, Top + 80, rc, d, False);
+          end;
+        end;
+      end;
+
+      d := g_WKInterfaceImages.Images[1951]; //显示英雄HP
+      if d <> nil then begin
+        rc := d.ClientRect;
+        if g_MyHero.m_Abil.MaxHP > 0 then
+          rc.Right := Round(rc.Right / g_MyHero.m_Abil.MaxHP * g_MyHero.m_Abil.HP);
+        dsurface.Draw(SurfaceX(Left) + 170, SurfaceY(Top) + 80, rc, d, True);
+      end;
+
+      d := g_WKInterfaceImages.Images[1952]; //显示英雄MP
+      if d <> nil then begin
+        rc := d.ClientRect;
+        if g_MyHero.m_Abil.MaxMP > 0 then
+          rc.Right := Round(rc.Right / g_MyHero.m_Abil.MaxMP * g_MyHero.m_Abil.MP);
+        dsurface.Draw(SurfaceX(Left) + 170, SurfaceY(Top) + 93, rc, d, True);
+      end;
+
+      d := g_WKInterfaceImages.Images[1953]; //显示英雄EXP
+      if d <> nil then begin
+        rc := d.ClientRect;
+        if g_MyHero.m_Abil.MaxExp > 0 then
+          rc.Right := Round(rc.Right / g_MyHero.m_Abil.MaxExp * g_MyHero.m_Abil.Exp);
+        dsurface.Draw(SurfaceX(Left) + 170, SurfaceY(Top) + 106, rc, d, True);
+      end;
+
+    //显示英雄名称
+      with dsurface do begin
+        BoldTextOut(SurfaceX(Left) + 152, SurfaceY(Top) + 122, g_MyHero.m_sUserName);
+        BoldTextOut(SurfaceX(Left) + 123, SurfaceY(Top) + 108, IntToStr(g_MyHero.m_Abil.Level));
+        BoldTextOut(SurfaceX(Left) + 171, SurfaceY(Top) + 77, IntToStr(g_MyHero.m_Abil.HP) + '/' + IntToStr(g_MyHero.m_Abil.MaxHP));
+        BoldTextOut(SurfaceX(Left) + 171, SurfaceY(Top) + 93, IntToStr(g_MyHero.m_Abil.MP) + '/' + IntToStr(g_MyHero.m_Abil.MaxMP));
+        BoldTextOut(SurfaceX(Left) + 171, SurfaceY(Top) + 103, FloatToStrFixFmt(100 * g_MyHero.m_Abil.Exp / g_MyHero.m_Abil.MaxExp, 3, 2) + '%');
       end;
     end;
   end;
@@ -14276,14 +14865,29 @@ end;
 
 procedure TFrmDlg.DButtonReCallHeroClick(Sender: TObject; X, Y: Integer);
 begin
-  if g_MyHero = nil then begin
-    if GetTickCount - g_dwRecallHeroTick > 500 then begin
-      g_dwRecallHeroTick := GetTickCount;
-      frmMain.SendClientMessage(CM_HEROLOGON, 0, 0, 0, 0);
-    end;
-  end else begin
+  if g_ConfigClient.btMainInterface in [3] then begin
+
+      if g_MyHero = nil then begin
+             if GetTickCount - g_dwRecallHeroTick > 500 then begin
+               g_dwRecallHeroTick := GetTickCount;
+                frmMain.SendClientMessage(CM_HEROLOGON, 0, 0, 0, 0);
+                  end;
+
+      end else begin
+        frmMain.SendClientMessage(CM_HEROLOGOUT, g_MyHero.m_nRecogId, 0, 0, 0);
+      end;
+  end;
+
+  if g_ConfigClient.btMainInterface in [0,1,2] then begin
+     if g_MyHero = nil then begin
+        if GetTickCount - g_dwRecallHeroTick > 500 then begin
+           g_dwRecallHeroTick := GetTickCount;
+           frmMain.SendClientMessage(CM_HEROLOGON, 0, 0, 0, 0);
+        end;
+     end else begin
    frmMain.tmrHeroLogout.Enabled := True;
    DScreen.AddChatBoardString('Your Hero will be logged out in 5 seconds', clyellow, clRed);
+     end;
   end;
 end;
 
@@ -14291,6 +14895,29 @@ procedure TFrmDlg.DButtonHeroStateClick(Sender: TObject; X, Y: Integer);
 begin
   if g_MyHero = nil then Exit;
   DHeroStateWin.Visible := not DHeroStateWin.Visible;
+  HeroStatePage := 0;
+      DHeroStMag1.Visible := False;
+    DHeroStMag2.Visible := False;
+    DHeroStMag3.Visible := False;
+    DHeroStMag4.Visible := False;
+    DHeroStMag5.Visible := False;
+    DHeroStMag6.Visible := False;
+end;
+
+procedure TFrmDlg.DButtonHeroSkillClick(Sender: TObject; X, Y: Integer);
+begin
+  if g_MyHero = nil then Exit;
+  if Sender = DButtonHeroSkill then begin
+    HeroStatePage := 3;
+    DHeroStateWin.Visible := not DHeroStateWin.Visible;
+    DHeroStMag1.Visible := True;
+    DHeroStMag2.Visible := True;
+    DHeroStMag3.Visible := True;
+    DHeroStMag4.Visible := True;
+    DHeroStMag5.Visible := True;
+    DHeroStMag6.Visible := True;
+  //DBoxItemGrid.Visible := DHeroItemBag.Visible;
+  end;
 end;
 
 procedure TFrmDlg.DButtonHeroBagClick(Sender: TObject; X, Y: Integer);
@@ -14319,6 +14946,12 @@ begin
   DHeroHealthStateWin.Visible := False;
   DHeroItemBag.Visible := False;
   DHeroStateWin.Visible := False;
+  DHeroStMag1.Visible := False;
+    DHeroStMag2.Visible := False;
+    DHeroStMag3.Visible := False;
+    DHeroStMag4.Visible := False;
+    DHeroStMag5.Visible := False;
+    DHeroStMag6.Visible := False;
 end;
 
 procedure TFrmDlg.DCloseHeroStateClick(Sender: TObject; X, Y: Integer);
@@ -16791,7 +17424,7 @@ begin
       with DHeroHealthStateWin do
         DScreen.ShowHint(Left + Width, 25, sStr, clWhite, False);
     end;
-  end else begin
+  end else if g_ConfigClient.btMainInterface in [1] then begin
     if g_MyHero.m_Abil.MaxExp > 0 then begin
       sStr := 'HP: ' + IntToStr(g_MyHero.m_Abil.HP) + '/' + IntToStr(g_MyHero.m_Abil.MaxHP) + '\' +
         'MP: ' + IntToStr(g_MyHero.m_Abil.MP) + '/' + IntToStr(g_MyHero.m_Abil.MaxMP) + '\' +
@@ -17096,7 +17729,7 @@ procedure TFrmDlg.DEdChatMouseMove(Sender: TObject; Shift: TShiftState; X,
 begin
   if ssLeft in Shift then CharMove(X);
   DScreen.ClearHint;
-  if g_ConfigClient.btMainInterface <> 0 then begin
+  if g_ConfigClient.btMainInterface = 1 then begin     //gobackhere
     if not EdChat.Visible then begin
       if (g_nShowEditChatCount < 5) then begin
         if (GetTickCount - g_dwShowEditChatTick > 1000) then begin
@@ -17114,6 +17747,16 @@ procedure TFrmDlg.DListBoxMouseDown(Sender: TObject; Button: TMouseButton;
 begin
   if Button = mbRight then
     frmMain.DXDrawMouseDown_(Button, Shift, X, Y);
+end;
+
+procedure TFrmDlg.DButtonNewOptionClick(Sender: TObject; X, Y: Integer);
+begin
+  if not DNewOption.Visible then begin
+    DNewOption.Visible := True;
+  end else begin
+    DNewOption.Visible := False;
+  end;
+  //Showmessage(TDButton(Sender).Name+' Left:'+IntToStr(TDButton(Sender).Left)+' Top:'+IntToStr(TDButton(Sender).Top));
 end;
 
 procedure TFrmDlg.DButtonShopClick(Sender: TObject; X, Y: Integer);
@@ -19080,9 +19723,14 @@ end;
 procedure TFrmDlg.DMemoChatDirectPaint(Sender: TObject;
   dsurface: TTexture);
 begin
-  if g_ConfigClient.btMainInterface = 1 then begin
+  if g_ConfigClient.btMainInterface in [1] then begin
     with TDControl(Sender) do
       dsurface.FillRectAlpha(Bounds(SurfaceX(Left), SurfaceY(Top), Width, Height), $00608490, 150); //$005894B8
+
+  end else  if g_ConfigClient.btMainInterface in [3] then begin
+
+    with TDControl(Sender) do
+      //dsurface.FillRectAlpha(Bounds(SurfaceX(Left), SurfaceY(Top), Width, Height), $00000000, 125); //$005894B8
   end;
 end;
 
@@ -19442,11 +20090,27 @@ begin
 end;
 
 procedure TFrmDlg.DChatDlgDirectPaint(Sender: TObject; dsurface: TTexture);
+var
+  d: TTexture;
+  nFaceIndex: Integer;
+  rc: TRect;
 begin
-  if g_ConfigClient.btMainInterface = 1 then begin
+  if g_ConfigClient.btMainInterface in [1] then begin
     with TDControl(Sender) do begin
       dsurface.FillRect(Bounds(SurfaceX(Left), SurfaceY(Top), 2, Height), 11064552); //$00486FA8
       dsurface.FillRect(Bounds(SurfaceX(Left), SurfaceY(Top), Width - 16, 2), 11064552); //$00486FA8
+    end;
+
+  end else if g_ConfigClient.btMainInterface in [3] then begin
+
+    with TDControl(Sender) do begin
+      //d := g_WKInterfaceImages.Images[2204];
+      rc := d.ClientRect;
+    if d <> nil then
+      //dsurface.Draw(SurfaceX(Left), SurfaceY(Top), rc, d, True);
+      //dsurface.FillRectAlpha(Bounds(SurfaceX(Left), SurfaceY(Top + 10), Width, Height), $00000000, 125); //$005894B
+      //dsurface.FillRect(Bounds(SurfaceX(Left), SurfaceY(Top), 2, Height), 00000000); //$00486FA8
+      //dsurface.FillRect(Bounds(SurfaceX(Left), SurfaceY(Top), Width - 16, 2), 00000000); //$00486FA8
     end;
   end;
 end;

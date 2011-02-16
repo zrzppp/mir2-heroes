@@ -1587,7 +1587,7 @@ type
 
   TUnbindInfo = record
     nUnbindCode: Integer;
-    sItemName: string[14];
+    sItemName: string[30];
   end;
   pTUnbindInfo = ^TUnbindInfo;
 
@@ -2901,7 +2901,7 @@ type
 
   TMapCondition = record
     nHumStatus: Integer;
-    sItemName: string[14];
+    sItemName: string[30];
     boNeedGroup: Boolean;
   end;
   pTMapCondition = ^TMapCondition;

@@ -1,3 +1,11 @@
+{MiloFoxburr - Notes
+ TMagicEff.Create(magid, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
+
+ scx, scy: Player Location for start of spell
+ sctx, scty: Target/Mouse Location for second part of spell
+ Use scx, scy, sctx, scty for Distance based skills
+ And scx, scy, scx, scy for Skills on Body
+}
 unit PlayScn;
 
 interface
@@ -2125,8 +2133,8 @@ begin
             if wimg <> nil then
               meff.ImgLib := wimg;
           end;
-        45: begin //»ðÁúÆøÑæ
-            meff := TMagicEff.Create(magid, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
+        45: begin //FlameField
+            meff := TMagicEff.Create(magid, effnum, scx, scy, scx + 2, scy + 2, mtype, Recusion, anitime);
             meff.MagExplosionBase := 920;
             meff.TargetActor := nil; //target;
             meff.NextFrameTime := 100;
@@ -2135,7 +2143,7 @@ begin
             if wimg <> nil then
               meff.ImgLib := wimg;
           end;
-        47: begin //ì«·çÆÆ
+        47: begin //IceCrush?
             meff := TMagicEff.Create(magid, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
             meff.MagExplosionBase := 1010;
             meff.TargetActor := nil; //target;

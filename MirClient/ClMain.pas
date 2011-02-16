@@ -2960,7 +2960,7 @@ begin
             FrmDlg.EdChat.SetFocus;
             Exit;
           end;
-          FrmDlg.SetInputVisible(g_ConfigClient.btMainInterface = 1);
+          FrmDlg.SetInputVisible(g_ConfigClient.btMainInterface in [1,3]);
           FrmDlg.EdChat.Visible := True;
           FrmDlg.EdChat.SetFocus;
           SetImeMode(FrmDlg.EdChat.Handle, LocalLanguage);
@@ -4921,6 +4921,7 @@ begin
     DUserState1.Visible := False;
     DAdjustAbility.Visible := False;
     DShop.Visible := False;
+    DNewOption.Visible := False;
     DHeroStateWin.Visible := False;
     DHeroHealthStateWin.Visible := False;
     DHeroItemBag.Visible := False;
@@ -4930,7 +4931,7 @@ begin
     DBook.Visible := False;
     DConfigDlg.Visible := False;
     DMiniMap.Visible := False;
-    if g_ConfigClient.btMainInterface = 1 then begin
+    if g_ConfigClient.btMainInterface in [1,3] then begin
       SetChatVisible(False);
       SetInputVisible(False);
       SetButVisible(False);

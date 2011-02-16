@@ -649,6 +649,7 @@ var
   g_WBookImages: TUibImages;
   g_WMiniMapImages: TUibImages;
   g_WCqFirImages: TGameImages;
+  g_WKInterfaceImages: TGameImages;
   g_WHorseImages: TGameImages;
   g_WHumHorseImages: TGameImages;
   g_WHairHorseImages: TGameImages;
@@ -702,7 +703,10 @@ var
   g_boBGSound: Boolean; //ø™∆Ù±≥æ∞“Ù¿÷
 
   g_FontArr: array[0..MAXFONT - 1] of string = (
-    'MS Sans Serif'
+    'Courier New',
+    'Arial',
+    'MS Sans Serif',
+    'Microsoft Sans Serif'
     );
 
   g_nCurFont: Integer = 0;
@@ -2980,6 +2984,7 @@ begin
   g_WMagic5Images := GetGameImages(g_ConfigClient.WMagic5Images, sFilePath + MAGIC5IMAGESFILE);
   g_WMagic6Images := GetGameImages(g_ConfigClient.WMagic6Images, sFilePath + MAGIC6IMAGESFILE);
   g_WCqFirImages := GetGameImages(lmUseFir, sFilePath + CQFIRIMAGESFILE);
+  g_WKInterfaceImages := GetGameImages(lmUseFir, sFilePath + KINTERFACEIMAGESFILE);
 
   FillChar(g_WObjectArr, SizeOf(g_WObjectArr), 0);
   FillChar(g_WObjectArr16, SizeOf(g_WObjectArr16), 0);
@@ -3073,7 +3078,11 @@ var
 begin
   sFilePath := ExtractFilePath(Paramstr(0));
 
+ // ------------------------------------ CqFir Interface //
   g_WCqFirImages.Initialize;
+ // ------------------------------------ Korean Interface //
+  g_WKInterfaceImages.Initialize;
+ // ------------------------------------ SNDA Interface //
   g_WEffectImg.Initialize;
   g_WDragonImg.Initialize;
   g_WMainImages.Initialize;
@@ -3281,6 +3290,8 @@ begin
 
   g_WCqFirImages.Finalize;
 
+  g_WKInterfaceImages.Finalize;
+
   g_WHorseImages.Finalize;
 
   g_WHumHorseImages.Finalize;
@@ -3426,6 +3437,9 @@ begin
   g_WCqFirImages.Finalize;
   g_WCqFirImages.Free;
 
+  g_WKInterfaceImages.Finalize;
+  g_WKInterfaceImages.Free;
+
   g_WHorseImages.Finalize;
   g_WHorseImages.Free;
 
@@ -3518,6 +3532,7 @@ begin
   g_WMagic5Images.FreeOldMemorys;
   g_WMagic6Images.FreeOldMemorys;
   g_WCqFirImages.FreeOldMemorys;
+  g_WKInterfaceImages.FreeOldMemorys;
   g_WHorseImages.FreeOldMemorys;
   g_WHumHorseImages.FreeOldMemorys;
   g_WHairHorseImages.FreeOldMemorys;

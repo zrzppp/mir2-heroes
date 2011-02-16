@@ -175,6 +175,7 @@ const
   MONPMFILE = 'Graphics\Monster\%d.pm';
 
   CQFIRIMAGESFILE = 'Data\Interface.Data';
+  KINTERFACEIMAGESFILE = 'Data\kInterface\Interface.Data';
 
   HORSEIMAGESFILE = 'Data\F-Horse.wil';
   HUMHORSEIMAGESFILE = 'Data\F-HumHorse.wil';
@@ -212,7 +213,7 @@ const
 
   MAXBAGITEMCL = 46;
 
-  MAXFONT = 1;
+  MAXFONT = 4;
   ENEMYCOLOR = 69;
 
   NEARESTPALETTEINDEXFILE = 'Data\npal.idx';

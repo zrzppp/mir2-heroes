@@ -2029,7 +2029,7 @@ begin
     DScrollChat.CenterButton.OnDirectPaint := nil;
     DScrollChat.Left := DMemoChat.Width;
     DScrollChat.Top := 0;  //90
-    DScrollChat.Increment := 15;   // 12
+    DScrollChat.Increment := 16;   // 12
     DScrollChat.LeftButton.Left := 1;
     DScrollChat.LeftButton.Top := 1;
     DScrollChat.RightButton.Left := 1;
@@ -2363,7 +2363,7 @@ begin
     DScrollChat.Top := 0; //Lyncus1
     DScrollChat.Height := DChatDlg.Height;
 
-    DScrollChat.Increment := 15;
+    DScrollChat.Increment := 16;
     DScrollChat.LeftButton.Left := (DScrollChat.Width - DScrollChat.LeftButton.Width) div 2;
     DScrollChat.LeftButton.Top := 1;
     DScrollChat.RightButton.Left := (DScrollChat.Width - DScrollChat.RightButton.Width) div 2;
@@ -2554,7 +2554,7 @@ begin
     DButFunc5.SetImgIndex(g_WCqFirImages, 94);
     DButFunc5.Left := 0;
     DButFunc5.Top := 0;
-
+    DButFunc5.Visible := False;
     //DButFunc5.Downed := True; //是按钮处于摁住状态
 
     DCategorizeSys.SetImgIndex(g_WCqFirImages, 106);
@@ -2712,7 +2712,7 @@ begin
     DScrollChat.Top := 25; //Lyncus1
     DScrollChat.Height := DChatDlg.Height - 40;
 
-    DScrollChat.Increment := 14;
+    DScrollChat.Increment := 30; //16 - MiloFoxburr, seems to fix issue where you had to scroll for new chat
     DScrollChat.LeftButton.Left := (DScrollChat.Width - DScrollChat.LeftButton.Width) div 3;
     DScrollChat.LeftButton.Top := - 10;
     DScrollChat.RightButton.Left := (DScrollChat.Width - DScrollChat.RightButton.Width) div 3;
@@ -9404,7 +9404,7 @@ begin
       49: begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           line2 := Format('Experience: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]);
-          HintList.AddObject('Weigth: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
+          HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));
           HintList.AddObject(Format('Experience: %d/%d', [MouseItem.Dura * 10000, MouseItem.DuraMax * 10000]), TObject(GetRGB(254)));
           //dwExp := MouseItem.Dura * 10000;
           //dwMaxExp := MouseItem.DuraMax * 10000;
@@ -9461,12 +9461,6 @@ begin
         //if MouseItem.s.AddPoint[12] > 0 then HintList.AddObject('移动加速: ' + IntToStr(MouseItem.s.AddPoint[12]) + '%', TObject(GetRGB(68)));
         //if MouseItem.s.AddPoint[13] > 0 then HintList.AddObject('攻击加速: ' + IntToStr(MouseItem.s.AddPoint[13]) + '%', TObject(GetRGB(68)));
       end;
-      if g_ServerConfig.boAllowItemTime then begin
-        if MouseItem.s.AddValue[0] = 1 then begin
-          HintList.AddObject('Expires: ' + DateToStr(MouseItem.s.MaxDate), TObject(clyellow));
-        end else begin
-          HintList.AddObject('Expires: Never', TObject(clyellow));
-        end;
         if MouseItem.s.sDescr <> '' then begin
           if (MouseItem.s.StdMode = 31) and (MouseItem.s.AniCount <> 0) and (MouseItem.s.Shape = 1) then Exit;
           nLine := 0;
@@ -9516,6 +9510,13 @@ begin
           //HintList.AddObject(sItemDesc, TObject(clyellow));
         HintList.AddObject(sItemDesc, TObject(clWhite));
       end;
+    end;
+    //Moved from original Postion so Description can sit above Expire message (Looks better)
+    if g_ServerConfig.boAllowItemTime then begin
+        if MouseItem.s.AddValue[0] = 1 then begin
+          HintList.AddObject('Expires: ' + DateToStr(MouseItem.s.MaxDate), TObject(clyellow));
+        end else begin
+          HintList.AddObject('Expires: Never', TObject(clyellow));
     end;
   end;
 end;

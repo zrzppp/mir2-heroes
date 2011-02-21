@@ -2426,6 +2426,7 @@ function TPlayObject.ClientPickUpItem: Boolean;
       MasterObject := Master;
       if (MasterObject <> nil) and (Self = MasterObject) then Result := True;
     end;
+
   end;
 
   function IsOfGroup(ActorObject: TActorObject): Boolean;
@@ -2527,7 +2528,7 @@ begin
       //清除复制装备
 
         ClearCopyItems();
-
+        WeightChanged();  //Added to update weight when you pick up an item.
         Result := True;
 
       end else begin
@@ -30514,7 +30515,16 @@ begin
         HealthSpellChanged();
         nCheckCode := 3;
       end else wHitMode := RM_HIT;
-    end;
+      end;
+
+          if (wHitMode = 8) and (m_MagicCrsSkill <> nil) then begin
+    if m_WAbil.MP > 0 then begin
+      DamageSpell(m_MagicCrsSkill.MagicInfo.btDefSpell + GetMagicSpell(m_MagicCrsSkill));
+      HealthSpellChanged();
+    end else wHitMode:=RM_HIT;
+  end;
+
+
     nCheckCode := 4;
     m_btDirection := nDir;
     if TargeTActorObject = nil then begin

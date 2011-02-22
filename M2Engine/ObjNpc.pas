@@ -2065,7 +2065,7 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
         end;
 
         { Ryan - Append Hero To End Of sMsg ~ Temp Fix }
-        sTempHeroNamePrefix := 'Hero';
+        sTempHeroNamePrefix := '`s Hero';
         User.m_sTempHeroName := sMsg + sTempHeroNamePrefix;
 
         sGotoLabel := Copy(sLabel, 2, Length(sLabel) - 1);
@@ -12734,6 +12734,7 @@ begin
       4: nInteger := POISON_DECHEALTH;
       5: nInteger := POISON_LOCKSPELL;
       6: nInteger := POISON_DAMAGEARMOR;
+      7: nInteger := POISON_FREEZE;
     else begin
         m_nNpcAutoChangeIdx := 0;
         nInteger := STATE_TRANSPARENT;
@@ -12752,6 +12753,7 @@ begin
       4: nInteger := POISON_DECHEALTH;
       5: nInteger := POISON_LOCKSPELL;
       6: nInteger := POISON_DAMAGEARMOR;
+      7: nInteger := POISON_FREEZE;
     else begin
         m_nFixColorIdx := 0;
         nInteger := STATE_TRANSPARENT;

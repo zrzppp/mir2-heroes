@@ -229,6 +229,8 @@ type
     WMagic4Images: TGameImages;
     WMagic5Images: TGameImages;
     WMagic6Images: TGameImages;
+    WMagic7Images: TGameImages;
+    WMagic8Images: TGameImages;
 
     WUIBImages: TGameImages;
     WBookImages: TGameImages;
@@ -2139,6 +2141,8 @@ begin
   PlugInfo.ImageManage.WMagic4Images := g_WMagic4Images;
   PlugInfo.ImageManage.WMagic5Images := g_WMagic5Images;
   PlugInfo.ImageManage.WMagic6Images := g_WMagic6Images;
+  PlugInfo.ImageManage.WMagic7Images := g_WMagic7Images;
+  PlugInfo.ImageManage.WMagic8Images := g_WMagic8Images;
 
   PlugInfo.ImageManage.WUIBImages := g_WUIBImages;
   PlugInfo.ImageManage.WBookImages := g_WBookImages;

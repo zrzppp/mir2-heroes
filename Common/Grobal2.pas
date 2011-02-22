@@ -56,9 +56,10 @@ const
 
   POISON_DECHEALTH = 0;
   POISON_DAMAGEARMOR = 1;
-  POISON_LOCKSPELL = 2;
+  POISON_LOCKSPELL = 3;
   POISON_DONTMOVE = 4;
   POISON_STONE = 5;
+  POISON_FREEZE = 2;
   STATE_TRANSPARENT = 8;
   STATE_DEFENCEUP = 9;
   STATE_MAGDEFENCEUP = 10;
@@ -1198,6 +1199,9 @@ type
     nParam1: Integer;
     nParam2: Integer;
     nParam3: Integer;
+    nParam4: Integer;
+    nParam5: Integer;
+    nParam6: Integer;
     BaseObject: TObject;
     boLateDelivery: Boolean;
     dwDeliveryTime: LongWord;

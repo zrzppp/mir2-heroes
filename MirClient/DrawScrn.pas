@@ -13,6 +13,7 @@ const
   AREASTATEICONBASE = 150;
   HEALTHBAR_BLACK = 0;
   HEALTHBAR_RED = 1;
+  HEALTHBAR_BLUE = 10;
 
 type
   TDelayMsg = record
@@ -217,10 +218,162 @@ type
 
   private
     m_dwFrameTime: LongWord;
+
     m_dwFrameCount: LongWord;
     m_dwDrawFrameCount: LongWord;
     m_DrawScreenXYManage: TDrawScreenXYManage;
     m_MoveMsgList: TList;
+        m_nRecogId: Integer; //角色标识 0x4
+    m_nCurrX: Integer; //当前所在地图座标X 0x08
+    m_nCurrY: Integer; //当前所在地图座标Y 0x0A
+    m_btDir: Byte; //当前站立方向 0x0C
+    m_btSex: Byte; //性别 0x0D
+    m_btRace: Byte; //0x0E
+    m_btHair: Byte; //头发类型 0x0F
+    m_btDress: Byte; //衣服类型 0x10
+    m_btWeapon: Byte; //武器类型
+    m_btHorse: Byte; //马类型
+    m_btEffect: Byte; //天使类型
+    m_btWeaponEffect: Byte; //武器效果
+    m_btJob: Byte; //职业 0:武士  1:法师  2:道士
+    m_wAppearance: Word; //0x14
+    m_btDeathState: Byte;
+    m_nFeature: Integer; //0x18
+    m_nFeatureEx: Integer; //0x18
+    m_nState: Integer; //0x1C
+    m_boDeath: Boolean; //0x20
+    m_boSkeleton: Boolean; //0x21
+    m_boDelActor: Boolean; //0x22
+    m_boDelActionAfterFinished: Boolean; //0x23
+    m_sDescUserName: string; //人物名称，后缀
+    m_sUserName: string; //0x28
+    m_nNameColor: Integer; //0x2C0
+
+
+    m_dwSayTime: LongWord;
+    m_nSayX: Integer;
+    m_nSayY: Integer;
+    m_nSayLineCount: Integer;
+
+
+    m_nShiftX: Integer; //0x98
+    m_nShiftY: Integer; //0x9C
+
+    m_nPx: Integer; //0xA0
+    m_nHpx: Integer; //0xA4
+    m_nWpx: Integer; //0xA8
+    m_nSpx: Integer; //0xAC
+
+    m_nPy: Integer;
+    m_nHpy: Integer;
+    m_nWpy: Integer;
+    m_nSpy: Integer; //0xB0 0xB4 0xB8 0xBC
+
+    m_nRx: Integer;
+    m_nRy: Integer; //0xC0 0xC4
+
+    m_nWGpx: Integer;
+    m_nWGpy: Integer;
+
+
+    m_nStoreX: Integer;
+    m_nStoreY: Integer;
+
+    m_nDownDrawLevel: Integer; //0xC8
+    m_nTargetX: Integer;
+    m_nTargetY: Integer; //0xCC 0xD0
+    m_nTargetRecog: Integer; //0xD4
+    m_nHiterCode: Integer; //0xD8
+    m_nMagicNum: Integer; //0xDC
+    m_nCurrentEvent: Integer;
+    m_boDigFragment: Boolean;
+    m_boThrow: Boolean;
+
+    m_nBodyOffset: Integer; //0x0E8   //0x0D0
+    m_nHairOffset: Integer; //0x0EC
+    m_nHumWinOffset: Integer; //0x0F0
+    m_nWeaponOffset: Integer; //0x0F4
+    m_boUseMagic: Boolean; //0x0F8   //0xE0
+    m_boHitEffect: Boolean; //0x0F9    //0xE1
+
+    m_boUseEffect: Boolean; //0x0FA    //0xE2
+    m_nHitEffectNumber: Integer; //0xE4
+    m_dwWaitMagicRequest: LongWord;
+    m_nWaitForRecogId: Integer;
+    m_nWaitForFeature: Integer;
+    m_nWaitForStatus: Integer;
+
+
+    m_nCurEffFrame: Integer; //0x110
+    m_nSpellFrame: Integer; //0x114
+    m_nSpellFrameSkip: Integer;
+    //GlimmingMode: Boolean;
+    //CurGlimmer: integer;
+    //MaxGlimmer: integer;
+    //GlimmerTime: longword;
+    m_nGenAniCount: Integer; //0x124
+    m_boOpenHealth: Boolean; //0x140
+    m_noInstanceOpenHealth: Boolean; //0x141
+    m_dwOpenHealthStart: LongWord;
+    m_dwOpenHealthTime: LongWord; //Integer;jacky
+
+    m_BodySurface: TTexture; //0x14C   //0x134
+    m_WeaponGlimmerSurface: TTexture;
+
+
+
+    m_boGrouped: Boolean; //0x150 是否组队
+    m_nCurrentAction: Integer; //0x154         //0x13C
+    m_boReverseFrame: Boolean; //0x158
+    m_boWarMode: Boolean; //0x159
+    m_dwWarModeTime: LongWord; //0x15C
+    m_nChrLight: Integer; //0x160
+    m_nMagLight: Integer; //0x164
+    m_nRushDir: Integer; //0, 1  //0x168
+    m_nXxI: Integer; //0x16C
+    m_boLockEndFrame: Boolean; //0x170
+    m_dwLastStruckTime: LongWord; //0x174
+    m_dwSendQueryUserNameTime: LongWord; //0x178
+    m_dwDeleteTime: LongWord; //0x17C
+
+    m_nMagicStruckSound: Integer; //0x180 被魔法攻击弯腰发出的声音
+    m_boRunSound: Boolean; //0x184 跑步发出的声音
+    m_nFootStepSound: Integer; //CM_WALK, CM_RUN //0x188  走步声
+    m_nStruckSound: Integer; //SM_STRUCK         //0x18C  弯腰声音
+    m_nStruckWeaponSound: Integer; //0x190  被指定武器攻击弯腰声音
+
+    m_nAppearSound: Integer;
+    m_nNormalSound: Integer;
+    m_nAttackSound: Integer;
+    m_nWeaponSound: Integer;
+    m_nScreamSound: Integer;
+    m_nDieSound: Integer;
+    m_nDie2Sound: Integer;
+
+    m_dwLoadSurfaceTime: LongWord; //0x210  //0x200
+    m_dwLoadSurfaceTick: LongWord;
+
+
+    m_nMagicStartSound: Integer; //0x1B0
+    m_nMagicFireSound: Integer; //0x1B4
+    m_nMagicExplosionSound: Integer; //0x1B8
+    m_HealthList: TGList;
+
+//护体神盾
+    m_nStateStartFrame: Integer;
+    m_nStateEndFrame: Integer;
+    m_dwStateFrameTime: LongWord;
+    m_btState: Byte;
+    m_boSuperShield: Boolean;
+    m_boCreateMagic: Boolean;
+//摆摊
+    m_StoreSurface: TTexture; //摊位
+    m_boStartStore: Boolean;
+
+    m_nIndex: Integer;
+    m_nMoveStepCount: Integer;
+    m_dwMoveTime: LongWord;
+
     //m_DrawScreenMoveMsg: TDrawScreenMoveMsg;
   public
     CurrentScene: TScene;
@@ -1941,8 +2094,10 @@ var
   dsurface: TTexture;
   d: TTexture;
   rc: TRect;
+  r: Real;
   infoMsg: string;
   dwRunTime: LongWord;
+  nHPY, nMPY: Integer;
 begin
   if CurrentScene <> nil then
     CurrentScene.PlayScene(MSurface);
@@ -1953,6 +2108,186 @@ begin
   end;
   Inc(m_dwFrameCount);
   infoMsg := '';
+
+   if g_MySelf = nil then exit;
+
+   if CurrentScene = PlayScene then begin
+      with MSurface do begin
+
+         with PlayScene do begin
+            for k:=0 to m_ActorList.Count-1 do begin
+               actor := m_ActorList[k];
+         //显示人物血量(数字显示)
+         {if g_boShowHPNumber and (actor.m_Abil.MaxHP > 1) and not actor.m_boDeath then begin
+           infoMsg:=IntToStr(actor.m_Abil.HP) + '/' + IntToStr(actor.m_Abil.MaxHP);
+           BoldTextOut (MSurface,actor.m_nSayX - 15 ,actor.m_nSayY - 5, clWhite, clBlack,infoMsg );
+           Canvas.Release;
+         end;   }
+
+          if (frmMain.IsGroupMember(actor.m_sUserName)) and (Actor <> g_MySelf) and (not actor.m_boDeath) then begin
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, d.ClientRect, d, TRUE);
+              //MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 9, d.ClientRect, d, TRUE);
+              //MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 6, d.ClientRect, d, TRUE);
+
+            d := g_WCqFirImages.Images[1];
+            if d <> nil then begin
+              rc := d.ClientRect;
+              if (actor.m_Abil.MaxHP > 0) and (actor.m_Abil.HP <> 0) then
+                rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxHP * actor.m_Abil.HP)
+              else
+                rc.Right := Round((rc.Right-rc.Left) / 1);
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, rc, d, TRUE);
+            end;
+
+            {if (frmMain.IsGroupMember(actor.m_sUserName)) and (Actor <> g_MySelf) and (not actor.m_boDeath) then begin
+            d := g_WCqFirImages.Images[5]; // 2004/03/05 眉仿钎矫 瞒喊拳
+               if d <> nil then begin
+                  rc := d.ClientRect;
+                  if (actor.m_Abil.MaxMP > 0) and (actor.m_Abil.MP <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxMP * actor.m_Abil.MP)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 9, rc, d, TRUE);
+               end;
+               end;
+
+            if (frmMain.IsGroupMember(actor.m_sUserName)) and (Actor <> g_MySelf) and (not actor.m_boDeath) then begin
+            d := g_WCqFirImages.Images[3]; // 2004/03/05 眉仿钎矫 瞒喊拳
+            if d <> nil then begin
+                rc := d.ClientRect;
+                  if (actor.m_Abil.MaxExp > 0) and (actor.m_Abil.Exp <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxExp * actor.m_Abil.Exp)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 6, rc, d, TRUE);
+               end;
+               end; }
+
+          end else if (frmMain.IsGroupMember(actor.m_sUserName)) and (Actor = g_MySelf) and (not actor.m_boDeath) then begin
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, d.ClientRect, d, TRUE);
+
+            d := g_WCqFirImages.Images[1];
+            if d <> nil then begin
+              rc := d.ClientRect;
+              if (actor.m_Abil.MaxHP > 0) and (actor.m_Abil.HP <> 0) then
+                rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxHP * actor.m_Abil.HP)
+              else
+                rc.Right := Round((rc.Right-rc.Left) / 1);
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, rc, d, TRUE);
+            end;
+
+            if (Actor = g_MySelf) and (not actor.m_boDeath) then begin
+
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 7, d.ClientRect, d, TRUE);
+
+            d := g_WCqFirImages.Images[5]; // 2004/03/05 眉仿钎矫 瞒喊拳
+               if d <> nil then begin
+                  rc := d.ClientRect;
+                  if (actor.m_Abil.MaxMP > 0) and (actor.m_Abil.MP <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxMP * actor.m_Abil.MP)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 7, rc, d, TRUE);
+               end;
+            end;
+
+          end else begin
+            //if g_boShowRedHPLable then actor.m_boOpenHealth:=True; //显示血条
+
+            if (actor.m_boOpenHealth or actor.m_noInstanceOpenHealth) and not actor.m_boDeath then begin
+              if actor.m_noInstanceOpenHealth then
+                if GetTickCount - actor.m_dwOpenHealthStart > actor.m_dwOpenHealthTime then
+                  actor.m_noInstanceOpenHealth := FALSE;
+              d := g_WMain3Images.Images[0];
+              if d <> nil then
+                MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, d.ClientRect, d, TRUE);
+              d := g_WMain3Images.Images[1];
+              if d <> nil then begin
+                rc := d.ClientRect;
+                if actor.m_Abil.MaxHP > 0 then
+                  rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxHP * actor.m_Abil.HP);
+                MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, rc, d, TRUE);
+              end;
+            end;
+
+            if (Actor = g_MySelf) and (not actor.m_boDeath) then begin
+
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, d.ClientRect, d, TRUE);
+
+            d := g_WMain3Images.Images[1]; // 2004/03/05 眉仿钎矫 瞒喊拳
+               if d <> nil then begin
+                  rc := d.ClientRect;
+                  if (actor.m_Abil.MaxHP > 0) and (actor.m_Abil.HP <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxHP * actor.m_Abil.HP)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, rc, d, TRUE);
+               end;
+            end;
+
+            if (Actor = g_MySelf) or (Actor = g_MyHero) and (not actor.m_boDeath) then begin
+
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 7, d.ClientRect, d, TRUE);
+
+            d := g_WCqFirImages.Images[5]; // 2004/03/05 眉仿钎矫 瞒喊拳
+               if d <> nil then begin
+                  rc := d.ClientRect;
+                  if (actor.m_Abil.MaxMP > 0) and (actor.m_Abil.MP <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxMP * actor.m_Abil.MP)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 7, rc, d, TRUE);
+               end;
+            end;
+
+            if (Actor = g_MyHero) and (not actor.m_boDeath) then begin
+
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, d.ClientRect, d, TRUE);
+
+            d := g_WCqFirImages.Images[2]; // 2004/03/05 眉仿钎矫 瞒喊拳
+               if d <> nil then begin
+                  rc := d.ClientRect;
+                  if (actor.m_Abil.MaxHP > 0) and (actor.m_Abil.HP <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxHP * actor.m_Abil.HP)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, rc, d, TRUE);
+               end;
+            end;
+
+            {if (Actor.sSalveName) and (not actor.m_boDeath) then begin
+
+            d := g_WMain3Images.Images[0];
+            if d <> nil then
+              MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, d.ClientRect, d, TRUE);
+
+            d := g_WCqFirImages.Images[2]; // 2004/03/05 眉仿钎矫 瞒喊拳
+               if d <> nil then begin
+                  rc := d.ClientRect;
+                  if (actor.m_Abil.MaxHP > 0) and (actor.m_Abil.HP <> 0) then
+                      rc.Right := Round((rc.Right-rc.Left) / actor.m_Abil.MaxHP * actor.m_Abil.HP)
+                  else
+                     rc.Right := Round((rc.Right-rc.Left) / 1);
+                    MSurface.Draw (actor.m_nSayX - d.Width div 2, actor.m_nSayY - 10, rc, d, TRUE);
+               end;
+            end;}
+          end;
+        end;
+    end;
+end;
+end;
 end;
 
 //显示左上角信息文字

@@ -161,6 +161,8 @@ const
   MAGIC4IMAGESFILE = 'Data\Magic4.wil';
   MAGIC5IMAGESFILE = 'Data\Magic5.wil';
   MAGIC6IMAGESFILE = 'Data\Magic6.wil';
+  MAGIC7IMAGESFILE = 'Data\Magic7.wil';
+  MAGIC8IMAGESFILE = 'Data\Magic8.wil';
   EVENTEFFECTIMAGESFILE = EFFECTIMAGEDIR + 'Event.wil';
   BAGITEMIMAGESFILE = 'Data\Items.wil';
   STATEITEMIMAGESFILE = 'Data\StateItem.wil';

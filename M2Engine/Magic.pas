@@ -76,6 +76,7 @@ type
 
     function MagMakeSpaceLock(BaseObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer): Boolean;
     function MagMeteorShower(BaseObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer): Boolean;
+    function MagMakeCurseArea(BaseObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer): Boolean;
 //ÊÉÑªÊõ
     function MagAbsorbBlood(PlayObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer; var TargeTActorObject: TActorObject): Boolean;
     function MagHeroGroup(PlayObject: TActorObject; UserMagic: pTUserMagic; nTargetX, nTargetY: Integer; var TargeTActorObject: TActorObject): Boolean;
@@ -792,6 +793,40 @@ begin
 end;
 
 //Á÷ÐÇ»ðÓê
+
+function TMagicManager.MagMakeCurseArea(BaseObject: TActorObject;
+  UserMagic: pTUserMagic; nTargetX, nTargetY: Integer): Boolean;//004C6F04
+var
+  III: Integer;
+  I,II: Integer;
+  nStartX,nStartY,nEndX,nEndY:Integer;
+  BaseObjectList: TList;
+  TargeTActorObject: TActorObject;
+  nSec: Integer;
+  nPowerValue: Integer;
+begin
+  Result := False;
+
+  BaseObjectList := TList.Create;
+  BaseObject.GetMapActorObjects(BaseObject.m_PEnvir, nTargetX, nTargetY, g_Config.nElecBlizzardRange + 2, BaseObjectList);
+
+  for I := 0 to BaseObjectList.Count - 1 do begin
+    TargeTActorObject := TActorObject(BaseObjectList.Items[I]);
+            if TargeTActorObject.m_boDeath or (TargeTActorObject.m_boGhost) or (BaseObject = TargeTActorObject) then Continue;
+              if BaseObject.IsProperTarget(TargeTActorObject) then begin
+                if (Random(10) >= TargeTActorObject.m_nAntiMagic) then begin
+                nSec := BaseObject.GetAttackPower(LoWord(BaseObject.m_WAbil.SC),
+                  Integer(LoWord(BaseObject.m_WAbil.SC)));
+                  TargeTActorObject.MakePosion(POISON_DONTMOVE, nSec ,0);
+                //TPlayObject(PlayObject).AttPowerDown(UserMagic);
+               if (BaseObject.m_btRaceServer = RC_PLAYMOSTER) or (BaseObject.m_btRaceServer = RC_HEROOBJECT) then Result := True
+               else if TargeTActorObject.m_btRaceServer >= RC_ANIMAL then Result := True;
+
+              end;
+              end;
+            end;
+  BaseObjectList.Free;
+end;
 
 function TMagicManager.MagMeteorShower(BaseObject: TActorObject;
   UserMagic: pTUserMagic; nTargetX, nTargetY: Integer): Boolean;
@@ -1853,7 +1888,7 @@ end;
 function TMagicManager.IsWarrSkill(wMagIdx: Integer): Boolean; //ÊÇ·ñÊÇÕ½Ê¿¼¼ÄÜ
 begin
   Result := False;
-  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_SLAYING, SKILL_THRUSTING, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_CROSSHALFMOON, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
+  if wMagIdx in [SKILL_FENCING, SKILL_SPIRITSWORD, SKILL_SLAYING, SKILL_THRUSTING, SKILL_BANWOL {25}, SKILL_FIRESWORD {26}, SKILL_MOOTEBO {27}, SKILL_CROSSHALFMOON, SKILL_TWINDRAKEBLADE, SKILL_43 {43}, SKILL_58, SKILL_77 {77}, SKILL_60, SKILL_100, SKILL_101, SKILL_102, SKILL_103] then
     Result := True;
 end;
 
@@ -1917,6 +1952,7 @@ var
 
 begin
   Result := False;
+  if PlayObject.m_boTDBeffect then exit; //tdb
   if IsWarrSkill(UserMagic.wMagIdx) then Exit;
   if PlayObject.m_boOnHorse or (PlayObject.m_NewStatus <> sNone) then Exit;
   if (PlayObject.m_btRaceServer = RC_PLAYOBJECT) and ((abs(PlayObject.m_nCurrX - nTargetX) > g_Config.nMagicAttackRage) or (abs(PlayObject.m_nCurrY - nTargetY) > g_Config.nMagicAttackRage)) then begin
@@ -2278,9 +2314,9 @@ begin
         if MagGroupMb(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then
           boTrain := True;
       end;
-    SKILL_TWINDRAKEBLADE: begin //¿ñ·çÕ¶
+    {SKILL_TWINDRAKEBLADE: begin //¿ñ·çÕ¶
         if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
-      end;
+      end;}
     SKILL_43: begin //ÆÆ¿Õ½£
         if MagHbFireBall(PlayObject, UserMagic, nTargetX, nTargetY, TargeTActorObject) then boTrain := True;
       end;
@@ -2310,7 +2346,12 @@ begin
       end;
 
     SKILL_53: begin //ÑªÖä
-        boTrain := True;
+        if Random(10) <= UserMagic.btLevel then begin
+                if MagMakeCurseArea(PlayObject,
+                  UserMagic,
+                  nTargetX,
+                  nTargetY) then boTrain := True;
+        end;
       end;
     SKILL_54: begin //÷¼÷ÃÖä
         if PlayObject.IsProperTargetSKILL_54(TargeTActorObject) then begin

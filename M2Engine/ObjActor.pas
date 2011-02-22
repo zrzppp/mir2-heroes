@@ -254,6 +254,19 @@ type
     m_SendRefMsgTick: LongWord;
     m_boInFreePKArea: Boolean; //是否在开行会战(Byte)
 
+    m_dwHitIntervalTime :LongWord; //攻击间隔
+    m_dwMagicHitIntervalTime :LongWord; //魔法间隔
+    m_dwRunIntervalTime :LongWord; //走路间隔
+    m_dwWalkIntervalTime :LongWord; //走路间隔
+    m_dwTurnIntervalTime :LongWord; //换方向间隔
+    m_dwActionIntervalTime :LongWord; //组合操作间隔
+    m_dwRunLongHitIntervalTime :LongWord; //组合操作间隔
+    m_dwRunHitIntervalTime :LongWord; //组合操作间隔
+    m_dwWalkHitIntervalTime :LongWord; //组合操作间隔
+    m_dwRunMagicIntervalTime :LongWord; //跑位魔法间隔
+    m_btOldDir: Byte;
+    m_dwActionTick: LongWord;
+    m_wOldIdent: Word;
     m_dwHitTick: LongWord;
     m_dwWalkTick: LongWord;
     m_dwSearchEnemyTick: LongWord;
@@ -294,7 +307,7 @@ type
 
     m_btReColorIdx: Byte;
     m_dwReColorTick: LongWord;
-
+    m_boTDBeffect             :Boolean;
     m_boPowerHit: Boolean;
     m_boUseThrusting: Boolean; //0x52D
     m_boUseHalfMoon: Boolean; //0x52E
@@ -324,6 +337,8 @@ type
     m_nAutoChangeIdx: Integer;
     m_nChangeColorType: Integer;
 
+    m_nnonfrzWalkSpeed        :Integer;
+    m_nnonfrzNextHitTime      :Integer;
     m_boFixColor: Boolean; //固定颜色
     m_nFixColorIdx: Integer;
     m_nFixStatus: Integer;
@@ -625,6 +640,7 @@ type
 
     function AllowFireHitSkill(): Boolean;
     function AllowCIDHitSkill(): Boolean;
+    //function AllowTwinHitSkill(): Boolean;
     function AllowKTZHitSkill(): Boolean;
     function AllowZRJFHitSkill(): Boolean;
 
@@ -1719,6 +1735,7 @@ begin
   m_boFireHitSkill := False;
   m_boCIDHitSkill := False;
   m_boKTZHitSkill := False;
+  m_boTDBeffect          := False;
   m_btHitPoint := 5;
   m_btSpeedPoint := 15;
   m_nHitSpeed := 0;
@@ -6373,14 +6390,21 @@ begin
       end;
     SKILL_TWINDRAKEBLADE: begin //狂风斩
         if m_Magic42Skill <> nil then begin
-          if not m_bo42kill then begin
+         if not m_bo42kill then begin
+              nSpellPoint:=GetSpellPoint(UserMagic);
+              if m_WAbil.MP >= nSpellPoint then begin
+                if nSpellPoint > 0 then begin
+                  DamageSpell(nSpellPoint);
+                  HealthSpellChanged();
+                end;
+              end;
             Skill42OnOff(True);
-            //SendSocket(nil, '+TWN');
+            //SendSocket(nil, '+TWN/' + IntToStr(GetTickCount));
           end else begin
             Skill42OnOff(False);
-            //SendSocket(nil, '+UTWN');
-          end;
-        end;
+            //SendSocket(nil, '+UTWN/' + IntToStr(GetTickCount));
+             end;
+            end;
         Result := True;
       end;
 
@@ -10152,6 +10176,8 @@ begin
   m_nCharStatus := GetCharStatus();
 
   SendRefMsg(RM_OPENHEALTH, 0, m_WAbil.HP, m_WAbil.MaxHP, 0, '');
+  SendRefMsg(RM_OPENHEALTH, 0, m_WAbil.MP, m_WAbil.MaxMP, 0, '');
+  SendRefMsg(RM_OPENHEALTH, 0, m_WAbil.Exp, m_WAbil.MaxExp, 0, '');
 end;
 
 procedure TActorObject.IncHealthSpell(nHP, nMP: Integer);
@@ -10529,6 +10555,7 @@ begin
           4: nInteger := POISON_DECHEALTH;
           5: nInteger := POISON_LOCKSPELL;
           6: nInteger := POISON_DAMAGEARMOR;
+          7: nInteger := POISON_FREEZE;
         else begin
             m_nAutoChangeIdx := 0;
             nInteger := STATE_TRANSPARENT;
@@ -10548,6 +10575,7 @@ begin
           4: nInteger := POISON_DECHEALTH;
           5: nInteger := POISON_LOCKSPELL;
           6: nInteger := POISON_DAMAGEARMOR;
+          7: nInteger := POISON_FREEZE;
         else begin
             m_nFixColorIdx := 0;
             nInteger := STATE_TRANSPARENT;
@@ -10768,6 +10796,13 @@ begin
               STATE_BUBBLEDEFENCEUP: begin
                   m_boAbilMagBubbleDefence := False;
                 end;
+              POISON_DONTMOVE: begin
+                  m_nWalkSpeed:= m_nnonfrzWalkSpeed;
+                  m_nNextHitTime := m_nnonfrzNextHitTime;
+                end;
+              POISON_LOCKSPELL: begin
+                m_boTDBeffect:=False;
+              end;
             end;
           end;
         end;
@@ -16605,14 +16640,21 @@ begin
       end;
     SKILL_TWINDRAKEBLADE: begin //狂风斩
         if m_Magic42Skill <> nil then begin
-          if not m_bo42kill then begin
+         if not m_bo42kill then begin
+              nSpellPoint:=GetSpellPoint(UserMagic);
+              if m_WAbil.MP >= nSpellPoint then begin
+                if nSpellPoint > 0 then begin
+                  DamageSpell(nSpellPoint);
+                  HealthSpellChanged();
+                end;
+              end;
             Skill42OnOff(True);
             SendSocket(nil, '+TWN/' + IntToStr(GetTickCount));
           end else begin
             Skill42OnOff(False);
             SendSocket(nil, '+UTWN/' + IntToStr(GetTickCount));
-          end;
-        end;
+             end;
+            end;
         Result := True;
       end;
     SKILL_43: begin //破空剑
@@ -17423,20 +17465,20 @@ begin
   if m_bo42kill then begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        SysMsg('Skill42 ready', c_Green, t_Hint);
+        SysMsg('TwinDrakeBlade is Charged!', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicOK then
-        THeroObject(Self).SysMsg('Skill42 ready', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('TwinDrakeBlade did not charge.', c_Green, t_Hint);
     end;
   end else begin
     if m_btRaceServer = RC_PLAYOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        SysMsg('Skill42 failed', c_Green, t_Hint);
+        SysMsg('TwinDrakeBlade is Charged!', c_Green, t_Hint);
     end else
       if m_btRaceServer = RC_HEROOBJECT then begin
       if not g_Config.boNoHintMagicFail then
-        THeroObject(Self).SysMsg('Skill42 failed.', c_Green, t_Hint);
+        THeroObject(Self).SysMsg('TwinDrakeBlade did not charge.', c_Green, t_Hint);
     end;
   end;
 end;
@@ -17544,6 +17586,34 @@ begin
     end;
   end;
 end;
+
+{function TActorObject.AllowTwinHitSkill(): Boolean;
+begin
+  Result := False;
+  if (GetTickCount - m_dwLatestTwinHitTick) > g_Config.nSkill42DelayTime * 1000 then begin
+    m_dwLatestTwinHitTick := GetTickCount();
+    m_bo42kill:= True;
+    if m_btRaceServer = RC_PLAYOBJECT then begin
+      if not g_Config.boNoHintMagicOK then
+        //SysMsg(sCidSpiritsSummoned, c_Green, t_Hint);
+    end else
+      if m_btRaceServer = RC_HEROOBJECT then begin
+      if not g_Config.boNoHintMagicOK then
+        //THeroObject(Self).SysMsg(sCidSpiritsSummoned, c_Green, t_Hint);
+    end;
+    //SysMsg(sFireSpiritsSummoned, c_Green, t_Hint);
+    Result := True;
+  end else begin
+    if m_btRaceServer = RC_PLAYOBJECT then begin
+      if not g_Config.boNoHintMagicFail then
+        //SysMsg(sCidSpiritsFail, c_Green, t_Hint);
+    end else
+      if m_btRaceServer = RC_HEROOBJECT then begin
+      if not g_Config.boNoHintMagicFail then
+        //THeroObject(Self).SysMsg(sCidSpiritsFail, c_Green, t_Hint);
+    end;
+  end;
+end;}
 
 function TActorObject.AllowCIDHitSkill(): Boolean;
 begin
@@ -23722,7 +23792,7 @@ begin
       if BaseObject.m_btRaceServer = RC_HEROOBJECT then begin
         if (BaseObject.m_Master <> nil) then begin
           UserState.GuildName := BaseObject.m_Master.m_sCharName + '''s';
-          UserState.GuildRankName := 'Hero';
+          UserState.GuildRankName := '`s Hero';
         end;
       end else begin
         if BaseObject.m_MyGuild <> nil then begin
@@ -35301,6 +35371,7 @@ var
   n20: Integer;
   nCheckCode: Integer;
   UserMagic: pTUserMagic;
+  nSec: Integer;
 resourcestring
   sExceptionMsg = '[Exception] TActorObject::_Attack Name:= %s Code:=%d';
 begin
@@ -35310,6 +35381,7 @@ begin
   nWeaponDamage := 0;
   nPower := 0;
   nSecPwr := 0;
+
 
   try
     if AttackTarget <> nil then begin
@@ -35513,6 +35585,20 @@ begin
 
       nPower := AttackTarget.GetHitStruckDamage(Self, nPower);
       nWeaponDamage := (Random(5) + 2) - m_AddAbil.btWeaponStrong;
+    end;
+    nCheckCode:=602;
+    if m_bo42kill then begin
+      m_bo42kill := false;
+      AttackTarget.SendDelayMsg(TActorObject(RM_STRUCK),RM_10101,nPower,AttackTarget.m_WAbil.HP,AttackTarget.m_WAbil.MaxHP,Integer(Self),'',200);
+      AttackTarget.SendDelayMsg(TActorObject(RM_STRUCK),RM_10101,nPower,AttackTarget.m_WAbil.HP,AttackTarget.m_WAbil.MaxHP,Integer(Self),'',400);
+      if (Random(25) >= AttackTarget.m_nAntiMagic) then begin
+        nSec := GetAttackPower(LoWord(m_WAbil.DC),
+        Integer(LoWord(m_WAbil.DC)));
+        AttackTarget.MakePosion(POISON_LOCKSPELL, nSec ,0); //yellow effect
+        AttackTarget.m_boTDBeffect := True;
+      end;
+    end else begin
+      AttackTarget.SendDelayMsg(TActorObject(RM_STRUCK),RM_10101,nPower,AttackTarget.m_WAbil.HP,AttackTarget.m_WAbil.MaxHP,Integer(Self),'',200);
     end;
     AttackTarget.StartNewShield();
     if nPower > 0 then begin
@@ -36424,6 +36510,12 @@ begin
       end;
     end else begin //004C35FF
       m_wStatusTimeArr[nType] := nTime;
+      if nType = POISON_DONTMOVE then begin //if got frozen then slow down hitspeed and walkspeed
+        m_nnonfrzWalkSpeed := m_nWalkSpeed;
+        m_nWalkSpeed:= m_nWalkSpeed * 3;
+        m_nnonfrzNextHitTime := m_nNextHitTime;
+        m_nNextHitTime := m_nNextHitTime * 3;
+      end;
     end;
     m_wStatusTimeArr[nType] := _MIN(m_wStatusTimeArr[nType], 60000 - 1);
 
@@ -41933,6 +42025,5 @@ function TAIPlayObject.IsProperFriend(BaseObject: TActorObject): Boolean;
 begin
   Result := inherited IsProperFriend(BaseObject);
 end;
-
 end.
 

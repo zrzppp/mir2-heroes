@@ -513,6 +513,7 @@ begin
         0: begin
             if (m_TargetCret <> nil) and (Integer(GetTickCount - m_dwHitTick) > g_Config.dwWarrorAttackTime) then begin
               m_dwHitTick := GetTickCount();
+              m_dwWalkTick := GetTickCount();
               if ActThink(nSelectMagic) then begin
 
                 //inherited;
@@ -521,6 +522,7 @@ begin
 
               if (m_TargetCret <> nil) and StartAttack(nSelectMagic) then begin
                 if (nSelectMagic > 0) and (nSelectMagic <= High(m_SkillUseTick)) then begin
+                  m_dwWalkTick := GetTickCount();
                   m_SkillUseTick[nSelectMagic] := GetTickCount;
                 end;
               end;
@@ -1313,13 +1315,13 @@ begin
   m_btRaceServer := RC_HEROOBJECT;
   bo2BF := True;
   m_sUserID := '';
-  m_nViewRange := 8;
-  m_nRunTime := 250;
+  m_nViewRange := 6;
+  m_nRunTime := 500;
   m_dwSearchTick := GetTickCount();
   m_nCopyHumanLevel := 3;
   m_btNameColor := g_Config.btHeroNameColor;
   m_boFixedHideMode := True;
-  {m_dwHitIntervalTime := g_Config.dwHitIntervalTime; //攻击间隔
+  m_dwHitIntervalTime := g_Config.dwHitIntervalTime; //攻击间隔
   m_dwMagicHitIntervalTime := g_Config.dwMagicHitIntervalTime; //魔法间隔
   m_dwRunIntervalTime := g_Config.dwRunIntervalTime; //走路间隔
   m_dwWalkIntervalTime := g_Config.dwWalkIntervalTime; //走路间隔
@@ -1329,10 +1331,11 @@ begin
   m_dwRunHitIntervalTime := g_Config.dwRunHitIntervalTime; //组合操作间隔
   m_dwWalkHitIntervalTime := g_Config.dwWalkHitIntervalTime; //组合操作间隔
   m_dwRunMagicIntervalTime := g_Config.dwRunMagicIntervalTime; //跑位魔法间隔
-          }
+  m_btOldDir := m_btDirection;
   m_dwHitTick := GetTickCount - LongWord(Random(3000));
   m_dwWalkTick := GetTickCount - LongWord(Random(3000));
-
+  m_dwActionTick := 1000;
+  m_wOldIdent := CM_WALK;
   m_SelItemObject := nil;
 
   m_nItemBagCount := 10;
@@ -3579,8 +3582,122 @@ begin
 end;
 
 function THeroObject.CheckActionStatus(wIdent: Word; var dwDelayTime: LongWord): Boolean;
+var
+  dwCheckTime: LongWord;
+//  dwCurrTick: LongWord;
+  dwActionIntervalTime: LongWord;
 begin
-  Result := True;
+  Result := False;
+  dwDelayTime := 0;
+  //检查人物弯腰停留时间
+  if not g_Config.boDisableStruck then begin
+    dwCheckTime := GetTickCount - m_dwStruckTick;
+    if g_Config.dwStruckTime > dwCheckTime then begin
+      dwDelayTime := g_Config.dwStruckTime - dwCheckTime;
+      m_btOldDir := m_btDirection;
+      Exit;
+    end;
+  end;
+
+  //检查二个不同操作之间所需间隔时间
+  dwCheckTime := GetTickCount - m_dwActionTick;
+
+  if m_wOldIdent = wIdent then begin //当二次操作一样时，则将 boFirst 设置为 真 ，退出由调用函数本身检查二个相同操作之间的间隔时间
+    Result := True;
+    Exit;
+  end;
+
+  if not g_Config.boControlActionInterval then begin
+    Result := True;
+    Exit;
+  end;
+
+  dwActionIntervalTime := m_dwActionIntervalTime;
+  case wIdent of
+    CM_LONGHIT: begin
+        //跑位刺杀
+        if g_Config.boControlRunLongHit and (m_wOldIdent = CM_RUN) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunLongHitIntervalTime;
+        end;
+      end;
+    CM_HIT: begin
+        //走位攻击
+        if g_Config.boControlWalkHit and (m_wOldIdent = CM_WALK) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwWalkHitIntervalTime;
+        end;
+        //跑位攻击
+        if g_Config.boControlRunHit and (m_wOldIdent = CM_RUN) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunHitIntervalTime;
+        end;
+      end;
+    CM_RUN: begin
+        //跑位刺杀
+        if g_Config.boControlRunLongHit and (m_wOldIdent = CM_LONGHIT) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunLongHitIntervalTime;
+        end;
+        //跑位攻击
+        if g_Config.boControlRunHit and (m_wOldIdent = CM_HIT) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunHitIntervalTime;
+        end;
+        //跑位魔法
+        if g_Config.boControlRunMagic and (m_wOldIdent = CM_SPELL) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunMagicIntervalTime;
+        end;
+      end;
+    CM_WALK: begin
+        //走位攻击
+        if g_Config.boControlWalkHit and (m_wOldIdent = CM_HIT) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwWalkHitIntervalTime;
+        end;
+        //跑位刺杀
+        if g_Config.boControlRunLongHit and (m_wOldIdent = CM_LONGHIT) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunLongHitIntervalTime;
+        end;
+      end;
+    CM_SPELL: begin
+        //跑位魔法
+        if g_Config.boControlRunMagic and (m_wOldIdent = CM_RUN) and (m_btOldDir <> m_btDirection) then begin
+          dwActionIntervalTime := m_dwRunMagicIntervalTime;
+        end;
+      end;
+  end;
+
+  //将几个攻击操作合并成一个攻击操作代码
+  if (wIdent = CM_HIT) or
+    (wIdent = CM_HEAVYHIT) or
+    (wIdent = CM_BIGHIT) or
+    (wIdent = CM_POWERHIT) or
+    //     (wIdent = CM_LONGHIT) or
+
+  (wIdent = CM_WIDEHIT) or
+    (wIdent = CM_CRSHIT) or
+    (wIdent = CM_PKHIT) or
+    (wIdent = CM_KTHIT) or
+    (wIdent = CM_60HIT) or
+    (wIdent = CM_FIREHIT) then begin
+
+    wIdent := CM_HIT;
+  end;
+
+  if dwCheckTime >= dwActionIntervalTime then begin
+    m_dwActionTick := GetTickCount();
+    Result := True;
+  end else begin
+    dwDelayTime := dwActionIntervalTime - dwCheckTime;
+  end;
+  m_wOldIdent := wIdent;
+  m_btOldDir := m_btDirection;
+  {
+  dwCheckTime:=GetTickCount - m_dwActionTick;
+  if dwCheckTime >= m_dwActionTime then begin
+    m_dwActionTick:=GetTickCount();
+    m_wOldIdent:=wIdent;
+    Result:=True;
+  end else begin
+    dwDelayTime:=m_dwActionTime - dwCheckTime;
+//    m_dwActionTime:=m_dwActionTime + 20;
+  end;
+  }
 end;
 
 //function THeroObject.AllowUseMagic(wMagIdx: Word): Boolean;
@@ -4404,18 +4521,18 @@ begin
       if (abs(m_nCurrX - m_TargetCret.m_nCurrX) > 6) or (abs(m_nCurrY - m_TargetCret.m_nCurrY) > 6) then begin
         for I := 3 downto 1 do begin
           for II := 0 to 7 do begin
-            if m_PEnvir.GetNextPosition(m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, II, I, nX, nY) and m_PEnvir.CanWalkEx(nX, nY, False) and m_PEnvir.CanWalkOfEvent(Self, nX, nY) then begin
+            if m_PEnvir.GetNextPosition(m_Master.m_nCurrX, m_Master.m_nCurrY, II, I, nX, nY) and m_PEnvir.CanWalkEx(nX, nY, False) and m_PEnvir.CanWalkOfEvent(Self, nX, nY) then begin
               SpaceMove(m_PEnvir.sMapName, nX, nY, 1);
-              m_nTargetX := -1;
-              m_nTargetY := -1;
+              m_nCurrX := -1;
+              m_nCurrX := -1;
               inherited;
               Exit;
             end;
           end
         end;
-        SpaceMove(m_PEnvir.sMapName, m_TargetCret.m_nCurrX, m_TargetCret.m_nCurrY, 1);
-        m_nTargetX := -1;
-        m_nTargetY := -1;
+        SpaceMove(m_PEnvir.sMapName, m_Master.m_nCurrX, m_Master.m_nCurrY, 1);
+        m_nCurrX := -1;
+        m_nCurrX := -1;
         inherited;
         Exit;
       end;

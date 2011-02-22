@@ -113,6 +113,8 @@ type
     WMagic4Images: TLoadMode;
     WMagic5Images: TLoadMode;
     WMagic6Images: TLoadMode;
+    WMagic7Images: TLoadMode;
+    WMagic8Images: TLoadMode;
     WHorseImages: TLoadMode;
     WHumHorseImages: TLoadMode;
     WHairHorseImages: TLoadMode;
@@ -637,6 +639,8 @@ var
   g_WMagic4Images: TGameImages;
   g_WMagic5Images: TGameImages;
   g_WMagic6Images: TGameImages;
+  g_WMagic7Images: TGameImages;
+  g_WMagic8Images: TGameImages;
 
   g_WEventEffectImages: TGameImages;
   g_WObjectArr: array[0..19] of TGameImages;
@@ -2983,6 +2987,8 @@ begin
   g_WMagic4Images := GetGameImages(g_ConfigClient.WMagic4Images, sFilePath + MAGIC4IMAGESFILE);
   g_WMagic5Images := GetGameImages(g_ConfigClient.WMagic5Images, sFilePath + MAGIC5IMAGESFILE);
   g_WMagic6Images := GetGameImages(g_ConfigClient.WMagic6Images, sFilePath + MAGIC6IMAGESFILE);
+  g_WMagic7Images := GetGameImages(g_ConfigClient.WMagic7Images, sFilePath + MAGIC7IMAGESFILE);
+  g_WMagic8Images := GetGameImages(g_ConfigClient.WMagic8Images, sFilePath + MAGIC8IMAGESFILE);
   g_WCqFirImages := GetGameImages(lmUseFir, sFilePath + CQFIRIMAGESFILE);
   g_WKInterfaceImages := GetGameImages(lmUseFir, sFilePath + KINTERFACEIMAGESFILE);
 
@@ -3113,6 +3119,8 @@ begin
   g_WMagic4Images.Initialize;
   g_WMagic5Images.Initialize;
   g_WMagic6Images.Initialize;
+  g_WMagic7Images.Initialize;
+  g_WMagic8Images.Initialize;
   g_WHorseImages.Initialize;
   g_WHumHorseImages.Initialize;
   g_WHairHorseImages.Initialize;
@@ -3288,6 +3296,10 @@ begin
 
   g_WMagic6Images.Finalize;
 
+  g_WMagic7Images.Finalize;
+
+  g_WMagic8Images.Finalize;
+
   g_WCqFirImages.Finalize;
 
   g_WKInterfaceImages.Finalize;
@@ -3434,6 +3446,12 @@ begin
   g_WMagic6Images.Finalize;
   g_WMagic6Images.Free;
 
+  g_WMagic7Images.Finalize;
+  g_WMagic7Images.Free;
+
+  g_WMagic8Images.Finalize;
+  g_WMagic8Images.Free;
+
   g_WCqFirImages.Finalize;
   g_WCqFirImages.Free;
 
@@ -3531,6 +3549,8 @@ begin
   g_WMagic4Images.FreeOldMemorys;
   g_WMagic5Images.FreeOldMemorys;
   g_WMagic6Images.FreeOldMemorys;
+  g_WMagic7Images.FreeOldMemorys;
+  g_WMagic8Images.FreeOldMemorys;
   g_WCqFirImages.FreeOldMemorys;
   g_WKInterfaceImages.FreeOldMemorys;
   g_WHorseImages.FreeOldMemorys;

@@ -1965,6 +1965,15 @@ begin
   meff := nil;
   case mtype of //EffectType
     mtReady, mtFly, mtFlyAxe: begin
+
+
+       if magnumb = 38 then begin
+          meff := TMagicEff.Create(magid {替为magnumb，击中后的效果改变了}, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
+          meff.TargetActor := target;
+          meff.frame := 6;
+          if wimg <> nil then
+            meff.ImgLib := wimg;
+        end else
         if magnumb = 39 then begin
           meff := TMagicEff.Create(magid {替为magnumb，击中后的效果改变了}, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
           meff.TargetActor := target;
@@ -2203,6 +2212,15 @@ begin
             meff.ImgLib := g_WMagic4Images;
           end;
 
+        38: begin //
+            meff := TMagicEff.Create(magid, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
+            meff.MagExplosionBase := 210;
+            meff.TargetActor := target;
+            meff.NextFrameTime := 0;
+            meff.ExplosionFrame := 220;
+            meff.light := 3;
+            meff.ImgLib := g_WMagic2Images;
+          end;
         62: begin //
             meff := TMagicEff.Create(magid, effnum, scx, scy, sctx, scty, mtype, Recusion, anitime);
             meff.MagExplosionBase := 390;

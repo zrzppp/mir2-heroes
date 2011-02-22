@@ -1263,6 +1263,8 @@ begin
   g_ConfigClient.WMagic4Images := lmUseWil;
   g_ConfigClient.WMagic5Images := lmUseWil;
   g_ConfigClient.WMagic6Images := lmUseWil;
+  g_ConfigClient.WMagic7Images := lmUseWil;
+  g_ConfigClient.WMagic8Images := lmUseWil;
   g_ConfigClient.WHorseImages := lmUseWil;
   g_ConfigClient.WHumHorseImages := lmUseWil;
   g_ConfigClient.WHairHorseImages := lmUseWil;
@@ -2569,7 +2571,7 @@ begin
 
               if g_Config.boChangeSign and (g_WaitingUseItem.Item.S.Name = '') then begin
                 case Magic.Def.wMagicId of //×Ô¶¯»»¶¾
-                  6, 38: begin
+                  6: begin
                       if g_Config.boChangePoison then begin
                         if g_nPoisonIndex < 0 then g_nPoisonIndex := g_Config.nPoisonIndex + 1;
                         if (g_UseItems[U_BUJUK].S.Name = '') or (g_UseItems[U_BUJUK].S.StdMode <> 25) or (g_UseItems[U_BUJUK].S.Shape <> g_nPoisonIndex) then begin
@@ -8149,8 +8151,8 @@ procedure TfrmMain.ClientObjCreateGroupOK();
 begin
   g_dwChangeGroupModeTick := GetTickCount;
   g_boAllowGroup := True;
-        {GroupMembers.Add (Myself.UserName);
-        GroupMembers.Add (DecodeString(body));}
+        g_GroupMembers.Add (g_MySelf.m_sUserName);
+        //GroupMembers.Add (DecodeString(body));}
 end;
 
 procedure TfrmMain.ClientObjCreateGroupFail(nFailCode: Integer);

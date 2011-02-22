@@ -2709,7 +2709,7 @@ begin
             end;
         end;
       end;
-      sStoreName := m_sUserName + ' Stall';
+      sStoreName := m_sUserName + '`s Stall';
       BoldTextOut(
         m_nSayX - TextWidth(sStoreName) div 2,
         m_nSayY + Y, sStoreName, clLime);
@@ -4567,6 +4567,7 @@ begin
         end;
         if (m_nCurrentAction = SM_TWINHIT) then begin
           m_boHitEffect := True;
+          m_nSpellFrame := 20;
           m_nMagLight := 2;
           m_nHitEffectNumber := 7;
         end;
@@ -4822,6 +4823,11 @@ begin
                 m_nSpellFrame := 20;
                 m_nSpellFrameSkip := 0;
               end;
+            {38: begin // ®◊”∫
+                m_nMagLight := 2;
+                m_nSpellFrame := 20;
+                m_nSpellFrameSkip := 0;
+              end;}
             51: begin //¡˜–«ª”Í
                 m_nMagLight := 2;
                 m_nSpellFrame := 10;
@@ -5127,6 +5133,18 @@ begin
         end;
 
         if m_boHitEffect and not m_boHitEndEffect then begin //–¬‘ˆº”π•ª˜–ßπ˚
+         if m_nHitEffectNumber = 7 then begin //∆∆ø’Ω£
+            m_btHitDir := m_btDir;
+            m_nStartPosHitFrame := 8;
+            m_nHitEndX := m_nShiftX;
+            m_nHitEndY := m_nShiftY;
+            m_nStartHitFrame := 0;
+            m_nEndHitFrame := m_nStartHitFrame + 15;
+            m_nCurrentHitFrame := m_nStartHitFrame;
+            m_dwHitFrameTime := Round(m_dwFrameTime * 2 / 3);
+            m_boHitEndEffect := True;
+            //DScreen.AddChatBoardString('∆∆ø’Ω£', clGreen, clWhite);
+          end else
           if m_nHitEffectNumber = 8 then begin //∆∆ø’Ω£
             m_btHitDir := m_btDir;
             m_nStartPosHitFrame := 8;
@@ -5787,6 +5805,11 @@ begin
    //œ‘ æπ•ª˜–ßπ˚
   if m_boHitEffect and (m_nHitEffectNumber > 0) then begin
     GetEffectBase(m_nHitEffectNumber - 1, 1, wimg, idx);
+    if m_nHitEffectNumber = 7 then begin //∆∆ø’Ω£
+      idx := idx + m_btDir * 20 + (m_nCurrentFrame - m_nStartFrame + 3);
+      m_nHitEndDX := dx;
+      m_nHitEndDY := dy;
+    end else
     if m_nHitEffectNumber = 8 then begin //∆∆ø’Ω£
       idx := idx + m_btDir * 20 + (m_nCurrentFrame - m_nStartFrame);
       m_nHitEndDX := dx;
@@ -5831,6 +5854,8 @@ begin
 
   if m_boHitEndEffect and (m_nHitEffectNumber > 0) then begin
     GetEffectBase(m_nHitEffectNumber - 1, 1, wimg, idx);
+    if m_nHitEffectNumber = 7 then //∆∆ø’Ω£
+      idx := idx + m_btHitDir * 20 + (m_nCurrentHitFrame - m_nStartHitFrame + m_nStartPosHitFrame + 3);
     if m_nHitEffectNumber = 8 then //∆∆ø’Ω£
       idx := idx + m_btHitDir * 20 + (m_nCurrentHitFrame - m_nStartHitFrame + m_nStartPosHitFrame);
     if m_nHitEffectNumber = 9 then //∆∆ªÍ’∂

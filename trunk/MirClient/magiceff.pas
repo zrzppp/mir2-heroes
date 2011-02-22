@@ -21,7 +21,7 @@ const
   THORNBASE = 2967;
   ARCHERBASE = 2607;
   ARCHERBASE2 = 272; //2609;
-
+  TDBBASE = 210;
   FLYFORSEC = 500;
   FIREGUNFRAME = 6;
 
@@ -644,7 +644,8 @@ begin
         FixedEffect := False;
         Repetition := Recusion;
         ExplosionFrame := 10;
-        if id = 38 then frame := 10;
+        //if id = 38 then frame := 5;
+        //ExplosionFrame := 20;
         if id = 39 then begin
           frame := 4;
           ExplosionFrame := 8;

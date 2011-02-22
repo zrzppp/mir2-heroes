@@ -2065,8 +2065,8 @@ procedure TMerchant.UserSelect(PlayObject: TPlayObject; sData: string);
         end;
 
         { Ryan - Append Hero To End Of sMsg ~ Temp Fix }
-        sTempHeroNamePrefix := '';
-        User.m_sTempHeroName := sMsg;
+        sTempHeroNamePrefix := 'Hero';
+        User.m_sTempHeroName := sMsg + sTempHeroNamePrefix;
 
         sGotoLabel := Copy(sLabel, 2, Length(sLabel) - 1);
         GotoLable(User, sGotoLabel, False);

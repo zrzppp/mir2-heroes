@@ -13263,13 +13263,23 @@ end;
 
 procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
+//Changed to prevent people exiting the client while in Battle in Windowed mode.
   if (g_MySelf <> nil) and (g_ConnectionStep = cnsPlay) then begin
     if mrOk = FrmDlg.DMessageDlg('Are you sure you want to exit the game?', [mbOk, mbCancel]) then begin
+      if (GetTickCount - g_dwLatestStruckTick > 10000) and
+          (GetTickCount - g_dwLatestMagicTick > 10000) and
+          (GetTickCount - g_dwLatestHitTick > 10000) or
+          (g_MySelf.m_boDeath) then begin
+
       if g_boBagLoaded then
         Savebags('.\Data\' + g_sServerName + '.' + g_sSelChrName + '.itm', @g_ItemArr);
-      g_boBagLoaded := False;
-      SendGameCenterMsg(CM_QUIT, IntToStr(Handle));
-    end else CanClose := False;
+        g_boBagLoaded := False;
+        SendGameCenterMsg(CM_QUIT, IntToStr(Handle));
+      end else begin
+         CanClose := False;
+         DScreen.AddChatBoardString('You cannot Exit the game during Battle.', clyellow, clRed);
+      end;
+    end;
   end else SendGameCenterMsg(CM_QUIT, IntToStr(Handle));
 end;
 

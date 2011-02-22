@@ -14875,8 +14875,13 @@ begin
                   end;
 
       end else begin
+      if g_MyHero.m_boDeath = True then begin
         frmMain.SendClientMessage(CM_HEROLOGOUT, g_MyHero.m_nRecogId, 0, 0, 0);
+      end else begin
+        frmMain.tmrHeroLogout.Enabled := True;
+        DScreen.AddChatBoardString('Your Hero will be logged out in 5 seconds', clyellow, clRed);
       end;
+    end;
   end;
 
   if g_ConfigClient.btMainInterface in [0,1,2] then begin
@@ -14886,9 +14891,14 @@ begin
            frmMain.SendClientMessage(CM_HEROLOGON, 0, 0, 0, 0);
         end;
      end else begin
-   frmMain.tmrHeroLogout.Enabled := True;
-   DScreen.AddChatBoardString('Your Hero will be logged out in 5 seconds', clyellow, clRed);
-     end;
+
+     if g_MyHero.m_boDeath = True then begin
+        frmMain.SendClientMessage(CM_HEROLOGOUT, g_MyHero.m_nRecogId, 0, 0, 0);
+     end else begin
+        frmMain.tmrHeroLogout.Enabled := True;
+        DScreen.AddChatBoardString('Your Hero will be logged out in 5 seconds', clyellow, clRed);
+      end;
+    end;
   end;
 end;
 

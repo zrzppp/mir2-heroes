@@ -5,11 +5,11 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, MMSystem, Forms, Dialogs,
   JSocket, ExtCtrls, Textures, DXDraws, DirectX, DXClass, DrawScrn, IntroScn, PlayScn,
-  DIB, StdCtrls, WIL, HUtil32, EncryptUnit, Actor, Mpeg, MapUnit,
+  Grobal2, DIB, StdCtrls, WIL, HUtil32, EncryptUnit, Actor, Mpeg, MapUnit,
   DWinCtl, ClFunc, magiceff, SoundUtil, clEvent, IniFiles, Registry,
-  Spin, ComCtrls, Grids, Menus, Mask, MShare, Share, StrUtils, MD5EncodeStr,
+  Spin, ComCtrls, Grids, Menus, Mask, MShare, Share, StrUtils, HTTPGet, MD5EncodeStr,
   SoundEngn, ShellApi, tlHelp32, psAPI, PlugIn, GameImages,
-  PathFind, zLibx, MPlayer, OleCtrls, GuaJi, HTTPGet, Grobal2;
+  PathFind, zLibx, MPlayer, OleCtrls, GuaJi;
 
 const
   BO_FOR_TEST = False;
@@ -1682,7 +1682,6 @@ begin
       if DComboboxItemType.itemindex <= 0 then begin
         g_ShowItemList.Get(i_All, List);
       end else begin
-        { Milo - I have to comment this out to get Client to Compile, know anything about this? lol}
         g_ShowItemList.Get(TItemType(DComboboxItemType.itemindex - 1), List);
       end;
 

@@ -1,8 +1,8 @@
 object FrmMain: TFrmMain
   Left = 273
   Top = 164
-  Width = 507
-  Height = 390
+  ClientHeight = 336
+  ClientWidth = 499
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -157,7 +157,7 @@ object FrmMain: TFrmMain
     Height = 336
     Orientation = orVertical
     Position = 159
-    Percent = 48
+    Percent = 47
     SplitterWidth = 2
     Align = alClient
     BorderShadow = clBtnFace
@@ -178,11 +178,14 @@ object FrmMain: TFrmMain
       Width = 499
       Height = 159
       Align = alClient
+      Color = clBtnShadow
+      ReadOnly = True
       ScrollBars = ssVertical
       TabOrder = 0
       OnChange = MemoLogChange
       OnDblClick = MemoLogDblClick
       FrameVisible = True
+      ReadOnlyColor = clBtnShadow
     end
     object RzSplitter1: TRzSplitter
       Left = 0

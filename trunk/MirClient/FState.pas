@@ -8957,7 +8957,7 @@ begin
               end;
             1: begin
                 line2 := 'HP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' Íò';
-                HintList.AddObject('HP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' Íò', TObject(GetRGB(254)));
+                HintList.AddObject('HP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
               end;
             2: begin
                 line2 := 'MP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' Íò';
@@ -17461,7 +17461,7 @@ begin
         LegendMap.BeginY := g_MySelf.m_nCurrY;
         LegendMap.EndX := LegendMap.Path[Length(LegendMap.Path) - 1].X;
         LegendMap.EndY := LegendMap.Path[Length(LegendMap.Path) - 1].Y;
-        DScreen.AddChatBoardString(Format('Automatically moving to (%d:%d)£¬press any Mouse Button to stop.', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
+        DScreen.AddChatBoardString(Format('Automatically moving to (%d:%d), press any Mouse Button to stop.', [LegendMap.EndX, LegendMap.EndY]), GetRGB(154), clWhite);
         Exit;
       end;
     end;

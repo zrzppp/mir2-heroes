@@ -5,11 +5,11 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, MMSystem, Forms, Dialogs,
   JSocket, ExtCtrls, Textures, DXDraws, DirectX, DXClass, DrawScrn, IntroScn, PlayScn,
-  Grobal2, DIB, StdCtrls, WIL, HUtil32, EncryptUnit, Actor, Mpeg, MapUnit,
+  DIB, StdCtrls, WIL, HUtil32, EncryptUnit, Actor, Mpeg, MapUnit,
   DWinCtl, ClFunc, magiceff, SoundUtil, clEvent, IniFiles, Registry,
-  Spin, ComCtrls, Grids, Menus, Mask, MShare, Share, StrUtils, HTTPGet, MD5EncodeStr,
+  Spin, ComCtrls, Grids, Menus, Mask, MShare, Share, StrUtils, MD5EncodeStr,
   SoundEngn, ShellApi, tlHelp32, psAPI, PlugIn, GameImages,
-  PathFind, zLibx, MPlayer, OleCtrls, GuaJi;
+  PathFind, zLibx, MPlayer, OleCtrls, GuaJi, HTTPGet, Grobal2;
 
 const
   BO_FOR_TEST = False;
@@ -1132,7 +1132,7 @@ var
 
   dwTickTime: LongWord; }
 begin
-  DebugOutStr('----------------------- start ------------------------');
+  DebugOutStr('----------------------- Started ------------------------');
   GetWindowThreadProcessId(Handle, @g_nSelfThreadProcessId);
   g_sAppFilePath := ExtractFilePath(Application.ExeName);
   //Sets Main Interface 0 = Original, 1 = CQFir, 2 = Original again? or not used.
@@ -1610,7 +1610,6 @@ begin
    nop
   end;
   //PlugInManage.LoadPlugIn;
-  DebugOutStr('----------------------- started ------------------------');
 
     //Module := LoadLibrary('test.dll');
 
@@ -1677,11 +1676,13 @@ begin
 
     nTop := 1;
     List := TList.Create;
+
     with FrmDlg do begin
       DMemoTab2.Clear;
       if DComboboxItemType.itemindex <= 0 then begin
         g_ShowItemList.Get(i_All, List);
       end else begin
+        { Milo - I have to comment this out to get Client to Compile, know anything about this? lol}
         g_ShowItemList.Get(TItemType(DComboboxItemType.itemindex - 1), List);
       end;
 
@@ -1741,11 +1742,6 @@ begin
       end;
     end;
     List.Free;
-
-    if doFullScreen in DXDraw.Options then begin
-         //Screen.Cursor := crNone;
-    end else begin
-    end;
 
     g_ImgMixSurface := TTexture.Create();
     g_MiniMapSurface := TTexture.Create();
@@ -12691,7 +12687,7 @@ begin
  { except
     Application.Terminate;
   end; }
-  DebugOutStr('----------------------- closed -------------------------');
+  DebugOutStr('----------------------- Closed -------------------------');
 end;
 
 procedure TfrmMain.HTTPGetCheckProDoneString(Sender: TObject;

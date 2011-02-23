@@ -8952,20 +8952,20 @@ begin
           line1 := line1 + 'Weight.' + IntToStr(MouseItem.s.Weight);
           case MouseItem.s.Shape of
             0: begin
-                line2 := 'Use ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次';
-                HintList.AddObject('Use:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 次', TObject(GetRGB(254)));
+                line2 := 'Use ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+                HintList.AddObject('Use:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
               end;
             1: begin
-                line2 := 'HP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万';
+                line2 := 'HP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
                 HintList.AddObject('HP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
               end;
             2: begin
-                line2 := 'MP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万';
-                HintList.AddObject('MP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万', TObject(GetRGB(254)));
+                line2 := 'MP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+                HintList.AddObject('MP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
               end;
             3: begin
-                line2 := 'HPMP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万';
-                HintList.AddObject('HPMP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax) + ' 万', TObject(GetRGB(254)));
+                line2 := 'HPMP ' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax);
+                HintList.AddObject('HPMP:' + GetDuraStr(MouseItem.Dura, MouseItem.DuraMax), TObject(GetRGB(254)));
               end;
           end;
           HintList.AddObject('Weight: ' + IntToStr(MouseItem.s.Weight), TObject(clWhite));

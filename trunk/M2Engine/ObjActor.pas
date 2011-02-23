@@ -35372,6 +35372,7 @@ var
   nCheckCode: Integer;
   UserMagic: pTUserMagic;
   nSec: Integer;
+  TDBTargetCheck : Integer; //Milo
 resourcestring
   sExceptionMsg = '[Exception] TActorObject::_Attack Name:= %s Code:=%d';
 begin
@@ -35591,11 +35592,18 @@ begin
       m_bo42kill := false;
       AttackTarget.SendDelayMsg(TActorObject(RM_STRUCK),RM_10101,nPower,AttackTarget.m_WAbil.HP,AttackTarget.m_WAbil.MaxHP,Integer(Self),'',200);
       AttackTarget.SendDelayMsg(TActorObject(RM_STRUCK),RM_10101,nPower,AttackTarget.m_WAbil.HP,AttackTarget.m_WAbil.MaxHP,Integer(Self),'',400);
-      if (Random(25) >= AttackTarget.m_nAntiMagic) then begin
-        nSec := GetAttackPower(LoWord(m_WAbil.DC),
-        Integer(LoWord(m_WAbil.DC)));
+      if (Random(50) >= AttackTarget.m_nAntiMagic) then begin
+
+      TDBTargetCheck := 1;
+      if AttackTarget.m_btRaceServer = RC_PLAYOBJECT then TDBTargetCheck := 2;
+
+      //Random Chance and Duration added from official Wemade Code
+      if ((TDBTargetCheck = 1) and (Random(100) < 5*(m_Magic42Skill.btLevel+1))) or
+         ((TDBTargetCheck = 2) and (Random(100) < 2*(m_Magic42Skill.btLevel+1))) then begin
+        nSec := Round(1.5 + 0.8 * m_Magic42Skill.btLevel);
         AttackTarget.MakePosion(POISON_LOCKSPELL, nSec ,0); //yellow effect
         AttackTarget.m_boTDBeffect := True;
+        end;
       end;
     end else begin
       AttackTarget.SendDelayMsg(TActorObject(RM_STRUCK),RM_10101,nPower,AttackTarget.m_WAbil.HP,AttackTarget.m_WAbil.MaxHP,Integer(Self),'',200);

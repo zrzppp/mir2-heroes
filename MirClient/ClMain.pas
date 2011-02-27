@@ -13109,6 +13109,7 @@ procedure TfrmMain.AutoHeroEatHPItem(Sender: TObject);
 var
   nIndex: Integer;
   sItemName: string;
+
   function EatHPItem1(flag: Boolean): Boolean;
   begin
     Result := False;

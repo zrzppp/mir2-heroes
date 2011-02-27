@@ -653,6 +653,10 @@ type
     DNewOption: TDWindow;
     DButtonNewOption: TDButton;
     DButtonHeroSkill: TDButton;
+    DLabel4: TDLabel;
+    DHeroPotLabel: TDLabel;
+    DHeroNoteLabel: TDLabel;
+    DHeroNoteLabel2: TDLabel;
 
     procedure DBottomInRealArea(Sender: TObject; X, Y: Integer;
       var IsRealArea: Boolean);
@@ -1208,6 +1212,7 @@ type
     procedure DComboboxHumMP1Change(Sender: TObject);
     procedure DComboboxHumHP2Change(Sender: TObject);
     procedure DComboboxHumMP2Change(Sender: TObject);
+
   private
     DlgTemp: TList;
     magcur, magtop: Integer;
@@ -4487,29 +4492,32 @@ begin
   DButtonTab1.Left := 10;
   DButtonTab1.Top := 12;
   DButtonTab1.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab2.Left := 10 + 48;
-  DButtonTab2.Top := 12;
-  DButtonTab2.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab3.Left := 10 + 48 * 2;
+  DButtonTab3.Left := 10 + 48;
   DButtonTab3.Top := 12;
   DButtonTab3.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab4.Left := 10 + 48 * 3;
+  DButtonTab4.Left := 10 + 48 * 2;
   DButtonTab4.Top := 12;
   DButtonTab4.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab5.Left := 10 + 48 * 4;
-  DButtonTab5.Top := 12;
-  DButtonTab5.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab6.Left := 10 + 48 * 5;
+  DButtonTab6.Left := 10 + 48 * 3;
   DButtonTab6.Top := 12;
   DButtonTab6.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab7.Left := 10 + 48 * 6;
-  DButtonTab7.Top := 12;
-  DButtonTab7.SetImgIndex(g_WMain2Images, 608);
-  DButtonTab8.Left := 10 + 48 * 7;
+  DButtonTab8.Left := 10 + 48 * 4;
   DButtonTab8.Top := 12;
   DButtonTab8.SetImgIndex(g_WMain2Images, 608);
-
-
+  {
+  //2 not used
+  DButtonTab2.Left := 10 + 48 * 10;
+  DButtonTab2.Top := 12;
+  DButtonTab2.SetImgIndex(g_WMain2Images, 608);
+  //5 Not used.
+  DButtonTab5.Left := 10 + 48 * 10;
+  DButtonTab5.Top := 12;
+  DButtonTab5.SetImgIndex(g_WMain2Images, 608);
+  //7 not used.
+  DButtonTab7.Left := 10 + 48 * 10;
+  DButtonTab7.Top := 12;
+  DButtonTab7.SetImgIndex(g_WMain2Images, 608);
+  }
 
   DConfigDlg.TabLeft := 14;
   DConfigDlg.TabTop := 36;
@@ -4781,31 +4789,33 @@ begin
   DCheckBoxHumHP2.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxHumMP2.SetImgIndex(g_WMain2Images, 228);
 
+  DLabel4.Left := 4;
+  DLabel4.Top := -4;
 
   DCheckBoxHumHP1.Left := 8;
-  DCheckBoxHumHP1.Top := 8;
+  DCheckBoxHumHP1.Top := 16;
 
   DCheckBoxHumMP1.Left := 8;
-  DCheckBoxHumMP1.Top := 8 + 30 * 1;
+  DCheckBoxHumMP1.Top := 16 + 30 * 1;
 
   DCheckBoxHumHP2.Left := 8;
-  DCheckBoxHumHP2.Top := 8 + 30 * 2;
+  DCheckBoxHumHP2.Top := 16 + 30 * 2;
 
   DCheckBoxHumMP2.Left := 8;
-  DCheckBoxHumMP2.Top := 8 + 30 * 3;
+  DCheckBoxHumMP2.Top := 16 + 30 * 3;
 
 
   DEditHumHPPercent1.Left := 45;
-  DEditHumHPPercent1.Top := 8 - 1;
+  DEditHumHPPercent1.Top := 16 - 1;
 
   DEditHumMPPercent1.Left := 45;
-  DEditHumMPPercent1.Top := 8 - 1 + 30 * 1;
+  DEditHumMPPercent1.Top := 16 - 1 + 30 * 1;
 
   DEditHumHPPercent2.Left := 45;
-  DEditHumHPPercent2.Top := 8 - 1 + 30 * 2;
+  DEditHumHPPercent2.Top := 16 - 1 + 30 * 2;
 
   DEditHumMPPercent2.Left := 45;
-  DEditHumMPPercent2.Top := 8 - 1 + 30 * 3;
+  DEditHumMPPercent2.Top := 16 - 1 + 30 * 3;
 
 
   DEditHumHPPercent1.Width := 80;
@@ -4821,16 +4831,16 @@ begin
 
 
   DComboboxHumHP1.Left := 140;
-  DComboboxHumHP1.Top := 8;
+  DComboboxHumHP1.Top := 16;
 
   DComboboxHumMP1.Left := 140;
-  DComboboxHumMP1.Top := 8 + 30 * 1;
+  DComboboxHumMP1.Top := 16 + 30 * 1;
 
   DComboboxHumHP2.Left := 140;
-  DComboboxHumHP2.Top := 8 + 30 * 2;
+  DComboboxHumHP2.Top := 16 + 30 * 2;
 
   DComboboxHumMP2.Left := 140;
-  DComboboxHumMP2.Top := 8 + 30 * 3;
+  DComboboxHumMP2.Top := 16 + 30 * 3;
 
   DComboboxHumHP1.Width := 100;
   DComboboxHumMP1.Width := 100;
@@ -4839,16 +4849,16 @@ begin
 
 
   DEditHumHPTime1.Left := 250;
-  DEditHumHPTime1.Top := 8 - 1;
+  DEditHumHPTime1.Top := 16 - 1;
 
   DEditHumMPTime1.Left := 250;
-  DEditHumMPTime1.Top := 8 - 1 + 30 * 1;
+  DEditHumMPTime1.Top := 16 - 1 + 30 * 1;
 
   DEditHumHPTime2.Left := 250;
-  DEditHumHPTime2.Top := 8 - 1 + 30 * 2;
+  DEditHumHPTime2.Top := 16 - 1 + 30 * 2;
 
   DEditHumMPTime2.Left := 250;
-  DEditHumMPTime2.Top := 8 - 1 + 30 * 3;
+  DEditHumMPTime2.Top := 16 - 1 + 30 * 3;
 
 
   DEditHumHPTime1.Width := 46;
@@ -4862,19 +4872,20 @@ begin
   DEditHumMPTime2.Text := '0';
 
   DLabelHumHP1.Left := 305;
-  DLabelHumHP1.Top := 8 + 1;
+  DLabelHumHP1.Top := 16 + 1;
 
   DLabelHumMP1.Left := 305;
-  DLabelHumMP1.Top := 8 + 1 + 30 * 1;
+  DLabelHumMP1.Top := 16 + 1 + 30 * 1;
 
   DLabelHumHP2.Left := 305;
-  DLabelHumHP2.Top := 8 + 1 + 30 * 2;
+  DLabelHumHP2.Top := 16 + 1 + 30 * 2;
 
   DLabelHumMP2.Left := 305;
-  DLabelHumMP2.Top := 8 + 1 + 30 * 3;
+  DLabelHumMP2.Top := 16 + 1 + 30 * 3;
 
 
   ItemList := DMemoTab3.Add;
+  DMemoTab3.AddSuItem(ItemList, DLabel4);
   DMemoTab3.AddSuItem(ItemList, DCheckBoxHumHP1);
   DMemoTab3.AddSuItem(ItemList, DEditHumHPPercent1);
   DMemoTab3.AddSuItem(ItemList, DComboboxHumHP1);
@@ -4905,40 +4916,39 @@ begin
 
 {-----------------------------------------------------------}
   DLabelBookItem.Left := 8;
-  DLabelBookItem.Top := 130;
+  DLabelBookItem.Top := 136;
   ItemList := DMemoTab3.Add;
   DMemoTab3.AddSuItem(ItemList, DLabelBookItem);
 
   DCheckBoxBook.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxBook.Left := 8;
-  DCheckBoxBook.Top := 130 + 30;
+  DCheckBoxBook.Top := 136 + 30;
 
 
-  DLabelBookHP.Left := 44;
-  DLabelBookHP.Top := 130 + 30 + 1;
-
+  DLabelBookHP.Left := 40;
+  DLabelBookHP.Top := 136 + 30 + 1;
 
   DEditBookHP.Left := 58;
-  DEditBookHP.Top := 130 + 30;
+  DEditBookHP.Top := 136 + 30;
   DEditBookHP.Width := 46;
   DEditBookHP.Text := '0';
 
   DEditBookTime.Left := 118;
-  DEditBookTime.Top := 130 + 30;
+  DEditBookTime.Top := 136 + 30;
   DEditBookTime.Width := 20;
   DEditBookTime.Text := '0';
 
 
   DLabelBookTime.Left := 144;
-  DLabelBookTime.Top := 130 + 30 + 2;
+  DLabelBookTime.Top := 136 + 30 + 2;
 
 
 
   DLabelBookItemType.Left := 144 + 30;
-  DLabelBookItemType.Top := 130 + 30 + 1;
+  DLabelBookItemType.Top := 136 + 30 + 1;
 
   DComboboxBookIndex.Left := 144 + 90;
-  DComboboxBookIndex.Top := 130 + 30;
+  DComboboxBookIndex.Top := 136 + 30;
   DComboboxBookIndex.Width := 80;
   DMenuBook.Width := DComboboxBookIndex.Width;
 
@@ -4959,30 +4969,38 @@ begin
   DCheckBoxHeroHP2.SetImgIndex(g_WMain2Images, 228);
   DCheckBoxHeroMP2.SetImgIndex(g_WMain2Images, 228);
 
+  DHeroPotLabel.Left := 4;
+  DHeroPotLabel.Top := -4;
+
+  DHeroNoteLabel.Left := 2;
+  DHeroNoteLabel.Top := 16 + 1 + 30 * 4;
+  DHeroNoteLabel2.Left := 2;
+  DHeroNoteLabel2.Top := 28 + 1 + 30 * 4;
+
   DCheckBoxHeroHP1.Left := 8;
-  DCheckBoxHeroHP1.Top := 8;
+  DCheckBoxHeroHP1.Top := 16;
 
   DCheckBoxHeroMP1.Left := 8;
-  DCheckBoxHeroMP1.Top := 8 + 30 * 1;
+  DCheckBoxHeroMP1.Top := 16 + 30 * 1;
 
   DCheckBoxHeroHP2.Left := 8;
-  DCheckBoxHeroHP2.Top := 8 + 30 * 2;
+  DCheckBoxHeroHP2.Top := 16 + 30 * 2;
 
   DCheckBoxHeroMP2.Left := 8;
-  DCheckBoxHeroMP2.Top := 8 + 30 * 3;
+  DCheckBoxHeroMP2.Top := 16 + 30 * 3;
 
 
   DEditHeroHPPercent1.Left := 45;
-  DEditHeroHPPercent1.Top := 8 - 1;
+  DEditHeroHPPercent1.Top := 16 - 1;
 
   DEditHeroMPPercent1.Left := 45;
-  DEditHeroMPPercent1.Top := 8 - 1 + 30 * 1;
+  DEditHeroMPPercent1.Top := 16 - 1 + 30 * 1;
 
   DEditHeroHPPercent2.Left := 45;
-  DEditHeroHPPercent2.Top := 8 - 1 + 30 * 2;
+  DEditHeroHPPercent2.Top := 16 - 1 + 30 * 2;
 
   DEditHeroMPPercent2.Left := 45;
-  DEditHeroMPPercent2.Top := 8 - 1 + 30 * 3;
+  DEditHeroMPPercent2.Top := 16 - 1 + 30 * 3;
 
 
   DEditHeroHPPercent1.Width := 80;
@@ -4996,16 +5014,16 @@ begin
   DEditHeroMPPercent2.Text := '0';
 
   DComboboxHeroHP1.Left := 140;
-  DComboboxHeroHP1.Top := 8;
+  DComboboxHeroHP1.Top := 16;
 
   DComboboxHeroMP1.Left := 140;
-  DComboboxHeroMP1.Top := 8 + 30 * 1;
+  DComboboxHeroMP1.Top := 16 + 30 * 1;
 
   DComboboxHeroHP2.Left := 140;
-  DComboboxHeroHP2.Top := 8 + 30 * 2;
+  DComboboxHeroHP2.Top := 16 + 30 * 2;
 
   DComboboxHeroMP2.Left := 140;
-  DComboboxHeroMP2.Top := 8 + 30 * 3;
+  DComboboxHeroMP2.Top := 16 + 30 * 3;
 
   DComboboxHeroHP1.Width := 100;
   DComboboxHeroMP1.Width := 100;
@@ -5014,16 +5032,16 @@ begin
 
 
   DEditHeroHPTime1.Left := 250;
-  DEditHeroHPTime1.Top := 8 - 1;
+  DEditHeroHPTime1.Top := 16 - 1;
 
   DEditHeroMPTime1.Left := 250;
-  DEditHeroMPTime1.Top := 8 - 1 + 30 * 1;
+  DEditHeroMPTime1.Top := 16 - 1 + 30 * 1;
 
   DEditHeroHPTime2.Left := 250;
-  DEditHeroHPTime2.Top := 8 - 1 + 30 * 2;
+  DEditHeroHPTime2.Top := 16 - 1 + 30 * 2;
 
   DEditHeroMPTime2.Left := 250;
-  DEditHeroMPTime2.Top := 8 - 1 + 30 * 3;
+  DEditHeroMPTime2.Top := 16 - 1 + 30 * 3;
 
 
   DEditHeroHPTime1.Width := 46;
@@ -5037,19 +5055,20 @@ begin
   DEditHeroMPTime2.Text := '0';
 
   DLabelHeroHP1.Left := 305;
-  DLabelHeroHP1.Top := 8 + 1;
+  DLabelHeroHP1.Top := 16 + 1;
 
   DLabelHeroMP1.Left := 305;
-  DLabelHeroMP1.Top := 8 + 1 + 30 * 1;
+  DLabelHeroMP1.Top := 16 + 1 + 30 * 1;
 
   DLabelHeroHP2.Left := 305;
-  DLabelHeroHP2.Top := 8 + 1 + 30 * 2;
+  DLabelHeroHP2.Top := 16 + 1 + 30 * 2;
 
   DLabelHeroMP2.Left := 305;
-  DLabelHeroMP2.Top := 8 + 1 + 30 * 3;
+  DLabelHeroMP2.Top := 16 + 1 + 30 * 3;
 
 
   ItemList := DMemoTab4.Add;
+  DMemoTab4.AddSuItem(ItemList, DHeroPotLabel);
   DMemoTab4.AddSuItem(ItemList, DCheckBoxHeroHP1);
   DMemoTab4.AddSuItem(ItemList, DEditHeroHPPercent1);
   DMemoTab4.AddSuItem(ItemList, DComboboxHeroHP1);
@@ -5076,6 +5095,8 @@ begin
   DMemoTab4.AddSuItem(ItemList, DComboboxHeroMP2);
   DMemoTab4.AddSuItem(ItemList, DEditHeroMPTime2);
   DMemoTab4.AddSuItem(ItemList, DLabelHeroMP2);
+  DMemoTab4.AddSuItem(ItemList, DHeroNoteLabel);
+  DMemoTab4.AddSuItem(ItemList, DHeroNoteLabel2);
 {------------------------DMemoTab5---------------------------}
 
 
@@ -15241,7 +15262,7 @@ begin
     // Auto-Pot MP Box Two [Hero]
     DComboboxHeroMP2.Items.Clear;
     for I := Low(g_HeroItemArr) to High(g_HeroItemArr) do begin
-      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.AC > 0) then
+      if (g_HeroItemArr[I].s.Name <> '') and (g_HeroItemArr[I].s.StdMode = 0) and (g_HeroItemArr[I].s.MAC > 0) then
         DComboboxHeroMP2.Items.Add(g_HeroItemArr[I].s.Name);
     end;
 

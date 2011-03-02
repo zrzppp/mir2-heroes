@@ -1,0 +1,5 @@
+;Control what players can do with Items
+;Usage: 0 Allow, 1 Prevent
+;Item		Drop	Deal	Store	Repair	Upgrade	Sell	CanNotScatter	CanDieScatter	CanOffLineTake	
+Meat		1	1	1	1	1	1	1	1	1
+SunPotion	0	0	0	0		0	0	0	0

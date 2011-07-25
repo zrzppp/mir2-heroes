@@ -39,7 +39,7 @@ here by importing goods from outside. Heh heh heh..\ \
 ;Item		Amount		Time
 Candle	         200	         1
 Torch	         200	         1
-DungeonEscape	 20o             1
+DungeonEscape	 200             1
 RandomTeleport	 200	         1
 Amulet	         200	         1
 Amulet(M)	 200             1

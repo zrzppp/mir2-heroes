@@ -39,3 +39,38 @@ Would you like to be revived in Town? \ \
 GOHOME
 GMEXECUTE Realive self
 
+[@GotoDuelMap]
+#IF
+GETDUELMAP S01
+#ACT
+GETDUELMAP S01
+LOCK S01 14 14 6 4
+MAPMOVE <$STR(S01)> 14 14
+HEROLOGOUT
+SENDMSG 0 "[%s] has entered [%M:%x:%y]. start a duel!"
+;SENDMSG 0 "Welcome to enter [%M] watch [%s] of the duel!"
+#ELSEACT
+MessageBox "All rooms are full, Please wait!"
+
+[@Defeat]
+#ACT
+SENDMSG 0 "[%s] has been defeated."
+CLEARDUELMAP S01
+;GETDUELITEMS
+#SAY
+You have been defeated.\
+Would you like to be revived in Town? \ \
+<Yes/@reviveTown>        <No/@exit>\
+
+[@Victory]
+#IF
+#ACT
+CLEARDUELMAP S01
+UNLOCK S01
+SENDMSG 0 "[%s] has won the Duel."
+GETDUELITEMS
+
+[@Retrieveditems]
+#ACT
+GETDUELITEMS
+

@@ -1,4 +1,4 @@
-#summary List of available monster ai mand magic in Mir2 Heroes
+#summary List of available monster ai and magic in Mir2 Heroes
 
 = Monster AI =
 

@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary List of avaialbe monster ai mand magic in Mir2 Heroes
 
 = Monster AI =
 

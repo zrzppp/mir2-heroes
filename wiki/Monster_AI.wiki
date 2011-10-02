@@ -1,0 +1,5 @@
+#summary One-sentence summary of this page.
+
+= Monster AI =
+
+This page will feature all the *monster AI* and _magics_ information you want to know.

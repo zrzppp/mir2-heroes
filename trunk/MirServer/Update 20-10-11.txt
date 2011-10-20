@@ -1,0 +1,28 @@
+[B]Firstly you need to download a full new client from here http://senture-mir.com/Heroes/HeroesClient20-10-11.zip . This is required. You will not be able to get ingame until you update to this client[/B]
+
+[B]Combo Skills[/B]
+
+Combo skills is a Shanda system were certain skills run together in a combo with a chance of hitting a critical strike
+
+To use
+- Find page in State Window (F10), Double Click top boxes to equip skill
+- Use with Ctrl+D
+- Delay etc can be set in !Setup -> SerieMagicTime
+- Need at least 2 skills to have a combo
+
+For Warrior: ThreeLore, HeartStab, MountainBreak, Annihilation
+For Wizard: DragonBreak, PhoenixDance, ThunderBurst, IceAndSnow
+For Taoist: TigerTactics, EightPalm,ThreeFlameCurse,ThousandSword
+
+You can no longer use the above skills as normal Skills. I'm not sure what will happen to players that already have those skills learnt. They should appear in the new menu but if they don't you'll need to script an NPC to check they have the skill, remove it and then give it back to them. Hopefully it's not needed.
+
+[B]Other updates - Thanks Ryan![/B]
+- Duel System, fixed other persons name on Duel Window, Now allows Gold and not GameGold. Duel messages to String.ini.
+- Add Other hints in chatbox for other buttons etc (Interface 0).
+- Some translations that were reported have been done
+- Added Sound and BGSound to .ini
+- Added Horse2.wil Support. You must unequip a horse before trying another one for now.
+- Behind the scenes cleanup and bug fixing
+- More work done on Graphics folder. Needs some final testing to confirm it's working properly
+
+

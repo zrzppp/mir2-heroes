@@ -1,0 +1,13 @@
+[FlamingMutant]
+FMWebAttackSlowTime=5
+FMWebTrapSlowTime=10
+FMWebTrapWebTime=60
+FMWebAttackWebTime=10
+FMMeteorTime=10
+FMWebAttackTime=15
+FMRepulseTime=20
+FMLayTrapTime=10
+FMCriticalSliceChance=5
+FMCriticalMultiplier=2
+FMTrapDistance=7
+FMViewRange=14

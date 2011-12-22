@@ -1,0 +1,27 @@
+;MonsterName MonsterFaction
+;Preset MonsterFactions: 0 - Ally of Player, 1 - Ally of Monster, X - Your custom Factions
+
+;Examples
+;-------------------
+;
+;Human Faction Ally
+;Arch 0
+
+;Wooma Faction Ally
+;--
+;WoomaSoldier 2
+;WoomaFighter 2
+;WoomaWarrior 2
+;FlamingWooma 2
+;WoomaGuardian 2
+;WoomaTaurus 2
+
+;Zuma Faction Ally
+;--
+;ZumaArcher 3
+;ZumaStatue 3
+;ZumaGuardian 3
+;ZumaTaurus 3
+;RedThunderZuma 3
+
+;--------------------

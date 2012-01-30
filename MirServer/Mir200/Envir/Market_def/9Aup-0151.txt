@@ -4,6 +4,7 @@
 ;99% Translated NPCs Including Quests
 
 ;Settings
+(@upgradenow @getbackupgnow)
 %100
 +5
 +6

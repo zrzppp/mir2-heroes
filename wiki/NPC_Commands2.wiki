@@ -1,2 +1,2 @@
-||       *Heroes NPC Commands*       ||
+||       *General Stuff - IF statements*       ||
 || *Command* || *Usage* || *Description* ||

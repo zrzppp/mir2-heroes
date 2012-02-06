@@ -1,2 +1,2 @@
 ||       *Heroes NPC Commands*       ||
-|| *Command* || Usage || Description ||
+|| *Command* || *Usage* || *Description* ||

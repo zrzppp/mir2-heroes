@@ -1,1 +1,1 @@
-|| Command || Usage || Description ||
+|| *Command* || Usage || Description ||

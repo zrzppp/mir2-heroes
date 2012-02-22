@@ -5,143 +5,155 @@
 
 [@main]
 #SAY
-<Use me to create a Hero, you will need 500,000 gold/FCOLOR=254> \
-<Please note Hero name must be less than(<) or equal(=) to 10 Characters/FCOLOR=254> \\ 
-<Create Hero/@herostep1>   \
-<Sell Hero/@delete>\  
+Hello <$USERNAME>, Use me to manage your hero, so what will it be?\ \
+ 
+I want to <Create/@herostep1> a hero.    I want to <Sell/@delete> my hero.\ \ 
+
+View information on <Dual Skills/@DSInfo>\ \
+
+<Buy/@Ame> Hero amulet.             <Tools/@Tools>\ \  
+
+<Note:/FCOLOR=254> Hero name must be no longer than 10 Characters.\
+
+
+[@Ame]
+#SAY
+What is a hero amulet? You need a hero amulet to use Dual skills>\ \
+
+Would you like to buy a hero amulet for 100,000 gold?\ \
+
+<Yeah Please/@BuyAme>\
+<No Thanks/@Main>\
+
+[@BuyAme]
+#IF
+CHECKGOLD 100000
+#ACT
+GIVE HeroAmulet 1
+SENDCOLORMSG 1 251 249 "Hero Amulet purchased please equipt on your hero to use dual skills"
+goto @main
 #ELSESAY
-Disabled for the moment, MiloFoxburr\        
-;<Auto Add HeroSkills/@HeroSkills> \
-;<Dual Skills/@dual> \
+You do not have 100,000 gold\ \
+
+<Back/@main>\
+
+
+
+[@DSInfo]
+#SAY
+Select your class.\ \
+
+<Warrior/@WarInfo>     <Wizard/@WizInfo>     <Taoist/@TaoInfo>\ \
+
+<Back/@main>\
+
+
+[@WarInfo]
+#SAY
+A Warrior's hero can learn one of the following skills.\ \
+
+<Warrior/FCOLOR=70> with <Warrior/FCOLOR=70> hero can learn <BrokenSoulCut/AUTOCOLOR=255,154>\
+<Warrior/FCOLOR=70> with <Wizard/FCOLOR=154> hero can learn <ThunderClap/AUTOCOLOR=255,154>\
+<Warrior/FCOLOR=70> with <Taoist/FCOLOR=2> hero can learn <ChopChopStar/AUTOCOLOR=255,154>\ \
+
+<Back/@DSInfo>\
+
+
+[@WizInfo]
+#SAY
+A Wizard's hero can learn one of the following skills.\ \
+
+<Wizard/FCOLOR=154> with <Warrior/FCOLOR=70> hero can learn <ThunderClap/AUTOCOLOR=255,154>\
+<Wizard/FCOLOR=154> with <Wizard/FCOLOR=154> hero can learn <DragonFlames/AUTOCOLOR=255,154>\
+<Wizard/FCOLOR=154> with <Taoist/FCOLOR=2> hero can learn <LastJudgement/AUTOCOLOR=255,154>\ \
+
+<Back/@DSInfo>\
+
+
+[@TaoInfo]
+#SAY
+A Taoist's hero can learn one of the following skills.\ \
+
+<Taoist/FCOLOR=2> with <Warrior/FCOLOR=70> hero can learn <ChopChopStar/AUTOCOLOR=255,154>\
+<Taoist/FCOLOR=2> with <Wizard/FCOLOR=154> hero can learn <LastJudgement/AUTOCOLOR=255,154>\
+<Taoist/FCOLOR=2> with <Taoist/FCOLOR=2> hero can learn <SoulEaterSwamp/AUTOCOLOR=255,154>\ \
+
+<Back/@DSInfo>\
+
 
 
 [@delete]
 #IF 
 HAVEHERO
 #SAY
-This will completely remove your Hero and return 250k in gold \
-Make sure to empty your Hero Bag \
-You will have to start a new Hero at Level 1 again \ \
-<Yes I want to sell my Hero/@sellHero> <Back/@main>
+This will completely remove your hero and return 250,000 gold.\
+Are you certain you want to delete your hero?\ \
+
+Yes please <remove/@SellHero> my hero now.\ \
+
+<Back/@main>              <No thanks/@main>\ \
+
+<Note:/FCOLOR=254> Please remember to remove all items from your hero.\
+<./FCOLOR=0>         Your hero must be offline.\
+
 #ELSESAY
-You dont have a hero!! Be gone with you!! \ \
+I do not buy heroes that don't exist you fool!!\ \
 <back/@main>
 
-[@sellHero]
+
+
+[@SellHero]
 #SAY
-THIS CANNOT BE UNDONE! \
-Ensure your Hero is offline and click Sell Hero \ \
-<Sell Hero/@SellHero2> <Back/@main>
+<LAST CHANCE THIS CANNOT BE UNDONE!/AUTOCOLOR=255,57>\ \
+
+
+<Sell Hero/@SellHero2>               <Keep hero/@main>\ \
+
 
 
 [@sellHero2]
 #IF
 HERO.CHECKONLINE
-#SAY
-Hero must be offline for this
+#ACT
+goto @HeroOff
 #ELSEACT
 GIVE Gold 250000
 DELETEHERO
+SENDCOLORMSG 1 251 249 "Hero has been sold, you can now make a new one"
+
+[@HeroOff]
 #SAY
-Hero has been sold, you can now make a new one.
+Hero must be offline for this.\ \
+
+<Main/@main>\
 
 
-[@dual]
-#ACT
-HERO.CHANGELEVEL = 50
-HERO.GIVE BrokenSoulCut
-HERO.GIVE ChopChopStar
-HERO.GIVE ThunderClap
-HERO.GIVE SoulEaterSwamp
-HERO.GIVE LastJudgement
-HERO.GIVE DragonFlames
-HERO.GIVE HeroAmulet
 
-
-[@HeroSkills]
-#IF
-HERO.CHECKONLINE
-#ACT
-GOTO @addHeroSkills
-break
-#ELSEACT
-MESSAGEBOX "Hero must be online for this."
-break
-
-[@addHeroSkills]
-#IF
-HERO.checkjob warrior
-#ACT
-HERO.ADDSKILL HeroFencing 3
-HERO.ADDSKILL HeroSlaying 3
-HERO.ADDSKILL HeroHalfmoon 3
-HERO.ADDSKILL HeroFlamingSwo 3
-HERO.ADDSKILL HeroShoulderD 3
-HERO.ADDSKILL HeroWindChop 3
-HERO.ADDSKILL HeroSwordPierce 3
-HERO.ADDSKILL HeroCutOpen 3
-HERO.ADDSKILL HeroDeepStalker 3
-HERO.ADDSKILL HeroDailySword 3
-MESSAGEBOX "Skills added to Hero"
-CLOSE
-#IF
-HERO.checkjob wizard
-#ACT
-HERO.ADDSKILL HeroFireball 3
-HERO.ADDSKILL HeroRepulsion 3
-HERO.ADDSKILL HeroLightning 3
-HERO.ADDSKILL HeroThunderB 3
-HERO.ADDSKILL HeroFirewall 3
-HERO.ADDSKILL HeroThunderS 3
-HERO.ADDSKILL HeroMagicS 3
-HERO.ADDSKILL HeroIceStorm 3
-HERO.ADDSKILL HeroIcePalm 3
-HERO.ADDSKILL HeroThermalFire 3
-HERO.ADDSKILL HeroTwoPlace 3
-HERO.ADDSKILL HeroDragonFlame 3
-HERO.ADDSKILL HeroMeteorS 3
-MESSAGEBOX "Skills added to Hero"
-CLOSE
-#IF
-HERO.checkjob taoist
-#ACT
-HERO.ADDSKILL HeroHealing 3
-HERO.ADDSKILL HeroSwordman 3
-HERO.ADDSKILL HeroPoisoning 3
-HERO.ADDSKILL HeroSoulFB 3
-HERO.ADDSKILL HeroSoulShield 3
-HERO.ADDSKILL HeroBlessedArm 3
-HERO.ADDSKILL HeroHiding 3
-HERO.ADDSKILL HeroMassHiding 3
-HERO.ADDSKILL HeroCharGroup 3
-HERO.ADDSKILL HeroMassHeal 3
-HERO.ADDSKILL HeroSummonDeva 3
-HERO.ADDSKILL HeroPurge 3
-HERO.ADDSKILL HTwinkleGuard 3
-HERO.ADDSKILL (H)Resurrection 3
-HERO.ADDSKILL (H)AegisShield 3
-HERO.GIVE HeroAmulet 1
-MESSAGEBOX "Skills added to Hero"
-CLOSE
 
 [@herostep1]
 #IF
 CHECKLEVELEX > 29
 CHECKGOLD 500000
 #SAY
-You need to be level 30 and pay 500,000 to create a hero. \
-Do you still want to create a hero? \ \
-<Yes/@@cqfirHero> \
-<No/@exit>
+To create a hero you need to be level 30 and pay 500,000 to create a hero.\
+Do you still want to create a hero?\ \
+
+<Create hero/@@cqfirHero>\
+<No thanks/@exit>\ \
+<Note:/FCOLOR=254> If nothing happens after inputing hero name please relog.\
+
 #ELSESAY
-You must be level 30 and have 500k in gold! \
+You must be level 30 and have 500,000 in gold!\
 
 [@cqfirHero]
 ;CREATEHERO 职业 性别
-<Choose your Hero/FCOLOR=253>    <Back/@main>\ \
-<Warrior (Male)/@CREATEHERO_WARR_MAN>             <Warrior (Female)/@CREATEHERO_WARR_WOM>\ \
-<Wizard (Male)/@CREATEHERO_WIZA_MAN>             <Wizard (Female)/@CREATEHERO_WIZA_WOM>\ \
-<Taoist (Male)/@CREATEHERO_TAOS_MAN>             <Taoist (Female)/@CREATEHERO_TAOS_WOM>\ \
+<Choose a class and gender for your Hero/FCOLOR=254>\ \
+(Male) <Warrior/@CREATEHERO_WARR_MAN>             (Female) <Warrior/@CREATEHERO_WARR_WOM>\ \
+(Male) <Wizard/@CREATEHERO_WIZA_MAN>             (Female) <Wizard/@CREATEHERO_WIZA_WOM>\ \
+(Male) <Taoist/@CREATEHERO_TAOS_MAN>              (Female) <Taoist/@CREATEHERO_TAOS_WOM>\ \
+
+<Note:/FCOLOR=254> if you exit before choosing a character please relog.\
+
 [@CREATEHERO_WARR_MAN]
 #ACT
 TAKE Gold 500000
@@ -175,3 +187,206 @@ goto @CreateingHero
 
 [@HeroNameFilter]
 Hero name must be less than 10 Characters\<Exit/@exit>
+
+
+
+
+
+
+
+;--- This is for admins only ---
+
+
+[@Tools]
+#IF
+ISADMIN
+#ACT
+Goto @ToolMain
+#ELSESAY
+Only GameMasters can access this.\ \
+
+<Back/@main>\
+
+
+[@ToolMain]
+#SAY
+Hello GameMaster <$USERNAME>, what service can i provide you today?\ \
+
+
+<Duel Skills/@DSS>            <Adjust Level/@Lvlh>     <Reset Level/@LvlR>\ \
+
+<Change my class/@chgclass>\ \ \ 
+
+<Back/@main>                           Credits:  iJam(Lomcn)
+
+
+[@LvlR]
+#ACT
+HERO.Changelevel - 65535
+SENDCOLORMSG 1 251 249 "Your hero is now level 0."
+goto @Tools
+
+[@Lvlh]
+#ACT
+HERO.Changelevel + 100
+HERO.HUMANHP + 50000
+HERO.HUMANMP + 50000
+SENDCOLORMSG 1 251 249 "100 levels has been added to your hero."
+goto @Tools
+
+
+[@ChgClass]
+#SAY
+What class would you like to change to?\ \
+
+<Warrior/@WarClass>     <Wizard/@WizClass>     <Taoist/@TaoClass>\ \
+
+<Back/@main> to main\
+
+
+[@WarClass]
+#ACT
+CHANGEJOB Warrior
+HUMANHP + 50000
+HUMANMP + 50000
+SENDCOLORMSG 1 251 249 "You are now a Warrior."
+goto @toolmain
+
+
+[@WizClass]
+#ACT
+CHANGEJOB Wizard
+HUMANHP + 50000
+HUMANMP + 50000
+SENDCOLORMSG 1 251 249 "You are now a Wizard."
+goto @toolmain
+
+
+[@TaoClass]
+#ACT
+CHANGEJOB Taoist
+HUMANHP + 50000
+HUMANMP + 50000
+SENDCOLORMSG 1 251 249 "You are now a Taoist."
+goto @toolmain
+
+
+
+
+
+
+
+[@DSS]
+#SAY
+Hello <$USERNAME>, ...\ \
+
+<View/@DS> avaliable duel skills for my class.\ \ \
+
+<Back/@ToolMain>\ \
+
+<Note:/FCOLOR=254> Only 1 dual skill will work acording to class.\
+
+
+[@DS]
+#IF
+CHECKJOB Warrior
+#ACT
+Goto @WarD
+#IF
+CHECKJOB Wizard 
+#ACT
+Goto @WizD
+#IF
+CHECKJOB Taoist
+#ACT
+Goto @TaoD
+
+
+[@WarD]
+#SAY
+Warriors can learn these duel skills.\ \
+
+<BrokenSoulCut/@BSC> - Your hero must be a warrior.\
+<ThunderClap/@TC> - Your hero must be a wizard.\
+<ChopChopStar/@CCS> - Your hero must be a Taoist.\ \
+
+<Back/@DSS>\
+
+
+
+[@WizD]
+#SAY
+Wizards can learn these duel skills.\ \
+
+<ThunderClap/@TC> - Your hero must be a warrior.\
+<DragonFlames/@DF> - Your hero must be a wizard.\
+<LastJudgement/@LJ> - Your hero must be a taoist.\ \
+
+<Back/@DSS>\
+
+
+[@TaoD]
+#SAY
+Taoist can learn these duel skills.\ \
+
+ChopChopStar - Your hero must be a warrior.\
+LastJudgement - Your hero must be a wizard.\
+SoulEaterSwamp - Your hero must be a taoist.\ \
+
+<Back/@DSS>\
+
+
+;--Warrior--
+
+[@BSC]
+#ACT
+HERO.ADDSKILL BrokenSoulCut 3
+HERO.GIVE HeroAmulet
+
+[@TC]
+#ACT
+HERO.ADDSKILL ThunderClap 3
+HERO.GIVE HeroAmulet
+
+[@CCS]
+#ACT
+HERO.ADDSKILL ChopChopStar 3
+HERO.GIVE HeroAmulet
+
+
+
+;--Wizard---
+
+[@TC]
+#ACT
+HERO.ADDSKILL ThunderClap 3
+HERO.GIVE HeroAmulet
+
+[@DF]
+#ACT
+HERO.ADDSKILL DragonFlames 3
+HERO.GIVE HeroAmulet
+
+[@LJ]
+#ACT
+HERO.ADDSKILL DragonFlames 3
+HERO.GIVE HeroAmulet
+
+
+
+;--Taoist--
+
+[@CCS]
+#ACT
+HERO.ADDSKILL ChopChopStar 3
+HERO.GIVE HeroAmulet
+
+[@LJ]
+#ACT
+HERO.ADDSKILL DragonFlames 3
+HERO.GIVE HeroAmulet
+
+[@SES]
+#ACT
+HERO.ADDSKILL SoulEaterSwamp 3
+HERO.GIVE HeroAmulet

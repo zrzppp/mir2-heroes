@@ -1,8 +1,8 @@
 ;Item name
-;'Example Item' 'Physical Damage Reduction' 'Magic Damage Reduction' 'Ignore Defence' 'Reflect Damage' 'Attack Damage' 'Physical Defence' 'Magic Defence' 'Physical Attack' 'Magic Attack' 'Soul Attack' 'Blind' 'Chaos' 'Blind Protection' 'Chaos Protection' 'Walk Speed' 'Attack Speed' 'Slow'
+;'Example Item' 'Physical Damage Reduction' 'Magic Damage Reduction' 'Ignore Defence' 'Reflect Damage' 'Attack Damage' 'Physical Defence' 'Magic Defence' 'Physical Attack' 'Magic Attack' 'Soul Attack' 'Blind' 'Chaos' 'Blind Protection' 'Chaos Protection' 'Walk Speed' 'Attack Speed' 'Slow' 'Attack Element Type' 'Amount' 'Magic Element Type' 'Amount' 'Weak Element Type' 'Amount'
 ;For example
-;DragonSlayer 0 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 5 
-;This adds 10% Attack Damage and +5 Slow to the DragonSlayer Item
+;DragonSlayer 0 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 5 0 0 2 4 0 0
+;This adds 10% Attack Damage, +5 Slow and Magic Element Ice + 4 to the DragonSlayer Item
 ;Currently the  first 5 stats cause issues if you also use the NPC Upgrade commands for them. So we recommend you don't allow players to upgrade them. The other stats are fine
 
 
